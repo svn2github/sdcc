@@ -7,7 +7,6 @@ echo "Tidying up $1";
 rm -rf sdcc
 tar xzf $1
 
-find sdcc -name "*.txt" -exec unix2dos {} ;
+find sdcc -name "*.txt" -exec unix2dos {} \;
 
 zip -9r `basename $1 .tar.gz`.zip sdcc
-
