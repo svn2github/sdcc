@@ -6,9 +6,6 @@
 test -z $BUILDROOT && \
   BUILDROOT=/var/tmp/`whoami`/build
 
-echo $BUILDROOT
-exit
-
 # A lockfile ensures, that the cronjobs of the different hosts don't overlap.
 
 # uniq id
