@@ -25,3 +25,4 @@ File .+ has modification time in the future
 ^CVS failed .*: 
 # regression tests
 ^gen/host/literalop.*warning: integer overflow in expression
+^gen/host/literalop/literalop.*In function 

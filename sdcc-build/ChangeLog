@@ -1,3 +1,7 @@
+2003-08-28  Bernhard Held <bernhard@bernhardheld.de>
+
+	* support/error-filter.sh: added 2nd filter for integer overflow on host
+
 2003-08-22  Bernhard Held <bernhard@bernhardheld.de>
 
 	* support/error-filter.sh: added filter for integer overflow on host
