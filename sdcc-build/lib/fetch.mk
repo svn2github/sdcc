@@ -7,7 +7,7 @@ SRCSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.copied)
 #	cd $(ORIGDIR); cvs $(CVSFLAGS) -d:pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` co `basename $@ .fetched`
 #	touch $@
 
-$(STAMPDIR)/%.copied: $(STAMPDIR)/%.fetched $(SRCDIR) $(STAMPDIR) 
+%.copied: %.fetched $(SRCDIR) $(STAMPDIR) 
 	rsync $(RSYNCFLAGS) $(ORIGDIR)/`basename $@ .copied` $(SRCDIR)
 	touch $@
 

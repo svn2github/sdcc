@@ -18,7 +18,3 @@ maccer-clean:
 # PENDING
 maccer-install:
 	cp $(MACCERDIR)/maccer $(BUILDDIR)/bin
-
-# Explicit dependency
-$(STAMPDIR)/maccer.copied: $(STAMPDIR)/maccer.fetched
-
