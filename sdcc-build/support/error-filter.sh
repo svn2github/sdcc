@@ -23,3 +23,5 @@ File .+ has modification time in the future
 # CVS retries
 ^cvs \[checkout aborted\]: 
 ^CVS failed .*: 
+# regression tests
+^gen/host/literalop.*warning: integer overflow in expression

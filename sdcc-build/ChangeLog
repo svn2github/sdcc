@@ -1,3 +1,7 @@
+2003-08-22  Bernhard Held <bernhard@bernhardheld.de>
+
+	* support/error-filter.sh: added filter for integer overflow on host
+
 2003-08-07  Bernhard Held <bernhard@bernhardheld.de>
 
 	* local/usf-cf-x86-linux-2.mk: added
