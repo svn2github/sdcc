@@ -39,7 +39,7 @@ sdcc-targetos-install:
 # Copies files from the native host that couldn't be compiled.
 sdcc-fromhost-install:
 ifeq ($(CROSSCOMPILING), 1)
-	cd $(TOPDIR)/build/$(HOSTOS); cp -r doc share $(BUILDDIR)
+	cd $(TOPDIR)/build/$(HOSTOS)/sdcc; cp -r doc share $(BUILDDIR)
 endif
 
 sdcc-device: sdcc-configured sdcc-build
