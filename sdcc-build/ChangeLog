@@ -2,6 +2,8 @@
 
 	* lib/fetch.mk: sdcc checkout with retry
 	* components/sdcc-extra: sdcc-extra checkout with retry
+	* components/sdcc.mk: removed MAKEJOBFLAGS for parallel build of regression tests;
+	needs more testing on CF (creating DIRs, timeouts)
 
 2003-05-05  Bernhard Held <bernhard@bernhardheld.de>
 
