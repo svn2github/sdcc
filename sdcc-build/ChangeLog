@@ -1,3 +1,8 @@
+2003-04-24  Bernhard Held <bernhard@bernhardheld.de>
+
+	* components/sdcc.mk: removed "SDCCCONFIGUREFLAGS += --program-suffix=$(EXEEXTENSION)"
+	after introducing EXEEXT
+
 2003-04-23  Bernhard Held <bernhard@bernhardheld.de>
 
         * local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: added SDCCINSTALLFLAGS

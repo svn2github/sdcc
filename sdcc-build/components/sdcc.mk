@@ -5,7 +5,7 @@ ifneq ($(SDCCMKINCLUDE), 1)
 SDCCMKINCLUDE = 1
 
 # Flags to pass on to configure in the sdcc directory
-SDCCCONFIGUREFLAGS += --program-suffix=$(EXEEXTENSION)
+# SDCCCONFIGUREFLAGS += --program-suffix=$(EXEEXTENSION)
 # Directory that the copy of sdcc is located in
 SDCCDIR = $(SRCDIR)/sdcc
 # Add sdcc to the list of source trees that need to be fetched
