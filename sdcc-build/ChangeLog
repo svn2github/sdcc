@@ -1,3 +1,7 @@
+2003-02-26  Bernhard Held <bernhard@bernhardheld.de>
+
+	* lib/bootstrap.mk: delete snapshots versions, if there are more than 7 files in a single directory
+
 2003-02-24  Bernhard Held <bernhard@bernhardheld.de>
 
 	* components/sdcc.mk: added mcs51-stack-auto to the regression tests

@@ -109,7 +109,10 @@ update-snapshots-dir: remove-old-versions upload-tarball
 
 # Removes all versions over seven days old.
 remove-old-versions:
-	ssh $(WEBHOST) 'cd $(WEBSNAPSHOTDIR); find . -mtime +7 -not -type d -exec rm {} \;'
+# over seven days old
+#	ssh $(WEBHOST) 'cd $(WEBSNAPSHOTDIR); find . -mtime +7 -not -type d -exec rm {} \;'
+# more than 7 files in dir
+	ssh $(WEBHOST) 'cd $(WEBSNAPSHOTDIR); find * -type d -exec sh -c "cd {} ; ls -1t | sed 1,7d | xargs rm -f" \;'
 
 # Sends email containing the results of the build, one filtered, one not.
 send-build-mail:
