@@ -1,5 +1,10 @@
 2004-02-11  Bernhard Held <bernhard AT bernhardheld.de>
 
+	* lib/bootstrap.mk (generate-tarball): fixed `find` argument to
+	`recode` both *.txt and *.TXT files
+
+2004-02-11  Bernhard Held <bernhard AT bernhardheld.de>
+
 	* sdcc-build-bootstrap.sh: added $EXTRATARGET to the list of
 	make targets; it will be used for target archive-src-trees
 
