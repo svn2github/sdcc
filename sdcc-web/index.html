@@ -61,31 +61,30 @@ What is SDCC ?</b></i></font></td>
  						
       <p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>SDCC</b></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="4">
  </font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
-is a<u> </u></font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>
-F<i>reeware , retargettable, optimizing ANSI - C compiler. </i></b></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="black" size="2">
+is a </font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b><i>
+Freeware , retargettable, optimizing ANSI - C compiler. </i></b></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="black" size="2">
 The current version targets the </font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>
 Intel 8051 </b></font><font color="black" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
-and recently the</font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>
+and the</font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>
  Zilog Z80<i> </i></b></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
-based MCUs. SDCC can be retargeted for other 8 bit MCUs or PICs and some
-day soon will be. The&nbsp; entire source code for the compiler is distributed
+based MCUs.  Work is in progress on supporting the Amtel AVR, DS390, and Microchip PIC series. The entire source code for the compiler is distributed
 under GPL. SDCC uses ASXXXX and ASLINK, a Freeware, retargettable assembler
 and linker. SDCC has </font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>
-extensive MCU specific language extensions, </b></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="black" size="2"><i>
-which</i> lets it utilize the underlying hardware effectively. The front
+extensive MCU specific language extensions, </b></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="black" size="2">
+which lets it utilize the underlying hardware effectively. The front
 end (parser) will be enhanced to handle language extensions for other MCUs
 as and when they are targeted. In addition to the MCU Specific optimizations
 SDCC also does a host of standard optimizations like <i>global sub expression
 elimination, loop optimizations (loop invariant , strength reduction of induction
 variables and loop reversing ), constant folding </i>and<i> propagation,
 copy propagation, dead code elimination and jump tables for 'switch' statements.
-For</i> the Back end SDCC uses a</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
+</i>For the Back end SDCC uses a</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
  </font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><i><b>
 global register allocation </b></i></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
 scheme which should be well suited for other 8 bit MCUs , the peep hole optimizer
 uses a rule based substitution mechanism which is MCU independent. Supported
 data types are </font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="maroon" size="2"><b>
-short </b>(<i>8</i> bits, 1 byte)</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
+short </b>(<i>16</i> bits, 2 byte)</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
 , </font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="maroon" size="2"><i><b>
 char </b></i>(<i>8</i> bits, 1 byte)</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
  , </font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="maroon" size="2"><b>
@@ -137,8 +136,8 @@ Who is SDCC ?</b></i></font></td>
 Sandeep Dutta (sandeep@users.sourceforge.net)</font></a>
               <font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
  - author (SDCC's version of Torvalds)</font> 									</li>
-            <li><a href="mailto:michaelh@earthling.net"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
-Michael Hope (michaelh@earthling.net)</font></a>
+            <li><a href="mailto:michaelh@juju.net.nz"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
+Michael Hope (michaelh@juju.net.nz)</font></a>
               <font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
  - Z80 port, additional coding and bug fixes.</font> 								</li>
           </ul>
@@ -218,15 +217,14 @@ What Platforms are Supported ?</b></i></font></td>
 Currently Linux (and other unices) and MS-Windows are supported. SDCC will
 compile natively on Linux using <a href="http://www.gnu.org">gcc</a>
 . Windows 95/NT users will need to download the full development version
-of CYGWIN32 from <a href="http://sourceware.cygnus.com/cygwin/"><i><b>http://sourceware.cygnus.com/cygwin/.</b></i></a>
+of CYGWIN32 from <a href="http://sources.redhat.com/"><i><b>http://sources.redhat.com/.</b></i></a>
           <br>
  						</font></p>
  						
           <p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>
 Note:</b> Cygnus distributes CYGWIN32 in two packages you will need the full
 development package, this contains the compiler and other utilities that
-you will need to compile SDCC, compiling the system with any other compiler
-under MS/Windows has not been tried.</font></p>
+you will need to compile SDCC.  SDCC for win32 also compiles using the Borland C compile, the mingw32 native win32 port of gcc, and cross compiles from Linux to mingw32.  The nightly builds are made by cross compiling to mingw32 from a Debian Linux host.</font></p>
  						
           <p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>
 Note: </b>It's official! SDCC now compiles on the win32 platform with Borland
@@ -244,46 +242,20 @@ Downloading SDCC </b></i></font></td>
  						
             </tbody>
           </table>
+
+          <p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
+As of September 29, 2001 - the current release version is<i><b> </b></i></font><b><i><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">
+v2.3.0</font></i></b></p>
  						</b></i></font></h3>
- 						
-          <p>Some latest download <a href="sdcctarballs.html">links</a>
+          <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge download page</a> for source and binary packages for Linux/x86, Linux/ppc, and Windows.
+          <p>Some alternate downloads <a href="sdcctarballs.html">links</a>
  &lt;--here.<br>
           </p>
           <p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
 The SDCC source tree is currently located at <a href="http://www.sourceforge.net">
 SourceForge</a>
 .</font></p>
- 						
-          <p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
-As of July 11, 2001 - the current release version is<i><b> </b></i></font><b><i><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">
-v2.2.2 beta</font></i></b></p>
- 						
-          <ul>
- 							
-            <li><a href="files/v2.2.1/sdcc-2.2.1-src.tar.gz"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
-SDCC v2.2.1 Source (in gzipped tar format) [2.0M]</font></a>
- 							</li>
-            <li><a href="files/v2.2.1/sdcc-2.2.1-win32-cygwin.zip"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
-SDCC v2.2.1 CygWin/Win32 Binary (in zip format) [1.4M]</font></a>
- 							</li>
-            <li><a href="files/v2.2.1/sdcc-2.2.1-win32-borland.zip"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
-SDCC v2.2.1 Borland/Win32 Binary (in zip format) [498K]</font></a>
-              <font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
- (NOTE: Cygwin is NOT needed)</font> 							</li>
-            <li><a href="ftp://sdcc.sourceforge.net/pub/sdcc/sdcc-2.2.2-7.11.01-winbin.zip"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
-SDCC v2.2.2-Winbin Cygwin/Borland Build</font></a>
-              <font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
- (FTP, July 11,2001 beta! zip format) [3.8Mb]</font> 							
-              <p><a href="previous.html" title="Previous News and Versions"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
-Previous versions</font></a>
-              </p>
- 						</li>
-          </ul>
- 						
-          <p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
-You can also browse the ftp <a href="ftp://sdcc.sourceforge.net/pub/sdcc/">
-archives</a>
-          </font></p>
+          <p>Nightly snapshots including binaries are available <a href="/snapshots">here</a>
  						
           <p><font size="2" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">
 Work continues in CVS. If you have CVS capability, the following will get
@@ -311,9 +283,9 @@ here</a>
 SourceForge has further documentation on accessing a CVS tree 	<a href="http://sourceforge.net/docman/display_doc.php?docid=763&amp;group_id=1">
 here</a>
 .<br>
- 	<a href="mailto:michaelh@earthling.net">Michael Hope</a>
+ 	<a href="mailto:michaelh@juju.net.nz">Michael Hope</a>
  has written some help on accessing CVS trees from a Win32 box and is available
-          <a href="http://earthling.net.nz/%7Emichaelh/cvs.html">here</a>
+          <a href="http://juju.net.nz/michaelh/cvs.html">here</a>
 .<br>
  This link includes a binary and step by step instructions. The CVSROOT address
 will need to be changed to the one above.</font></p>
@@ -331,6 +303,9 @@ Recent NEWS</b></i></font></td>
           </table>
  						</i></font></p>
  						
+          <p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b>
+September 29th, 2001 - Version 2.3.0 released</b></i></font></p>
+          <p>Version 2.3.0 is now available.  This is the first official release in some time, and includes many bug fixes and significantly improved Z80 support.</p>
           <p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b>
 July 11,2001 - Winbin updates</b></i></font></p>
  						
