@@ -17,17 +17,20 @@ BUILDDATE=$(shell date +%Y%m%d)
 TARBALLNAME=$(SNAPSHOTDIR)/$(TARGETOS)/sdcc-snapshot-$(TARGETOS)-$(BUILDDATE).tar.gz
 # Location to copy the tarball to
 SNAPSHOTDEST=shell1.sourceforge.net:/home/groups/s/sd/sdcc/htdocs
-
-update-bootstrap:
-	cp -f sdcc-build-bootstrap.sh ..
+# Host and path used for removing old versions
+SNAPSHOTHOST=shell1.sourceforge.net
+SNAPSHOTDIR=/home/groups/s/sd/sdcc/htdocs/snapshots
 
 # PENDING: Better naming
 crontab-spawn: update-bootstrap build-all-targets
 
+update-bootstrap:
+	cp -f sdcc-build-bootstrap.sh ..
+
 build-all-targets:
 	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-build TARGETOS=$$i; done
 
-per-target-build: per-target-clean logged-build generate-tarball upload-tarball send-build-mail
+per-target-build: per-target-clean logged-build update-snapshots-dir send-build-mail
 
 per-target-clean:
 	rm -rf $(STAMPDIR)
@@ -40,9 +43,17 @@ generate-tarball:
 	mkdir -p `dirname $(TARBALLNAME)`
 	-cd $(BUILDDIR)/..; tar czf $(TARBALLNAME) sdcc
 
-upload-tarball:
+# Uploads
+upload-tarball: generate-tarball
 	cd $(SNAPSHOTDIR)/..; rsync -rC -e ssh --size-only snapshots $(SNAPSHOTDEST)
 
+update-snapshots-dir: remove-old-versions upload-tarball
+
+# Removes all versions over seven days old.
+remove-old-versions:
+	ssh $(SNAPSHOTHOST) 'cd $(SNAPSHOTDIR); find . -mtime +7 -not -type d -exec rm {} \;'
+
+# Sends email containing the results of the build, one filtered, one not.
 send-build-mail:
 	cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
 	-egrep -v -f $(TOPDIR)/support/error-filter.sh $(BOOTSTRAPLOG) > $(BOOTSTRAPLOG).filtered
