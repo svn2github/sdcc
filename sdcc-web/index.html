@@ -50,21 +50,21 @@ under GPL.
 <p>
 Some of the features include:
 <ul>
-<li>Uses ASXXXX and ASLINK, a Freeware, retargettable assembler and
+<li>ASXXXX and ASLINK, a Freeware, retargettable assembler and
 linker.</li>
-<li>Has extensive MCU specific language extensions,
+<li>extensive MCU specific language extensions,
 allowing effective use of the underlying hardware.</li>
-<li>A host of standard optimizations like <i>global sub expression
+<li>a host of standard optimizations such as <i>global sub expression
 elimination, loop optimizations (loop invariant, strength reduction of induction
 variables and loop reversing ), constant folding </i>and<i> propagation,
 copy propagation, dead code elimination and jump tables for 'switch'
 statements.</i>
 </li>
 <li>MCU specific optimisations, including a global register allocator.</li>
-<li>An adaptable MCU specific backend that should be well suited for other 8
+<li>adaptable MCU specific backend that should be well suited for other 8
 bit MCUs</li>
-<li>An independent rule based peep hole optimizer.</li>
-<li>A full range of data types: <b>
+<li>independent rule based peep hole optimizer.</li>
+<li>a full range of data types: <b>
 char </b>(<i>8</i> bits, 1 byte),
 <b>
 short </b>(<i>16</i> bits, 2 bytes),
@@ -75,10 +75,10 @@ long </b> (<i>32</i> bit, 4 bytes)
 and <b>
 float </b> (<i>4</i> byte IEEE).
 </li>
-<li>Ability to add inline assembler code anywhere in a function.</li>
-<li>Ability to report on the complexity of a function to help decide what
+<li>the ability to add inline assembler code anywhere in a function.</li>
+<li>the ability to report on the complexity of a function to help decide what
 should be re-written in assembler.</li>
-<li>A good selection of automated regression tests.</li>
+<li>a good selection of automated regression tests.</li>
 </ul>
 <p>
 SDCC also comes with the <i>source level debugger</i><b> SDCDB</b>,
@@ -86,24 +86,24 @@ SDCC also comes with the <i>source level debugger</i><b> SDCDB</b>,
   </p>
  <p> 
   <b>SDCC</b>
- was written by Sandeep Dutta and released under the GPL license. Since it's
+ was written by Sandeep Dutta and released under a GPL license. Since its
 initial release there have been numerous bug fixes and improvements. As of
 December 1999, the code was moved to SourceForge where all the "users turned
 developers" can access the same source tree. SDCC is constantly being updated
-from all the users and developer's input.
+with all the users' and developers' input.
 </p>
 <p>AVR and gbz80 ports are no longer maintained. </p>
 <p>
 
 <h2><a name="News"></a>News</h2>
  <p>
-Feburary 23rd: SDCC 3.0 released.
+February 23rd: SDCC 3.0 released.
 </p>
 <h2>What Platforms are Supported ?</h2>
   
    <p>
  Linux and Microsoft Windows are the primary targets, although SDCC
-is regularly compiled on the Sourceforge Compile Farm which include Mac OS
+is regularly compiled on the Sourceforge Compile Farm which includes Mac OS
 X, Alpha, Sparc, and AMD Opteron machines.
 </p>
 <p>SDCC will compile natively on Linux using using <a
@@ -115,13 +115,13 @@ scripts. The nightly builds are made by cross compiling to mingw32 from a Linux 
 
 <h2><a name="Download"></a>Downloading SDCC</h2>
 
-<p>SDCC 3.0 was released on Feburary 23rd, 2004.</p>
+<p>SDCC 3.0 was released on February 23rd, 2004.</p>
 <p>See the <a
 href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
 download page</a> for the last released version including source and binary packages for Linux/x86, Mac OS X, and Windows.
 </p>
 <p>
-SDCC is always active development. Please consider 
+SDCC is always under active development. Please consider 
 <a href="snap.php">downloading one of the nightly snapshots</a> if you have
 run across a bug, or if the above release is more than two months old.
 </p>
@@ -162,7 +162,7 @@ here</a>.
 </p>
 <p>
 Before reporting a bug, please check your SDCC version and build
-date using the -v option, and include the full version string in
+date using the -v option, and be sure to include the full version string in
 your bug report. For example:
 <p>
 <code>
@@ -174,12 +174,13 @@ SDCC : mcs51/gbz80/z80/avr/ds390/pic14/TININative/xa51 2.3.8 (Feb 10 2004) (UNIX
 
    <p><b>
 SDCC</b> and the included support packages come with fair amounts of documentation
-and examples. When that isn't enough, you can find help in the
+and examples. When they aren't enough, you can find help in the
 places listed below. Here is a short check list of tips to greatly improve your
 chances of obtaining a helpful response.
 
 <ol>
-<li>Attach the code you are compiling with SDCC. It should compile "out of the box". Incomplete snippets, missing headers, declarations or definitions are real show stoppers.
+<li>Attach the code you are compiling with SDCC. It should compile "out of the box". Snippets must compile and must include any required header files, etc.
+Incomplete information will hamper your chance of a timely response.
 <li>Specify the exact command you use to run SDCC, or attach your Makefile.
 <li>Specify the SDCC version (type "sdcc -v"), your platform and operating system.
 <li>Provide an exact copy of any error message or incorrect output.
@@ -221,7 +222,7 @@ Subscribe to the user list</a>
 <li><a href="http://sourceforge.net/bugs/?func=addbug&amp;group_id=599">
 Bug Reporting</a>
 
- - if you have a problem using SDCC, we need to hear about it. Please attach <b>code to reproduce the problem</b>, and be sure provide your email address so a developer can contact you if they need more information to investigate and fix the bug.
+ - if you have a problem using SDCC, we need to hear about it. Please attach <b>code to reproduce the problem</b>, and be sure to provide your email address so a developer can contact you if they need more information to investigate and fix the bug.
 </li>
 
 <li><a href="http://sourceforge.net/tracker/?func=add&amp;group_id=599&amp;atid=536150">
@@ -235,7 +236,7 @@ Website/Documentation Issues</a>
    <li><a href="https://sourceforge.net/forum/forum.php?forum_id=1864&amp;et=0">
 SDCC Message Forum</a>
     
- - an account on Sourceforge is needed if your going to post and reply. Short
+ - an account on Sourceforge is needed if you're going to post and reply. Short
 easy online fill-in the blanks.  </li>
    <li><a href="http://www.qsl.net/dl9sec/SDCC_OKR.html">
 Open Knowledge Web Site</a>
@@ -381,8 +382,8 @@ July 11, 2001 - Winbin updates</b></i></p>
    <p>
 Recently, Karl Bongers has put together a beta for win32 using pre-built cygwin
 and Borland bins. You can download it <a href="ftp://sdcc.sourceforge.net/pub/sdcc/sdcc-2.2.2-7.11.01-winbin.zip">
-here</a>,
-remember this is a beta build and will change from time to time. Updates
+here</a>.
+Remember this is a beta build and will change from time to time. Updates
 will be posted in the <a href="#Download">Download</a>
  section as they become available. There will be a link in the <a href="#Download">
 Download</a>
@@ -399,7 +400,7 @@ remove the old source dir and do a fresh checkout.</p>
   
    <p>
 As always, there is lots going on in CVS. There are a LOT of changes to
-the documentation. This has been and alway will be a short side of OSS,
+the documentation. This has been and always will be a short side of OSS,
 SDCC included. The developers have added a lot of new command line switches
 and made changes to the old ones. The mcs51 header files have been removed
 and replaced with a common one. RTFM and then ask questions. The Z80 port
@@ -423,7 +424,7 @@ April 24, 2001 - Notes</b></i></p>
   
    <p>
 There has been a <i><b>lot</b></i> of updates to v2.2.2 CVS lately. v2.2.1
-is somewhat old comparatively and you are recommended to download a binary
+is comparatively old and we recommend you download a binary
 build from the <a href="http://www.qsl.net/dl9sec/SDCC_OKR.html">OKR</a>
  or update your sources from CVS. Mitja Kukovec has sent the mailing list
 some short instructions on installing Cygwin on a Win32 box, the link to
@@ -434,7 +435,7 @@ February 20, 2001 - Pic Port</b></i></p>
   
    <p>
 Scott has been making great strides on the pic port. There are a lot of issues
-with bringing his work into other branches of SDCC. So you will not see all
+with bringing his work into other branches of SDCC, so you will not see all
 of the features of his port in the avr and mcs51 trees. Scott has been working
 on generating intermediate 'pcode' that will be used for code optimizations
 and linker features. This is a major step and there are bound to be problems...
@@ -466,7 +467,7 @@ lists too.</p>
    <p>
 Some (if not all) of SDCC users will be glad to know that Scott Dattalo has
 been porting SDCC to the 14bit versions of the Microchip PIC controller.
-His port is still in it's early stages and needs a lot of work but it does
+His port is still in its early stages and needs a lot of work but it does
 compile programs. His code has been committed to cvs on sourceforge and is
 included when you update your cvs directories.</p>
   
