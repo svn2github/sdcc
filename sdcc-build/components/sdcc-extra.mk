@@ -18,7 +18,14 @@ ARCHIVETREES += sdcc-extra
 $(STAMPDIR)/sdcc-extra.fetched: $(ORIGDIR) $(STAMPDIR)
 	grep -q :pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc $(HOME)/.cvspass || \
 	  cvs -d:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc login
-	cd $(ORIGDIR); cvs $(CVSFLAGS) -d:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc co sdcc-extra
+	cd $(ORIGDIR); \
+	sh -c 'i=0; while ((i < 600)); do { \
+	  ((i += 1)); \
+	  cvs $(CVSFLAGS) -d:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc co sdcc-extra \
+	    && break ; \
+	  echo CVS failed $$i: `date`; \
+	  sleep 1; \
+	} done'
 	touch $@
 
 sdcc-extra:
