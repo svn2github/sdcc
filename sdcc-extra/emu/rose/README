@@ -1,0 +1,20 @@
+Simple Z80 processor emulator with console output
+-------------------------------------------------
+
+This hack doesn't deserve a real name at the moment :) Rose is the name
+of another related project.
+
+This is a very simple Z80 emulator which emulates a system with 64kb
+of RAM and a character based write only terminal designed to help me
+port sdcc.  It uses the Z80 core from the ZX Spectrum Emulator
+'Jasper':
+
+http://www.spectrum.lovely.net/
+
+My additions are covered by the GPL.  Unfortunatly Jasper doesnt have a
+license explicitly attached to it.
+
+Enough said.
+
+-- Michael Hope, May 5 2001.
+   michaelh@juju.net.nz
