@@ -44,6 +44,7 @@ ifneq ($(CROSSCOMPILING), 1)
 TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.gz
 else
 TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).zip
+SETUPNAME=$(TARBALLDIR)-setup/sdcc_$(BUILDDATE)_setup.exe
 endif
 
 # Location to copy the tarball to
@@ -78,9 +79,9 @@ release-build:
 
 per-target-build: per-target-clean logged-build update-snapshots-dir send-build-mail
 
-per-target-test-build: per-target-clean logged-build generate-tarball
+per-target-test-build: per-target-clean logged-build generate-packages
 
-per-target-release-build: per-target-clean logged-build copy-extra-docs generate-tarball
+per-target-release-build: per-target-clean logged-build copy-extra-docs generate-packages
 
 per-target-clean:
 	rm -rf $(STAMPDIR)
@@ -89,12 +90,26 @@ per-target-clean:
 logged-build:
 	-$(MAKE) -k $(MAKESILENTFLAG) build 2>&1 | tee $(BOOTSTRAPLOG)
 
+generate-packages: generate-tarball generate-setup
+
+generate-setup:
+ifeq ($(CROSSCOMPILING), 1)
+	mkdir -p `dirname $(SETUPNAME)`
+	cp $(TOPDIR)/src/sdcc/COPYING $(BUILDDIR)/COPYING.TXT; unix2dos $(BUILDDIR)/COPYING.TXT
+	cp $(TOPDIR)/src/sdcc/support/scripts/sdcc.nsi $(BUILDDIR)
+	cp $(TOPDIR)/src/sdcc/support/scripts/sdcc.ico $(BUILDDIR)
+	-cd $(BUILDDIR); $(NSISBIN)/makensis sdcc.nsi;
+	mv $(BUILDDIR)/setup.exe $(SETUPNAME)
+endif
+
 generate-tarball:
 	mkdir -p `dirname $(TARBALLNAME)`
 ifneq ($(CROSSCOMPILING), 1)
 	-cd $(BUILDDIR)/..; tar czf $(TARBALLNAME) sdcc
 else
-	-find $(BUILDDIR) \( -name "*.txt" -or -name "*.TXT" \) -exec recode lat1..ibmpc {} \;
+# 2004-10-10 borutr: Windows use Latin1 (actually CP1252) - no encoding conversion is needed,
+# so the next line is commented out
+#	-find $(BUILDDIR) \( -name "*.txt" -or -name "*.TXT" \) -exec recode lat1..ibmpc {} \;
 	-cd $(BUILDDIR)/..; zip -9r $(TARBALLNAME) sdcc
 endif
 
@@ -104,11 +119,11 @@ copy-extra-docs:
 	cd $(BUILDDIR); cp -f $(TOPDIR)/src/sdcc/doc/README.txt $(TOPDIR)/src/sdcc/doc/INSTALL.txt .
 
 # Uploads and delete archive to save space on CF
-upload-tarball: generate-tarball
+upload-packages: generate-tarball generate-packages
 	cd $(STAGINGBASE); rsync -rC -e ssh --size-only $(TARBALLBASE) $(SNAPSHOTDEST)
 	rm $(STAGINGBASE)/$(TARBALLBASE)/*/*
 
-update-snapshots-dir: upload-tarball remove-old-versions
+update-snapshots-dir: upload-packages remove-old-versions
 
 # Removes old versions
 remove-old-versions:
@@ -134,4 +149,3 @@ send-build-mail:
 			cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLISTADMIN)'; \
 		fi \
 	fi
-

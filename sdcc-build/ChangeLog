@@ -1,3 +1,8 @@
+2004-10-17 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk, lib/variables.mk: cross compiling of WIN32 setup.exe
+	on Linux as a part of nightly build
+
 2004-10-09  Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* lib/bootstrap.mk: updated BOOTSTRAPFILTEREDLISTADMIN to point
