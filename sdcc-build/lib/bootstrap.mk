@@ -144,7 +144,7 @@ send-build-mail:
 	#		Send it to the adim
 	if egrep -qv '^ *$$' $(BOOTSTRAPLOG).filtered; then \
 		if egrep -qv '^Summary for ' $(BOOTSTRAPLOG).filtered; then \
-			cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
+			cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLISTADMIN)'; \
 		else \
 			cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLISTADMIN)'; \
 		fi \
