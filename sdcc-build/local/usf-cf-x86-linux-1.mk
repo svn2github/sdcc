@@ -1,2 +1,2 @@
 # Dual processor
-MAKEFLAGS += -j 2
+MAKEJOBFLAGS = -j 2
