@@ -25,7 +25,7 @@ $(SDCCDIR)/sdccconf.h:
 sdcc: sdcc-build
 
 sdcc-build: sdcc-configured
-	$(MAKE) $(MAKEJOBFLAGS) -C $(SDCCDIR) sdcc
+	$(MAKE) $(MAKEJOBFLAGS) -k -C $(SDCCDIR) sdcc
 
 # PENDING: sdcc-cc sdcc-aslink sdcc-misc sdcc-packihx
 

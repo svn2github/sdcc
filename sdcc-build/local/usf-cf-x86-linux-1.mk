@@ -1,2 +1,2 @@
-# Dual processor
-MAKEJOBFLAGS = -j 2
+# Dual processor, but make doesn't detect conflicts properly
+MAKEJOBFLAGS =
