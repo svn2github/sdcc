@@ -9,3 +9,7 @@ For Windoze character set and line ending:
 
 http://sdcc.sourceforge.net/snapshot/docs/sdcc-doc.zip
 
+
+Online:
+
+http://sdcc.sourceforge.net/doc/

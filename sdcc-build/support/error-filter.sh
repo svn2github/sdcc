@@ -1,7 +1,7 @@
 # Ignore Makefile.dep/main.dep warnings
 \.dep: No such file or directory
 # Inhibit the warning from yacc
-^conflicts:
+# ^conflicts:
 # Inhibit Makefile autogeneration skew message. SF's server (NFS!) are not synchronized despite of ntp.
 warning:  Clock skew detected
 File .+ has modification time in the future

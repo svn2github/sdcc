@@ -1,3 +1,8 @@
+2003-03-18  Bernhard Held <bernhard@bernhardheld.de>
+
+	* support/readme-snapshot.txt: added link to online documentation
+	* support/error-filter.sh: yacc's warning is no longer filtered
+
 2003-03-11  Bernhard Held <bernhard@bernhardheld.de>
 
 	* components/sdcc.mk: add first 100 lines of sdcc's ChangeLog to snapshot
