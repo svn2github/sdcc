@@ -1,5 +1,5 @@
-grep -v ^lk\|^as\|^z80\|Makefile\.dep\|skew\|^future
-
+^as.+\.c\:
+^lk.+\.c\:
 
 
 

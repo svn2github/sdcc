@@ -3,8 +3,8 @@ BOOTSTRAPLOG=$(TOPDIR)/build.log
 # Machine to ssh into to send the build result out via email
 BOOTSTRAPSSHMAILSERVER=shell1.sourceforge.net
 # Address to send the build output to
-#BOOTSTRAPLIST=michaelh@juju.net.nz
-BOOTSTRAPLIST=sdcc-devel@lists.sourceforge.net
+BOOTSTRAPLIST=michaelh@juju.net.nz
+#BOOTSTRAPLIST=sdcc-devel@lists.sourceforge.net
 # Subject line to use in the build output email
 BOOTSTRAPSUBJECT=Automated build output ($(TARGET))
 # Stamp to append to the build name.
@@ -18,14 +18,10 @@ update-bootstrap:
 	cp -f sdcc-build-bootstrap.sh ..
 
 # PENDING: Better naming
-crontab-spawn: update-bootstrap logged-build filter-noise generate-tarball upload-tarball send-build-mail kill-ssh-agent
+crontab-spawn: update-bootstrap logged-build generate-tarball upload-tarball send-build-mail kill-ssh-agent
 
 logged-build:
 	-$(MAKE) -s build > $(BOOTSTRAPLOG) 2>&1
-
-filter-noise:
-	cat $(BOOTSTRAPLOG) | `cat $(TOPDIR)/support/error-filter.sh` > $(BOOTSTRAPLOG).tmp
-	mv $(BOOTSTRAPLOG).tmp $(BOOTSTRAPLOG)
 
 generate-tarball:
 	cd $(BUILDDIR); cd ..; tar czf $(TARBALLNAME) sdcc
@@ -34,7 +30,8 @@ upload-tarball:
 	scp $(TARBALLNAME) $(SNAPSHOTDEST)
 
 send-build-mail:
-	cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
+	cat $(BOOTSTRAPLOG) | grep -v -f $(TOPDIR)/support/error-filter.sh | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
 
 kill-ssh-agent:
 	ssh-agent -k
+
