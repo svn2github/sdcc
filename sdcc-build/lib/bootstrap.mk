@@ -5,9 +5,11 @@ BOOTSTRAPLOG=$(TOPDIR)/build.log
 BOOTSTRAPSSHMAILSERVER=shell1.sourceforge.net
 # Address to send the filtered build output to
 #BOOTSTRAPFILTEREDLIST=michaelh@juju.net.nz
+#BOOTSTRAPFILTEREDLIST=bernhardheld@users.sourceforge.net
 BOOTSTRAPFILTEREDLIST=sdcc-devel@lists.sourceforge.net
 # Address to send the unfiltered build output to
 #BOOTSTRAPLIST=michaelh@juju.net.nz
+#BOOTSTRAPLIST=bernhardheld@users.sourceforge.net
 BOOTSTRAPLIST=sdcc-buildlogs@lists.sourceforge.net
 # Subject line to use in the build output email
 BOOTSTRAPSUBJECT=Automated build output ($(TARGETOS))
