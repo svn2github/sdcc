@@ -1,4 +1,8 @@
-2003-05-09
+2003-05-12  Bernhard Held <bernhard@bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: added lockfile mechanism
+
+2003-05-09  Bernhard Held <bernhard@bernhardheld.de>
 
 	* local/ucf-cf-ppc-macosx-2.mk: enable ucsim, it compiles cleanly with g++2
 
