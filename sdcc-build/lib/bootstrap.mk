@@ -1,7 +1,3 @@
-# PENDING
-RELEASEVERSIONTAG=sdcc-230
-# PENDING
-RELEASEVERSION=2.3.0
 # File to log all main make output to
 BOOTSTRAPLOG=$(TOPDIR)/build.log
 # Machine to ssh into to send the build result out via email
@@ -17,18 +13,27 @@ BOOTSTRAPLIST=sdcc-buildlogs@lists.sourceforge.net
 BOOTSTRAPSUBJECT=Automated build output ($(TARGETOS))
 # Stamp to append to the build name.
 BUILDDATE=$(shell date +%Y%m%d)
-# Name to append to the tar name
-# PENDING
+
+# The file naming and output directories depend on whether this is a
+# release or a snapshot build
 ifeq ($(ISRELEASE),true)
+# Format is staging/sdcc-version-target.tar.gz
+
+# The tail part of the tar ball name
 BUILDNAME=$(RELEASEVERSION)-$(TARGETOS)
+# The root directory that the tarballs will go into
 TARBALLBASE=staging
-TARBALLDIR=$(SNAPSHOTDIR)/../$(TARBALLBASE)
+# The directory that the tarballs will finally go into
+TARBALLDIR=$(STAGINGBASE)/$(TARBALLBASE)
+
 else
+# Format is snapshots/target/sdcc-target-date.tar.gz
 BUILDNAME=snapshot-$(TARGETOS)-$(BUILDDATE)
 TARBALLBASE=snapshots
 TARBALLDIR=$(SNAPSHOTDIR)/$(TARGETOS)
+
 endif
-#BUILDNAME=$(RELEASE)-$(TARGETOS)
+
 # Name of the tarball for this target
 TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.gz
 # Location to copy the tarball to
@@ -40,15 +45,23 @@ WEBSNAPSHOTDIR=/home/groups/s/sd/sdcc/htdocs/$(TARBALLBASE)
 # PENDING: Better naming
 crontab-spawn: update-bootstrap build-all-targets
 
+# Update the bootstrap shell file that is used by cron to spawn a
+# build
 update-bootstrap:
 	cp -f sdcc-build-bootstrap.sh ..
 
+# Does a test build for each target which does everything but send the
+# emails and upload the tarballs
 test-all-targets:
 	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-test-build TARGETOS=$$i; done
 
+# Builds for each target, including sending the results out in an
+# email and updating the snapshots directory
 build-all-targets:
 	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-build TARGETOS=$$i; done
 
+# Does a release build of each target by checking out from a label and
+# building for each target
 release-build:
 	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-release-build TARGETOS=$$i ISRELEASE=true 'CVSTAGFLAG=-r $(RELEASEVERSIONTAG)'; done
 
@@ -69,13 +82,14 @@ generate-tarball:
 	mkdir -p `dirname $(TARBALLNAME)`
 	-cd $(BUILDDIR)/..; tar czf $(TARBALLNAME) sdcc
 
-# PENDING
+# Copies a few extra docs to the top level directory to give the user
+# initial direction
 copy-extra-docs:
 	cd $(BUILDDIR); cp -f $(TOPDIR)/src/sdcc/doc/README.txt $(TOPDIR)/src/sdcc/doc/INSTALL.txt .
 
 # Uploads
 upload-tarball: generate-tarball
-	cd $(SNAPSHOTDIR)/..; rsync -rC -e ssh --size-only $(TARBALLBASE) $(SNAPSHOTDEST)
+	cd $(STAGINGBASE); rsync -rC -e ssh --size-only $(TARBALLBASE) $(SNAPSHOTDEST)
 
 update-snapshots-dir: remove-old-versions upload-tarball
 

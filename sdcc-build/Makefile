@@ -15,6 +15,7 @@ include lib/fetch.mk
 include lib/clean.mk
 include lib/install.mk
 include lib/help.mk
+include lib/release.mk
 include lib/bootstrap.mk
 
 build: dirs fetch-build-trees sdcc sdcc-install

@@ -15,7 +15,8 @@ ORIGDIR = orig
 BUILDDIR = $(TOPDIR)/build/$(TARGETOS)/sdcc
 BINDIR= $(BUILDDIR)/bin
 NOISELOG = $(TOPDIR)/build-noise.log
-SNAPSHOTDIR = $(TOPDIR)/../snapshots
+STAGINGBASE = $(TOPDIR)/..
+SNAPSHOTDIR = $(STAGINGBASE)/snapshots
 
 CVSFLAGS += -z5 -Q
 STAMPDIR = stamps
