@@ -1,6 +1,8 @@
 2003-03-27  Bernhard Held <bernhard@bernhardheld.de>
 
 	* support/error-filter.sh: suppress cvs lock messages
+	* components/sdcc.mk: --target not required for configure (even if
+	cross-compiling)
 
 2003-03-18  Bernhard Held <bernhard@bernhardheld.de>
 
