@@ -7,7 +7,7 @@ update-bootstrap:
 	cp -f sdcc-build-bootstrap.sh ..
 
 # PENDING: Better naming
-crontab-spawn:
-	-$(MAKE) -s fail > $(BOOTSTRAPLOG) 2>&1
+crontab-spawn: update-bootstrap
+	-$(MAKE) -s build > $(BOOTSTRAPLOG) 2>&1
 	cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
 	ssh-agent -k
