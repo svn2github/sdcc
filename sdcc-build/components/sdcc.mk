@@ -35,7 +35,7 @@ sdcc-install: sdcc-build
 	cp $(SDCCDIR)/bin/* $(BUILDDIR)/bin
 
 sdcc-device: sdcc-configured sdcc-build
-	$(MAKE) $(MAKEFLAGS) -C $(SDCCDIR) sdcc-device
+	$(MAKE) $(MAKEJOBFLAGS) -C $(SDCCDIR) sdcc-device
 
 sdcc-clean:
 	echo Here
