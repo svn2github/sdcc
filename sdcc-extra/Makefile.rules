@@ -1,0 +1,30 @@
+CC = gcc
+CFLAGS += -Wall
+
+JAVAC = javac
+JAVACFLAGS +=
+
+OBJ = $(CSRC:.c=.o) $(JAVASRC:.java=.class)
+
+all: subdirs $(OBJ) $(BIN) $(LIB)
+
+$(BIN): $(OBJ) $(EXTRA_LIBS)
+
+$(LIB): $(OBJ)
+	ar r $(LIB) $(OBJ)
+	ranlib $(LIB)
+
+%.class: %.java
+	$(JAVAC) $<
+
+subdirs:
+ifdef SUBDIRS
+	for i in $(SUBDIRS); do $(MAKE) -C $$i; done
+endif
+
+clean:
+ifdef SUBDIRS
+	for i in $(SUBDIRS); do $(MAKE) -C $$i clean; done
+endif
+	rm -f *.o *.class *~ *.a $(BIN) $(LIB)
+

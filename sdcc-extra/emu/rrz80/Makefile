@@ -1,19 +1,11 @@
-SRC = rrz80.c
-OBJ = $(SRC:.c=.o)
+TOPDIR = ../..
+
+CSRC = rrz80.c
 
 BIN = rrz80
 
-CC = gcc
-CFLAGS = -Wall
+SUBDIRS = cpu
 
-all: $(BIN)
+EXTRA_LIBS  = cpu/libz80cpu.a
 
-$(BIN): $(OBJ) cpu/libz80cpu.a
-
-cpu/libz80cpu.a:
-	make -C cpu
-
-clean:
-	make -C cpu clean
-	rm -f *.o *~ $(BIN)
-
+include $(TOPDIR)/Makefile.rules
