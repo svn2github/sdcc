@@ -1,3 +1,7 @@
+2003-09-03  Bernhard Held <bernhard@bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: cp log files from local hd to $HOME/build on nfs server
+
 2003-08-29  Bernhard Held <bernhard@bernhardheld.de>
 
 	* sdcc-build-bootstrap.sh: moved BUILDROOT to local harddisk

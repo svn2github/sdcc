@@ -96,4 +96,8 @@ done
 cd $BUILDROOT/$MODULE
 make $MAKEFLAGS crontab-spawn
 
+# cp log files from local hd to $HOME/build on nfs server
+test $BUILDROOT != $HOME/build && \
+  cp -p ../*.log ../*.flitered $HOME/build/
+
 cleanup
