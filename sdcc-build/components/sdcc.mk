@@ -49,4 +49,9 @@ sdcc-clean:
 
 sdcc-device-clean:
 
+sdcc-regression: sdcc sdcc-install sdcc-extra
+ifneq ($(CROSSCOMPILING), 1)
+	$(MAKE) -C src/sdcc/support/regression SDCC_DIR=$(BUILDDIR) SDCC_EXTRA_DIR=$(TOPDIR)/src/sdcc-extra test-host test-z80
+endif
+
 endif

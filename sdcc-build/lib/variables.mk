@@ -18,7 +18,7 @@ NOISELOG = $(TOPDIR)/build-noise.log
 STAGINGBASE = $(TOPDIR)/..
 SNAPSHOTDIR = $(STAGINGBASE)/snapshots
 
-CVSFLAGS += -z5 -Q
+CVSFLAGS += -Q
 STAMPDIR = stamps
 RSYNCFLAGS = -C -r
 # Passed on to Makes to make them silent.  Can override.
