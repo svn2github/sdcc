@@ -4,8 +4,8 @@ SRCSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.copied)
 
 # Default rule for fetching a tree from cvs
 $(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)
-	grep -q pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` || \
-	  cvs-d:pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` login
+	grep -q pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` $(HOME)/.cvspass || \
+	 cvs -d:pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` login
 	cd $(ORIGDIR); cvs $(CVSFLAGS) -d:pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` co $(CVSTAGFLAG) `basename $@ .fetched`
 	touch $@
 

@@ -40,7 +40,7 @@ endif
 ifneq ($(CROSSCOMPILING), 1)
 TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.gz
 else
-TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.zip
+TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).zip
 endif
 
 # Location to copy the tarball to
@@ -103,7 +103,7 @@ copy-extra-docs:
 # Uploads and delete archive to save space on CF
 upload-tarball: generate-tarball
 	cd $(STAGINGBASE); rsync -rC -e ssh --size-only $(TARBALLBASE) $(SNAPSHOTDEST)
-	rm $(TARBALLNAME)/*/*
+	rm $(STAGINGBASE)/$(TARBALLBASE)/*/*
 
 update-snapshots-dir: remove-old-versions upload-tarball
 
