@@ -3,6 +3,8 @@
 	* lib/bootstrap.mk: delete snapshots versions, if there are more than 7 files in a single directory
 	separate build.log files for different TARGETOS
 	* lib/variables.mk: separate build-noise.log files for different TARGETOS
+	* local/usf-cf-sparc-linux-1.mk: added
+	* local/usf-cf-alpha-linux-1.mk: added
 
 2003-02-24  Bernhard Held <bernhard@bernhardheld.de>
 
