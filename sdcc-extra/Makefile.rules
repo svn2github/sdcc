@@ -1,5 +1,6 @@
 CC = gcc
 CFLAGS += -Wall -O2
+CXXFLAGS += -fdollars-in-identifiers -ggdb
 
 JAVAC = javac
 JAVACFLAGS +=

@@ -1022,11 +1022,9 @@ instr(0xd6,8);
    pc++;
 endinstr;
 
-instr(0xd7,32);			/* Old RST 10 - new print A */
-/*   push2(pc);
-   pc=16;*/ {
-	putchar(a); fflush(stdout);
-   }
+instr(0xd7,32);			/* Old RST 10 */
+   push2(pc);
+   pc=16;
 endinstr;
 
 instr(0xd8,8);

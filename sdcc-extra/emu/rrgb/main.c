@@ -99,6 +99,12 @@ void handleRST08(struct sregs *pregs)
             fflush(stdout);
         }
         break;
+    case RST_08_GET_CLOCK: {
+        unsigned ticks = tstates / (CPU_SPEED/CPU_CLOCKS_PER_SECOND);
+        *pregs->e = (unsigned char)ticks;
+        *pregs->d = (unsigned char)(ticks >> 8);
+        break;
+    }
     case RST_08_PROFILE_ENTER:
     case RST_08_PROFILE_EXIT:
     case RST_08_PROFILE_ENTER_LEAF:
