@@ -1,3 +1,7 @@
+2003-04-22  Bernhard Held <bernhard@bernhardheld.de>
+
+	* local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: adapted to new configure
+
 2003-04-12  Bernhard Held <bernhard@bernhardheld.de>
 
 	* components/sdcc.mk: SDCC_DIR renamed to SDCC_HOME
