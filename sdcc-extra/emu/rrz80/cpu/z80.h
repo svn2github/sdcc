@@ -24,13 +24,16 @@
 #ifdef HAVE_CONFIG_H
 #  include "config.h"
 #else
-#  include <sys/types.h>
-#  if defined(_BIG_ENDIAN)
-#    define WORDS_BIGENDIAN
-#  elif !defined(_LITTLE_ENDIAN)
-#    include <endian.h>
-#    if BYTE_ORDER == BIG_ENDIAN
+   /* Hack: GYGWIN doesn't have endian.h */
+#  ifndef __CYGWIN__
+#    include <sys/types.h>
+#    if defined(_BIG_ENDIAN)
 #      define WORDS_BIGENDIAN
+#    elif !defined(_LITTLE_ENDIAN)
+#      include <endian.h>
+#      if BYTE_ORDER == BIG_ENDIAN
+#        define WORDS_BIGENDIAN
+#      endif
 #    endif
 #  endif
 #endif
