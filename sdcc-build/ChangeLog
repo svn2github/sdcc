@@ -5,6 +5,7 @@
 	* components/sdcc.mk
 	* components/sdcc-extra.mk
 	* lib/fetch.mk
+	* lib/bootstrap.mk: build own recode
 
 2003-07-16  Bernhard Held <bernhard@bernhardheld.de>
 
