@@ -65,8 +65,9 @@ sdcc-clean:
 sdcc-device-clean:
 
 sdcc-regression: sdcc sdcc-install sdcc-extra
+ test-gbz80 temporary disabled because of problems; Bernhard 2003-02-13
 ifneq ($(CROSSCOMPILING), 1)
-	$(MAKE) -C src/sdcc/support/regression SDCC_DIR=$(BUILDDIR) SDCC_EXTRA_DIR=$(TOPDIR)/src/sdcc-extra test-host test-z80 test-gbz80 test-mcs51 test-mcs51-large test-ds390
+	$(MAKE) -C src/sdcc/support/regression SDCC_DIR=$(BUILDDIR) SDCC_EXTRA_DIR=$(TOPDIR)/src/sdcc-extra test-host test-z80 test-mcs51 test-mcs51-large test-ds390
 endif
 
 endif
