@@ -25,17 +25,16 @@ update-bootstrap:
 crontab-spawn: update-bootstrap build-all-targets
 
 build-all-targets:
-	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) per-target-build TARGETOS=$$i; done
+	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-build TARGETOS=$$i; done
 
-per-target-build: per-target-clean logged-build generate-tarball upload-tarball send-build-mail kill-ssh-agent
+per-target-build: per-target-clean logged-build generate-tarball upload-tarball send-build-mail
 
 per-target-clean:
 	rm -rf $(STAMPDIR)
 	rm -rf $(SRCDIR)
-	echo $(TARGETOS) $(TARGETCC)
 
 logged-build:
-	-$(MAKE) -k -s build 2>&1 | tee $(BOOTSTRAPLOG)
+	-$(MAKE) -k $(MAKESILENTFLAG) build 2>&1 | tee $(BOOTSTRAPLOG)
 
 generate-tarball:
 	mkdir -p `dirname $(TARBALLNAME)`
@@ -50,6 +49,3 @@ send-build-mail:
 	if egrep -qv '^ *$$' $(BOOTSTRAPLOG).filtered; then \
 		cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
 		fi
-
-kill-ssh-agent:
-	ssh-agent -k

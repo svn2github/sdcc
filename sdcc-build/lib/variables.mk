@@ -20,6 +20,8 @@ SNAPSHOTDIR = $(TOPDIR)/../snapshots
 CVSFLAGS += -z5 -Q
 STAMPDIR = stamps
 RSYNCFLAGS = -C -r
+# Passed on to Makes to make them silent.  Can override.
+MAKESILENTFLAG = -s
 
 $(STAMPDIR):
 	mkdir -p $(STAMPDIR)
