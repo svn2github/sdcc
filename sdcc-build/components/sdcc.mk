@@ -27,6 +27,7 @@ sdcc-configured: $(SDCCDIR)/sdccconf.h
 
 $(SDCCDIR)/sdccconf.h:
 	-cd $(SDCCDIR); CC=$(TARGETCC) CXX=$(TARGETCXX) STRIP=$(TARGETSTRIP) RANLIB=$(TARGETRANLIB) CXXFLAGS=$(TARGETCXXFLAGS) ./configure $(SDCCCONFIGUREFLAGS) > $(NOISELOG)
+	@echo -- Configured sdcc for $(TARGETOS), CC $(TARGETCC)
 
 sdcc: sdcc-build
 

@@ -27,7 +27,7 @@ crontab-spawn: update-bootstrap build-all-targets
 build-all-targets:
 	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) per-target-build TARGETOS=$$i; done
 
-per-target-build: logged-build generate-tarball upload-tarball send-build-mail kill-ssh-agent
+per-target-build: per-target-clean logged-build generate-tarball upload-tarball send-build-mail kill-ssh-agent
 
 per-target-clean:
 	rm -rf $(STAMPDIR)
@@ -35,7 +35,7 @@ per-target-clean:
 	echo $(TARGETOS) $(TARGETCC)
 
 logged-build:
-	-$(MAKE) -k build 2>&1 | tee $(BOOTSTRAPLOG)
+	-$(MAKE) -k -s build 2>&1 | tee $(BOOTSTRAPLOG)
 
 generate-tarball:
 	mkdir -p `dirname $(TARBALLNAME)`
