@@ -46,12 +46,12 @@ ifeq ($(ISRELEASE),true)
 	echo Fetch sdcc.doc.tar.gz and add it to the archive!
 else
 ifneq ($(CROSSCOMPILING), 1)
-	rm -rf $(BUILDDIR)/share/doc/*
-	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/doc/README
+	rm -rf $(BUILDDIR)/share/sdcc/doc/*
+	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/sdcc/doc/README
 else
 # some day /share will be omitted for windoze
-	rm -rf $(BUILDDIR)/share/doc/*
-	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/doc/README.TXT
+	rm -rf $(BUILDDIR)/share/sdcc/doc/*
+	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/sdcc/doc/README.TXT
 endif
 endif
 

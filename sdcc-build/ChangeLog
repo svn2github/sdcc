@@ -1,6 +1,7 @@
 2003-02-14  Bernhard Held <bernhard@bernhardheld.de>
 
 	* local/usf-cf-ppc-macosx-1.mk: --disbale-ucsim
+	* components/sdcc.mk: moved share/doc to share/sdcc/doc
 
 2003-02-13  Bernhard Held <bernhard@bernhardheld.de>
 
