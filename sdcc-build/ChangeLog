@@ -1,3 +1,7 @@
+2003-03-10  Bernhard Held <bernhard@bernhardheld.de>
+
+	* lib/bootstrap.mk: first upload, then remove-old-versions, not vice versa
+
 2003-03-03  Bernhard Held <bernhard@bernhardheld.de>
 
 	* lib/bootstrap.mk: put logs in $(STAGINGBASE), so that they survive sdcc-build-bootstrap.sh

@@ -105,9 +105,9 @@ upload-tarball: generate-tarball
 	cd $(STAGINGBASE); rsync -rC -e ssh --size-only $(TARBALLBASE) $(SNAPSHOTDEST)
 	rm $(STAGINGBASE)/$(TARBALLBASE)/*/*
 
-update-snapshots-dir: remove-old-versions upload-tarball
+update-snapshots-dir: upload-tarball remove-old-versions
 
-# Removes all versions over seven days old.
+# Removes old versions
 remove-old-versions:
 # over seven days old
 #	ssh $(WEBHOST) 'cd $(WEBSNAPSHOTDIR); find . -mtime +7 -not -type d -exec rm {} \;'
