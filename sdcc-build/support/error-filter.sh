@@ -13,3 +13,6 @@ File .+ has modification time in the future
 ^-- 
 ^configure: WARNING:
 If a cross compiler is detected then cross compile mode will be used.
+# Inhibit regression suite messages
+^Processing
+constant is out of range for
