@@ -1,3 +1,7 @@
+2003-07-14  Bernhard Held <bernhard@bernhardheld.de>
+
+	* lib/fetch.mk: add "-z3" to cvs
+
 2003-06-17  Bernhard Held <bernhard@bernhardheld.de>
 
 	* support/error-filter.sh: filter "cvs [checkout aborted]:",
