@@ -5,8 +5,10 @@ BOOTSTRAPLOG=$(STAGINGBASE)/build.$(TARGETOS).log
 BOOTSTRAPSSHMAILSERVER=shell1.sourceforge.net
 # Address to send the filtered build output to
 #BOOTSTRAPFILTEREDLIST=michaelh@juju.net.nz
-#BOOTSTRAPFILTEREDLIST=bernhardheld@users.sourceforge.net
+#BOOTSTRAPFILTEREDLIST=sdcc-devel@lists.sourceforge.net
 BOOTSTRAPFILTEREDLIST=sdcc-devel@lists.sourceforge.net
+# Admin address to send the filtered build output to
+BOOTSTRAPFILTEREDLISTADMIN=bernhardheld@users.sourceforge.net
 # Address to send the unfiltered build output to
 #BOOTSTRAPLIST=michaelh@juju.net.nz
 #BOOTSTRAPLIST=bernhardheld@users.sourceforge.net
@@ -116,8 +118,19 @@ remove-old-versions:
 
 # Sends email containing the results of the build, one filtered, one not.
 send-build-mail:
-	cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
+	# 2003-06-03 Bernhard: nobody reads the BOOTSTRAPLIST, so let's save SF's resources by not sending the logs.
+	# cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
 	-egrep -v -f $(TOPDIR)/support/error-filter.sh $(BOOTSTRAPLOG) > $(BOOTSTRAPLOG).filtered
+	# If there's something in the log
+	#	If there's anything else than summaries (e.g. error messages)
+	#		Send it to the list
+	#	Else
+	#		Send it to the adim
 	if egrep -qv '^ *$$' $(BOOTSTRAPLOG).filtered; then \
-		cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
-		fi
+		if egrep -qv '^Summary for ' $(BOOTSTRAPLOG).filtered; then \
+			cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
+		else \
+			cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLISTADMIN)'; \
+		fi \
+	fi
+

@@ -1,3 +1,8 @@
+2003-06-06  Bernhard Held <bernhard@bernhardheld.de>
+
+	* lib/bootstrap.mk: stop sending logs to sdcc-buildlogs (nobody reads it, me included)
+	send only mail to sdcc-devel, if there's an error, otherwise send it to the Admin
+
 2003-05-13  Bernhard Held <bernhard@bernhardheld.de>
 
 	* sdcc-build-bootstrap.sh: removed "exec", so that cleanup() is finally called
