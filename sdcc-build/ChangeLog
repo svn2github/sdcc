@@ -1,4 +1,8 @@
-2004-02-11  Bernhard Held <bernhard AT bernhardheld.de>
+2004-02-20  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/src-archive.mk: finally removed $HOSTNAME from archive name
+
+2004-02-19  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/bootstrap.mk (generate-tarball): fixed `find` argument to
 	`recode` both *.txt and *.TXT files
