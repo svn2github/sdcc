@@ -21,6 +21,6 @@ cvs -Q -d$CVSROOT co $MODULE
 cd $BUILDROOT/$MODULE
 make $MAKEFLAGS > $LOG 2>&1
 
-perl $BUILDROOT/support/sendMessage.pl $LIST $LOG
+perl $BUILDROOT/$MODULE/support/sendMessage.pl $LIST $LOG
 rm -f $LOG
 
