@@ -1,3 +1,9 @@
+# SDCC Component
+
+# Prevent multiple inclusion
+ifneq ($(SDCCMKINCLUDE), 1)
+SDCCMKINCLUDE = 1
+
 # Flags to pass on to configure in the sdcc directory
 SDCCCONFIGUREFLAGS += 
 # Directory that the copy of sdcc is located in
@@ -32,3 +38,5 @@ sdcc-clean:
 	$(MAKE) -C $(SDCCDIR) clean
 
 sdcc-device-clean:
+
+endif

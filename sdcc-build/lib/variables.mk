@@ -1,7 +1,7 @@
 # List of all source trees that need to be fetched either locally or from cvs
 SRCTREES += 
-# PENDING
-TARGET = ppc-unknown-linux2.2
+# Target to build for.  Currently unused.
+TARGET = i386-unknown-linux2.2
 # Compiler to build with
 TARGETCC = gcc
 

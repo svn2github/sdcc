@@ -1,3 +1,9 @@
+# gbdk-support (Gameboy Development Kit Support Files) Component
+
+# Prevent multiple inclusion
+ifneq ($(GBDKSUPPORTMKINCLUDE), 1)
+GBDKSUPPORTMKINCLUDE = 1
+
 # Add gbdk-lib to the list of source trees that need to be fetched
 SRCTREES += gbdk-support
 # Dir
@@ -28,3 +34,5 @@ gbdk-support-install: gbdk-support-lcc
 
 gbdk-support-lcc-clean:
 	make -C $(GBDKSUPPORTDIR)/lcc clean
+
+endif

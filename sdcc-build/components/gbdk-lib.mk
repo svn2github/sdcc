@@ -1,3 +1,9 @@
+# gbdk-lib (Gameboy Development Kit Libraries) Component
+
+# Prevent multiple inclusion
+ifneq ($(GBDKLIBMKINCLUDE), 1)
+GBDKLIBMKINCLUDE = 1
+
 # Add gbdk-lib to the list of source trees that need to be fetched
 SRCTREES += gbdk-lib
 # PENDING
@@ -18,4 +24,4 @@ gbdk-lib-copy: $(BUILDDIR)/Makefile.common
 $(BUILDDIR)/Makefile.common:
 	cp -r $(GBDKLIBDIR)/examples $(GBDKLIBDIR)/libc $(GBDKLIBDIR)/tools $(GBDKLIBDIR)/include $(GBDKLIBDIR)/Makefile.common $(BUILDDIR)
 
-
+endif
