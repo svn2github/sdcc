@@ -65,6 +65,7 @@ static struct {
     struct {
         int enable;
         unsigned long *ticks;
+        unsigned long *calls;
         long startTStates;
         int callStack[1024];
         int callDepth;
@@ -98,12 +99,16 @@ void exitEmu(void)
             fatal("Failure while opening " PROFILE_FILE_NAME);
         }
 
+        fprintf(fp, "; Function total-ticks total-calls ticks-per-call total-percent\n");
+
         for (i = 0; i < MEMORY_SIZE; i++) {
             if (_G.profile.ticks[i] != 0) {
                 char buffer[128];
-                fprintf(fp, "%s %lu %.2f\n", map_lookup(_G.pmap, (uint16)i, buffer), 
-                       _G.profile.ticks[i],
-                       100.0 * _G.profile.ticks[i] / _G.tStates
+                fprintf(fp, "%s %lu %lu %lu %.2f\n", map_lookup(_G.pmap, (uint16)i, buffer), 
+                        _G.profile.ticks[i],
+                        _G.profile.calls[i],
+                        _G.profile.ticks[i]/_G.profile.calls[i],
+                        100.0 * _G.profile.ticks[i] / _G.tStates
                        );
             }
         }
@@ -126,6 +131,8 @@ static void handleEnter(void)
         _G.profile.startTStates = _G.tStates;
         /* Push this fun onto the call stack */
         _G.profile.callStack[++_G.profile.callDepth] = PC - PROFILE_ENTER_OFFSET;
+        /* Increase the call count. */
+        _G.profile.calls[_G.profile.callStack[_G.profile.callDepth]]++;
         assert(_G.profile.callDepth < 1023);
         /* And continue */
     }
@@ -286,7 +293,8 @@ int main(int argc, char **argv)
             else if (!strcmp(argv[i], "--profile")) {
                 _G.profile.enable = 1;
                 _G.profile.ticks = calloc(MEMORY_SIZE, sizeof(*_G.profile.ticks));
-                if (_G.profile.ticks == NULL) {
+                _G.profile.calls = calloc(MEMORY_SIZE, sizeof(*_G.profile.calls));
+                if (_G.profile.ticks == NULL || _G.profile.calls == NULL) {
                     fatal("Out of memory while allocating profile array");
                 }
             }

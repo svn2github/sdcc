@@ -1,0 +1,31 @@
+0.1 (980321)
+------------
+
+Initial version, derrived from z81 by Russel Marks.
+Some instructions arent implemented (search for NYI)
+Some arent tested (search from NYT)
+
+0.2 (980707)
+------------
+Fixed up the tstates per cycle for all opcodes.  An audit would be nice...
+
+0.21 (980716)
+-------------
+Added read only banked memory support.
+
+0.30 (980719)
+------------
+Added a simple command line debugger with disassembler.
+
+0.32 (980821)
+-------------
+Debugger is much enhanced and will load a .map file if its present.
+Call back stack is implemented - try "b <subroutine name>" "g" "s"
+Added bank write support !!WRITE ACCESS IS ENABLED BY DEFAULT!!
+Can now set breakpoints, ranges etc by label.
+
+0.35 (981023)
+-------------
+Lots of stuff.  Added simple comms support through sockets.  Added
+command line switches(!), making entering the debugger and loading
+the map file etc optinal.  Added a 100Hz timer interupt. 
