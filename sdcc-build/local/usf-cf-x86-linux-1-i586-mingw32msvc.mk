@@ -1,5 +1,5 @@
 # Dual processor
-MAKEJOBFLAGS = "-j 2"
+MAKEJOBFLAGS = -j 2
 CROSSCOMPILING = 1
 TOOLSPREFIX = $(HOME)/local/cross-tools/bin/i586-mingw32msvc-
 SDCCCONFIGUREFLAGS = --prefix=/sdcc --disable-device-lib-build --disable-ucsim
