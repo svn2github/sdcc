@@ -15,6 +15,10 @@ CLEANTARGETS += sdcc-clean sdcc-device-clean
 # PENDING
 INSTALLTARGETS += sdcc-install
 
+$(STAMPDIR)/sdcc.fetched: $(ORIGDIR) $(STAMPDIR)
+	cd $(ORIGDIR); cvs $(CVSFLAGS) -d:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc co sdcc
+	touch $@
+
 sdcc-configured: $(SDCCDIR)/sdccconf.h
 
 $(SDCCDIR)/sdccconf.h:
