@@ -12,6 +12,7 @@ SRCDIR = src
 ORIGDIR = orig
 BUILDDIR = $(TOPDIR)/build/$(TARGET)
 BINDIR= $(BUILDDIR)/bin
+NOISELOG = $(TOPDIR)/build-noise.log
 
 CVSFLAGS += -z5 -Q
 STAMPDIR = stamps
