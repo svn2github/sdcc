@@ -8,7 +8,8 @@ BOOTSTRAPSSHMAILSERVER=shell1.sourceforge.net
 #BOOTSTRAPFILTEREDLIST=sdcc-devel@lists.sourceforge.net
 BOOTSTRAPFILTEREDLIST=sdcc-devel@lists.sourceforge.net
 # Admin address to send the filtered build output to
-BOOTSTRAPFILTEREDLISTADMIN=bernhardheld@users.sourceforge.net
+#BOOTSTRAPFILTEREDLISTADMIN=bernhardheld@users.sourceforge.net
+BOOTSTRAPFILTEREDLISTADMIN=epetrich@users.sourceforge.net
 # Address to send the unfiltered build output to
 #BOOTSTRAPLIST=michaelh@juju.net.nz
 #BOOTSTRAPLIST=bernhardheld@users.sourceforge.net
