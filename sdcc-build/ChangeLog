@@ -1,3 +1,7 @@
+2003-02-13  Bernhard Held <bernhard@bernhardheld.de>
+
+	* local/usf-cf-ppc-macosx-1.mk: added
+
 2003-02-11  Bernhard Held <bernhard@bernhardheld.de>
 
 	* support/readme-snapshot.txt: new file; will be the only file in the
