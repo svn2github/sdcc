@@ -149,6 +149,11 @@ int enterDebugger( pmregs regs )
 	debugging = 1;
 	updateLine = 1;
 
+
+	if (flags & DLIMITEDRUN) {
+	  	printf("Error: Tried to enter the debugger in a limited length run\n");
+		exit(-1);
+	}
 	
 	while (debugging) {
 		if (updateLine) {

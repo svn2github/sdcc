@@ -20,6 +20,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "z80.h"
 #include "debugger.h"
 #include "parse_map.h"
@@ -91,9 +92,10 @@ int mainloop(int flags)
 	unsigned char op;
 	int	states_until_timerint;
 	unsigned long last_tstates;
-
 	unsigned startTime;
 	int cpuRunning = 1;
+	clock_t max_run_time = clock() + CLOCKS_PER_SEC*30;
+	unsigned run_time_check_mod = 0;
 
 	int j, runOne = 0;
 
@@ -150,6 +152,14 @@ int mainloop(int flags)
 				push2(pc);
 				pc=0x50;
 			}
+		}
+		if (flags&DLIMITEDRUN && (++run_time_check_mod) == 100) {
+		  if (clock() > max_run_time) {
+    		    	printf("Error: Maximum runtime exceeded\n");
+		  	cpuRunning = 0;
+		  }
+		  run_time_check_mod = 0;
+		  fprintf(stderr, "Left: %lu\n", max_run_time - clock());
 		}
 	}
 	return 0;

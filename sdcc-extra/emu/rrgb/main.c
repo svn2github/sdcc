@@ -77,7 +77,8 @@ void usage(void)
 	       "\t\t-d - Enter debugger before running.\n"
 	       "\t\t-s - Use name.bin as a segment file.\n"
 	       "\t\t-t - Open port 6808 for input.\n"
-	       "\t\t-i - enable 100Hz timer interrupts.\n"
+	       "\t\t-i - Enable 100Hz timer interrupts.\n"
+	       "\t\t-k - Run for at most 20s.\n"
 	       );
 }
 
@@ -122,7 +123,7 @@ int main(int argc,char **argv)
 
 	flags=0;
 
-	while ((c=getopt(argc, argv, "pms:dti"))!=-1) {
+	while ((c=getopt(argc, argv, "kpms:dti"))!=-1) {
 		switch (c) {
 			case 'p': {
 				flags|=DPROFILE;
@@ -146,6 +147,12 @@ int main(int argc,char **argv)
 			}
 			case 'i': {
 				flags|=DTIMERINT;
+				break;
+			}
+			case 'k': {
+			  fprintf(stderr, "Foo!\n");
+			  fflush(stderr);
+				flags|=DLIMITEDRUN;
 				break;
 			}
 			default: {

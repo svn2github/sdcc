@@ -56,6 +56,8 @@ static struct {
     int dumpRet;
     /** If set dumps the register contents at each instruction. */
     int traceRegs;
+    /** If set, does an outline depth trace. */
+    int traceOutlineDepth;
     /** Loaded map file if any. */
     MAP *pmap;
     /** If set indents the debug output based on the call depth. */
@@ -123,6 +125,24 @@ void exitEmu(void)
     exit(0);
 }
 
+static void printEnterExitLog(int pc, int isEnter)
+{
+    static const char spaces[] = "                                                        ";
+    char buffer[MAX_LINE];
+
+    if (isEnter) {
+	fprintf(stderr, "%s%s %s\n", 
+		spaces + sizeof(spaces) - _G.callDepth*2, 
+		isEnter ? "Entered " : "Leaving",
+		map_lookup(_G.pmap, pc, buffer));
+    }
+    else {
+	fprintf(stderr, "%sLeaving\n",
+		spaces + sizeof(spaces) - _G.callDepth*2
+		);
+    }
+}
+
 static void handleEnter(void)
 {
     if (_G.profile.enable) {
@@ -138,6 +158,11 @@ static void handleEnter(void)
         assert(_G.profile.callDepth < 1023);
         /* And continue */
     }
+    if (_G.traceOutlineDepth) {
+	int pc = PC - PROFILE_ENTER_OFFSET;
+	printEnterExitLog(pc, 1);
+    }
+    _G.callDepth++;
 }
 
 static void handleExit(void)
@@ -152,6 +177,12 @@ static void handleExit(void)
         assert(_G.profile.callDepth >= 0);
     }
     _G.profile.inLeaf = FALSE;
+    _G.callDepth--;
+    assert(_G.callDepth >= 0);
+
+    if (_G.traceOutlineDepth) {
+	printEnterExitLog(PC, 0);
+    }
 }
 
 void returnHook(void)
@@ -207,10 +238,9 @@ unsigned char mon_read_byte(unsigned int addr)
 
 void debug_z80(void)
 {
-    static const char spaces[] = "                                                        ";
     if (_G.trace) {
         char buffer[MAX_LINE];
-        fprintf(stderr, "%s%s:\t", spaces + sizeof(spaces) - _G.callDepth*2, map_lookup(_G.pmap, PC, buffer));
+        fprintf(stderr, "%s:\t", map_lookup(_G.pmap, PC, buffer));
         disass_z80(stderr, PC);
 
         if (_G.traceRegs) {
@@ -256,7 +286,7 @@ static void loadImage(const char *fname)
 
 static void usage(void)
 {
-    fatal("Usage: rrz80 [--trace] [--tracewithdepth] [--traceregs] [--dumpret] [--maxruntime=xx] [--mapfile=mapfilename] romimage.bin");
+    fatal("Usage: rrz80 [--trace] [--outlinedepthtrace] [--tracewithdepth] [--traceregs] [--dumpret] [--maxruntime=xx] [--mapfile=mapfilename] romimage.bin");
 }
 
 static int startsWith(const char *sz, const char *szStart)
@@ -303,6 +333,9 @@ int main(int argc, char **argv)
             else if (!strcmp(argv[i], "--traceregs")) {
                 _G.traceRegs = 1;
             }
+	    else if (!strcmp(argv[i], "--outlinedepthtrace")) {
+		_G.traceOutlineDepth = 1;
+	    }
             else if (!strcmp(argv[i], "--dumpret")) {
                 _G.dumpRet = 1;
             }

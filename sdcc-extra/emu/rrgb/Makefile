@@ -4,14 +4,14 @@ VER = 0.35
 # this looks wrong, but *ops.c are actually #include'd by z80.c
 OBJS=main.o z80.o parse_map.o debugger.o disgb.o csock.o
 CC=gcc
-OPTS = -DSEG
+OPTS = -DSEG -g
 #CFLAGS=-O3 -fomit-frame-pointer -funroll-loops -Wall $(OPTS)
 CFLAGS= $(OPTS) -Wall
 
 all: rrgb
 
 rrgb: $(OBJS)
-	$(CC) -lm -o rrgb $(OBJS)
+	$(CC) $(OPTS) -lm -o rrgb $(OBJS)
 
 clean:
 	$(RM) *.o *~ rrgb

@@ -30,6 +30,7 @@
 #define DSTARTDEBUG	4
 #define DSOCKETS	8
 #define DTIMERINT	16
+#define DLIMITEDRUN	32
 
 #ifdef SEG
 extern unsigned char *segments[];
