@@ -1,3 +1,9 @@
+2003-05-07  Bernhard Held <bernhard@bernhardheld.de>
+
+	* lib/ports.mk: don't include ports/z80.mk and ports/gbz80.mk.
+	This only disables the checkout of maccer, gbdk-lib and gbdk-support,
+	there was no further functionality.
+
 2003-05-06  Bernhard Held <bernhard@bernhardheld.de>
 
 	* lib/fetch.mk: sdcc checkout with retry
