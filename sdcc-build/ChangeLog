@@ -1,3 +1,7 @@
+2003-07-18  Bernhard Held <bernhard@bernhardheld.de>
+
+	* lib/bootstrap.mk: added *.TXT (old *.txt) to files, which need recoding
+
 2003-07-17  Bernhard Held <bernhard@bernhardheld.de>
 
 	Replace cvs.sdcc.sourceforge.net:/cvsroot/sdcc by cvs.sourceforge.net:/cvsroot/sdcc

@@ -93,7 +93,7 @@ generate-tarball:
 ifneq ($(CROSSCOMPILING), 1)
 	-cd $(BUILDDIR)/..; tar czf $(TARBALLNAME) sdcc
 else
-	-find $(BUILDDIR) -name "*.txt" -exec recode lat1..ibmpc {} \;
+	-find $(BUILDDIR) -name "*.txt" -or -name "*.TXT" -exec recode lat1..ibmpc {} \;
 	-cd $(BUILDDIR)/..; zip -9r $(TARBALLNAME) sdcc
 endif
 
