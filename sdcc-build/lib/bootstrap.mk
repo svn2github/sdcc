@@ -37,6 +37,9 @@ send-build-mail:
 	if egrep -v '^ *$' $(BOOTSTRAPLOG); then \
 		grep -v -f $(TOPDIR)/support/error-filter.sh $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
 		fi
+	if ! egrep -v '^ *$' $(BOOTSTRAPLOG); then \
+		grep -v -f $(TOPDIR)/support/error-filter.sh $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" fish-$(BOOTSTRAPFILTEREDLIST)'; \
+		fi
 
 kill-ssh-agent:
 	ssh-agent -k
