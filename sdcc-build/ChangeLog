@@ -1,3 +1,10 @@
+2003-02-11  Bernhard Held <bernhard@bernhardheld.de>
+
+	* support/readme-snapshot.txt: new file; will be the only file in the
+	snapshot archives' share/doc
+	* components/sdcc.mk: new target sdcc-docs; it cleans the doc dir after
+	install and copies readme-snapshot.txt to this dir
+
 2003-02-08  Bernhard Held <bernhard@bernhardheld.de>
 
 	* sdcc-build-bootstrap.sh: create directory $BUILDROOT

@@ -29,7 +29,7 @@ sdcc-build: sdcc-configured
 	$(MAKE) $(MAKEJOBFLAGS) -k -C $(SDCCDIR) sdcc
 
 # PENDING: Should depend on sdcc-build
-sdcc-install: sdcc-targetos-install sdcc-fromhost-install
+sdcc-install: sdcc-targetos-install sdcc-fromhost-install sdcc-docs
 
 sdcc-targetos-install:
 	$(MAKE) -k -C $(SDCCDIR) prefix=$(BUILDDIR) install
@@ -38,6 +38,19 @@ sdcc-targetos-install:
 sdcc-fromhost-install:
 ifeq ($(CROSSCOMPILING), 1)
 	cd $(TOPDIR)/build/$(HOSTOS)/sdcc; cp -r share $(BUILDDIR)
+endif
+
+# There are no docs in the snapshot
+sdcc-docs:
+ifeq ($(ISRELEASE),true)
+	echo Fetch sdcc.doc.tar.gz and add it to the archive!
+else
+	rm -rf $(BUILDDIR)/share/doc/*
+ifneq ($(CROSSCOMPILING), 1)
+	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/doc/README
+else
+	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/doc/README.TXT
+endif
 endif
 
 sdcc-device: sdcc-configured sdcc-build
