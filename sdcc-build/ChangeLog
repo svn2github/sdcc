@@ -1,6 +1,7 @@
 2003-08-07  Bernhard Held <bernhard@bernhardheld.de>
 
 	* local/usf-cf-x86-linux-2.mk: added
+	* local/usf-cf-x86-linux-2.cf.sourceforge.net.mk: added (complain to SF)
 
 2003-07-28  Bernhard Held <bernhard@bernhardheld.de>
 
