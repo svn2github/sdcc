@@ -2,6 +2,7 @@
 
 	* local/x86-linux2.cf.sourceforge.net-i586-mingw32msvc.mk: added
 	* local/x86-linux2.cf.sourceforge.net.mk: added
+	* sdcc-build-bootstrap.sh: fixed typo "flitered"; BUILDROOT can now be defined in enviroment
 
 2003-09-04  Bernhard Held <bernhard@bernhardheld.de>
 

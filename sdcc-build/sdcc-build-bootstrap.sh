@@ -3,7 +3,11 @@
 # and start them running.
 
 # BUILDROOT=$HOME/build
-BUILDROOT=/var/tmp/`whoami`/build
+test -z $BUILDROOT && \
+  BUILDROOT=/var/tmp/`whoami`/build
+
+echo $BUILDROOT
+exit
 
 # A lockfile ensures, that the cronjobs of the different hosts don't overlap.
 
@@ -98,6 +102,6 @@ make $MAKEFLAGS crontab-spawn
 
 # cp log files from local hd to $HOME/build on nfs server
 test $BUILDROOT != $HOME/build && \
-  cp -p ../*.log ../*.flitered $HOME/build/
+  cp -p ../*.log ../*.filtered $HOME/build/
 
 cleanup
