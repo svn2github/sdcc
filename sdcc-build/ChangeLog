@@ -1,7 +1,16 @@
 2003-02-23  Bernhard Held <bernhard@bernhardheld.de>
 
+	* Makefile: include building of source archives
+	* components/sdcc-extra.mk: add sdcc-extra to the source archives
+	* components/sdcc.mk: add sdcc to the source archives
+	* lib/bootstrap.mk: include building of source archives
+	* lib/src-archive.mk: added
+
+2003-02-23  Bernhard Held <bernhard@bernhardheld.de>
+
 	* components/sdcc.mk: specify host, target and build for configure to avoid all warnings with autoconf 2.54 
 
+>>>>>>> 1.9
 2003-02-16  Bernhard Held <bernhard@bernhardheld.de>
 
 	* local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: moved cross-tools to ~/local/

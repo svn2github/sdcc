@@ -10,6 +10,8 @@ SRCTREES += sdcc-extra
 SDCCEXTRADIR = $(SRCDIR)/sdcc-extra
 # PENDING
 CVSREPOSITORIES += cvs.sdcc.sourceforge.net:/cvsroot/sdcc
+# Add sdcc-extra to the list of source trees, that are archieved and copied to the snapshot page
+ARCHIVETREES += sdcc-extra
 
 # Override the default fetch behavoiur
 # Default rule for fetching a tree from cvs

@@ -16,6 +16,8 @@ CLEANTARGETS += sdcc-clean sdcc-device-clean
 INSTALLTARGETS += sdcc-install
 # PENDING
 CVSREPOSITORIES += cvs.sdcc.sourceforge.net:/cvsroot/sdcc
+# Add sdcc to the list of source trees, that are archieved and copied to the snapshot page
+ARCHIVETREES += sdcc
 
 sdcc-configured: $(SDCCDIR)/sdccconf.h
 

@@ -18,8 +18,9 @@ include lib/install.mk
 include lib/help.mk
 include lib/release.mk
 include lib/bootstrap.mk
+include lib/src-archive.mk
 
-build: dirs fetch-build-trees sdcc sdcc-install sdcc-regression
+build: dirs fetch-build-trees archive-src-trees sdcc sdcc-install sdcc-regression
 
 test-integrity:
 	@echo Target: $(TARGETOS)
