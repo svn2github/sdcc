@@ -8,6 +8,6 @@ update-bootstrap:
 
 # PENDING: Better naming
 crontab-spawn:
-	$(MAKE) -s fail > $(BOOTSTRAPLOG) 2>&1
+	-$(MAKE) -s fail > $(BOOTSTRAPLOG) 2>&1
 	cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
 	ssh-agent -k
