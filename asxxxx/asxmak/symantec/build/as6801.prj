@@ -1,0 +1,27 @@
+82569
+C:\ASXXXX\ASXMAK\SYMANTEC\BUILD\as6801.prj
+as6801.OPN
+novcs
+as6801.DEF
+8
+950220624
+0 0 0 0 0 "..\..\..\ASXXSRC\ASDATA.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASEXPR.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASLEX.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASLIST.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASMAIN.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASOUT.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASSUBR.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASSYM.C"
+0 0 0 0 0 "..\..\..\AS6801\M01ADR.C"
+0 0 0 0 0 "..\..\..\AS6801\M01EXT.C"
+0 0 0 0 0 "..\..\..\AS6801\M01MCH.C"
+0 0 0 0 0 "..\..\..\AS6801\M01PST.C"
+0 0 0 0 0 "as6801.DEF"
+0 -1 0 0 0 "F:\SC\INCLUDE\stdio.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\setjmp.h"
+0 -1 0 0 0 "..\..\..\asxxsrc\asxxxx.h"
+0 -1 0 0 0 "..\..\..\AS6801\m6801.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\string.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\alloc.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\stdlib.h"

@@ -1,0 +1,41 @@
+# Symantec SC++ generated .dpd file. V: 7200
+c:\asxxxx\asxmak\symantec\build\asdata.OBJ: \
+	..\..\..\asxxsrc\asdata.c \
+	..\..\..\ASXXSRC\asxxxx.h 
+c:\asxxxx\asxmak\symantec\build\asexpr.OBJ: \
+	..\..\..\asxxsrc\asexpr.c \
+	..\..\..\ASXXSRC\asxxxx.h 
+c:\asxxxx\asxmak\symantec\build\aslex.OBJ: \
+	..\..\..\asxxsrc\aslex.c \
+	..\..\..\ASXXSRC\asxxxx.h 
+c:\asxxxx\asxmak\symantec\build\aslist.OBJ: \
+	..\..\..\asxxsrc\aslist.c \
+	..\..\..\ASXXSRC\asxxxx.h 
+c:\asxxxx\asxmak\symantec\build\asmain.OBJ: \
+	..\..\..\asxxsrc\asmain.c \
+	..\..\..\ASXXSRC\asxxxx.h 
+c:\asxxxx\asxmak\symantec\build\asout.OBJ: \
+	..\..\..\asxxsrc\asout.c \
+	..\..\..\ASXXSRC\asxxxx.h 
+c:\asxxxx\asxmak\symantec\build\assubr.OBJ: \
+	..\..\..\asxxsrc\assubr.c \
+	..\..\..\ASXXSRC\asxxxx.h 
+c:\asxxxx\asxmak\symantec\build\assym.OBJ: \
+	..\..\..\asxxsrc\assym.c \
+	..\..\..\ASXXSRC\asxxxx.h 
+c:\asxxxx\asxmak\symantec\build\m01adr.OBJ: \
+	..\..\..\as6801\m01adr.c \
+	..\..\..\asxxsrc\asxxxx.h \
+	..\..\..\AS6801\m6801.h 
+c:\asxxxx\asxmak\symantec\build\m01ext.OBJ: \
+	..\..\..\as6801\m01ext.c \
+	..\..\..\asxxsrc\asxxxx.h \
+	..\..\..\AS6801\m6801.h 
+c:\asxxxx\asxmak\symantec\build\m01mch.OBJ: \
+	..\..\..\as6801\m01mch.c \
+	..\..\..\asxxsrc\asxxxx.h \
+	..\..\..\AS6801\m6801.h 
+c:\asxxxx\asxmak\symantec\build\m01pst.OBJ: \
+	..\..\..\as6801\m01pst.c \
+	..\..\..\asxxsrc\asxxxx.h \
+	..\..\..\AS6801\m6801.h 
