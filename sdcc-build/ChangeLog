@@ -4,6 +4,7 @@
 	sdcc-src-$(HOSTNAME)-$(BUILDDATE)
 	* lib/bootstrap.mk (crontab-spawn): removed target archive-src-trees,
 	from now on this will be done by only one host
+	* support/readme-snapshot.txt: updated link to sdcc-doc
 
 2004-01-21  Bernhard Held <bernhard@bernhardheld.de>
 
