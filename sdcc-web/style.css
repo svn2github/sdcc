@@ -1,0 +1,25 @@
+body {
+     color: black;
+     background-color: white;
+     font-size: 22pt;
+     font-family: Verdana,Arial,Helvetica,Sans-Serif;
+}
+
+p, li, ul {
+font-size: 10pt;
+}
+
+h1 {
+   font-size:22pt; 
+   color: black; 
+   background-color: white;
+   text-align: left;
+   border-bottom: teal solid 2px;
+}
+
+h2 {
+   font-size:16pt; 
+   color: teal;
+   background-color: white;
+   border-bottom: black solid 1px;
+}
