@@ -36,10 +36,10 @@ upload-tarball:
 send-build-mail:
 	cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
 	egrep -v -f $(TOPDIR)/support/error-filter.sh $(BOOTSTRAPLOG) > $(BOOTSTRAPLOG).filtered
-	if egrep -v '^ *\$' $(BOOTSTRAPLOG).filtered; then \
+	if egrep -v '^ *$$' $(BOOTSTRAPLOG).filtered; then \
 		cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
 		fi
-	if ! egrep -v '^ *\$' $(BOOTSTRAPLOG).filtered; then \
+	if ! egrep -v '^ *$$' $(BOOTSTRAPLOG).filtered; then \
 		cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
 		fi
 
