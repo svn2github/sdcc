@@ -1,3 +1,7 @@
+2003-05-09
+
+	* local/ucf-cf-ppc-macosx-2.mk: enable ucsim, it compiles cleanly with g++2
+
 2003-05-08  Bernhard Held <bernhard@bernhardheld.de>
 
 	* support/error-filter.sh: filter messages from CVS retries
