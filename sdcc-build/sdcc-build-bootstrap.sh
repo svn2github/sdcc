@@ -13,9 +13,9 @@ rm -rf $BUILDROOT/$MODULE
 
 # Checkout the latest version
 cd $BUILDROOT
-cvs -d$CVSROOT co $MODULE
+cvs -Q -d$CVSROOT co $MODULE
 
 # And spawn onto the actual build
-cd $BUILDROOT
+cd $BUILDROOT/$MODULE
 exec make -s
 
