@@ -18,6 +18,7 @@ include lib/bootstrap.mk
 build: dirs fetch-build-trees sdcc sdcc-install
 
 test-integrity:
+	@echo Target: $(TARGET)
 
 fail:
 	false
