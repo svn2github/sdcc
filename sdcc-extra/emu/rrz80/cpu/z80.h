@@ -22,12 +22,17 @@
 #define Z80_H
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#  include "config.h"
 #else
-#include <sys/types.h>
-#if defined(_BIG_ENDIAN)
-#define WORDS_BIGENDIAN
-#endif
+#  include <sys/types.h>
+#  if defined(_BIG_ENDIAN)
+#    define WORDS_BIGENDIAN
+#  elif !defined(_LITTLE_ENDIAN)
+#    include <endian.h>
+#    if BYTE_ORDER == BIG_ENDIAN
+#      define WORDS_BIGENDIAN
+#    endif
+#  endif
 #endif
 
 #ifndef COMPARISON
