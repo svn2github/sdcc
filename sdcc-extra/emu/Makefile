@@ -1,5 +1,5 @@
 TOPDIR = ..
 
-SUBDIRS = rose rrz80
+SUBDIRS = rrz80 rrgb
 
 include $(TOPDIR)/Makefile.rules

@@ -19,6 +19,34 @@
 #define instr(opcode,cycles) case opcode: {tstates+=cycles
 #define endinstr             }; break
 
+enum {
+  /** Carry */
+  CBIT = 0x01,
+  NBIT = 0x02,
+  /** Parity/Overflow */
+  VBIT = 0x04,
+  /** Half carry */
+  HBIT = 0x10,
+  /** Zero */
+  ZBIT = 0x40,
+  /** Sign */
+  SBIT = 0x80
+};
+
+enum {
+  /** Carry */
+  CLOG = 0,
+  NLOG = 1,
+  /** Parity/Overflow */
+  VLOG = 2,
+  /** Half carry */
+  HLOG = 4,
+  /** Zero */
+  ZLOG = 6,
+  /** Sign */
+  SLOG = 7
+};
+
 #define cy (f&1)
 
 #define xh (h)
@@ -1223,6 +1251,11 @@ instr(0xf8,12);			/* Old RET M - new LD HL,SP+nn NYT */
 	{ 
 		unsigned j = (unsigned)(sp+(signed char)fetch(pc));
 		h=j>>8; l=j&0x0ff;
+                /* Clear Z and N */
+                f &= ~(ZBIT | NBIT | CBIT | HBIT);
+                /* Set carry and half carry as appropriate */
+                /* PENDING: Set half carry. */
+                f |= (j>>8);
 		pc++;
 	}
 /*   if(f&0x80)ret; */

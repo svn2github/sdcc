@@ -5,8 +5,8 @@ VER = 0.35
 OBJS=main.o z80.o parse_map.o debugger.o disgb.o csock.o
 CC=gcc
 OPTS = -DSEG
-CFLAGS=-O3 -fomit-frame-pointer -funroll-loops -Wall $(OPTS)
-#CFLAGS= $(OPTS) -Wall
+#CFLAGS=-O3 -fomit-frame-pointer -funroll-loops -Wall $(OPTS)
+CFLAGS= $(OPTS) -Wall
 
 all: rrgb
 
