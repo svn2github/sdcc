@@ -28,10 +28,10 @@ logged-build:
 	-$(MAKE) -s build > $(BOOTSTRAPLOG) 2>&1
 
 generate-tarball:
-	cd $(BUILDDIR); cd ..; tar czf $(TARBALLNAME) sdcc
+	-cd $(BUILDDIR); cd ..; tar czf $(TARBALLNAME) sdcc
 
 upload-tarball:
-	scp $(TARBALLNAME) $(SNAPSHOTDEST)
+	-scp $(TARBALLNAME) $(SNAPSHOTDEST)
 
 send-build-mail:
 	cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
