@@ -56,7 +56,7 @@ done
 
 MODULE=sdcc-build
 # CVSROOT=:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc
-CVSROOT=:ext:sdcc-builder@cvs.sdcc.sourceforge.net:/cvsroot/sdcc
+CVSROOT=:ext:sdcc-builder@cvs.sourceforge.net:/cvsroot/sdcc
 export CVS_RSH=ssh
 # -s for quiet operation so that this can be run from a cronjob
 MAKEFLAGS=

@@ -1,3 +1,10 @@
+2003-07-17  Bernhard Held <bernhard@bernhardheld.de>
+
+	Replace cvs.sdcc.sourceforge.net:/cvsroot/sdcc by cvs.sourceforge.net:/cvsroot/sdcc
+	* sdcc-build-bootstrap.sh
+	* components/sdcc.mk
+	* components/sdcc-extra.mk
+
 2003-07-16  Bernhard Held <bernhard@bernhardheld.de>
 
 	switch to cvs access via ssh:

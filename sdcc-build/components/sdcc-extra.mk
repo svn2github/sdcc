@@ -9,7 +9,7 @@ SRCTREES += sdcc-extra
 # PENDING
 SDCCEXTRADIR = $(SRCDIR)/sdcc-extra
 # PENDING
-CVSREPOSITORIES += cvs.sdcc.sourceforge.net:/cvsroot/sdcc
+CVSREPOSITORIES += cvs.sourceforge.net:/cvsroot/sdcc
 # Add sdcc-extra to the list of source trees, that are archieved and copied to the snapshot page
 ARCHIVETREES += sdcc-extra
 
@@ -19,12 +19,12 @@ CVSACCESS=:ext:sdcc-builder
 # Override the default fetch behavoiur
 # Default rule for fetching a tree from cvs
 $(STAMPDIR)/sdcc-extra.fetched: $(ORIGDIR) $(STAMPDIR)
-	# grep -q :pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc $(HOME)/.cvspass || \
-	#  cvs -d:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc login
+	# grep -q :pserver:anonymous@cvs.sourceforge.net:/cvsroot/sdcc $(HOME)/.cvspass || \
+	#  cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/sdcc login
 	cd $(ORIGDIR); \
 	sh -c 'i=0; while ((i < 600)); do { \
 	  ((i += 1)); \
-	    cvs $(CVSFLAGS) -d$(CVSACCESS)@cvs.sdcc.sourceforge.net:/cvsroot/sdcc co sdcc-extra \
+	    cvs $(CVSFLAGS) -d$(CVSACCESS)@cvs.sourceforge.net:/cvsroot/sdcc co sdcc-extra \
 	    && break ; \
 	  echo CVS failed $$i: `date`; \
 	  sleep 1; \
