@@ -1,0 +1,1 @@
+TARGETCXXFLAGS += -fdollars-in-identifiers
