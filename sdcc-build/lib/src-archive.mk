@@ -3,7 +3,7 @@ ARCHIVESRCTREES = $(ARCHIVETREES:%=$(STAMPDIR)/%.src-archive)
 
 %.src-archive: %.fetched $(SRCDIR) $(STAMPDIR)
 	mkdir -p $(STAGINGBASE)/$(TARBALLBASE)/`basename $@ .src-archive`.src
-	cd $(ORIGDIR)/`basename $@ .src-archive`; tar -czf $(STAGINGBASE)/$(TARBALLBASE)/`basename $@ .src-archive`.src/`basename $@ .src-archive`.tar.gz --exclude=CVS *
+	cd $(ORIGDIR)/`basename $@ .src-archive`; tar -czf $(STAGINGBASE)/$(TARBALLBASE)/`basename $@ .src-archive`.src/`basename $@ .src-archive`.src.tar.gz --exclude=CVS *
 	touch $@
 
 .PHONY: archive-src-trees
