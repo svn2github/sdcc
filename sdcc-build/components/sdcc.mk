@@ -49,8 +49,9 @@ ifneq ($(CROSSCOMPILING), 1)
 	rm -rf $(BUILDDIR)/share/doc/*
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/doc/README
 else
-	rm -rf $(BUILDDIR)/doc/*
-	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/doc/README.TXT
+# some day /share will be omitted for windoze
+	rm -rf $(BUILDDIR)/share/doc/*
+	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/doc/README.TXT
 endif
 endif
 
