@@ -1,3 +1,7 @@
+# PENDING
+RELEASEVERSIONTAG=sdcc-230
+# PENDING
+RELEASEVERSION=2.3.0
 # File to log all main make output to
 BOOTSTRAPLOG=$(TOPDIR)/build.log
 # Machine to ssh into to send the build result out via email
@@ -13,8 +17,11 @@ BOOTSTRAPLIST=sdcc-buildlogs@lists.sourceforge.net
 BOOTSTRAPSUBJECT=Automated build output ($(TARGETOS))
 # Stamp to append to the build name.
 BUILDDATE=$(shell date +%Y%m%d)
+# Name to append to the tar name
+BUILDNAME=snapshot-$(TARGETOS)-$(BUILDDATE).tar.gz
+#BUILDNAME=$(RELEASE)-$(TARGETOS)
 # Name of the tarball for this target
-TARBALLNAME=$(SNAPSHOTDIR)/$(TARGETOS)/sdcc-snapshot-$(TARGETOS)-$(BUILDDATE).tar.gz
+TARBALLNAME=$(SNAPSHOTDIR)/$(TARGETOS)/sdcc-$(BUILDNAME).tar.gz
 # Location to copy the tarball to
 SNAPSHOTDEST=shell1.sourceforge.net:/home/groups/s/sd/sdcc/htdocs
 # Host and path used for removing old versions
@@ -29,13 +36,18 @@ update-bootstrap:
 
 test-all-targets:
 	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-test-build TARGETOS=$$i; done
-		 
+
 build-all-targets:
 	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-build TARGETOS=$$i; done
 
+release-build:
+	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-release-build TARGETOS=$$i BUILDNAME=$(RELEASEVERSION)-$(TARGETOS) 'CVSTAGFLAG=-r $(RELEASEVERSIONTAG)'; done
+
 per-target-build: per-target-clean logged-build update-snapshots-dir send-build-mail
 
-per-target-test-build: per-target-clean logged-build
+per-target-test-build: per-target-clean logged-build generate-tarball
+
+per-target-release-build: per-target-clean logged-build generate-tarball
 
 per-target-clean:
 	rm -rf $(STAMPDIR)
