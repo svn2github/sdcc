@@ -18,10 +18,11 @@ cd $BUILDROOT
 cvs -Q -d$CVSROOT co $MODULE
 
 # Setup the ssh keys
-eval `ssh-agent`
-export SSH_AGENT_PID
-export SSH_AUTH_SOCK
-ssh-add
+# Not needed as an empty key is automatically read.
+#eval `ssh-agent`
+#export SSH_AGENT_PID
+#export SSH_AUTH_SOCK
+#ssh-add
 
 # And spawn onto the actual build
 cd $BUILDROOT/$MODULE
