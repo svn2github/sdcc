@@ -4,6 +4,7 @@
 	* sdcc-build-bootstrap.sh
 	* components/sdcc.mk
 	* components/sdcc-extra.mk
+	* lib/fetch.mk
 
 2003-07-16  Bernhard Held <bernhard@bernhardheld.de>
 
