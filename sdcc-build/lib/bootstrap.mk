@@ -56,7 +56,7 @@ per-target-build: per-target-clean logged-build update-snapshots-dir send-build-
 
 per-target-test-build: per-target-clean logged-build generate-tarball
 
-per-target-release-build: per-target-clean logged-build generate-tarball
+per-target-release-build: per-target-clean logged-build copy-extra-docs generate-tarball
 
 per-target-clean:
 	rm -rf $(STAMPDIR)
@@ -68,6 +68,10 @@ logged-build:
 generate-tarball:
 	mkdir -p `dirname $(TARBALLNAME)`
 	-cd $(BUILDDIR)/..; tar czf $(TARBALLNAME) sdcc
+
+# PENDING
+copy-extra-docs:
+	cd $(BUILDDIR); cp -f $(TOPDIR)/src/sdcc/doc/README.txt $(TOPDIR)/src/sdcc/doc/INSTALL.txt .
 
 # Uploads
 upload-tarball: generate-tarball
