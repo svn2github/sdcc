@@ -11,7 +11,7 @@ $(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)
 	cd $(ORIGDIR); cvs $(CVSFLAGS) -d:pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` co `basename $@ .fetched`
 	touch $@
 
-$(STAMPDIR)/%.copied: $(SRCDIR) $(STAMPDIR) $(STAMPDIR)/%.fetched
+$(STAMPDIR)/%.copied: $(STAMPDIR)/%.fetched $(SRCDIR) $(STAMPDIR) 
 	rsync $(RSYNCFLAGS) $(ORIGDIR)/`basename $@ .copied` $(SRCDIR)
 	touch $@
 
