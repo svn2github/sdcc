@@ -1,6 +1,7 @@
 BOOTSTRAPLOG=$(TOPDIR)/build.log
 BOOTSTRAPSSHMAILSERVER=shell1.sourceforge.net
-BOOTSTRAPLIST=sdcc-devel@lists.sourceforge.net
+BOOTSTRAPLIST=michaelh@juju.net.nz
+#BOOTSTRAPLIST=sdcc-devel@lists.sourceforge.net
 BOOTSTRAPSUBJECT=Automated build output ($(TARGET))
 BUILDDATE=$(shell date +%Y%m%d)
 TARBALLNAME=$(TOPDIR)/build/sdcc-snapshot-$(TARGET)-$(BUILDDATE).tar.gz
