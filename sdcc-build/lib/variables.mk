@@ -19,3 +19,11 @@ RSYNCFLAGS = -C -r
 
 $(STAMPDIR):
 	mkdir -p $(STAMPDIR)
+
+$(ORIGDIR):
+	mkdir -p $(ORIGDIR)
+
+$(SRCDIR):
+	mkdir -p $(SRCDIR)
+
+dirs: $(STAMPDIR) $(ORIGDIR) $(SRCDIR)

@@ -14,10 +14,3 @@ fetch-build-trees: $(SRCSRCTREES)
 $(STAMPDIR)/%.copied: $(STAMPDIR)/%.fetched $(SRCDIR) $(STAMPDIR) 
 	rsync $(RSYNCFLAGS) $(ORIGDIR)/`basename $@ .copied` $(SRCDIR)
 	touch $@
-
-$(ORIGDIR):
-	mkdir -p $(ORIGDIR)
-
-$(SRCDIR):
-	mkdir -p $(SRCDIR)
-

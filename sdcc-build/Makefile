@@ -14,6 +14,6 @@ include lib/clean.mk
 include lib/install.mk
 include lib/help.mk
 
-build: fetch-build-trees sdcc
+build: dirs fetch-build-trees sdcc
 
 test-integrity:
