@@ -1,0 +1,6 @@
+2003-02-08  Bernhard Held <bernhard@bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: create directory $BUILDROOT
+	* check before each cvs co, if pserver passwd in ~/.cvspass; if not: login
+	* lib/bootstrap: include tidy-up-win32-release.sh; recode installed in ~/local 
+

@@ -37,7 +37,12 @@ TARBALLDIR=$(SNAPSHOTDIR)/$(TARGETOS)
 endif
 
 # Name of the tarball for this target
+ifneq ($(CROSSCOMPILING), 1)
 TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.gz
+else
+TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.zip
+endif
+
 # Location to copy the tarball to
 SNAPSHOTDEST=shell1.sourceforge.net:/home/groups/s/sd/sdcc/htdocs
 # Host and path used for removing old versions
@@ -82,16 +87,23 @@ logged-build:
 
 generate-tarball:
 	mkdir -p `dirname $(TARBALLNAME)`
+ifneq ($(CROSSCOMPILING), 1)
 	-cd $(BUILDDIR)/..; tar czf $(TARBALLNAME) sdcc
+else
+	-find $(BUILDDIR) -name "*.txt" -exec /lib/ld-linux.so.2 --library-path $(HOME)/local/lib/ $(HOME)/local/bin/recode ibmpc..lat1 {} \;
+	-mv $(BUILDIR)/bin/sdcpp $(BUILDDIR)/bin/sdcpp.exe
+	-cd $(BUILDDIR)/..; zip -9r $(TARBALLNAME) sdcc
+endif
 
 # Copies a few extra docs to the top level directory to give the user
 # initial direction
 copy-extra-docs:
 	cd $(BUILDDIR); cp -f $(TOPDIR)/src/sdcc/doc/README.txt $(TOPDIR)/src/sdcc/doc/INSTALL.txt .
 
-# Uploads
+# Uploads and delete archive to save space on CF
 upload-tarball: generate-tarball
 	cd $(STAGINGBASE); rsync -rC -e ssh --size-only $(TARBALLBASE) $(SNAPSHOTDEST)
+	rm $(TARBALLNAME)/*/*
 
 update-snapshots-dir: remove-old-versions upload-tarball
 

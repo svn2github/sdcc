@@ -14,7 +14,9 @@ PATH=$PATH:$HOME/local/bin
 rm -rf $BUILDROOT/$MODULE
 
 # Checkout the latest version
+mkdir -p $BUILDROOT
 cd $BUILDROOT
+grep -q $CVSROOT $HOME/.cvspass || cvs -d$CVSROOT login
 cvs -Q -d$CVSROOT co $MODULE
 
 # Setup the ssh keys
