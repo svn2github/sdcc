@@ -1,3 +1,10 @@
+2003-03-31  Bernhard Held <bernhard@bernhardheld.de>
+
+	* usf-cf-alpha-linux-1.mk, usf-cf-sparc-linux-1.mk,
+	usf-cf-x86-linux-1-i586-mingw32msvc.mk,
+	usf-cf-x86-linux-1.mk: added 'MAKEJOBFLAGS = "-j 2"' to exploit the
+	dual processors
+
 2003-03-27  Bernhard Held <bernhard@bernhardheld.de>
 
 	* support/error-filter.sh: suppress cvs lock messages
