@@ -1,6 +1,7 @@
 2003-05-13  Bernhard Held <bernhard@bernhardheld.de>
 
 	* sdcc-build-bootstrap.sh: removed "exec", so that cleanup() is finally called
+	* support/error-filter.sh: added escapes to []()
 
 2003-05-12  Bernhard Held <bernhard@bernhardheld.de>
 

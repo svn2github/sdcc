@@ -21,5 +21,5 @@ File .+ has modification time in the future
 ^cvs server: .* waiting for .* lock in /cvsroot/
 ^cvs server: .* obtained lock in /cvsroot/
 # CVS retries
-^cvs [checkout aborted]: recv() from server
+^cvs \[checkout aborted\]: recv\(\) from server 
 ^CVS failed .*: 
