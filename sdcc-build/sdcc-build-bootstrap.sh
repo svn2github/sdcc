@@ -2,6 +2,8 @@
 # Simple shell script that knows enough to download the sdcc build scripts
 # and start them running.
 
+BUILDROOT=$HOME/build
+
 # A lockfile ensures, that the cronjobs of the different hosts don't overlap.
 
 # uniq id
@@ -11,7 +13,7 @@ SLEEP=60
 # maximum age of lockfile; after this the lock will be removed
 MAXMINUTES=120
 # filename of lock
-LOCKFILE=lock
+LOCKFILE=$BUILDROOT/sdcc-build.lock
 # prefix for all messages, which is used to filter the messages out of the buildlogs
 MSGPREFIX="Buildlock: "
 
@@ -54,7 +56,6 @@ done
 
 MODULE=sdcc-build
 CVSROOT=:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc
-BUILDROOT=$HOME/build
 # -s for quiet operation so that this can be run from a cronjob
 MAKEFLAGS=
 # Include local apps.
