@@ -198,7 +198,7 @@ int format_label( char *buffer, unsigned int addr )
 int parse_label( char *buffer )
 {
 	pmglobal walk;
-	int scanned, tmp;
+	int tmp;
 
 	/* Try to find the label */
 	walk = sorted_globals;

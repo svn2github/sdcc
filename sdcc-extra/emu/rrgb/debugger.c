@@ -24,7 +24,7 @@ void profile(void)
 		       walk->num_calls,
 		       walk->tstates,
 		       (walk->tstates)/(walk->num_calls),
-		       (100*walk->tstates/tstates)
+		       (int)(100*walk->tstates/tstates)
 		       );
 		walk = walk->next;
 	}
@@ -160,7 +160,7 @@ int enterDebugger( pmregs regs )
 		}
 		printf("!: ");
 		fflush(stdout);
-		gets( string );
+		fgets( string, sizeof(string), stdin );
 		switch (string[0]) {
 			case 'd': {
 				/* Dump: d [start] [end]
@@ -201,11 +201,13 @@ int enterDebugger( pmregs regs )
 				printRegisters( regs );
 				break;
 			}
+#if DISABLED
 			case 'f': {
 				/* Print float in HLDE */
 				printGBfloat((int)(*regs->h)<<8 |*regs->l, (int)(*regs->d)<<8 | (int)(*regs->e) );
 				break;
 			}
+#endif
 			case 'n': {
 				/* Execute until next line */
 				breakpoints[0] = dpc + offset;

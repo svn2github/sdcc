@@ -26,6 +26,9 @@ byte z80c_addf_tbl[256];
 byte z80c_subf_tbl[256];
 byte z80c_orf_tbl[256];
 
+/* PENDING: Forward definitions. */
+void debug_z80(void);
+void profile_z80(int addr, int ticks);
 
 void PRNM(pushpc)(void)
 {

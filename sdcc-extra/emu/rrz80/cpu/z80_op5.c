@@ -23,6 +23,10 @@
 #include "z80_op5.h"
 #endif
 
+#ifdef DEBUG_Z80
+#include <stdio.h>
+#endif
+
 OPDEF(ill_ed, 0x00)
 {
 #ifdef DEBUG_Z80

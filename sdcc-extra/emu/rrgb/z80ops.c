@@ -16,6 +16,9 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+/* PENDING: Forward definitions. */
+void handleRST08(struct sregs *pregs);
+
 #define instr(opcode,cycles) case opcode: {tstates+=cycles
 #define endinstr             }; break
 
@@ -1200,7 +1203,6 @@ endinstr;
 instr(0xef,32);			/* Old RST 28 - new print float */
 /*   push2(pc);
    pc=40;*/
-	printGBfloat( hl, de );
 endinstr;
 
 #ifdef INCLUDE_UNIMP

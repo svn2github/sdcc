@@ -25,6 +25,7 @@
 #endif
 
 #if RETURN_HOOK
+void returnHook(void);
 #define RETURNHOOK	returnHook()
 #else
 #define RETURNHOOK

@@ -12,6 +12,8 @@
 
 #include "types.h"
 
+int disass_z80(FILE *f, uint32 adr);
+
 enum {
     FALSE,
     TRUE
