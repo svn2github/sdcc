@@ -5,7 +5,8 @@ TARGET = i386-unknown-linux2.2
 # Compiler to build with
 TARGETCC = gcc
 
-TOPDIR = /home/michaelh/projects/sdcc-build
+TOPDIR := $(shell /bin/pwd)
+
 # Directory that all of the soure trees get copied into
 SRCDIR = src
 ORIGDIR = orig
