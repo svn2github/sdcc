@@ -1,3 +1,7 @@
+2003-02-27  Bernhard Held <bernhard@bernhardheld.de>
+
+	* lib/variables.mk: fix availability of $(HOSTNAME) on several CF platforms
+
 2003-02-26  Bernhard Held <bernhard@bernhardheld.de>
 
 	* lib/bootstrap.mk: delete snapshots versions, if there are more than 7 files in a single directory

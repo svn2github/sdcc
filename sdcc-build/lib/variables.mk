@@ -6,6 +6,9 @@ TARGETOS = i386-unknown-linux2.2
 HOSTOS = i386-unknown-linux2.2
 # By default compile for the host.
 TOOLSPREFIX = 
+# make's info page tells me, that this shouldn't be necessary, but without the
+# next line $(HOSTNAME) is empty on serveral SF platforms
+HOSTNAME = $(shell echo $$HOSTNAME)
 
 TOPDIR := $(shell /bin/pwd)
 
