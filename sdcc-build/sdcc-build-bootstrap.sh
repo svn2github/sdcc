@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Simple shell script that knows enough to download the sdcc build scripts
 # and start them running.
 
@@ -17,7 +17,15 @@ rm -rf $BUILDROOT/$MODULE
 mkdir -p $BUILDROOT
 cd $BUILDROOT
 grep -q $CVSROOT $HOME/.cvspass || cvs -d$CVSROOT login
-cvs -Q -d$CVSROOT co $MODULE
+
+# Retry CVS 600 time each second
+for ((i = 1; i < 600; ++i)) ; do
+{
+  cvs -Q -d$CVSROOT co $MODULE && break
+  echo CVS failed $i: `date`
+  sleep 1
+}
+done
 
 # Setup the ssh keys
 # Not needed as an empty key is automatically read.
