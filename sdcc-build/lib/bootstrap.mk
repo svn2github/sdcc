@@ -18,8 +18,8 @@ TARBALLNAME=$(SNAPSHOTDIR)/$(TARGETOS)/sdcc-snapshot-$(TARGETOS)-$(BUILDDATE).ta
 # Location to copy the tarball to
 SNAPSHOTDEST=shell1.sourceforge.net:/home/groups/s/sd/sdcc/htdocs
 # Host and path used for removing old versions
-SNAPSHOTHOST=shell1.sourceforge.net
-SNAPSHOTDIR=/home/groups/s/sd/sdcc/htdocs/snapshots
+WEBHOST=shell1.sourceforge.net
+WEBSNAPSHOTDIR=/home/groups/s/sd/sdcc/htdocs/snapshots
 
 # PENDING: Better naming
 crontab-spawn: update-bootstrap build-all-targets
@@ -51,7 +51,7 @@ update-snapshots-dir: remove-old-versions upload-tarball
 
 # Removes all versions over seven days old.
 remove-old-versions:
-	ssh $(SNAPSHOTHOST) 'cd $(SNAPSHOTDIR); find . -mtime +7 -not -type d -exec rm {} \;'
+	ssh $(WEBHOST) 'cd $(WEBSNAPSHOTDIR); find . -mtime +7 -not -type d -exec rm {} \;'
 
 # Sends email containing the results of the build, one filtered, one not.
 send-build-mail:
