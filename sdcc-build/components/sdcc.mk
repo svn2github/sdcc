@@ -14,6 +14,8 @@ SRCTREES += sdcc
 CLEANTARGETS += sdcc-clean sdcc-device-clean
 # PENDING
 INSTALLTARGETS += sdcc-install
+# PENDING
+CVSREPOSITORIES += cvs.sdcc.sourceforge.net:/cvsroot/sdcc
 
 sdcc-configured: $(SDCCDIR)/sdccconf.h
 

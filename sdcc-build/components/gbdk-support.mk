@@ -12,6 +12,8 @@ GBDKSUPPORTDIR = $(SRCDIR)/gbdk-support
 GBDKLIBINSTALLDIR = ~/gbdk/
 # PENDING
 CLEANTARGETS += gbdk-support-clean
+# PENDING
+CVSREPOSITORIES += cvs.gbdk.sourceforge.net:/cvsroot/gbdk
 
 # Override the default fetch behavoiur
 # Default rule for fetching a tree from cvs

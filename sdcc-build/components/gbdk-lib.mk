@@ -8,6 +8,8 @@ GBDKLIBMKINCLUDE = 1
 SRCTREES += gbdk-lib
 # PENDING
 GBDKLIBDIR = $(SRCDIR)/gbdk-lib
+# PENDING
+CVSREPOSITORIES += cvs.gbdk.sourceforge.net:/cvsroot/gbdk
 
 include components/maccer.mk
 

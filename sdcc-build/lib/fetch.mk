@@ -14,3 +14,7 @@ $(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)
 fetch-orig-trees: $(ORIGSRCTREES)
 
 fetch-build-trees: $(SRCSRCTREES)
+
+# Couldn't automate the password
+fetch-login-all:
+	for i in $(CVSREPOSITORIES); do cvs -d:pserver:anonymous@$$i login; done
