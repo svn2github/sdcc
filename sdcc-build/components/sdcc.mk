@@ -16,12 +16,6 @@ CLEANTARGETS += sdcc-clean sdcc-device-clean
 INSTALLTARGETS += sdcc-install
 # PENDING
 CVSREPOSITORIES += cvs.sdcc.sourceforge.net:/cvsroot/sdcc
-# PENDING
-ifeq ($(CROSSCOMPILING),1)
-SDCCBUILDTARGETS = sdcc-cc sdcc-aslink	
-else
-SDCCBUILDTARGETS = sdcc
-endif
 
 sdcc-configured: $(SDCCDIR)/sdccconf.h
 
@@ -32,7 +26,7 @@ $(SDCCDIR)/sdccconf.h:
 sdcc: sdcc-build
 
 sdcc-build: sdcc-configured
-	$(MAKE) $(MAKEJOBFLAGS) -k -C $(SDCCDIR) $(SDCCBUILDTARGETS)
+	$(MAKE) $(MAKEJOBFLAGS) -k -C $(SDCCDIR) sdcc
 
 # PENDING: Explicit copy of everything in bin
 # PENDING: Should depend on sdcc-build
