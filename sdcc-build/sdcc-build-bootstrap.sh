@@ -28,6 +28,8 @@ cleanup ()
 
 trap 'echo $MSGPREFIX caught signal ; cleanup ; exit 1' 1 2 3 13 15
 
+mkdir -p $BUILDROOT
+
 echo $MSGPREFIX Try to obtain lock on `date`
 test -f $LOCKFILE && echo -n $MSGPREFIX && ls -l --full-time $LOCKFILE
 # for ((;;)); do
@@ -68,7 +70,6 @@ PATH=$PATH:$HOME/local/bin
 rm -rf $BUILDROOT/$MODULE
 
 # Checkout the latest version
-mkdir -p $BUILDROOT
 cd $BUILDROOT
 # grep -q $CVSROOT $HOME/.cvspass || cvs -d$CVSROOT login
 
