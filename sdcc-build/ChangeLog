@@ -1,3 +1,7 @@
+2003-03-27  Bernhard Held <bernhard@bernhardheld.de>
+
+	* support/error-filter.sh: suppress cvs lock messages
+
 2003-03-18  Bernhard Held <bernhard@bernhardheld.de>
 
 	* support/readme-snapshot.txt: fix links and added a link to online documentation

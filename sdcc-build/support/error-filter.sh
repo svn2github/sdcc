@@ -17,3 +17,6 @@ File .+ has modification time in the future
 ^Processing
 # for mcs-stack-auto
 ^\.\./\.\./device/lib/vprintf\.c:28:2: warning: #warning "this module cannot yet be use as a reentrant one"
+# CVS warnings regarding locks
+^cvs server: .* waiting for .* lock in /cvsroot/
+^cvs server: .* obtained lock in /cvsroot/
