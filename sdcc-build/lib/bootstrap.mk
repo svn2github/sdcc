@@ -120,7 +120,7 @@ copy-extra-docs:
 
 # Uploads and delete archive to save space on CF
 upload-packages: generate-tarball generate-packages
-	cd $(STAGINGBASE); rsync -rC -e ssh --size-only $(TARBALLBASE) $(SNAPSHOTDEST)
+	cd $(STAGINGBASE); rsync -rC --include='*.exe' -e ssh --size-only $(TARBALLBASE) $(SNAPSHOTDEST)
 	rm $(STAGINGBASE)/$(TARBALLBASE)/*/*
 
 update-snapshots-dir: upload-packages remove-old-versions

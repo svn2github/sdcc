@@ -1,3 +1,7 @@
+2004-10-28 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk: --include='*.exe' to rsync sdcc_yyyymmdd_setup.exe
+
 2004-10-17 Borut Razem <borut.razem AT siol.net>
 
 	* lib/bootstrap.mk, lib/variables.mk: cross compiling of WIN32 setup.exe
