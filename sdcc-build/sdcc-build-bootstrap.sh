@@ -6,7 +6,7 @@ MODULE=sdcc-build
 CVSROOT=:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc
 BUILDROOT=$HOME/build
 # -s for quiet operation so that this can be run from a cronjob
-MAKEFLAGS=-s fail
+MAKEFLAGS=fail
 LOG=sdcc-build.log
 LIST=michaelh@juju.net.nz
 
