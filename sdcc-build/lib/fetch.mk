@@ -2,10 +2,6 @@
 ORIGSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.fetched)
 SRCSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.copied)
 
-fetch-orig-trees: $(ORIGSRCTREES)
-
-fetch-build-trees: $(SRCSRCTREES)
-
 # Default rule for fetching a tree from cvs
 #$(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)
 #	cd $(ORIGDIR); cvs $(CVSFLAGS) -d:pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` co `basename $@ .fetched`
@@ -14,3 +10,7 @@ fetch-build-trees: $(SRCSRCTREES)
 $(STAMPDIR)/%.copied: $(STAMPDIR)/%.fetched $(SRCDIR) $(STAMPDIR) 
 	rsync $(RSYNCFLAGS) $(ORIGDIR)/`basename $@ .copied` $(SRCDIR)
 	touch $@
+
+fetch-orig-trees: $(ORIGSRCTREES)
+
+fetch-build-trees: $(SRCSRCTREES)
