@@ -18,15 +18,24 @@ BOOTSTRAPSUBJECT=Automated build output ($(TARGETOS))
 # Stamp to append to the build name.
 BUILDDATE=$(shell date +%Y%m%d)
 # Name to append to the tar name
-BUILDNAME=snapshot-$(TARGETOS)-$(BUILDDATE).tar.gz
+# PENDING
+ifeq ($(ISRELEASE),true)
+BUILDNAME=$(RELEASEVERSION)-$(TARGETOS)
+TARBALLBASE=staging
+TARBALLDIR=$(SNAPSHOTDIR)/../$(TARBALLBASE)
+else
+BUILDNAME=snapshot-$(TARGETOS)-$(BUILDDATE)
+TARBALLBASE=snapshots
+TARBALLDIR=$(SNAPSHOTDIR)/$(TARGETOS)
+endif
 #BUILDNAME=$(RELEASE)-$(TARGETOS)
 # Name of the tarball for this target
-TARBALLNAME=$(SNAPSHOTDIR)/$(TARGETOS)/sdcc-$(BUILDNAME).tar.gz
+TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.gz
 # Location to copy the tarball to
 SNAPSHOTDEST=shell1.sourceforge.net:/home/groups/s/sd/sdcc/htdocs
 # Host and path used for removing old versions
 WEBHOST=shell1.sourceforge.net
-WEBSNAPSHOTDIR=/home/groups/s/sd/sdcc/htdocs/snapshots
+WEBSNAPSHOTDIR=/home/groups/s/sd/sdcc/htdocs/$(TARBALLBASE)
 
 # PENDING: Better naming
 crontab-spawn: update-bootstrap build-all-targets
@@ -41,7 +50,7 @@ build-all-targets:
 	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-build TARGETOS=$$i; done
 
 release-build:
-	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-release-build TARGETOS=$$i BUILDNAME=$(RELEASEVERSION)-$(TARGETOS) 'CVSTAGFLAG=-r $(RELEASEVERSIONTAG)'; done
+	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-release-build TARGETOS=$$i ISRELEASE=true 'CVSTAGFLAG=-r $(RELEASEVERSIONTAG)'; done
 
 per-target-build: per-target-clean logged-build update-snapshots-dir send-build-mail
 
@@ -62,7 +71,7 @@ generate-tarball:
 
 # Uploads
 upload-tarball: generate-tarball
-	cd $(SNAPSHOTDIR)/..; rsync -rC -e ssh --size-only snapshots $(SNAPSHOTDEST)
+	cd $(SNAPSHOTDIR)/..; rsync -rC -e ssh --size-only $(TARBALLBASE) $(SNAPSHOTDEST)
 
 update-snapshots-dir: remove-old-versions upload-tarball
 
