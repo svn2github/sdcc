@@ -1,3 +1,7 @@
+2003-03-11  Bernhard Held <bernhard@bernhardheld.de>
+
+	* components/sdcc.mk: add first 100 lines of sdcc's ChangeLog to snapshot
+
 2003-03-10  Bernhard Held <bernhard@bernhardheld.de>
 
 	* lib/bootstrap.mk: first upload, then remove-old-versions, not vice versa

@@ -50,10 +50,12 @@ else
 ifneq ($(CROSSCOMPILING), 1)
 	rm -rf $(BUILDDIR)/share/sdcc/doc/*
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/sdcc/doc/README
+	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/share/sdcc/doc/ChangeLog.head
 else
 # some day /share will be omitted for windoze
 	rm -rf $(BUILDDIR)/share/sdcc/doc/*
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/sdcc/doc/README.TXT
+	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/share/sdcc/doc/ChangeLog_head.txt
 endif
 endif
 
