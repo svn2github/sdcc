@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "parse_map.h"
 #include "disgb.h"
 

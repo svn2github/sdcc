@@ -7,7 +7,7 @@ Please read the file COPYRIGHT for further details.
 
 */
 
-#ifdef __linux__
+#if defined __linux__ || defined __CYGWIN__
 #include <unistd.h>
 #endif
 #include <sys/types.h>

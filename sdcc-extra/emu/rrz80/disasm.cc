@@ -23,6 +23,7 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+#include <string.h>
 #include "types.h"
 
 extern "C" uint8 mon_read_byte(uint32 addr);

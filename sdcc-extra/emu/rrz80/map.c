@@ -21,7 +21,7 @@ static MAP *_grow(MAP *pMap)
 
     if (pMap->numSyms == pMap->maxSyms) {
         pMap->maxSyms = (pMap->maxSyms + 1)*2;
-        pMap->syms = realloc(pMap->syms, pMap->maxSyms*sizeof(*pMap->syms));
+        pMap->syms = (SYM_ENTRY*) realloc(pMap->syms, pMap->maxSyms*sizeof(*pMap->syms));
         assert(pMap->syms);
     }
     else {
@@ -58,7 +58,7 @@ MAP *map_load(const char *fname)
         return NULL;
     }
     else {
-        MAP *pmap = calloc(1, sizeof(*pmap));
+        MAP *pmap = (MAP*) calloc(1, sizeof(*pmap));
 
         while (fgets(line, sizeof(line), fp) != NULL) {
             int drop, addr;

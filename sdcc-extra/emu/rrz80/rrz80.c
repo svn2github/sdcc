@@ -324,8 +324,8 @@ int main(int argc, char **argv)
             }
             else if (!strcmp(argv[i], "--profile")) {
                 _G.profile.enable = 1;
-                _G.profile.ticks = calloc(MEMORY_SIZE, sizeof(*_G.profile.ticks));
-                _G.profile.calls = calloc(MEMORY_SIZE, sizeof(*_G.profile.calls));
+                _G.profile.ticks = (long unsigned int*) calloc(MEMORY_SIZE, sizeof(*_G.profile.ticks));
+                _G.profile.calls = (long unsigned int*) calloc(MEMORY_SIZE, sizeof(*_G.profile.calls));
                 if (_G.profile.ticks == NULL || _G.profile.calls == NULL) {
                     fatal("Out of memory while allocating profile array");
                 }

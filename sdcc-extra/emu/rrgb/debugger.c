@@ -1,6 +1,7 @@
 #include "disgb.h"
 #include "z80.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include "debugger.h"
 
