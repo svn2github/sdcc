@@ -157,6 +157,11 @@ int PRNM(step)(int tc)
   else do {
     register int nextop;
 
+#if !DISABLE_PROFILE
+    int pc = PC;
+    int startTC = DANM(tc);
+#endif
+
 #ifdef DEBUG_Z80
     debug_z80();
 #endif
@@ -168,6 +173,11 @@ int PRNM(step)(int tc)
 #else
     (*z80c_op_tab[nextop])();
 #endif
+
+#if !DISABLE_PROFILE
+    profile_z80(pc, startTC - DANM(tc));
+#endif
+
     RR++; 
   } while(DANM(tc) > 0);
 

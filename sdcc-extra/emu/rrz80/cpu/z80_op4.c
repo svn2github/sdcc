@@ -24,9 +24,16 @@
 #include "z80_ari.h"
 #endif
 
+#if RETURN_HOOK
+#define RETURNHOOK	returnHook()
+#else
+#define RETURNHOOK
+#endif
+
 #define RET_CC(ccn, cc, n) \
 OPDEF(ret_ ## ccn, 0xC0+n*8)       \
 {                                  \
+  RETURNHOOK;                      \
   if(!(cc)) {                      \
     ENTIME(5);                     \
   }                                \
@@ -59,6 +66,7 @@ POP_RR(af, AF, 3)
 
 OPDEF(ret, 0xC9)
 {
+  RETURNHOOK;
   POP(PC);
   ENTIME(10);
 }

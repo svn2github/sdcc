@@ -5,6 +5,6 @@ CSRC =	z80.c z80optab.c z80_step.c \
 
 LIB = libz80cpu.a
 
-CFLAGS = -DZ80C=1 -DCLEAR_MEM=1 -DHIJACK_RST_08=1
+CFLAGS = -DZ80C=1 -DCLEAR_MEM=1 -DHIJACK_RST_08=1 -DDEBUG_Z80=1 -DRETURN_HOOK=1
 
 include $(TOPDIR)/Makefile.rules

@@ -20,6 +20,7 @@
 
 #include "z80_def.h"
 #include "z80optab.h"
+#include <stdio.h>
 
 #ifdef PROCP
 #define NEXTTAB(tab) \

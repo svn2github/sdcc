@@ -1,10 +1,10 @@
 CC = gcc
-CFLAGS += -Wall
+CFLAGS += -Wall -O2
 
 JAVAC = javac
 JAVACFLAGS +=
 
-OBJ = $(CSRC:.c=.o) $(JAVASRC:.java=.class)
+OBJ = $(CSRC:.c=.o) $(JAVASRC:.java=.class) $(CCSRC:.cc=.o)
 
 all: subdirs $(OBJ) $(BIN) $(LIB)
 

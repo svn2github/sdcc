@@ -1,6 +1,9 @@
 TOPDIR = ../..
 
-CSRC = rrz80.c
+CSRC = rrz80.c map.c
+CCSRC = disasm.cc
+
+CFLAGS += -g
 
 BIN = rrz80
 
