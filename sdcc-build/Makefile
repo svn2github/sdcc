@@ -10,6 +10,7 @@ include lib/ports.mk
 
 include components/sdcc.mk
 
+include lib/bugs.mk
 include lib/fetch.mk
 include lib/clean.mk
 include lib/install.mk
