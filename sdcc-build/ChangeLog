@@ -1,6 +1,6 @@
 2003-03-18  Bernhard Held <bernhard@bernhardheld.de>
 
-	* support/readme-snapshot.txt: added link to online documentation
+	* support/readme-snapshot.txt: fix links and added a link to online documentation
 	* support/error-filter.sh: yacc's warning is no longer filtered
 
 2003-03-11  Bernhard Held <bernhard@bernhardheld.de>
