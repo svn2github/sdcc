@@ -2,6 +2,7 @@
 
 	* components/sdcc.mk: added mcs51-stack-auto to the regression tests
 	* support/error-filter.sh: Removed several warnings, added 1 for mcs51-stack-auto
+	* lib/src-archive.mk: beautified
 
 2003-02-23  Bernhard Held <bernhard@bernhardheld.de>
 
