@@ -2,8 +2,7 @@
 ORIGSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.fetched)
 SRCSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.copied)
 
-# CVSACCESS=:pserver:anonymous
-CVSACCESS=:ext:sdcc-builder
+# CVSACCESS is now set through variables.mk
 
 # Default rule for fetching a tree from cvs
 $(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)

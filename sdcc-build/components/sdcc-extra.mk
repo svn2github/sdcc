@@ -13,8 +13,7 @@ CVSREPOSITORIES += cvs.sourceforge.net:/cvsroot/sdcc
 # Add sdcc-extra to the list of source trees, that are archieved and copied to the snapshot page
 ARCHIVETREES += sdcc-extra
 
-# CVSACCESS=:pserver:anonymous
-CVSACCESS=:ext:sdcc-builder
+# CVSACCESS is now set through variables.mk
 
 # Override the default fetch behavoiur
 # Default rule for fetching a tree from cvs

@@ -5,7 +5,7 @@ ifneq ($(SDCCMKINCLUDE), 1)
 SDCCMKINCLUDE = 1
 
 # Flags to pass on to configure in the sdcc directory
-# SDCCCONFIGUREFLAGS += --program-suffix=$(EXEEXTENSION)
+SDCCCONFIGUREFLAGS += --enable-z80
 # Directory that the copy of sdcc is located in
 SDCCDIR = $(SRCDIR)/sdcc
 # Add sdcc to the list of source trees that need to be fetched
@@ -70,7 +70,7 @@ sdcc-device-clean:
 sdcc-regression: sdcc sdcc-install sdcc-extra
 # test-gbz80 temporary disabled because of problems; Bernhard 2003-02-13
 ifneq ($(CROSSCOMPILING), 1)
-	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(TOPDIR)/src/sdcc-extra test-host test-z80 test-mcs51 test-mcs51-stack-auto test-mcs51-large test-ds390
+	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(TOPDIR)/src/sdcc-extra test-host test-ucz80 test-mcs51 test-mcs51-stack-auto test-mcs51-large test-ds390
 endif
 
 endif
