@@ -17,5 +17,4 @@ cvs -Q -d$CVSROOT co $MODULE
 
 # And spawn onto the actual build
 cd $BUILDROOT/$MODULE
-exec make -s
-
+exec make $MAKEFLAGS
