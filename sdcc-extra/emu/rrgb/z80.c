@@ -159,7 +159,6 @@ int mainloop(int flags)
 		  	cpuRunning = 0;
 		  }
 		  run_time_check_mod = 0;
-		  fprintf(stderr, "Left: %lu\n", max_run_time - clock());
 		}
 	}
 	return 0;

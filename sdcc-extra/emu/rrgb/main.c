@@ -150,8 +150,6 @@ int main(int argc,char **argv)
 				break;
 			}
 			case 'k': {
-			  fprintf(stderr, "Foo!\n");
-			  fflush(stderr);
 				flags|=DLIMITEDRUN;
 				break;
 			}
