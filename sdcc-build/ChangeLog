@@ -1,3 +1,8 @@
+2004-02-11  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: added $EXTRATARGET to the list of
+	make targets; it will be used for target archive-src-trees
+
 2004-02-09  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* Makefile (build): removed finally archive-src-trees
