@@ -27,10 +27,15 @@ crontab-spawn: update-bootstrap build-all-targets
 update-bootstrap:
 	cp -f sdcc-build-bootstrap.sh ..
 
+test-all-targets:
+	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-test-build TARGETOS=$$i; done
+		 
 build-all-targets:
 	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-build TARGETOS=$$i; done
 
 per-target-build: per-target-clean logged-build update-snapshots-dir send-build-mail
+
+per-target-test-build: per-target-clean logged-build
 
 per-target-clean:
 	rm -rf $(STAMPDIR)
