@@ -34,11 +34,12 @@ upload-tarball:
 
 send-build-mail:
 	cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
-	if egrep -v '^ *$' $(BOOTSTRAPLOG); then \
-		grep -v -f $(TOPDIR)/support/error-filter.sh $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
+	egrep -v -f $(TOPDIR)/support/error-filter.sh $(BOOTSTRAPLOG) > $(BOOTSTRAPLOG).filtered
+	if egrep -v '^ *$\' $(BOOTSTRAPLOG).filtered; then \
+		cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
 		fi
-	if ! egrep -v '^ *$' $(BOOTSTRAPLOG); then \
-		grep -v -f $(TOPDIR)/support/error-filter.sh $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" fish-$(BOOTSTRAPFILTEREDLIST)'; \
+	if ! egrep -v '^ *$\' $(BOOTSTRAPLOG).filtered; then \
+		cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
 		fi
 
 kill-ssh-agent:

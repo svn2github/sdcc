@@ -25,7 +25,7 @@ $(SDCCDIR)/sdccconf.h:
 sdcc: sdcc-build
 
 sdcc-build: sdcc-configured
-	$(MAKE) -C $(SDCCDIR) sdcc
+	$(MAKE) $(MAKEFLAGS) -C $(SDCCDIR) sdcc
 
 # PENDING: sdcc-cc sdcc-aslink sdcc-misc sdcc-packihx
 
@@ -35,7 +35,7 @@ sdcc-install: sdcc-build
 	cp $(SDCCDIR)/bin/* $(BUILDDIR)/bin
 
 sdcc-device: sdcc-configured sdcc-build
-	$(MAKE) -C $(SDCCDIR) sdcc-device
+	$(MAKE) $(MAKEFLAGS) -C $(SDCCDIR) sdcc-device
 
 sdcc-clean:
 	echo Here
