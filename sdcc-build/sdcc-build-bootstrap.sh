@@ -90,6 +90,6 @@ done
 
 # And spawn onto the actual build
 cd $BUILDROOT/$MODULE
-exec make $MAKEFLAGS crontab-spawn
+make $MAKEFLAGS crontab-spawn
 
 cleanup
