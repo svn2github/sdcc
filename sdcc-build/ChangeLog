@@ -1,3 +1,9 @@
+2003-08-29  Bernhard Held <bernhard@bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: moved BUILDROOT to local harddisk
+	/var/tmp/`whoami`/build; nfs access was incredible slow, and we can
+	build now on all hosts at the same time!
+
 2003-08-28  Bernhard Held <bernhard@bernhardheld.de>
 
 	* support/error-filter.sh: added 2nd filter for integer overflow on host

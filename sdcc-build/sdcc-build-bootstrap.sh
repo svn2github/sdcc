@@ -2,7 +2,8 @@
 # Simple shell script that knows enough to download the sdcc build scripts
 # and start them running.
 
-BUILDROOT=$HOME/build
+# BUILDROOT=$HOME/build
+BUILDROOT=/var/tmp/`whoami`/build
 
 # A lockfile ensures, that the cronjobs of the different hosts don't overlap.
 
