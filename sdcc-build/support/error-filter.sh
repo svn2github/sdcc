@@ -20,3 +20,6 @@ File .+ has modification time in the future
 # CVS warnings regarding locks
 ^cvs server: .* waiting for .* lock in /cvsroot/
 ^cvs server: .* obtained lock in /cvsroot/
+# CVS retries
+^cvs [checkout aborted]: recv() from server
+^CVS failed .*: 
