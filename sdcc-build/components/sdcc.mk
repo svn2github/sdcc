@@ -29,7 +29,7 @@ sdcc-build: sdcc-configured
 	$(MAKE) $(MAKEJOBFLAGS) -k -C $(SDCCDIR) sdcc
 
 # PENDING: Should depend on sdcc-build
-sdcc-install: sdcc-targetos-install sdcc-bin-install sdcc-fromhost-install
+sdcc-install: sdcc-targetos-install sdcc-fromhost-install
 
 # PENDING: Explicit copy of everything in bin
 sdcc-targetos-install:
