@@ -1,3 +1,8 @@
+2003-03-03  Bernhard Held <bernhard@bernhardheld.de>
+
+	* lib/bootstrap.mk: put logs in $(STAGINGBASE), so that they survive sdcc-build-bootstrap.sh
+	* lib/variables.mk: put logs in $(STAGINGBASE), so that they survive sdcc-build-bootstrap.sh
+
 2003-02-27  Bernhard Held <bernhard@bernhardheld.de>
 
 	* lib/variables.mk: fix availability of $(HOSTNAME) on several CF platforms
@@ -28,7 +33,6 @@
 
 	* components/sdcc.mk: specify host, target and build for configure to avoid all warnings with autoconf 2.54 
 
->>>>>>> 1.9
 2003-02-16  Bernhard Held <bernhard@bernhardheld.de>
 
 	* local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: moved cross-tools to ~/local/

@@ -1,5 +1,5 @@
 # File to log all main make output to
-BOOTSTRAPLOG=$(TOPDIR)/build.$(TARGETOS).log
+BOOTSTRAPLOG=$(STAGINGBASE)/build.$(TARGETOS).log
 # Machine to ssh into to send the build result out via email
 #BOOTSTRAPSSHMAILSERVER=smoke.csoft.net
 BOOTSTRAPSSHMAILSERVER=shell1.sourceforge.net

@@ -17,7 +17,7 @@ SRCDIR = src
 ORIGDIR = orig
 BUILDDIR = $(TOPDIR)/build/$(TARGETOS)/sdcc
 BINDIR= $(BUILDDIR)/bin
-NOISELOG = $(TOPDIR)/build-noise.$(TARGETOS).log
+NOISELOG = $(STAGINGBASE)/build-noise.$(TARGETOS).log
 STAGINGBASE = $(TOPDIR)/..
 SNAPSHOTDIR = $(STAGINGBASE)/snapshots
 
