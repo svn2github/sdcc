@@ -8,7 +8,7 @@ CVSREPOSITORIES += cvs.gbdk.sourceforge.net:/cvsroot/gbdk
 # Override the default fetch behavoiur
 # Default rule for fetching a tree from cvs
 $(STAMPDIR)/maccer.fetched: $(ORIGDIR) $(STAMPDIR)
-	grep -q :pserver:anonymous@cvs.gbdk.sourceforge.net:/cvsroot/gbdk $HOME/.cvspass || \
+	grep -q :pserver:anonymous@cvs.gbdk.sourceforge.net:/cvsroot/gbdk $(HOME)/.cvspass || \
 	  cvs -d:pserver:anonymous@cvs.gbdk.sourceforge.net:/cvsroot/gbdk login
 	cd $(ORIGDIR); cvs $(CVSFLAGS) -d:pserver:anonymous@cvs.gbdk.sourceforge.net:/cvsroot/gbdk co maccer
 	touch $@
