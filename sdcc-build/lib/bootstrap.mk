@@ -10,10 +10,14 @@ update-bootstrap:
 	cp -f sdcc-build-bootstrap.sh ..
 
 # PENDING: Better naming
-crontab-spawn: update-bootstrap logged-build generate-tarball upload-tarball send-build-mail kill-ssh-agent
+crontab-spawn: update-bootstrap logged-build filter-noise generate-tarball upload-tarball send-build-mail kill-ssh-agent
 
 logged-build:
 	-$(MAKE) -s build > $(BOOTSTRAPLOG) 2>&1
+
+filter-noise:
+	cat $(BOOTSTRAPLOG) | `cat $(TOPDIR)/support/error-filter.sh` > $(BOOTSTRAPLOG).tmp
+	mv $(BOOTSTRAPLOG).tmp $(BOOTSTRAPLOG)
 
 generate-tarball:
 	cd $(BUILDDIR); cd ..; tar czf $(TARBALLNAME) sdcc
