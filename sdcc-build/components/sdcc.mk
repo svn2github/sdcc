@@ -44,7 +44,7 @@ endif
 sdcc-docs:
 ifeq ($(ISRELEASE),true)
 	echo Fetch sdcc.doc.tar.gz and add it to the archive!
-endif
+else
 ifneq ($(CROSSCOMPILING), 1)
 	rm -rf $(BUILDDIR)/share/doc/*
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/doc/README
