@@ -59,7 +59,7 @@ sdcc-device: sdcc-configured sdcc-build
 	$(MAKE) $(MAKEJOBFLAGS) -C $(SDCCDIR) sdcc-device
 
 sdcc-clean:
-	echo Here
+#	echo Here
 	$(MAKE) -C $(SDCCDIR) clean
 
 sdcc-device-clean:
