@@ -2,5 +2,7 @@
 TARGETOS = ppc-unknown-macosx10
 HOSTOS = ppc-unknown-macosx10
 
+SDCCCONFIGUREFLAGS = --disable-ucsim
+
 TARGETCC  = cc
 TARGETCXX = c++
