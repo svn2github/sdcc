@@ -1,3 +1,8 @@
+2003-10-28  Bernhard Held <bernhard@bernhardheld.de>
+
+	* local/x86-linux2.cf.sourceforge.net-i586-mingw32msvc.mk: added
+	* local/x86-linux2.cf.sourceforge.net.mk: added
+
 2003-09-04  Bernhard Held <bernhard@bernhardheld.de>
 
 	* support/error-filter.sh: more tests need filter for integer overflow on host
