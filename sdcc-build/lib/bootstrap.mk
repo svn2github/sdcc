@@ -56,6 +56,7 @@ crontab-spawn: update-bootstrap archive-src-trees build-all-targets
 # build
 update-bootstrap:
 	cp -f sdcc-build-bootstrap.sh ..
+	chmod 744 ../sdcc-build-bootstrap.sh
 
 # Does a test build for each target which does everything but send the
 # emails and upload the tarballs
