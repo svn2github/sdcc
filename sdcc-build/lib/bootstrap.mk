@@ -25,7 +25,7 @@ update-bootstrap:
 crontab-spawn: update-bootstrap build-all-targets
 
 build-all-targets:
-	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) per-target-build TARGET=$$i; done
+	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) per-target-build TARGETOS=$$i; done
 
 per-target-build: logged-build generate-tarball upload-tarball send-build-mail kill-ssh-agent
 

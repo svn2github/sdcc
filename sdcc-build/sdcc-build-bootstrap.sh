@@ -7,6 +7,8 @@ CVSROOT=:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc
 BUILDROOT=$HOME/build
 # -s for quiet operation so that this can be run from a cronjob
 MAKEFLAGS=
+# Include local apps.
+PATH=$PATH:$HOME/local/bin
 
 # Remove the old version
 rm -rf $BUILDROOT/$MODULE
