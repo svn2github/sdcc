@@ -11,3 +11,5 @@ File .+ has modification time in the future
 ^configure: warning: Cannot determine the sizeof basic types while cross compiling. Using gcc on a 32 bit machine defaults.
 # Inhibit messages
 ^-- 
+^configure: WARNING:
+If a cross compiler is detected then cross compile mode will be used.
