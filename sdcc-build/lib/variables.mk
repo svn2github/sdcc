@@ -22,7 +22,7 @@ STAGINGBASE = $(TOPDIR)/..
 SNAPSHOTDIR = $(STAGINGBASE)/snapshots
 # Start of the CVS repository line, used to set the access method (pserver,
 # ext, ...) and username.  Can be overriden in your local.mk
-CVSACCESS = :ext:sdcc-build
+CVSACCESS = :ext:sdcc-builder
 
 CVSFLAGS += -Q
 STAMPDIR = stamps
