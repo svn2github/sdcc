@@ -90,7 +90,7 @@ generate-tarball:
 ifneq ($(CROSSCOMPILING), 1)
 	-cd $(BUILDDIR)/..; tar czf $(TARBALLNAME) sdcc
 else
-	-find $(BUILDDIR) -name "*.txt" -exec /lib/ld-linux.so.2 --library-path $(HOME)/local/lib/ $(HOME)/local/bin/recode ibmpc..lat1 {} \;
+	-find $(BUILDDIR) -name "*.txt" -exec /lib/ld-linux.so.2 --library-path $(HOME)/local/lib/ $(HOME)/local/bin/recode lat1..ibmpc {} \;
 	-mv $(BUILDIR)/bin/sdcpp $(BUILDDIR)/bin/sdcpp.exe
 	-cd $(BUILDDIR)/..; zip -9r $(TARBALLNAME) sdcc
 endif
