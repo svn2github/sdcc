@@ -19,13 +19,16 @@ cd $BUILDROOT
 grep -q $CVSROOT $HOME/.cvspass || cvs -d$CVSROOT login
 
 # Retry CVS 600 time each second
+# bash on usf-cf-x86-linux-1 is too old for this:
 # for ((i = 1; i < 600; ++i)) ; do
-# {
+i=0; while (($i < 600)) ; do
+{
+  ((i += 1))
   cvs -Q -d$CVSROOT co $MODULE && break
-#   echo CVS failed $i: `date`
-#   sleep 1
-# }
-# done
+  echo CVS failed $i: `date`
+  sleep 1
+}
+done
 
 # Setup the ssh keys
 # Not needed as an empty key is automatically read.
