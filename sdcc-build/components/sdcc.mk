@@ -35,6 +35,7 @@ sdcc-install: sdcc-targetos-install sdcc-fromhost-install sdcc-docs
 
 sdcc-targetos-install:
 	$(MAKE) -k -C $(SDCCDIR) prefix=$(BUILDDIR) install
+	# For mingw32 crosscompiling "docdir=$(BUILDDIR)/doc" could be used
 
 # Copies files from the native host that couldn't be compiled.
 sdcc-fromhost-install:
@@ -52,7 +53,9 @@ ifneq ($(CROSSCOMPILING), 1)
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/sdcc/doc/README
 	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/share/sdcc/doc/ChangeLog.head
 else
-	rm -rf $(BUILDDIR)/doc/*
+	# share/sdcc/doc is created during installation of the docs.
+	# "make install ... docdir=$(BUILDDIR)/doc" could prevent this.
+	rm -rf $(BUILDDIR)/doc/* $(BUILDDIR)/share
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/doc/README.TXT
 	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/doc/ChangeLog_head.txt
 endif
