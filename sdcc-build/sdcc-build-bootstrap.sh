@@ -6,7 +6,9 @@ MODULE=sdcc-build
 CVSROOT=:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc
 BUILDROOT=$HOME/build
 # -s for quiet operation so that this can be run from a cronjob
-MAKEFLAGS=-s
+MAKEFLAGS=-s fail
+LOG=sdcc-build.log
+LIST=michaelh@juju.net.nz
 
 # Remove the old version
 rm -rf $BUILDROOT/$MODULE
@@ -17,4 +19,8 @@ cvs -Q -d$CVSROOT co $MODULE
 
 # And spawn onto the actual build
 cd $BUILDROOT/$MODULE
-exec make $MAKEFLAGS
+make $MAKEFLAGS > $LOG 2>&1
+
+perl $BUILDROOT/support/sendMessage.pl $LIST $LOG
+rm -f $LOG
+

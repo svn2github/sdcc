@@ -18,3 +18,6 @@ include lib/bootstrap.mk
 build: update-bootstrap dirs fetch-build-trees sdcc sdcc-install
 
 test-integrity:
+
+fail:
+	false
