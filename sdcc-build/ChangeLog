@@ -1,6 +1,7 @@
 2003-04-12  Bernhard Held <bernhard@bernhardheld.de>
 
 	* components/sdcc.mk: SDCC_DIR renamed to SDCC_HOME
+	remove share/sdcc for mingw32
 
 2003-04-01  Bernhard Held <bernhard@bernhardheld.de>
 

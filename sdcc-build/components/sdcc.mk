@@ -39,7 +39,7 @@ sdcc-targetos-install:
 # Copies files from the native host that couldn't be compiled.
 sdcc-fromhost-install:
 ifeq ($(CROSSCOMPILING), 1)
-	cd $(TOPDIR)/build/$(HOSTOS)/sdcc; cp -r share $(BUILDDIR)
+	cd $(TOPDIR)/build/$(HOSTOS)/sdcc/share/sdcc; cp -r * $(BUILDDIR)
 endif
 
 # There are no docs in the snapshot
@@ -52,10 +52,9 @@ ifneq ($(CROSSCOMPILING), 1)
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/sdcc/doc/README
 	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/share/sdcc/doc/ChangeLog.head
 else
-# some day /share will be omitted for windoze
-	rm -rf $(BUILDDIR)/share/sdcc/doc/*
-	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/sdcc/doc/README.TXT
-	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/share/sdcc/doc/ChangeLog_head.txt
+	rm -rf $(BUILDDIR)/doc/*
+	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/doc/README.TXT
+	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/doc/ChangeLog_head.txt
 endif
 endif
 
