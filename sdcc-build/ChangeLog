@@ -1,3 +1,10 @@
+2003-07-16  Bernhard Held <bernhard@bernhardheld.de>
+
+	switch to cvs access via ssh:
+	* sdcc-build-bootstrap.sh:
+	* lib/fetch.mk:
+	* components/sdcc-extra.mk:
+
 2003-07-14  Bernhard Held <bernhard@bernhardheld.de>
 
 	* lib/fetch.mk: add "-z3" to cvs

@@ -55,7 +55,9 @@ done
 
 
 MODULE=sdcc-build
-CVSROOT=:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc
+# CVSROOT=:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc
+CVSROOT=:ext:sdcc-builder@cvs.sdcc.sourceforge.net:/cvsroot/sdcc
+export CVS_RSH=ssh
 # -s for quiet operation so that this can be run from a cronjob
 MAKEFLAGS=
 # Include local apps.
@@ -67,7 +69,7 @@ rm -rf $BUILDROOT/$MODULE
 # Checkout the latest version
 mkdir -p $BUILDROOT
 cd $BUILDROOT
-grep -q $CVSROOT $HOME/.cvspass || cvs -d$CVSROOT login
+# grep -q $CVSROOT $HOME/.cvspass || cvs -d$CVSROOT login
 
 # Retry CVS 600 time each second
 # bash on usf-cf-x86-linux-1 is too old for this:

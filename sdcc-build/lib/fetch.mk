@@ -2,14 +2,17 @@
 ORIGSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.fetched)
 SRCSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.copied)
 
+# CVSACCESS=:pserver:anonymous
+CVSACCESS=:ext:sdcc-builder
+
 # Default rule for fetching a tree from cvs
 $(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)
-	grep -q pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` $(HOME)/.cvspass || \
-	 cvs -d:pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` login
+	# grep -q pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` $(HOME)/.cvspass || \
+	# cvs -d:pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` login
 	cd $(ORIGDIR); \
 	sh -c 'i=0; while ((i < 600)); do { \
 	  ((i += 1)); \
-	  cvs -z3 $(CVSFLAGS) -d:pserver:anonymous@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` co $(CVSTAGFLAG) `basename $@ .fetched` \
+	  cvs -z3 $(CVSFLAGS) -d$(CVSACCESS)@cvs.`basename $@ .fetched`.sourceforge.net:/cvsroot/`basename $@ .fetched` co $(CVSTAGFLAG) `basename $@ .fetched` \
 	    && break ; \
 	  echo CVS failed $$i: `date`; \
 	  sleep 1; \
