@@ -2,6 +2,7 @@
 
 	* local/usf-cf-ppc-macosx-1.mk: added
 	* components/sdcc.mk: regression test of gbz80 disabled because of (sim?) problems
+	* lib/cross.mk: don't touch TARGETCC and TARGETCXX, if it has already been set by local/*.mk
 
 2003-02-11  Bernhard Held <bernhard@bernhardheld.de>
 
