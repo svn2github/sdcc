@@ -10,7 +10,7 @@ TOPDIR := $(shell /bin/pwd)
 # Directory that all of the soure trees get copied into
 SRCDIR = src
 ORIGDIR = orig
-BUILDDIR = $(TOPDIR)/build/$(TARGET)
+BUILDDIR = $(TOPDIR)/build/$(TARGET)/sdcc
 BINDIR= $(BUILDDIR)/bin
 NOISELOG = $(TOPDIR)/build-noise.log
 
