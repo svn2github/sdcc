@@ -2,6 +2,7 @@
 
 	* sdcc-build-bootstrap.sh: retry `CVS co` in case of failure
 	* lib/bootstrap.mk: added chmod to make sdcc-build-bootstrap.sh executable
+	* components/sdcc.mk: added MAKEJOBFLAGS for parallel build of regression tests
 
 2003-05-01  Bernhard Held <bernhard@bernhardheld.de>
 
