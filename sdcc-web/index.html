@@ -1,59 +1,179 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html>
-  <head>
-    <title>sdcc - home</title>
-  </head>
 
-  <body bgcolor="white">
-    <table border=0 cols=1 width="100%" bgcolor="black">
-      <tr valign=top>
-	<td>
-	  <table border=0 cellpadding=5 cols=1 width="100%" bgcolor="white">
-	    <tr valign=center>
-	      <td align="center">
-		<font face="Arial,Helvetica" size="+1">Small Device C Compler (sdcc)</font>
-	      </td>
-	    </tr>
-	  </table>
-	</td>
-      </tr>
-    </table>
-    <p><font face="Arial,Helvetica" size=-1>
-	A portable C compiler for the Intel mcs51 series (8051, 8032...) and for the Zilog Z80.  <tt>sdcc</tt> is reasonably easy to port to other eight bit processors.
-	<br>
-	<p>This page is just a holder.  <tt>sdcc</tt> is currently under development - the mcs51 port is stable, and the Z80 port generates valid if ugly code.
-	  <br>
-	<h4>Contact:</h4>
-	<ul>
-	  <li><a href="mailto:sandeep.dutta@usa.net">Sandeep Dutta</a></li>
-	  <li><a href="mailto:michaelh@earthling.net">Michael Hope</a> (Z80 port)</li>
-	</ul>
-	<h4>
-	  Links:</h4>
-    <ul>
-      <li>
-	<a href="http://www.geocities.com/ResearchTriangle/Forum/1353/">sdcc at Geocities</a>
-	</li>
-      <li>
-	<a href="http://earthling.net.nz/~michaelh/">sdcc-z80 at earthling.net.nz.</a>  Includes weekly snapshots.
-      </li>
-      <li>
-	<a href="http://42.fht-esslingen.de/SDCC_OKR/">The Open-Knowledge website</a>
-      </li>
-      <li>
-	<a href="http://web.kd0yu.com/">KD0YU</a> (mirror)
-      </li>
-    </ul>
-<H4>Files:</H4>
-	<li><a href="ftp://sdcc.sourceforge.net/pub/sdcc/sdcc-2.1.9Ga.tar.gz">SDCC v2.1.9Ga Source (gzipped tar, 1697K)</a></li>
-	<li><a href="ftp://sdcc.sourceforge.net/pub/sdcc/sdcc-2.1.9Gawinbin.tar.gz">SDCC v2.1.9Ga Win32 Binary (gzipped tar, 1877K)</a></li><br>
-    <hr>
-    <p align="right"><a href="mailto:michaelh@earthling.net.nz">Michael Hope</a> | 
-<!-- Created: Fri Jan 21 15:46:54 PST 2000 -->
-<!-- hhmts start -->
-Last modified: Wed Jan 26 18:41:50 PST 2000
-<!-- hhmts end -->
-    <A href="http://sourceforge.net">
-      <IMG src="http://sourceforge.net/sflogo.php?group_id=599&type=1" width="88" height="31" border="0"></A></p>
-  </body>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive 4">
+		<title>SDCC - Small Device C Compiler</title>
+	</head>
+
+	<body bgcolor="white" link="teal" vlink="#483d8b">
+		<div align="left">
+			<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="6"><i><b>SDCC </b></i></font>
+			<h3><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>Small Device C Compiler</i></font></h3>
+			<p>
+			<table border="0" cellpadding="2" cellspacing="1" width="100%" bgcolor="white">
+				<tr>
+					<td width="15%" valign="top">
+						<div align="left">
+							<a href="#What"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>What</i></font></a>
+							<p><a href="#Who"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>Who</i></font></a></p>
+							<p><a href="#Platforms"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>Platforms</i></font></a></p>
+							<p><a href="#Download"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>Download<br>
+							</i></font></a></p>
+							<p><a href="#News"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>News</i></font></a></p>
+							<p><a href="#Support"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>Support</i></font></a></p>
+							<p><a href="http://sdcc.sourceforge.net/links.html" target="new"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>Links and More!</i></font></a></div>
+					</td>
+					<td width="85%">
+						<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#5f9ea0">
+							<tr valign="middle">
+								<td width="100%" valign="bottom" bgcolor="#5f9ea0"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b><a name="What"></a>What is SDCC ?</b></i></font></td>
+							</tr>
+						</table>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>SDCC</b></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="4"> </font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">is a<u> </u></font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>F<i>reeware , retargettable, optimizing ANSI - C compiler. </i></b></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="black" size="2">The current version targets the </font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>Intel 8051 </b></font><font color="black" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">and recently the</font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b> Zilog Z80<i> </i></b></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">based MCUs. SDCC can be retargeted for other 8 bit MCUs or PICs and some day soon will be. The&nbsp; entire source code for the compiler is distributed under GPL. SDCC uses ASXXXX and ASLINK, a Freeware, retargettable assembler and linker. SDCC has </font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>extensive MCU specific language extensions, </b></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="black" size="2"><i>which</i> lets it utilize the underlying hardware effectively. The front end (parser) will be enhanced to handle language extensions for other MCUs as and when they are targeted. In addition to the MCU Specific optimizations SDCC also does a host of standard optimizations like <i>global sub expression elimination, loop optimizations (loop invariant , strength reduction of induction variables and loop reversing ), constant folding </i>and<i> propagation, copy propagation, dead code elimination and jump tables for 'switch' statements. For</i> the Back end SDCC uses a</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> </font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><i><b>global register allocation </b></i></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">scheme which should be well suited for other 8 bit MCUs , the peep hole optimizer uses a rule based substitution mechanism which is MCU independent. Supported data types are </font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="maroon" size="2"><b>short </b>(<i>8</i> bits, 1 byte)</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">, </font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="maroon" size="2"><i><b>char </b></i>(<i>8</i> bits, 1 byte)</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> , </font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="maroon" size="2"><b>int</b> (16 bits, 2 bytes )</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">, </font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="#660000" size="2"><b>long </b><i>(32</i> bit, 4 bytes)</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> and </font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" color="#660000" size="2"><b>float </b><i>(4</i> byte IEEE)</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">.&nbsp; SDCC also comes with the <i>source level debugger</i><b> SDCDB</b>, the current version of the debugger uses Daniel's s51 simulator. The compiler also allows </font><font color="#660000" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><i><b>inline assembler code</b></i></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> to be embedded anywhere in a function. In addition routines developed in assembly can also be called. SDCC also provides an option to report the relative complexity of a function, these functions can then be further optimized , or hand coded in assembly if need be.</font><font size="2"><br>
+						</font><br>
+						</p>
+						<dl>
+							<dt><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>SDCC</b></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> was written by Sandeep Dutta and released under the GPL license. Since it's initial release there have been numerous bug fixes and improvements. As of December 1999, the code was moved to SourceForge where all the &quot;users turned developers&quot; can access the same source tree. SDCC is constantly being updated from all the users and developer's input. Michael Hope has done the porting of SDCC to the Z80. As of January 2000, Sandeep has started porting to the Atmel AVR MCU and is making good headway.</font><font size="2"><br>
+							</font><br>
+							<dt><font size="4" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b>
+							<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#5f9ea0">
+								<tr>
+									<td><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b><a name="Who"></a>Who is SDCC ?</b></i></font></td>
+								</tr>
+							</table>
+							</b></i></font><a href="mailto:sandeep@users.sourceforge.net"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><br>
+							</font></a>
+							<dl>
+								<ul>
+									<li><a href="mailto:sandeep@users.sourceforge.net"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Sandeep Dutta (sandeep@users.sourceforge.net)</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> - author (SDCC's version of Torvalds)</font>
+									<li><a href="mailto:michaelh@juju.net.nz"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Michael Hope (michaelh@juju.net.nz)</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> - Z80 port, additional coding and bug fixes.</font>
+								</ul>
+							</dl>
+							<ul>
+								<ul>
+									<li><a href="mailto:baldwin@shop-pdp.kent.edu"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Alan Baldwin (baldwin@shop-pdp.kent.edu) </font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">- Initial version of ASXXXX&nbsp; and&nbsp; ASLINK.</font>
+									<li><a href="mailto:jhartman@compuserve.com"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">John Hartman (jhartman@compuserve.com) </font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">- Porting ASXXX&nbsp;&nbsp; and ASLINK for 8051.</font>
+									<li><a href="mailto:dso@usa.net"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Dmitry S. Obukhov (dso@usa.net)</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> - malloc and serial I/O routines.</font>
+									<li><a href="mailto:boehm@sgi.com"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Jans J Boehm(boehm@sgi.com)</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> and Alan J Demers - Conservative garbage collector for C &amp; C++.</font>
+									<li><a href="mailto:jlvern@writeme.com"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Jean Loius-VERN (jlvern@writeme.com&gt;</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> - substantial improvement in the back-end code generation.</font>
+									<li><a href="mailto:drdani@mazsola.iit.uni-miskolc.hu"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Daniel Drotos &lt;drdani@mazsola.iit.uni-miskolc.hu&gt; </font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">- Free ware simulator for 8051.</font>
+									<li><a href="mailto:kevin@vigor.nu"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Kevin Vigor &lt;kevin@vigor.nu&gt; </font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">- numerous enhancements and bug fixes to the Dallas ds390 tree.</font>
+									<li><a href="mailto:johan.knol@iduna.nl"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Johan Knol &lt;johan.knol@iduna.nl&gt;</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> - testing and patching ds390 tree, bug stompper extrodanaire</font>
+									<li><a href="mailto:malini_dutta@hotmail.com"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Malini Dutta(malini@mediaone.net)</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> - my wife for her patience and support.</font>
+									<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Unknown - for the GNU C - preprocessor</font>
+								</ul>
+							</ul>
+						</dl>
+						<h3><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b>
+						<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#5f9ea0">
+							<tr>
+								<td><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b><a name="Platforms"></a>What Platforms are Supported ?</b></i></font></td>
+							</tr>
+						</table>
+						</b></i></font></h3>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Currently Linux (and other unices) and MS-Windows are supported. SDCC will compile natively on Linux using <a href="http://www.gnu.org">gcc</a>. Windows 95/NT users will need to download the full development version of CYGWIN32 from <a href="http://sourceware.cygnus.com/cygwin/"><i><b>http://sourceware.cygnus.com/cygwin/.</b></i></a><br>
+						</font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>Note:</b> Cygnus distributes CYGWIN32 in two packages you will need the full development package, this contains the compiler and other utilities that you will need to compile SDCC, compiling the system with any other compiler under MS/Windows has not been tried.</font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>Note: </b>It's official! SDCC now compiles on the win32 platform with Borland C. There are a set of executable binaries in the <a href="#download">dowload</a> section.</font></p>
+						<h3><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b>
+						<table border="0" cellpadding="0" cellspacing="1" width="100%" bgcolor="#5f9ea0">
+							<tr>
+								<td><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b><a name="Download"></a>Downloading SDCC </b></i></font></td>
+							</tr>
+						</table>
+						</b></i></font></h3>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">The SDCC source tree is currently located at <a href="http://www.sourceforge.net">SourceForge</a>.</font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">As of October 14, 2000 - the current release version is<i><b> </b></i></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b>v2.2.1</b></i></font></p>
+						<ul>
+							<li><a href="files/v2.2.1/sdcc-2.2.1-src.tar.gz"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">SDCC v2.2.1 Source (in gzipped tar format) [2.0M]</font></a>
+							<li><a href="files/v2.2.1/sdcc-2.2.1-win32-cygwin.zip"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">SDCC v2.2.1 CygWin/Win32 Binary (in zip format) [1.4M]</font></a>
+							<li><a href="files/v2.2.1/sdcc-2.2.1-win32-borland.zip"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">SDCC v2.2.1 Borland/Win32 Binary (in zip format) [498K]</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> (NOTE: Cygwin is NOT needed)</font>
+							<p><a href="previous.html" title="Previous News and Versions"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Previous versions</font></a></p>
+						</ul>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">You can also browse the ftp <a href="ftp://sdcc.sourceforge.net/pub/sdcc/">archives</a></font></p>
+						<p><font size="2" face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Work continues in CVS. If you have CVS capability, the following will get you the latest sources.</font></p>
+						<p><font face="Courier New,Courier,Monaco" size="2">cvs -d:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc login</font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">The password is empty and pressing [ENTER] will get you in.</font></p>
+						<p><font face="Courier New,Courier,Monaco" size="2">cvs -z3 -d:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc co sdcc</font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">... will create the </font><font face="Courier New,Courier,Monaco" size="2"><i>sdcc</i></font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> directory in your current directory and place all downloaded code there. You can browse our CVS tree <a href="http://cvs.sourceforge.net/cgi-bin/cvsweb.cgi?cvsroot=sdcc">here</a>. </font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">SourceForge has further documentation on accessing a CVS tree <a href="http://sfdocs.sourceforge.net/sfdocs/">here</a>.<br>
+						<a href="mailto:michaelh@juju.net.nz">Michael Hope</a> has written some help on accessing CVS trees from a Win32 box and is available <a href="http://juju.net.nz/michaelh/cvs.html">here</a>.<br>
+						This link includes a binary and step by step instructions. The CVSROOT address will need to be changed to the one above.</font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>
+						<table border="0" cellpadding="0" cellspacing="2" width="100%" bgcolor="#5f9ea0">
+							<tr>
+								<td><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b><a name="News"></a>Recent NEWS</b></i></font></td>
+							</tr>
+						</table>
+						</i></font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b>Check it out in the <a href="#download">download</a> section</b></i></font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b>SDCC v2.2.1 is out!!!</b></i></font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">This is a milestone release for the development group.<br>
+						New stuff includes:</font></p>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">bug fixes (always bug fixes)</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">better support for the Dallas '390, flat memory model is a lot better than before, not perfect.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">changes to the assembler</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">better documentation</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">faster compile times</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">and more...</font>
+						</ul>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">There are more new command line switches to SDCC.. PAY ATTENTION! Read the documentation!</font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">There have been additions to the SDCC developer team, we would like to welcome</font></p>
+						<ul>
+							<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Kevin Vigor and Johan Knol<br>
+							</font></p>
+							<p><a href="http://sdcc.sourceforge.net/previous.html"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Previous News</font></a></p>
+						</ul>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>
+						<table border="0" cellpadding="0" cellspacing="1" width="100%" bgcolor="#5f9ea0">
+							<tr>
+								<td><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i><b><a name="Support"></a>Support for SDCC</b></i></font></td>
+							</tr>
+						</table>
+						</i></font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><b>SDCC</b> and the included support packages come with fair amounts of documentation and examples. When that isn't enough, you can find help in the following places:</font></p>
+						<ul>
+							<li><a href="http://sdcc.sourceforge.net"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Web Page</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">, you are (X) here.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Mailing list: [use &quot;BUG REPORTING&quot; below if you believe you have found a bug.]</font>
+							<ul>
+								<li><a href="mailto:sdcc-devel@lists.sourceforge.net"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Send to the developer list</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> - for developement work on SDCC</font>
+								<li><a href="mailto:sdcc-user@lists.sourceforge.net"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Send to the user list</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> - [preferred] all developers and all users.</font>
+								<li><a href="http://lists.sourceforge.net/mailman/listinfo/sdcc-user"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Subscribe to the user list</font></a>
+							</ul>
+							<li><a href="http://sourceforge.net/bugs/?func=addbug&group_id=599"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Bug Reporting</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> - if you have a problem using SDCC, we need to hear about it.</font>
+							<li><a href="https://sourceforge.net/forum/forum.php?forum_id=1864&et=0"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">SDCC Message Forum</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> - an account on Sourceforge is needed if your going to post and reply. Short easy online fill-in the blanks.</font>
+							<li><a href="http://www.qsl.net/dl9sec/SDCC_OKR.html"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Open Knowlege Web Site</font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"> - Run by <a href="mailto:thorsten.godau@gmx.de">Thorsten Godau</a></font>
+							<li><a href="mailto:felix_daners@gmx.ch">Felix Daners</a> has a few <a href="sdcc-install-nt.html">notes</a> on i<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">nstalling SDCC on an NT box<br>
+							<br>
+							<hr size="1" width="60%" align="left">
+							</font>
+						</ul>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
+						<table border="0" cellpadding="0" cellspacing="2" width="100%">
+							<tr>
+								<td><a href="http://www.webring.org/cgi-bin/webring?ring=80x51;list"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">The 8051 Web Ring </font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><img height="63" width="81" src="images/x51chip.jpg" align="middle"></font></td>
+								<td><a href="http://sdcc.sourceforge.net/links.html"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Links and</font></a><a href="http://sdcc.sourceforge.net/links.html"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"> More!</font></a></td>
+							</tr>
+						</table>
+						</font></p>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">
+						<table border="0" cellpadding="0" cellspacing="2" width="100%">
+							<tr>
+								<td><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><i>This Site Hosted by</i></font>
+									<p><a href="http://www.sourceforge.net"><img height="31" width="88" src="images/sourceforge.jpg" align="middle"></a></td>
+								<td>
+									<div align="right">
+										<a href="mailto:dhelton@users.sourceforge.net"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Webmaster</font></a>
+										<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Last updated: <csobj w="193" h="16" t="DateTime" format="LongDate" locale="00000409" region="0">Thursday, October 26, 2000</csobj></font></div>
+								</td>
+							</tr>
+						</table>
+						</font></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+
 </html>
