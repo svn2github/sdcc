@@ -43,4 +43,7 @@ sdcc-clean:
 
 sdcc-device-clean:
 
+# Explicit dependency
+$(STAMPDIR)/sdcc.copied: $(STAMPDIR)/sdcc.fetched
+
 endif

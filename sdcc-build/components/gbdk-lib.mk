@@ -24,4 +24,6 @@ gbdk-lib-copy: $(BUILDDIR)/Makefile.common
 $(BUILDDIR)/Makefile.common:
 	cp -r $(GBDKLIBDIR)/examples $(GBDKLIBDIR)/libc $(GBDKLIBDIR)/tools $(GBDKLIBDIR)/include $(GBDKLIBDIR)/Makefile.common $(BUILDDIR)
 
+$(STAMPDIR)/gbdk-lib.copied: $(STAMPDIR)/gbdk-lib.fetched
+
 endif

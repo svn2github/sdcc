@@ -35,4 +35,7 @@ gbdk-support-install: gbdk-support-lcc
 gbdk-support-lcc-clean:
 	make -C $(GBDKSUPPORTDIR)/lcc clean
 
+# Explicit dependency
+$(STAMPDIR)/gbdk-support.copied: $(STAMPDIR)/gbdk-support.fetched
+
 endif
