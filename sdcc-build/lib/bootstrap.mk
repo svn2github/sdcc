@@ -1,7 +1,8 @@
 # File to log all main make output to
 BOOTSTRAPLOG=$(TOPDIR)/build.log
 # Machine to ssh into to send the build result out via email
-BOOTSTRAPSSHMAILSERVER=shell1.sourceforge.net
+BOOTSTRAPSSHMAILSERVER=smoke.csoft.net
+#BOOTSTRAPSSHMAILSERVER=shell1.sourceforge.net
 # Address to send the filtered build output to
 BOOTSTRAPFILTEREDLIST=michaelh-filtered@juju.net.nz
 #BOOTSTRAPFILTEREDLIST=sdcc-devel@lists.sourceforge.net
@@ -35,10 +36,10 @@ upload-tarball:
 send-build-mail:
 	cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
 	egrep -v -f $(TOPDIR)/support/error-filter.sh $(BOOTSTRAPLOG) > $(BOOTSTRAPLOG).filtered
-	if egrep -v '^ *$\' $(BOOTSTRAPLOG).filtered; then \
+	if egrep -v '^ *\$' $(BOOTSTRAPLOG).filtered; then \
 		cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
 		fi
-	if ! egrep -v '^ *$\' $(BOOTSTRAPLOG).filtered; then \
+	if ! egrep -v '^ *\$' $(BOOTSTRAPLOG).filtered; then \
 		cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLIST)'; \
 		fi
 
