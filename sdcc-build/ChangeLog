@@ -1,3 +1,9 @@
+2003-04-23  Bernhard Held <bernhard@bernhardheld.de>
+
+        * local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: added SDCCINSTALLFLAGS
+	for docdir
+	* components/sdcc.mk: use SDCCINSTALLFLAGS when installing
+	
 2003-04-22  Bernhard Held <bernhard@bernhardheld.de>
 
 	* local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: adapted to new configure

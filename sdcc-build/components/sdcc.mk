@@ -34,8 +34,7 @@ sdcc-build: sdcc-configured
 sdcc-install: sdcc-targetos-install sdcc-fromhost-install sdcc-docs
 
 sdcc-targetos-install:
-	$(MAKE) -k -C $(SDCCDIR) prefix=$(BUILDDIR) install
-	# For mingw32 crosscompiling "docdir=$(BUILDDIR)/doc" could be used
+	$(MAKE) -k -C $(SDCCDIR) prefix=$(BUILDDIR) $(SDCCINSTALLFLAGS) install
 
 # Copies files from the native host that couldn't be compiled.
 sdcc-fromhost-install:
