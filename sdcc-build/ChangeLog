@@ -1,4 +1,8 @@
-2004-02-07  Bernhard Held <bernhard@bernhardheld.de>
+2004-02-09  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* Makefile (build): removed finally archive-src-trees
+
+2004-02-07  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/src-archive.mk: changed file name from sdcc.src-$(HOSTNAME) to
 	sdcc-src-$(HOSTNAME)-$(BUILDDATE)
@@ -6,56 +10,56 @@
 	from now on this will be done by only one host
 	* support/readme-snapshot.txt: updated link to sdcc-doc
 
-2004-01-21  Bernhard Held <bernhard@bernhardheld.de>
+2004-01-21  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/ppc-osx2.cf.sourceforge.net.mk: added, SF keeps changing host names :-( 
 
-2004-01-09  Bernhard Held <bernhard@bernhardheld.de>
+2004-01-09  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/src-archive.mk: added HOSTNAME to src-archiv name
 
-2003-10-28  Bernhard Held <bernhard@bernhardheld.de>
+2003-10-28  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/x86-linux2.cf.sourceforge.net-i586-mingw32msvc.mk: added
 	* local/x86-linux2.cf.sourceforge.net.mk: added
 	* sdcc-build-bootstrap.sh: fixed typo "flitered"; BUILDROOT can now be defined in enviroment
 
-2003-09-04  Bernhard Held <bernhard@bernhardheld.de>
+2003-09-04  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* support/error-filter.sh: more tests need filter for integer overflow on host
 
-2003-09-03  Bernhard Held <bernhard@bernhardheld.de>
+2003-09-03  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* sdcc-build-bootstrap.sh: cp log files from local hd to $HOME/build on nfs server
 
-2003-08-29  Bernhard Held <bernhard@bernhardheld.de>
+2003-08-29  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* sdcc-build-bootstrap.sh: moved BUILDROOT to local harddisk
 	/var/tmp/`whoami`/build; nfs access was incredible slow, and we can
 	build now on all hosts at the same time!
 
-2003-08-28  Bernhard Held <bernhard@bernhardheld.de>
+2003-08-28  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* support/error-filter.sh: added 2nd filter for integer overflow on host
 
-2003-08-22  Bernhard Held <bernhard@bernhardheld.de>
+2003-08-22  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* support/error-filter.sh: added filter for integer overflow on host
 
-2003-08-07  Bernhard Held <bernhard@bernhardheld.de>
+2003-08-07  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/usf-cf-x86-linux-2.mk: added
 	* local/usf-cf-x86-linux-2.cf.sourceforge.net.mk: added (complain to SF)
 
-2003-07-28  Bernhard Held <bernhard@bernhardheld.de>
+2003-07-28  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/amd64-linux1.mk: added
 
-2003-07-18  Bernhard Held <bernhard@bernhardheld.de>
+2003-07-18  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/bootstrap.mk: added *.TXT (old *.txt) to files, which need recoding
 
-2003-07-17  Bernhard Held <bernhard@bernhardheld.de>
+2003-07-17  Bernhard Held <bernhard AT bernhardheld.de>
 
 	Replace cvs.sdcc.sourceforge.net:/cvsroot/sdcc by cvs.sourceforge.net:/cvsroot/sdcc
 	* sdcc-build-bootstrap.sh
@@ -64,51 +68,51 @@
 	* lib/fetch.mk
 	* lib/bootstrap.mk: build own recode
 
-2003-07-16  Bernhard Held <bernhard@bernhardheld.de>
+2003-07-16  Bernhard Held <bernhard AT bernhardheld.de>
 
 	switch to cvs access via ssh:
 	* sdcc-build-bootstrap.sh:
 	* lib/fetch.mk:
 	* components/sdcc-extra.mk:
 
-2003-07-14  Bernhard Held <bernhard@bernhardheld.de>
+2003-07-14  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/fetch.mk: add "-z3" to cvs
 
-2003-06-17  Bernhard Held <bernhard@bernhardheld.de>
+2003-06-17  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* support/error-filter.sh: filter "cvs [checkout aborted]:",
 	because of "cvs [checkout aborted]: could not find out home directory"
 
-2003-06-06  Bernhard Held <bernhard@bernhardheld.de>
+2003-06-06  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/bootstrap.mk: stop sending logs to sdcc-buildlogs (nobody reads it, me included)
 	send only mail to sdcc-devel, if there's an error, otherwise send it to the Admin
 
-2003-05-13  Bernhard Held <bernhard@bernhardheld.de>
+2003-05-13  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* sdcc-build-bootstrap.sh: removed "exec", so that cleanup() is finally called
 	* support/error-filter.sh: added escapes to []()
 
-2003-05-12  Bernhard Held <bernhard@bernhardheld.de>
+2003-05-12  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* sdcc-build-bootstrap.sh: added lockfile mechanism
 
-2003-05-09  Bernhard Held <bernhard@bernhardheld.de>
+2003-05-09  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/ucf-cf-ppc-macosx-2.mk: enable ucsim, it compiles cleanly with g++2
 
-2003-05-08  Bernhard Held <bernhard@bernhardheld.de>
+2003-05-08  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* support/error-filter.sh: filter messages from CVS retries
 
-2003-05-07  Bernhard Held <bernhard@bernhardheld.de>
+2003-05-07  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/ports.mk: don't include ports/z80.mk and ports/gbz80.mk.
 	This only disables the checkout of maccer, gbdk-lib and gbdk-support,
 	there was no further functionality.
 
-2003-05-06  Bernhard Held <bernhard@bernhardheld.de>
+2003-05-06  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/fetch.mk: sdcc checkout with retry
 	* components/sdcc-extra: sdcc-extra checkout with retry
@@ -116,80 +120,80 @@
 	needs more testing on CF (creating DIRs, timeouts).
 	Cleanup installing docs for mingw32
 
-2003-05-05  Bernhard Held <bernhard@bernhardheld.de>
+2003-05-05  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* sdcc-build-bootstrap.sh: retry `CVS co` in case of failure
 	* lib/bootstrap.mk: added chmod to make sdcc-build-bootstrap.sh executable
 	* components/sdcc.mk: added MAKEJOBFLAGS for parallel build of regression tests
 
-2003-05-01  Bernhard Held <bernhard@bernhardheld.de>
+2003-05-01  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/ucf-cf-ppc-macosx-2.mk: added
 
-2003-04-28  Bernhard Held <bernhard@bernhardheld.de>
+2003-04-28  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/src-archive.mk: added directory sdcc to root of archive
 
-2003-04-24  Bernhard Held <bernhard@bernhardheld.de>
+2003-04-24  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* components/sdcc.mk: removed "SDCCCONFIGUREFLAGS += --program-suffix=$(EXEEXTENSION)"
 	after introducing EXEEXT
 
-2003-04-23  Bernhard Held <bernhard@bernhardheld.de>
+2003-04-23  Bernhard Held <bernhard AT bernhardheld.de>
 
         * local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: added SDCCINSTALLFLAGS
 	for docdir
 	* components/sdcc.mk: use SDCCINSTALLFLAGS when installing
 	
-2003-04-22  Bernhard Held <bernhard@bernhardheld.de>
+2003-04-22  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: adapted to new configure
 
-2003-04-12  Bernhard Held <bernhard@bernhardheld.de>
+2003-04-12  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* components/sdcc.mk: SDCC_DIR renamed to SDCC_HOME
 	remove share/sdcc for mingw32
 
-2003-04-01  Bernhard Held <bernhard@bernhardheld.de>
+2003-04-01  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/bootstrap.mk: `mv sdcpp sdcpp.exe` seems to be no longer necessary
 
-2003-03-31  Bernhard Held <bernhard@bernhardheld.de>
+2003-03-31  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* usf-cf-alpha-linux-1.mk, usf-cf-sparc-linux-1.mk,
 	usf-cf-x86-linux-1-i586-mingw32msvc.mk,
 	usf-cf-x86-linux-1.mk: added 'MAKEJOBFLAGS = "-j 2"' to exploit the
 	dual processors
 
-2003-03-27  Bernhard Held <bernhard@bernhardheld.de>
+2003-03-27  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* support/error-filter.sh: suppress cvs lock messages
 	* components/sdcc.mk: --target not required for configure (even if
 	cross-compiling)
 
-2003-03-18  Bernhard Held <bernhard@bernhardheld.de>
+2003-03-18  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* support/readme-snapshot.txt: fix links and added a link to online documentation
 	* support/error-filter.sh: yacc's warning is no longer filtered
 
-2003-03-11  Bernhard Held <bernhard@bernhardheld.de>
+2003-03-11  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* components/sdcc.mk: add first 100 lines of sdcc's ChangeLog to snapshot
 
-2003-03-10  Bernhard Held <bernhard@bernhardheld.de>
+2003-03-10  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/bootstrap.mk: first upload, then remove-old-versions, not vice versa
 
-2003-03-03  Bernhard Held <bernhard@bernhardheld.de>
+2003-03-03  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/bootstrap.mk: put logs in $(STAGINGBASE), so that they survive sdcc-build-bootstrap.sh
 	* lib/variables.mk: put logs in $(STAGINGBASE), so that they survive sdcc-build-bootstrap.sh
 
-2003-02-27  Bernhard Held <bernhard@bernhardheld.de>
+2003-02-27  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/variables.mk: fix availability of $(HOSTNAME) on several CF platforms
 
-2003-02-26  Bernhard Held <bernhard@bernhardheld.de>
+2003-02-26  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/bootstrap.mk: delete snapshots versions, if there are more than 7 files in a single directory
 	separate build.log files for different TARGETOS
@@ -197,13 +201,13 @@
 	* local/usf-cf-sparc-linux-1.mk: added
 	* local/usf-cf-alpha-linux-1.mk: added
 
-2003-02-24  Bernhard Held <bernhard@bernhardheld.de>
+2003-02-24  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* components/sdcc.mk: added mcs51-stack-auto to the regression tests
 	* support/error-filter.sh: Removed several warnings, added 1 for mcs51-stack-auto
 	* lib/src-archive.mk: beautified
 
-2003-02-23  Bernhard Held <bernhard@bernhardheld.de>
+2003-02-23  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* Makefile: include building of source archives
 	* components/sdcc-extra.mk: add sdcc-extra to the source archives
@@ -211,33 +215,33 @@
 	* lib/bootstrap.mk: include building of source archives
 	* lib/src-archive.mk: added
 
-2003-02-23  Bernhard Held <bernhard@bernhardheld.de>
+2003-02-23  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* components/sdcc.mk: specify host, target and build for configure to avoid all warnings with autoconf 2.54 
 
-2003-02-16  Bernhard Held <bernhard@bernhardheld.de>
+2003-02-16  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: moved cross-tools to ~/local/
 
-2003-02-14  Bernhard Held <bernhard@bernhardheld.de>
+2003-02-14  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/usf-cf-ppc-macosx-1.mk: --disbale-ucsim
 	* components/sdcc.mk: moved share/doc to share/sdcc/doc
 
-2003-02-13  Bernhard Held <bernhard@bernhardheld.de>
+2003-02-13  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/usf-cf-ppc-macosx-1.mk: added
 	* components/sdcc.mk: regression test of gbz80 disabled because of (sim?) problems
 	* lib/cross.mk: don't touch TARGETCC and TARGETCXX, if it has already been set by local/*.mk
 
-2003-02-11  Bernhard Held <bernhard@bernhardheld.de>
+2003-02-11  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* support/readme-snapshot.txt: new file; will be the only file in the
 	snapshot archives' share/doc
 	* components/sdcc.mk: new target sdcc-docs; it cleans the doc dir after
 	install and copies readme-snapshot.txt to this dir
 
-2003-02-08  Bernhard Held <bernhard@bernhardheld.de>
+2003-02-08  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* sdcc-build-bootstrap.sh: create directory $BUILDROOT
 	* check before each cvs co, if pserver passwd in ~/.cvspass; if not: login
