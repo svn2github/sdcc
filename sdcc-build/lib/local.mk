@@ -10,4 +10,8 @@ ifneq ($(wildcard $(USERCONFIG)), )
 include $(USERCONFIG)
 endif
 
+HOSTTARGETCONFIG = local/$(HOSTNAME)-$(TARGETOS).mk
 
+ifneq ($(wildcard $(HOSTTARGETCONFIG)), )
+include $(HOSTTARGETCONFIG)
+endif

@@ -5,6 +5,7 @@ all: build
 
 include lib/variables.mk
 include lib/local.mk
+include lib/cross.mk
 include lib/ports.mk
 
 include components/sdcc.mk
@@ -18,7 +19,7 @@ include lib/bootstrap.mk
 build: dirs fetch-build-trees sdcc sdcc-install
 
 test-integrity:
-	@echo Target: $(TARGET)
+	@echo Target: $(TARGETOS)
 
 fail:
 	false
