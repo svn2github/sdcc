@@ -1,3 +1,7 @@
+2004-01-09  Bernhard Held <bernhard@bernhardheld.de>
+
+	* lib/src-archive.mk: added HOSTNAME to src-archiv name
+
 2003-10-28  Bernhard Held <bernhard@bernhardheld.de>
 
 	* local/x86-linux2.cf.sourceforge.net-i586-mingw32msvc.mk: added
