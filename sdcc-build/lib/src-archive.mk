@@ -8,8 +8,8 @@ _ARCHIVE_NAME              = $(_ARCHIVE_BASENAME).tar.gz
 
 %.src-archive: %.fetched $(SRCDIR) $(STAMPDIR)
 	mkdir -p $(_ARCHIVE_DIR)
-	cd $(ORIGDIR)/$(_ARCHIVE_SRC_TREE_BASENAME); \
-	  tar -czf $(_ARCHIVE_DIR)/$(_ARCHIVE_NAME) --exclude=CVS *
+	cd $(ORIGDIR); \
+	  tar -czf $(_ARCHIVE_DIR)/$(_ARCHIVE_NAME) --exclude=CVS $(_ARCHIVE_SRC_TREE_BASENAME) 
 	touch $@
 
 .PHONY: archive-src-trees
