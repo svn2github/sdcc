@@ -1,3 +1,7 @@
+2004-01-21  Bernhard Held <bernhard@bernhardheld.de>
+
+	* local/ppc-osx2.cf.sourceforge.net.mk: added, SF keeps changing host names :-( 
+
 2004-01-09  Bernhard Held <bernhard@bernhardheld.de>
 
 	* lib/src-archive.mk: added HOSTNAME to src-archiv name
