@@ -13,4 +13,4 @@ $(STAMPDIR)/%.copied: $(STAMPDIR)/%.fetched $(SRCDIR) $(STAMPDIR)
 
 fetch-orig-trees: $(ORIGSRCTREES)
 
-fetch-build-trees: $(SRCSRCTREES)
+fetch-build-trees: fetch-orig-trees $(SRCSRCTREES)

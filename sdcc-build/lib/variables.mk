@@ -13,7 +13,7 @@ ORIGDIR = orig
 BUILDDIR = $(TOPDIR)/build/$(TARGET)
 BINDIR= $(BUILDDIR)/bin
 
-CVSFLAGS += -z5
+CVSFLAGS += -z5 -Q
 STAMPDIR = stamps
 RSYNCFLAGS = -C -r
 
