@@ -3,8 +3,8 @@ BOOTSTRAPLOG=$(TOPDIR)/build.log
 # Machine to ssh into to send the build result out via email
 BOOTSTRAPSSHMAILSERVER=shell1.sourceforge.net
 # Address to send the build output to
-BOOTSTRAPLIST=michaelh@juju.net.nz
-#BOOTSTRAPLIST=sdcc-devel@lists.sourceforge.net
+#BOOTSTRAPLIST=michaelh@juju.net.nz
+BOOTSTRAPLIST=sdcc-devel@lists.sourceforge.net
 # Subject line to use in the build output email
 BOOTSTRAPSUBJECT=Automated build output ($(TARGET))
 # Stamp to append to the build name.
@@ -30,7 +30,7 @@ upload-tarball:
 	scp $(TARBALLNAME) $(SNAPSHOTDEST)
 
 send-build-mail:
-	cat $(BOOTSTRAPLOG) | grep -v -f $(TOPDIR)/support/error-filter.sh | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
+	cat $(BOOTSTRAPLOG) | egrep -v -f $(TOPDIR)/support/error-filter.sh | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
 
 kill-ssh-agent:
 	ssh-agent -k
