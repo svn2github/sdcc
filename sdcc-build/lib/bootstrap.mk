@@ -52,7 +52,7 @@ WEBHOST=shell1.sourceforge.net
 WEBSNAPSHOTDIR=/home/groups/s/sd/sdcc/htdocs/$(TARBALLBASE)
 
 # PENDING: Better naming
-crontab-spawn: update-bootstrap archive-src-trees build-all-targets
+crontab-spawn: update-bootstrap build-all-targets
 
 # Update the bootstrap shell file that is used by cron to spawn a
 # build

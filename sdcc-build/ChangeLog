@@ -1,3 +1,10 @@
+2004-02-07  Bernhard Held <bernhard@bernhardheld.de>
+
+	* lib/src-archive.mk: changed file name from sdcc.src-$(HOSTNAME) to
+	sdcc-src-$(HOSTNAME)-$(BUILDDATE)
+	* lib/bootstrap.mk (crontab-spawn): removed target archive-src-trees,
+	from now on this will be done by only one host
+
 2004-01-21  Bernhard Held <bernhard@bernhardheld.de>
 
 	* local/ppc-osx2.cf.sourceforge.net.mk: added, SF keeps changing host names :-( 
