@@ -1,3 +1,8 @@
+2003-05-06  Bernhard Held <bernhard@bernhardheld.de>
+
+	* lib/fetch.mk: sdcc checkout with retry
+	* components/sdcc-extra: sdcc-extra checkout with retry
+
 2003-05-05  Bernhard Held <bernhard@bernhardheld.de>
 
 	* sdcc-build-bootstrap.sh: retry `CVS co` in case of failure
