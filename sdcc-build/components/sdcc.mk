@@ -25,7 +25,9 @@ $(SDCCDIR)/sdccconf.h:
 sdcc: sdcc-build
 
 sdcc-build: sdcc-configured
-	$(MAKE) -C $(SDCCDIR) sdcc-cc sdcc-aslink sdcc-misc sdcc-packihx
+	$(MAKE) -C $(SDCCDIR) sdcc
+
+# PENDING: sdcc-cc sdcc-aslink sdcc-misc sdcc-packihx
 
 # PENDING: Explicit copy of everything in bin
 sdcc-install: sdcc-build
