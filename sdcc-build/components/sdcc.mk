@@ -28,11 +28,19 @@ sdcc: sdcc-build
 sdcc-build: sdcc-configured
 	$(MAKE) $(MAKEJOBFLAGS) -k -C $(SDCCDIR) sdcc
 
-# PENDING: Explicit copy of everything in bin
 # PENDING: Should depend on sdcc-build
-sdcc-install:
+sdcc-install: sdcc-targetos-install sdcc-bin-install sdcc-fromhost-install
+
+# PENDING: Explicit copy of everything in bin
+sdcc-targetos-install:
 	$(MAKE) -k -C $(SDCCDIR) prefix=$(BUILDDIR) install
 	cp -f $(SDCCDIR)/bin/* $(BUILDDIR)/bin
+
+# Copies files from the native host that couldn't be compiled.
+sdcc-fromhost-install:
+ifeq ($(CROSSCOMPILING), 1)
+	cd $(TOPDIR)/build/$(HOSTOS); cp -r doc share $(BUILDDIR)
+endif
 
 sdcc-device: sdcc-configured sdcc-build
 	$(MAKE) $(MAKEJOBFLAGS) -C $(SDCCDIR) sdcc-device
