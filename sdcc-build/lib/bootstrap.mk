@@ -65,17 +65,17 @@ update-bootstrap:
 # Does a test build for each target which does everything but send the
 # emails and upload the tarballs
 test-all-targets:
-	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-test-build TARGETOS=$$i; done
+	for i in $(TARGETOS) $(OTHERTARGETS); do echo "=== Building $$i ==="; $(MAKE) $(MAKESILENTFLAG) per-target-test-build TARGETOS=$$i; done
 
 # Builds for each target, including sending the results out in an
 # email and updating the snapshots directory
 build-all-targets:
-	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-build TARGETOS=$$i; done
+	for i in $(TARGETOS) $(OTHERTARGETS); do echo "=== Building $$i ==="; $(MAKE) $(MAKESILENTFLAG) per-target-build TARGETOS=$$i; done
 
 # Does a release build of each target by checking out from a label and
 # building for each target
 release-build:
-	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-release-build TARGETOS=$$i ISRELEASE=true 'CVSTAGFLAG=-r $(RELEASEVERSIONTAG)'; done
+	for i in $(TARGETOS) $(OTHERTARGETS); do echo "=== Building $$i ==="; $(MAKE) $(MAKESILENTFLAG) per-target-release-build TARGETOS=$$i ISRELEASE=true 'CVSTAGFLAG=-r $(RELEASEVERSIONTAG)'; done
 
 per-target-build: per-target-clean logged-build update-snapshots-dir send-build-mail
 
