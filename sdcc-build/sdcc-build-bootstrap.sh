@@ -65,7 +65,11 @@ export CVS_RSH=ssh
 # -s for quiet operation so that this can be run from a cronjob
 MAKEFLAGS=
 # Include local apps.
-PATH=$PATH:$HOME/local/bin
+if [ -d ~/local-$(uname -m)/bin ] ; then
+    PATH=$PATH:$HOME/local-$(uname -m)/bin
+elif [ -d ~/local/bin ] ; then
+    PATH=$PATH:$HOME/local/bin
+fi
 
 # Remove the old version
 rm -rf $BUILDROOT/$MODULE
