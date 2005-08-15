@@ -8,9 +8,8 @@ HOSTOS = i386-unknown-linux2.2
 TOOLSPREFIX = 
 # Path to the makensis binary
 NSISBIN = $(HOME)/local/bin
-# make's info page tells me, that this shouldn't be necessary, but without the
-# next line $(HOSTNAME) is empty on serveral SF platforms
-HOSTNAME = $(shell echo $$HOSTNAME)
+#extract the host name without domain to $(HOSTNAME)
+HOSTNAME = $(shell if [ $(shell expr $(shell hostname) : '.*\.') != '0' ]; then expr $(shell hostname) : '\([^.]*\).'; else echo $(shell hostname); fi)
 
 TOPDIR := $(shell /bin/pwd)
 

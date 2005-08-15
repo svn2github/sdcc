@@ -1,3 +1,11 @@
+2005-08-15 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk: extract the host name without domain to $(HOSTNAME)
+
+2005-08-08 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk: report the target OS
+
 2005-05-07  Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* lib/release.mk: updated for 2.5.0 release
