@@ -21,7 +21,7 @@ $(STAMPDIR)/sdcc-extra.fetched: $(ORIGDIR) $(STAMPDIR)
 	# grep -q :pserver:anonymous@cvs.sourceforge.net:/cvsroot/sdcc $(HOME)/.cvspass || \
 	#  cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/sdcc login
 	cd $(ORIGDIR); \
-	sh -c 'i=0; while ((i < 600)); do { \
+	bash -c 'i=0; while ((i < 600)); do { \
 	  ((i += 1)); \
 	    cvs $(CVSFLAGS) -d$(CVSACCESS)@cvs.sourceforge.net:/cvsroot/sdcc co sdcc-extra \
 	    && break ; \

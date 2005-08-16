@@ -9,7 +9,7 @@ $(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)
 	# grep -q pserver:anonymous@cvs.sourceforge.net:/cvsroot/`basename $@ .fetched` $(HOME)/.cvspass || \
 	# cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/`basename $@ .fetched` login
 	cd $(ORIGDIR); \
-	sh -c 'i=0; while ((i < 600)); do { \
+	bash -c 'i=0; while ((i < 600)); do { \
 	  ((i += 1)); \
 	  cvs -z3 $(CVSFLAGS) -d$(CVSACCESS)@cvs.sourceforge.net:/cvsroot/`basename $@ .fetched` co $(CVSTAGFLAG) `basename $@ .fetched` \
 	    && break ; \
