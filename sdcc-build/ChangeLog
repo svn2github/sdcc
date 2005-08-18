@@ -1,3 +1,9 @@
+2005-08-16 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc-extra.mk, lib/fetch.mk:
+	  use bash instead sh: scripts are bash specific
+	* sparc-solaris1.mk: added local/sparc-solaris1.mk
+
 2005-08-15 Borut Razem <borut.razem AT siol.net>
 
 	* lib/variables.mk: extract the host name without domain to $(HOSTNAME)
