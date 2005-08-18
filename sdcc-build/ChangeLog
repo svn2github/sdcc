@@ -1,3 +1,7 @@
+2005-08-18 Borut Razem <borut.razem AT siol.net>
+
+	* local/x86-linux2.mk, local/x86-linux2-i586-mingw32msvc.mk: added
+
 2005-08-16 Borut Razem <borut.razem AT siol.net>
 
 	* components/sdcc-extra.mk, lib/fetch.mk:
