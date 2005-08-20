@@ -22,7 +22,9 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <sys/time.h>
+#ifndef __sun__
 #include <getopt.h>
+#endif
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <netinet/in.h>

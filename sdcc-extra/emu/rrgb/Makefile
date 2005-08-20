@@ -7,11 +7,16 @@ CC=gcc
 OPTS = -DSEG -g
 #CFLAGS=-O3 -fomit-frame-pointer -funroll-loops -Wall $(OPTS)
 CFLAGS= $(OPTS) -Wall
+ifeq ($(shell uname -s),SunOS)
+LIBS = -lm -lsocket
+else
+LIBS = -lm
+endif
 
 all: rrgb
 
 rrgb: $(OBJS)
-	$(CC) $(OPTS) -lm -o rrgb $(OBJS)
+	$(CC) $(OPTS) $(LIBS) -o rrgb $(OBJS)
 
 clean:
 	$(RM) *.o *~ rrgb
