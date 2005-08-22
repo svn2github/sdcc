@@ -1,3 +1,8 @@
+2005-08-22 Borut Razem <borut.razem AT siol.net>
+
+	* local/sparc-solaris1.mk: use /usr/ccs/bin/strip instead the default
+	  GNU /usr/local/bin/strip, which has problems
+
 2005-08-18 Borut Razem <borut.razem AT siol.net>
 
 	* local/x86-linux2.mk, local/x86-linux2-i586-mingw32msvc.mk: added
