@@ -2,6 +2,8 @@
 
 	* local/sparc-solaris1.mk: use /usr/ccs/bin/strip instead the default
 	  GNU /usr/local/bin/strip, which has problems
+	* lib/cross.mk: define TRARGETSTRIP and TRAGETRANLIB only if not
+	  defined yet
 
 2005-08-18 Borut Razem <borut.razem AT siol.net>
 

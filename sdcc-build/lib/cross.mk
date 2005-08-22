@@ -4,5 +4,9 @@ endif
 ifeq ($(TARGETCXX),)
   TARGETCXX = $(TOOLSPREFIX)g++
 endif
-TARGETRANLIB = $(TOOLSPREFIX)ranlib
-TARGETSTRIP = $(TOOLSPREFIX)strip
+ifeq ($(TARGETRANLIB),)
+  TARGETRANLIB = $(TOOLSPREFIX)ranlib
+endif
+ifeq ($(TARGETSTRIP),)
+  TARGETSTRIP = $(TOOLSPREFIX)strip
+endif
