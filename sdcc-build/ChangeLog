@@ -1,3 +1,8 @@
+2005-08-23 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk: egrep on solaris doesn't understand -q option;
+	  stdout redirection to /dev/null is used instead
+
 2005-08-22 Borut Razem <borut.razem AT siol.net>
 
 	* local/sparc-solaris1.mk: use /usr/ccs/bin/strip instead the default
