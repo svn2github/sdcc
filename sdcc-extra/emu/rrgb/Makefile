@@ -9,8 +9,10 @@ OPTS = -DSEG -g
 CFLAGS= $(OPTS) -Wall
 ifeq ($(shell uname -s),SunOS)
 LIBS = -lm -lsocket
+STRIP = /usr/ccs/bin/strip
 else
 LIBS = -lm
+STRIP = strip
 endif
 
 all: rrgb
@@ -22,7 +24,8 @@ clean:
 	$(RM) *.o *~ rrgb
 
 install:
-	install --strip rrgb /usr/bin
+	install rrgb /usr/bin
+	$(STRIP) /usr/bin/rrgb
 
 src-dist: clean
 	tar czf ../rrgb-$(VER).tar.gz *
