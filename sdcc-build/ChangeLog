@@ -2,6 +2,8 @@
 
 	* components/sdcc.mk: added STRIP=$(TARGETSTRIP) to sdcc-targetos-install
 	  rule, so that the correct strip is used on sparc-solaris
+	* sdcc-build-bootstrap.sh: make it work on ppc-osx
+	* local/ppc-osx2.mk: added
 
 2005-08-23 Borut Razem <borut.razem AT siol.net>
 

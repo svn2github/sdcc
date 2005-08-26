@@ -65,8 +65,8 @@ export CVS_RSH=ssh
 # -s for quiet operation so that this can be run from a cronjob
 MAKEFLAGS=
 # Include local apps.
-if [ -d ~/local-$(uname -m)/bin ] ; then
-    PATH=$PATH:$HOME/local-$(uname -m)/bin
+if [ -d ~/local-$(uname -m | sed -e's/ /_/g')/bin ] ; then
+    PATH=$PATH:$HOME/local-$(uname -m | sed -e's/ /_/g')/bin
 elif [ -d ~/local/bin ] ; then
     PATH=$PATH:$HOME/local/bin
 fi
