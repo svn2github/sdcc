@@ -22,7 +22,7 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <sys/time.h>
-#ifndef __sun__
+#if !defined(__sun__) && !defined(__APPLE__)
 #include <getopt.h>
 #endif
 #include <sys/socket.h>

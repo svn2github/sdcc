@@ -1,3 +1,8 @@
+2005-08-27 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrgb/main.c: don't include getopt.h if __sun__ (sparc-solaris) or
+	  __APPLE__ (ppc-osx)
+
 2005-08-26 Borut Razem <borut.razem AT siol.net>
 
 	* emu/rrgb/Makefile: install --strip changed to 2 steps:
