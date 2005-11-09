@@ -1,3 +1,8 @@
+2005-11-09 Borut Razem <borut.razem AT siol.net>
+
+	* index.html: fixed doc request [ 1201748 ] Adding Maarten Brock's name to "who is
+	  SDCC" section
+
 2004-05-13 Borut Razem <borut.razem AT siol.net>
 
 	* index.html: info about SDCC 2.5.0 release
