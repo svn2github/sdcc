@@ -1,7 +1,8 @@
 2005-11-09 Borut Razem <borut.razem AT siol.net>
 
 	* index.html: fixed doc request [ 1201748 ] Adding Maarten Brock's name to "who is
-	  SDCC" section
+	  SDCC" section, [ 766655 ] target of link on SDCC links page has moved
+	* links.html: added to CVS
 
 2004-05-13 Borut Razem <borut.razem AT siol.net>
 
