@@ -1,6 +1,7 @@
 2005-11-10 Borut Razem <borut.razem AT siol.net>
 
-	* links.html: reformatted to use style.css
+	* index.html, links.html, previous.html, snap.html, snap_header.html, snap_footer.html, style.css:
+	  added to CVS, reformatted to use style.css, valid HTML 4.01 Transitional
 
 2005-11-09 Borut Razem <borut.razem AT siol.net>
 

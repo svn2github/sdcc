@@ -10,10 +10,7 @@ require 'snap_footer.html';
 
 function green_bar($text, $name)
 {
-	echo "\t<table border=\"0\" cellpadding=\"0\" cellspacing=\"1\" width=\"100%\" bgcolor=\"#5f9ea0\"><tr>\n";
-	echo "\t<td><font face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\"><i><b>";
-	echo "<a name=\"" . $name . "\"></a>" . $text . "</b></i></font></td>\n";
-	echo "\t</tr></table>\n";
+	echo "<h2><a name=\"" . $name . "\"></a>" . $text . "</h2>\n";
 }
 
 function display_files($dir, $subdir)
