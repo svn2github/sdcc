@@ -1,3 +1,16 @@
+2005-11-11 Borut Razem <borut.razem AT siol.net>
+
+	* links.html: fixed documentation requests:
+	  [ 1183225 ] Link suggestions
+	  [ 1036515 ] http://mikrokontrolery.of.pl/
+	  [ 1000901 ] Links
+	  [ 957885 ] Link to simulators
+	  [ 948959 ] Add a link Request
+	  [ 709221 ] SDCC/USB based micro programer (carl.norum@usask.ca)
+	  [ 1164546 ] DS89C450 on USB in a DIL40 package
+	* index.html, previous.html, snap_header.html, snap_footer.html:
+	  new Sourceforge icon, unified menu
+
 2005-11-10 Borut Razem <borut.razem AT siol.net>
 
 	* index.html, links.html, previous.html, snap.html, snap_header.html, snap_footer.html, style.css:
