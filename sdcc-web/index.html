@@ -4,14 +4,19 @@
 
 
 
+
+  
   
   
   <meta content="text/html; charset=UTF-8" http-equiv="content-type">
 
 
+
   
 
 
+  
+  
   
   
   
@@ -24,8 +29,10 @@
 
 
 
+
 <div align="left">
 <h1>SDCC - Small Device C Compiler</h1>
+
 
 
 
@@ -33,7 +40,9 @@
 
 
 
+
   <tbody>
+
 
 
 
@@ -41,13 +50,17 @@
 
 
 
+
       <td valign="top" width="15%">
+      
       
       
       <div class="menu" align="left"> <b><a href="http://sdcc.sourceforge.net/"><i>SDCC Home</i></a></b>
       
       
+      
       <div class="submenu"> <a href="#News"><i>News</i></a><br>
+
 
 
 
@@ -55,7 +68,9 @@
 
 
 
+
       <a href="#Download"><i>Download</i></a><br>
+
 
 
 
@@ -63,7 +78,9 @@
 
 
 
+
       <a href="#Who"><i>Who</i></a><br>
+
 
 
 
@@ -71,14 +88,18 @@
 
 
 
+
       </div>
+
 
 
 
       <b><a href="snap.php"><i>Snapshots</i></a></b>
       
       
+      
       <div class="submenu"> <a href="snap.php#Linux"><i>Linux</i></a><br>
+
 
 
 
@@ -86,7 +107,9 @@
 
 
 
+
       <a href="snap.php#Source"><i>Source</i></a><br>
+
 
 
 
@@ -94,15 +117,19 @@
 
 
 
+
       </div>
+
 
 
 
       <b><a href="doc/"><i>Documentation</i></a></b>
       
       
+      
       <div class="submenu"> <a href="doc/sdccman.html/"><i>SDCC
 Manual</i></a><br>
+
 
 
 
@@ -111,7 +138,9 @@ Suite</i></a><br>
 
 
 
+
       <a href="doc/cdbfileformat.html/"><i>CDB Format</i></a><br>
+
 
 
 
@@ -119,7 +148,9 @@ Suite</i></a><br>
 
 
 
+
       </div>
+
 
 
 
@@ -128,39 +159,49 @@ More!</i></a></b> </div>
 
 
 
+
       </td>
+
 
 
 
       <td width="85%">
       
       
+      
       <h2>What is SDCC?</h2>
 
 
 
+
+      
       
       
       <p> <b>SDCC</b> is a <b><i>Freeware,
 retargettable, optimizing ANSI - C compiler</i></b> that
 targets the <b><i>Intel 8051, Maxim 80DS390</i></b>
 and the<b><i> Zilog Z80 </i></b>based MCUs.
-Work is in progress on supporting the Motorola 68HC08 as well as
-Microchip PIC16 and PIC18 series. The entire source code for the
+Work is in progress on supporting the <span style="font-style: italic; font-weight: bold;">Motorola 68HC08</span> as well as
+      <span style="font-weight: bold; font-style: italic;">Microchip PIC16</span> and <span style="font-style: italic; font-weight: bold;">PIC18</span> series. The entire source code for the
 compiler is distributed
 under GPL. </p>
 
 
 
+
+      
       
       
       <p>Some of the features include: </p>
 
 
 
+
+      
       
       
       <ul>
+
 
 
 
@@ -170,8 +211,10 @@ linker.</li>
 
 
 
+
         <li>extensive MCU specific language extensions,
 allowing effective use of the underlying hardware.</li>
+
 
 
 
@@ -186,8 +229,10 @@ statements.</i> </li>
 
 
 
+
         <li>MCU specific optimisations, including a global
 register allocator.</li>
+
 
 
 
@@ -197,7 +242,9 @@ bit MCUs</li>
 
 
 
+
         <li>independent rule based peep hole optimizer.</li>
+
 
 
 
@@ -212,8 +259,10 @@ float </b> (<i>4</i> byte IEEE). </li>
 
 
 
+
         <li>the ability to add inline assembler code anywhere in
 a function.</li>
+
 
 
 
@@ -223,23 +272,30 @@ should be re-written in assembler.</li>
 
 
 
+
         <li>a good selection of automated regression tests.</li>
 
 
 
+
+      
       
       
       </ul>
 
 
 
+
+      
       
       
       <p>SDCC also comes with the <i>source level debugger</i><b>
-SDCDB</b>, using the current version of Daniel's s51 simulator. </p>
+SDCDB</b>, using the current version of Daniel's s51 simulator. (Currently not available on Win32 platforms). </p>
 
 
 
+
+      
       
       
       <p> <b>SDCC</b> was written by Sandeep Dutta
@@ -254,24 +310,30 @@ with all the users' and developers' input. </p>
 
 
 
-      
-      
-      <p>AVR and gbz80 ports are no longer maintained. </p>
-
-
 
       
       
-      <p> </p>
+      
+      <p><span style="font-weight: bold; font-style: italic;">AVR</span> and <span style="font-weight: bold; font-style: italic;">gbz80</span> ports are no longer maintained. </p>
 
 
 
+
+      
+      
+      
+
+
+
+      
       
       
       <h2><a name="News"></a>News</h2>
 
 
 
+
+      
       
       
       <p><b>May 12th, 2005: SDCC 2.5.0 released.</b>
@@ -281,6 +343,8 @@ download page</a>.</p>
 
 
 
+
+      
       
       
       <h2><a name="Platforms"></a>What
@@ -288,6 +352,8 @@ Platforms are Supported?</h2>
 
 
 
+
+      
       
       
       <p> Linux and Microsoft Windows are the primary targets,
@@ -298,6 +364,8 @@ X, Alpha, Sparc, and AMD Opteron machines. </p>
 
 
 
+
+      
       
       
       <p>SDCC will compile natively on Linux using using <a href="http://www.gnu.org">gcc</a>. Windows
@@ -310,6 +378,8 @@ a Linux host.</p>
 
 
 
+
+      
       
       
       <h2><a name="Download"></a>Downloading
@@ -317,6 +387,8 @@ SDCC</h2>
 
 
 
+
+      
       
       
       <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
@@ -325,6 +397,8 @@ and binary packages for Linux/x86, Mac OS X, and Windows. </p>
 
 
 
+
+      
       
       
       <p>SDCC is always under active development. Please consider
@@ -335,6 +409,8 @@ run across a bug, or if the above release is more than two months old. </p>
 
 
 
+
+      
       
       
       <p> Debian packages (many thanks to <a href="mailto:aurel32.AT.debian.org">Aurelien Jarno</a>):
@@ -342,9 +418,12 @@ run across a bug, or if the above release is more than two months old. </p>
 
 
 
+
+      
       
       
       <ul>
+
 
 
 
@@ -353,17 +432,22 @@ run across a bug, or if the above release is more than two months old. </p>
 
 
 
+
         <li> <a href="http://ftp.debian.org/debian/pool/main/s/sdcc/">http://ftp.debian.org/debian/pool/main/s/sdcc/</a>
         </li>
 
 
 
+
+      
       
       
       </ul>
 
 
 
+
+      
       
       
       <p>RPM packages (thanks to Mandrake, Conectiva and PLD
@@ -372,9 +456,12 @@ distributions): </p>
 
 
 
+
+      
       
       
       <ul>
+
 
 
 
@@ -383,17 +470,22 @@ distributions): </p>
 
 
 
+
         <li> <a href="http://rpmfind.net/">http://rpmfind.net/</a>
         </li>
 
 
 
+
+      
       
       
       </ul>
 
 
 
+
+      
       
       
       <p>The latest development source code can be accessed using
@@ -403,9 +495,11 @@ will fetch the latest sources:<br>
 
 
 
+
       <code> cvs
 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/sdcc
 login </code><br>
+
 
 
 
@@ -413,9 +507,11 @@ The password is empty and pressing [ENTER] will get you in. <br>
 
 
 
+
       <code>cvs -z3
 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/sdcc
 co sdcc</code> <br>
+
 
 
 
@@ -428,6 +524,8 @@ here</a>
 
 
 
+
+      
       
       
       <p>SourceForge has further documentation on accessing CVS <a href="http://sourceforge.net/docman/display_doc.php?docid=763&amp;group_id=1">
@@ -435,6 +533,8 @@ here</a>. </p>
 
 
 
+
+      
       
       
       <p>Before reporting a bug, please check your SDCC version
@@ -445,9 +545,12 @@ your bug report. For example: </p>
 
 
 
+
+      
       
       
       <p><code>sdcc/bin &gt; sdcc -v<br>
+
 
 
 
@@ -456,6 +559,8 @@ SDCC : mcs51/gbz80/z80/avr/ds390/pic14/TININative/xa51 2.3.8 (Feb 10
 
 
 
+
+      
       
       
       <h2><a name="Support"></a>Support for
@@ -463,6 +568,8 @@ SDCC</h2>
 
 
 
+
+      
       
       
       <p><b>SDCC</b> and the included support
@@ -474,9 +581,12 @@ chances of obtaining a helpful response. </p>
 
 
 
+
+      
       
       
       <ol>
+
 
 
 
@@ -487,8 +597,10 @@ Incomplete information will hamper your chance of a timely response. </li>
 
 
 
+
         <li>Specify the exact command you use to run SDCC, or
 attach your Makefile. </li>
+
 
 
 
@@ -497,17 +609,22 @@ platform and operating system. </li>
 
 
 
+
         <li>Provide an exact copy of any error message or
 incorrect output. </li>
 
 
 
+
+      
       
       
       </ol>
 
 
 
+
+      
       
       
       <p> <b>Please attempt to include these 4 important
@@ -525,9 +642,12 @@ sure to provide sample code if you are reporting a bug! </p>
 
 
 
+
+      
       
       
       <ul>
+
 
 
 
@@ -536,12 +656,15 @@ Page</a> , you are (X) here. </li>
 
 
 
+
         <li>Mailing list: [use "BUG REPORTING" below if you
 believe you have found a
 bug.]
           
           
+          
           <ul>
+
 
 
 
@@ -550,8 +673,10 @@ developer list</a> - for development work on SDCC </li>
 
 
 
+
             <li><a href="mailto:sdcc-user@lists.sourceforge.net">Send to the
 user list</a> - [preferred] all developers and all users. </li>
+
 
 
 
@@ -560,13 +685,17 @@ to the user list</a> </li>
 
 
 
+
+          
           
           
           </ul>
 
 
 
+
         </li>
+
 
 
 
@@ -578,9 +707,11 @@ you if they need more information to investigate and fix the bug. </li>
 
 
 
+
         <li><a href="http://sourceforge.net/tracker/?func=add&amp;group_id=599&amp;atid=536150">Website/Documentation
 Issues</a> - Please report erroneous,
 missing or outdated information </li>
+
 
 
 
@@ -591,9 +722,11 @@ easy online fill-in the blanks. </li>
 
 
 
+
         <li><a href="http://www.qsl.net/dl9sec/SDCC_OKR.html">Open
 Knowledge Web Site</a> - Run by <a href="mailto:thorsten.godau.AT.gmx.de">Thorsten Godau</a>
         </li>
+
 
 
 
@@ -603,9 +736,11 @@ on installing SDCC on an NT box </li>
 
 
 
+
         <li><a href="cygwin_help.html" target="new">Installing
 Cygwin on a Win32 box</a> (an email from <a href="mailto:mitja.kukovec.AT.uni-mb.si">Mitja Kukovec</a>
 to the SDCC mailing list)<br>
+
 
 
 
@@ -613,21 +748,28 @@ to the SDCC mailing list)<br>
 
 
 
+
+      
       
       
       </ul>
 
 
 
+
+      
       
       
       <h2><a name="Who"></a>Who is SDCC?</h2>
 
 
 
+
+      
       
       
       <ul>
+
 
 
 
@@ -637,9 +779,11 @@ Dutta &lt;sandeep.AT.users.sourceforge.net&gt;</a>
 
 
 
+
         <li><a href="mailto:jlvern.AT.writeme.com">Jean
 Loius-VERN &lt;jlvern.AT.writeme.com&gt;</a> -
 substantial improvement in the back-end code generation.</li>
+
 
 
 
@@ -649,9 +793,11 @@ Drotos &lt;drdani.AT.mazsola.iit.uni-miskolc.hu&gt;</a>
 
 
 
+
         <li><a href="mailto:kevin.AT.vigor.nu">Kevin
 Vigor &lt;kevin.AT.vigor.nu&gt;</a>
 - numerous enhancements and bug fixes to the Dallas ds390 tree.</li>
+
 
 
 
@@ -661,9 +807,11 @@ Vigor &lt;kevin.AT.vigor.nu&gt;</a>
 
 
 
+
         <li><a href="mailto:scott.AT.dattalo.com">Scott
 Dattalo &lt;scott.AT.dattalo.com&gt;</a> -
 Microchip PIC controller port of sdcc</li>
+
 
 
 
@@ -673,9 +821,11 @@ support, winbin builds, and an occasional bug.</li>
 
 
 
+
         <li><a href="mailto:bernhard.AT.bernhardheld.de">Bernhard
 Held &lt;bernhard.AT.bernhardheld.de&gt;</a>
 - nightly builds and general housekeeping</li>
+
 
 
 
@@ -685,9 +835,11 @@ Ferlemann &lt;Frieder.Ferlemann.AT.web.de&gt;</a>
 
 
 
+
         <li><a href="mailto:jesusc.AT.ece.ubc.ca">Jesus
 Calvino-Fraga &lt;jesusc.AT.ece.ubc.ca&gt;</a>
 - math functions, AOMF51, linker improvements</li>
+
 
 
 
@@ -698,9 +850,11 @@ improvements, bug fixing, ...</li>
 
 
 
+
         <li><a href="mailto:vrokas.AT.otenet.gr">Vangelis
 Rokas &lt;vrokas.AT.otenet.gr&gt;</a>
 - PIC16 port development for Microchip PIC18F microcontrollers</li>
+
 
 
 
@@ -710,9 +864,11 @@ Petrich &lt;epetrich.AT.users.sourceforge.net&gt;</a>
 
 
 
+
         <li><a href="mailto:dave.AT.kd0yu.com">Dave
 Helton &lt;dave.AT.kd0yu.com&gt;</a>
 - website design</li>
+
 
 
 
@@ -722,23 +878,30 @@ optimizations and website maintenance.</li>
 
 
 
+
         <li><a href="mailto:michaelh.AT.juju.net.nz">Michael
 Hope &lt;michaelh.AT.juju.net.nz&gt;</a> - initial Z80
 port, additional coding and bug fixes.</li>
 
 
 
+
         <li><a href="mailto:sourceforge.brock.AT.dse.nl">Maarten
-Brock &lt;sourceforge.brock.AT.dse.nl&gt;</a> -</li>
+Brock &lt;sourceforge.brock.AT.dse.nl&gt;</a> - several bug fixes and improvements, esp. for mcs51 port</li>
+        <li><a href="mailto:RNeider.AT.web.de">Raphael Neider &lt;RNeider.AT.web.de&gt;</a> - bug fixes and optimizations for PIC16, completion of the PIC14 port</li>
 
 
 
+
+      
       
       
       </ul>
 
 
 
+
+      
       
       
       <p>SDCC has had help from a number of external sources,
@@ -746,9 +909,12 @@ including: </p>
 
 
 
+
+      
       
       
       <ul>
+
 
 
 
@@ -758,9 +924,11 @@ Baldwin &lt;baldwin.AT.shop-pdp.kent.edu&gt;</a>
 
 
 
+
         <li><a href="mailto:jhartman.AT.compuserve.com">John
 Hartman &lt;jhartman.AT.compuserve.com&gt;</a>
 - Porting ASXXX&nbsp;&nbsp; and ASLINK for 8051.</li>
+
 
 
 
@@ -770,13 +938,16 @@ Demers - Conservative garbage collector for C &amp; C++.</li>
 
 
 
+
         <li><a href="mailto:dso.AT.usa.net">Dmitry
 S. Obukhov &lt;dso.AT.usa.net&gt;</a> - malloc and
 serial I/O routines.</li>
 
 
 
+
         <li>Unknown - for the GNU C - preprocessor</li>
+
 
 
 
@@ -786,24 +957,30 @@ Sandeep's wife, for her patience and support.</li>
 
 
 
+
+      
       
       
       </ul>
 
 
 
+
       
       
-      <p> </p>
+      
 
 
 
+      
       
       
       <h2>Past news</h2>
 
 
 
+
+      
       
       
       <p><i><b>February 26th, 2004 - SDCC 2.4.0
@@ -811,6 +988,8 @@ released</b></i></p>
 
 
 
+
+      
       
       
       <p>Source code and binaries for Mac OS X, Microsoft
@@ -820,6 +999,8 @@ download page</a>. SDCC has been tested on Mandrake 9.2, Windows
 
 
 
+
+      
       
       
       <p><i><b>September 29, 2001 - Version 2.3.0
@@ -827,6 +1008,8 @@ released</b></i></p>
 
 
 
+
+      
       
       
       <p>Version 2.3.0 is now available. This is the first
@@ -835,12 +1018,16 @@ significantly improved Z80 support.</p>
 
 
 
+
+      
       
       
       <p><i><b>July 11, 2001 - Winbin updates</b></i></p>
 
 
 
+
+      
       
       
       <p>Recently, Karl Bongers has put together a beta for win32
@@ -860,10 +1047,13 @@ section below.<br>
 
 
 
+
       </p>
 
 
 
+
+      
       
       
       <p>If you run a win32 box I recommend installing Karl's
@@ -874,6 +1064,8 @@ remove the old source dir and do a fresh checkout.</p>
 
 
 
+
+      
       
       
       <p>As always, there is lots going on in CVS. There are a
@@ -898,6 +1090,8 @@ this should help tremendously.</p>
 
 
 
+
+      
       
       
       <p>There are a few bugs left that are keeping the
@@ -908,6 +1102,8 @@ the next few months.</p>
 
 
 
+
+      
       
       
       <p>Special thanks to Johan Knol for keeping the ball
@@ -916,12 +1112,16 @@ is working their paying jobs.</p>
 
 
 
+
+      
       
       
       <p><i><b>April 24, 2001 - Notes</b></i></p>
 
 
 
+
+      
       
       
       <p>There has been a <i><b>lot</b></i>
@@ -936,12 +1136,16 @@ the text is in the SUPPORT section.</p>
 
 
 
+
+      
       
       
       <p><i><b>February 20, 2001 - Pic Port</b></i></p>
 
 
 
+
+      
       
       
       <p>Scott has been making great strides on the pic port.
@@ -964,6 +1168,8 @@ a matter of time ;-) Tip-o-the-hat to Scott.</p>
 
 
 
+
+      
       
       
       <p>Sandeep's daytime job keeps him from doing as much as he
@@ -984,6 +1190,8 @@ OKR</a>
 
 
 
+
+      
       
       
       <p><i><b>January 25, 2001 -- SDCC v2.2.2 is
@@ -991,6 +1199,8 @@ still in CVS</b></i></p>
 
 
 
+
+      
       
       
       <p>Due to numerous additions to SDCC to support the Dallas
@@ -1003,6 +1213,8 @@ lists too.</p>
 
 
 
+
+      
       
       
       <p>Some (if not all) of SDCC users will be glad to know
@@ -1017,6 +1229,8 @@ included when you update your cvs directories.</p>
 
 
 
+
+      
       
       
       <p><i><b>SDCC v2.2.1 is out!!! Check it out in
@@ -1024,13 +1238,17 @@ the <a href="#download">download</a> section<br>
 
 
 
+
       </b></i></p>
 
 
 
+
+      
       
       
       <p>This is a milestone release for the development group.<br>
+
 
 
 
@@ -1038,13 +1256,17 @@ New stuff includes:</p>
 
 
 
+
+      
       
       
       <ul>
 
 
 
+
         <li>bug fixes (always bug fixes) </li>
+
 
 
 
@@ -1054,7 +1276,9 @@ before, not perfect. </li>
 
 
 
+
         <li>changes to the assembler </li>
+
 
 
 
@@ -1062,7 +1286,9 @@ before, not perfect. </li>
 
 
 
+
         <li>faster compile times </li>
+
 
 
 
@@ -1070,12 +1296,16 @@ before, not perfect. </li>
 
 
 
+
+      
       
       
       </ul>
 
 
 
+
+      
       
       
       <p>There are more new command line switches to SDCC.. PAY
@@ -1084,6 +1314,8 @@ documentation!</p>
 
 
 
+
+      
       
       
       <p>There have been additions to the SDCC developer team, we
@@ -1091,9 +1323,12 @@ would like to welcome</p>
 
 
 
+
+      
       
       
       <p>Kevin Vigor and Johan Knol<br>
+
 
 
 
@@ -1101,10 +1336,13 @@ And now... Scott Dattalo<br>
 
 
 
+
       </p>
 
 
 
+
+      
       
       
       <p><a href="previous.html">Previous News</a>
@@ -1112,12 +1350,16 @@ And now... Scott Dattalo<br>
 
 
 
+
+      
       
       
       <hr>
       
       
+      
       <table border="0" cellpadding="0" cellspacing="2" width="100%">
+
 
 
 
@@ -1125,7 +1367,9 @@ And now... Scott Dattalo<br>
 
 
 
+
           <tr>
+
 
 
 
@@ -1134,9 +1378,12 @@ And now... Scott Dattalo<br>
 
 
 
+
             <td><br>
 
+
             </td>
+
 
 
 
@@ -1144,7 +1391,9 @@ And now... Scott Dattalo<br>
 
 
 
+
           <tr>
+
 
 
 
@@ -1152,7 +1401,9 @@ And now... Scott Dattalo<br>
 
 
 
+
             <td><a href="http://validator.w3.org/check?uri=referer"><img style="border: 0px solid ; width: 88px; height: 31px;" src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional"></a><br>
+
 
 
 
@@ -1161,7 +1412,9 @@ And now... Scott Dattalo<br>
 
 
 
+
           </tr>
+
 
 
 
@@ -1169,7 +1422,9 @@ And now... Scott Dattalo<br>
 
 
 
+
             <td><br>
+
 
 
 
@@ -1177,12 +1432,15 @@ And now... Scott Dattalo<br>
 
 
 
+
             <td><br>
 
 
 
+
 Last updated:
-November 11, 2005</td>
+November 12, 2005</td>
+
 
 
 
@@ -1190,12 +1448,16 @@ November 11, 2005</td>
 
 
 
+
+        
         
         
         </tbody>
       
       
+      
       </table>
+
 
 
 
@@ -1203,10 +1465,13 @@ November 11, 2005</td>
 
 
 
+
     </tr>
 
 
 
+
+  
   
   
   </tbody>
@@ -1214,7 +1479,9 @@ November 11, 2005</td>
 
 
 
+
 </div>
+
 
 
 
