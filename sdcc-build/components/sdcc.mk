@@ -28,7 +28,7 @@ $(SDCCDIR)/sdccconf.h:
 sdcc: sdcc-build
 
 sdcc-build: sdcc-configured
-	$(MAKE) $(MAKEJOBFLAGS) -k -C $(SDCCDIR) sdcc
+	$(MAKE) $(MAKEJOBFLAGS) -k -C $(SDCCDIR) sdcc SILENT=1
 
 # PENDING: Should depend on sdcc-build
 sdcc-install: sdcc-targetos-install sdcc-fromhost-install sdcc-docs

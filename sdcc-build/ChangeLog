@@ -1,3 +1,8 @@
+2005-11-17 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk: itroduced SILENT option to make building of pic16
+	  libraries less verbose - used for nightly snapshot build
+
 2005-08-26 Borut Razem <borut.razem AT siol.net>
 
 	* components/sdcc.mk: added STRIP=$(TARGETSTRIP) to sdcc-targetos-install
