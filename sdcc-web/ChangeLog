@@ -1,6 +1,7 @@
 2005-11-23 Borut Razem <borut.razem AT siol.net>
 
-	* left_menu.inc, index.php, links.php: added - common left menu
+	* left_menu.inc, index.php, links.php, snap_header.php, snap.php:
+	  added - common left menu
 
 2005-11-12 Borut Razem <borut.razem AT siol.net>
 

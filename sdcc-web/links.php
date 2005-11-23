@@ -6,6 +6,8 @@
 
 
 
+
+  
   
   
   
@@ -16,6 +18,8 @@
 
 
 
+
+  
   
   
   
@@ -25,9 +29,12 @@
 
 
 
+
   
 
 
+  
+  
   
   
   
@@ -46,8 +53,10 @@
 
 
 
+
 <div align="left">
 <h1>SDCC - Links and More!</h1>
+
 
 
 
@@ -60,7 +69,9 @@
 
 
 
+
   <tbody>
+
 
 
 
@@ -72,9 +83,12 @@
 
 
 
-      <td valign="top" width="15%"><?php echo(file_get_contents('./left_menu.php'));?><br>
+
+      <td valign="top" width="15%"><?php echo(file_get_contents('./left_menu.inc'));?><br>
+
 
       </td>
+
 
 
 
@@ -85,18 +99,22 @@
       
       
       
+      
       <h2>Links - General</h2>
 
 
 
 
 
+
+      
       
       
       
       
       <p><a href="http://www.willem.org/nprome.htm">PcGenerator</a>
 EpromProgrammer,Pic24C and more...<br>
+
 
 
 
@@ -109,8 +127,10 @@ EpromProgrammer,Pic24C and more...<br>
 
 
 
+
 Sensorella</a>
 - Dual 8051 board, ADCs and <i>lots</i> of I/O.<br>
+
 
 
 
@@ -125,9 +145,11 @@ ethernet and Dallas 390's)<br>
 
 
 
+
       <a href="http://www.kd0yu.com">KD0YU.COM</a>
 - Misc stuff, mirrors SDCC when it's not doing anything else. (Oct,2000
 - Re-designed)<br>
+
 
 
 
@@ -141,9 +163,11 @@ microcontrollers.com (Arrow Electronics... what a joke!)<br>
 
 
 
+
       <span style="font-style: italic; color: rgb(255, 102, 0);">(Page Not Found)</span>
       <a href="http://www.aesmicro.com/8051.htm">AES Micro</a>
 - nice but a bit expensive, may be just what some one needs though.<br>
+
 
 
 
@@ -158,9 +182,11 @@ too.<br>
 
 
 
+
       <a href="mailto:karl@turbobit.com">Karl
 Bongers</a> has a start on a <a href="http://www.turbobit.com/sdcc.html">Summary/FAQ</a>
 about SDCC. (*highly* recommended reading!)<br>
+
 
 
 
@@ -174,9 +200,11 @@ I/O. Kits available.<br>
 
 
 
+
       <a href="http://www.flexgate.de">FlexGate</a>
 - '552 based boards with onboard ethernet. (German, not much on the web
 site yet)<br>
+
 
 
 
@@ -189,8 +217,10 @@ site yet)<br>
 
 
 
+
       <a href="http://www.bhargavaz.net/main.html">www.bhargavaz.net</a>
 -<br>
+
 
 
 
@@ -199,6 +229,7 @@ site yet)<br>
       <a href="http://www.dcd.pl/">Digital Core Design</a>&nbsp;-
 private Intellectual Property (IP) Core provider and System-on-Chip
 (SoC) design house<br>
+
 
 
 
@@ -216,9 +247,11 @@ operating&nbsp;systems.<br>
 
 
 
+
       <a href="http://norum.homeunix.net/%7Ecarl/usbp/">USBp
 Serial Device Programmer</a> - USB-based microcontroller
 programming system for Mac OS X, Linux, BSD, and Windows<br>
+
 
 
 
@@ -233,9 +266,11 @@ Major Microcontroller Architectures<br>
 
 
 
+
       <a href="http://www.soudez.be/">www.soudez.be</a>
 -&nbsp;<span class="genmed"><font face="Arial, sans-serif"><span style="text-decoration: none;">DS89C450</span></font></span>
 system over USB port in a standard DIL40 package<br>
+
 
 
 
@@ -247,6 +282,8 @@ system over USB port in a standard DIL40 package<br>
 
 
 
+
+      
       
       
       
@@ -257,6 +294,8 @@ system over USB port in a standard DIL40 package<br>
 
 
 
+
+      
       
       
       
@@ -269,8 +308,10 @@ Link updated Jan 6,2001<br>
 
 
 
+
       <a href="http://www.programmersheaven.com/zone5/cat27/index.htm">Programmers
 Heaven</a> - 8051 resources, sample code and compilers<br>
+
 
 
 
@@ -285,9 +326,11 @@ drive interface with C code.<br>
 
 
 
+
       <a href="http://www.pjrc.com/tech/8051/index.html">Paul
 Stoffregen's Home Page</a> - Home of PAULMON and other code
 snippets.<br>
+
 
 
 
@@ -300,8 +343,10 @@ snippets.<br>
 
 
 
+
       <a href="http://www.freertos.org/">FreeRTOS</a>
 - a portable, open source, mini Real Time Kernel<br>
+
 
 
 
@@ -313,6 +358,8 @@ snippets.<br>
 
 
 
+
+      
       
       
       
@@ -323,6 +370,8 @@ snippets.<br>
 
 
 
+
+      
       
       
       
@@ -333,9 +382,11 @@ board HOWTO using Press &amp; Peel Tech Film</a><br>
 
 
 
+
       <span style="color: rgb(255, 102, 0); font-style: italic;">
 (Page Not Found)</span> <a href="http://www.teckniks.com">Teckniks</a>
 - makers of the Press-n-Peel transfer film.<br>
+
 
 
 
@@ -350,12 +401,15 @@ Win32 or Linux.<br>
 
 
 
+
       </p>
 
 
 
 
 
+
+      
       
       
       
@@ -366,12 +420,15 @@ Win32 or Linux.<br>
 
 
 
+
+      
       
       
       
       
       <p><span style="color: rgb(255, 102, 0); font-style: italic;">(Page Not Found)</span> <a href="http://www.hitex.com/chipdir/chipdir.htm">The
 Chip Directory</a> - Searchable web space for all kinds of semi's<br>
+
 
 
 
@@ -384,9 +441,11 @@ time. Need info? Go here!<br>
 
 
 
+
       <span style="color: rgb(255, 102, 0); font-style: italic;">
 (Page Not Found)</span> <a href="http://www.iox.co.za/%7Eepanorama.html">ePanorama</a>
 - interesting site for electronic information.<br>
+
 
 
 
@@ -398,6 +457,8 @@ time. Need info? Go here!<br>
 
 
 
+
+      
       
       
       
@@ -408,6 +469,8 @@ time. Need info? Go here!<br>
 
 
 
+
+      
       
       
       
@@ -416,6 +479,7 @@ time. Need info? Go here!<br>
 - a
 small embedded ethernet add-on for micros. Full internet node support.
 This is an open hardware and software project.<br>
+
 
 
 
@@ -432,6 +496,8 @@ what not to do.</p>
 
 
 
+
+      
       
       
       
@@ -442,6 +508,8 @@ what not to do.</p>
 
 
 
+
+      
       
       
       
@@ -453,12 +521,15 @@ the Optrex DM-5000 series and others) </p>
 
 
 
+
+      
       
       
       
       
       <p> A couple of
 pictures of an lcd panel with a familiar phrase.<br>
+
 
 
 
@@ -471,8 +542,10 @@ Feb 15,2000 10:54:02 PM (133K jpg) <br>
 
 
 
+
       <a href="lcd/MVC-006X.JPG">LCD picture 2 - close up</a>
 Feb 15,2000 10:57:06 PM (139K jpg)<br>
+
 
 
 
@@ -486,17 +559,21 @@ written by <a href="mailto:dave@kd0yu.com">Dave Helton</a>,
 
 
 
+
       </p>
 
 
 
 
 
+
+      
       
       
       
       
       <p>Note:<br>
+
 
 
 
@@ -513,11 +590,14 @@ made a better mouse trap... please email me and let me know.</p>
 
 
 
+
+      
       
       
       
       
       <h2>Links - simulators</h2>
+
 
 
 
@@ -532,13 +612,16 @@ microcontrollers distributed under the GNU General Public License<br>
 
 
 
+
       <a href="http://mazsola.iit.uni-miskolc.hu/%7Edrdani/embedded/ucsim/">&micro;Csim</a>
 - the old ucsim page
       
       
       
       
+      
       <hr>
+      
       
       
       
@@ -552,6 +635,8 @@ note.</i></p>
 
 
 
+
+      
       
       
       
@@ -563,6 +648,8 @@ us your link!</a></p>
 
 
 
+
+      
       
       
       
@@ -572,7 +659,9 @@ us your link!</a></p>
       
       
       
+      
       <table border="0" cellpadding="0" cellspacing="2" width="100%">
+
 
 
 
@@ -584,7 +673,9 @@ us your link!</a></p>
 
 
 
+
           <tr>
+
 
 
 
@@ -597,7 +688,9 @@ us your link!</a></p>
 
 
 
+
             <td><a href="file:///C:/cvs/sdcc_latest/sdcc-web/links.html"><br>
+
 
 
 
@@ -609,7 +702,9 @@ us your link!</a></p>
 
 
 
+
           </tr>
+
 
 
 
@@ -621,13 +716,16 @@ us your link!</a></p>
 
 
 
+
             <td><i>This Site Hosted by</i> <a href="http://sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=599&amp;type=1" alt="SourceForge.net Logo" border="0" height="31" width="88"></a></td>
 
 
 
 
 
+
             <td><a href="http://validator.w3.org/check?uri=referer"><img style="border: 0px solid ; width: 88px; height: 31px;" src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional"></a><br>
+
 
 
 
@@ -640,7 +738,9 @@ us your link!</a></p>
 
 
 
+
           </tr>
+
 
 
 
@@ -652,7 +752,9 @@ us your link!</a></p>
 
 
 
+
             <td><br>
+
 
 
 
@@ -664,7 +766,9 @@ us your link!</a></p>
 
 
 
+
             <td><br>
+
 
 
 
@@ -677,12 +781,15 @@ November 23, 2005</td>
 
 
 
+
           </tr>
 
 
 
 
 
+
+        
         
         
         
@@ -692,7 +799,9 @@ November 23, 2005</td>
       
       
       
+      
       </table>
+
 
 
 
@@ -706,12 +815,15 @@ November 23, 2005</td>
 
 
 
+
     </tr>
 
 
 
 
 
+
+  
   
   
   
@@ -723,13 +835,16 @@ November 23, 2005</td>
 
 
 
+
 </p>
 
 
 
 
 
+
 </div>
+
 
 
 

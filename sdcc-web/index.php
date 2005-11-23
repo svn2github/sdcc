@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 
@@ -41,7 +41,7 @@
 
 
 
-      <td valign="top" width="15%"><?php echo(file_get_contents('./left_menu.php'));?>
+      <td valign="top" width="15%"><?php echo(file_get_contents('./left_menu.inc'));?>
       </td>
 
 
