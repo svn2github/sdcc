@@ -1,6 +1,6 @@
 <?php
 
-require 'snap_header.html';
+require 'snap_header.php';
 
 parse_dir("snapshots");
 
