@@ -1,3 +1,7 @@
+2005-24-17 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk: added SILENT=1 option
+
 2005-11-17 Borut Razem <borut.razem AT siol.net>
 
 	* components/sdcc.mk: itroduced SILENT option to make building of pic16
