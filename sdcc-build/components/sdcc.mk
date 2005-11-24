@@ -34,7 +34,7 @@ sdcc-build: sdcc-configured
 sdcc-install: sdcc-targetos-install sdcc-fromhost-install sdcc-docs
 
 sdcc-targetos-install:
-	$(MAKE) -k -C $(SDCCDIR) prefix=$(BUILDDIR) STRIP=$(TARGETSTRIP) $(SDCCINSTALLFLAGS) install
+	$(MAKE) -k -C $(SDCCDIR) prefix=$(BUILDDIR) STRIP=$(TARGETSTRIP) $(SDCCINSTALLFLAGS) install SILENT=1
 
 # Copies files from the native host that couldn't be compiled.
 sdcc-fromhost-install:
