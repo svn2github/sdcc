@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="content-type">
@@ -90,7 +90,7 @@ and <b>Microsoft Windows</b>
 are the primary targets,
 although <b>SDCC</b>
 is regularly compiled on the <b>Sourceforge
-Compile Farm</b> which includes <b>x86</b>, <b ="">AMD Opteron (AMD64)</b>,
+Compile Farm</b> which includes <b>x86</b>, <b>AMD Opteron (AMD64)</b>,
       <b>Alpha</b>,
       <b>Mac OS
 X</b>, and <b>Sparc</b> machines. </p>

@@ -167,7 +167,6 @@ us your link!</a></p>
     </tr>
   </tbody>
 </table>
-</p>
 </div>
 </body>
 </html>
