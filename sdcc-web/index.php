@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
   <title>SDCC - Small Device C Compiler</title>
-  <link rel="stylesheet" href="style.css" type="text/css">
+  <link type="text/css" href="style.css" rel="stylesheet" />
 </head>
 <body link="teal" vlink="#483d8b">
 <div align="left">
@@ -457,7 +457,7 @@ would like to welcome</p>
       <p>Kevin Vigor and Johan Knol<br />
 And now... Scott Dattalo<br />
       </p>
-      <p><a href="previous.php">Previous News</a>
+      <p><a href="previous.php">Previous News</a></p>
 <?php include('./footer.php')?>
       </td>
     </tr>

@@ -28,12 +28,12 @@ function display_files($dir, $subdir)
     array_multisort($file_date, SORT_DESC, $file_name, $file_size);
   }
 
-  echo "<p><img src=\"/images/dir.gif\" border=\"0\" align=bottom width=20 height=22 alt=\"Directory\">";
+  echo "<p><img src=\"/images/dir.gif\" border=\"0\" align=\"bottom\" width=\"20\" height=\"22\" alt=\"Directory\" />";
   echo "<font face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\"><b><i>";
   if (is_file("$dir/../snapshots.desc/$subdir.desc")) {
     include "$dir/../snapshots.desc/$subdir.desc";
   }
-  echo "($subdir)</i></b></font>\n";
+  echo "($subdir)</i></b></font></p>\n";
   echo "<div style=\"padding-left: 2em\">\n";
   echo "<table width=\"100%\" border=\"0\" cellpadding=\"2\" cellspacing=\"1\"><tr>";
   echo "<th align=\"left\"><font color=\"#660000\" face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\">Filename</font></th>";
@@ -51,7 +51,7 @@ function display_files($dir, $subdir)
       $modDate</td></tr>";
     echo $dispthisdir;
   }
-  echo "</table></div>\n<p>\n";
+  echo "</table></div>\n";
 }
 
 
