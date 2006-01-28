@@ -1,6 +1,14 @@
 2006-01-28 Borut Razem <borut.razem AT siol.net>
 
 	* local/x86-linux1.mk, local/x86-linux1-i586-mingw32msvc.mk: added
+	* x86-linux2.cf.sourceforge.net-i586-mingw32msvc.mk,
+	  x86-linux2.cf.sourceforge.net.mk,
+	  usf-cf-x86-linux-2-i586-mingw32msvc.mk,
+	  usf-cf-x86-linux-2.cf.sourceforge.net-i586-mingw32msvc.mk,
+	  usf-cf-x86-linux-2.cf.sourceforge.net.mk,
+	  usf-cf-x86-linux-2.mk,
+	  usf-cf-x86-linux-1-i586-mingw32msvc.mk,
+	  usf-cf-x86-linux-1.mk: removed
 
 2005-11-24 Borut Razem <borut.razem AT siol.net>
 
@@ -337,4 +345,3 @@
 	* sdcc-build-bootstrap.sh: create directory $BUILDROOT
 	* check before each cvs co, if pserver passwd in ~/.cvspass; if not: login
 	* lib/bootstrap: include tidy-up-win32-release.sh; recode installed in ~/local 
-
