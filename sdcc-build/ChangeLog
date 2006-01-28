@@ -1,4 +1,8 @@
-2005-24-17 Borut Razem <borut.razem AT siol.net>
+2006-01-28 Borut Razem <borut.razem AT siol.net>
+
+	* local/x86-linux1.mk, local/x86-linux1-i586-mingw32msvc.mk: added
+
+2005-11-24 Borut Razem <borut.razem AT siol.net>
 
 	* components/sdcc.mk: added SILENT=1 option
 
