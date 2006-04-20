@@ -75,7 +75,7 @@ build-all-targets:
 # Does a release build of each target by checking out from a label and
 # building for each target
 release-build:
-	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-release-build TARGETOS=$$i ISRELEASE=true 'CVSTAGFLAG=-r $(RELEASEVERSIONTAG)'; done
+	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-release-build TARGETOS=$$i ISRELEASE=true 'SVNBRANCH=$(RELEASEVERSIONTAG)'; done
 
 per-target-build: per-target-clean logged-build update-snapshots-dir send-build-mail
 

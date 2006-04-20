@@ -14,8 +14,6 @@ SRCTREES += sdcc
 CLEANTARGETS += sdcc-clean sdcc-device-clean
 # PENDING
 INSTALLTARGETS += sdcc-install
-# PENDING
-CVSREPOSITORIES += cvs.sourceforge.net:/cvsroot/sdcc
 # Add sdcc to the list of source trees, that are archieved and copied to the snapshot page
 ARCHIVETREES += sdcc
 

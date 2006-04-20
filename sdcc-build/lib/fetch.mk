@@ -2,18 +2,20 @@
 ORIGSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.fetched)
 SRCSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.copied)
 
-# CVSACCESS is now set through variables.mk
-
-# Default rule for fetching a tree from cvs
+# Default rule for fetching a tree from svn
 $(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)
-	# grep -q pserver:anonymous@cvs.sourceforge.net:/cvsroot/`basename $@ .fetched` $(HOME)/.cvspass || \
-	# cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/`basename $@ .fetched` login
 	cd $(ORIGDIR); \
 	bash -c 'i=0; while ((i < 600)); do { \
 	  ((i += 1)); \
-	  cvs -z3 $(CVSFLAGS) -d$(CVSACCESS)@cvs.sourceforge.net:/cvsroot/`basename $@ .fetched` co $(CVSTAGFLAG) `basename $@ .fetched` \
+	  if [ "$(ISRELEASE)" == "true" ]; \
+	  then \
+	    svn $(SVNFLAGS) co $(SVNTAGFLAG) https://svn.sourceforge.net/svnroot/sdcc/branches/$(SVNBRANCH)/`basename $@ .fetched` `basename $@ .fetched` \
 	    && break ; \
-	  echo CVS failed $$i: `date`; \
+          else \
+	    svn $(SVNFLAGS) co https://svn.sourceforge.net/svnroot/sdcc/trunk/`basename $@ .fetched` `basename $@ .fetched` \
+	    && break ; \
+	  fi \
+	  echo SVN failed $$i: `date`; \
 	  sleep 1; \
 	} done'
 	touch $@

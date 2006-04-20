@@ -26,6 +26,7 @@ SNAPSHOTDIR = $(STAGINGBASE)/snapshots
 CVSACCESS = :ext:sdcc-builder
 
 CVSFLAGS += -Q
+SVNFLAGS +=
 STAMPDIR = stamps
 RSYNCFLAGS = -C -r
 # Passed on to Makes to make them silent.  Can override.

@@ -59,9 +59,7 @@ done
 
 
 MODULE=sdcc-build
-# CVSROOT=:pserver:anonymous@cvs.sdcc.sourceforge.net:/cvsroot/sdcc
-CVSROOT=:ext:sdcc-builder@cvs.sourceforge.net:/cvsroot/sdcc
-export CVS_RSH=ssh
+SVNROOT=https://svn.sourceforge.net/svnroot/sdcc/trunk
 # -s for quiet operation so that this can be run from a cronjob
 MAKEFLAGS=
 # Include local apps.
@@ -76,26 +74,18 @@ rm -rf $BUILDROOT/$MODULE
 
 # Checkout the latest version
 cd $BUILDROOT
-# grep -q $CVSROOT $HOME/.cvspass || cvs -d$CVSROOT login
 
-# Retry CVS 600 time each second
+# Retry SVN 600 time each second
 # bash on usf-cf-x86-linux-1 is too old for this:
 # for ((i = 1; i < 600; ++i)) ; do
 i=0; while (($i < 600)) ; do
 {
   ((i += 1))
-  cvs -Q -d$CVSROOT co $MODULE && break
-  echo CVS failed $i: `date`
+  svn co $SVNROOT/$MODULE $MODULE && break
+  echo SVN failed $i: `date`
   sleep 1
 }
 done
-
-# Setup the ssh keys
-# Not needed as an empty key is automatically read.
-#eval `ssh-agent`
-#export SSH_AGENT_PID
-#export SSH_AUTH_SOCK
-#ssh-add
 
 # And spawn onto the actual build
 cd $BUILDROOT/$MODULE
