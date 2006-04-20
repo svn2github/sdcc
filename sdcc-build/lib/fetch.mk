@@ -14,7 +14,7 @@ $(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)
           else \
 	    svn $(SVNFLAGS) co https://svn.sourceforge.net/svnroot/sdcc/trunk/`basename $@ .fetched` `basename $@ .fetched` \
 	    && break ; \
-	  fi \
+	  fi; \
 	  echo SVN failed $$i: `date`; \
 	  sleep 1; \
 	} done'
