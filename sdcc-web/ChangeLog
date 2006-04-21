@@ -1,6 +1,9 @@
 2006-04-21 Borut Razem <borut.razem AT siol.net>
 
-	* index.php, left_menu.inc, snap_header.php: CVS replaced with Subversion
+	* index.php, left_menu.inc, snap_header.php:
+	  CVS replaced with Subversion
+	* index.html, links.html, previous.html, snap_footer.html,
+	  snap_header.html:deleted
 
 2005-12-12 Borut Razem <borut.razem AT siol.net>
 

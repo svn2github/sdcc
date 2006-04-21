@@ -150,7 +150,7 @@ Subversion. The following will fetch the latest sources:<br />
 downloaded code there. You can browse the Subversion repository
 <a href="http://svn.sourceforge.net/viewcvs.cgi/sdcc/trunk/sdcc/">here</a>. </p>
       <p>SourceForge has further documentation on accessing the Subversion repository
-<a href="http://sourceforge.net/docman/display_doc.php?docid=31070&group_id=1">here</a>. </p>
+<a href="http://sourceforge.net/docman/display_doc.php?docid=31070&amp;group_id=1">here</a>. </p>
       <p>Before reporting a bug, please check your SDCC version
 and build
 date using the -v option, and be sure to include the full version
