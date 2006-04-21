@@ -9,7 +9,7 @@ $(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)
 	  ((i += 1)); \
 	  if [ "$(ISRELEASE)" == "true" ]; \
 	  then \
-	    svn $(SVNFLAGS) co $(SVNTAGFLAG) https://svn.sourceforge.net/svnroot/sdcc/branches/$(SVNBRANCH)/`basename $@ .fetched` `basename $@ .fetched` \
+	    svn $(SVNFLAGS) export $(SVNTAGFLAG) https://svn.sourceforge.net/svnroot/sdcc/branches/$(SVNBRANCH)/`basename $@ .fetched` `basename $@ .fetched` \
 	    && break ; \
           else \
 	    svn $(SVNFLAGS) co https://svn.sourceforge.net/svnroot/sdcc/trunk/`basename $@ .fetched` `basename $@ .fetched` \

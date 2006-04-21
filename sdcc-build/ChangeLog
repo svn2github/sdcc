@@ -1,3 +1,9 @@
+2006-04-21 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-build-bootstrap.sh, lib/fetch.mk, components/sdcc-extra.mk:
+	  use "svn export" instead "svn co" to save disk space.
+	  Thanks to Jim Paris.
+
 2006-04-20 Borut Razem <borut.razem AT siol.net>
 
 	* sdcc-build-bootstrap.sh, README,

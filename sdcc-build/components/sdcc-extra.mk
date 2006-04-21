@@ -17,7 +17,7 @@ $(STAMPDIR)/sdcc-extra.fetched: $(ORIGDIR) $(STAMPDIR)
 	cd $(ORIGDIR); \
 	bash -c 'i=0; while ((i < 600)); do { \
 	  ((i += 1)); \
-	    svn $(SVNFLAGS) co https://svn.sourceforge.net/svnroot/sdcc/trunk/sdcc-extra sdcc-extra \
+	    svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/trunk/sdcc-extra sdcc-extra \
 	    && break ; \
 	  echo SVN failed $$i: `date`; \
 	  sleep 1; \

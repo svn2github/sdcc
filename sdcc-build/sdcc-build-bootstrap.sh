@@ -81,7 +81,7 @@ cd $BUILDROOT
 i=0; while (($i < 600)) ; do
 {
   ((i += 1))
-  svn co $SVNROOT/$MODULE $MODULE && break
+  svn export $SVNROOT/$MODULE $MODULE && break
   echo SVN failed $i: `date`
   sleep 1
 }
