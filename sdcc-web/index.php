@@ -79,6 +79,7 @@ with all the users' and developers' input. </p>
 and <b><i>gbz80</i></b>
 ports are no longer maintained. </p>
       <h2><a name="News"></a>News</h2>
+      <p><b>April 19th, 2006: SDCC migrated from CVS to Subversion version control system.</b></p>
       <p><b>May 12th, 2005: SDCC 2.5.0 released.</b>
 Source code and binaries Microsoft Windows and Linux are available from
 the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
@@ -139,24 +140,17 @@ distributions): </p>
         </li>
       </ul>
       <p>The latest development source code can be accessed using
-CVS. The
-following
-will fetch the latest sources:<br />
-      <code> cvs
--d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/sdcc
-login </code><br />
-The password is empty and pressing [ENTER] will get you in. <br />
-      <code>cvs -z3
--d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/sdcc
-co sdcc</code> <br />
-... will create the <i>
-sdcc</i> directory in your current directory and place all
-downloaded
-code there. You can browse CVS <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/sdcc/">
-here</a>
-. </p>
-      <p>SourceForge has further documentation on accessing CVS <a href="http://sourceforge.net/docman/display_doc.php?docid=763&amp;group_id=1">
-here</a>. </p>
+Subversion. The following will fetch the latest sources:<br />
+      <br />
+      <code>
+        svn co https://svn.sourceforge.net/svnroot/sdcc/trunk/sdcc sdcc
+      </code><br />
+      <br />
+... will create the <i>sdcc</i> directory in your current directory and place all
+downloaded code there. You can browse the Subversion repository
+<a href="http://svn.sourceforge.net/viewcvs.cgi/sdcc/trunk/sdcc/">here</a>. </p>
+      <p>SourceForge has further documentation on accessing the Subversion repository
+<a href="http://sourceforge.net/docman/display_doc.php?docid=31070&group_id=1">here</a>. </p>
       <p>Before reporting a bug, please check your SDCC version
 and build
 date using the -v option, and be sure to include the full version

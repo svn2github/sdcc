@@ -17,7 +17,7 @@
           <h2><a name="What"></a>Automatically Updated Nightly Snapshots</h2>
           <p>
 These snapshots are automatically updated from the developmental
-code in the CVS server.  They are <i>not</i> official releases
+code in the Subversion repository.  They are <i>not</i> official releases
 and should be considered "beta" quality.  Some may not even work
 at all if a serious bug was introduced during development, so
 several are provided to give you the best chance of finding one
@@ -31,6 +31,6 @@ snapshot build to see if it has already been fixed by a developer.
           </p>
           <p>
 To see what developers have added, you can
-<a href="http://cvs.sourceforge.net/viewcvs.py/*checkout*/sdcc/sdcc/ChangeLog?content-type=text%2Fplain&amp;rev=HEAD">
-view the ChangeLog</a> directly from the CVS server.
+<a href="http://svn.sourceforge.net/viewcvs.cgi/*checkout*/sdcc/trunk/sdcc/ChangeLog?rev=4099">
+view the ChangeLog</a> directly from the Subversion repository.
           </p>
