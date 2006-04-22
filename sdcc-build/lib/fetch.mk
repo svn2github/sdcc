@@ -9,10 +9,10 @@ $(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)
 	  ((i += 1)); \
 	  if [ "$(ISRELEASE)" == "true" ]; \
 	  then \
-	    svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/tags/$(SVNTAG)/`basename $@ .fetched` `basename $@ .fetched` \
+	    svn $(SVNFLAGS) --force export https://svn.sourceforge.net/svnroot/sdcc/tags/$(SVNTAG)/`basename $@ .fetched` `basename $@ .fetched` \
 	    && break ; \
           else \
-	    svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/trunk/`basename $@ .fetched` `basename $@ .fetched` \
+	    svn $(SVNFLAGS) --force export https://svn.sourceforge.net/svnroot/sdcc/trunk/`basename $@ .fetched` `basename $@ .fetched` \
 	    && break ; \
 	  fi; \
 	  echo SVN failed $$i: `date`; \
