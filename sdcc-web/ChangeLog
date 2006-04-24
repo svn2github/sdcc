@@ -1,3 +1,7 @@
+2006-04-24 Frieder Ferlemann <Frieder.Ferlemann AT web.de>
+
+	* left_menu.inc: added links to pdf files
+
 2006-04-21 Borut Razem <borut.razem AT siol.net>
 
 	* index.php, left_menu.inc, snap_header.php:

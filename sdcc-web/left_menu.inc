@@ -13,9 +13,9 @@
   </div>
   <br />
   <b><a href="doc/"><i>Documentation</i></a></b>
-  <div class="submenu"> <a href="doc/sdccman.html/"><i>SDCC Manual</i></a><br />
-    <a href="doc/test_suite_spec.html/"><i>Test Suite</i></a><br />
-    <a href="doc/cdbfileformat.html/"><i>CDB Format</i></a><br />
+  <div class="submenu"> <a href="doc/sdccman.html/"><i>SDCC Manual (html</i></a>/<a href="doc/sdccman.pdf"><i>pdf)</i></a><br />
+    <a href="doc/test_suite_spec.html/"><i>Test Suite (html</i></a>/<a href="doc/test_suite_spec.pdf"><i>pdf)</i></a><br />
+    <a href="doc/cdbfileformat.html/"><i>CDB Format (html</i></a>/<a href="doc/cdbfileformat.pdf"><i>pdf)</i></a><br />
   </div>
   <br />
   <b><a href="http://sourceforge.net/projects/sdcc"><i>SDCC at SourceForge</i></a></b>
