@@ -1,6 +1,6 @@
 /*
 
-$Header$
+$Id$
 This file is part of socket(1).
 Copyright (C) 1992 by Juergen Nickelsen <nickel@cs.tu-berlin.de>
 Please read the file COPYRIGHT for further details.
