@@ -1,3 +1,12 @@
+2006-04-24  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/sapphire-i586-mingw32msvc.mk,
+	  local/x86-linux1-i586-mingw32msvc.mk,
+	  local/x86-linux2-i586-mingw32msvc.mk,
+	  local/saturn.juju.net.nz-i386-mingw32msvc.mk: renamed
+	  --disable-device-lib-build in --disable-device-lib
+	* components/sdcc.mk: build of ucsim's sz80 is now enabled by default
+
 2006-04-21 Borut Razem <borut.razem AT siol.net>
 
 	* sdcc-build-bootstrap.sh, lib/fetch.mk, components/sdcc-extra.mk:

@@ -8,6 +8,6 @@ docdir=/sdcc/doc \
 include_dir_suffix=include \
 lib_dir_suffix=lib \
 sdccconf_h_dir_separator=\\\\ \
---disable-device-lib-build --disable-ucsim
+--disable-device-lib --disable-ucsim
 EXEEXTENSION = .exe
 SDCCINSTALLFLAGS = docdir=$(BUILDDIR)/doc
