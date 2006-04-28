@@ -95,11 +95,11 @@ generate-packages: generate-tarball generate-setup
 
 generate-setup:
 ifeq ($(CROSSCOMPILING), 1)
-	mkdir -p `dirname $(SETUPNAME)`
-	cp $(TOPDIR)/src/sdcc/COPYING $(BUILDDIR)/COPYING.TXT; unix2dos $(BUILDDIR)/COPYING.TXT
-	cp $(TOPDIR)/src/sdcc/support/scripts/sdcc.nsi $(BUILDDIR)
-	cp $(TOPDIR)/src/sdcc/support/scripts/sdcc.ico $(BUILDDIR)
-	-cd $(BUILDDIR); $(NSISBIN)/makensis sdcc.nsi;
+	mkdir -p $(dir $(SETUPNAME))
+	cp $(TOPDIR)/src/sdcc/COPYING $(BUILDDIR)/sdcc/COPYING.TXT; unix2dos $(BUILDDIR)/sdcc/COPYING.TXT
+	cp $(TOPDIR)/src/sdcc/support/scripts/sdcc.nsi $(BUILDDIR)/sdcc
+	cp $(TOPDIR)/src/sdcc/support/scripts/sdcc.ico $(BUILDDIR)/sdcc
+	-cd $(BUILDDIR)/sdcc; $(NSISBIN)/makensis sdcc.nsi;
 	mv $(BUILDDIR)/setup.exe $(SETUPNAME)
 endif
 
@@ -111,7 +111,7 @@ else
 # 2004-10-10 borutr: Windows use Latin1 (actually CP1252) - no encoding conversion is needed,
 # so the next line is commented out
 #	-find $(BUILDDIR) \( -name "*.txt" -or -name "*.TXT" \) -exec recode lat1..ibmpc {} \;
-	-cd $(BUILDDIR)/..; zip -9r $(TARBALLNAME) sdcc
+	-cd $(BUILDDIR); zip -9r $(TARBALLNAME) sdcc
 endif
 
 # Copies a few extra docs to the top level directory to give the user

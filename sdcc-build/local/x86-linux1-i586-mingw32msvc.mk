@@ -11,4 +11,3 @@ lib_dir_suffix=lib \
 sdccconf_h_dir_separator=\\\\ \
 --disable-device-lib --disable-ucsim
 EXEEXTENSION = .exe
-SDCCINSTALLFLAGS = docdir=$(BUILDDIR)/doc

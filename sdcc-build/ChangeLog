@@ -1,3 +1,18 @@
+2006-04-28  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc.mk (sdcc-docs): create doc dir, it's no longer
+	created by 'make install' unless --enable-doc is configured
+	(install): use DESTDIR instead of tweaking
+	suffic, docdir and datadir
+	* lib/bootstrap (generate-setup): files are installed in
+	$(BUILDIR)/[prefix|datadir|docdir] =
+	$(HOME)/build/sdcc-build/build/i586-mingw32msvc/sdcc/sdcc/*
+	The first /sdcc/ is from BUILDDIR, the 2nd from [prefix|...].
+	* local/x86-linux1-i586-mingw32msvc.mk,
+	* local/x86-linux2-i586-mingw32msvc.mk,
+	* local/saturn.juju.net.nz-i386-mingw32msvc.mk: SDCCINSTALLFLAGS are
+	no longer needed to tweak install directories
+
 2006-04-24  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/sapphire-i586-mingw32msvc.mk,

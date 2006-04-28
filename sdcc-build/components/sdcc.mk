@@ -32,12 +32,12 @@ sdcc-build: sdcc-configured
 sdcc-install: sdcc-targetos-install sdcc-fromhost-install sdcc-docs
 
 sdcc-targetos-install:
-	$(MAKE) -k -C $(SDCCDIR) prefix=$(BUILDDIR) STRIP=$(TARGETSTRIP) $(SDCCINSTALLFLAGS) install SILENT=1
+	$(MAKE) -k -C $(SDCCDIR) DESTDIR=$(BUILDDIR) STRIP=$(TARGETSTRIP) $(SDCCINSTALLFLAGS) install SILENT=1
 
 # Copies files from the native host that couldn't be compiled.
 sdcc-fromhost-install:
 ifeq ($(CROSSCOMPILING), 1)
-	cd $(TOPDIR)/build/$(HOSTOS)/sdcc/share/sdcc; cp -r * $(BUILDDIR)
+	cd $(TOPDIR)/build/$(HOSTOS)/sdcc/share/sdcc; cp -r * $(BUILDDIR)/sdcc
 endif
 
 # There are no docs in the snapshot
@@ -47,12 +47,14 @@ ifeq ($(ISRELEASE),true)
 else
 ifneq ($(CROSSCOMPILING), 1)
 	rm -rf $(BUILDDIR)/share/sdcc/doc/*
+	mkdir -p $(BUILDDIR)/share/sdcc/doc
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/share/sdcc/doc/README
 	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/share/sdcc/doc/ChangeLog.head
 else
-	rm -rf $(BUILDDIR)/doc/*
-	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/doc/README.TXT
-	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/doc/ChangeLog_head.txt
+	rm -rf $(BUILDDIR)/sdcc/doc/*
+	mkdir -p $(BUILDDIR)/sdcc/doc
+	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/sdcc/doc/README.TXT
+	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/sdcc/doc/ChangeLog_head.txt
 endif
 endif
 
