@@ -1,6 +1,7 @@
 2006-04-29  Bernhard Held <bernhard AT bernhardheld.de>
 
-	* components/sdcc.mk(sdcc-docs): fixed install directory for docs
+	* components/sdcc.mk (sdcc-docs): fixed install directory for docs,
+	(sdcc-fromhost-install): fixed new install paths
 
 2006-04-28  Bernhard Held <bernhard AT bernhardheld.de>
 
