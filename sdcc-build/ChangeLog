@@ -1,3 +1,7 @@
+2006-04-29  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc.mk(sdcc-docs): fixed install directory for docs
+
 2006-04-28  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* components/sdcc.mk (sdcc-docs): create doc dir, it's no longer
