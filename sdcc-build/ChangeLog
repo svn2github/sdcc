@@ -1,3 +1,7 @@
+2006-05-01  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/bootstrap.mk (generate-setup): fixed another directory
+
 2006-04-29  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* components/sdcc.mk (sdcc-docs): fixed install directory for docs,

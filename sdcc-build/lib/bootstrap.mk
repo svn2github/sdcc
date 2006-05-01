@@ -100,7 +100,7 @@ ifeq ($(CROSSCOMPILING), 1)
 	cp $(TOPDIR)/src/sdcc/support/scripts/sdcc.nsi $(BUILDDIR)/sdcc
 	cp $(TOPDIR)/src/sdcc/support/scripts/sdcc.ico $(BUILDDIR)/sdcc
 	-cd $(BUILDDIR)/sdcc; $(NSISBIN)/makensis sdcc.nsi;
-	mv $(BUILDDIR)/setup.exe $(SETUPNAME)
+	mv $(BUILDDIR)/sdcc/setup.exe $(SETUPNAME)
 endif
 
 generate-tarball:
