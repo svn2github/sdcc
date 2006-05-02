@@ -1,3 +1,9 @@
+2006-05-02 Borut Razem <borut.razem AT siol.net>
+
+	* local/amd64-linux1.mk: added SDCCCONFIGUREFLAGS = --enable-doc
+	  to configure the doc Makefile and OPT_ENABLE_DOC = 1 to run the
+	  doc Makefile
+
 2006-05-01  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/bootstrap.mk (generate-setup): fixed another directory

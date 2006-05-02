@@ -1,4 +1,9 @@
-# Quad opteron with SuSE 8
+# Opteron with Fedora Core release 3
 MAKEJOBFLAGS = -j 2
 TARGETOS = amd64-unknown-linux2.2
 HOSTOS = amd64-unknown-linux2.2
+# The SDCC documentation package is built on this machine
+# Configure the doc Makefile
+SDCCCONFIGUREFLAGS = --enable-doc
+# Run the doc Makefile
+OPT_ENABLE_DOC = 1
