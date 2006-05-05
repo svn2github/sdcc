@@ -19,6 +19,7 @@ include lib/help.mk
 include lib/release.mk
 include lib/bootstrap.mk
 include lib/src-archive.mk
+include lib/doc-archive.mk
 
 build: dirs fetch-build-trees sdcc sdcc-install sdcc-regression
 

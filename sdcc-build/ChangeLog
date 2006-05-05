@@ -1,3 +1,8 @@
+2006-05-05 Borut Razem <borut.razem AT siol.net>
+
+	* Makefile: include lib/doc-archive.mk
+	* lib/doc-archive.mk, support/sdcc_theme.pl: added
+
 2006-05-02 Borut Razem <borut.razem AT siol.net>
 
 	* local/amd64-linux1.mk: added SDCCCONFIGUREFLAGS = --enable-doc
