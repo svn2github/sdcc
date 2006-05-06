@@ -1,9 +1,9 @@
 2006-05-06 Borut Razem <borut.razem AT siol.net>
 
-	* lib/doc-archive.mk:
-	* support/sdcc_theme.pl: get sdcc_theme_navbar.html from $(_DOC_ARCHIVE_SUPPORT_DIR)
+	* lib/doc-archive.mk: get sdcc_theme_navbar.html from $(_DOC_ARCHIVE_SUPPORT_DIR)
+	* support/sdcc_theme.pl: added svn:executable property, ...
 	* support/sdcc_theme_navbar.html: added
-	* README
+	* README: added desctiption of the tmp directory
 
 2006-05-05 Borut Razem <borut.razem AT siol.net>
 
