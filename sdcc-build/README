@@ -22,6 +22,7 @@ to override the defaults.
 local copies.
     o src - Build time copies of the source code.
     o build - Output directory.
+    o tmp - temporary directory for building the documentation
 
 Assumes a Debian GNU/Linux like system, having at least svn and GNU
 make.  maccer requires doc++ (http://docpp.sourceforge.net/).

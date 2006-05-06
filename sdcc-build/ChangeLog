@@ -1,3 +1,10 @@
+2006-05-06 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk:
+	* support/sdcc_theme.pl: get sdcc_theme_navbar.html from $(_DOC_ARCHIVE_SUPPORT_DIR)
+	* support/sdcc_theme_navbar.html: added
+	* README
+
 2006-05-05 Borut Razem <borut.razem AT siol.net>
 
 	* Makefile: include lib/doc-archive.mk

@@ -48,23 +48,22 @@ doc-archive-copy-html:
 	for dir in $(_DOC_ARCHIVE_HTML); do \
 	  find $$dir -maxdepth 1 -type f ! -name "*.html" -exec cp {} $(_DOC_ARCHIVE_TMP_DIR)/$$dir \; ; \
         done
-	# Get navbar (should be somewhere in SVN)
-	cp -p $(_DOC_ARCHIVE_BUILDROOT)/local/sdcc_theme_navbar.html $(_DOC_ARCHIVE_TMP_DIR)
 	# Mangle HTML files
-	cd $(_DOC_ARCHIVE_DOC_DIR); SDCC_SECTION="SDCC Manual"    ; for i in sdccman.html/*.html        ; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_TMP_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_TMP_DIR)/$$i; done
-	cd $(_DOC_ARCHIVE_DOC_DIR); SDCC_SECTION="SDCC Test Suite"; for i in test_suite_spec.html/*.html; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_TMP_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_TMP_DIR)/$$i; done
-	cd $(_DOC_ARCHIVE_DOC_DIR); SDCC_SECTION="SDCC CDB Format"; for i in cdbfileformat.html/*.html  ; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_TMP_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_TMP_DIR)/$$i; done
+	cd $(_DOC_ARCHIVE_DOC_DIR); SDCC_SECTION="SDCC Manual"    ; for i in sdccman.html/*.html        ; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_TMP_DIR)/$$i; done
+	cd $(_DOC_ARCHIVE_DOC_DIR); SDCC_SECTION="SDCC Test Suite"; for i in test_suite_spec.html/*.html; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_TMP_DIR)/$$i; done
+	cd $(_DOC_ARCHIVE_DOC_DIR); SDCC_SECTION="SDCC CDB Format"; for i in cdbfileformat.html/*.html  ; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_TMP_DIR)/$$i; done
 	cd $(_DOC_ARCHIVE_TMP_DIR); rsync -vrC --delete -e ssh $(_DOC_ARCHIVE_HTML) shell1.sourceforge.net:$(_PROJECT_DOC_DIR)
 
 doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_DOC_DIR)/,*.txt *.html *.pdf z80/* avr/*) \
 		     $(addprefix $(_DOC_ARCHIVE_SDCC_DIR)/,as/* \
 		     sim/ucsim/doc/*.html sim/ucsim/doc/*.jpg sim/ucsim/doc/*.gif sim/ucsim/doc/*.fig)
 	rm -rf $(_DOC_ARCHIVE_TMP_DIR)
-	mkdir -p $(_DOC_ARCHIVE_TMP_DIR)/doc/ucsim $(_DOC_ARCHIVE_TMP_DIR)/doc/as
+	mkdir -p $(_DOC_ARCHIVE_TMP_DIR)/doc/ucsim
 	cd $(_DOC_ARCHIVE_DOC_DIR); cp -rpf *.txt *.html *.pdf z80/ avr/ $(_DOC_ARCHIVE_TMP_DIR)/doc
 	cd $(_DOC_ARCHIVE_SDCC_DIR); cp -rpf as/doc/ $(_DOC_ARCHIVE_TMP_DIR)/doc/as/
 	cd $(_DOC_ARCHIVE_SDCC_DIR)/sim/ucsim/doc; cp -rpf *.html *.jpg *.gif *.fig $(_DOC_ARCHIVE_TMP_DIR)/doc/ucsim/
 	cd $(_DOC_ARCHIVE_TMP_DIR); tar -czf sdcc-doc-$(_DOC_ARCHIVE_BUILDDATE).tar.gz doc
+	find $(_DOC_ARCHIVE_TMP_DIR) -name "*.txt" -exec unix2dos {} \;
 	cd $(_DOC_ARCHIVE_TMP_DIR); zip -9r sdcc-doc-$(_DOC_ARCHIVE_BUILDDATE).zip doc
 
 doc-archive-copy-archives:
