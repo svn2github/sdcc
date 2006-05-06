@@ -89,7 +89,7 @@ done
 
 # And spawn onto the actual build
 cd $BUILDROOT/$MODULE
-make $MAKEFLAGS $EXTRATARGETS crontab-spawn
+make $MAKEFLAGS crontab-spawn $EXTRATARGETS
 
 # cp log files from local hd to $HOME/build on nfs server
 test $BUILDROOT != $HOME/build && \

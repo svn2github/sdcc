@@ -16,8 +16,6 @@ BOOTSTRAPFILTEREDLISTADMIN=epetrich@users.sourceforge.net
 BOOTSTRAPLIST=sdcc-buildlogs@lists.sourceforge.net
 # Subject line to use in the build output email
 BOOTSTRAPSUBJECT=Automated build output ($(TARGETOS))
-# Stamp to append to the build name.
-BUILDDATE=$(shell date +%Y%m%d)
 
 # The file naming and output directories depend on whether this is a
 # release or a snapshot build

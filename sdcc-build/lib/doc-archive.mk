@@ -2,8 +2,6 @@ _PROJECT_DIR = /home/groups/s/sd/sdcc
 _PROJECT_DOC_DIR = $(_PROJECT_DIR)/htdocs/doc
 _PROJECT_SNAPDOC_DIR = $(_PROJECT_DIR)/htdocs/snapshots/docs
 
-_DOC_ARCHIVE_BUILDDATE = $(shell date +%Y%m%d)
-
 _DOC_ARCHIVE_BUILDROOT = $(HOME)
 
 _DOC_ARCHIVE_SDCC_DIR = $(SRCDIR)/sdcc
@@ -62,9 +60,9 @@ doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_DOC_DIR)/,*.txt *.html *.
 	cd $(_DOC_ARCHIVE_DOC_DIR); cp -rpf *.txt *.html *.pdf z80/ avr/ $(_DOC_ARCHIVE_TMP_DIR)/doc
 	cd $(_DOC_ARCHIVE_SDCC_DIR); cp -rpf as/doc/ $(_DOC_ARCHIVE_TMP_DIR)/doc/as/
 	cd $(_DOC_ARCHIVE_SDCC_DIR)/sim/ucsim/doc; cp -rpf *.html *.jpg *.gif *.fig $(_DOC_ARCHIVE_TMP_DIR)/doc/ucsim/
-	cd $(_DOC_ARCHIVE_TMP_DIR); tar -czf sdcc-doc-$(_DOC_ARCHIVE_BUILDDATE).tar.gz doc
+	cd $(_DOC_ARCHIVE_TMP_DIR); tar -czf sdcc-doc-$(BUILDDATE).tar.gz doc
 	find $(_DOC_ARCHIVE_TMP_DIR) -name "*.txt" -exec unix2dos {} \;
-	cd $(_DOC_ARCHIVE_TMP_DIR); zip -9r sdcc-doc-$(_DOC_ARCHIVE_BUILDDATE).zip doc
+	cd $(_DOC_ARCHIVE_TMP_DIR); zip -9r sdcc-doc-$(BUILDDATE).zip doc
 
 doc-archive-copy-archives:
 	rsync -v -e ssh --size-only $(addprefix $(_DOC_ARCHIVE_TMP_DIR)/,$(_DOC_ARCHIVE_ARCHIVES)) shell1.sourceforge.net:$(_PROJECT_SNAPDOC_DIR)

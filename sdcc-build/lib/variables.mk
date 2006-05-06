@@ -8,8 +8,10 @@ HOSTOS = i386-unknown-linux2.2
 TOOLSPREFIX = 
 # Path to the makensis binary
 NSISBIN = $(HOME)/local/bin
-#extract the host name without domain to $(HOSTNAME)
+# Extract the host name without domain to $(HOSTNAME)
 HOSTNAME = $(shell if [ $(shell expr $(shell hostname) : '.*\.') != '0' ]; then expr $(shell hostname) : '\([^.]*\).'; else echo $(shell hostname); fi)
+# Stamp to append to the build name.
+BUILDDATE=$(shell date +%Y%m%d)
 
 TOPDIR := $(shell /bin/pwd)
 
