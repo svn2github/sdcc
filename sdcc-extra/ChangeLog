@@ -1,3 +1,15 @@
+2006-05-09 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* configure,
+	* configure.in: added to enable VPATH feature
+	* Makefile,
+	* emu/Makefile,
+	* emu/rrgb/Makefile,
+	* emu/rrz80/Makefile,
+	* emu/rrz80/cpu/Makefile: renamed to Makefile.in, added VPATH and top_srcdir
+	variables
+	* Makefile.rules: added distclean to remove files created by configure
+
 2006-04-24 Borut Razem <borut.razem AT siol.net>
 
 	* emu/rrgb/csock.c: replaced $Header$ with $Id$ svn keyword

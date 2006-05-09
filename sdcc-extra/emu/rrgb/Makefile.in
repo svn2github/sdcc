@@ -1,4 +1,7 @@
 # Makefile for rrgb
+
+VPATH = @srcdir@
+
 VER = 0.35
 
 # this looks wrong, but *ops.c are actually #include'd by z80.c
@@ -22,6 +25,9 @@ rrgb: $(OBJS)
 
 clean:
 	$(RM) *.o *~ rrgb
+
+distclean: clean
+	$(RM) Makefile
 
 install:
 	install rrgb /usr/bin

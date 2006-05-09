@@ -1,4 +1,6 @@
-TOPDIR = ../..
+VPATH = @srcdir@
+
+top_srcdir = @top_srcdir@
 
 CSRC = rrz80.c map.c
 CCSRC = disasm.cc
@@ -16,4 +18,4 @@ LDLIBS += -lstdc++
 
 EXTRA_LIBS  = cpu/libz80cpu.a
 
-include $(TOPDIR)/Makefile.rules
+include $(top_srcdir)/Makefile.rules

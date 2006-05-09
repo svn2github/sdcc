@@ -29,3 +29,8 @@ ifdef SUBDIRS
 endif
 	rm -f *.o *.class *~ *.a $(BIN) $(LIB)
 
+distclean: clean
+ifdef SUBDIRS
+	for i in $(SUBDIRS); do $(MAKE) -C $$i distclean; done
+endif
+	rm -f Makefile config.log config.status

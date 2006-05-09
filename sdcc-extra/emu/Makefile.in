@@ -1,0 +1,7 @@
+VPATH = @srcdir@
+
+top_srcdir = @top_srcdir@
+
+SUBDIRS = rrz80 rrgb
+
+include $(top_srcdir)/Makefile.rules
