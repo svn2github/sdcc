@@ -25,6 +25,7 @@ $(STAMPDIR)/sdcc-extra.fetched: $(ORIGDIR) $(STAMPDIR)
 	touch $@
 
 sdcc-extra:
+	cd $(SDCCEXTRADIR); ./configure
 	$(MAKE) -C $(SDCCEXTRADIR)
 
 sdcc-extra-clean:

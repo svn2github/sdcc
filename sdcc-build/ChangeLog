@@ -1,3 +1,7 @@
+2006-05-09  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc-extra.mk (sdcc-extra): sdcc-extra now needs configuring
+
 2006-05-06 Borut Razem <borut.razem AT siol.net>
 
 	* lib/doc-archive.mk: get sdcc_theme_navbar.html from $(_DOC_ARCHIVE_SUPPORT_DIR)
