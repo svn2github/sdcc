@@ -1,3 +1,8 @@
+2006-05-11 Borut Razem <borut.razem AT siol.net>
+
+	* snap_header.php: fixed bug [1486015] Changelog not visible from the
+	  Snapshots webpage. Thanks to Jim Paris.
+
 2006-04-24 Frieder Ferlemann <Frieder.Ferlemann AT web.de>
 
 	* left_menu.inc: added links to pdf files
