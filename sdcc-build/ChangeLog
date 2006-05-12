@@ -8,6 +8,9 @@
 	* support/sdcc_theme.pl: added svn:executable property, ...
 	* support/sdcc_theme_navbar.html: added
 	* README: added desctiption of the tmp directory
+	* lib/bootstrap.mk, lib/doc-archive.mk, lib/src-archive.mk, lib/variables.mk:
+	  definition of BUILDDATE moved to variables.mk
+	* sdcc-build-bootstrap.sh: make $EXTRATARGETS after crontab-spawn
 
 2006-05-05 Borut Razem <borut.razem AT siol.net>
 
