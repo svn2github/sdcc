@@ -12,6 +12,8 @@ NSISBIN = $(HOME)/local/bin
 HOSTNAME = $(shell if [ $(shell expr $(shell hostname) : '.*\.') != '0' ]; then expr $(shell hostname) : '\([^.]*\).'; else echo $(shell hostname); fi)
 # Stamp to append to the build name.
 BUILDDATE=$(shell date +%Y%m%d)
+# Get revision from sdcc/ChangeLog to append to the build name
+SDCCREVISION=$(shell grep ^\$$Revision src/sdcc/ChangeLog | awk '{ print $$2 }')
 
 TOPDIR := $(shell /bin/pwd)
 

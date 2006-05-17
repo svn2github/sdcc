@@ -39,10 +39,10 @@ endif
 
 # Name of the tarball for this target
 ifneq ($(CROSSCOMPILING), 1)
-TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.gz
+TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME)-$(SDCCREVISION).tar.gz
 else
-TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).zip
-SETUPNAME=$(TARBALLDIR)-setup/sdcc_$(BUILDDATE)_setup.exe
+TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME)-$(SDCCREVISION).zip
+SETUPNAME=$(TARBALLDIR)-setup/sdcc_$(BUILDDATE)_$(SDCCREVISION)_setup.exe
 endif
 
 # Location to copy the tarball to

@@ -1,3 +1,8 @@
+2006-05-17  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/variables.mk: added SDCCRELEASE, extracted from ChangeLog
+	* components/bootstrap.mk: added SDCCRELEASE to tarball names
+
 2006-05-09  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* components/sdcc-extra.mk (sdcc-extra): sdcc-extra now needs configuring
