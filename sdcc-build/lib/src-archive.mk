@@ -4,7 +4,8 @@ ARCHIVESRCTREES = $(ARCHIVETREES:%=$(STAMPDIR)/%-src-archive)
 _ARCHIVE_SRC_TREE_BASENAME = `basename $@ -src-archive`
 _ARCHIVE_BASENAME          = $(_ARCHIVE_SRC_TREE_BASENAME)-src
 _ARCHIVE_DIR               = $(STAGINGBASE)/$(TARBALLBASE)/$(_ARCHIVE_BASENAME)
-_ARCHIVE_NAME              = $(_ARCHIVE_BASENAME)-$(BUILDDATE).tar.gz
+_ARCHIVE_REVISION          = $(shell grep ^\$$Revision $(ORIGDIR)/ChangeLog | awk '{ print $$2 }')
+_ARCHIVE_NAME              = $(_ARCHIVE_BASENAME)-$(BUILDDATE)-$(_ARCHIVE_REVISION).tar.gz
 
 %-src-archive: %.fetched $(SRCDIR) $(STAMPDIR)
 	mkdir -p $(_ARCHIVE_DIR)
