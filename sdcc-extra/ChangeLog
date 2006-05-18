@@ -1,3 +1,7 @@
+2006-05-18 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* ChangeLog: added Revision
+
 2006-05-09 Bernhard Held <bernhard AT bernhardheld.de>
 
 	* configure,
@@ -29,3 +33,5 @@
 
 	* emu/rrgb/Makefile: link with libsocket in case of sparc-solaris
 	* emu/rrgb/main.c: don't include getopt.h if __sun__ (sparc-solaris)
+
+$Revision$
