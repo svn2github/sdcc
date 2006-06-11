@@ -1,3 +1,12 @@
+2006-06-11 Borut Razem <borut.razem AT siol.net>
+
+	* lib/src-archive.mk, lib/variables.mk: introduced SNAPSHOTID
+	* lib/bootstrap.mk: introduced SNAPSHOTID; replaced '_' with '-' in the
+	  WIN32 setup name; introduced do-upload target
+	* lib/doc-archive.mk: temporary files moved from tmp to build directory,
+	  snapshot packages moved to ../snapshots/docs directory
+	* lib/fetch.mk: spaces replaced with a tab
+
 2006-05-18  Bernhard Held <bernhard AT bernhardheld.de>
 
 	* components/src-archive.mk: added RELEASE to src-archives, extracted

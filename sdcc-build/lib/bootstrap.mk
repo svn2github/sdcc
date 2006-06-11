@@ -30,8 +30,8 @@ TARBALLBASE=staging
 TARBALLDIR=$(STAGINGBASE)/$(TARBALLBASE)
 
 else
-# Format is snapshots/target/sdcc-target-date.tar.gz
-BUILDNAME=snapshot-$(TARGETOS)-$(BUILDDATE)
+# Format is snapshots/target/sdcc-target-date-revision.tar.gz
+BUILDNAME=snapshot-$(TARGETOS)-$(SNAPSHOTID)
 TARBALLBASE=snapshots
 TARBALLDIR=$(SNAPSHOTDIR)/$(TARGETOS)
 
@@ -39,10 +39,10 @@ endif
 
 # Name of the tarball for this target
 ifneq ($(CROSSCOMPILING), 1)
-TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME)-$(SDCCREVISION).tar.gz
+TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.gz
 else
-TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME)-$(SDCCREVISION).zip
-SETUPNAME=$(TARBALLDIR)-setup/sdcc_$(BUILDDATE)_$(SDCCREVISION)_setup.exe
+TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).zip
+SETUPNAME=$(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-setup.exe
 endif
 
 # Location to copy the tarball to
@@ -118,7 +118,9 @@ copy-extra-docs:
 	cd $(BUILDDIR); cp -f $(TOPDIR)/src/sdcc/doc/README.txt $(TOPDIR)/src/sdcc/doc/INSTALL.txt .
 
 # Uploads and delete archive to save space on CF
-upload-packages: generate-tarball generate-packages
+upload-packages: generate-tarball generate-packages do-upload
+
+do-upload:
 	cd $(STAGINGBASE); rsync -rC --include='*.exe' -e ssh --size-only $(TARBALLBASE) $(SNAPSHOTDEST)
 	rm $(STAGINGBASE)/$(TARBALLBASE)/*/*
 

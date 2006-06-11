@@ -1,4 +1,4 @@
-# List of all source trees that need to be fetched either locally or from cvs
+# List of all source trees that need to be fetched either locally or from Subversion
 SRCTREES += 
 # Target to build for.
 TARGETOS = i386-unknown-linux2.2
@@ -10,10 +10,14 @@ TOOLSPREFIX =
 NSISBIN = $(HOME)/local/bin
 # Extract the host name without domain to $(HOSTNAME)
 HOSTNAME = $(shell if [ $(shell expr $(shell hostname) : '.*\.') != '0' ]; then expr $(shell hostname) : '\([^.]*\).'; else echo $(shell hostname); fi)
-# Stamp to append to the build name.
-BUILDDATE=$(shell date +%Y%m%d)
-# Get revision from sdcc/ChangeLog to append to the build name
-SDCCREVISION=$(shell grep ^\$$Revision src/sdcc/ChangeLog | awk '{ print $$2 }')
+# Get build date
+BUILDDATE = $(shell date +%Y%m%d)
+## Get revision from sdcc/ChangeLog to append to the build name
+#SDCCREVISION = $(shell awk '/^\$$Revision:/ { print $$2 }' $(ORIGDIR)/sdcc/ChangeLog)
+# Get current revision from Subversion to append to the build name
+SDCCREVISION = $(shell svn info https://svn.sourceforge.net/svnroot/sdcc | awk '/^Revision:/ { print $$2 }')
+# Stamp to append to the build name
+SNAPSHOTID = $(BUILDDATE)-$(SDCCREVISION)
 
 TOPDIR := $(shell /bin/pwd)
 
@@ -21,7 +25,7 @@ TOPDIR := $(shell /bin/pwd)
 SRCDIR = src
 ORIGDIR = orig
 BUILDDIR = $(TOPDIR)/build/$(TARGETOS)/sdcc
-BINDIR= $(BUILDDIR)/bin
+BINDIR = $(BUILDDIR)/bin
 NOISELOG = $(STAGINGBASE)/build-noise.$(TARGETOS).log
 STAGINGBASE = $(TOPDIR)/..
 SNAPSHOTDIR = $(STAGINGBASE)/snapshots
