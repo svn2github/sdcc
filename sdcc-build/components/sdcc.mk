@@ -20,6 +20,8 @@ ARCHIVETREES += sdcc
 sdcc-configured: $(SDCCDIR)/sdccconf.h
 
 $(SDCCDIR)/sdccconf.h:
+	mkdir -p $(SDCCDIR)
+	#cd $(SDCCDIR); CC=$(TARGETCC) CXX=$(TARGETCXX) STRIP=$(TARGETSTRIP) RANLIB=$(TARGETRANLIB) CXXFLAGS=$(TARGETCXXFLAGS) $(ORIGDIR)/sdcc/configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) > $(NOISELOG)
 	cd $(SDCCDIR); CC=$(TARGETCC) CXX=$(TARGETCXX) STRIP=$(TARGETSTRIP) RANLIB=$(TARGETRANLIB) CXXFLAGS=$(TARGETCXXFLAGS) ./configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) > $(NOISELOG)
 	@echo -- Configured sdcc for $(TARGETOS), CC $(TARGETCC)
 
@@ -49,12 +51,12 @@ ifneq ($(CROSSCOMPILING), 1)
 	rm -rf $(BUILDDIR)/usr/local/share/sdcc/doc/*
 	mkdir -p $(BUILDDIR)/usr/local/share/sdcc/doc
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/usr/local/share/sdcc/doc/README
-	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/usr/local/share/sdcc/doc/ChangeLog.head
+	head -n 100 $(ORIGDIR)/sdcc/ChangeLog > $(BUILDDIR)/usr/local/share/sdcc/doc/ChangeLog.head
 else
 	rm -rf $(BUILDDIR)/sdcc/doc/*
 	mkdir -p $(BUILDDIR)/sdcc/doc
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/sdcc/doc/README.TXT
-	head -n 100 $(SDCCDIR)/ChangeLog > $(BUILDDIR)/sdcc/doc/ChangeLog_head.txt
+	head -n 100 $(ORIGDIR)/sdcc/ChangeLog > $(BUILDDIR)/sdcc/doc/ChangeLog_head.txt
 endif
 endif
 
@@ -70,7 +72,7 @@ sdcc-device-clean:
 sdcc-regression: sdcc sdcc-install sdcc-extra
 # test-gbz80 temporary disabled because of problems; Bernhard 2003-02-13
 ifneq ($(CROSSCOMPILING), 1)
-	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(TOPDIR)/src/sdcc-extra test-host test-ucz80 test-mcs51 test-mcs51-stack-auto test-mcs51-large test-ds390 test-hc08
+	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra test-host test-ucz80 test-mcs51 test-mcs51-stack-auto test-mcs51-large test-ds390 test-hc08
 endif
 
 endif

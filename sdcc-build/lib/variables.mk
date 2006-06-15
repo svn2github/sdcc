@@ -9,20 +9,24 @@ TOOLSPREFIX =
 # Path to the makensis binary
 NSISBIN = $(HOME)/local/bin
 # Extract the host name without domain to $(HOSTNAME)
-HOSTNAME = $(shell if [ $(shell expr $(shell hostname) : '.*\.') != '0' ]; then expr $(shell hostname) : '\([^.]*\).'; else echo $(shell hostname); fi)
+HOSTNAME := $(shell if [ $(shell expr $(shell hostname) : '.*\.') != '0' ]; then expr $(shell hostname) : '\([^.]*\).'; else echo $(shell hostname); fi)
 # Get build date
-BUILDDATE = $(shell date +%Y%m%d)
+BUILDDATE := $(shell date +%Y%m%d)
+# Current revision in Subversion
+SVNREVISION := $(shell svn info https://svn.sourceforge.net/svnroot/sdcc | awk '/^Revision:/ { print $$2 }')
 ## Get revision from sdcc/ChangeLog to append to the build name
 #SDCCREVISION = $(shell awk '/^\$$Revision:/ { print $$2 }' $(ORIGDIR)/sdcc/ChangeLog)
-# Get current revision from Subversion to append to the build name
-SDCCREVISION = $(shell svn info https://svn.sourceforge.net/svnroot/sdcc | awk '/^Revision:/ { print $$2 }')
+# Get current revision from Subversion to append to the build name (temporary workaround)
+SDCCREVISION := $(shell svn info https://svn.sourceforge.net/svnroot/sdcc | awk '/^Revision:/ { print $$2 }')
 # Stamp to append to the build name
 SNAPSHOTID = $(BUILDDATE)-$(SDCCREVISION)
 
 TOPDIR := $(shell /bin/pwd)
 
 # Directory that all of the soure trees get copied into
+#SRCDIR = $(TOPDIR)/src
 SRCDIR = src
+#ORIGDIR = ~/build/sdcc-build/orig
 ORIGDIR = orig
 BUILDDIR = $(TOPDIR)/build/$(TARGETOS)/sdcc
 BINDIR = $(BUILDDIR)/bin
@@ -34,7 +38,8 @@ SNAPSHOTDIR = $(STAGINGBASE)/snapshots
 CVSACCESS = :ext:sdcc-builder
 
 CVSFLAGS += -Q
-SVNFLAGS +=
+SVNFLAGS += --force
+#STAMPDIR = $(ORIGDIR)/../stamps
 STAMPDIR = stamps
 RSYNCFLAGS = -C -r
 # Passed on to Makes to make them silent.  Can override.

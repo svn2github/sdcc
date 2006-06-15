@@ -82,7 +82,6 @@ per-target-test-build: per-target-clean logged-build generate-packages
 per-target-release-build: per-target-clean logged-build copy-extra-docs generate-packages
 
 per-target-clean:
-	rm -rf $(STAMPDIR)
 	rm -rf $(SRCDIR)
 
 logged-build:
@@ -94,9 +93,9 @@ generate-packages: generate-tarball generate-setup
 generate-setup:
 ifeq ($(CROSSCOMPILING), 1)
 	mkdir -p $(dir $(SETUPNAME))
-	cp $(TOPDIR)/src/sdcc/COPYING $(BUILDDIR)/sdcc/COPYING.TXT; unix2dos $(BUILDDIR)/sdcc/COPYING.TXT
-	cp $(TOPDIR)/src/sdcc/support/scripts/sdcc.nsi $(BUILDDIR)/sdcc
-	cp $(TOPDIR)/src/sdcc/support/scripts/sdcc.ico $(BUILDDIR)/sdcc
+	cp $(ORIGDIR)/sdcc/COPYING $(BUILDDIR)/sdcc/COPYING.TXT; unix2dos $(BUILDDIR)/sdcc/COPYING.TXT
+	cp $(ORIGDIR)/sdcc/support/scripts/sdcc.nsi $(BUILDDIR)/sdcc
+	cp $(ORIGDIR)/sdcc/support/scripts/sdcc.ico $(BUILDDIR)/sdcc
 	-cd $(BUILDDIR)/sdcc; $(NSISBIN)/makensis sdcc.nsi;
 	mv $(BUILDDIR)/sdcc/setup.exe $(SETUPNAME)
 endif
