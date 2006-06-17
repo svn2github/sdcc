@@ -12,12 +12,10 @@ NSISBIN = $(HOME)/local/bin
 HOSTNAME := $(shell if [ $(shell expr $(shell hostname) : '.*\.') != '0' ]; then expr $(shell hostname) : '\([^.]*\).'; else echo $(shell hostname); fi)
 # Get build date
 BUILDDATE := $(shell date +%Y%m%d)
-# Current revision in Subversion
-SVNREVISION := $(shell svn info https://svn.sourceforge.net/svnroot/sdcc | awk '/^Revision:/ { print $$2 }')
 ## Get revision from sdcc/ChangeLog to append to the build name
 #SDCCREVISION = $(shell awk '/^\$$Revision:/ { print $$2 }' $(ORIGDIR)/sdcc/ChangeLog)
 # Get current revision from Subversion to append to the build name (temporary workaround)
-SDCCREVISION := $(shell svn info https://svn.sourceforge.net/svnroot/sdcc | awk '/^Revision:/ { print $$2 }')
+SDCCREVISION := $(shell ssh sdcc-builder@shell.cf.sourceforge.net svn info https://svn.sourceforge.net/svnroot/sdcc | awk '/^Revision:/ { print $$2 }')
 # Stamp to append to the build name
 SNAPSHOTID = $(BUILDDATE)-$(SDCCREVISION)
 
