@@ -12,20 +12,16 @@ NSISBIN = $(HOME)/local/bin
 HOSTNAME := $(shell if [ $(shell expr $(shell hostname) : '.*\.') != '0' ]; then expr $(shell hostname) : '\([^.]*\).'; else echo $(shell hostname); fi)
 # Get build date
 BUILDDATE := $(shell date +%Y%m%d)
-## Get revision from sdcc/ChangeLog to append to the build name
-#SDCCREVISION = $(shell awk '/^\$$Revision:/ { print $$2 }' $(ORIGDIR)/sdcc/ChangeLog)
-# Get current revision from Subversion to append to the build name (temporary workaround)
-SDCCREVISION := $(shell ssh sdcc-builder@shell.cf.sourceforge.net svn info https://svn.sourceforge.net/svnroot/sdcc | awk '/^Revision:/ { print $$2 }')
+# Get revision from sdcc/ChangeLog to append to the build name
+SDCCREVISION = $(shell awk '/^\$$Revision:/ { print $$2 }' $(ORIGDIR)/sdcc/ChangeLog)
 # Stamp to append to the build name
 SNAPSHOTID = $(BUILDDATE)-$(SDCCREVISION)
 
 TOPDIR := $(shell /bin/pwd)
 
 # Directory that all of the soure trees get copied into
-#SRCDIR = $(TOPDIR)/src
-SRCDIR = src
-#ORIGDIR = ~/build/sdcc-build/orig
-ORIGDIR = orig
+SRCDIR = $(TOPDIR)/src
+ORIGDIR = ~/build/sdcc-build/orig
 BUILDDIR = $(TOPDIR)/build/$(TARGETOS)/sdcc
 BINDIR = $(BUILDDIR)/bin
 NOISELOG = $(STAGINGBASE)/build-noise.$(TARGETOS).log
@@ -34,11 +30,12 @@ SNAPSHOTDIR = $(STAGINGBASE)/snapshots
 # Start of the CVS repository line, used to set the access method (pserver,
 # ext, ...) and username.  Can be overriden in your local.mk
 CVSACCESS = :ext:sdcc-builder
+# Subversion server, accessed by ssh
+SVNSERVER = sdcc-builder@shell.cf.sourceforge.net
 
 CVSFLAGS += -Q
 SVNFLAGS += --force
-#STAMPDIR = $(ORIGDIR)/../stamps
-STAMPDIR = stamps
+STAMPDIR = $(ORIGDIR)/../stamps
 RSYNCFLAGS = -C -r
 # Passed on to Makes to make them silent.  Can override.
 MAKESILENTFLAG = -s

@@ -1,33 +1,20 @@
 # Makefile that can fetch a copy of the source trees
-ORIGSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.fetched)
-SRCSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.copied)
+_FETCH_EXT = $(BUILDDATE)-fetched
+_FETCH_ORIGSRCTREES = $(SRCTREES:%=$(STAMPDIR)/%.$(_FETCH_EXT))
 
 # Default rule for fetching a tree from svn
-$(STAMPDIR)/%.fetched: $(ORIGDIR) $(STAMPDIR)
+$(STAMPDIR)/%.$(_FETCH_EXT):
+	ssh $(SVNSERVER) ' \
+	mkdir -p $(STAMPDIR); \
+	mkdir -p $(ORIGDIR); \
+	rm -f $(STAMPDIR)/sdcc.*-fetched; \
+	rm -rf $(ORIGDIR)/sdcc; \
 	cd $(ORIGDIR); \
-	bash -c 'i=0; while ((i < 600)); do { \
-	  ((i += 1)); \
-	  if [ "$(ISRELEASE)" == "true" ]; \
-	  then \
-	    svn $(SVNFLAGS) --force export https://svn.sourceforge.net/svnroot/sdcc/tags/$(SVNTAG)/`basename $@ .fetched` `basename $@ .fetched` \
-	    && break; \
-	  else \
-	    svn $(SVNFLAGS) --force export https://svn.sourceforge.net/svnroot/sdcc/trunk/`basename $@ .fetched` `basename $@ .fetched` \
-	    && break; \
-	  fi; \
-	  echo SVN failed $$i: `date`; \
-	  sleep 1; \
-	} done'
-	touch $@
+	if [ "$(ISRELEASE)" == "true" ]; \
+	then \
+	  svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/tags/$(SVNTAG)/$(shell basename $@ .$(_FETCH_EXT)) $(shell basename $@ .$(_FETCH_EXT))
+; \
+	else \
+	  svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/trunk/$(shell basename $@ .$(_FETCH_EXT)) $(shell basename $@ .$(_FETCH_EXT))'
 
-%.copied: %.fetched $(SRCDIR) $(STAMPDIR) 
-	rsync $(RSYNCFLAGS) $(ORIGDIR)/`basename $@ .copied` $(SRCDIR)
-	touch $@
-
-fetch-orig-trees: $(ORIGSRCTREES)
-
-fetch-build-trees: $(SRCSRCTREES)
-
-# Couldn't automate the password
-fetch-login-all:
-	for i in $(CVSREPOSITORIES); do cvs -d:pserver:anonymous@$$i login; done
+fetch-orig-trees: $(_FETCH_ORIGSRCTREES)
