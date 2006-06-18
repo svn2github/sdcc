@@ -14,7 +14,7 @@ $(STAMPDIR)/%.$(_FETCH_EXT):
 	then \
 	  svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/tags/$(SVNTAG)/$(shell basename $@ .$(_FETCH_EXT)) $(shell basename $@ .$(_FETCH_EXT)); \
 	else \
-	  svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/trunk/$(shell basename $@ .$(_FETCH_EXT)) $(shell basename $@ .$(_FETCH_EXT));
+	  svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/trunk/$(shell basename $@ .$(_FETCH_EXT)) $(shell basename $@ .$(_FETCH_EXT)); \
 	fi'
 
 fetch-orig-trees: $(_FETCH_ORIGSRCTREES)
