@@ -4,7 +4,10 @@
 
 # BUILDROOT=$HOME/build
 test -z $BUILDROOT && \
-  BUILDROOT=/var/tmp/`whoami`/build
+  BUILDROOT=/var/tmp/$(whoami)/build
+
+HOMEBUILD=$HOME/build
+BUILDDATE=$(date +%Y%m%d)
 
 # A lockfile ensures, that the cronjobs of the different hosts don't overlap.
 
@@ -57,42 +60,34 @@ while (true); do
 }
 done
 
-
 MODULE=sdcc-build
 SVNROOT=https://svn.sourceforge.net/svnroot/sdcc/trunk
 # -s for quiet operation so that this can be run from a cronjob
 MAKEFLAGS=
 # Include local apps.
 if [ -d ~/local-$(uname -m | sed -e's/ /_/g')/bin ] ; then
-    PATH=$PATH:$HOME/local-$(uname -m | sed -e's/ /_/g')/bin
+  PATH=$PATH:$HOME/local-$(uname -m | sed -e's/ /_/g')/bin
 elif [ -d ~/local/bin ] ; then
-    PATH=$PATH:$HOME/local/bin
+  PATH=$PATH:$HOME/local/bin
 fi
 
-# Remove the old version
-rm -rf $BUILDROOT/$MODULE
-
 # Checkout the latest version
-cd $BUILDROOT
-
-# Retry SVN 600 time each second
-# bash on usf-cf-x86-linux-1 is too old for this:
-# for ((i = 1; i < 600; ++i)) ; do
-i=0; while (($i < 600)) ; do
-{
-  ((i += 1))
-  svn export $SVNROOT/$MODULE $MODULE && break
-  echo SVN failed $i: `date`
-  sleep 1
-}
-done
+if [ ! -e $HOMEBUILD/sdcc-build/stamps/sdcc-build.$BUILDDATE-fetched ]
+then
+  # Remove the old version
+  rm -rf $HOMEBUILD/$MODULE/dl
+  mkdir -p $HOMEBUILD/$MODULE
+  ssh sdcc-builder@shell.cf.sourceforge.net svn export $SVNROOT/$MODULE $HOMEBUILD/$MODULE/dl && mkdir -p $HOMEBUILD/$MODULE/stamps/ && touch $HOMEBUILD/$MODULE/stamps/$MODULE.$BUILDDATE-fetched
+fi
+mkdir -p $BUILDROOT/$MODULE
+cp -R $HOMEBUILD/$MODULE/dl/* $BUILDROOT/$MODULE
 
 # And spawn onto the actual build
 cd $BUILDROOT/$MODULE
 make $MAKEFLAGS crontab-spawn $EXTRATARGETS
 
-# cp log files from local hd to $HOME/build on nfs server
-test $BUILDROOT != $HOME/build && \
-  cp -p ../*.log ../*.filtered $HOME/build/
+# cp log files from local hd to $HOMEBUILD on nfs server
+test $BUILDROOT != $HOMEBUILD && \
+  cp -p ../*.log ../*.filtered $HOMEBUILD/
 
 cleanup

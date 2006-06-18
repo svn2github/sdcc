@@ -1,6 +1,8 @@
 2006-06-18 Borut Razem <borut.razem AT siol.net>
 
-	* lib/variables.mk, lib/doc-archive.mk, lib/fetch.mk:
+	* lib/variables.mk, lib/doc-archive.mk, lib/fetch.mk,
+	  lib/src-archive.mk, components/sdcc.mk, components/sdcc-extra.mk,
+	  sdcc-build-bootstrap.sh:
 	  use common ORIG tree with VPATH functionality
 
 2006-06-17 Borut Razem <borut.razem AT siol.net>

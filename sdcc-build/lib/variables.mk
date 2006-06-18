@@ -21,7 +21,7 @@ TOPDIR := $(shell /bin/pwd)
 
 # Directory that all of the soure trees get copied into
 SRCDIR = $(TOPDIR)/src
-ORIGDIR = ~/build/sdcc-build/orig
+ORIGDIR = $(HOME)/build/sdcc-build/orig
 BUILDDIR = $(TOPDIR)/build/$(TARGETOS)/sdcc
 BINDIR = $(BUILDDIR)/bin
 NOISELOG = $(STAGINGBASE)/build-noise.$(TARGETOS).log

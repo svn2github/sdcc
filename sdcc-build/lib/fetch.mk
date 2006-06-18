@@ -13,9 +13,9 @@ $(STAMPDIR)/%.$(_FETCH_EXT):
 	cd $(ORIGDIR); \
 	if [ "$(ISRELEASE)" == "true" ]; \
 	then \
-	  svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/tags/$(SVNTAG)/$(_FETCH_TREE) $(_FETCH_TREE); \
+	  svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/tags/$(SVNTAG)/$(_FETCH_TREE) $(_FETCH_TREE) && touch $@; \
 	else \
-	  svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/trunk/$(_FETCH_TREE) $(_FETCH_TREE); \
+	  svn $(SVNFLAGS) export https://svn.sourceforge.net/svnroot/sdcc/trunk/$(_FETCH_TREE) $(_FETCH_TREE) && touch $@; \
 	fi'
 
 fetch-orig-trees: $(_FETCH_ORIGSRCTREES)
