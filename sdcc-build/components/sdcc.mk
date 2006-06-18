@@ -21,8 +21,7 @@ sdcc-configured: $(SDCCDIR)/sdccconf.h
 
 $(SDCCDIR)/sdccconf.h:
 	mkdir -p $(SDCCDIR)
-	#cd $(SDCCDIR); CC=$(TARGETCC) CXX=$(TARGETCXX) STRIP=$(TARGETSTRIP) RANLIB=$(TARGETRANLIB) CXXFLAGS=$(TARGETCXXFLAGS) $(ORIGDIR)/sdcc/configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) > $(NOISELOG)
-	cd $(SDCCDIR); CC=$(TARGETCC) CXX=$(TARGETCXX) STRIP=$(TARGETSTRIP) RANLIB=$(TARGETRANLIB) CXXFLAGS=$(TARGETCXXFLAGS) ./configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) > $(NOISELOG)
+	cd $(SDCCDIR); CC=$(TARGETCC) CXX=$(TARGETCXX) STRIP=$(TARGETSTRIP) RANLIB=$(TARGETRANLIB) CXXFLAGS=$(TARGETCXXFLAGS) $(ORIGDIR)/sdcc/configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) > $(NOISELOG)
 	@echo -- Configured sdcc for $(TARGETOS), CC $(TARGETCC)
 
 sdcc: sdcc-build
@@ -64,7 +63,6 @@ sdcc-device: sdcc-configured sdcc-build
 	$(MAKE) $(MAKEJOBFLAGS) -C $(SDCCDIR) sdcc-device
 
 sdcc-clean:
-#	echo Here
 	$(MAKE) -C $(SDCCDIR) clean
 
 sdcc-device-clean:

@@ -1,3 +1,7 @@
+# Prevent multiple inclusion
+ifneq ($(DOCARCHIVEMKINCLUDE), 1)
+DOCARCHIVEMKINCLUDE = 1
+
 _PROJECT_DIR = /home/groups/s/sd/sdcc
 _PROJECT_DOC_DIR = $(_PROJECT_DIR)/htdocs/doc
 _PROJECT_SNAPDOC_DIR = $(_PROJECT_DIR)/htdocs/snapshots/docs
@@ -85,3 +89,5 @@ doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_DOC_DIR)/,*.txt *.html *.
 	# create zip doc package
 	find $(_DOC_ARCHIVE_BUILDDIR) -name "*.txt" -exec unix2dos {} \;
 	cd $(_DOC_ARCHIVE_BUILDDIR); zip -9r $(_DOC_ARCHIVE_DIR)/sdcc-doc-$(SNAPSHOTID).zip doc
+
+endif
