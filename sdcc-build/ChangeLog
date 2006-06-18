@@ -1,3 +1,8 @@
+2006-06-18 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk, lib/doc-archive.mk, lib/fetch.mk:
+	  use common ORIG tree with VPATH functionality
+
 2006-06-17 Borut Razem <borut.razem AT siol.net>
 
 	* lib/doc-archive.mk: run configure from the current (SRC) directory

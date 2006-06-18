@@ -31,13 +31,11 @@ _DOC_ARCHIVE_ARCHIVES = sdcc-doc-$(SNAPSHOTID).tar.gz sdcc-doc-$(SNAPSHOTID).zip
 .PHONY: doc-archive-copy doc-archive-copy-pdf doc-archive-copy-tex
 .PHONY: doc-archive-copy-html doc-archive-build-archives
 
-#build-doc-archive: fetch-orig-trees doc-archive-configure doc-archive-make doc-archive-build-archives doc-archive-copy do-upload
-build-doc-archive: doc-archive-configure doc-archive-make doc-archive-build-archives doc-archive-copy do-upload
+build-doc-archive: fetch-orig-trees doc-archive-configure doc-archive-make doc-archive-build-archives doc-archive-copy do-upload
 
 doc-archive-configure:
 	mkdir -p $(_DOC_ARCHIVE_SDCC_DIR)
-	#cd $(_DOC_ARCHIVE_SDCC_DIR); $(ORIGDIR)/sdcc/configure --enable-doc > $(NOISELOG)
-	cd $(_DOC_ARCHIVE_SDCC_DIR); ./configure --enable-doc > $(NOISELOG)
+	cd $(_DOC_ARCHIVE_SDCC_DIR); $(ORIGDIR)/sdcc/configure --enable-doc > $(NOISELOG)
 
 doc-archive-make $(addprefix $(_DOC_ARCHIVE_DOC_DIR)/,*.txt *.html *.pdf):
 	make -C $(_DOC_ARCHIVE_SDCC_DIR)/doc
