@@ -1,3 +1,7 @@
+2006-06-30 Borut Razem <borut.razem AT siol.net>
+
+	* local/openpower-linux1.mk: added
+
 2006-06-18 Borut Razem <borut.razem AT siol.net>
 
 	* lib/variables.mk, lib/doc-archive.mk, lib/fetch.mk,
