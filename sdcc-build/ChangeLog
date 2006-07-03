@@ -1,3 +1,8 @@
+2006-07-03 Borut Razem <borut.razem AT siol.net>
+
+	* local/ppc-osx3.mk: added
+	* emu/rrz80/cpu/z80.h: detect __BIG_ENDIAN__ if defined by preprocessor
+
 2006-06-30 Borut Razem <borut.razem AT siol.net>
 
 	* local/openpower-linux1.mk: added

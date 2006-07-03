@@ -23,8 +23,12 @@
 
 #ifdef HAVE_CONFIG_H
 #  include "config.h"
-#else
-   /* Hack: GYGWIN doesn't have endian.h */
+#elif defined(__BIG_ENDIAN__)
+   /* defined by preprocessor */
+#  define WORDS_BIGENDIAN
+#elif !defined(__LITTLE_ENDIAN__)
+   /* try with types.h and endian.h */
+   /* Hack: GYGWIN doesn't have endian.h, but we know it is LITTLE ENDIAN */
 #  ifndef __CYGWIN__
 #    include <sys/types.h>
 #    if defined(_BIG_ENDIAN)
