@@ -1,3 +1,7 @@
+2006-07-03 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrz80/cpu/z80.h: detect __BIG_ENDIAN__ if defined by preprocessor
+
 2006-05-18 Bernhard Held <bernhard AT bernhardheld.de>
 
 	* ChangeLog: added Revision

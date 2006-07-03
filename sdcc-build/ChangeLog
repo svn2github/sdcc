@@ -1,8 +1,8 @@
 2006-07-03 Borut Razem <borut.razem AT siol.net>
 
 	* local/ppc-osx3.mk: added
-	* emu/rrz80/cpu/z80.h: detect __BIG_ENDIAN__ if defined by preprocessor
 	* sdcc-build-bootstrap.sh: Remove the stamp
+	* components/sdcc.mk: introduced TARGETCPPFLAGS configure option
 
 2006-06-30 Borut Razem <borut.razem AT siol.net>
 

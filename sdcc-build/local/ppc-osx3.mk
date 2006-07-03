@@ -6,4 +6,4 @@ SDCCCONFIGUREFLAGS = --disable-ucsim
 
 TARGETCC  = gcc2
 TARGETCXX = g++2
-CPPFLAGS = -no-cpp-precomp
+TARGETCPPFLAGS = -no-cpp-precomp
