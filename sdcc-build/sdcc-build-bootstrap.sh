@@ -74,6 +74,8 @@ fi
 # Checkout the latest version
 if [ ! -e $HOMEBUILD/sdcc-build/stamps/sdcc-build.$BUILDDATE-fetched ]
 then
+  # Remove the stamp
+  rm -f $HOMEBUILD/sdcc-build/stamps/sdcc-build.*-fetched
   # Remove the old version
   rm -rf $HOMEBUILD/$MODULE/dl
   mkdir -p $HOMEBUILD/$MODULE
