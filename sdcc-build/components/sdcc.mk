@@ -21,7 +21,13 @@ sdcc-configured: $(SDCCDIR)/sdccconf.h
 
 $(SDCCDIR)/sdccconf.h:
 	mkdir -p $(SDCCDIR)
-	cd $(SDCCDIR); CC=$(TARGETCC) CXX=$(TARGETCXX) STRIP=$(TARGETSTRIP) RANLIB=$(TARGETRANLIB) CPPFLAGS=$(TARGETCPPFLAGS) CXXFLAGS=$(TARGETCXXFLAGS) $(ORIGDIR)/sdcc/configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) > $(NOISELOG)
+	cd $(SDCCDIR); \
+	CC=$(TARGETCC) \
+	CXX=$(TARGETCXX) \
+	STRIP=$(TARGETSTRIP) \
+	RANLIB=$(TARGETRANLIB) \
+	CXXFLAGS=$(TARGETCXXFLAGS) \
+	$(ORIGDIR)/sdcc/configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) > $(NOISELOG)
 	@echo -- Configured sdcc for $(TARGETOS), CC $(TARGETCC)
 
 sdcc: sdcc-build
