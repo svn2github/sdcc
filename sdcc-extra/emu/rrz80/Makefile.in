@@ -1,6 +1,7 @@
 VPATH = @srcdir@
 
 top_srcdir = @top_srcdir@
+top_builddir = @top_builddir@
 
 CSRC = rrz80.c map.c
 CCSRC = disasm.cc
@@ -18,4 +19,4 @@ LDLIBS += -lstdc++
 
 EXTRA_LIBS  = cpu/libz80cpu.a
 
-include $(top_srcdir)/Makefile.rules
+include $(top_builddir)Makefile.rules

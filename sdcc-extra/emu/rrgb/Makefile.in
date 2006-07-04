@@ -6,10 +6,15 @@ VER = 0.35
 
 # this looks wrong, but *ops.c are actually #include'd by z80.c
 OBJS=main.o z80.o parse_map.o debugger.o disgb.o csock.o
-CC=gcc
+
+CC = @CC@
+CXX = @CXX@
+
+CPPFLAGS += @CPPFLAGS@
+
 OPTS = -DSEG -g
 #CFLAGS=-O3 -fomit-frame-pointer -funroll-loops -Wall $(OPTS)
-CFLAGS= $(OPTS) -Wall
+CFLAGS += @CFLAGS@ $(OPTS) -Wall
 ifeq ($(shell uname -s),SunOS)
 LIBS = -lm -lsocket
 STRIP = /usr/ccs/bin/strip
