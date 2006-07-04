@@ -1,3 +1,7 @@
+2006-07-04 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc-extra.mk: accept TARGETXXX configure options
+
 2006-07-03 Borut Razem <borut.razem AT siol.net>
 
 	* local/ppc-osx3.mk: added

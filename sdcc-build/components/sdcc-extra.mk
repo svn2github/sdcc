@@ -13,7 +13,14 @@ ARCHIVETREES += sdcc-extra
 
 sdcc-extra:
 	mkdir -p $(SDCCEXTRADIR)
-	cd $(SDCCEXTRADIR); $(ORIGDIR)/sdcc-extra/configure
+	cd $(SDCCEXTRADIR); \
+	CC=$(TARGETCC) \
+	CXX=$(TARGETCXX) \
+	STRIP=$(TARGETSTRIP) \
+	RANLIB=$(TARGETRANLIB) \
+	CPPFLAGS=$(TARGETCPPFLAGS) \
+	CXXFLAGS=$(TARGETCXXFLAGS) \
+	$(ORIGDIR)/sdcc-extra/configure
 	$(MAKE) -C $(SDCCEXTRADIR)
 
 sdcc-extra-clean:
