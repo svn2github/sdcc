@@ -9,6 +9,7 @@ OBJS=main.o z80.o parse_map.o debugger.o disgb.o csock.o
 
 CC = @CC@
 CXX = @CXX@
+STRIP = @STRIP@
 
 CPPFLAGS += @CPPFLAGS@
 
@@ -17,10 +18,8 @@ OPTS = -DSEG -g
 CFLAGS += @CFLAGS@ $(OPTS) -Wall
 ifeq ($(shell uname -s),SunOS)
 LIBS = -lm -lsocket
-STRIP = /usr/ccs/bin/strip
 else
 LIBS = -lm
-STRIP = strip
 endif
 
 all: rrgb

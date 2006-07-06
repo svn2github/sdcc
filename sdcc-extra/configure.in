@@ -9,6 +9,7 @@ AC_CONFIG_SRCDIR([Makefile.in])
 AC_PROG_CC
 AC_PROG_CXX
 AC_PROG_CPP
+AC_CHECK_PROG(STRIP, strip, strip, :)
 
 AC_CONFIG_FILES([Makefile
                  Makefile.rules

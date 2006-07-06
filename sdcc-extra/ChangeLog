@@ -1,3 +1,15 @@
+2006-07-06 Borut Razem <borut.razem AT siol.net>
+
+	* configure.in, configure, emu/rrgb/Makefile.in: define STRIP at
+	  configure time
+
+2006-07-04 Borut Razem <borut.razem AT siol.net>
+
+	* configure.in, configure, Makefile.in, Makefile.rules.in,
+	  emu/Makefile.in, emu/rrgb/Makefile.in, emu/rrz80/Makefile.in,
+	  emu/rrz80/cpu/Makefile.in: configurable CC, CXX, CPPFLAGS,
+	  CFLAGS and CXXFLAGS
+
 2006-07-03 Borut Razem <borut.razem AT siol.net>
 
 	* emu/rrz80/cpu/z80.h: detect __BIG_ENDIAN__ if defined by preprocessor
