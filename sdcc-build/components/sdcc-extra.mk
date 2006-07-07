@@ -20,7 +20,7 @@ sdcc-extra:
 	RANLIB=$(TARGETRANLIB) \
 	CPPFLAGS=$(TARGETCPPFLAGS) \
 	CXXFLAGS=$(TARGETCXXFLAGS) \
-	$(ORIGDIR)/sdcc-extra/configure
+	$(ORIGDIR)/sdcc/configure --host=$(TARGETOS) --build=$(HOSTOS)
 	$(MAKE) -C $(SDCCEXTRADIR)
 
 sdcc-extra-clean:
