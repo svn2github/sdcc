@@ -26,12 +26,21 @@ BUILDDIR = $(TOPDIR)/build/$(TARGETOS)/sdcc
 BINDIR = $(BUILDDIR)/bin
 NOISELOG = $(STAGINGBASE)/build-noise.$(TARGETOS).log
 STAGINGBASE = $(TOPDIR)/..
-SNAPSHOTDIR = $(STAGINGBASE)/snapshots
+HTDOCDIR = $(STAGINGBASE)/htdoc
+SNAPSHOTDIR = $(HTDOCDIR)/snapshots
+
 # Start of the CVS repository line, used to set the access method (pserver,
 # ext, ...) and username.  Can be overriden in your local.mk
 CVSACCESS = :ext:sdcc-builder
 # Subversion server, accessed by ssh
 SVNSERVER = sdcc-builder@shell.cf.sourceforge.net
+
+# Regression test targets
+REGTESTTARGETS = test-host test-ucz80 test-mcs51 test-mcs51-stack-auto test-mcs51-large test-ds390 test-hc08
+# Directory for regression test log file
+REGTESTDIR = $(HTDOCDIR)/regression_test_results/$(TARGETOS)
+# Regression test log file
+REGTESTLOG = $(REGTESTDIR)/regression-test-$(TARGETOS)-$(SNAPSHOTID).log
 
 CVSFLAGS += -Q
 SVNFLAGS += --force

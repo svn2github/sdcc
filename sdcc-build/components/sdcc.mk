@@ -77,7 +77,8 @@ sdcc-device-clean:
 sdcc-regression: sdcc sdcc-install sdcc-extra
 # test-gbz80 temporary disabled because of problems; Bernhard 2003-02-13
 ifneq ($(CROSSCOMPILING), 1)
-	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra test-host test-ucz80 test-mcs51 test-mcs51-stack-auto test-mcs51-large test-ds390 test-hc08
+	mkdir -p $(REGTESTDIR)
+	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) 2>&1 | tee $(REGTESTLOG)
 endif
 
 endif

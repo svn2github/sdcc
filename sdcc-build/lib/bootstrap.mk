@@ -120,8 +120,9 @@ copy-extra-docs:
 upload-packages: generate-tarball generate-packages do-upload
 
 do-upload:
-	cd $(STAGINGBASE); rsync -rC --include='*.exe' -e ssh --size-only $(TARBALLBASE) $(SNAPSHOTDEST)
-	rm $(STAGINGBASE)/$(TARBALLBASE)/*/*
+	cd $(STAGINGBASE); \
+	rsync -r --include='*.exe' -e ssh --size-only $(HTDOCDIR)/* $(SNAPSHOTDEST);
+	rm $(HTDOCDIR)/*/*/*
 
 update-snapshots-dir: upload-packages remove-old-versions
 

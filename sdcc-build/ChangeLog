@@ -2,6 +2,8 @@
 
 	* components/sdcc-extra.mk: added --host and --build options to
 	  configure, so that sdcc-extra can be cross-compiled
+	* components/sdcc.mk, lib/bootstrap.mk, lib/variables.mk: make
+	  regression test results available on the WEB
 
 2006-07-04 Borut Razem <borut.razem AT siol.net>
 
