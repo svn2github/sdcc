@@ -17,6 +17,8 @@ BOOTSTRAPLIST=sdcc-buildlogs@lists.sourceforge.net
 # Subject line to use in the build output email
 BOOTSTRAPSUBJECT=Automated build output ($(TARGETOS))
 
+REGTESTBASE = regression_test_results
+
 # The file naming and output directories depend on whether this is a
 # release or a snapshot build
 ifeq ($(ISRELEASE),true)
@@ -44,12 +46,6 @@ else
 TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).zip
 SETUPNAME=$(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-setup.exe
 endif
-
-# Location to copy the tarball to
-SNAPSHOTDEST=shell1.sourceforge.net:/home/groups/s/sd/sdcc/htdocs
-# Host and path used for removing old versions
-WEBHOST=shell1.sourceforge.net
-WEBSNAPSHOTDIR=/home/groups/s/sd/sdcc/htdocs/$(TARBALLBASE)
 
 # PENDING: Better naming
 crontab-spawn: update-bootstrap build-all-targets
@@ -119,19 +115,7 @@ copy-extra-docs:
 # Uploads and delete archive to save space on CF
 upload-packages: generate-tarball generate-packages do-upload
 
-do-upload:
-	cd $(STAGINGBASE); \
-	rsync -r --include='*.exe' -e ssh --size-only $(HTDOCDIR)/* $(SNAPSHOTDEST);
-	rm $(HTDOCDIR)/*/*/*
-
 update-snapshots-dir: upload-packages remove-old-versions
-
-# Removes old versions
-remove-old-versions:
-# over seven days old
-#	ssh $(WEBHOST) 'cd $(WEBSNAPSHOTDIR); find . -mtime +7 -not -type d -exec rm {} \;'
-# more than 7 files in dir
-	ssh $(WEBHOST) 'cd $(WEBSNAPSHOTDIR); find * -type d -exec sh -c "cd {} ; ls -1t | sed 1,7d | xargs rm -f" \;'
 
 # Sends email containing the results of the build, one filtered, one not.
 send-build-mail:

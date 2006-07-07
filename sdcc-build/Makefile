@@ -13,6 +13,7 @@ include components/sdcc-extra.mk
 
 include lib/bugs.mk
 include lib/fetch.mk
+include lib/upload.mk
 include lib/clean.mk
 include lib/install.mk
 include lib/help.mk
