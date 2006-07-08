@@ -1,3 +1,8 @@
+2006-07-08 Borut Razem <borut.razem AT siol.net>
+
+	* snap.php, snap_footer.php: added regression test results
+	* images/*: added
+
 2006-05-11 Borut Razem <borut.razem AT siol.net>
 
 	* snap_header.php: fixed bug [1486015] Changelog not visible from the

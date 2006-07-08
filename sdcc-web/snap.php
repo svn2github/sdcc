@@ -2,7 +2,7 @@
 
 require 'snap_header.php';
 
-parse_dir("snapshots");
+parse_dir("snapshots", "regression_test_results");
 
 require 'snap_footer.php';
 
@@ -12,7 +12,29 @@ function green_bar($text, $name)
   echo "<h2><a name=\"" . $name . "\"></a>" . $text . "</h2>\n";
 }
 
-function display_files($dir, $subdir)
+function file_name_to_revision($fname)
+{
+  return preg_replace('/.*-([^-]+-[^-]+-[^-]+-\d{8}-\d+)\..*/', '$1', $fname);
+}
+
+function rt_failed($fname)
+{
+  if ($handle = fopen($fname, "r")) {
+    while ($line = fgets($handle)) {
+      # Summary for 'host': 0 failures, 4244 tests, 596 test cases, 0 bytes, 0 ticks
+      $failures = preg_replace('/^Summary for \'.+\':.* (\d+) failures, \d+ tests, \d+ test cases, \d+ bytes, \d+ ticks/',
+        '$1', $line);
+      if ($failures && $failures > 0)
+        return true;
+    }
+  
+    return false;
+  }
+  else
+    return null;
+}
+
+function display_files($dir, $rtdir, $subdir)
 {
   $numfiles = 0;
   $thissubdir = @opendir("$dir/$subdir");
@@ -39,23 +61,41 @@ function display_files($dir, $subdir)
   echo "<th align=\"left\"><font color=\"#660000\" face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\">Filename</font></th>";
   echo "<th align=\"left\"><font color=\"#660000\" face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\">Size</font></th>";
   echo "<th align=\"left\"><font color=\"#660000\" face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\">Snapshot Date</font></th>";
+  if ($rtdir)
+    echo "<th align=\"left\"><font color=\"#660000\" face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\">RegTest</font></th>";
   echo "</tr>\n";
   for ($i=0; $i<$numfiles; $i++) {
     $fs = round($file_size[$i] / 1024,0);
     $subdirpp = preg_replace("/\s/","%20","$dir/$subdir");
     $filep = preg_replace("/\s/","%20",$file_name[$i]);
     $modDate = date("F j, Y", $file_date[$i]);
+
+    $rt = '&nbsp;';
+    if ($rtdir) {
+      $rtpath = $rtdir . "/" . $subdir . '/regression-test-' . file_name_to_revision($file_name[$i]) . '.log';
+      if (is_file($rtpath)) {
+        $rtpathp = preg_replace("/\s/", "%20", $rtpath);
+        $failed = rt_failed($rtpathp);
+        if (isset($failed))
+          $rtIcon = $failed ? '18dot1a.gif' : '18dot4a.gif';
+        else
+          $rtIcon = '18dot2a.gif';
+        $rt = "<a href=\"$rtpathp\"><img src=\"/images/$rtIcon\" border=\"0\" alt=\"RT\" /></a>";
+      }
+    }
+
     $dispthisdir = "<tr><td align=\"left\">
       <a href=\"$subdirpp/$filep\">$file_name[$i]</a></td><td align=\"left\">
       $fs K</td><td align=\"left\">
-      $modDate</td></tr>";
+      $modDate</td><td align=\"center\">$rt</td></tr>";
+
     echo $dispthisdir;
   }
   echo "</table></div>\n";
 }
 
 
-function parse_dir($scanthis)
+function parse_dir($scanthis, $rtdir)
 {
   $linux_num = $windows_num = $docs_num = $source_num = $other_num = 0;
 
@@ -78,23 +118,23 @@ function parse_dir($scanthis)
 
   green_bar("Linux Binaries", "Linux");
   for ($i=0; $i<$linux_num; $i++) {
-    display_files($scanthis, $linux_dir[$i]);
+    display_files($scanthis, $rtdir, $linux_dir[$i]);
   }
   green_bar("Windows Binaries", "Windows");
   for ($i=0; $i<$windows_num; $i++) {
-    display_files($scanthis, $windows_dir[$i]);
+    display_files($scanthis, false, $windows_dir[$i]);
   }
         green_bar("Documentation", "Docs");
         for ($i=0; $i<$docs_num; $i++) {
-                display_files($scanthis, $docs_dir[$i]);
+                display_files($scanthis, false, $docs_dir[$i]);
         }
   green_bar("Source Code", "Source");
   for ($i=0; $i<$source_num; $i++) {
-    display_files($scanthis, $source_dir[$i]);
+    display_files($scanthis, false, $source_dir[$i]);
   }
   if ($other_num > 0) green_bar("Other Files", "Other");
   for ($i=0; $i<$other_num; $i++) {
-    display_files($scanthis, $other_dir[$i]);
+    display_files($scanthis, $rtdir, $other_dir[$i]);
   }
 
 }//end-function declaration
