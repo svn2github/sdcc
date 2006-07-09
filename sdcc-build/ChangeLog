@@ -1,9 +1,19 @@
+2006-07-09 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk, lib/variables.mk: make
+	  ChangeLog heads available on the WEB
+
 2006-07-07 Borut Razem <borut.razem AT siol.net>
 
 	* components/sdcc-extra.mk: added --host and --build options to
 	  configure, so that sdcc-extra can be cross-compiled
 	* components/sdcc.mk, lib/bootstrap.mk, lib/variables.mk: make
 	  regression test results available on the WEB
+	* lib/bootstrap.mk, lib/upload.mk: rules do_update and
+	  remove-old-versions moved to newly added upload.mk,
+	  remove-old-versions removes old versions in $(WEBREGTESTDIR)
+	* lib variables.mk: HTDOCDIR corrected to HTDOCSDIR
+	* Makefile: added include upload.mk
 
 2006-07-04 Borut Razem <borut.razem AT siol.net>
 

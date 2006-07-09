@@ -1,3 +1,7 @@
+2006-07-09 Borut Razem <borut.razem AT siol.net>
+
+	* snap.php, snap_footer.php: added ChangeLog heads
+
 2006-07-08 Borut Razem <borut.razem AT siol.net>
 
 	* snap.php, snap_footer.php: added regression test results

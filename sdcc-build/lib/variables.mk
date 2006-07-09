@@ -42,11 +42,16 @@ REGTESTDIR = $(HTDOCSDIR)/regression_test_results/$(TARGETOS)
 # Regression test log file
 REGTESTLOG = $(REGTESTDIR)/regression-test-$(TARGETOS)-$(SNAPSHOTID).log
 
+# Directory for regression test log file
+CHLOGDIR = $(HTDOCSDIR)/changelog_heads
+# Regression test log file
+CHLOGTXT = $(CHLOGDIR)/changelog-head-$(SDCCREVISION).txt
+
 CVSFLAGS += -Q
 SVNFLAGS += --force
 STAMPDIR = $(ORIGDIR)/../stamps
 RSYNCFLAGS = -C -r
-# Passed on to Makes to make them silent.  Can override.
+# Passed on to Makes to make them silent. Can override.
 MAKESILENTFLAG = -s
 
 $(STAMPDIR):

@@ -58,11 +58,13 @@ ifneq ($(CROSSCOMPILING), 1)
 	mkdir -p $(BUILDDIR)/usr/local/share/sdcc/doc
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/usr/local/share/sdcc/doc/README
 	head -n 100 $(ORIGDIR)/sdcc/ChangeLog > $(BUILDDIR)/usr/local/share/sdcc/doc/ChangeLog.head
+	cp $(BUILDDIR)/usr/local/share/sdcc/doc/ChangeLog.head $(CHLOGTXT)
 else
 	rm -rf $(BUILDDIR)/sdcc/doc/*
 	mkdir -p $(BUILDDIR)/sdcc/doc
 	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/sdcc/doc/README.TXT
 	head -n 100 $(ORIGDIR)/sdcc/ChangeLog > $(BUILDDIR)/sdcc/doc/ChangeLog_head.txt
+	cp $(BUILDDIR)/sdcc/doc/ChangeLog_head.txt $(CHLOGTXT)
 endif
 endif
 
