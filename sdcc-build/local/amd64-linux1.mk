@@ -2,6 +2,10 @@
 MAKEJOBFLAGS = -j 2
 TARGETOS = amd64-unknown-linux2.2
 HOSTOS = amd64-unknown-linux2.2
+
+# Enable the pic16 regression tests
+REGTESTTARGETS += pic16
+
 # The SDCC documentation package is built on this machine
 # Configure the doc Makefile
 SDCCCONFIGUREFLAGS = --enable-doc

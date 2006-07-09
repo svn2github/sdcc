@@ -2,6 +2,7 @@
 
 	* components/sdcc.mk, lib/variables.mk: make
 	  ChangeLog heads available on the WEB
+	* local/amd64-linux1.mk: enable the pic16 regression tests
 
 2006-07-07 Borut Razem <borut.razem AT siol.net>
 
