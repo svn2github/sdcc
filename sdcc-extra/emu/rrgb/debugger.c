@@ -143,7 +143,7 @@ int enterDebugger( pmregs regs )
 	unsigned char *ppc;
 	unsigned int dpc = *regs->pc;
 	int debugging, updateLine;
-	int offset;
+	int offset = 0;
 
 	int start, end, dumpCount, i;
 

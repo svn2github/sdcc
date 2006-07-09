@@ -121,7 +121,7 @@ int main(int argc,char **argv)
 {
 	int i, c;
 	struct sockaddr_in sock;
-	int sock_len, hsocket;
+	int sock_len, hsocket = 0;
 
 	flags=0;
 

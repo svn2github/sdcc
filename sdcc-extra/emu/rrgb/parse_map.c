@@ -7,10 +7,10 @@ int parse_map( char *file_name, pmarea *first_area )
 {
 	FILE *mapFP;
 	char line[100];
-	int section, sub_sect;
+	int section = 0, sub_sect = 0;
 
 	pmarea current_area, *next_area;
-	pmglobal current_global, *next_global;
+	pmglobal current_global, *next_global = NULL;
 	char tmp, *tmp2;
 
 	next_area = first_area;

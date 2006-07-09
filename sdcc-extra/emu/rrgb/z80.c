@@ -92,7 +92,7 @@ int mainloop(int flags)
 	unsigned char op;
 	int	states_until_timerint;
 	unsigned long last_tstates;
-	unsigned startTime;
+	unsigned startTime = tstates;
 	int cpuRunning = 1;
 	clock_t max_run_time = clock() + CLOCKS_PER_SEC*30;
 	unsigned run_time_check_mod = 0;
