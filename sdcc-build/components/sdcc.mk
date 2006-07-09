@@ -53,6 +53,7 @@ sdcc-docs:
 ifeq ($(ISRELEASE),true)
 	echo Fetch sdcc.doc.tar.gz and add it to the archive!
 else
+	mkdir -p $(CHLOGDIR)
 ifneq ($(CROSSCOMPILING), 1)
 	rm -rf $(BUILDDIR)/usr/local/share/sdcc/doc/*
 	mkdir -p $(BUILDDIR)/usr/local/share/sdcc/doc
