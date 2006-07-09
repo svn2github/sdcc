@@ -14,7 +14,7 @@ SNAPSHOTDEST=$(WEBHOST):$(WEBHTDOCSDIR)
 do-upload:
 	cd $(STAGINGBASE); \
 	rsync -r --include='*.exe' -e ssh --size-only $(HTDOCSDIR)/* $(SNAPSHOTDEST);
-	rm $(HTDOCSDIR)/*/*/*
+	rm -f $(HTDOCSDIR)/*/*/*
 
 # Removes old versions
 remove-old-versions:
