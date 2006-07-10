@@ -14,7 +14,13 @@ function green_bar($text, $name)
 
 function file_name_to_snapshot_id($fname)
 {
-  return preg_replace('/.*-([^-]+-[^-]+-[^-]+-\d{8}-\d+)\..*/', '$1', $fname);
+  $ret = preg_replace('/sdcc-snapshot-([^-]+-[^-]+-[^-]+-\d{8}-\d+)\..*/', '$1', $fname);
+  if ($ret === $fname)
+    $ret = preg_replace('/sdcc-snapshot-([^-]+-[^-]+-\d{8}-\d+)\..*/', '$1', $fname);
+  if ($ret === $fname)
+    $ret = preg_replace('/.*-([^-]+-[^-]+-[^-]+-\d{8}-\d+)\..*/', '$1', $fname);
+
+  return $ret;
 }
 
 function file_name_to_revision($fname)
@@ -147,7 +153,7 @@ function parse_dir($scanthis, $cldir, $rtdir)
   }
   green_bar("Windows Binaries", "Windows");
   for ($i=0; $i<$windows_num; $i++) {
-    display_files($scanthis, $cldir, false, $windows_dir[$i]);
+    display_files($scanthis, $cldir, $rtdir, $windows_dir[$i]);
   }
   green_bar("Documentation", "Docs");
   for ($i=0; $i<$docs_num; $i++) {
