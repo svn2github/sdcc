@@ -80,14 +80,15 @@ doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_DOC_DIR)/,*.txt *.html *.
 	# copy to build directory
 	cd $(_DOC_ARCHIVE_DOC_DIR); cp -rpf *.txt *.html *.pdf $(_DOC_ARCHIVE_BUILDDIR)/doc
 	cd $(_DOC_ARCHIVE_ORIG_DIR); \
-	cp -rpf doc/z80/* $(_DOC_ARCHIVE_BUILDDIR)/doc/z80/; \
-	cp -rpf doc/avr/* $(_DOC_ARCHIVE_BUILDDIR)/doc/avr/; \
-	cp -rpf as/doc/* $(_DOC_ARCHIVE_BUILDDIR)/doc/as/
+	cp -rpf doc/z80 $(_DOC_ARCHIVE_BUILDDIR)/doc; \
+	cp -rpf doc/avr $(_DOC_ARCHIVE_BUILDDIR)/doc; \
+	cp -rpf as/doc/* $(_DOC_ARCHIVE_BUILDDIR)/doc/as/; \
+	cp -pf doc/*.txt $(_DOC_ARCHIVE_BUILDDIR)/doc
 	cd $(_DOC_ARCHIVE_ORIG_DIR)/sim/ucsim/doc; cp -rpf *.html *.jpg *.gif *.fig $(_DOC_ARCHIVE_BUILDDIR)/doc/ucsim/
 	# create tar.gz doc package
 	cd $(_DOC_ARCHIVE_BUILDDIR); tar -czf $(_DOC_ARCHIVE_DIR)/sdcc-doc-$(SNAPSHOTID).tar.gz doc
 	# create zip doc package
-	find $(_DOC_ARCHIVE_BUILDDIR) -name "*.txt" -exec unix2dos {} \;
+	find $(_DOC_ARCHIVE_BUILDDIR) -type f \( -name '*.txt' -o -name '*.html' \) -exec unix2dos {} \;
 	cd $(_DOC_ARCHIVE_BUILDDIR); zip -9r $(_DOC_ARCHIVE_DIR)/sdcc-doc-$(SNAPSHOTID).zip doc
 
 endif
