@@ -17,14 +17,11 @@
       <h2>What is SDCC?</h2>
       <p> <b>SDCC</b> is a <b><i>Freeware,
 retargettable, optimizing ANSI - C compiler</i></b> that
-targets the <b><i>Intel 8051, Maxim 80DS390</i></b>
-and the<b><i> Zilog Z80 </i></b>based MCUs.
-Work is in progress on supporting the <b><i>Motorola
-68HC08</i></b> as well as <b><i>Microchip
-PIC16</i></b> and <b><i>PIC18</i></b>
-series. The entire source code for the
-compiler is distributed
-under GPL. </p>
+targets the <b><i>Intel 8051, Maxim 80DS390, Zilog Z80</i></b>
+and the <b><i>Motorola 68HC08</i></b> based MCUs.
+Work is in progress on supporting the <b><i>Microchip
+PIC16</i></b> and <b><i>PIC18</i></b> series. The entire source code for the
+compiler is distributed under GPL. </p>
       <p>Some of the features include: </p>
       <ul>
         <li>ASXXXX and ASLINK, a Freeware, retargettable
@@ -79,22 +76,23 @@ with all the users' and developers' input. </p>
 and <b><i>gbz80</i></b>
 ports are no longer maintained. </p>
       <h2><a name="News"></a>News</h2>
-      <p><b>April 19th, 2006: SDCC migrated from CVS to Subversion version control system.</b></p>
-      <p><b>May 12th, 2005: SDCC 2.5.0 released.</b>
-Source code and binaries Microsoft Windows and Linux are available from
-the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
-download page</a>.</p>
-      <h2><a name="Platforms"></a>What
-Platforms are Supported?</h2>
+      <p><i><b>July 12th, 2006: SDCC 2.6.0 RC1 released.</b></i></p>
+      <p>SDCC 2.6.0 Release Candidate 1 packages for x86 Linux, 32 bit Windows, 
+ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+      <p><i><b>April 19th, 2006: SDCC migrated from CVS to Subversion version control system.</b></i></p>
+      <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
       <p><b> Linux</b>
 and <b>Microsoft Windows</b>
 are the primary targets,
 although <b>SDCC</b>
 is regularly compiled on the <b>Sourceforge
-Compile Farm</b> which includes <b>x86</b>, <b>AMD Opteron (AMD64)</b>,
+Compile Farm</b> which includes <b>x86</b>,
+      <b>AMD Opteron (AMD64)</b>,
       <b>Alpha</b>,
-      <b>Mac OS
-X</b>, and <b>Sparc</b> machines. </p>
+      <b>IBM Power5</b>,
+      <b>Mac OS X</b>,
+      and <b>Sparc</b> machines. </p>
       <p><b>SDCC</b>
 will compile natively on <b>Linux</b>
 using using <a href="http://www.gnu.org">gcc</a>. <b>Windows
@@ -113,9 +111,10 @@ download page</a> for the last released version including source
 and binary packages for <b>Linux/x86</b>,
       <b>Linux/Opteron (AMD64)</b>,
       <b>Linux/Alpha</b>,
+      <b>Linux/IBM Power5</b>,
       <b>Mac OS X/PPC</b>,
       <b>SUN Solaris/Sparc</b>
-and <b>Microsoft Windows</b>.
+and <b>32 bit Microsoft Windows</b>.
       </p>
       <p>SDCC is always under active development. Please consider
       <a href="snap.php">downloading one of the nightly
@@ -308,6 +307,10 @@ Dutta &lt;malini.AT.mediaone.net&gt;</a> -
 Sandeep's wife, for her patience and support.</li>
       </ul>
       <h2>Past news</h2>
+      <p><i><b>May 12th, 2005: SDCC 2.5.0 released.</b></i></p>
+      <p>Source code and binaries Microsoft Windows and Linux are available from
+the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
+download page</a>.</p>
       <p><i><b>February 26th, 2004 - SDCC 2.4.0
 released</b></i></p>
       <p>Source code and binaries for Mac OS X, Microsoft
