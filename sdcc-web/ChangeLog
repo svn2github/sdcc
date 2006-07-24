@@ -1,3 +1,7 @@
+2006-07-24 Borut Razem <borut.razem AT siol.net>
+
+	* snap.php: correct alt tag values for RT and CL icons
+
 2006-07-12 Borut Razem <borut.razem AT siol.net>
 
 	* index.php: sdcc 2.6.0 RC1 announced

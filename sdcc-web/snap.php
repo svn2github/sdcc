@@ -91,7 +91,7 @@ function display_files($dir, $cldir, $rtdir, $subdir)
       if (is_file($clpath)) {
         $clpathp = preg_replace("/\s/", "%20", $clpath);
         $clIcon = '18dot2a.gif';
-        $cl = "<a href=\"$clpathp\"><img src=\"/images/$clIcon\" border=\"0\" alt=\"RT\" /></a>";
+        $cl = "<a href=\"$clpathp\"><img src=\"/images/$clIcon\" border=\"0\" alt=\"ChangeLog Head\" /></a>";
       }
     }
 
@@ -106,7 +106,7 @@ function display_files($dir, $cldir, $rtdir, $subdir)
           $rtIcon = $failed ? '18dot1a.gif' : '18dot4a.gif';
         else
           $rtIcon = '18dot2a.gif';
-        $rt = "<a href=\"$rtpathp\"><img src=\"/images/$rtIcon\" border=\"0\" alt=\"RT\" /></a>";
+        $rt = "<a href=\"$rtpathp\"><img src=\"/images/$rtIcon\" border=\"0\" alt=\"Regression Test Log\" /></a>";
       }
     }
 
