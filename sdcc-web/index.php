@@ -75,12 +75,32 @@ with all the users' and developers' input. </p>
       <p><b><i>AVR</i></b>
 and <b><i>gbz80</i></b>
 ports are no longer maintained. </p>
+
       <h2><a name="News"></a>News</h2>
+
+      <p><i><b>July 31th, 2006: Small Device C Compiler 2.6.0 released</b></i></p>
+<p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, PIC, and HC08 microprocessors
+is now available (<a href="http://sdcc.sourceforge.net">http://sdcc.sourceforge.net</a>). Sources, documentation
+and binaries compiled for x86 Linux, x86 Microsoft Windows and PPC Mac OS X are available.</p>
+<p>This release improves the compiler's conformance to the C standard. Significant progress was also made on the
+PIC (both 14- and 16-bit) backends. For the 8051 SDCC has seen the addition of a new memory model, code banking
+and bit variables. Numerous feature requests and bug fixes are included as well.</p>
+<p>Since 2.5.0 the ChangeLog has grown by more than 3000 lines so all changes are simply too numerous to name.</p>
+<p>You can download the this release from:<br />
+<a href="http://sourceforge.net/project/showfiles.php?group_id=599">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
+
+      <p><i><b>July 28th, 2006: SDCC 2.6.0 RC2 released.</b></i></p>
+      <p>SDCC 2.6.0 Release Candidate 2 packages for x86 Linux, 32 bit Windows, 
+ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
       <p><i><b>July 12th, 2006: SDCC 2.6.0 RC1 released.</b></i></p>
       <p>SDCC 2.6.0 Release Candidate 1 packages for x86 Linux, 32 bit Windows, 
 ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
 and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
       <p><i><b>April 19th, 2006: SDCC migrated from CVS to Subversion version control system.</b></i></p>
+
       <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
       <p><b> Linux</b>
 and <b>Microsoft Windows</b>
@@ -104,6 +124,7 @@ scripts. The nightly builds are made by <b>cross compiling to
 mingw32</b>
 from
 a Linux host.</p>
+
       <h2><a name="Download"></a>Downloading
 SDCC</h2>
       <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
