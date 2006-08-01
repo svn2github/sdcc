@@ -1,3 +1,9 @@
+2006-08-01 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.k, lib/doc-archive.mk, lib/src-archive.mk:
+	  changed package formats from *.tar.gz to *.tar.bz2
+	* components/sdcc-extra.mk: corrected configure source to sdcc-extra
+
 2006-07-28 Borut Razem <borut.razem AT siol.net>
 
 	* lib/doc-archive.mk: add doc/*.html to the doc archive

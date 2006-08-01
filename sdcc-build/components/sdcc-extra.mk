@@ -4,7 +4,7 @@
 ifneq ($(SDCCEXTRAMKINCLUDE), 1)
 SDCCEXTRAMKINCLUDE = 1
 
-# Add gbdk-lib to the list of source trees that need to be fetched
+# Add sdcc-extra to the list of source trees that need to be fetched
 SRCTREES += sdcc-extra
 # PENDING
 SDCCEXTRADIR = $(SRCDIR)/sdcc-extra
@@ -20,7 +20,7 @@ sdcc-extra:
 	RANLIB=$(TARGETRANLIB) \
 	CPPFLAGS=$(TARGETCPPFLAGS) \
 	CXXFLAGS=$(TARGETCXXFLAGS) \
-	$(ORIGDIR)/sdcc/configure --host=$(TARGETOS) --build=$(HOSTOS)
+	$(ORIGDIR)/sdcc-extra/configure --host=$(TARGETOS) --build=$(HOSTOS)
 	$(MAKE) -C $(SDCCEXTRADIR)
 
 sdcc-extra-clean:
