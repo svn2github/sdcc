@@ -99,7 +99,7 @@ endif
 generate-tarball:
 	mkdir -p `dirname $(TARBALLNAME)`
 ifneq ($(CROSSCOMPILING), 1)
-	-cd $(BUILDDIR)/..; tar cjf $(TARBALLNAME) sdcc 
+	-cd $(BUILDDIR)/..; tar cf - sdcc | bzip2 -c - > $(TARBALLNAME) 
 else
 # 2004-10-10 borutr: Windows use Latin1 (actually CP1252) - no encoding conversion is needed,
 # so the next line is commented out
