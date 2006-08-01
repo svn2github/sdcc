@@ -29,8 +29,6 @@ _DOC_ARCHIVE_HTML = $(_DOC_ARCHIVE_SOURCES:.lyx=.html)
 _DOC_ARCHIVE_HTML_DIRS = $(addprefix $(_DOC_ARCHIVE_DOC_DIR)/,$(_DOC_ARCHIVE_HTML))
 _DOC_ARCHIVE_TMP_HTML_DIRS = $(addprefix $(_DOC_ARCHIVE_BUILDDIR)/,$(_DOC_ARCHIVE_HTML))
 
-_DOC_ARCHIVE_ARCHIVES = sdcc-doc-$(SNAPSHOTID).tar.gz sdcc-doc-$(SNAPSHOTID).zip
-
 .PHONY: doc-archive-configure doc-archive-copy build-doc-archive
 .PHONY: doc-archive-copy doc-archive-copy-pdf doc-archive-copy-tex
 .PHONY: doc-archive-copy-html doc-archive-build-archives
@@ -86,7 +84,7 @@ doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_DOC_DIR)/,*.txt *.html *.
 	cp -pf doc/*.txt doc/*.html $(_DOC_ARCHIVE_BUILDDIR)/doc
 	cd $(_DOC_ARCHIVE_ORIG_DIR)/sim/ucsim/doc; cp -rpf *.html *.jpg *.gif *.fig $(_DOC_ARCHIVE_BUILDDIR)/doc/ucsim/
 	# create tar.gz doc package
-	cd $(_DOC_ARCHIVE_BUILDDIR); tar -czf $(_DOC_ARCHIVE_DIR)/sdcc-doc-$(SNAPSHOTID).tar.gz doc
+	cd $(_DOC_ARCHIVE_BUILDDIR); tar -cjf $(_DOC_ARCHIVE_DIR)/sdcc-doc-$(SNAPSHOTID).tar.bz2 doc
 	# create zip doc package
 	find $(_DOC_ARCHIVE_BUILDDIR) -type f \( -name '*.txt' -o -name '*.html' \) -exec unix2dos {} \;
 	cd $(_DOC_ARCHIVE_BUILDDIR); zip -9r $(_DOC_ARCHIVE_DIR)/sdcc-doc-$(SNAPSHOTID).zip doc

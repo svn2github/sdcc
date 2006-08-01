@@ -22,7 +22,7 @@ REGTESTBASE = regression_test_results
 # The file naming and output directories depend on whether this is a
 # release or a snapshot build
 ifeq ($(ISRELEASE),true)
-# Format is staging/sdcc-version-target.tar.gz
+# Format is staging/sdcc-version-target.tar.bz2
 
 # The tail part of the tar ball name
 BUILDNAME=$(RELEASEVERSION)-$(TARGETOS)
@@ -32,7 +32,7 @@ TARBALLBASE=staging
 TARBALLDIR=$(STAGINGBASE)/$(TARBALLBASE)
 
 else
-# Format is snapshots/target/sdcc-target-date-revision.tar.gz
+# Format is snapshots/target/sdcc-target-date-revision.tar.bz2
 BUILDNAME=snapshot-$(TARGETOS)-$(SNAPSHOTID)
 TARBALLBASE=snapshots
 TARBALLDIR=$(SNAPSHOTDIR)/$(TARGETOS)
@@ -41,7 +41,7 @@ endif
 
 # Name of the tarball for this target
 ifneq ($(CROSSCOMPILING), 1)
-TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.gz
+TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.bz2
 else
 TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).zip
 SETUPNAME=$(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-setup.exe
@@ -99,7 +99,7 @@ endif
 generate-tarball:
 	mkdir -p `dirname $(TARBALLNAME)`
 ifneq ($(CROSSCOMPILING), 1)
-	-cd $(BUILDDIR)/..; tar cf - sdcc | gzip -c - > $(TARBALLNAME) 
+	-cd $(BUILDDIR)/..; tar cjf $(TARBALLNAME) sdcc 
 else
 # 2004-10-10 borutr: Windows use Latin1 (actually CP1252) - no encoding conversion is needed,
 # so the next line is commented out
