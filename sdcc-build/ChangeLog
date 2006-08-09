@@ -1,3 +1,11 @@
+2006-08-09 Borut Razem <borut.razem AT siol.net>
+
+	* local/x86-linux2.mk, local/openpower-linux1.mk, local/amd64-linux1.mk,
+	  local/amd64-linux1, local/ucf-cf-alpha-linux1.mk: changed glibc version
+	  number from 2.2 to 2.3
+	* local/ppc-osx3.mk, local/sparc-solaris1.mk: removed (g)libc version number
+	* lib/variables.mk: default HOSTOS and TARGETOS are unknown-unknown-unknown
+
 2006-08-01 Borut Razem <borut.razem AT siol.net>
 
 	* lib/bootstrap.k, lib/doc-archive.mk, lib/src-archive.mk:

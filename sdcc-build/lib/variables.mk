@@ -1,9 +1,9 @@
 # List of all source trees that need to be fetched either locally or from Subversion
 SRCTREES += 
 # Target to build for.
-TARGETOS = i386-unknown-linux2.2
+TARGETOS = unknown-unknown-unknown
 # Local host type.
-HOSTOS = i386-unknown-linux2.2
+HOSTOS = unknown-unknown-unknown
 # By default compile for the host.
 TOOLSPREFIX = 
 # Path to the makensis binary
