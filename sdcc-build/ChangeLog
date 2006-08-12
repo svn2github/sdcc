@@ -2,6 +2,7 @@
 
 	* lib/src-archive.mk: use do-upload for snapshot and doc uploading
 	  to sdcc WEB
+	* lib/upload.mk: remove htdocs/* if rsync succeeded
 
 2006-08-09 Borut Razem <borut.razem AT siol.net>
 

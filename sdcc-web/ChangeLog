@@ -1,3 +1,7 @@
+2006-08-12 Borut Razem <borut.razem AT siol.net>
+
+	* snap.php: report failure if 'Error' found
+
 2006-07-31 Borut Razem <borut.razem AT siol.net>
 
 	* index.php: Small Device C Compiler 2.6.0 released

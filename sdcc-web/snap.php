@@ -35,7 +35,7 @@ function rt_failed($fname)
       # Summary for 'host': 0 failures, 4244 tests, 596 test cases, 0 bytes, 0 ticks
       $failures = preg_replace('/^Summary for \'.+\':.* (\d+) failures, \d+ tests, \d+ test cases, \d+ bytes, \d+ ticks/',
         '$1', $line);
-      if ($failures && $failures > 0)
+      if (($failures && $failures > 0) || preg_match('/Error/', $line))
         return true;
     }
   
