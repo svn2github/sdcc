@@ -9,5 +9,5 @@ docdir=/sdcc/doc \
 include_dir_suffix=include \
 lib_dir_suffix=lib \
 sdccconf_h_dir_separator=\\\\ \
---disable-device-lib --disable-ucsim
+--disable-device-lib
 EXEEXTENSION = .exe
