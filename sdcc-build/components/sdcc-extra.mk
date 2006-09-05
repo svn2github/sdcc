@@ -12,6 +12,8 @@ SDCCEXTRADIR = $(SRCDIR)/sdcc-extra
 ARCHIVETREES += sdcc-extra
 
 sdcc-extra:
+# don't build sdcc-extra if cross compiling
+ifneq ($(CROSSCOMPILING), 1)
 	mkdir -p $(SDCCEXTRADIR)
 	cd $(SDCCEXTRADIR); \
 	CC=$(TARGETCC) \
@@ -22,6 +24,7 @@ sdcc-extra:
 	CXXFLAGS=$(TARGETCXXFLAGS) \
 	$(ORIGDIR)/sdcc-extra/configure --host=$(TARGETOS) --build=$(HOSTOS)
 	$(MAKE) -C $(SDCCEXTRADIR)
+endif
 
 sdcc-extra-clean:
 	$(MAKE) -C $(SDCCEXTRADIR) clean
