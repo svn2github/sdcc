@@ -1,6 +1,6 @@
 2006-09-05 Borut Razem <borut.razem AT siol.net>
 
-	* don't build sdcc-extra if cross compiling
+	* components/sdcc-extra.mk: don't build sdcc-extra if cross compiling
 
 2006-08-31 Borut Razem <borut.razem AT siol.net>
 
