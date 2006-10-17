@@ -3,6 +3,7 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
   <title>SDCC - Small Device C Compiler</title>
+  <meta keywords="68hc08 8032 8051 ansi c compiler assembler CPU DS390 embedded development Floating Point Arithmetic free Freescale GPL HC08 inline Intel ISO/IEC 9899:1990 Linux MAC OS X OSX manual Maxim mcs51 Microchip microcontroller open source PIC Unix Windows XP Z80 Zilog" />
   <link type="text/css" href="style.css" rel="stylesheet" />
 </head>
 <body link="teal" vlink="#483d8b">
@@ -238,7 +239,7 @@ missing or outdated information </li>
 Message Forum</a> - an account on Sourceforge is needed if you're
 going to post and reply. Short
 easy online fill-in the blanks. </li>
-        <li><a href="http://www.qsl.net/dl9sec/SDCC_OKR.html">Open
+        <li><a href="http://sdccokr.dl9sec.de/">Open
 Knowledge Web Site</a> - Run by <a href="mailto:thorsten.godau.AT.gmx.de">Thorsten Godau</a>
         </li>
         <li> <a href="mailto:felix_daners.AT.gmx.ch">Felix

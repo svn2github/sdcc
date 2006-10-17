@@ -1,3 +1,7 @@
+2006-10-17 Frieder Ferlemann <Frieder.Ferlemann AT web.de>
+
+	* index.php: updated SDCC OKR link, added keywords (of the manual)
+
 2006-08-12 Borut Razem <borut.razem AT siol.net>
 
 	* snap.php: report failure if 'Error' found
