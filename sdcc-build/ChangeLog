@@ -1,3 +1,9 @@
+2006-10-18 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk: create .htaccess so that .html files
+	  are PHP processed
+	* support/sdcc_theme_navbar.html: include ../../left_menu.inc
+
 2006-09-05 Borut Razem <borut.razem AT siol.net>
 
 	* components/sdcc-extra.mk: don't build sdcc-extra if cross compiling

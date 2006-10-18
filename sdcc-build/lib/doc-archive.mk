@@ -48,6 +48,8 @@ doc-archive-copy:
 	SDCC_SECTION="SDCC Manual"    ; for i in sdccman.html/*.html        ; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_DIR)/$$i; done; \
 	SDCC_SECTION="SDCC Test Suite"; for i in test_suite_spec.html/*.html; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_DIR)/$$i; done; \
 	SDCC_SECTION="SDCC CDB Format"; for i in cdbfileformat.html/*.html  ; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_DIR)/$$i; done
+	# PHP process .html files
+	for i in $(addprefix $(_DOC_ARCHIVE_DIR)/, $(_DOC_ARCHIVE_HTML)); do echo "AddType application/x-httpd-php .html" > $$i/.htaccess; done
 	# Copy *.pdf
 	cp -r $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,$(_DOC_ARCHIVE_PDF)) $(_DOC_ARCHIVE_DIR)
 

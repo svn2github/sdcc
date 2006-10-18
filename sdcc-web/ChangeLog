@@ -1,3 +1,7 @@
+2006-10-18 Borut Razem <borut.razem AT siol.net>
+
+	* left_menu.inc: absolute URLs, so that it can be reused in html doc
+
 2006-10-17 Frieder Ferlemann <Frieder.Ferlemann AT web.de>
 
 	* index.php: updated SDCC OKR link, added keywords (of the manual)
