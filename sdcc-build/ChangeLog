@@ -4,6 +4,8 @@
 	* support/sdcc_theme.pl: don't use sdcc_theme_navbar.html, insert
 	  favicon to the html docummentation
 	* lib/doc-archive: changed sdcc_theme.pl command line
+	* components/sdcc-web.mk: added
+	* Makefile: inluded components/sdcc-web.mk
 
 2006-10-18 Borut Razem <borut.razem AT siol.net>
 
