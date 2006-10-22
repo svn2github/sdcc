@@ -24,7 +24,7 @@ _DOC_ARCHIVE_PDF = $(_DOC_ARCHIVE_SOURCES:.lyx=.pdf)
 _DOC_ARCHIVE_TEX = $(_DOC_ARCHIVE_SOURCES:.lyx=.tex)
 _DOC_ARCHIVE_HTML = $(_DOC_ARCHIVE_SOURCES:.lyx=.html)
 
-.PHONY: build-doc-archive doc-archive-configure doc-archive-make doc-archive-copy  doc-archive-build-archives
+.PHONY: build-doc-archive doc-archive-configure doc-archive-make doc-archive-copy doc-archive-build-archives
 
 build-doc-archive: fetch-orig-trees doc-archive-configure doc-archive-make doc-archive-build-archives doc-archive-copy do-upload
 
@@ -45,9 +45,9 @@ doc-archive-copy:
 	done
 	# Mangle HTML files
 	cd $(_DOC_ARCHIVE_SRC_DIR); \
-	SDCC_SECTION="SDCC Manual"    ; for i in sdccman.html/*.html        ; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_DIR)/$$i; done; \
-	SDCC_SECTION="SDCC Test Suite"; for i in test_suite_spec.html/*.html; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_DIR)/$$i; done; \
-	SDCC_SECTION="SDCC CDB Format"; for i in cdbfileformat.html/*.html  ; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -f $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme_navbar.html $$i > $(_DOC_ARCHIVE_DIR)/$$i; done
+	for i in sdccman.html/*.html; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -s "SDCC Manual" $$i > $(_DOC_ARCHIVE_DIR)/$$i; done; \
+	for i in test_suite_spec.html/*.html; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -s "SDCC Test Suite" $$i > $(_DOC_ARCHIVE_DIR)/$$i; done; \
+	for i in cdbfileformat.html/*.html; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -s "SDCC CDB Format" $$i > $(_DOC_ARCHIVE_DIR)/$$i; done
 	# PHP process .html files
 	for i in $(addprefix $(_DOC_ARCHIVE_DIR)/, $(_DOC_ARCHIVE_HTML)); do echo "AddType application/x-httpd-php .html" > $$i/.htaccess; done
 	# Copy *.pdf

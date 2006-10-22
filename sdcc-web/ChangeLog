@@ -1,3 +1,7 @@
+2006-10-22 Borut Razem <borut.razem AT siol.net>
+
+	* index.php, snap_header.php: added favicon, thanks to Maarten Brock
+
 2006-10-18 Borut Razem <borut.razem AT siol.net>
 
 	* left_menu.inc: absolute URLs, so that it can be reused in html doc

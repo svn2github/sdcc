@@ -1,3 +1,10 @@
+2006-10-22 Borut Razem <borut.razem AT siol.net>
+
+	* support/sdcc_theme_navbar.html: deleted
+	* support/sdcc_theme.pl: don't use sdcc_theme_navbar.html, insert
+	  favicon to the html docummentation
+	* lib/doc-archive: changed sdcc_theme.pl command line
+
 2006-10-18 Borut Razem <borut.razem AT siol.net>
 
 	* lib/doc-archive.mk: create .htaccess so that .html files

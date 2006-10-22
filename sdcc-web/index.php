@@ -5,6 +5,7 @@
   <title>SDCC - Small Device C Compiler</title>
   <meta keywords="68hc08 8032 8051 ansi c compiler assembler CPU DS390 embedded development Floating Point Arithmetic free Freescale GPL HC08 inline Intel ISO/IEC 9899:1990 Linux MAC OS X OSX manual Maxim mcs51 Microchip microcontroller open source PIC Unix Windows XP Z80 Zilog" />
   <link type="text/css" href="style.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/sdcc.ico" />
 </head>
 <body link="teal" vlink="#483d8b">
 <div align="left">
@@ -91,12 +92,12 @@ and bit variables. Numerous feature requests and bug fixes are included as well.
 <a href="http://sourceforge.net/project/showfiles.php?group_id=599">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
 
       <p><i><b>July 28th, 2006: SDCC 2.6.0 RC2 released.</b></i></p>
-      <p>SDCC 2.6.0 Release Candidate 2 packages for x86 Linux, 32 bit Windows, 
+      <p>SDCC 2.6.0 Release Candidate 2 packages for x86 Linux, 32 bit Windows,
 ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
 and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
 
       <p><i><b>July 12th, 2006: SDCC 2.6.0 RC1 released.</b></i></p>
-      <p>SDCC 2.6.0 Release Candidate 1 packages for x86 Linux, 32 bit Windows, 
+      <p>SDCC 2.6.0 Release Candidate 1 packages for x86 Linux, 32 bit Windows,
 ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
 and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
 
