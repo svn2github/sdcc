@@ -1,6 +1,7 @@
 2006-10-22 Borut Razem <borut.razem AT siol.net>
 
-	* index.php, snap_header.php: added favicon, thanks to Maarten Brock
+	* index.php, snap_header.php, links.php, previous.php:
+	  added favicon, thanks to Maarten Brock
 
 2006-10-18 Borut Razem <borut.razem AT siol.net>
 

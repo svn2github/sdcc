@@ -4,6 +4,7 @@
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
   <title>SDCC Previous News and Changes</title>
   <link rel="stylesheet" href="style.css" type="text/css" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/sdcc.ico" />
 </head>
 <body link="teal" vlink="#483d8b">
 <div align="left">
