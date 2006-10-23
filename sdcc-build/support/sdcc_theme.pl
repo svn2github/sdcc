@@ -24,6 +24,7 @@ use Getopt::Std;
     # add favicon at the end of head
     if (/^<\/HEAD>/) {
       print($favicon . $_);
+      next;
     }
 
     # treak the title, so google results and bookmarks show SDCC as first word
