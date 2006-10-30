@@ -16,7 +16,9 @@
       <td valign="top" width="15%"><?php echo(file_get_contents('./left_menu.inc'));?>
       </td>
       <td width="85%">
+
       <h2>What is SDCC?</h2>
+
       <p> <b>SDCC</b> is a <b><i>Freeware,
 retargettable, optimizing ANSI - C compiler</i></b> that
 targets the <b><i>Intel 8051, Maxim 80DS390, Zilog Z80</i></b>
@@ -91,19 +93,8 @@ and bit variables. Numerous feature requests and bug fixes are included as well.
 <p>You can download the this release from:<br />
 <a href="http://sourceforge.net/project/showfiles.php?group_id=599">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
 
-      <p><i><b>July 28th, 2006: SDCC 2.6.0 RC2 released.</b></i></p>
-      <p>SDCC 2.6.0 Release Candidate 2 packages for x86 Linux, 32 bit Windows,
-ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
-and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
-
-      <p><i><b>July 12th, 2006: SDCC 2.6.0 RC1 released.</b></i></p>
-      <p>SDCC 2.6.0 Release Candidate 1 packages for x86 Linux, 32 bit Windows,
-ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
-and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
-
-      <p><i><b>April 19th, 2006: SDCC migrated from CVS to Subversion version control system.</b></i></p>
-
       <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
+
       <p><b> Linux</b>
 and <b>Microsoft Windows</b>
 are the primary targets,
@@ -127,8 +118,8 @@ mingw32</b>
 from
 a Linux host.</p>
 
-      <h2><a name="Download"></a>Downloading
-SDCC</h2>
+      <h2><a name="Download"></a>Downloading SDCC</h2>
+
       <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
 download page</a> for the last released version including source
 and binary packages for <b>Linux/x86</b>,
@@ -181,8 +172,9 @@ your bug report. For example: </p>
       <p><code>sdcc/bin &gt; sdcc -v<br />
 SDCC : mcs51/gbz80/z80/avr/ds390/pic14/TININative/xa51 2.3.8 (Feb 10
 2004) (UNIX) </code></p>
-      <h2><a name="Support"></a>Support for
-SDCC</h2>
+
+      <h2><a name="Support"></a>Support for SDCC</h2>
+
       <p><b>SDCC</b> and the included support
 packages come with fair amounts of documentation
 and examples. When they aren't enough, you can find help in the
@@ -251,7 +243,9 @@ Cygwin on a Win32 box</a> (an email from <a href="mailto:mitja.kukovec.AT.uni-mb
 to the SDCC mailing list)<br />
         </li>
       </ul>
+
       <h2><a name="Who"></a>Who is SDCC?</h2>
+
       <ul>
         <li><a href="mailto:sandeep.AT.users.sourceforge.net">Sandeep
 Dutta &lt;sandeep.AT.users.sourceforge.net&gt;</a>
@@ -329,154 +323,21 @@ serial I/O routines.</li>
 Dutta &lt;malini.AT.mediaone.net&gt;</a> -
 Sandeep's wife, for her patience and support.</li>
       </ul>
+
       <h2>Past news</h2>
-      <p><i><b>May 12th, 2005: SDCC 2.5.0 released.</b></i></p>
-      <p>Source code and binaries Microsoft Windows and Linux are available from
-the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
-download page</a>.</p>
-      <p><i><b>February 26th, 2004 - SDCC 2.4.0
-released</b></i></p>
-      <p>Source code and binaries for Mac OS X, Microsoft
-Windows, and Linux are available from the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
-download page</a>. SDCC has been tested on Mandrake 9.2, Windows
-98, and Mac OS X with the gcc 3.3 update.</p>
-      <p><i><b>September 29, 2001 - Version 2.3.0
-released</b></i></p>
-      <p>Version 2.3.0 is now available. This is the first
-official release in some time, and includes many bug fixes and
-significantly improved Z80 support.</p>
-      <p><i><b>July 11, 2001 - Winbin updates</b></i></p>
-      <p>Recently, Karl Bongers has put together a beta for win32
-using pre-built cygwin
-and Borland bins. You can download it <a href="ftp://sdcc.sourceforge.net/pub/sdcc/sdcc-2.2.2-7.11.01-winbin.zip">
-here</a>.
-Remember this is a beta build and will change from time to time.
-Updates
-will be posted in the <a href="#Download">Download</a>
-section as they become available. There will be a link in the <a href="#Download">
-Download</a> section for this and all future builds. Please *DO
-NOT* email Karl directly
-with problems. Any questions or fixes you have can be directed to the
-mailing
-list, see the link in the <a href="#Support">Support</a>
-section below.<br />
-      </p>
-      <p>If you run a win32 box I recommend installing Karl's
-build, if only for the
-ease of install. If you are a native Linux user, use the CVS tree.
-Completely
-remove the old source dir and do a fresh checkout.</p>
-      <p>As always, there is lots going on in CVS. There are a
-LOT of changes to
-the documentation. This has been and always will be a short side of
-OSS,
-SDCC included. The developers have added a lot of new command line
-switches
-and made changes to the old ones. The mcs51 header files have been
-removed
-and replaced with a common one. RTFM and then ask questions. The Z80
-port
-has been updated as well. Scott has fallen off the face of the earth
-and
-has not been heard from for a while ;-) We'll hear of his adventures
-when
-he returns. Meanwhile the PIC port has remained static. Michael has
-been
-working on an automated build for SDCC. If you download the source
-files,
-this should help tremendously.</p>
-      <p>There are a few bugs left that are keeping the
-developers from releasing
-v2.2.2. This has been said now for a long time now. You just can't rush
-quality ;-) An <i>official</i> release should happen in
-the next few months.</p>
-      <p>Special thanks to Johan Knol for keeping the ball
-rolling while everyone
-is working their paying jobs.</p>
-      <p><i><b>April 24, 2001 - Notes</b></i></p>
-      <p>There has been a <i><b>lot</b></i>
-of updates to v2.2.2 CVS lately. v2.2.1
-is comparatively old and we recommend you download a binary
-build from the <a href="http://www.qsl.net/dl9sec/SDCC_OKR.html">OKR</a>
-or update your sources from CVS. Mitja Kukovec has sent the mailing
-list
-some short instructions on installing Cygwin on a Win32 box, the link
-to
-the text is in the SUPPORT section.</p>
-      <p><i><b>February 20, 2001 - Pic Port</b></i></p>
-      <p>Scott has been making great strides on the pic port.
-There are a lot of issues
-with bringing his work into other branches of SDCC, so you will not see
-all
-of the features of his port in the avr and mcs51 trees. Scott has been
-working
-on generating intermediate 'pcode' that will be used for code
-optimizations
-and linker features. This is a major step and there are bound to be
-problems...
-on the cutting edge you might get cut every once in a while. This has
-not
-been implemented in any of the other trees, but if he pulls this off,
-you
-will see better and more flexible code come out of SDCC. We think it's
-just
-a matter of time ;-) Tip-o-the-hat to Scott.</p>
-      <p>Sandeep's daytime job keeps him from doing as much as he
-would like, but
-he pops in from time to time with fixes and other contributions.
-Everyone
-involved with the project has been very active lately, we are a lot
-closer
-to an <i>official</i> 2.2.2 release. As always, the above
-can be had from
-cvs. It would be a good idea to do a fresh check-out from cvs rather
-than
-an update as a LOT of things have changed. Binary builds from recent
-cvs
-sources can be downloaded from the <a href="http://www.qsl.net/dl9sec/SDCC_OKR.html">
-OKR</a>
-.</p>
-      <p><i><b>January 25, 2001 -- SDCC v2.2.2 is
-still in CVS</b></i></p>
-      <p>Due to numerous additions to SDCC to support the Dallas
-DS'390, Version 2.2.2
-has been delayed until more bugs are squashed. Kevin and Johan are
-working
-on them all the time ;-) Lots of help from the user and development
-mailing
-lists too.</p>
-      <p>Some (if not all) of SDCC users will be glad to know
-that Scott Dattalo has
-been porting SDCC to the 14bit versions of the Microchip PIC
-controller.
-His port is still in its early stages and needs a lot of work but it
-does
-compile programs. His code has been committed to cvs on sourceforge and
-is
-included when you update your cvs directories.</p>
-      <p><i><b>SDCC v2.2.1 is out!!! Check it out in
-the <a href="#download">download</a> section<br />
-      </b></i></p>
-      <p>This is a milestone release for the development group.<br />
-New stuff includes:</p>
-      <ul>
-        <li>bug fixes (always bug fixes) </li>
-        <li>better support for the Dallas '390, flat memory model
-is a lot better than
-before, not perfect. </li>
-        <li>changes to the assembler </li>
-        <li>better documentation </li>
-        <li>faster compile times </li>
-        <li>and more... </li>
-      </ul>
-      <p>There are more new command line switches to SDCC.. PAY
-ATTENTION! Read the
-documentation!</p>
-      <p>There have been additions to the SDCC developer team, we
-would like to welcome</p>
-      <p>Kevin Vigor and Johan Knol<br />
-And now... Scott Dattalo<br />
-      </p>
+
+      <p><i><b>July 28th, 2006: SDCC 2.6.0 RC2 released.</b></i></p>
+      <p>SDCC 2.6.0 Release Candidate 2 packages for x86 Linux, 32 bit Windows,
+ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
+      <p><i><b>July 12th, 2006: SDCC 2.6.0 RC1 released.</b></i></p>
+      <p>SDCC 2.6.0 Release Candidate 1 packages for x86 Linux, 32 bit Windows,
+ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
+      <p><i><b>April 19th, 2006: SDCC migrated from CVS to Subversion version control system.</b></i></p>
+
       <p><a href="previous.php">Previous News</a></p>
 <?php include('./footer.php')?>
       </td>

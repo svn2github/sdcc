@@ -1,3 +1,9 @@
+2006-10-30 Borut Razem <borut.razem AT siol.net>
+
+	* index.php, previous.php: moved no-so-fresh-news to past news and
+	  previous news
+	* left_menu.php: use absolute paths instead full URLs
+
 2006-10-23 Borut Razem <borut.razem AT siol.net>
 
 	* index.php: corrected keywords to pass the w3c XHTML 1.0 validation
