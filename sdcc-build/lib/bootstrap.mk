@@ -84,7 +84,23 @@ logged-build:
 	echo "--- Building $(TARGETOS) ---" | tee $(BOOTSTRAPLOG)
 	-$(MAKE) -k $(MAKESILENTFLAG) build 2>&1 | tee -a $(BOOTSTRAPLOG)
 
-generate-packages: generate-tarball generate-setup
+generate-packages: copy-extra-bins generate-tarball generate-setup
+
+copy-extra-bins:
+ifeq ($(CROSSCOMPILING), 1)
+	cp $(HOME)/local/cross-tools/i586-mingw32msvc/dll/readline5.dll $(BUILDDIR)/sdcc/bin
+endif
+
+generate-tarball:
+	mkdir -p `dirname $(TARBALLNAME)`
+ifneq ($(CROSSCOMPILING), 1)
+	-cd $(BUILDDIR)/..; tar cf - sdcc | bzip2 -c - > $(TARBALLNAME)
+else
+# 2004-10-10 borutr: Windows use Latin1 (actually CP1252) - no encoding conversion is needed,
+# so the next line is commented out
+#	-find $(BUILDDIR) \( -name "*.txt" -or -name "*.TXT" \) -exec recode lat1..ibmpc {} \;
+	-cd $(BUILDDIR); zip -9r $(TARBALLNAME) sdcc
+endif
 
 generate-setup:
 ifeq ($(CROSSCOMPILING), 1)
@@ -94,17 +110,6 @@ ifeq ($(CROSSCOMPILING), 1)
 	cp $(ORIGDIR)/sdcc/support/scripts/sdcc.ico $(BUILDDIR)/sdcc
 	-cd $(BUILDDIR)/sdcc; $(NSISBIN)/makensis sdcc.nsi;
 	mv $(BUILDDIR)/sdcc/setup.exe $(SETUPNAME)
-endif
-
-generate-tarball:
-	mkdir -p `dirname $(TARBALLNAME)`
-ifneq ($(CROSSCOMPILING), 1)
-	-cd $(BUILDDIR)/..; tar cf - sdcc | bzip2 -c - > $(TARBALLNAME) 
-else
-# 2004-10-10 borutr: Windows use Latin1 (actually CP1252) - no encoding conversion is needed,
-# so the next line is commented out
-#	-find $(BUILDDIR) \( -name "*.txt" -or -name "*.TXT" \) -exec recode lat1..ibmpc {} \;
-	-cd $(BUILDDIR); zip -9r $(TARBALLNAME) sdcc
 endif
 
 # Copies a few extra docs to the top level directory to give the user
