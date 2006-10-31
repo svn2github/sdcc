@@ -36,7 +36,6 @@ mkdir -p $BUILDROOT
 
 echo $MSGPREFIX Try to obtain lock on `date`
 test -f $LOCKFILE && echo -n $MSGPREFIX && ls -l --full-time $LOCKFILE
-# for ((;;)); do
 while (true); do
 {
   if test -f $LOCKFILE; then
@@ -77,12 +76,12 @@ then
   # Remove the stamp
   rm -f $HOMEBUILD/sdcc-build/stamps/sdcc-build.*-fetched
   # Remove the old version
-  rm -rf $HOMEBUILD/$MODULE/dl
+  rm -rf $HOMEBUILD/$MODULE/orig/sdcc-build
   mkdir -p $HOMEBUILD/$MODULE
-  ssh sdcc-builder@shell.cf.sourceforge.net svn export $SVNROOT/$MODULE $HOMEBUILD/$MODULE/dl && mkdir -p $HOMEBUILD/$MODULE/stamps/ && touch $HOMEBUILD/$MODULE/stamps/$MODULE.$BUILDDATE-fetched
+  ssh sdcc-builder@shell.cf.sourceforge.net svn export $SVNROOT/$MODULE $HOMEBUILD/$MODULE/orig/sdcc-build && mkdir -p $HOMEBUILD/$MODULE/stamps/ && touch $HOMEBUILD/$MODULE/stamps/$MODULE.$BUILDDATE-fetched
 fi
 mkdir -p $BUILDROOT/$MODULE
-cp -R $HOMEBUILD/$MODULE/dl/* $BUILDROOT/$MODULE
+cp -R $HOMEBUILD/$MODULE/orig/sdcc-build/* $BUILDROOT/$MODULE
 
 # And spawn onto the actual build
 cd $BUILDROOT/$MODULE

@@ -1,6 +1,9 @@
 2006-10-31 Borut Razem <borut.razem AT siol.net>
 
 	* lib/doc-archive.mk: fixed build failure if $(ORIGDIR)/sdcc doesn't exist
+	* sdcc-build-bootstrap.sh: checkout sdcc-build directory to
+	  $(HOME)/build/sdcc/sdcc-build/orig/sdcc-build instead
+	  $(HOME)/build/sdcc/sdcc-build/dl
 
 2006-10-30 Borut Razem <borut.razem AT siol.net>
 
