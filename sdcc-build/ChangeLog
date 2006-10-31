@@ -1,6 +1,7 @@
 2006-10-30 Borut Razem <borut.razem AT siol.net>
 
 	* lib/bootstrap.mk: add readline5.dll to packages if cross compiling
+	* lib/upload.mk: keep only the newest 7 files in changelog_heads
 
 2006-10-23 Borut Razem <borut.razem AT siol.net>
 
