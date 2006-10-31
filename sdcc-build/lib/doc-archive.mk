@@ -53,9 +53,7 @@ doc-archive-copy:
 	# Copy *.pdf
 	cp -r $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,$(_DOC_ARCHIVE_PDF)) $(_DOC_ARCHIVE_DIR)
 
-doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.pdf) \
-		     $(addprefix $(_DOC_ARCHIVE_ORIG_DIR)/, doc/z80/* doc/avr/* as/doc/* \
-		     sim/ucsim/doc/*.html sim/ucsim/doc/*.jpg sim/ucsim/doc/*.gif sim/ucsim/doc/*.fig)
+doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.pdf)
 	mkdir -p $(_DOC_ARCHIVE_TARBALL_DIR)
 	rm -rf $(_DOC_ARCHIVE_BUILDDIR)
 	mkdir -p $(_DOC_ARCHIVE_BUILDDIR)/doc/ucsim
