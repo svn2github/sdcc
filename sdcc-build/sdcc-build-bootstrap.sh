@@ -77,7 +77,7 @@ then
   rm -f $HOMEBUILD/sdcc-build/stamps/sdcc-build.*-fetched
   # Remove the old version
   rm -rf $HOMEBUILD/$MODULE/orig/sdcc-build
-  mkdir -p $HOMEBUILD/$MODULE
+  mkdir -p $HOMEBUILD/$MODULE/orig
   ssh sdcc-builder@shell.cf.sourceforge.net svn export $SVNROOT/$MODULE $HOMEBUILD/$MODULE/orig/sdcc-build && mkdir -p $HOMEBUILD/$MODULE/stamps/ && touch $HOMEBUILD/$MODULE/stamps/$MODULE.$BUILDDATE-fetched
 fi
 mkdir -p $BUILDROOT/$MODULE
