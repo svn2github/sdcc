@@ -64,8 +64,7 @@ should be re-written in assembler.</li>
       </ul>
       <p><b>SDCC</b>
 also comes with the <i>source level debugger</i><b>
-SDCDB</b>, using the current version of Daniel's s51 simulator.
-(Currently not available on Win32 platforms). </p>
+SDCDB</b>, using the current version of Daniel's s51 simulator. </p>
       <p> <b>SDCC</b> was written by Sandeep Dutta
 and released under a <b>GPL</b>
 license. Since its
