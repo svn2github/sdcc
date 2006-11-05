@@ -18,11 +18,11 @@ ARCHIVETREES += sdcc
 # Directory that the copy of sdcc is located in
 _SDCCDIR = $(SRCDIR)/sdcc
 
-sdcc-configured: $(SDCCDIR)/sdccconf.h
+sdcc-configured: $(_SDCCDIR)/sdccconf.h
 
-$(SDCCDIR)/sdccconf.h:
-	mkdir -p $(SDCCDIR)
-	cd $(SDCCDIR); \
+$(_SDCCDIR)/sdccconf.h:
+	mkdir -p $(_SDCCDIR)
+	cd $(_SDCCDIR); \
 	CC=$(TARGETCC) \
 	CXX=$(TARGETCXX) \
 	STRIP=$(TARGETSTRIP) \
@@ -35,13 +35,13 @@ $(SDCCDIR)/sdccconf.h:
 sdcc: sdcc-build
 
 sdcc-build: sdcc-configured
-	$(MAKE) $(MAKEJOBFLAGS) -k -C $(SDCCDIR) sdcc SILENT=1
+	$(MAKE) $(MAKEJOBFLAGS) -k -C $(_SDCCDIR) sdcc SILENT=1
 
 # PENDING: Should depend on sdcc-build
 sdcc-install: sdcc-targetos-install sdcc-fromhost-install sdcc-docs
 
 sdcc-targetos-install:
-	$(MAKE) -k -C $(SDCCDIR) DESTDIR=$(BUILDDIR) STRIP=$(TARGETSTRIP) $(SDCCINSTALLFLAGS) install SILENT=1
+	$(MAKE) -k -C $(_SDCCDIR) DESTDIR=$(BUILDDIR) STRIP=$(TARGETSTRIP) $(SDCCINSTALLFLAGS) install SILENT=1
 
 # Copies files from the native host that couldn't be compiled.
 sdcc-fromhost-install:
@@ -71,10 +71,10 @@ endif
 endif
 
 sdcc-device: sdcc-configured sdcc-build
-	$(MAKE) $(MAKEJOBFLAGS) -C $(SDCCDIR) sdcc-device
+	$(MAKE) $(MAKEJOBFLAGS) -C $(_SDCCDIR) sdcc-device
 
 sdcc-clean:
-	$(MAKE) -C $(SDCCDIR) clean
+	$(MAKE) -C $(_SDCCDIR) clean
 
 sdcc-install-clean:
 	rm -rf $(BUILDDIR)
