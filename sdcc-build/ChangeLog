@@ -15,7 +15,9 @@
 	  local/ucf-cf-ppc-macosx-1.mk, local/ucf-cf-sparc-linux-1.mk,
 	  local/x86-linux1-i586-mingw32msvc.mk, local/x86-linux1.mk:
 	  removed unneded locals
-	* components/sdcc.mk: make _SDCCDIR local
+	* components/sdcc.mk: make _SDCCDIR local, removed /usr/local from
+	  host build directory
+	* lib/bootstrap.mk: use $(PREFIX)
 
 
 2006-10-31 Borut Razem <borut.razem AT siol.net>

@@ -88,7 +88,7 @@ generate-packages: copy-extra-bins generate-tarball generate-setup
 
 copy-extra-bins:
 ifeq ($(CROSSCOMPILING), 1)
-	cp $(HOME)/local/cross-tools/i586-mingw32msvc/dll/readline5.dll $(BUILDDIR)/sdcc/bin
+	cp $(HOME)/local/cross-tools/i586-mingw32msvc/dll/readline5.dll $(BUILDDIR)$(PREFIX)/bin
 endif
 
 generate-tarball:
@@ -105,17 +105,17 @@ endif
 generate-setup:
 ifeq ($(CROSSCOMPILING), 1)
 	mkdir -p $(dir $(SETUPNAME))
-	cp $(ORIGDIR)/sdcc/COPYING $(BUILDDIR)/sdcc/COPYING.TXT; unix2dos $(BUILDDIR)/sdcc/COPYING.TXT
-	cp $(ORIGDIR)/sdcc/support/scripts/sdcc.nsi $(BUILDDIR)/sdcc
-	cp $(ORIGDIR)/sdcc/support/scripts/sdcc.ico $(BUILDDIR)/sdcc
-	-cd $(BUILDDIR)/sdcc; $(NSISBIN)/makensis sdcc.nsi;
-	mv $(BUILDDIR)/sdcc/setup.exe $(SETUPNAME)
+	cp $(ORIGDIR)/sdcc/COPYING $(BUILDDIR)$(PREFIX)/COPYING.TXT; unix2dos $(BUILDDIR)$(PREFIX)/COPYING.TXT
+	cp $(ORIGDIR)/sdcc/support/scripts/sdcc.nsi $(BUILDDIR)$(PREFIX)
+	cp $(ORIGDIR)/sdcc/support/scripts/sdcc.ico $(BUILDDIR)$(PREFIX)
+	-cd $(BUILDDIR)$(PREFIX); $(NSISBIN)/makensis sdcc.nsi;
+	mv $(BUILDDIR)$(PREFIX)/setup.exe $(SETUPNAME)
 endif
 
 # Copies a few extra docs to the top level directory to give the user
 # initial direction
 copy-extra-docs:
-	cd $(BUILDDIR); cp -f $(TOPDIR)/src/sdcc/doc/README.txt $(TOPDIR)/src/sdcc/doc/INSTALL.txt .
+	cp -f $(SRCDIR)/sdcc/doc/README.txt $(SRCDIR)/sdcc/doc/INSTALL.txt $(BUILDDIR)
 
 # Uploads and delete archive to save space on CF
 upload-packages: generate-tarball generate-packages do-upload
