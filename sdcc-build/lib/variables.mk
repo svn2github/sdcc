@@ -1,11 +1,11 @@
 # List of all source trees that need to be fetched either locally or from Subversion
-SRCTREES += 
+SRCTREES +=
 # Target to build for.
 TARGETOS = unknown-unknown-unknown
 # Local host type.
 HOSTOS = unknown-unknown-unknown
 # By default compile for the host.
-TOOLSPREFIX = 
+TOOLSPREFIX =
 # Path to the makensis binary
 NSISBIN = $(HOME)/local/bin
 # Extract the host name without domain to $(HOSTNAME)
@@ -16,6 +16,9 @@ BUILDDATE := $(shell date +%Y%m%d)
 SDCCREVISION = $(shell awk '/^\$$Revision:/ { print $$2 }' $(ORIGDIR)/sdcc/ChangeLog)
 # Stamp to append to the build name
 SNAPSHOTID = $(BUILDDATE)-$(SDCCREVISION)
+
+# cofigure --prefix parmeter
+PREFIX = /
 
 TOPDIR := $(shell /bin/pwd)
 

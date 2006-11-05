@@ -28,7 +28,7 @@ $(SDCCDIR)/sdccconf.h:
 	RANLIB=$(TARGETRANLIB) \
 	CPPFLAGS=$(TARGETCPPFLAGS) \
 	CXXFLAGS=$(TARGETCXXFLAGS) \
-	$(ORIGDIR)/sdcc/configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) > $(NOISELOG)
+	$(ORIGDIR)/sdcc/configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) --prefix=$(PREFIX) > $(NOISELOG)
 	@echo -- Configured sdcc for $(TARGETOS), CC $(TARGETCC)
 
 sdcc: sdcc-build
@@ -45,7 +45,7 @@ sdcc-targetos-install:
 # Copies files from the native host that couldn't be compiled.
 sdcc-fromhost-install:
 ifeq ($(CROSSCOMPILING), 1)
-	cd $(TOPDIR)/build/$(HOSTOS)/sdcc/usr/local/share/sdcc; cp -r * $(BUILDDIR)/sdcc
+	cd $(BUILDDIR)$(PREFIX)/share/sdcc; cp -r * $(BUILDDIR)/sdcc
 endif
 
 # There are no docs in the snapshot
@@ -55,11 +55,11 @@ ifeq ($(ISRELEASE),true)
 else
 	mkdir -p $(CHLOGDIR)
 ifneq ($(CROSSCOMPILING), 1)
-	rm -rf $(BUILDDIR)/usr/local/share/sdcc/doc/*
-	mkdir -p $(BUILDDIR)/usr/local/share/sdcc/doc
-	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/usr/local/share/sdcc/doc/README
-	head -n 100 $(ORIGDIR)/sdcc/ChangeLog > $(BUILDDIR)/usr/local/share/sdcc/doc/ChangeLog.head
-	cp $(BUILDDIR)/usr/local/share/sdcc/doc/ChangeLog.head $(CHLOGTXT)
+	rm -rf $(BUILDDIR)$(PREFIX)/share/sdcc/doc/*
+	mkdir -p $(BUILDDIR)$(PREFIX)/share/sdcc/doc
+	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)$(PREFIX)/share/sdcc/doc/README
+	head -n 100 $(ORIGDIR)/sdcc/ChangeLog > $(BUILDDIR)$(PREFIX)/share/sdcc/doc/ChangeLog.head
+	cp $(BUILDDIR)$(PREFIX)/share/sdcc/doc/ChangeLog.head $(CHLOGTXT)
 else
 	rm -rf $(BUILDDIR)/sdcc/doc/*
 	mkdir -p $(BUILDDIR)/sdcc/doc

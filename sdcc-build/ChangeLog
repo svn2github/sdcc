@@ -1,3 +1,9 @@
+2006-11-05 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk: added PREFIX variable set to /
+	* components/sdcc.mk: added --prefix=$(PREFIX) argument to configure
+	  command line, couse $(PREFIX) variable instead hard-coded /usr/local
+
 2006-10-31 Borut Razem <borut.razem AT siol.net>
 
 	* lib/doc-archive.mk: fixed build failure if $(ORIGDIR)/sdcc doesn't exist
