@@ -6,8 +6,6 @@ SDCCMKINCLUDE = 1
 
 # Flags to pass on to configure in the sdcc directory
 SDCCCONFIGUREFLAGS +=
-# Directory that the copy of sdcc is located in
-SDCCDIR = $(SRCDIR)/sdcc
 # Add sdcc to the list of source trees that need to be fetched
 SRCTREES += sdcc
 # PENDING
@@ -16,6 +14,9 @@ CLEANTARGETS += sdcc-clean sdcc-device-clean
 INSTALLTARGETS += sdcc-install
 # Add sdcc to the list of source trees, that are archieved and copied to the snapshot page
 ARCHIVETREES += sdcc
+
+# Directory that the copy of sdcc is located in
+_SDCCDIR = $(SRCDIR)/sdcc
 
 sdcc-configured: $(SDCCDIR)/sdccconf.h
 
@@ -74,6 +75,9 @@ sdcc-device: sdcc-configured sdcc-build
 
 sdcc-clean:
 	$(MAKE) -C $(SDCCDIR) clean
+
+sdcc-install-clean:
+	rm -rf $(BUILDDIR)
 
 sdcc-device-clean:
 

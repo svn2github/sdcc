@@ -23,7 +23,7 @@ include lib/bootstrap.mk
 include lib/src-archive.mk
 include lib/doc-archive.mk
 
-build: dirs fetch-orig-trees sdcc sdcc-install sdcc-regression
+build: dirs fetch-orig-trees sdcc sdcc-install-clean sdcc-install sdcc-regression
 
 test-integrity:
 	@echo Target: $(TARGETOS)

@@ -2,7 +2,21 @@
 
 	* lib/variables.mk: added PREFIX variable set to /
 	* components/sdcc.mk: added --prefix=$(PREFIX) argument to configure
-	  command line, couse $(PREFIX) variable instead hard-coded /usr/local
+	  command line, use $(PREFIX) variable instead hard-coded /usr/local,
+	  added sdcc-install-clean target to remove the previous installation
+	* local/x86-linux2-i586-mingw32msvc.mk: define PREFIX
+	* Makefile: remove the previous installation before installing the
+	  new one
+	* local/crush.mk, local/ppc-osx2.cf.sourceforge.net.mk,
+	  local/sapphire.mk, local/sapphire-i586-mingw32msvc.mk,
+	  local/saturn.juju.net.nz.mk,
+	  local/saturn.juju.net.nz-i386-mingw32msvc.mk,
+	  local/ucf-cf-ppc-macosx-2.mk, local/ucf-cf-ppc-linux-1.mk,
+	  local/ucf-cf-ppc-macosx-1.mk, local/ucf-cf-sparc-linux-1.mk,
+	  local/x86-linux1-i586-mingw32msvc.mk, local/x86-linux1.mk:
+	  removed unneded locals
+	* components/sdcc.mk: make _SDCCDIR local
+
 
 2006-10-31 Borut Razem <borut.razem AT siol.net>
 
