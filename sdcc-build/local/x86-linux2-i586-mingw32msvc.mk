@@ -2,7 +2,7 @@
 MAKEJOBFLAGS = -j 2
 CROSSCOMPILING = 1
 TOOLSPREFIX = $(HOME)/local/cross-tools/bin/i586-mingw32msvc-
-PREFIX=
+PREFIX = /sdcc
 SDCCCONFIGUREFLAGS = \
 --datadir=/sdcc \
 docdir=/sdcc/doc \

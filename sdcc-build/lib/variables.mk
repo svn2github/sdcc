@@ -17,9 +17,6 @@ SDCCREVISION = $(shell awk '/^\$$Revision:/ { print $$2 }' $(ORIGDIR)/sdcc/Chang
 # Stamp to append to the build name
 SNAPSHOTID = $(BUILDDATE)-$(SDCCREVISION)
 
-# cofigure --prefix parmeter
-PREFIX = /
-
 TOPDIR := $(shell /bin/pwd)
 
 # Directory that all of the soure trees get copied into
