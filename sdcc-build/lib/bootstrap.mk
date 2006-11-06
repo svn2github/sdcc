@@ -94,7 +94,14 @@ endif
 generate-tarball:
 	mkdir -p `dirname $(TARBALLNAME)`
 ifneq ($(CROSSCOMPILING), 1)
-	-cd $(BUILDDIR)/..; tar cf - sdcc | bzip2 -c - > $(TARBALLNAME)
+	-cd $(BUILDDIR)$(PREFIX)/..; \
+	if test "$(shell basename $(BUILDDIR)$(PREFIX))" != sdcc; then \
+	  mv $(shell basename $(BUILDDIR)$(PREFIX)) sdcc; \
+	fi; \
+	tar cf - sdcc | bzip2 -c - > $(TARBALLNAME); \
+	if test "$(shell basename $(BUILDDIR)$(PREFIX))" != sdcc; then \
+	  mv sdcc $(shell basename $(BUILDDIR)$(PREFIX)); \
+	fi
 else
 # 2004-10-10 borutr: Windows use Latin1 (actually CP1252) - no encoding conversion is needed,
 # so the next line is commented out

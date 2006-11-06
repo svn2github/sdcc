@@ -6,6 +6,7 @@
 	  command line, use $(HOSTPREFIX)
 	* local/x86-linux2-i586-mingw32msvc.mk: add --prefix=$(PREFIX) to
 	  SDCCCONFIGUREFLAGS
+	* lib/bootstrap.mk: skip PREFIX directories in tar.bz2 packages
 
 2006-11-05 Borut Razem <borut.razem AT siol.net>
 
