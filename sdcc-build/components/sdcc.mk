@@ -29,7 +29,7 @@ $(_SDCCDIR)/sdccconf.h:
 	RANLIB=$(TARGETRANLIB) \
 	CPPFLAGS=$(TARGETCPPFLAGS) \
 	CXXFLAGS=$(TARGETCXXFLAGS) \
-	$(ORIGDIR)/sdcc/configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) --prefix=$(PREFIX) > $(NOISELOG)
+	$(ORIGDIR)/sdcc/configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) > $(NOISELOG)
 	@echo -- Configured sdcc for $(TARGETOS), CC $(TARGETCC)
 
 sdcc: sdcc-build
@@ -46,7 +46,7 @@ sdcc-targetos-install:
 # Copies files from the native host that couldn't be compiled.
 sdcc-fromhost-install:
 ifeq ($(CROSSCOMPILING), 1)
-	cd $(TOPDIR)/build/$(HOSTOS)/sdcc/share/sdcc; cp -r * $(BUILDDIR)$(PREFIX)
+	cd $(TOPDIR)/build/$(HOSTOS)/sdcc$(HOSTPREFIX)/share/sdcc; cp -r * $(BUILDDIR)$(PREFIX)
 endif
 
 # There are no docs in the snapshot

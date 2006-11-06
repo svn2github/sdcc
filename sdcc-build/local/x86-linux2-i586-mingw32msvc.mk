@@ -4,6 +4,7 @@ CROSSCOMPILING = 1
 TOOLSPREFIX = $(HOME)/local/cross-tools/bin/i586-mingw32msvc-
 PREFIX = /sdcc
 SDCCCONFIGUREFLAGS = \
+--prefix=$(PREFIX) \
 --datadir=/sdcc \
 docdir=/sdcc/doc \
 include_dir_suffix=include \
