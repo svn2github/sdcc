@@ -1,3 +1,8 @@
+2006-01-19 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/x86-linux2-i586-mingw32msvc.mk: replaced --datadir by
+	--datarootdir for conformance with autoconf 2.6
+
 2006-11-06 Borut Razem <borut.razem AT siol.net>
 
 	* lib/variables.mk: added default definitions for PREFIX and
