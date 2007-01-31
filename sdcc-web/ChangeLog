@@ -3,6 +3,11 @@
 	* index.php: added link for webdoc 1445872,
 	  updated www.soudez.be with unfound product
 
+2007-01-02 Borut Razem <borut.razem AT siol.net>
+
+	* links.php: removed old broken links, new broken links marked as
+	  (Page Not Found), closed [ 948959 ] Add a link Request: link removed
+
 2006-10-31 Borut Razem <borut.razem AT siol.net>
 
 	* index.php: ucSim and sdcdb are now avaialble also in WIN32 platforms
