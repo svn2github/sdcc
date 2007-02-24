@@ -6,7 +6,8 @@
 	sdcc.svn.sourceforge.net, because it worked better during the broken
 	DNS setup; now both work, but the latter one is the official one
 	* sdcc-build-bootstrap.sh: changed SVN-URL,
-	export sdcc-build directly from svn
+	export sdcc-build directly from svn,
+	moved BUILDROOT from /var/tmp back to ~/build
 	* local/cf_x86.mk,
 	* local/cf_x86-i586-mingw32msvc.mk: added Erik's host
 
