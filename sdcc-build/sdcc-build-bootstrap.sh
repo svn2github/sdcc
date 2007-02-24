@@ -2,7 +2,7 @@
 # Simple shell script that knows enough to download the sdcc build scripts
 # and start them running.
 
-# BUILDROOT=$HOME/build
+BUILDROOT=$HOME/build
 test -z $BUILDROOT && \
   BUILDROOT=/var/tmp/$(whoami)/build
 
