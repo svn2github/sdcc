@@ -38,7 +38,7 @@ SNAPSHOTDIR = $(HTDOCSDIR)/snapshots
 # ext, ...) and username.  Can be overriden in your local.mk
 CVSACCESS = :ext:sdcc-builder
 # Subversion server, accessed by ssh
-SVNSERVER = sdcc-builder@shell.cf.sourceforge.net
+SVNSERVER = localhost
 
 # Regression test targets
 REGTESTTARGETS = test-host test-ucz80 test-mcs51 test-mcs51-stack-auto test-mcs51-large test-ds390 test-hc08

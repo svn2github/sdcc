@@ -60,7 +60,7 @@ while (true); do
 done
 
 MODULE=sdcc-build
-SVNROOT=https://svn.sourceforge.net/svnroot/sdcc/trunk
+SVNROOT=https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk
 # -s for quiet operation so that this can be run from a cronjob
 MAKEFLAGS=
 # Include local apps.
@@ -78,7 +78,7 @@ then
   # Remove the old version
   rm -rf $HOMEBUILD/$MODULE/orig/sdcc-build
   mkdir -p $HOMEBUILD/$MODULE/orig
-  ssh sdcc-builder@shell.cf.sourceforge.net svn export $SVNROOT/$MODULE $HOMEBUILD/$MODULE/orig/sdcc-build && mkdir -p $HOMEBUILD/$MODULE/stamps/ && touch $HOMEBUILD/$MODULE/stamps/$MODULE.$BUILDDATE-fetched
+  svn export $SVNROOT/$MODULE $HOMEBUILD/$MODULE/orig/sdcc-build && mkdir -p $HOMEBUILD/$MODULE/stamps/ && touch $HOMEBUILD/$MODULE/stamps/$MODULE.$BUILDDATE-fetched
 fi
 mkdir -p $BUILDROOT/$MODULE
 cp -R $HOMEBUILD/$MODULE/orig/sdcc-build/* $BUILDROOT/$MODULE
