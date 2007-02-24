@@ -1,3 +1,20 @@
+2006-01-24 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/variables.mk: changed SVNSERVER to localhost, maybe it should
+	be removed
+	* lib/fetch.mk: changed SVN-URL from svn.sourceforge.net to
+	sdcc.svn.sourceforge.net, because it worked better during the broken
+	DNS setup; now both work, but the latter one is the official one
+	* sdcc-build-bootstrap.sh: changed SVN-URL,
+	export sdcc-build directly from svn
+	* local/cf_x86.mk,
+	* local/cf_x86-i586-mingw32msvc.mk: added Erik's host
+
+2006-01-24 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* /sdcc/tags/sdcc-build_before_move_to_ECF: added tag, the nightly
+	build now moves from sourceforges compile farm to Erik's compile farm.
+
 2006-01-19 Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/x86-linux2-i586-mingw32msvc.mk: replaced --datadir by
