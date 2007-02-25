@@ -81,7 +81,7 @@ then
   svn checkout $SVNROOT/$MODULE $HOMEBUILD/$MODULE/orig/sdcc-build && mkdir -p $HOMEBUILD/$MODULE/stamps/ && touch $HOMEBUILD/$MODULE/stamps/$MODULE.$BUILDDATE-fetched
 fi
 mkdir -p $BUILDROOT/$MODULE
-cp -R $HOMEBUILD/$MODULE/orig/sdcc-build/* $BUILDROOT/$MODULE
+cp -r $HOMEBUILD/$MODULE/orig/sdcc-build $BUILDROOT
 
 # And spawn onto the actual build
 cd $BUILDROOT/$MODULE
