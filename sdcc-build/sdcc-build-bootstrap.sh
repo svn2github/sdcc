@@ -59,7 +59,6 @@ while (true); do
 }
 done
 
-MODULE=sdcc-build
 SVNROOT=https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk
 # -s for quiet operation so that this can be run from a cronjob
 MAKEFLAGS=
@@ -71,20 +70,11 @@ elif [ -d ~/local/bin ] ; then
 fi
 
 # Checkout the latest version
-if [ ! -e $HOMEBUILD/sdcc-build/stamps/sdcc-build.$BUILDDATE-fetched ]
-then
-  # Remove the stamp
-  rm -f $HOMEBUILD/sdcc-build/stamps/sdcc-build.*-fetched
-  # Remove the old version
-  rm -rf $HOMEBUILD/$MODULE/orig/sdcc-build
-  mkdir -p $HOMEBUILD/$MODULE/orig
-  svn checkout $SVNROOT/$MODULE $HOMEBUILD/$MODULE/orig/sdcc-build && mkdir -p $HOMEBUILD/$MODULE/stamps/ && touch $HOMEBUILD/$MODULE/stamps/$MODULE.$BUILDDATE-fetched
-fi
-mkdir -p $BUILDROOT/$MODULE
-cp -r $HOMEBUILD/$MODULE/orig/sdcc-build $BUILDROOT
+rm -rf $BULDROOT/sdcc-build
+svn checkout $SVNROOT/sdcc-build
 
 # And spawn onto the actual build
-cd $BUILDROOT/$MODULE
+cd $BUILDROOT/sdcc-build
 make $MAKEFLAGS crontab-spawn $EXTRATARGETS
 
 # cp log files from local hd to $HOMEBUILD on nfs server
