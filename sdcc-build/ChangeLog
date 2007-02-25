@@ -1,3 +1,11 @@
+2006-01-25 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/bootstrap.mk,
+	* lib/variables.mk,
+	* sdcc-build-bootstrap.sh: put local tools in ~/local-$HOSTNAME
+	* sdcc-build-bootstrap.sh: use "svn checkout" instead "svn export"
+	because there's enough space and it makes administration easier
+
 2006-01-24 Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/variables.mk: changed SVNSERVER to localhost, maybe it should

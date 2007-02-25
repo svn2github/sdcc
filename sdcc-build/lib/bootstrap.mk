@@ -88,7 +88,7 @@ generate-packages: copy-extra-bins generate-tarball generate-setup
 
 copy-extra-bins:
 ifeq ($(CROSSCOMPILING), 1)
-	cp $(HOME)/local/cross-tools/i586-mingw32msvc/dll/readline5.dll $(BUILDDIR)$(PREFIX)/bin
+	cp $(HOME)/local-$(HOSTNAME)/cross-tools/i586-mingw32msvc/dll/readline5.dll $(BUILDDIR)$(PREFIX)/bin
 endif
 
 generate-tarball:

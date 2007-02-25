@@ -64,8 +64,8 @@ SVNROOT=https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk
 # -s for quiet operation so that this can be run from a cronjob
 MAKEFLAGS=
 # Include local apps.
-if [ -d ~/local-$(uname -m | sed -e's/ /_/g')/bin ] ; then
-  PATH=$PATH:$HOME/local-$(uname -m | sed -e's/ /_/g')/bin
+if [ -d ~/local-$HOSTNAME/bin ] ; then
+  PATH=$PATH:$HOME/local-$HOSTNAME/bin
 elif [ -d ~/local/bin ] ; then
   PATH=$PATH:$HOME/local/bin
 fi
@@ -78,7 +78,7 @@ then
   # Remove the old version
   rm -rf $HOMEBUILD/$MODULE/orig/sdcc-build
   mkdir -p $HOMEBUILD/$MODULE/orig
-  svn export $SVNROOT/$MODULE $HOMEBUILD/$MODULE/orig/sdcc-build && mkdir -p $HOMEBUILD/$MODULE/stamps/ && touch $HOMEBUILD/$MODULE/stamps/$MODULE.$BUILDDATE-fetched
+  svn checkout $SVNROOT/$MODULE $HOMEBUILD/$MODULE/orig/sdcc-build && mkdir -p $HOMEBUILD/$MODULE/stamps/ && touch $HOMEBUILD/$MODULE/stamps/$MODULE.$BUILDDATE-fetched
 fi
 mkdir -p $BUILDROOT/$MODULE
 cp -R $HOMEBUILD/$MODULE/orig/sdcc-build/* $BUILDROOT/$MODULE

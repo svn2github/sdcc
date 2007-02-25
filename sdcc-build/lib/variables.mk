@@ -6,10 +6,10 @@ TARGETOS = unknown-unknown-unknown
 HOSTOS = unknown-unknown-unknown
 # By default compile for the host.
 TOOLSPREFIX =
-# Path to the makensis binary
-NSISBIN = $(HOME)/local/bin
 # Extract the host name without domain to $(HOSTNAME)
 HOSTNAME := $(shell if [ $(shell expr $(shell hostname) : '.*\.') != '0' ]; then expr $(shell hostname) : '\([^.]*\).'; else echo $(shell hostname); fi)
+# Path to the makensis binary
+NSISBIN = $(HOME)/local-$(HOSTNAME)/bin
 # Get build date
 BUILDDATE := $(shell date +%Y%m%d)
 # Get revision from sdcc/ChangeLog to append to the build name
