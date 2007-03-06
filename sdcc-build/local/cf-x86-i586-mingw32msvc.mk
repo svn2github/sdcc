@@ -1,6 +1,7 @@
-MAKEJOBFLAGS =
+# Dual processor
+MAKEJOBFLAGS = -j 2
 CROSSCOMPILING = 1
-TOOLSPREFIX = /usr/bin/i386-mingw32-
+TOOLSPREFIX = $(HOME)/local-$(HOSTNAME)/cross-tools/bin/i586-mingw32msvc-
 PREFIX = /sdcc
 SDCCCONFIGUREFLAGS = \
 --prefix=$(PREFIX) \

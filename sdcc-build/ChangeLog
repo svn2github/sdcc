@@ -1,4 +1,9 @@
-2006-01-25 Bernhard Held <bernhard AT bernhardheld.de>
+2007-03-06 Borut Razem <borut.razem AT siol.net>
+
+	* local/cf-x86-i586-mingw32msvc.mk: the latest version of mingw gcc is
+	  installed in $(HOME)/local-$(HOSTNAME); added MAKEJOBFLAGS = -j 2
+
+2007-01-25 Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/bootstrap.mk,
 	* lib/variables.mk,
@@ -7,7 +12,7 @@
 	because there's enough space and it makes administration easier,
 	simplify co of sdcc-build
 
-2006-01-24 Bernhard Held <bernhard AT bernhardheld.de>
+2007-01-24 Bernhard Held <bernhard AT bernhardheld.de>
 
 	* lib/variables.mk: changed SVNSERVER to localhost, maybe it should
 	be removed
@@ -20,12 +25,12 @@
 	* local/cf-x86.mk,
 	* local/cf-x86-i586-mingw32msvc.mk: added Erik's host
 
-2006-01-24 Bernhard Held <bernhard AT bernhardheld.de>
+2007-01-24 Bernhard Held <bernhard AT bernhardheld.de>
 
 	* /sdcc/tags/sdcc-build_before_move_to_ECF: added tag, the nightly
 	build now moves from sourceforges compile farm to Erik's compile farm.
 
-2006-01-19 Bernhard Held <bernhard AT bernhardheld.de>
+2007-01-19 Bernhard Held <bernhard AT bernhardheld.de>
 
 	* local/x86-linux2-i586-mingw32msvc.mk: replaced --datadir by
 	--datarootdir for conformance with autoconf 2.6
