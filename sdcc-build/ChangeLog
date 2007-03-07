@@ -2,6 +2,7 @@
 
 	* local/cf-x86-i586-mingw32msvc.mk: the latest version of mingw gcc is
 	  installed in $(HOME)/local-$(HOSTNAME); added MAKEJOBFLAGS = -j 2
+	* local/cf-x86.mk: cf-x86 is an amd64-unknown-linux2.4 machine
 
 2007-01-25 Bernhard Held <bernhard AT bernhardheld.de>
 
