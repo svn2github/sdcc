@@ -1,5 +1,7 @@
 include ../packages.mk
 
+ABS_LOCAL_DIR=$(shell ls -d $(LOCAL_DIR))
+
 VERSION=$(shell expr download/nsis-*-src.tar.bz2 : 'download/nsis-\(.*\)-src.tar.bz2')
 
 .PHONY: all
@@ -16,7 +18,7 @@ nsis-unpack.tag: nsis-download.tag
 
 nsis-configure.tag: nsis-unpack.tag
 	cd nsis-$(VERSION)-src && \
-	scons PREFIX=$(LOCAL_DIR) SKIPSTUBS=all SKIPPLUGINS=all SKIPUTILS=all SKIPMISC=all VERSION=$(VERSION)
+	scons PREFIX=$(ABS_LOCAL_DIR) SKIPSTUBS=all SKIPPLUGINS=all SKIPUTILS=all SKIPMISC=all VERSION=$(VERSION)
 	touch $@
 
 nsis-install.tag: nsis-configure.tag
