@@ -1,3 +1,8 @@
+2007-03-08 Borut Razem <borut.razem AT siol.net>
+
+	* local/cf-x86-i386-unknown-linux2.5.mk: added
+	* local/cf-x86.mk: added i386-unknown-linux2.5 build to OTHERTARGETS
+
 2007-03-06 Borut Razem <borut.razem AT siol.net>
 
 	* local/cf-x86-i586-mingw32msvc.mk: the latest version of mingw gcc is
