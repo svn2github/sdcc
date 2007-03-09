@@ -12,4 +12,4 @@ _ARCHIVE_NAME              = $(_ARCHIVE_BASENAME)-$(SNAPSHOTID).tar.bz2
 	  tar -cjf $(_ARCHIVE_DIR)/$(_ARCHIVE_NAME) --exclude=CVS --exclude=.svn $(_ARCHIVE_SRC_TREE_BASENAME)
 
 .PHONY: archive-src-trees
-archive-src-trees: $(ARCHIVESRCTREES) do-upload
+archive-src-trees: $(ARCHIVESRCTREES)

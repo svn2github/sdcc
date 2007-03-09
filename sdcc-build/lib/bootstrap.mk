@@ -125,7 +125,7 @@ copy-extra-docs:
 	cp -f $(SRCDIR)/sdcc/doc/README.txt $(SRCDIR)/sdcc/doc/INSTALL.txt $(BUILDDIR)
 
 # Uploads and delete archive to save space on CF
-upload-packages: generate-tarball generate-packages do-upload
+upload-packages: generate-tarball generate-packages
 
 update-snapshots-dir: upload-packages remove-old-versions
 

@@ -9,7 +9,7 @@ _SDCC_WEB_ORIG_DIR = $(ORIGDIR)/sdcc-web
 
 .PHONY: sdcc-web-copy
 
-build-sdcc-web: fetch-orig-trees sdcc-web-copy do-upload
+build-sdcc-web: fetch-orig-trees sdcc-web-copy
 
 sdcc-web-copy:
 	# Create dirs for the WEB

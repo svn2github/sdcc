@@ -1,3 +1,11 @@
+2007-03-09 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc-web.mk, lib/bootstrap.mk, lib/doc-archive.mk,
+	  lib/src-archive.mk, local/cf-x86.mk, sdcc-build-bootstrap.sh:
+	  invoke do-upload only once at the end of all builds;
+	  do not configure and run the doc Makefile as a part of cf-x86 build
+	  since the documentation is built in a separate step
+
 2007-03-08 Borut Razem <borut.razem AT siol.net>
 
 	* local/cf-x86-i386-unknown-linux2.5.mk: added

@@ -75,7 +75,7 @@ svn checkout $SVNROOT/sdcc-build
 
 # And spawn onto the actual build
 cd $BUILDROOT/sdcc-build
-make $MAKEFLAGS crontab-spawn $EXTRATARGETS
+make $MAKEFLAGS crontab-spawn $EXTRATARGETS do-upload
 
 # cp log files from local hd to $HOMEBUILD on nfs server
 test $BUILDROOT != $HOMEBUILD && \

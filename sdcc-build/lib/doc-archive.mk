@@ -26,7 +26,7 @@ _DOC_ARCHIVE_HTML = $(_DOC_ARCHIVE_SOURCES:.lyx=.html)
 
 .PHONY: build-doc-archive doc-archive-configure doc-archive-make doc-archive-copy doc-archive-build-archives
 
-build-doc-archive: fetch-orig-trees doc-archive-configure doc-archive-make doc-archive-build-archives doc-archive-copy do-upload
+build-doc-archive: fetch-orig-trees doc-archive-configure doc-archive-make doc-archive-build-archives doc-archive-copy
 
 doc-archive-configure:
 	mkdir -p $(_DOC_ARCHIVE_SDCC_DIR)
