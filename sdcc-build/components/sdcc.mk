@@ -30,7 +30,7 @@ $(_SDCCDIR)/sdccconf.h:
 	CPPFLAGS=$(TARGETCPPFLAGS) \
 	CXXFLAGS=$(TARGETCXXFLAGS) \
 	$(ORIGDIR)/sdcc/configure $(SDCCCONFIGUREFLAGS) --host=$(TARGETOS) --build=$(HOSTOS) > $(NOISELOG)
-	@echo -- Configured sdcc for $(TARGETOS), CC $(TARGETCC)
+	@echo -- Configured sdcc for $(TARGETOS), CC=$(TARGETCC), CXX=$(TARGETCXX)
 
 sdcc: sdcc-build
 

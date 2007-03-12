@@ -37,8 +37,8 @@ SNAPSHOTDIR = $(HTDOCSDIR)/snapshots
 # Start of the CVS repository line, used to set the access method (pserver,
 # ext, ...) and username.  Can be overriden in your local.mk
 CVSACCESS = :ext:sdcc-builder
-# Subversion server, accessed by ssh
-SVNSERVER = localhost
+# Name of the machine used for fetching svn tree; empty for the local machine
+SVNSERVER =
 
 # Regression test targets
 REGTESTTARGETS = test-host test-ucz80 test-mcs51 test-mcs51-stack-auto test-mcs51-large test-ds390 test-hc08

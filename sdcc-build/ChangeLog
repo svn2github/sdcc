@@ -1,3 +1,12 @@
+2007-03-12 Borut Razem <borut.razem AT siol.net>
+
+	* lib/fetch.mk, lib/variables.mk: fetch by the local machine if SVNSERVER
+	  is not defined
+	* components/sdcc.mk: report CXX settings
+	* local/cf-x86-i386-unknown-linux2.5.mk: define HOSTOS=i386-unknown-linux2.5
+	  even on 64bit amd64-unknown-linux2.5 host in order to copile 32bit i386
+	  binaries
+
 2007-03-09 Borut Razem <borut.razem AT siol.net>
 
 	* components/sdcc-web.mk, lib/bootstrap.mk, lib/doc-archive.mk,
