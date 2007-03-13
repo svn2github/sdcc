@@ -1,3 +1,10 @@
+2007-03-13 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk, components/sdcc-extra.mk: introduced TREGETLDFLAGS
+	* local/cf-x86.mk, local/cf-x86-i386-unknown-linux2.5.mk: set TARGETLDFLAGS = -Wl,--hash-style=both
+	* local/cf-x86-i586-mingw32msvc.mk: set TARGETLDFLAGS =
+	* sdcc-build-bootstrap.sh: change directory to $HOME/build
+
 2007-03-12 Borut Razem <borut.razem AT siol.net>
 
 	* lib/fetch.mk, lib/variables.mk: fetch by the local machine if SVNSERVER

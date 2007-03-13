@@ -19,3 +19,5 @@ lib_dir_suffix=lib \
 sdccconf_h_dir_separator=\\\\ \
 --disable-device-lib
 EXEEXTENSION = .exe
+
+TARGETLDFLAGS =

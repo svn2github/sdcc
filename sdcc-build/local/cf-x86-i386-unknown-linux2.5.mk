@@ -9,3 +9,5 @@ HOSTOS = i386-unknown-linux2.5
 
 TARGETCC  = "gcc -march=i386 -m32"
 TARGETCXX = "g++ -march=i386 -m32"
+
+TRAGETLDFLAGS = -Wl,--hash-style=both

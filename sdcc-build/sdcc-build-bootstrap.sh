@@ -71,6 +71,7 @@ fi
 
 # Checkout the latest version
 rm -rf $BULDROOT/sdcc-build
+cd $HOMEBUILD
 svn checkout $SVNROOT/sdcc-build
 
 # And spawn onto the actual build

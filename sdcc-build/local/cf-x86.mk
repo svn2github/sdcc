@@ -12,3 +12,5 @@ REGTESTTARGETS += test-pic16
 
 # cross-tools are installed
 OTHERTARGETS = i586-mingw32msvc i386-unknown-linux2.5
+
+TARGETLDFLAGS = -Wl,--hash-style=both
