@@ -1,3 +1,7 @@
+2007-03-13 Borut Razem <borut.razem AT siol.net>
+
+	* crontab.txt: added
+
 2007-03-11 Borut Razem <borut.razem AT siol.net>
 
 	* packages/packages.mk: defined LOCAL_DIR using $(HOME)/... instead of
