@@ -1,3 +1,9 @@
+2007-03-15 Borut Razem <borut.razem AT siol.net>
+
+	* local/cf-x86.mk, local/cf-x86-i386-unknown-linux2.5.mk: added coment
+	  about --hash-style=both
+	* sdcc-build-bootstrap.sh: checkout sdcc-build to $BUILDROOT/sdcc-build
+
 2007-03-13 Borut Razem <borut.razem AT siol.net>
 
 	* components/sdcc.mk, components/sdcc-extra.mk: introduced TREGETLDFLAGS

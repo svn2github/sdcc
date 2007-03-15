@@ -3,8 +3,8 @@
 # and start them running.
 
 BUILDROOT=$HOME/build
-test -z $BUILDROOT && \
-  BUILDROOT=/var/tmp/$(whoami)/build
+#test -z $BUILDROOT && \
+#  BUILDROOT=/var/tmp/$(whoami)/build
 
 HOMEBUILD=$HOME/build
 BUILDDATE=$(date +%Y%m%d)
@@ -69,10 +69,9 @@ elif [ -d ~/local/bin ] ; then
   PATH=$PATH:$HOME/local/bin
 fi
 
-# Checkout the latest version
+# Checkout the latest sdcc-build version to $BULDROOT/sdcc-build
 rm -rf $BULDROOT/sdcc-build
-cd $HOMEBUILD
-svn checkout $SVNROOT/sdcc-build
+svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
 
 # And spawn onto the actual build
 cd $BUILDROOT/sdcc-build

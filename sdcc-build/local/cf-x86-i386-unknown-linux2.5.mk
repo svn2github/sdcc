@@ -10,4 +10,6 @@ HOSTOS = i386-unknown-linux2.5
 TARGETCC  = "gcc -march=i386 -m32"
 TARGETCXX = "g++ -march=i386 -m32"
 
+# for backward compatibility
+# FC6 uses --hash-style=gnu by default
 TRAGETLDFLAGS = -Wl,--hash-style=both

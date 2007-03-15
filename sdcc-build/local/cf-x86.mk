@@ -13,4 +13,6 @@ REGTESTTARGETS += test-pic16
 # cross-tools are installed
 OTHERTARGETS = i586-mingw32msvc i386-unknown-linux2.5
 
+# for backward compatibility
+# FC6 uses --hash-style=gnu by default
 TARGETLDFLAGS = -Wl,--hash-style=both
