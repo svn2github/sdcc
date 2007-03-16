@@ -1,3 +1,9 @@
+2007-03-16 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-build-bootstrap.sh, lib/bootstrap.mk: invoke
+	  remove-old-versions only once at the end of all builds after
+	  do-upload
+
 2007-03-15 Borut Razem <borut.razem AT siol.net>
 
 	* local/cf-x86.mk, local/cf-x86-i386-unknown-linux2.5.mk: added coment

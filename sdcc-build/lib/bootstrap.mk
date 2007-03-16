@@ -124,10 +124,7 @@ endif
 copy-extra-docs:
 	cp -f $(SRCDIR)/sdcc/doc/README.txt $(SRCDIR)/sdcc/doc/INSTALL.txt $(BUILDDIR)
 
-# Uploads and delete archive to save space on CF
-upload-packages: generate-tarball generate-packages
-
-update-snapshots-dir: upload-packages remove-old-versions
+update-snapshots-dir: generate-tarball generate-packages
 
 # Sends email containing the results of the build, one filtered, one not.
 send-build-mail:

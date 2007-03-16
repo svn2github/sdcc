@@ -42,8 +42,8 @@ while (true); do
   {
     sleep $SLEEP
     find $LOCKFILE -mmin +$MAXMINUTES \
-	 -exec echo $MSGPREFIX lock from \"`cat $LOCKFILE`\" expired \; \
-	 -exec rm -f {} \;
+         -exec echo $MSGPREFIX lock from \"`cat $LOCKFILE`\" expired \; \
+         -exec rm -f {} \;
   }
   else
   {
@@ -75,7 +75,7 @@ svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
 
 # And spawn onto the actual build
 cd $BUILDROOT/sdcc-build
-make $MAKEFLAGS crontab-spawn $EXTRATARGETS do-upload
+make $MAKEFLAGS crontab-spawn $EXTRATARGETS do-upload remove-old-versions
 
 # cp log files from local hd to $HOMEBUILD on nfs server
 test $BUILDROOT != $HOMEBUILD && \
