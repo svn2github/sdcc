@@ -1,3 +1,7 @@
+2007-03-17 Borut Razem <borut.razem AT siol.net>
+
+	* local/mirror-doors.mk: added
+
 2007-03-16 Borut Razem <borut.razem AT siol.net>
 
 	* sdcc-build-bootstrap.sh, lib/bootstrap.mk: invoke
