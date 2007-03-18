@@ -14,7 +14,7 @@ gpsim-configure.tag: gpsim-download.tag
 	autoheader && \
 	automake --add-missing && \
 	autoconf && \
-	./configure --prefix=$(LOCAL_DIR) --disable-gui
+	./configure --prefix=$(LOCAL_DIR) --disable-gui CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)"
 	touch $@
 
 gpsim-make.tag: gpsim-configure.tag

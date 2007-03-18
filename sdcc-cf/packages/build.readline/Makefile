@@ -1,5 +1,12 @@
 include ../packages.mk
 
+ifeq ($(OS), Darwin)
+  # Build universl binaries
+  CFLAGS += -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc
+  CXXFLAGS += -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc
+  LDFLAGS += -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc
+endif
+
 VERSION=$(shell expr download/readline-*.tar.gz : 'download/readline-\(.*\).tar.gz')
 
 .PHONY: all

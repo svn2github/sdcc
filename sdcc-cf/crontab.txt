@@ -1,2 +1,4 @@
 # amd64, i386, mingw, doc archive and src archive build on cf-x86
 00 03 * * * . $HOME/.bashrc; export EXTRATARGETS="build-doc-archive archive-src-trees build-sdcc-web"; $HOME/build/sdcc-build-bootstrap.sh > $HOME/build/build-cf-x86.log 2>&1
+# MacOSX build on mirror-doors
+00 08 * * * . $HOME/.profile; $HOME/build/sdcc-build-bootstrap.sh > $HOME/build/build-mirror-doors.log 2>&1
