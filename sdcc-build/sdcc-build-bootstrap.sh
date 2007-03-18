@@ -30,12 +30,26 @@ cleanup ()
   test -f $LOCKFILE && head -n 1 $LOCKFILE | grep $MYID > /dev/null && rm $LOCKFILE
 }
 
+# Execute supported version of ls -l --full-time
+ls_l_full_time ()
+{
+  # test if ls -l --full-time is supported
+  RES=$(ls -l --full-time $1 2>&1)
+  if test $? == 0; then
+    # ls -l --full-time supported: echo the result
+    echo "$RES"
+  else
+    # ls -l --full-time not supported: execute ls -l
+    ls -l $1
+  fi
+}
+
 trap 'echo $MSGPREFIX caught signal ; cleanup ; exit 1' 1 2 3 13 15
 
 mkdir -p $BUILDROOT
 
 echo $MSGPREFIX Try to obtain lock on `date`
-test -f $LOCKFILE && echo -n $MSGPREFIX && ls -l --full-time $LOCKFILE
+test -f $LOCKFILE && echo -n $MSGPREFIX && ls_l_full_time $LOCKFILE
 while (true); do
 {
   if test -f $LOCKFILE; then

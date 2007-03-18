@@ -21,7 +21,7 @@ gputils-configure.tag: gputils-unpack.tag
 gputils-make.tag: gputils-configure.tag
 	$(MAKE) -C gputils-$(VERSION)
 	touch $@
-	
+
 gputils-install.tag: gputils-make.tag
 	$(MAKE) -C gputils-$(VERSION) install
 	touch $@

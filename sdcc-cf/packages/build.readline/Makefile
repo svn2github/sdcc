@@ -21,7 +21,7 @@ readline-configure.tag: readline-unpack.tag
 readline-make.tag: readline-configure.tag
 	$(MAKE) -C readline-$(VERSION)
 	touch $@
-	
+
 readline-install.tag: readline-make.tag
 	$(MAKE) -C readline-$(VERSION) install
 	touch $@

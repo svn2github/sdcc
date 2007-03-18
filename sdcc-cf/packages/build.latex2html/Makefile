@@ -21,7 +21,7 @@ l2h-configure.tag: l2h-unpack.tag
 l2h-make.tag: l2h-configure.tag
 	$(MAKE) -C latex2html-$(VERSION)
 	touch $@
-	
+
 l2h-install.tag: l2h-make.tag
 	$(MAKE) -C latex2html-$(VERSION) install
 	touch $@

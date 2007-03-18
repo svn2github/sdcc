@@ -20,7 +20,7 @@ gpsim-configure.tag: gpsim-download.tag
 gpsim-make.tag: gpsim-configure.tag
 	$(MAKE) -C gpsim
 	touch $@
-	
+
 gpsim-install.tag: gpsim-make.tag
 	$(MAKE) -C gpsim install
 	touch $@

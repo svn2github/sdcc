@@ -115,7 +115,7 @@ gcc-configure.tag: gcc-unpack.tag
 	  --target=$(TARGET) --program-prefix=$(PROGRAM_PREFIX) --prefix=$(PREFIX)  \
 	  --with-gcc --with-gnu-ld --with-gnu-as			\
 	  --enable-threads   --disable-nls   --enable-languages=c,c++	\
-          --disable-multilib --enable-win32-registry --disable-shared
+	  --disable-multilib --enable-win32-registry --disable-shared
 	touch $@
 
 gcc-make.tag: gcc-configure.tag
