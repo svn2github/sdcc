@@ -83,8 +83,8 @@ elif [ -d ~/local/bin ] ; then
   PATH=$PATH:$HOME/local/bin
 fi
 
-# Checkout the latest sdcc-build version to $BULDROOT/sdcc-build
-rm -rf $BULDROOT/sdcc-build
+# Checkout the latest sdcc-build version to $BUILDROOT/sdcc-build
+rm -rf $BUILDROOT/sdcc-build
 svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
 
 # And spawn onto the actual build

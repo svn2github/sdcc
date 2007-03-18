@@ -3,6 +3,7 @@
 	* added fuction ls_l_full_time() which executes supported version of
 	  ls -l --full-time
 	* local/mirror-dors.mk: more specific comments about readline
+	* sdcc-build-bootstrap.sh: fixed typo - $BULDROOT changed to $BUILDROOT
 
 2007-03-17 Borut Razem <borut.razem AT siol.net>
 
