@@ -7,9 +7,6 @@ MAKEJOBFLAGS = -j 2
 TARGETOS = amd64-unknown-linux2.5
 HOSTOS = amd64-unknown-linux2.5
 
-# Enable the pic16 regression tests
-REGTESTTARGETS += test-pic16
-
 # cross-tools are installed
 OTHERTARGETS = i586-mingw32msvc i386-unknown-linux2.5
 
