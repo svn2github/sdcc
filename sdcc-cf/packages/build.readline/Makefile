@@ -22,7 +22,7 @@ readline-unpack.tag: readline-download.tag
 
 readline-configure.tag: readline-unpack.tag
 	cd readline-$(VERSION) && \
-	./configure --prefix=$(LOCAL_DIR)
+	./configure --prefix=$(LOCAL_DIR) CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)"
 	touch $@
 
 readline-make.tag: readline-configure.tag
