@@ -1,6 +1,11 @@
+2007-03-24 Borut Razem <borut.razem AT siol.net>
+
+	* lib/upload.mk, lib/variables.mk, sdcc-build-bootstrap.sh:
+	  sdcc-builder preparation for Disrtibured Compile Farm
+
 2007-03-20 Borut Razem <borut.razem AT siol.net>
 
-	*
+	* local/cf-x86.mk: disabled pic16 regression test
 
 2007-03-18 Borut Razem <borut.razem AT siol.net>
 

@@ -89,7 +89,7 @@ svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
 
 # And spawn onto the actual build
 cd $BUILDROOT/sdcc-build
-make $MAKEFLAGS crontab-spawn $EXTRATARGETS do-upload remove-old-versions
+make $MAKEFLAGS crontab-spawn $EXTRATARGETS do-upload $ARGS
 
 # cp log files from local hd to $HOMEBUILD on nfs server
 test $BUILDROOT != $HOMEBUILD && \

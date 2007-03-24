@@ -17,6 +17,11 @@ SDCCREVISION = $(shell awk '/^\$$Revision:/ { print $$2 }' $(ORIGDIR)/sdcc/Chang
 # Stamp to append to the build name
 SNAPSHOTID = $(BUILDDATE)-$(SDCCREVISION)
 
+# WEB server host, user and path
+WEBHOST=shell1.sourceforge.net
+WEBUSER=sdcc-builder
+WEBHTDOCSDIR=/home/groups/s/sd/sdcc/htdocs/
+
 # default prefix
 PREFIX = /usr/local
 # default host prefix if cross compiling
