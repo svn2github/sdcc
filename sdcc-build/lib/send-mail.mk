@@ -18,10 +18,10 @@ send-build-mail:
 	# cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
 	-egrep -v -f $(TOPDIR)/support/error-filter.sh $(BOOTSTRAPLOG) > $(BOOTSTRAPLOG).filtered
 	# If there's something in the log
-	#	If there's anything else than summaries (e.g. error messages)
-	#		Send it to the list
-	#	Else
-	#		Send it to the adim
+	#   If there's anything else than summaries (e.g. error messages)
+	#     Send it to the list
+	#   Else
+	#     Send it to the adim
 	if test -n $(BOOTSTRAPSSHMAILSERVER); then \
 	  if egrep -v '^ *$$' $(BOOTSTRAPLOG).filtered > /dev/null; then \
 	    if egrep -v '^Summary for ' $(BOOTSTRAPLOG).filtered > /dev/null; then \
@@ -29,5 +29,5 @@ send-build-mail:
 	    else \
 	      cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLISTADMIN)'; \
 	    fi \
-	  fi
+	  fi \
 	fi
