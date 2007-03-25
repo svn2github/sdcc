@@ -22,7 +22,7 @@ send-build-mail:
 	#     Send it to the list
 	#   Else
 	#     Send it to the adim
-	if test -n $(BOOTSTRAPSSHMAILSERVER); then \
+	if test -n "$(BOOTSTRAPSSHMAILSERVER)"; then \
 	  if egrep -v '^ *$$' $(BOOTSTRAPLOG).filtered > /dev/null; then \
 	    if egrep -v '^Summary for ' $(BOOTSTRAPLOG).filtered > /dev/null; then \
 	      cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLISTADMIN)'; \
