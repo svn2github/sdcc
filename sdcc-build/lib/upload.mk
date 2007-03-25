@@ -10,11 +10,10 @@ _WEBSNAPSHOTDEST=$(WEBUSER)@$(WEBHOST):$(WEBHTDOCSDIR)
 .PHONY: do-upload remove-old-versions
 do-upload:
 	# make all files wtitable and searchable by group members
-	chmod g+wx $(HTDOCSDIR)
 	find $(HTDOCSDIR) -type d -exec chmod g+wx {} \;
 	find $(HTDOCSDIR) -type f -exec chmod g+w {} \;
 	# copy files
-	rsync -r --include='*.exe' -e ssh --size-only $(HTDOCSDIR)/* $(_WEBSNAPSHOTDEST) && \
+	rsync --recursive --perms --include='*.exe' -e ssh --size-only $(HTDOCSDIR)/* $(_WEBSNAPSHOTDEST) && \
 	rm -rf $(HTDOCSDIR)/*
 
 # Removes old versions

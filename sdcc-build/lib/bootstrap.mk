@@ -1,21 +1,5 @@
 # File to log all main make output to
 BOOTSTRAPLOG=$(STAGINGBASE)/build.$(TARGETOS).log
-# Machine to ssh into to send the build result out via email
-#BOOTSTRAPSSHMAILSERVER=smoke.csoft.net
-BOOTSTRAPSSHMAILSERVER=shell1.sourceforge.net
-# Address to send the filtered build output to
-#BOOTSTRAPFILTEREDLIST=michaelh@juju.net.nz
-#BOOTSTRAPFILTEREDLIST=sdcc-devel@lists.sourceforge.net
-BOOTSTRAPFILTEREDLIST=sdcc-devel@lists.sourceforge.net
-# Admin address to send the filtered build output to
-#BOOTSTRAPFILTEREDLISTADMIN=bernhardheld@users.sourceforge.net
-BOOTSTRAPFILTEREDLISTADMIN=epetrich@users.sourceforge.net
-# Address to send the unfiltered build output to
-#BOOTSTRAPLIST=michaelh@juju.net.nz
-#BOOTSTRAPLIST=bernhardheld@users.sourceforge.net
-BOOTSTRAPLIST=sdcc-buildlogs@lists.sourceforge.net
-# Subject line to use in the build output email
-BOOTSTRAPSUBJECT=Automated build output ($(TARGETOS))
 
 REGTESTBASE = regression_test_results
 
@@ -125,21 +109,3 @@ copy-extra-docs:
 	cp -f $(SRCDIR)/sdcc/doc/README.txt $(SRCDIR)/sdcc/doc/INSTALL.txt $(BUILDDIR)
 
 update-snapshots-dir: generate-tarball generate-packages
-
-# Sends email containing the results of the build, one filtered, one not.
-send-build-mail:
-	# 2003-06-03 Bernhard: nobody reads the BOOTSTRAPLIST, so let's save SF's resources by not sending the logs.
-	# cat $(BOOTSTRAPLOG) | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPLIST)'
-	-egrep -v -f $(TOPDIR)/support/error-filter.sh $(BOOTSTRAPLOG) > $(BOOTSTRAPLOG).filtered
-	# If there's something in the log
-	#	If there's anything else than summaries (e.g. error messages)
-	#		Send it to the list
-	#	Else
-	#		Send it to the adim
-	if egrep -v '^ *$$' $(BOOTSTRAPLOG).filtered > /dev/null; then \
-		if egrep -v '^Summary for ' $(BOOTSTRAPLOG).filtered > /dev/null; then \
-			cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLISTADMIN)'; \
-		else \
-			cat $(BOOTSTRAPLOG).filtered | ssh $(BOOTSTRAPSSHMAILSERVER) 'mail -s "$(BOOTSTRAPSUBJECT)" $(BOOTSTRAPFILTEREDLISTADMIN)'; \
-		fi \
-	fi

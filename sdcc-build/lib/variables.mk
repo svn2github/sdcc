@@ -18,9 +18,12 @@ SDCCREVISION = $(shell awk '/^\$$Revision:/ { print $$2 }' $(ORIGDIR)/sdcc/Chang
 SNAPSHOTID = $(BUILDDATE)-$(SDCCREVISION)
 
 # WEB server host, user and path
-WEBHOST=shell1.sourceforge.net
-WEBUSER=sdcc-builder
-WEBHTDOCSDIR=/home/groups/s/sd/sdcc/htdocs/
+WEBHOST = shell1.sourceforge.net
+WEBUSER = sdcc-builder
+WEBHTDOCSDIR = /home/groups/s/sd/sdcc/htdocs/
+
+# Machine to ssh into to send the build result out via email
+BOOTSTRAPSSHMAILSERVER =
 
 # default prefix
 PREFIX = /usr/local

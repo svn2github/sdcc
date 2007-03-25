@@ -1,3 +1,10 @@
+2007-03-25 Borut Razem <borut.razem AT siol.net>
+
+	* lib/send-mail.mk, lib/bootstrap.sh, Makefile:
+	  mail handling reorganization
+	* lib/upload.mk: retain file permissions
+	* lib/variables: added global mail server definition
+
 2007-03-24 Borut Razem <borut.razem AT siol.net>
 
 	* lib/upload.mk, lib/variables.mk, sdcc-build-bootstrap.sh:

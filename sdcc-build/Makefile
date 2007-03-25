@@ -14,6 +14,7 @@ include components/sdcc-web.mk
 
 include lib/bugs.mk
 include lib/fetch.mk
+include lib/send-mail.mk
 include lib/upload.mk
 include lib/clean.mk
 include lib/install.mk
