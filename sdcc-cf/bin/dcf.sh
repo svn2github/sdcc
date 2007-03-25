@@ -30,17 +30,17 @@ LOCK_DIR=$HOME/lock
 
 DCF_BUILDER_LIST_FILE=$ETC_DIR/dcf_list
 DCF_LOG=$LOG_DIR/dcf.log
-DCF_LOCK=$LOG_DIR/dcf.lock
+DCF_LOCK=$LOCK_DIR/dcf.lock
 
 mkdir -p $LOG_DIR $LOCK_DIR
 
 WEBHOST=shell.sf.net
 WEBUSER=sdcc-builder
-WEBHTDOCSDIR=/home/groups/s/sd/sdcc/htdocs/
+WEBHTDOCSDIR=/home/groups/s/sd/sdcc/htdocs
 
-WEBSNAPSHOTDIR=$(WEBHTDOCSDIR)/snapshots
-WEBREGTESTDIR=$(WEBHTDOCSDIR)/regression_test_results
-WEBCHANGELOGDIR=$(WEBHTDOCSDIR)/changelog_heads
+WEBSNAPSHOTDIR=$WEBHTDOCSDIR/snapshots
+WEBREGTESTDIR=$WEBHTDOCSDIR/regression_test_results
+WEBCHANGELOGDIR=$WEBHTDOCSDIR/changelog_heads
 
 {
 # remove files & directories specified in arguments
@@ -73,7 +73,7 @@ list_files ()
 # remove more than 7 files in dir from WEB server
 rm_old_versions ()
 {
-  ssh $WEBUSER@$WEBHOST 'find $WEBSNAPSHOTDIR/* $WEBREGTESTDIR/* $WEBCHANGELOGDIR -type d -exec sh -c "cd {} ; ls -1t | sed 1,7d | xargs rm -f" \;'
+  ssh $WEBUSER@$WEBHOST "find $WEBSNAPSHOTDIR/* $WEBREGTESTDIR/* $WEBCHANGELOGDIR -type d -exec sh -c 'cd {} ; ls -1t | sed 1,7d | xargs rm -f' \\;"
 }
 
 
@@ -82,7 +82,7 @@ then
   BUILDER_LIST=$(cat $DCF_BUILDER_LIST_FILE)
 fi
 
-lockfile $DCF_LOCK >/dev/null 2>&1 || exit 1
+lockfile -r 0 $DCF_LOCK >/dev/null 2>&1 || exit 1
 
 for builder in $BUILDER_LIST
 do
@@ -93,7 +93,7 @@ do
     echo rsyncing $builder:
     list_files $FILE_LIST
 
-    rsync -r --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR
+    rsync -r --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/
     rm_list $FILE_LIST
 
     echo "--- end: $(date)"
@@ -105,3 +105,5 @@ rm_old_versions
 
 rm -f $DCF_LOCK
 } >> $DCF_LOG 2>&1
+
+exit 0
