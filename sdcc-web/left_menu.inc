@@ -30,4 +30,7 @@
   <b><a href="/release_wiki/"><i>SDCC Release Wiki</i></a></b><br />
   <br />
   <b><a href="/links.php"><i>Links and More!</i></a></b><br />
+  <br />
+  <b><a href="http://www.ohloh.net/projects/425"><i>SDCC Metrics by Ohloh</i></a></b><br />
+  <script type='text/javascript' language='JavaScript' src='http://www.ohloh.net/projects/425;badge_js'></script><br />
 </div>

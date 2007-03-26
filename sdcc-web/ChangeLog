@@ -1,3 +1,7 @@
+2007-03-26 Borut Razem <borut.razem AT siol.net>
+
+	* left_menu.inc: added link to Ohloh
+
 2007-01-16 Maarten Brock <sourceforge.brock AT dse.nl>
 
 	* index.php: added link for webdoc 1445872,
@@ -16,7 +20,7 @@
 
 	* index.php, previous.php: moved no-so-fresh-news to past news and
 	  previous news
-	* left_menu.php: use absolute paths instead full URLs
+	* left_menu.inc: use absolute paths instead full URLs
 
 2006-10-23 Borut Razem <borut.razem AT siol.net>
 
