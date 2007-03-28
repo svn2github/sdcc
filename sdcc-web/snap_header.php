@@ -8,7 +8,7 @@
 </head>
 <body bgcolor="white" link="teal" vlink="#483d8b">
   <div align="left">
-    <h1>SDCC - Snapshot Builde</h1>
+    <h1>SDCC - Snapshot Builds</h1>
     <table border="0" cellpadding="2" cellspacing="1" width="100%" bgcolor="white">
     <tbody>
       <tr>
