@@ -112,7 +112,7 @@ using using <a href="http://www.gnu.org">gcc</a>. <b>Windows
 recommended to use Cygwin (<a href="http://sources.redhat.com/cygwin/">http://sources.redhat.com/cygwin/</a>)
 or may try the unsupported Borland C compiler or Microsoft Visual C++
 build
-scripts. The nightly builds are made by <b>cross compiling to
+scripts. The snapshot builds are made by <b>cross compiling to
 mingw32</b>
 from
 a Linux host.</p>
@@ -130,8 +130,7 @@ and binary packages for <b>Linux/x86</b>,
 and <b>32 bit Microsoft Windows</b>.
       </p>
       <p>SDCC is always under active development. Please consider
-      <a href="snap.php">downloading one of the nightly
-snapshots</a>
+      <a href="snap.php">downloading one of the snapshot builds</a>
 if you have
 run across a bug, or if the above release is more than two months old. </p>
       <p> Debian packages (many thanks to <a href="mailto:aurel32.AT.debian.org">Aurelien Jarno</a>):
@@ -269,7 +268,7 @@ Bongers &lt;karl.AT.turbobit.com&gt;</a> - mcs51
 support, winbin builds, and an occasional bug.</li>
         <li><a href="mailto:bernhard.AT.bernhardheld.de">Bernhard
 Held &lt;bernhard.AT.bernhardheld.de&gt;</a>
-- nightly builds and general housekeeping</li>
+- snpshot builds and general housekeeping</li>
         <li><a href="mailto:Frieder.Ferlemann.AT.web.de">Frieder
 Ferlemann &lt;Frieder.Ferlemann.AT.web.de&gt;</a>
 - contributions to the documentation and last stages of code generation</li>

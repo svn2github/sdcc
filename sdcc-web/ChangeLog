@@ -1,3 +1,10 @@
+2007-03-28 Borut Razem <borut.razem AT siol.net>
+
+	* index.php, snap_header.php:
+	  "Nightly Snapshots" replaced with "Snapshot Builds", since the SDCC
+	  is developed, built and used worldwide, and the word "night" doesn't
+	  make any sense.
+
 2007-03-26 Borut Razem <borut.razem AT siol.net>
 
 	* left_menu.inc: added link to Ohloh
