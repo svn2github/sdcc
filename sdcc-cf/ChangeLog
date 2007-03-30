@@ -1,3 +1,7 @@
+2007-03-30 Borut Razem <borut.razem AT siol.net>
+
+	* bin/dcf.sh: enhanced logging
+
 2007-03-25 Borut Razem <borut.razem AT siol.net>
 
 	* bin/dcf.sh: added Distributed Compile Farm

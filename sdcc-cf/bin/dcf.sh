@@ -1,4 +1,6 @@
-# dcf.sh - Distributed Compile Farm
+#!/bin/sh
+
+# dcf.sh - Distributed Compile Farm Mediator
 #
 # Copyright (c) 2007 Borut Razem
 #
@@ -23,6 +25,7 @@
 #  Borut Razem
 #  borut.razem@siol.net
 
+LOG_LINES=100
 
 ETC_DIR=$HOME/etc
 LOG_DIR=$HOME/log
@@ -42,7 +45,7 @@ WEBSNAPSHOTDIR=$WEBHTDOCSDIR/snapshots
 WEBREGTESTDIR=$WEBHTDOCSDIR/regression_test_results
 WEBCHANGELOGDIR=$WEBHTDOCSDIR/changelog_heads
 
-{
+
 # remove files & directories specified in arguments
 # relays on find -depth
 rm_list ()
@@ -70,6 +73,23 @@ list_files ()
 }
 
 
+# write the standard input to beginning of the log file
+# and truncate it to $LOG_LINES lines
+log_it ()
+{
+  local LOG=$(cat)
+
+  if test -n "$LOG"
+  then
+    if test $(echo "$LOG" | wc -l) -lt $LOG_LINES
+    then
+      LOG=$(echo -e "$LOG\n" | cat - $DCF_LOG | head -n $LOG_LINES)
+    fi
+    echo "$LOG" > $DCF_LOG
+  fi
+}
+
+
 # remove more than 7 files in dir from WEB server
 rm_old_versions ()
 {
@@ -77,33 +97,33 @@ rm_old_versions ()
 }
 
 
-if test -e $DCF_BUILDER_LIST_FILE
-then
-  BUILDER_LIST=$(cat $DCF_BUILDER_LIST_FILE)
-fi
-
-lockfile -r 0 $DCF_LOCK >/dev/null 2>&1 || exit 1
-
-for builder in $BUILDER_LIST
-do
-  FILE_LIST=$(find /home/$builder/htdocs/* -depth 2>/dev/null)
-  if test -n "$FILE_LIST"
+{
+  if test -e $DCF_BUILDER_LIST_FILE
   then
-    echo "+++ start: $(date)"
-    echo rsyncing $builder:
-    list_files $FILE_LIST
-
-    rsync -r --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/
-    rm_list $FILE_LIST
-
-    echo "--- end: $(date)"
-    echo
+    BUILDER_LIST=$(cat $DCF_BUILDER_LIST_FILE)
   fi
-done
 
-rm_old_versions
+  lockfile -r 0 $DCF_LOCK >/dev/null 2>&1 || exit 1
 
-rm -f $DCF_LOCK
-} >> $DCF_LOG 2>&1
+  for builder in $BUILDER_LIST
+  do
+    FILE_LIST=$(find /home/$builder/htdocs/* -depth 2>/dev/null)
+    if test -n "$FILE_LIST"
+    then
+      echo "+++ start: $(date)"
+      echo "rsyncing $builder:"
+      list_files $FILE_LIST
+
+      rsync -r --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/
+      rm_list $FILE_LIST
+
+      echo "--- end: $(date)"
+    fi
+  done
+
+  rm_old_versions
+
+  rm -f $DCF_LOCK
+} 2>&1 | log_it
 
 exit 0
