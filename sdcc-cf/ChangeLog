@@ -1,6 +1,7 @@
 2007-03-31 Borut Razem <borut.razem AT siol.net>
 
-	* crontab.txt define "make" arguments on command line
+	* crontab.txt: define "make" arguments on command line
+	* bin/dcf.sh: introduced trap, relative rsync
 
 2007-03-30 Borut Razem <borut.razem AT siol.net>
 

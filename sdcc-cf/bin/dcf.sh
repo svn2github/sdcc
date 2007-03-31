@@ -97,7 +97,16 @@ rm_old_versions ()
 }
 
 
+# cleanup the lock file
+cleanup ()
 {
+  rm -f $DCF_LOCK
+}
+
+
+{
+  trap 'echo dcf.sh caught signal ; cleanup ; exit 1' 1 2 3 13 15
+
   if test -e $DCF_BUILDER_LIST_FILE
   then
     BUILDER_LIST=$(cat $DCF_BUILDER_LIST_FILE)
@@ -107,23 +116,29 @@ rm_old_versions ()
 
   for builder in $BUILDER_LIST
   do
-    FILE_LIST=$(find /home/$builder/htdocs/* -depth 2>/dev/null)
-    if test -n "$FILE_LIST"
-    then
-      echo "+++ start: $(date)"
-      echo "rsyncing $builder:"
-      list_files $FILE_LIST
+    (
+      cd /home/$builder/htdocs
+      FILE_LIST=$(find * -depth -print 2>/dev/null)
+      if test -n "$FILE_LIST"
+      then
+        echo "+++ start: $(date)"
+        echo "rsyncing /home/$builder/htdocs:"
+        list_files $FILE_LIST
 
-      rsync -r --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/
-      rm_list $FILE_LIST
+        rsync --relative --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/ 2>&1 | grep -v -e "skipping directory"
 
-      echo "--- end: $(date)"
-    fi
+        rm_list $FILE_LIST
+
+        echo "--- end: $(date)"
+      fi
+    )
   done
 
   rm_old_versions
 
   rm -f $DCF_LOCK
 } 2>&1 | log_it
+
+cleanup
 
 exit 0
