@@ -1,10 +1,14 @@
 #!/bin/bash
+
 # Simple shell script that knows enough to download the sdcc build scripts
 # and start them running.
 
 BUILDROOT=$HOME/build
 #test -z $BUILDROOT && \
 #  BUILDROOT=/var/tmp/$(whoami)/build
+
+# SVN sdcc-build repository
+SVNROOT=https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk
 
 HOMEBUILD=$HOME/build
 BUILDDATE=$(date +%Y%m%d)
@@ -44,38 +48,37 @@ ls_l_full_time ()
   fi
 }
 
+# Perform locking
+do_lock ()
+{
+  echo $MSGPREFIX Try to obtain lock on $(date)
+  test -f $LOCKFILE && echo -n $MSGPREFIX && ls_l_full_time $LOCKFILE
+  while (true)
+  do
+    if test -f $LOCKFILE
+    then
+      sleep $SLEEP
+      find $LOCKFILE -mmin +$MAXMINUTES \
+           -exec echo $MSGPREFIX lock from \"$(cat $LOCKFILE$)\" expired \; \
+           -exec rm -f {} \;
+    else
+      echo $MYID > $LOCKFILE
+      # check, if we're in the first line of lockfile;
+      # if we're not in the first line, another host was faster
+      # and we have to wait again.
+      head -n 1 $LOCKFILE | grep $MYID > /dev/null || continue
+      echo $MSGPREFIX "Obtained lock on     " $(date)
+      break
+    fi
+  done
+}
+
 trap 'echo $MSGPREFIX caught signal ; cleanup ; exit 1' 1 2 3 13 15
 
 mkdir -p $BUILDROOT
 
-echo $MSGPREFIX Try to obtain lock on `date`
-test -f $LOCKFILE && echo -n $MSGPREFIX && ls_l_full_time $LOCKFILE
-while (true); do
-{
-  if test -f $LOCKFILE; then
-  {
-    sleep $SLEEP
-    find $LOCKFILE -mmin +$MAXMINUTES \
-         -exec echo $MSGPREFIX lock from \"`cat $LOCKFILE`\" expired \; \
-         -exec rm -f {} \;
-  }
-  else
-  {
-    echo $MYID > $LOCKFILE
-    # check, if we're in the first line of lockfile;
-    # if we're not in the first line, another host was faster
-    # and we have to wait again.
-    head -n 1 $LOCKFILE | grep $MYID > /dev/null || continue
-    echo $MSGPREFIX "Obtained lock on     " `date`
-    break
-  }
-  fi
-}
-done
+do_lock
 
-SVNROOT=https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk
-# -s for quiet operation so that this can be run from a cronjob
-MAKEFLAGS=
 # Include local apps.
 if [ -d ~/local-$HOSTNAME/bin ] ; then
   PATH=$PATH:$HOME/local-$HOSTNAME/bin
@@ -89,7 +92,7 @@ svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
 
 # And spawn onto the actual build
 cd $BUILDROOT/sdcc-build
-make $MAKEFLAGS crontab-spawn $EXTRATARGETS do-upload $ARGS
+make $*
 
 # cp log files from local hd to $HOMEBUILD on nfs server
 test $BUILDROOT != $HOMEBUILD && \
