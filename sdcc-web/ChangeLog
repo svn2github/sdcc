@@ -2,6 +2,7 @@
 
 	* index.php: replaced "freeware" with "Free Open Source Software",
 	  announce "officially supported" platforms, ...
+	* links.php: removed unreachable pages
 
 2007-03-31 Borut Razem <borut.razem AT siol.net>
 

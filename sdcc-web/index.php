@@ -21,7 +21,7 @@
 targets the <b><i>Intel 8051, Maxim 80DS390, Zilog Z80</i></b>
 and the <b><i>Motorola 68HC08</i></b> based MCUs.
 Work is in progress on supporting the <b><i>Microchip
-PIC16</i></b> and <b><i>PIC18</i></b> series. SDCC is a Free Open Source Software, distributed under GNU General Public License (GPL). </p>
+PIC16</i></b> and <b><i>PIC18</i></b> series. SDCC is Free Open Source Software, distributed under GNU General Public License (GPL). </p>
       <p>Some of the features include: </p>
       <ul>
         <li>ASXXXX and ASLINK, a Freeware, retargettable

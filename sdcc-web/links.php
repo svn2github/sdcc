@@ -29,10 +29,6 @@ Sensorella</a>
       <a href="http://www.systronix.com">Systronix</a>
 - Makers of the STEP and STEP+ for the DallasTINI board (a must see for embedded
 ethernet and Dallas 390's)<br />
-      <span style="color: rgb(255, 102, 0); font-style: italic;">(Page Not Found)</span>
-      <a href="http://www.kd0yu.com">KD0YU.COM</a>
-- Misc stuff, mirrors SDCC when it's not doing anything else. (Oct,2000
-- Re-designed)<br />
       <a href="http://www.microcontroller.com">Microcontroller.com</a>
 - Micros and Embedded stuff. Not to be confused with
 microcontrollers.com (Arrow Electronics... what a joke!)<br />
@@ -54,15 +50,10 @@ site yet)<br />
       <a href="http://www.dcd.pl/">Digital Core Design</a>&nbsp;-
 private Intellectual Property (IP) Core provider and System-on-Chip
 (SoC) design house<br />
-      <span style="color: rgb(255, 102, 0); font-style: italic;">(Page Not Found)</span>
-      <a href="http://norum.homeunix.net/%7Ecarl/usbp/">USBp
-Serial Device Programmer</a> - USB-based microcontroller
-programming system for Mac OS X, Linux, BSD, and Windows<br />
       <a href="http://microcontrollershop.com/">MicroController
 Pros
 Corporation (&micro;CPros)</a> - Development Tools for All
 Major Microcontroller Architectures<br />
-      <span style="color: rgb(255, 102, 0); font-style: italic;">(Product Not Found)</span>
       <a href="http://www.soudez.be/">www.soudez.be</a>
 -&nbsp;<span class="genmed"><font face="Arial, sans-serif"><span style="text-decoration: none;">DS89C450</span></font></span>
 system over USB port in a standard DIL40 package<br />
@@ -74,11 +65,6 @@ development board with SDCC library code<br />
       <p>
       <a href="http://www.programmersheaven.com/zone5/cat27/index.htm">Programmers
 Heaven</a> - 8051 resources, sample code and compilers<br />
-      <span style="color: rgb(255, 102, 0); font-style: italic;">(Page Not Found)</span>
-      <a href="http://www.moonbounce.dk/embedded.htm">Carsten
-Groen,
-OZ9AAR</a> - This looked interesting, a Dallas DS5000 to IDE Hard
-drive interface with C code.<br />
       <a href="http://www.pjrc.com/tech/8051/index.html">Paul
 Stoffregen's Home Page</a> - Home of PAULMON and other code
 snippets.<br />
@@ -104,11 +90,6 @@ time. Need info? Go here!<br />
       </p>
       <h2>Links - Embedded Ethernet</h2>
       <p>
-      <span style="color: rgb(255, 102, 0); font-style: italic;">(Page Not Found)</span>
-      <a href="http://www.egnite.de/ethernut/">Ethernut</a>
-- a
-small embedded ethernet add-on for micros. Full internet node support.
-This is an open hardware and software project.<br />
       <a href="mailto:werner.cornelius@gmx.de">Werner
 Cornelius</a>
 has a <a href="http://www.titro.de/ethernet/">web page</a>
