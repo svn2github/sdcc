@@ -16,16 +16,12 @@
       <td valign="top" width="15%"><?php echo(file_get_contents('./left_menu.inc'));?>
       </td>
       <td width="85%">
-
       <h2>What is SDCC?</h2>
-
-      <p> <b>SDCC</b> is a <b><i>Freeware,
-retargettable, optimizing ANSI - C compiler</i></b> that
+      <p> <b>SDCC</b> is a <b><i>retargettable, optimizing ANSI - C compiler</i></b> that
 targets the <b><i>Intel 8051, Maxim 80DS390, Zilog Z80</i></b>
 and the <b><i>Motorola 68HC08</i></b> based MCUs.
 Work is in progress on supporting the <b><i>Microchip
-PIC16</i></b> and <b><i>PIC18</i></b> series. The entire source code for the
-compiler is distributed under GPL. </p>
+PIC16</i></b> and <b><i>PIC18</i></b> series. SDCC is a Free Open Source Software, distributed under GNU General Public License (GPL). </p>
       <p>Some of the features include: </p>
       <ul>
         <li>ASXXXX and ASLINK, a Freeware, retargettable
@@ -41,7 +37,7 @@ variables and loop reversing ), constant folding </i>and<i>
 propagation,
 copy propagation, dead code elimination and jump tables for 'switch'
 statements.</i> </li>
-        <li>MCU specific optimisations, including a global
+        <li>MCU specific optimizations, including a global
 register allocator.</li>
         <li>adaptable MCU specific backend that should be well
 suited for other 8
@@ -78,56 +74,35 @@ with all the users' and developers' input. </p>
       <p><b><i>AVR</i></b>
 and <b><i>gbz80</i></b>
 ports are no longer maintained. </p>
-
       <h2><a name="News"></a>News</h2>
-
       <p><i><b>July 31th, 2006: Small Device C Compiler 2.6.0 released</b></i></p>
-<p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, PIC, and HC08 microprocessors
+      <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, PIC, and HC08 microprocessors
 is now available (<a href="http://sdcc.sourceforge.net">http://sdcc.sourceforge.net</a>). Sources, documentation
 and binaries compiled for x86 Linux, x86 Microsoft Windows and PPC Mac OS X are available.</p>
-<p>This release improves the compiler's conformance to the C standard. Significant progress was also made on the
+      <p>This release improves the compiler's conformance to the C standard. Significant progress was also made on the
 PIC (both 14- and 16-bit) backends. For the 8051 SDCC has seen the addition of a new memory model, code banking
 and bit variables. Numerous feature requests and bug fixes are included as well.</p>
-<p>Since 2.5.0 the ChangeLog has grown by more than 3000 lines so all changes are simply too numerous to name.</p>
-<p>You can download the this release from:<br />
-<a href="http://sourceforge.net/project/showfiles.php?group_id=599">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
-
+      <p>Since 2.5.0 the ChangeLog has grown by more than 3000 lines so all changes are simply too numerous to name.</p>
+      <p>You can download the this release from:<br />
+      <a href="http://sourceforge.net/project/showfiles.php?group_id=599">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
       <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
-
-      <p><b> Linux</b>
-and <b>Microsoft Windows</b>
-are the primary targets,
-although <b>SDCC</b>
-is regularly compiled on the <b>Sourceforge
-Compile Farm</b> which includes <b>x86</b>,
-      <b>AMD Opteron (AMD64)</b>,
-      <b>Alpha</b>,
-      <b>IBM Power5</b>,
-      <b>Mac OS X</b>,
-      and <b>Sparc</b> machines. </p>
-      <p><b>SDCC</b>
-will compile natively on <b>Linux</b>
-using using <a href="http://www.gnu.org">gcc</a>. <b>Windows
-9x/NT/2000/XP</b> users are
+      <p><b>Linux - x86</b>, <b>Microsoft Windows - x86</b> and <b>Mac OS x - ppc</b>
+are the primary, so called "officially supported" platforms.</p>
+      <p><b>SDCC</b> compiles natively on <b>Linux</b> and <b>Mac OS X</b>
+using using <a href="http://www.gnu.org">gcc</a>. <b>Windows</b> release and snapshot builds are made by <b>cross compiling to mingw32</b> on a Linux host.</p>
+      <p><b>Windows 9x/NT/2000/XP</b> users are
 recommended to use Cygwin (<a href="http://sources.redhat.com/cygwin/">http://sources.redhat.com/cygwin/</a>)
-or may try the unsupported Borland C compiler or Microsoft Visual C++
-build
-scripts. The snapshot builds are made by <b>cross compiling to
-mingw32</b>
-from
-a Linux host.</p>
-
+or may try the unsupported Borland C compiler or Microsoft Visual C++ build
+scripts.</p>
       <h2><a name="Download"></a>Downloading SDCC</h2>
-
       <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
 download page</a> for the last released version including source
-and binary packages for <b>Linux/x86</b>,
-      <b>Linux/Opteron (AMD64)</b>,
-      <b>Linux/Alpha</b>,
-      <b>Linux/IBM Power5</b>,
-      <b>Mac OS X/PPC</b>,
-      <b>SUN Solaris/Sparc</b>
-and <b>32 bit Microsoft Windows</b>.
+and binary packages for <b>Linux - x86</b>,
+      <b>Microsoft Windows - x86</b> and <b>Mac OS x - ppc</b>.</p>
+      <p>SDCC is known to compile from the source code also on <b>Linux - x86_64</b>,
+      <b>Linux - Alpha</b>,
+      <b>Linux - IBM Power5</b>,
+      and <b>SUN Solaris - Sparc</b>.
       </p>
       <p>SDCC is always under active development. Please consider
       <a href="snap.php">downloading one of the snapshot builds</a>
@@ -159,9 +134,9 @@ Subversion. The following will fetch the latest sources:<br />
       <br />
 ... will create the <i>sdcc</i> directory in your current directory and place all
 downloaded code there. You can browse the Subversion repository
-<a href="http://svn.sourceforge.net/viewcvs.cgi/sdcc/trunk/sdcc/">here</a>. </p>
+      <a href="https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/">here</a>. </p>
       <p>SourceForge has further documentation on accessing the Subversion repository
-<a href="http://sourceforge.net/docman/display_doc.php?docid=31070&amp;group_id=1">here</a>. </p>
+      <a href="http://sourceforge.net/docman/display_doc.php?docid=31070&amp;group_id=1">here</a>. </p>
       <p>Before reporting a bug, please check your SDCC version
 and build
 date using the -v option, and be sure to include the full version
@@ -170,9 +145,7 @@ your bug report. For example: </p>
       <p><code>sdcc/bin &gt; sdcc -v<br />
 SDCC : mcs51/gbz80/z80/avr/ds390/pic14/TININative/xa51 2.3.8 (Feb 10
 2004) (UNIX) </code></p>
-
       <h2><a name="Support"></a>Support for SDCC</h2>
-
       <p><b>SDCC</b> and the included support
 packages come with fair amounts of documentation
 and examples. When they aren't enough, you can find help in the
@@ -233,17 +206,8 @@ easy online fill-in the blanks. </li>
         <li><a href="http://sdccokr.dl9sec.de/">Open
 Knowledge Web Site</a> - Run by <a href="mailto:thorsten.godau.AT.gmx.de">Thorsten Godau</a>
         </li>
-        <li> <a href="mailto:felix_daners.AT.gmx.ch">Felix
-Daners</a> has a few <a href="sdcc-install-nt.html">notes</a>
-on installing SDCC on an NT box </li>
-        <li><a href="cygwin_help.html" target="new">Installing
-Cygwin on a Win32 box</a> (an email from <a href="mailto:mitja.kukovec.AT.uni-mb.si">Mitja Kukovec</a>
-to the SDCC mailing list)<br />
-        </li>
       </ul>
-
       <h2><a name="Who"></a>Who is SDCC?</h2>
-
       <ul>
         <li><a href="mailto:sandeep.AT.users.sourceforge.net">Sandeep
 Dutta &lt;sandeep.AT.users.sourceforge.net&gt;</a>
@@ -321,21 +285,16 @@ serial I/O routines.</li>
 Dutta &lt;malini.AT.mediaone.net&gt;</a> -
 Sandeep's wife, for her patience and support.</li>
       </ul>
-
       <h2>Past news</h2>
-
       <p><i><b>July 28th, 2006: SDCC 2.6.0 RC2 released.</b></i></p>
       <p>SDCC 2.6.0 Release Candidate 2 packages for x86 Linux, 32 bit Windows,
 ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
 and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
-
       <p><i><b>July 12th, 2006: SDCC 2.6.0 RC1 released.</b></i></p>
       <p>SDCC 2.6.0 Release Candidate 1 packages for x86 Linux, 32 bit Windows,
 ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
 and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
-
       <p><i><b>April 19th, 2006: SDCC migrated from CVS to Subversion version control system.</b></i></p>
-
       <p><a href="previous.php">Previous News</a></p>
 <?php include('./footer.php')?>
       </td>
