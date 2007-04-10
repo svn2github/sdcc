@@ -2,6 +2,7 @@
 
 	* crontab.txt: run do-upload in a separate make task in order to
 	  prevent starting upload before other make jobs are finished
+	* bin/dcf.sh: removed duplicated rm -f $DCF_LOCK
 
 2007-03-31 Borut Razem <borut.razem AT siol.net>
 

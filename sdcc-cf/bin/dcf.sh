@@ -135,8 +135,6 @@ cleanup ()
   done
 
   rm_old_versions
-
-  rm -f $DCF_LOCK
 } 2>&1 | log_it
 
 cleanup
