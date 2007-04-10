@@ -1,3 +1,8 @@
+2007-04-10 Borut Razem <borut.razem AT siol.net>
+
+	* crontab.txt: run do-upload in a separate make task in order to
+	  prevent starting upload before other make jobs are finished
+
 2007-03-31 Borut Razem <borut.razem AT siol.net>
 
 	* crontab.txt: define "make" arguments on command line
