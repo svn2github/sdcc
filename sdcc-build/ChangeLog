@@ -1,3 +1,7 @@
+2007-04-12 Borut Razem <borut.razem AT siol.net>
+
+	* lib/upload.mk: explicitly execute chmod g+w at destination
+
 2007-03-31 Borut Razem <borut.razem AT siol.net>
 
 	* sdcc-build-bootstrap.sh: take "make" arguments from the command line
