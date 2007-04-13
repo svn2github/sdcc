@@ -1,6 +1,10 @@
 2007-04-12 Borut Razem <borut.razem AT siol.net>
 
-	* lib/upload.mk: explicitly execute chmod g+w at destination
+	* lib/upload.mk: explicitly execute chmod g+wx on destination directories
+
+2007-04-12 Borut Razem <borut.razem AT siol.net>
+
+	* lib/upload.mk: explicitly execute chmod g+w on destination files
 
 2007-03-31 Borut Razem <borut.razem AT siol.net>
 
