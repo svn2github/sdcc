@@ -19,7 +19,7 @@ do-upload:
 	then \
 	  rsync --relative --include='*.exe' -e ssh --size-only $$FILE_LIST $(_WEBSNAPSHOTDEST) && \
 	  { \
-	    ssh $(WEBUSER)@$(WEBHOST) cd $(WEBHTDOCSDIR)\; chmod g+wx $$DIR_LIST\; chmod g+w $$FILE_LIST\; \
+	    ssh $(WEBUSER)@$(WEBHOST) cd $(WEBHTDOCSDIR)\; chmod g+wx $$DIR_LIST\; chmod g+w $$FILE_LIST; \
 	    rm -rf $(HTDOCSDIR)/*; \
 	  }; \
 	fi

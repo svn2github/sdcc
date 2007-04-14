@@ -1,3 +1,7 @@
+2007-04-14 Borut Razem <borut.razem AT siol.net>
+
+	* crontab.txt: run do-upload in a separate make task on cf-x86 too
+
 2007-04-10 Borut Razem <borut.razem AT siol.net>
 
 	* crontab.txt: run do-upload in a separate make task in order to
