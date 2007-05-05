@@ -1,3 +1,7 @@
+2007-05-05 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.nsis/Makefile: updated to NSIS version 2.27
+
 2007-04-14 Borut Razem <borut.razem AT siol.net>
 
 	* crontab.txt: run do-upload in a separate make task on cf-x86 too
