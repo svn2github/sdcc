@@ -80,6 +80,15 @@ ports are no longer maintained. </p>
 32 bit Windows and ppc Mac OS X are available at:
 <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc1</a>
 and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+      <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
+      <p><b>Linux - x86</b>, <b>Microsoft Windows - x86</b> and <b>Mac OS x - ppc</b>
+are the primary, so called "officially supported" platforms.</p>
+      <p><b>SDCC</b> compiles natively on <b>Linux</b> and <b>Mac OS X</b>
+using using <a href="http://www.gnu.org">gcc</a>. <b>Windows</b> release and snapshot builds are made by <b>cross compiling to mingw32</b> on a Linux host.</p>
+      <p><b>Windows 9x/NT/2000/XP</b> users are
+recommended to use Cygwin (<a href="http://sources.redhat.com/cygwin/">http://sources.redhat.com/cygwin/</a>)
+or may try the unsupported Borland C compiler or Microsoft Visual C++ build
+scripts.</p>
       <h2><a name="Download"></a>Downloading SDCC</h2>
       <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
 download page</a> for the last released version including source
@@ -282,15 +291,6 @@ and bit variables. Numerous feature requests and bug fixes are included as well.
       <p>Since 2.5.0 the ChangeLog has grown by more than 3000 lines so all changes are simply too numerous to name.</p>
       <p>You can download the this release from:<br />
       <a href="http://sourceforge.net/project/showfiles.php?group_id=599">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
-      <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
-      <p><b>Linux - x86</b>, <b>Microsoft Windows - x86</b> and <b>Mac OS x - ppc</b>
-are the primary, so called "officially supported" platforms.</p>
-      <p><b>SDCC</b> compiles natively on <b>Linux</b> and <b>Mac OS X</b>
-using using <a href="http://www.gnu.org">gcc</a>. <b>Windows</b> release and snapshot builds are made by <b>cross compiling to mingw32</b> on a Linux host.</p>
-      <p><b>Windows 9x/NT/2000/XP</b> users are
-recommended to use Cygwin (<a href="http://sources.redhat.com/cygwin/">http://sources.redhat.com/cygwin/</a>)
-or may try the unsupported Borland C compiler or Microsoft Visual C++ build
-scripts.</p>
       <p><a href="previous.php">Previous News</a></p>
 <?php include('./footer.php')?>
       </td>
