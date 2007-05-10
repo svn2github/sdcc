@@ -18,6 +18,30 @@
 
       <h2>Previous NEWS</h2>
 
+      <p><i><b>July 28th, 2006: SDCC 2.6.0 RC2 released.</b></i></p>
+      <p>SDCC 2.6.0 Release Candidate 2 packages for x86 Linux, 32 bit Windows,
+ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
+      <p><i><b>July 12th, 2006: SDCC 2.6.0 RC1 released.</b></i></p>
+      <p>SDCC 2.6.0 Release Candidate 1 packages for x86 Linux, 32 bit Windows,
+ppc MacOSX and doc packages are available at: <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.6.0-rc1</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
+      <p><i><b>April 19th, 2006: SDCC migrated from CVS to Subversion version control system.</b></i></p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
       <p><i><b>May 12th, 2005: SDCC 2.5.0 released.</b></i></p>
       <p>Source code and binaries Microsoft Windows and Linux are available from
 the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
