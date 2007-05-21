@@ -268,7 +268,7 @@ Baldwin &lt;baldwin.AT.shop-pdp.kent.edu&gt;</a>
 - Initial version of ASXXXX&nbsp; and&nbsp; ASLINK.</li>
         <li><a href="mailto:jhartman.AT.compuserve.com">John
 Hartman &lt;jhartman.AT.compuserve.com&gt;</a>
-- Porting ASXXX&nbsp;&nbsp; and ASLINK for 8051.</li>
+- Porting ASXXXX and ASLINK for 8051.</li>
         <li><a href="mailto:boehm.AT.sgi.com">Jans J
 Boehm &lt;boehm.AT.sgi.com&gt;</a> and Alan J
 Demers - Conservative garbage collector for C &amp; C++.</li>

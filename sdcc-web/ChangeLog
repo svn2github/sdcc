@@ -1,3 +1,8 @@
+2007-05-21 Borut Razem <borut.razem AT siol.net>
+
+	* index.php: fixed ASXXXX typo
+	* left_menu.inc: added link to the Sandeep's article
+
 2007-05-10 Borut Razem <borut.razem AT siol.net>
 
 	* index.php, previous.php: sdcc 2.7.0 RC1 announced, nodes old news to
