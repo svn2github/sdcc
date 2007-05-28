@@ -75,6 +75,12 @@ with all the users' and developers' input. </p>
 and <b><i>gbz80</i></b>
 ports are no longer maintained. </p>
       <h2><a name="News"></a>News</h2>
+      <p><i><b>May 26th, 2007: SDCC 2.7.0 RC3 released.</b></i></p>
+      <p>SDCC 2.7.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
+32 bit Windows and ppc Mac OS X are available at:
+<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc3">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc3</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
       <p><i><b>May 22nd, 2007: SDCC 2.7.0 RC2 released.</b></i></p>
       <p>SDCC 2.7.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
 32 bit Windows and ppc Mac OS X are available at:
