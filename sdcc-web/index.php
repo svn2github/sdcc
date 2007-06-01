@@ -75,29 +75,33 @@ with all the users' and developers' input. </p>
 and <b><i>gbz80</i></b>
 ports are no longer maintained. </p>
       <h2><a name="News"></a>News</h2>
-      <p><i><b>May 26th, 2007: SDCC 2.7.0 RC3 released.</b></i></p>
-      <p>SDCC 2.7.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
-32 bit Windows and ppc Mac OS X are available at:
-<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc3">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc3</a>
-and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
 
-      <p><i><b>May 22nd, 2007: SDCC 2.7.0 RC2 released.</b></i></p>
-      <p>SDCC 2.7.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
-32 bit Windows and ppc Mac OS X are available at:
-<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc2</a>
-and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+      <p><i><b>May 31st, 2007: Small Device C Compiler 2.7.0 released.</b></i></p>
+      <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
+HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
+Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and
+PPC Mac OS X are available.</p>
+	<p>SDCC 2.7.0 Feature List:</p>
+	<ul>
+      <li>enabled Z80 floating point support</li>
+      <li>ucSim simulator and SDCDB debugger native WIN32 port</li>
+      <li>added gnu readline support to sdcdb</li>
+      <li>removed deprecated pragmas</li>
+      <li>sdcpp preprocessor synchronized with GNU cpp 4.1.2</li>
+      <li>use memory buffers instead of temporary files</li>
+      <li>added --fdollars-in-identifier command line option</li>
+      <li>added --funsigned-char command line option</li>
+      <li>SDCC libraries are --std-c99 compatible</li>
+      <li>added --fverbose-asm command line option</li>
+      <li>Z80 assembler is now case sensitive</li>
+      <li>a default heap is added and automatically initialized</li>
+      <li>initialized variables with an absolute address are allocated and initialized</li>
+      <li>support for inline functions; consider it alpha quality</li>
+    </ul>
+	<p>Numerous feature requests and bug fixes are included as well.</p>
+	<p>You can download the release from:<br />
+      <a href="http://sourceforge.net/project/showfiles.php?group_id=599" target="_new">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
 
-      <p><i><b>May 21st, 2007: Circuit Cellar made the Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C 
-Compiler" publically available</b></i></p>
-      <p>Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C 
-Compiler", published in Circuit Cellar, issue 121, is now publicly 
-available at:
-<a href="http://www.circuitcellar.com/SA/Articles2/Dutta-121.pdf">http://www.circuitcellar.com/SA/Articles2/Dutta-121.pdf</a>.</p>
-      <p><i><b>May 10th, 2007: SDCC 2.7.0 RC1 released.</b></i></p>
-      <p>SDCC 2.7.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
-32 bit Windows and ppc Mac OS X are available at:
-<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc1</a>
-and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
       <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
       <p><b>Linux - x86</b>, <b>Microsoft Windows - x86</b> and <b>Mac OS x - ppc</b>
 are the primary, so called "officially supported" platforms.</p>
@@ -298,18 +302,35 @@ serial I/O routines.</li>
 Dutta &lt;malini.AT.mediaone.net&gt;</a> -
 Sandeep's wife, for her patience and support.</li>
       </ul>
+
       <h2>Past news</h2>
-      <p><i><b>July 31th, 2006: Small Device C Compiler 2.6.0 released</b></i></p>
-      <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, PIC, and HC08 microprocessors
-is now available (<a href="http://sdcc.sourceforge.net">http://sdcc.sourceforge.net</a>). Sources, documentation
-and binaries compiled for x86 Linux, x86 Microsoft Windows and PPC Mac OS X are available.</p>
-      <p>This release improves the compiler's conformance to the C standard. Significant progress was also made on the
-PIC (both 14- and 16-bit) backends. For the 8051 SDCC has seen the addition of a new memory model, code banking
-and bit variables. Numerous feature requests and bug fixes are included as well.</p>
-      <p>Since 2.5.0 the ChangeLog has grown by more than 3000 lines so all changes are simply too numerous to name.</p>
-      <p>You can download the this release from:<br />
-      <a href="http://sourceforge.net/project/showfiles.php?group_id=599">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
+
+      <p><i><b>May 26th, 2007: SDCC 2.7.0 RC3 released.</b></i></p>
+      <p>SDCC 2.7.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
+32 bit Windows and ppc Mac OS X are available at:
+<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc3">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc3</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
+      <p><i><b>May 22nd, 2007: SDCC 2.7.0 RC2 released.</b></i></p>
+      <p>SDCC 2.7.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+32 bit Windows and ppc Mac OS X are available at:
+<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc2</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
+      <p><i><b>May 21st, 2007: Circuit Cellar made the Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C 
+Compiler" publically available</b></i></p>
+      <p>Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C 
+Compiler", published in Circuit Cellar, issue 121, is now publicly 
+available at:
+<a href="http://www.circuitcellar.com/SA/Articles2/Dutta-121.pdf">http://www.circuitcellar.com/SA/Articles2/Dutta-121.pdf</a>.</p>
+      <p><i><b>May 10th, 2007: SDCC 2.7.0 RC1 released.</b></i></p>
+      <p>SDCC 2.7.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+32 bit Windows and ppc Mac OS X are available at:
+<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc1</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
       <p><a href="previous.php">Previous News</a></p>
+
 <?php include('./footer.php')?>
       </td>
     </tr>
