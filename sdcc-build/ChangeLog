@@ -1,3 +1,9 @@
+2007-06-03 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk, lib/local.mk: added posibility to have the local
+	  machine makefiles in a user defined directory, ~/.sdcc_builder/local
+	  by default; defined in LOCAL_MK variable
+
 2007-04-14 Borut Razem <borut.razem AT siol.net>
 
 	* lib/upload.mk: unquote the ssh command

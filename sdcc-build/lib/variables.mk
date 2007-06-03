@@ -17,6 +17,10 @@ SDCCREVISION = $(shell awk '/^\$$Revision:/ { print $$2 }' $(ORIGDIR)/sdcc/Chang
 # Stamp to append to the build name
 SNAPSHOTID = $(BUILDDATE)-$(SDCCREVISION)
 
+# Path to the directory containing local machine makefiles (<hosatname>.mk)
+# $(HOME)/build/sdcc-build/local is used if the path doesn't exist
+LOCAL_MK = ~/.sdcc_builder/local
+
 # WEB server host, user and path
 WEBHOST = shell1.sourceforge.net
 WEBUSER = sdcc-builder

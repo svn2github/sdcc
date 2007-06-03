@@ -1,6 +1,13 @@
 # Rules to include local settings
-USERCONFIG = local/$(HOSTNAME)-$(USER).mk
-HOSTCONFIG = local/$(HOSTNAME).mk
+
+# Path to the directory containing local machine makefiles (<hosatname>.mk)
+# $(HOME)/build/sdcc-build/local is used if the path doesn't exist
+ifneq ($(shell test -d $(LOCAL_MK) && echo 1),1)
+  LOCAL_MK = local
+endif
+
+USERCONFIG = $(LOCAL_MK)/$(HOSTNAME)-$(USER).mk
+HOSTCONFIG = $(LOCAL_MK)/$(HOSTNAME).mk
 
 ifneq ($(wildcard $(HOSTCONFIG)), )
 include $(HOSTCONFIG)
@@ -10,7 +17,7 @@ ifneq ($(wildcard $(USERCONFIG)), )
 include $(USERCONFIG)
 endif
 
-HOSTTARGETCONFIG = local/$(HOSTNAME)-$(TARGETOS).mk
+HOSTTARGETCONFIG = $(LOCAL_MK)/$(HOSTNAME)-$(TARGETOS).mk
 
 ifneq ($(wildcard $(HOSTTARGETCONFIG)), )
 include $(HOSTTARGETCONFIG)
