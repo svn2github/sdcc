@@ -2,6 +2,8 @@
 
 	* index.php, snap_header.php, left_menu.inc:
 	  use new svn URL scheme
+	* left_menu.inc: SDCC Wiki moved to
+	  http://sdcc.wiki.sourceforge.net/
 
 2007-06-01 Borut Razem <borut.razem AT siol.net>
 

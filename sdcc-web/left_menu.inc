@@ -28,7 +28,7 @@
     <a href="http://sdcc.svn.sourceforge.net/viewcvs.cgi/sdcc/trunk/sdcc/"><i>SDCC Subversion Repository</i></a><br />
   </div>
   <br />
-  <b><a href="/release_wiki/"><i>SDCC Release Wiki</i></a></b><br />
+  <b><a href="http://sdcc.wiki.sourceforge.net/"><i>SDCC Wiki</i></a></b><br />
   <br />
   <b><a href="/links.php"><i>Links and More!</i></a></b><br />
   <br />
