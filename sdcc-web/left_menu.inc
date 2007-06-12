@@ -25,7 +25,7 @@
   <b><a href="http://sourceforge.net/projects/sdcc"><i>SDCC at SourceForge</i></a></b>
   <div class="submenu">
     <a href="http://sourceforge.net/project/showfiles.php?group_id=599"><i>SDCC File Releases</i></a><br />
-    <a href="http://svn.sourceforge.net/viewcvs.cgi/sdcc/trunk/sdcc/"><i>SDCC Subversion Repository</i></a><br />
+    <a href="http://sdcc.svn.sourceforge.net/viewcvs.cgi/sdcc/trunk/sdcc/"><i>SDCC Subversion Repository</i></a><br />
   </div>
   <br />
   <b><a href="/release_wiki/"><i>SDCC Release Wiki</i></a></b><br />

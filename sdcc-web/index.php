@@ -146,7 +146,7 @@ distributions): </p>
 Subversion. The following will fetch the latest sources:<br />
       <br />
       <code>
-        svn co https://svn.sourceforge.net/svnroot/sdcc/trunk/sdcc sdcc
+        svn co https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc sdcc
       </code><br />
       <br />
 ... will create the <i>sdcc</i> directory in your current directory and place all

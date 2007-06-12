@@ -1,3 +1,8 @@
+2007-06-12 Borut Razem <borut.razem AT siol.net>
+
+	* index.php, snap_header.php, left_menu.inc:
+	  use new svn URL scheme
+
 2007-06-01 Borut Razem <borut.razem AT siol.net>
 
 	* index.php: added News - sdcc 2.7.0 release
