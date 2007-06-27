@@ -1,3 +1,7 @@
+2007-06-27 Borut Razem <borut.razem AT siol.net>
+
+	* local/mirror-doors.mk: create Mac OS X unified binaries
+
 2007-06-03 Borut Razem <borut.razem AT siol.net>
 
 	* lib/variables.mk, lib/local.mk: added posibility to have the local
