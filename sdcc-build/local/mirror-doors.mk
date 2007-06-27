@@ -1,6 +1,6 @@
 # PPC G4 on MacOS X 10.4
-TARGETOS = unified-apple-macosx
-HOSTOS = unified-apple-macosx
+TARGETOS = ppc-apple-macosx
+HOSTOS = ppc-apple-macosx
 
 # an old readline version is installed on the machine,
 # so I had to install new one (readline-5.2) to $(HOME)/local-$(HOSTNAME)
