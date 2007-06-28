@@ -1,9 +1,10 @@
 # PPC G4 on MacOS X 10.4
+# i386/ppc universal binaries
 TARGETOS = ppc-apple-macosx
 HOSTOS = ppc-apple-macosx
 
 # an old readline version is installed on the machine,
 # so I had to install new one (readline-5.2) to $(HOME)/local-$(HOSTNAME)
-TARGETLDFLAGS = "-isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -L$(HOME)/local-$(HOSTNAME)/lib"
+TARGETLDFLAGS = "-Wl,-syslibroot,/Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -L$(HOME)/local-$(HOSTNAME)/lib"
 TARGETCXXFLAGS = "-O2 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -I$(HOME)/local-$(HOSTNAME)/include"
 TARGETCFLAGS = "-O2 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -I$(HOME)/local-$(HOSTNAME)/include"

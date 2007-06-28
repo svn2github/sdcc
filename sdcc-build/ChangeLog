@@ -1,6 +1,10 @@
+2007-06-28 Borut Razem <borut.razem AT siol.net>
+
+	* local/mirror-doors.mk: slightly changed TARGETLDFLAGS
+
 2007-06-27 Borut Razem <borut.razem AT siol.net>
 
-	* local/mirror-doors.mk: create Mac OS X unified binaries
+	* local/mirror-doors.mk: create Mac OS X universal binaries
 
 2007-06-03 Borut Razem <borut.razem AT siol.net>
 
