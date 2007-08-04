@@ -1,3 +1,8 @@
+2007-08-04 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.mingw/Makefile: upgraded to gcc-4.2.1,
+	  mingw-runtime-3.13, w32api-3.10
+
 2007-06-24 Borut Razem <borut.razem AT siol.net>
 
 	* packages/build.readline: fixed support for universal binaries
@@ -10,7 +15,7 @@
 2007-06-01 Borut Razem <borut.razem AT siol.net>
 
 	* packages/build.mingw/Makefile: upgraded to gcc-4.2.0,
-	  binutils-2.17, mingw-runtime-3.12, w32api-3.9 
+	  binutils-2.17, mingw-runtime-3.12, w32api-3.9
 
 2007-05-05 Borut Razem <borut.razem AT siol.net>
 
