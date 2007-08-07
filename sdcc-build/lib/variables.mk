@@ -19,7 +19,7 @@ SNAPSHOTID = $(BUILDDATE)-$(SDCCREVISION)
 
 # Path to the directory containing local machine makefiles (<hosatname>.mk)
 # $(HOME)/build/sdcc-build/local is used if the path doesn't exist
-LOCAL_MK = ~/.sdcc_builder/local
+LOCAL_MK = $(HOME)/.sdcc_builder/local
 
 # WEB server host, user and path
 WEBHOST = shell1.sourceforge.net

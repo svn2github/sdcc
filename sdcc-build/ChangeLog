@@ -1,3 +1,9 @@
+2007-08-07 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* lib/variables.mk: changed ~/.sdcc_builder/local to
+	  $(HOME)/.sdcc_builder/local since not all shells have
+	  a special meaning for ~
+
 2007-06-28 Borut Razem <borut.razem AT siol.net>
 
 	* local/mirror-doors.mk: slightly changed TARGETLDFLAGS
