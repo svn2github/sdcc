@@ -1,3 +1,8 @@
+2007-08-20 Borut Razem <borut.razem AT siol.net>
+
+	* index.php, links.php. previous.php, snap_head.php:
+	  fixed to pass http://validator.w3.org/ validator
+
 2007-07-10 Borut Razem <borut.razem AT siol.net>
 
 	* left_menu.inc: fixed #1751299: subversion link broken
