@@ -1,3 +1,7 @@
+2007-09-03 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.gputils/Makefile: get gputils sources from CVS
+
 2007-08-04 Borut Razem <borut.razem AT siol.net>
 
 	* packages/build.mingw/Makefile: upgraded to gcc-4.2.1,

@@ -2,29 +2,39 @@ include ../packages.mk
 
 VERSION=$(shell expr download/gputils-*.tar.gz : 'download/gputils-\(.*\).tar.gz')
 
+#GPUTILS_DIR=gputils-$(VERSION)
+GPUTILS_DIR=gputils
+
 .PHONY: all
 all: gputils-install.tag clean
 
+#gputils-download.tag:
+#	wget -P download $(SF_REPOSITORY)/sourceforge/gputils/gputils-0.13.4.tar.gz
+#	touch $@
+#
+#gputils-unpack.tag: gputils-download.tag
+#	tar xzvf download/$(GPUTILS_DIR).tar.gz
+#	touch $@
+
 gputils-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/gputils/gputils-0.13.4.tar.gz
+	cvs -z3 -d:pserver:anonymous@gputils.cvs.sourceforge.net:/cvsroot/gputils co gputils
 	touch $@
 
 gputils-unpack.tag: gputils-download.tag
-	tar xzvf download/gputils-$(VERSION).tar.gz
 	touch $@
 
 gputils-configure.tag: gputils-unpack.tag
-	cd gputils-$(VERSION) && \
+	cd $(GPUTILS_DIR) && \
 	./configure --prefix=$(LOCAL_DIR)
 	touch $@
 
 gputils-make.tag: gputils-configure.tag
-	$(MAKE) -C gputils-$(VERSION)
+	$(MAKE) -C $(GPUTILS_DIR)
 	touch $@
 
 gputils-install.tag: gputils-make.tag
-	$(MAKE) -C gputils-$(VERSION) install
+	$(MAKE) -C $(GPUTILS_DIR) install
 	touch $@
 
 clean:
-	rm -rf gputils-$(VERSION) download/* *.tag
+	rm -rf $(GPUTILS_DIR) download/* *.tag
