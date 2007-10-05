@@ -3,26 +3,6 @@ BOOTSTRAPLOG=$(STAGINGBASE)/build.$(TARGETOS).log
 
 REGTESTBASE = regression_test_results
 
-# The file naming and output directories depend on whether this is a
-# release or a snapshot build
-ifeq ($(ISRELEASE),true)
-# Format is staging/sdcc-version-target.tar.bz2
-
-# The tail part of the tar ball name
-BUILDNAME=$(RELEASEVERSION)-$(TARGETOS)
-# The root directory that the tarballs will go into
-TARBALLBASE=staging
-# The directory that the tarballs will finally go into
-TARBALLDIR=$(STAGINGBASE)/$(TARBALLBASE)
-
-else
-# Format is snapshots/target/sdcc-target-date-revision.tar.bz2
-BUILDNAME=snapshot-$(TARGETOS)-$(SNAPSHOTID)
-TARBALLBASE=snapshots
-TARBALLDIR=$(SNAPSHOTDIR)/$(TARGETOS)
-
-endif
-
 # Name of the tarball for this target
 ifneq ($(CROSSCOMPILING), 1)
 TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.bz2

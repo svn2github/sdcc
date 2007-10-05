@@ -1,3 +1,9 @@
+2007-10-05 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk, lib/bootstrap.mk: the default definition of BUILDNAME,
+	  TARBALLBASE and TARBALLDIR moved from bootstrap.mk to variables.mk, so
+	  that they can be redefined by local settings
+
 2007-08-07 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* lib/variables.mk: changed ~/.sdcc_builder/local to
