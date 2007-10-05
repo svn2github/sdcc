@@ -2,7 +2,9 @@
 
 	* lib/variables.mk, lib/bootstrap.mk: the default definition of BUILDNAME,
 	  TARBALLBASE and TARBALLDIR moved from bootstrap.mk to variables.mk, so
-	  that they can be redefined by local settings
+	  that they can be redefined by local settings. Introduced TRAGET_PLATFORM
+	* local/mirror-doors.mk: universal binaries are producrd; defined
+	  TARAGET_PLATFORM as universal-apple-macosx
 
 2007-08-07 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 

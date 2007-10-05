@@ -2,6 +2,8 @@
 SRCTREES +=
 # Target to build for.
 TARGETOS = unknown-unknown-unknown
+# Target platform name equals to target OS name by default
+TARGET_PLATFORM = $(TARGETOS)
 # Local host type.
 HOSTOS = unknown-unknown-unknown
 # By default compile for the host.
@@ -39,9 +41,9 @@ TOPDIR := $(shell /bin/pwd)
 # Directory that all of the soure trees get copied into
 SRCDIR = $(TOPDIR)/src
 ORIGDIR = $(HOME)/build/sdcc-build/orig
-BUILDDIR = $(TOPDIR)/build/$(TARGETOS)/sdcc
+BUILDDIR = $(TOPDIR)/build/$(TARGET_PLATFORM)/sdcc
 BINDIR = $(BUILDDIR)/bin
-NOISELOG = $(STAGINGBASE)/build-noise.$(TARGETOS).log
+NOISELOG = $(STAGINGBASE)/build-noise.$(TARGET_PLATFORM).log
 STAGINGBASE = $(TOPDIR)/..
 HTDOCSDIR = $(STAGINGBASE)/htdocs
 SNAPSHOTDIR = $(HTDOCSDIR)/snapshots
@@ -55,9 +57,9 @@ SVNSERVER =
 # Regression test targets
 REGTESTTARGETS = test-host test-ucz80 test-mcs51 test-mcs51-stack-auto test-mcs51-large test-ds390 test-hc08
 # Directory for regression test log file
-REGTESTDIR = $(HTDOCSDIR)/regression_test_results/$(TARGETOS)
+REGTESTDIR = $(HTDOCSDIR)/regression_test_results/$(TARGET_PLATFORM)
 # Regression test log file
-REGTESTLOG = $(REGTESTDIR)/regression-test-$(TARGETOS)-$(SNAPSHOTID).log
+REGTESTLOG = $(REGTESTDIR)/regression-test-$(TARGET_PLATFORM)-$(SNAPSHOTID).log
 
 # Directory for regression test log file
 CHLOGDIR = $(HTDOCSDIR)/changelog_heads
@@ -76,16 +78,16 @@ MAKESILENTFLAG = -s
 ifeq ($(ISRELEASE),true)
 # Format is staging/sdcc-version-target.tar.bz2
 # The tail part of the tar ball name
-BUILDNAME = $(RELEASEVERSION)-$(TARGETOS)
+BUILDNAME = $(RELEASEVERSION)-$(TARGET_PLATFORM)
 # The root directory that the tarballs will go into
 TARBALLBASE = staging
 # The directory that the tarballs will finally go into
 TARBALLDIR = $(STAGINGBASE)/$(TARBALLBASE)
 else
 # Format is snapshots/target/sdcc-target-date-revision.tar.bz2
-BUILDNAME = snapshot-$(TARGETOS)-$(SNAPSHOTID)
+BUILDNAME = snapshot-$(TARGET_PLATFORM)-$(SNAPSHOTID)
 TARBALLBASE = snapshots
-TARBALLDIR = $(SNAPSHOTDIR)/$(TARGETOS)
+TARBALLDIR = $(SNAPSHOTDIR)/$(TARGET_PLATFORM)
 endif
 
 $(STAMPDIR):
