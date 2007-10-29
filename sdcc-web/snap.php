@@ -126,15 +126,17 @@ function display_files($dir, $cldir, $rtdir, $subdir)
 
 function parse_dir($scanthis, $cldir, $rtdir)
 {
-  $linux_num = $windows_num = $docs_num = $other_docs_num = $source_num = $other_num = 0;
+  $linux_num = $windows_num = $macosx_num = $docs_num = $other_docs_num = $source_num = $other_num = 0;
 
   $dir = @opendir($scanthis);
   while (false!=($file = @readdir($dir))) {
     if (is_dir($scanthis."/".$file) && $file != "." && $file != "..") {
-      if (preg_match('/linux/', $file)) {
+      if (preg_match('/(i386|amd64)-.*-linux/', $file)) {
         $linux_dir[$linux_num++] = $file;
       } elseif (preg_match('/msvc/', $file)) {
         $windows_dir[$windows_num++] = $file;
+      } elseif (preg_match('/macosx/', $file)) {
+        $macosx_dir[$macosx_num++] = $file;
       } elseif (preg_match('/docs$/', $file)) {
         $docs_dir[$docs_num++] = $file;
       } elseif (preg_match('/docs_/', $file)) {
@@ -147,13 +149,17 @@ function parse_dir($scanthis, $cldir, $rtdir)
     }//end-if
   }//end-while
 
-  green_bar("Linux Binaries", "Linux");
+  green_bar("Supported Linux Binaries", "Linux");
   for ($i=0; $i<$linux_num; $i++) {
     display_files($scanthis, $cldir, $rtdir, $linux_dir[$i]);
   }
-  green_bar("Windows Binaries", "Windows");
+  green_bar("Supported Windows Binaries", "Windows");
   for ($i=0; $i<$windows_num; $i++) {
     display_files($scanthis, $cldir, $rtdir, $windows_dir[$i]);
+  }
+  green_bar("Supported Mac OS X Binaries", "MacOSX");
+  for ($i=0; $i<$macosx_num; $i++) {
+    display_files($scanthis, $cldir, $rtdir, $macosx_dir[$i]);
   }
   green_bar("Documentation", "Docs");
   for ($i=0; $i<$docs_num; $i++) {
