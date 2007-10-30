@@ -11,6 +11,8 @@
   <div class="submenu">
     <a href="/snap.php#Linux"><i>Linux</i></a><br />
     <a href="/snap.php#Windows"><i>Windows</i></a><br />
+    <a href="/snap.php#MacOSX"><i>Mac OS X</i></a><br />
+    <a href="/snap.php#Docs"><i>Documentation</i></a><br />
     <a href="/snap.php#Source"><i>Source</i></a><br />
   </div>
   <br />
