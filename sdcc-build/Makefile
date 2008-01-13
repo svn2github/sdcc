@@ -4,6 +4,7 @@
 all: build
 
 include lib/variables.mk
+include lib/version.mk
 include lib/local.mk
 include lib/cross.mk
 include lib/ports.mk

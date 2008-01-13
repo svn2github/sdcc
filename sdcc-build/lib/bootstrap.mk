@@ -79,7 +79,8 @@ ifeq ($(CROSSCOMPILING), 1)
 	cp $(ORIGDIR)/sdcc/COPYING $(BUILDDIR)$(PREFIX)/COPYING.TXT; unix2dos $(BUILDDIR)$(PREFIX)/COPYING.TXT
 	cp $(ORIGDIR)/sdcc/support/scripts/sdcc.nsi $(BUILDDIR)$(PREFIX)
 	cp $(ORIGDIR)/sdcc/support/scripts/sdcc.ico $(BUILDDIR)$(PREFIX)
-	-cd $(BUILDDIR)$(PREFIX); $(NSISBIN)/makensis sdcc.nsi;
+	-cd $(BUILDDIR)$(PREFIX); \
+	  $(NSISBIN)/makensis -DVER_MAJOR=$(SDCC_VER_MAJOR) -DVER_MINOR=$(SDCC_VER_MINOR) -DVER_REVISION=$(SDCC_VER_DEVEL) -DVER_BUILD=$(SDCC_REVISION) sdcc.nsi;
 	mv $(BUILDDIR)$(PREFIX)/setup.exe $(SETUPNAME)
 endif
 

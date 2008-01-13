@@ -6,8 +6,8 @@ VERSION=$(shell expr download/nsis-*-src.tar.bz2 : 'download/nsis-\(.*\)-src.tar
 all: nsis-install.tag clean
 
 nsis-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/nsis/nsis-2.27-src.tar.bz2
-	wget -P download $(SF_REPOSITORY)/sourceforge/nsis/nsis-2.27.zip
+	wget -P download $(SF_REPOSITORY)/sourceforge/nsis/nsis-2.34-src.tar.bz2
+	wget -P download $(SF_REPOSITORY)/sourceforge/nsis/nsis-2.34.zip
 	touch $@
 
 nsis-unpack.tag: nsis-download.tag

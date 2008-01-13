@@ -1,3 +1,10 @@
+2008-01-13 Borut Razem <borut.razem AT siol.net>
+
+	* Makefile, lib/bootstrap.mk, lib/variables.mk, lib/version.mk:
+	  added version.mk, introduced variables SDCC_VER_MAJOR,
+	  SDCC_VER_MINOR, SDCC_VER_DEVEL, SDCCREVISION renamed to
+	  SDCC_REVISION
+
 2007-10-27 Borut Razem <borut.razem AT siol.net>
 
 	* lib/variables.mk: test-mcs51 replaced with test-mcs51-small in
