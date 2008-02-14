@@ -1,3 +1,8 @@
+2008-02-14 Borut Razem <borut.razem AT siol.net>
+
+	* local/mirror-doors.mk: murror-doors is now Mac OS X 10.5 Leopard
+	  with Xcvode 3.0
+
 2008-01-13 Borut Razem <borut.razem AT siol.net>
 
 	* Makefile, lib/bootstrap.mk, lib/variables.mk, lib/version.mk:
