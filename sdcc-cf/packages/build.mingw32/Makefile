@@ -20,7 +20,7 @@ real-clean: binutils-realclean mingw-runtime-realclean w32api-realclean gcc-real
 
 
 binutils-download.tag:
-	wget -P download http://ftp.gnu.org/gnu/binutils/binutils-2.17.tar.bz2
+	wget -P download http://ftp.gnu.org/gnu/binutils/binutils-2.18.tar.bz2
 	touch $@
 
 binutils-unpack.tag: binutils-download.tag
@@ -58,7 +58,7 @@ binutils-realclean: binutils-clean
 
 
 mingw-runtime-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/mingw-runtime-3.13.tar.gz
+	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/mingw-runtime-3.14.tar.gz
 	touch $@
 
 mingw-runtime-install.tag: mingw-runtime-download.tag
@@ -77,7 +77,7 @@ mingw-runtime-realclean: mingw-runtime-clean
 
 
 w32api-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/w32api-3.10.tar.gz
+	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/w32api-3.11.tar.gz
 	touch $@
 
 w32api-install.tag: w32api-download.tag
@@ -96,8 +96,8 @@ w32api-realclean: w32api-clean
 
 
 gcc-download.tag:
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.2.1/gcc-core-4.2.1.tar.bz2
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.2.1/gcc-g++-4.2.1.tar.bz2
+	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.2.3/gcc-core-4.2.3.tar.bz2
+	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.2.3/gcc-g++-4.2.3.tar.bz2
 	touch $@
 
 gcc-unpack.tag: gcc-download.tag
