@@ -2,6 +2,7 @@
 
 	* packages/build.gputils/Makefile: possibiliy to build gputils from
 	  a release package or svn repository if FROM_SVN is defined
+	* packages/build.wget/*: added
 
 2008-02-17 Borut Razem <borut.razem AT siol.net>
 
