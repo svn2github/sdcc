@@ -2,26 +2,29 @@ include ../packages.mk
 
 VERSION=$(shell expr download/gputils-*.tar.gz : 'download/gputils-\(.*\).tar.gz')
 
-#GPUTILS_DIR=gputils-$(VERSION)
-GPUTILS_DIR=gputils
-
 .PHONY: all
 all: gputils-install.tag clean
 
-#gputils-download.tag:
-#	wget -P download $(SF_REPOSITORY)/sourceforge/gputils/gputils-0.13.4.tar.gz
-#	touch $@
-#
-#gputils-unpack.tag: gputils-download.tag
-#	tar xzvf download/$(GPUTILS_DIR).tar.gz
-#	touch $@
+ifdef FROM_SVN
+GPUTILS_DIR=gputils
 
 gputils-download.tag:
-	cvs -z3 -d:pserver:anonymous@gputils.cvs.sourceforge.net:/cvsroot/gputils co gputils
+	svn --force export https://gputils.svn.sourceforge.net/svnroot/gputils/trunk/gputils gputils
 	touch $@
 
 gputils-unpack.tag: gputils-download.tag
 	touch $@
+else
+GPUTILS_DIR=gputils-$(VERSION)
+
+gputils-download.tag:
+	wget -P download $(SF_REPOSITORY)/sourceforge/gputils/gputils-0.13.5.tar.gz
+	touch $@
+
+gputils-unpack.tag: gputils-download.tag
+	tar xzvf download/$(GPUTILS_DIR).tar.gz
+	touch $@
+endif
 
 gputils-configure.tag: gputils-unpack.tag
 	cd $(GPUTILS_DIR) && \
