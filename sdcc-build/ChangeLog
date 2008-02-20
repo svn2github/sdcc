@@ -1,6 +1,12 @@
+2008-02-20 Borut Razem <borut.razem AT siol.net>
+
+	* local/mirror-doors.mk: mirror-doors is now Mac OS X 10.5 Leopard
+	  with Xcvode 2.5; binaries generated with Xcode 3.0 seems not to be
+	  backward compatible with Mac OS X 10.4 and older
+
 2008-02-14 Borut Razem <borut.razem AT siol.net>
 
-	* local/mirror-doors.mk: murror-doors is now Mac OS X 10.5 Leopard
+	* local/mirror-doors.mk: mirror-doors is now Mac OS X 10.5 Leopard
 	  with Xcvode 3.0
 
 2008-01-13 Borut Razem <borut.razem AT siol.net>
