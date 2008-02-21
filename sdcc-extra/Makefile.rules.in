@@ -3,6 +3,7 @@ CXX = @CXX@
 CPPFLAGS += @CPPFLAGS@
 CFLAGS += @CFLAGS@ -Wall -O2
 CXXFLAGS += @CXXFLAGS@ -fdollars-in-identifiers -ggdb
+LDFLAGS += @LDFLAGS@
 
 JAVAC = javac
 JAVACFLAGS +=

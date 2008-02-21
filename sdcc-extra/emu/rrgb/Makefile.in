@@ -12,6 +12,7 @@ CXX = @CXX@
 STRIP = @STRIP@
 
 CPPFLAGS += @CPPFLAGS@
+LDFLAGS = @LDFLAGS@
 
 OPTS = -DSEG -g
 #CFLAGS=-O3 -fomit-frame-pointer -funroll-loops -Wall $(OPTS)
@@ -25,7 +26,7 @@ endif
 all: rrgb
 
 rrgb: $(OBJS)
-	$(CC) $(OPTS) $(LIBS) -o rrgb $(OBJS)
+	$(CC) $(OPTS) $(LDFLAGS) $(LIBS) -o rrgb $(OBJS)
 
 clean:
 	$(RM) *.o *~ rrgb
