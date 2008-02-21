@@ -1,6 +1,9 @@
 2008-02-21 Borut Razem <borut.razem AT siol.net>
 
 	* emu/rrgb/Makefile.in, Makefile.rules.in: added LDFLAGS
+	* emu/rrgb/csock.c: include unistd.h id Mac OS X (__APPLE__),
+	  fixed csock.c:113: warning: pointer targets in passing argument 3 of
+	  'accept' differ in signedness
 
 2006-07-09 Borut Razem <borut.razem AT siol.net>
 
