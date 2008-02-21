@@ -8,6 +8,9 @@ HOSTOS = ppc-apple-macosx
 # proper naming of packages containing universal binaries
 TARGET_PLATFORM = universal-apple-macosx
 
+TARGETCC = "/Xcode2.5/usr/bin/gcc"
+TARGETCXX = "/Xcode2.5/usr/bin/g++"
+
 # an old readline version is installed on the machine,
 # so I had to install new one (readline-5.2) to $(HOME)/local-$(HOSTNAME)
 TARGETLDFLAGS = "-Wl,-syslibroot,/Xcode2.5/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -L$(HOME)/local-$(HOSTNAME)/lib"
