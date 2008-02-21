@@ -282,8 +282,11 @@ bug fixes and improvements, esp. for mcs51 port</li>
 Neider &lt;RNeider.AT.web.de&gt;</a> - bug fixes and
 optimizations for PIC16, completion of the PIC14 port</li>
       </ul>
+      li><a href="mailto:pkk.AT.spth.de">Philipp Klaus
+Krause &lt;pkk AT spth.de&gt;</a> - Z80 and GBZ80 bug fixes
+and optimizations</li>
       <p>SDCC has had help from a number of external sources,
-including: </p>
+including:</p>
       <ul>
         <li><a href="mailto:baldwin.AT.shop-pdp.kent.edu">Alan
 Baldwin &lt;baldwin.AT.shop-pdp.kent.edu&gt;</a>
