@@ -81,8 +81,8 @@ ports are no longer maintained. </p>
 HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
 Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and
 PPC Mac OS X are available.</p>
-	<p>SDCC 2.7.0 Feature List:</p>
-	<ul>
+        <p>SDCC 2.7.0 Feature List:</p>
+        <ul>
       <li>enabled Z80 floating point support</li>
       <li>ucSim simulator and SDCDB debugger native WIN32 port</li>
       <li>added gnu readline support to sdcdb</li>
@@ -98,8 +98,8 @@ PPC Mac OS X are available.</p>
       <li>initialized variables with an absolute address are allocated and initialized</li>
       <li>support for inline functions; consider it alpha quality</li>
     </ul>
-	<p>Numerous feature requests and bug fixes are included as well.</p>
-	<p>You can download the release from:<br />
+        <p>Numerous feature requests and bug fixes are included as well.</p>
+        <p>You can download the release from:<br />
       <a href="http://sourceforge.net/project/showfiles.php?group_id=599" target="_new">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
 
       <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
@@ -281,10 +281,10 @@ bug fixes and improvements, esp. for mcs51 port</li>
         <li><a href="mailto:RNeider.AT.web.de">Raphael
 Neider &lt;RNeider.AT.web.de&gt;</a> - bug fixes and
 optimizations for PIC16, completion of the PIC14 port</li>
-      </ul>
-      li><a href="mailto:pkk.AT.spth.de">Philipp Klaus
+        <li><a href="mailto:pkk.AT.spth.de">Philipp Klaus
 Krause &lt;pkk AT spth.de&gt;</a> - Z80 and GBZ80 bug fixes
 and optimizations</li>
+      </ul>
       <p>SDCC has had help from a number of external sources,
 including:</p>
       <ul>
@@ -320,10 +320,10 @@ and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/s
 <a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc2</a>
 and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
 
-      <p><i><b>May 21st, 2007: Circuit Cellar made the Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C 
+      <p><i><b>May 21st, 2007: Circuit Cellar made the Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C
 Compiler" publically available</b></i></p>
-      <p>Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C 
-Compiler", published in Circuit Cellar, issue 121, is now publicly 
+      <p>Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C
+Compiler", published in Circuit Cellar, issue 121, is now publicly
 available at:
 <a href="http://www.circuitcellar.com/SA/Articles2/Dutta-121.pdf">http://www.circuitcellar.com/SA/Articles2/Dutta-121.pdf</a>.</p>
       <p><i><b>May 10th, 2007: SDCC 2.7.0 RC1 released.</b></i></p>
