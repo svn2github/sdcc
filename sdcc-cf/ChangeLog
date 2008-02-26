@@ -1,3 +1,7 @@
+2008-02-26 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.nsis/Makefile: updated to NSIS version 2.35
+
 2008-02-19 Borut Razem <borut.razem AT siol.net>
 
 	* packages/build.gputils/Makefile: possibiliy to build gputils from
