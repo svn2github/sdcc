@@ -18,6 +18,47 @@
 
       <h2>Previous NEWS</h2>
 
+      <p><i><b>May 26th, 2007: SDCC 2.7.0 RC3 released.</b></i></p>
+      <p>SDCC 2.7.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
+32 bit Windows and ppc Mac OS X are available at:
+<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc3">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc3</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
+      <p><i><b>May 22nd, 2007: SDCC 2.7.0 RC2 released.</b></i></p>
+      <p>SDCC 2.7.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+32 bit Windows and ppc Mac OS X are available at:
+<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc2</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
+      <p><i><b>May 21st, 2007: Circuit Cellar made the Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C
+Compiler" publically available</b></i></p>
+      <p>Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C
+Compiler", published in Circuit Cellar, issue 121, is now publicly
+available at:
+<a href="http://www.circuitcellar.com/SA/Articles2/Dutta-121.pdf">http://www.circuitcellar.com/SA/Articles2/Dutta-121.pdf</a>.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
+      <p><i><b>May 10th, 2007: SDCC 2.7.0 RC1 released.</b></i></p>
+      <p>SDCC 2.7.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+32 bit Windows and ppc Mac OS X are available at:
+<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc1</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
       <p><i><b>July 31th, 2006: Small Device C Compiler 2.6.0 released</b></i></p>
       <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, PIC, and HC08 microprocessors
 is now available (<a href="http://sdcc.sourceforge.net">http://sdcc.sourceforge.net</a>). Sources, documentation

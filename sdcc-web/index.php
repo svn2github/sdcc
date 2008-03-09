@@ -73,37 +73,35 @@ updated
 with all the users' and developers' input. </p>
       <p><b><i>AVR</i></b>
 and <b><i>gbz80</i></b>
-ports are no longer maintained. </p>
+targets are no longer maintained. </p>
       <h2><a name="News"></a>News</h2>
 
-      <p><i><b>May 31st, 2007: Small Device C Compiler 2.7.0 released.</b></i></p>
-      <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
-HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
-Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and
-PPC Mac OS X are available.</p>
-        <p>SDCC 2.7.0 Feature List:</p>
-        <ul>
-      <li>enabled Z80 floating point support</li>
-      <li>ucSim simulator and SDCDB debugger native WIN32 port</li>
-      <li>added gnu readline support to sdcdb</li>
-      <li>removed deprecated pragmas</li>
-      <li>sdcpp preprocessor synchronized with GNU cpp 4.1.2</li>
-      <li>use memory buffers instead of temporary files</li>
-      <li>added --fdollars-in-identifier command line option</li>
-      <li>added --funsigned-char command line option</li>
-      <li>SDCC libraries are --std-c99 compatible</li>
-      <li>added --fverbose-asm command line option</li>
-      <li>Z80 assembler is now case sensitive</li>
-      <li>a default heap is added and automatically initialized</li>
-      <li>initialized variables with an absolute address are allocated and initialized</li>
-      <li>support for inline functions; consider it alpha quality</li>
-    </ul>
-        <p>Numerous feature requests and bug fixes are included as well.</p>
-        <p>You can download the release from:<br />
+      <p><i><b>March 9th, 2008: SDCC 2.8.0 RC1 released.</b></i></p>
+      <p>SDCC 2.8.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+32 bit Windows and universal Mac OS X are available at:
+<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.8.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.8.0-rc1</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+      <p>SDCC 2.8.0 Feature List:</p>
+      <ul>
+        <li>added predefined preprocessor macro SDCC_REVISION holding SDCC's subversion revision number</li>
+        <li>added preprocessor macros SDCC_PARMS_IN_BANK1, SDCC_FLOAT_REENT and SDCC_INT_LONG_REENT</li>
+        <li>sdcpp synchronized with GNU cpp 4.2.3</li>
+        <li>multiple infiles for sdcclib</li>
+        <li>added option --acall-ajmp: replaces lcall/ljmp with acall/ajmp</li>
+        <li>added support for many PIC devices</li>
+        <li>sdcc executables on Mac OS X are built as universal binaries, so that they can run on both ppc and i386 Mac OS X</li>
+        <li>added --Werror command line option</li>
+        <li>Windows installer enhancements</li>
+        <li>generation of cdb debug info for as-z80 and link-z80</li>
+        <li>Tail call optimization for functions that take no parameters on Z80</li>
+        <li>ISO/IEC 9899 standard compliant integer promotion of integer function arguments if --std-cXX is defined in command line</li>
+      </ul>
+      <p>Numerous feature requests and bug fixes are included as well.</p>
+      <p>You can download the release from:<br />
       <a href="http://sourceforge.net/project/showfiles.php?group_id=599" target="_new">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
 
       <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
-      <p><b>Linux - x86</b>, <b>Microsoft Windows - x86</b> and <b>Mac OS x - ppc</b>
+      <p><b>Linux - x86</b>, <b>Microsoft Windows - x86</b> and <b>Mac OS X</b>
 are the primary, so called "officially supported" platforms.</p>
       <p><b>SDCC</b> compiles natively on <b>Linux</b> and <b>Mac OS X</b>
 using using <a href="http://www.gnu.org">gcc</a>. <b>Windows</b> release and snapshot builds are made by <b>cross compiling to mingw32</b> on a Linux host.</p>
@@ -115,7 +113,7 @@ scripts.</p>
       <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
 download page</a> for the last released version including source
 and binary packages for <b>Linux - x86</b>,
-      <b>Microsoft Windows - x86</b> and <b>Mac OS x - ppc</b>.</p>
+      <b>Microsoft Windows - x86</b> and <b>Mac OS X</b>.</p>
       <p>SDCC is known to compile from the source code also on <b>Linux - x86_64</b>,
       <b>Linux - Alpha</b>,
       <b>Linux - IBM Power5</b>,
@@ -243,7 +241,7 @@ Vigor &lt;kevin.AT.vigor.nu&gt;</a>
 - testing and patching ds390 tree, bug stompper extrodanaire</li>
         <li><a href="mailto:scott.AT.dattalo.com">Scott
 Dattalo &lt;scott.AT.dattalo.com&gt;</a> -
-Microchip PIC controller port of sdcc</li>
+sdcc for Microchip PIC controller target</li>
         <li><a href="mailto:karl.AT.turbobit.com">Karl
 Bongers &lt;karl.AT.turbobit.com&gt;</a> - mcs51
 support, winbin builds, and an occasional bug.</li>
@@ -258,11 +256,11 @@ Calvino-Fraga &lt;jesusc.AT.ece.ubc.ca&gt;</a>
 - math functions, AOMF51, linker improvements</li>
         <li><a href="mailto:borut.razem.AT.siol.net">Borut
 Ražem &lt;borut.razem.AT.siol.net&gt;</a>
-- WIN32 MSC and cygwin port, NSIS installer, preprocessor and front end
-improvements, bug fixing, snapshot builds, ...</li>
+- WIN32 MSC, cygwin and mingw ports, NSIS installer, preprocessor and front end
+improvements, bug fixing, snapshot builds on Distibuted Compile Farm, ...</li>
         <li><a href="mailto:vrokas.AT.otenet.gr">Vangelis
 Rokas &lt;vrokas.AT.otenet.gr&gt;</a>
-- PIC16 port development for Microchip PIC18F microcontrollers</li>
+- PIC16 taget development for Microchip PIC18F microcontrollers</li>
         <li><a href="mailto:epetrich.AT.users.sourceforge.net">Erik
 Petrich &lt;epetrich.AT.users.sourceforge.net&gt;</a>
 - Bug fixes and improvements for the front end, 8051, z80 and hc08</li>
@@ -274,15 +272,15 @@ Stoffregen &lt;paul.AT.pjrc.com&gt;</a> - mcs51
 optimizations and website maintenance.</li>
         <li><a href="mailto:michaelh.AT.juju.net.nz">Michael
 Hope &lt;michaelh.AT.juju.net.nz&gt;</a> - initial Z80
-port, additional coding and bug fixes.</li>
+target, additional coding and bug fixes.</li>
         <li><a href="mailto:sourceforge.brock.AT.dse.nl">Maarten
 Brock &lt;sourceforge.brock.AT.dse.nl&gt;</a> - several
-bug fixes and improvements, esp. for mcs51 port</li>
+bug fixes and improvements, esp. for mcs51 target</li>
         <li><a href="mailto:RNeider.AT.web.de">Raphael
 Neider &lt;RNeider.AT.web.de&gt;</a> - bug fixes and
-optimizations for PIC16, completion of the PIC14 port</li>
+optimizations for PIC16, completion of the PIC14 target</li>
         <li><a href="mailto:pkk.AT.spth.de">Philipp Klaus
-Krause &lt;pkk AT spth.de&gt;</a> - Z80 and GBZ80 bug fixes
+Krause &lt;pkk AT spth.de&gt;</a> - z80 and gbz80 bug fixes
 and optimizations</li>
       </ul>
       <p>SDCC has had help from a number of external sources,
@@ -300,7 +298,7 @@ Demers - Conservative garbage collector for C &amp; C++.</li>
         <li><a href="mailto:dso.AT.usa.net">Dmitry
 S. Obukhov &lt;dso.AT.usa.net&gt;</a> - malloc and
 serial I/O routines.</li>
-        <li>Unknown - for the GNU C - preprocessor</li>
+        <li><a href="http://gcc.gnu.org/">The GCC development team</a> - for the GNU C preprocessor</li>
         <li><a href="mailto:malini_dutta.AT.hotmail.com">Malini
 Dutta &lt;malini.AT.mediaone.net&gt;</a> -
 Sandeep's wife, for her patience and support.</li>
@@ -308,29 +306,11 @@ Sandeep's wife, for her patience and support.</li>
 
       <h2>Past news</h2>
 
-      <p><i><b>May 26th, 2007: SDCC 2.7.0 RC3 released.</b></i></p>
-      <p>SDCC 2.7.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
-32 bit Windows and ppc Mac OS X are available at:
-<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc3">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc3</a>
-and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
-
-      <p><i><b>May 22nd, 2007: SDCC 2.7.0 RC2 released.</b></i></p>
-      <p>SDCC 2.7.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
-32 bit Windows and ppc Mac OS X are available at:
-<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc2</a>
-and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
-
-      <p><i><b>May 21st, 2007: Circuit Cellar made the Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C
-Compiler" publically available</b></i></p>
-      <p>Sandeep's article "Anatomy of a Compiler A Retargetable ANSI-C
-Compiler", published in Circuit Cellar, issue 121, is now publicly
-available at:
-<a href="http://www.circuitcellar.com/SA/Articles2/Dutta-121.pdf">http://www.circuitcellar.com/SA/Articles2/Dutta-121.pdf</a>.</p>
-      <p><i><b>May 10th, 2007: SDCC 2.7.0 RC1 released.</b></i></p>
-      <p>SDCC 2.7.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
-32 bit Windows and ppc Mac OS X are available at:
-<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.7.0-rc1</a>
-and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+      <p><i><b>May 31st, 2007: Small Device C Compiler 2.7.0 released.</b></i></p>
+      <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
+HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
+Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and
+PPC Mac OS X are available.</p>
 
       <p><a href="previous.php">Previous News</a></p>
 
