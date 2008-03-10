@@ -64,12 +64,13 @@ doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.
 	cp -rpf doc/z80 $(_DOC_ARCHIVE_BUILDDIR)/doc; \
 	cp -rpf doc/avr $(_DOC_ARCHIVE_BUILDDIR)/doc; \
 	cp -rpf as/doc/* $(_DOC_ARCHIVE_BUILDDIR)/doc/as/; \
-	cp -pf doc/*.txt doc/*.html $(_DOC_ARCHIVE_BUILDDIR)/doc
+	cp -pf doc/*.txt doc/*.html $(_DOC_ARCHIVE_BUILDDIR)/doc; \
+	cp -pf ChangeLog $(_DOC_ARCHIVE_BUILDDIR)
 	cd $(_DOC_ARCHIVE_ORIG_DIR)/sim/ucsim/doc; cp -rpf *.html *.jpg *.gif *.fig $(_DOC_ARCHIVE_BUILDDIR)/doc/ucsim/
 	# create tar.gz doc package
 	cd $(_DOC_ARCHIVE_BUILDDIR); tar -cjf $(_DOC_ARCHIVE_TARBALL_DIR)/sdcc-doc-$(SNAPSHOTID).tar.bz2 doc
 	# create zip doc package
-	find $(_DOC_ARCHIVE_BUILDDIR) -type f \( -name '*.txt' -o -name '*.html' \) -exec unix2dos {} \;
+	find $(_DOC_ARCHIVE_BUILDDIR) -type f \( -name '*.txt' -o -name '*.html' -name 'ChangeLog' \) -exec unix2dos {} \;
 	cd $(_DOC_ARCHIVE_BUILDDIR); zip -9r $(_DOC_ARCHIVE_TARBALL_DIR)/sdcc-doc-$(SNAPSHOTID).zip doc
 
 endif
