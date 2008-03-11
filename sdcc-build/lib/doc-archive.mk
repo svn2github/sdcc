@@ -65,7 +65,7 @@ doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.
 	cp -rpf doc/avr $(_DOC_ARCHIVE_BUILDDIR)/doc; \
 	cp -rpf as/doc/* $(_DOC_ARCHIVE_BUILDDIR)/doc/as/; \
 	cp -pf doc/*.txt doc/*.html $(_DOC_ARCHIVE_BUILDDIR)/doc; \
-	cp -pf ChangeLog $(_DOC_ARCHIVE_BUILDDIR)
+	cp -pf ChangeLog $(_DOC_ARCHIVE_BUILDDIR)/doc
 	cd $(_DOC_ARCHIVE_ORIG_DIR)/sim/ucsim/doc; cp -rpf *.html *.jpg *.gif *.fig $(_DOC_ARCHIVE_BUILDDIR)/doc/ucsim/
 	# create tar.gz doc package
 	cd $(_DOC_ARCHIVE_BUILDDIR); tar -cjf $(_DOC_ARCHIVE_TARBALL_DIR)/sdcc-doc-$(SNAPSHOTID).tar.bz2 doc
