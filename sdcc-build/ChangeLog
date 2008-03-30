@@ -1,3 +1,7 @@
+2008-03-24 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk: generate knownbugs.html
+
 2008-03-16 Borut Razem <borut.razem AT siol.net>
 
 	* lib/bootstrap.mk: rename COPYING.TX to COPYING.txt
