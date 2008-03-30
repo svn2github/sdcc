@@ -1,3 +1,7 @@
+2008-03-28 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.cpan/*: added
+
 2008-02-26 Borut Razem <borut.razem AT siol.net>
 
 	* packages/build.nsis/Makefile: updated to NSIS version 2.35
