@@ -18,6 +18,16 @@
 
       <h2>Previous NEWS</h2>
 
+      <p><i><b>May 31st, 2007: Small Device C Compiler 2.7.0 released.</b></i></p>
+      <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
+HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
+Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and
+PPC Mac OS X are available.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
       <p><i><b>May 26th, 2007: SDCC 2.7.0 RC3 released.</b></i></p>
       <p>SDCC 2.7.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
 32 bit Windows and ppc Mac OS X are available at:
