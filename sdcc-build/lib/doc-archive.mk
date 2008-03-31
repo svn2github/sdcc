@@ -52,8 +52,6 @@ doc-archive-copy:
 	for i in $(addprefix $(_DOC_ARCHIVE_DIR)/, $(_DOC_ARCHIVE_HTML)); do echo "AddType application/x-httpd-php .html" > $$i/.htaccess; done
 	# Copy *.pdf
 	cp -r $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,$(_DOC_ARCHIVE_PDF)) $(_DOC_ARCHIVE_DIR)
-	# Create knownbugs.html
-	read _VER < $(ORIGDIR)/sdcc/.version; perl $(ORIGDIR)/sdcc/support/scripts/gen_known_bugs.pl $$_VER > $(_DOC_ARCHIVE_DIR)/knownbugs.html
 
 doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.pdf)
 	mkdir -p $(_DOC_ARCHIVE_TARBALL_DIR)
@@ -69,6 +67,8 @@ doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.
 	cp -pf doc/*.txt doc/*.html $(_DOC_ARCHIVE_BUILDDIR)/doc; \
 	cp -pf ChangeLog $(_DOC_ARCHIVE_BUILDDIR)/doc/ChangeLog.txt
 	cd $(_DOC_ARCHIVE_ORIG_DIR)/sim/ucsim/doc; cp -rpf *.html *.jpg *.gif *.fig $(_DOC_ARCHIVE_BUILDDIR)/doc/ucsim/
+	# Create knownbugs.html
+	read _VER < $(ORIGDIR)/sdcc/.version; perl $(ORIGDIR)/sdcc/support/scripts/gen_known_bugs.pl $$_VER > $(_DOC_ARCHIVE_BUILDDIR)/doc/knownbugs.html
 	# create tar.gz doc package
 	cd $(_DOC_ARCHIVE_BUILDDIR); tar -cjf $(_DOC_ARCHIVE_TARBALL_DIR)/sdcc-doc-$(SNAPSHOTID).tar.bz2 doc
 	# create zip doc package
