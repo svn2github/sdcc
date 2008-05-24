@@ -18,7 +18,7 @@ else
 GPUTILS_DIR=gputils-$(VERSION)
 
 gputils-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/gputils/gputils-0.13.5.tar.gz
+	wget -P download $(SF_REPOSITORY)/sourceforge/gputils/gputils-0.13.6.tar.gz
 	touch $@
 
 gputils-unpack.tag: gputils-download.tag
