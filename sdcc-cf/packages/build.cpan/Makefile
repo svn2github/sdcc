@@ -32,5 +32,5 @@ clean:
 	rm -rf $(HTML_TREE_DIR) *.tag
 	@echo '***************************************************************'
 	@echo "Add the following line to ~/.bash_profile:"
-	@echo "    export PERL5LIB=~/local-$(HOSTNAME)/lib/perl5/site_perl/5.8.8"
+	@echo "    export PERL5LIB=~/local-$(HOSTNAME)/lib/perl5/site_perl/"$$(perl -e "print(substr($$^V, 1))")
 	@echo '***************************************************************'
