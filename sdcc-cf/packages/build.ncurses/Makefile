@@ -2,9 +2,12 @@ include ../packages.mk
 
 ifeq ($(OS), Darwin)
   # Build universl binaries
-  CFLAGS += -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc
-  CXXFLAGS += -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc
-  LDFLAGS += -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc
+
+  COMPILERS = CC="/Xcode2.5/usr/bin/gcc" CXX="/Xcode2.5/usr/bin/g++"
+
+  LDFLAGS += -Wl,-syslibroot,/Xcode2.5/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -L$(HOME)/local-$(HOSTNAME)/lib
+  CXXFLAGS += -O2 -isysroot /Xcode2.5/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -I$(HOME)/local-$(HOSTNAME)/include
+  CFLAGS += -O2 -isysroot /Xcode2.5/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -I$(HOME)/local-$(HOSTNAME)/include
 endif
 
 VERSION=$(shell expr download/ncurses-*.tar.gz : 'download/ncurses-\(.*\).tar.gz')
@@ -22,7 +25,7 @@ ncurses-unpack.tag: ncurses-download.tag
 
 ncurses-configure.tag: ncurses-unpack.tag
 	cd ncurses-$(VERSION) && \
-	./configure --prefix=$(LOCAL_DIR) CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)"
+        ./configure --prefix=$(LOCAL_DIR) $(COMPILERS) CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)"
 	touch $@
 
 ncurses-make.tag: ncurses-configure.tag

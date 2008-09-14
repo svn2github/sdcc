@@ -1,5 +1,11 @@
 include ../packages.mk
 
+ifeq ($(OS), Darwin)
+  LIBTOOLIZE = glibtoolize
+else
+  LIBTOOLIZE = libtoolize
+endif
+
 .PHONY: all
 all: gpsim-install.tag clean
 
@@ -9,7 +15,7 @@ gpsim-download.tag:
 
 gpsim-configure.tag: gpsim-download.tag
 	cd gpsim && \
-	libtoolize --force && \
+	$(LIBTOOLIZE) --force && \
 	aclocal && \
 	autoheader && \
 	automake --add-missing && \
