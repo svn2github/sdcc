@@ -22,8 +22,8 @@ SNAPSHOTID = $(BUILDDATE)-$(SDCC_REVISION)
 LOCAL_MK = $(HOME)/.sdcc_builder/local
 
 # WEB server host, user and path
-WEBHOST = shell1.sourceforge.net
-WEBUSER = sdcc-builder
+WEBHOST = web.sourceforge.net
+WEBUSER = sdcc-builder,sdcc
 WEBHTDOCSDIR = /home/groups/s/sd/sdcc/htdocs/
 
 # Machine to ssh into to send the build result out via email

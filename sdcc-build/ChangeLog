@@ -1,3 +1,8 @@
+2008-09-23 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk:
+	  new SF web server sdcc-builder,sdcc@web.sourceforge.net
+
 2008-03-31 Borut Razem <borut.razem AT siol.net>
 
 	* lib/doc-archive.mk: generate knownbugs.html - 2nd try
