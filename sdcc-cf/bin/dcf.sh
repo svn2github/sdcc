@@ -37,8 +37,8 @@ DCF_LOCK=$LOCK_DIR/dcf.lock
 
 mkdir -p $LOG_DIR $LOCK_DIR
 
-WEBHOST=shell.sf.net
-WEBUSER=sdcc-builder
+WEBHOST=web.sourceforge.net
+WEBUSER=sdcc-builder,sdcc
 WEBHTDOCSDIR=/home/groups/s/sd/sdcc/htdocs
 
 WEBSNAPSHOTDIR=$WEBHTDOCSDIR/snapshots
