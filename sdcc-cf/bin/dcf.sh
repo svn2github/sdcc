@@ -95,16 +95,16 @@ rm_old_versions ()
 {
   for i in "htdocs/snapshots htdocs/regression_test_results"
   do    
-    for j in $(echo "ls -1t $i" | sftp -b- ${WEBUSER}@${WEBHOST})
+    for j in $(echo "ls -1t $i" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '/^sftp> /d')
     do    
-      for k in $(echo "ls -1t $j" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '1,7d')
+      for k in $(echo "ls -1t $j" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '/^sftp> /d' | sed -e '1,7d')
       do    
         if [ -n "$k" ]; then echo "removing $k"; echo "rm $k" | sftp ${WEBUSER}@${WEBHOST}; fi
       done
     done
   done
 
-  for k in $(echo "ls -1t htdocs/changelog_heads" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '1,7d')
+  for k in $(echo "ls -1t htdocs/changelog_heads" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '/^sftp> /d' | sed -e '1,7d')
   do
     if [ -n "$k" ]; then echo "removing $k"; echo "rm $k" | sftp ${WEBUSER}@${WEBHOST}; fi
   done
