@@ -93,7 +93,21 @@ log_it ()
 # remove more than 7 files in dir from WEB server
 rm_old_versions ()
 {
-  ssh $WEBUSER@$WEBHOST "find $WEBSNAPSHOTDIR/* $WEBREGTESTDIR/* $WEBCHANGELOGDIR -type d -exec sh -c 'cd {} ; ls -1t | sed 1,7d | xargs rm -f' \\;"
+  for i in "htdocs/snapshots htdocs/regression_test_results"
+  do    
+    for j in $(echo "ls -1t $i" | sftp -b- ${WEBUSER}@${WEBHOST})
+    do    
+      for k in $(echo "ls -1t $j" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '1,7d')
+      do    
+        if [ -n "$k" ]; then echo "removing $k"; echo "rm $k" | sftp ${WEBUSER}@${WEBHOST}; fi
+      done
+    done
+  done
+
+  for k in $(echo "ls -1t htdocs/changelog_heads" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '1,7d')
+  do
+    if [ -n "$k" ]; then echo "removing $k"; echo "rm $k" | sftp ${WEBUSER}@${WEBHOST}; fi
+  done
 }
 
 
