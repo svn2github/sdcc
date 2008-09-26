@@ -81,7 +81,7 @@ log_it ()
 
   if test -n "$LOG"
   then
-    if test $(echo "$LOG" | wc -l) -lt $LOG_LINES
+    if test -e $DCF_LOG -a $(echo "$LOG" | wc -l) -lt $LOG_LINES
     then
       LOG=$(echo -e "$LOG\n" | cat - $DCF_LOG | head -n $LOG_LINES)
     fi
@@ -93,6 +93,8 @@ log_it ()
 # remove more than 7 files in dir from WEB server
 rm_old_versions ()
 {
+  local i j k
+
   for i in "htdocs/snapshots htdocs/regression_test_results"
   do    
     for j in $(echo "ls -1t $i" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '/^sftp> /d')
@@ -128,6 +130,7 @@ cleanup ()
 
   lockfile -r 0 $DCF_LOCK >/dev/null 2>&1 || exit 1
 
+  rm_old=0
   for builder in $BUILDER_LIST
   do
     (
@@ -135,6 +138,7 @@ cleanup ()
       FILE_LIST=$(find * -depth -print 2>/dev/null)
       if test -n "$FILE_LIST"
       then
+        rm_old=1
         echo "+++ start: $(date)"
         echo "rsyncing /home/$builder/htdocs:"
         list_files $FILE_LIST
@@ -148,7 +152,10 @@ cleanup ()
     )
   done
 
-  rm_old_versions
+  if test "$rm_old" = 1
+  then
+    rm_old_versions
+  fi
 } 2>&1 | log_it
 
 cleanup
