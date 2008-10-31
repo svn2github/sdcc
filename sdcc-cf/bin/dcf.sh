@@ -100,15 +100,15 @@ rm_old_versions ()
     for j in $(echo "ls -1t $i" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '/^sftp> /d')
     do    
       for k in $(echo "ls -1t $j" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '/^sftp> /d' | sed -e '1,7d')
-      do    
-        if [ -n "$k" ]; then echo "removing $k"; echo "rm $k" | sftp ${WEBUSER}@${WEBHOST}; fi
+      do
+        if [ -n "$k" ]; then echo "removing $k"; echo "rm $k" | sftp -b- ${WEBUSER}@${WEBHOST}; fi
       done
     done
   done
 
   for k in $(echo "ls -1t htdocs/changelog_heads" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '/^sftp> /d' | sed -e '1,7d')
   do
-    if [ -n "$k" ]; then echo "removing $k"; echo "rm $k" | sftp ${WEBUSER}@${WEBHOST}; fi
+    if [ -n "$k" ]; then echo "removing $k"; echo "rm $k" | sftp -b- ${WEBUSER}@${WEBHOST}; fi
   done
 }
 
@@ -130,7 +130,6 @@ cleanup ()
 
   lockfile -r 0 $DCF_LOCK >/dev/null 2>&1 || exit 1
 
-  rm_old=0
   for builder in $BUILDER_LIST
   do
     (
@@ -138,7 +137,6 @@ cleanup ()
       FILE_LIST=$(find * -depth -print 2>/dev/null)
       if test -n "$FILE_LIST"
       then
-        rm_old=1
         echo "+++ start: $(date)"
         echo "rsyncing /home/$builder/htdocs:"
         list_files $FILE_LIST
@@ -147,15 +145,12 @@ cleanup ()
 
         rm_list $FILE_LIST
 
+        rm_old_versions
+
         echo "--- end: $(date)"
       fi
     )
   done
-
-  if test "$rm_old" = 1
-  then
-    rm_old_versions
-  fi
 } 2>&1 | log_it
 
 cleanup
