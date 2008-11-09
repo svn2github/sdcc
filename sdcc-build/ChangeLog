@@ -1,3 +1,9 @@
+2008-11-09 Borut Razem <borut.razem AT siol.net>
+
+	* lib/ports.mk: commented out ports/i186.mk and ports/tlcs900h.mk
+	  to remove "configure: WARNING: unrecognized options:
+	  --disable-i186-port, --disable-tlcs900h-port"
+
 2008-09-23 Borut Razem <borut.razem AT siol.net>
 
 	* lib/variables.mk:
