@@ -1,0 +1,7 @@
+# sdcc-builder profile
+
+# this for svn
+export EDITOR=vi
+
+HOSTNAME=$(if test $(expr $(hostname) : '.*\.') != '0'; then expr $(hostname) : '\([^.]*\).'; else echo $(hostname); fi)
+export PATH=$HOME/local-$HOSTNAME/bin:$PATH
