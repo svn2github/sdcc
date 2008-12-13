@@ -6,7 +6,7 @@ VERSION=$(shell expr download/scons-*.tar.gz : 'download/scons-\(.*\).tar.gz')
 all: scons-install.tag clean
 
 scons-download.tag:
-	wget -P download http://prdownloads.sourceforge.net/scons/scons-0.96.95.tar.gz
+	wget -P download $(SF_REPOSITORY)/sourceforge/scons/scons-1.1.0.tar.gz
 	touch $@
 
 scons-unpack.tag: scons-download.tag

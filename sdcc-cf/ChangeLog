@@ -1,3 +1,8 @@
+2008-12-13 Borut Razem <borut.razem AT siol.net>
+	* packages/packages.mk, packages/build.scons/Makefile,
+	  packages/build.nsis/Makefile: upgraded to SCons 1.1.0,
+	  NSIS 2.41
+
 2008-12-12 Borut Razem <borut.razem AT siol.net>
 
 	* etc/*, .sdcc_builder/*: added
