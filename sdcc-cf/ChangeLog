@@ -2,7 +2,7 @@
 
 	* .sdcc_builder/profile: defined PERL5LIB
 	* bin/dcf.sh: test if can't cd
-	* etc/dcf_list: added cf-x86 to DCF
+	* crontab.txt, etc/dcf_list: added cf-x86 to DCF
 
 2008-12-13 Borut Razem <borut.razem AT siol.net>
 
