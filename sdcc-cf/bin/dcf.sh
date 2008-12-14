@@ -133,21 +133,23 @@ cleanup ()
   for builder in $BUILDER_LIST
   do
     (
-      cd /home/$builder/htdocs
-      FILE_LIST=$(find * -depth -print 2>/dev/null)
-      if test -n "$FILE_LIST"
+      if cd /home/$builder/htdocs
       then
-        echo "+++ start: $(date)"
-        echo "rsyncing /home/$builder/htdocs:"
-        list_files $FILE_LIST
+        FILE_LIST=$(find * -depth -print 2>/dev/null)
+        if test -n "$FILE_LIST"
+        then
+          echo "+++ start: $(date)"
+          echo "rsyncing /home/$builder/htdocs:"
+          list_files $FILE_LIST
 
-        rsync --relative --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/ 2>&1 | grep -v -e "skipping directory"
+          rsync --relative --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/ 2>&1 | grep -v -e "skipping directory"
 
-        rm_list $FILE_LIST
+          rm_list $FILE_LIST
 
-        rm_old_versions
+          rm_old_versions
 
-        echo "--- end: $(date)"
+          echo "--- end: $(date)"
+        fi
       fi
     )
   done
