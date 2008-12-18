@@ -20,7 +20,7 @@ real-clean: binutils-realclean mingw-runtime-realclean w32api-realclean gcc-real
 
 
 binutils-download.tag:
-	wget -P download http://ftp.gnu.org/gnu/binutils/binutils-2.18.tar.bz2
+	wget -P download http://ftp.gnu.org/gnu/binutils/binutils-2.19.tar.bz2
 	touch $@
 
 binutils-unpack.tag: binutils-download.tag
@@ -58,13 +58,13 @@ binutils-realclean: binutils-clean
 
 
 mingw-runtime-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/mingw-runtime-3.14.tar.gz
+	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/mingwrt-3.15.1-mingw32-dev.tar.gz
 	touch $@
 
 mingw-runtime-install.tag: mingw-runtime-download.tag
 	mkdir -p $(PREFIX)/$(TARGET)/include
 	mkdir -p $(PREFIX)/$(TARGET)/lib
-	tar -xzf download/mingw-runtime*.tar.gz -C $(PREFIX)/$(TARGET)
+	tar -xzf download/mingwrt*.tar.gz -C $(PREFIX)/$(TARGET)
 	touch $@
 
 .PHONY: mingw-runtime-clean
@@ -77,7 +77,7 @@ mingw-runtime-realclean: mingw-runtime-clean
 
 
 w32api-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/w32api-3.11.tar.gz
+	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/w32api-3.13-mingw32-dev.tar.gz
 	touch $@
 
 w32api-install.tag: w32api-download.tag

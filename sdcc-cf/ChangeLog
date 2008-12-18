@@ -1,6 +1,8 @@
 2008-12-18 Borut Razem <borut.razem AT siol.net>
 
 	* crontab.txt take defaults for DCF
+	* packages/build.mingw32/Makefile:
+	  updated to binutils-2.19, mingwrt-3.1-mingw32 and w32api-3.13-mingw32
 
 2008-12-14 Borut Razem <borut.razem AT siol.net>
 
