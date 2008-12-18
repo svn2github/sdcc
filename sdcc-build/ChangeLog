@@ -1,3 +1,8 @@
+2008-12-18 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk, lib/upload.mk: defaults for DCF
+	* lib/upload.mk: removed remove-old-versions makefile target
+
 2008-11-09 Borut Razem <borut.razem AT siol.net>
 
 	* lib/ports.mk: commented out ports/i186.mk and ports/tlcs900h.mk

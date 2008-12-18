@@ -1,3 +1,7 @@
+2008-12-18 Borut Razem <borut.razem AT siol.net>
+
+	* crontab.txt take defaults for DCF
+
 2008-12-14 Borut Razem <borut.razem AT siol.net>
 
 	* .sdcc_builder/profile: defined PERL5LIB

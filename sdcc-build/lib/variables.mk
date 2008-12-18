@@ -21,10 +21,10 @@ SNAPSHOTID = $(BUILDDATE)-$(SDCC_REVISION)
 # $(HOME)/build/sdcc-build/local is used if the path doesn't exist
 LOCAL_MK = $(HOME)/.sdcc_builder/local
 
-# WEB server host, user and path
-WEBHOST = web.sourceforge.net
-WEBUSER = sdcc-builder,sdcc
-WEBHTDOCSDIR = /home/groups/s/sd/sdcc/htdocs/
+# DCF server host, user and path
+DCFHOST = 66.142.207.42	#cf-x86.ivorytower.norman.ok.us
+DCFUSER = $(HOSTNAME)
+DCFHTDOCSDIR = /home/$(HOSTNAME)/htdocs/
 
 # Machine to ssh into to send the build result out via email
 BOOTSTRAPSSHMAILSERVER =
