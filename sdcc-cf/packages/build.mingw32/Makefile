@@ -96,8 +96,8 @@ w32api-realclean: w32api-clean
 
 
 gcc-download.tag:
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.2.3/gcc-core-4.2.3.tar.bz2
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.2.3/gcc-g++-4.2.3.tar.bz2
+	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.3.2/gcc-core-4.3.2.tar.bz2
+	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.3.2/gcc-g++-4.3.2.tar.bz2
 	touch $@
 
 gcc-unpack.tag: gcc-download.tag
@@ -114,6 +114,7 @@ gcc-configure.tag: gcc-unpack.tag
 	../$(shell find . -maxdepth 1 -type d -name "gcc*")/configure	\
 	  --target=$(TARGET) --program-prefix=$(PROGRAM_PREFIX) --prefix=$(PREFIX)  \
 	  --with-gcc --with-gnu-ld --with-gnu-as			\
+	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_PATH)             \
 	  --enable-threads   --disable-nls   --enable-languages=c,c++	\
 	  --disable-multilib --enable-win32-registry --disable-shared
 	touch $@

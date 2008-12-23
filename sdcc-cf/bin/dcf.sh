@@ -2,7 +2,7 @@
 
 # dcf.sh - Distributed Compile Farm Mediator
 #
-# Copyright (c) 2007 Borut Razem
+# Copyright (c) 2007-2008 Borut Razem
 #
 # This file is part of sdcc.
 #
@@ -25,7 +25,7 @@
 #  Borut Razem
 #  borut.razem@siol.net
 
-LOG_LINES=100
+LOG_LINES=1000
 
 ETC_DIR=$HOME/etc
 LOG_DIR=$HOME/log
@@ -128,10 +128,11 @@ cleanup ()
     BUILDER_LIST=$(cat $DCF_BUILDER_LIST_FILE)
   fi
 
-  lockfile -r 0 $DCF_LOCK >/dev/null 2>&1 || exit 1
+  lockfile -r 0 $DCF_LOCK || exit 1
 
   for builder in $BUILDER_LIST
   do
+    export builder
     (
       if cd /home/$builder/htdocs
       then
@@ -139,13 +140,16 @@ cleanup ()
         if test -n "$FILE_LIST"
         then
           echo "+++ start: $(date)"
-          echo "rsyncing /home/$builder/htdocs:"
+          echo "=== files in /home/$builde/htdocs:"
           list_files $FILE_LIST
 
+          echo "=== rsyncing:"
           rsync --relative --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/ 2>&1 | grep -v -e "skipping directory"
 
+          echo "=== removing:"
           rm_list $FILE_LIST
 
+          echo "=== removing old versions"
           rm_old_versions
 
           echo "--- end: $(date)"
@@ -153,8 +157,8 @@ cleanup ()
       fi
     )
   done
-} 2>&1 | log_it
 
-cleanup
+  cleanup
+} 2>&1 | log_it
 
 exit 0
