@@ -2,6 +2,10 @@
 
 	* index.php: updated John Hartman's e-mail address,
 	  removed mailto links
+	* snap.php: changed folder icon with the one found at
+	  http://www.iconarchive.com/show/folder-icons-by-kodz-red/folder-B4-6-icon.html
+	  images/dir.gif: removed
+	  images/folder-B4-6-32x32.png: added
 
 2008-11-14 Borut Razem <borut.razem AT siol.net>
 

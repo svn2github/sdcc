@@ -61,7 +61,7 @@ function display_files($dir, $cldir, $rtdir, $subdir)
     array_multisort($file_date, SORT_DESC, $file_name, $file_size);
   }
 
-  echo "<p><img src=\"/images/folder-1-3-9-48x48.png\" border=\"0\" align=\"bottom\" width=\"20\" height=\"22\" alt=\"Directory\" />";
+  echo "<p><img src=\"/images/folder-B4-6-32x32.png\" border=\"0\" align=\"bottom\" alt=\"Folder\" />";
   echo "<font face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\"><b><i>";
   if (is_file("$dir/../snapshots.desc/$subdir.desc")) {
     include "$dir/../snapshots.desc/$subdir.desc";
