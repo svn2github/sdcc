@@ -125,7 +125,7 @@ and binary packages for <b>Linux - x86</b>,
       <a href="snap.php">downloading one of the snapshot builds</a>
 if you have
 run across a bug, or if the above release is more than two months old. </p>
-      <p> Debian packages (many thanks to <a href="mailto:aurel32.AT.debian.org">Aurelien Jarno</a>):
+      <p> Debian packages (many thanks to Aurelien Jarno &lt;aurel32.AT.debian.org&gt;):
       </p>
       <ul>
         <li> <a href="http://packages.debian.org/sdcc">http://packages.debian.org/sdcc</a>
@@ -200,10 +200,12 @@ Page</a> , you are (X) here. </li>
 believe you have found a
 bug.]
           <ul>
-            <li><a href="mailto:sdcc-devel@lists.sourceforge.net">Send to the
-developer list</a> - for development work on SDCC </li>
-            <li><a href="mailto:sdcc-user@lists.sourceforge.net">Send to the
-user list</a> - [preferred] all developers and all users. </li>
+            <li>Send to the developer list
+&lt;sdcc-devel.AT.lists.sourceforge.net&gt;
+- for development work on SDCC</li>
+            <li>Send to the user list
+&lt;sdcc-user.AT.lists.sourceforge.net&gt;
+- [preferred] all developers and all users.</li>
             <li><a href="http://lists.sourceforge.net/mailman/listinfo/sdcc-user">Subscribe
 to the user list</a> </li>
           </ul>
@@ -221,89 +223,87 @@ Message Forum</a> - an account on Sourceforge is needed if you're
 going to post and reply. Short
 easy online fill-in the blanks. </li>
         <li><a href="http://sdccokr.dl9sec.de/">Open
-Knowledge Web Site</a> - Run by <a href="mailto:thorsten.godau.AT.gmx.de">Thorsten Godau</a>
+Knowledge Web Site</a> - Run by Thorsten Godau &lt;thorsten.godau.AT.gmx.de&gt;
         </li>
       </ul>
       <h2><a name="Who"></a>Who is SDCC?</h2>
       <ul>
-        <li><a href="mailto:sandeep.AT.users.sourceforge.net">Sandeep
-Dutta &lt;sandeep.AT.users.sourceforge.net&gt;</a>
+        <li>Sandeep Dutta
+&lt;sandeep.AT.users.sourceforge.net&gt;
 - original author (SDCC's version of Torvalds)</li>
-        <li><a href="mailto:jlvern.AT.writeme.com">Jean
-Loius-VERN &lt;jlvern.AT.writeme.com&gt;</a> -
-substantial improvement in the back-end code generation.</li>
-        <li><a href="mailto:drdani.AT.mazsola.iit.uni-miskolc.hu">Daniel
-Drotos &lt;drdani.AT.mazsola.iit.uni-miskolc.hu&gt;</a>
+        <li>Jean Loius-VERN
+&lt;jlvern.AT.writeme.com&gt;
+- substantial improvement in the back-end code generation.</li>
+        <li>Daniel Drotos
+&lt;drdani.AT.mazsola.iit.uni-miskolc.hu&gt;
 - Freeware simulator for 8051.</li>
-        <li><a href="mailto:kevin.AT.vigor.nu">Kevin
-Vigor &lt;kevin.AT.vigor.nu&gt;</a>
+        <li>Kevin Vigor
+&lt;kevin.AT.vigor.nu&gt;
 - numerous enhancements and bug fixes to the Dallas ds390 tree.</li>
-        <li><a href="mailto:johan.knol.AT.users.sourceforge.net">Johan Knol
-&lt;johan.knol.AT.users.sourceforge.net&gt;</a>
+        <li>Johan Knol
+&lt;johan.knol.AT.users.sourceforge.net&gt;
 - testing and patching ds390 tree, bug stompper extrodanaire</li>
-        <li><a href="mailto:scott.AT.dattalo.com">Scott
-Dattalo &lt;scott.AT.dattalo.com&gt;</a> -
-sdcc for Microchip PIC controller target</li>
-        <li><a href="mailto:karl.AT.turbobit.com">Karl
-Bongers &lt;karl.AT.turbobit.com&gt;</a> - mcs51
-support, winbin builds, and an occasional bug.</li>
-        <li><a href="mailto:bernhard.AT.bernhardheld.de">Bernhard
-Held &lt;bernhard.AT.bernhardheld.de&gt;</a>
+        <li>Scott Dattalo
+&lt;scott.AT.dattalo.com&gt;
+- sdcc for Microchip PIC controller target</li>
+        <li>Karl Bongers
+&lt;karl.AT.turbobit.com&gt;
+- mcs51 support, winbin builds, and an occasional bug.</li>
+        <li>Bernhard Held
+&lt;bernhard.AT.bernhardheld.de&gt;
 - snpshot builds and general housekeeping</li>
-        <li><a href="mailto:Frieder.Ferlemann.AT.web.de">Frieder
-Ferlemann &lt;Frieder.Ferlemann.AT.web.de&gt;</a>
+        <li>Frieder Ferlemann
+&lt;Frieder.Ferlemann.AT.web.de&gt;
 - contributions to the documentation and last stages of code generation</li>
-        <li><a href="mailto:jesusc.AT.ece.ubc.ca">Jesus
-Calvino-Fraga &lt;jesusc.AT.ece.ubc.ca&gt;</a>
+        <li>Jesus Calvino-Fraga
+&lt;jesusc.AT.ece.ubc.ca&gt;
 - math functions, AOMF51, linker improvements</li>
-        <li><a href="mailto:borut.razem.AT.siol.net">Borut
-Ražem &lt;borut.razem.AT.siol.net&gt;</a>
+        <li>Borut Ražem
+&lt;borut.razem.AT.siol.net&gt;
 - WIN32 MSC, cygwin and mingw ports, NSIS installer, preprocessor and front end
 improvements, bug fixing, snapshot builds on Distibuted Compile Farm, ...</li>
-        <li><a href="mailto:vrokas.AT.otenet.gr">Vangelis
-Rokas &lt;vrokas.AT.otenet.gr&gt;</a>
+        <li>Vangelis Rokas
+&lt;vrokas.AT.otenet.gr&gt;
 - PIC16 taget development for Microchip PIC18F microcontrollers</li>
-        <li><a href="mailto:epetrich.AT.users.sourceforge.net">Erik
-Petrich &lt;epetrich.AT.users.sourceforge.net&gt;</a>
+        <li>Erik Petrich
+&lt;epetrich.AT.users.sourceforge.net&gt;
 - Bug fixes and improvements for the front end, 8051, z80 and hc08</li>
-        <li><a href="mailto:dave.AT.kd0yu.com">Dave
-Helton &lt;dave.AT.kd0yu.com&gt;</a>
+        <li>Dave Helton
+&lt;dave.AT.kd0yu.com&gt;
 - website design</li>
-        <li><a href="mailto:paul.AT.pjrc.com">Paul
-Stoffregen &lt;paul.AT.pjrc.com&gt;</a> - mcs51
-optimizations and website maintenance.</li>
-        <li><a href="mailto:michaelh.AT.juju.net.nz">Michael
-Hope &lt;michaelh.AT.juju.net.nz&gt;</a> - initial Z80
-target, additional coding and bug fixes.</li>
-        <li><a href="mailto:sourceforge.brock.AT.dse.nl">Maarten
-Brock &lt;sourceforge.brock.AT.dse.nl&gt;</a> - several
-bug fixes and improvements, esp. for mcs51 target</li>
-        <li><a href="mailto:RNeider.AT.web.de">Raphael
-Neider &lt;RNeider.AT.web.de&gt;</a> - bug fixes and
-optimizations for PIC16, completion of the PIC14 target</li>
-        <li><a href="mailto:pkk.AT.spth.de">Philipp Klaus
-Krause &lt;pkk AT spth.de&gt;</a> - z80 and gbz80 bug fixes
-and optimizations</li>
+        <li>Paul Stoffregen
+&lt;paul.AT.pjrc.com&gt;
+- mcs51 optimizations and website maintenance.</li>
+        <li>Michael Hope
+&lt;michaelh.AT.juju.net.nz&gt;
+- initial Z80 target, additional coding and bug fixes.</li>
+        <li>Maarten Brock
+&lt;sourceforge.brock.AT.dse.nl&gt;
+- several bug fixes and improvements, esp. for mcs51 target</li>
+        <li>Raphael Neider
+&lt;RNeider.AT.web.de&gt;
+- bug fixes and optimizations for PIC16, completion of the PIC14 target</li>
+        <li>Philipp Klaus
+Krause &lt;pkk AT spth.de&gt;
+- z80 and gbz80 bug fixes and optimizations</li>
       </ul>
-      <p>SDCC has had help from a number of external sources,
-including:</p>
+      <p>SDCC has had help from a number of external sources, including:</p>
       <ul>
-        <li><a href="mailto:baldwin.AT.shop-pdp.kent.edu">Alan
-Baldwin &lt;baldwin.AT.shop-pdp.kent.edu&gt;</a>
+        <li>Alan Baldwin
+&lt;baldwin.AT.shop-pdp.kent.edu&gt;
 - Initial version of ASXXXX&nbsp; and&nbsp; ASLINK.</li>
-        <li><a href="mailto:noice.AT.noicedebugger.com">John
-Hartman &lt;noice@noicedebugger.com&gt;</a>
+        <li>John Hartman
+&lt;noice.AT.noicedebugger.com&gt;
 - Porting ASXXXX and ASLINK for 8051.</li>
-        <li><a href="mailto:boehm.AT.sgi.com">Jans J
-Boehm &lt;boehm.AT.sgi.com&gt;</a> and Alan J
-Demers - Conservative garbage collector for C &amp; C++.</li>
-        <li><a href="mailto:dso.AT.usa.net">Dmitry
-S. Obukhov &lt;dso.AT.usa.net&gt;</a> - malloc and
-serial I/O routines.</li>
+        <li>Jans J Boehm
+&lt;boehm.AT.sgi.com&gt; and Alan J Demers - Conservative garbage collector for C &amp; C++.</li>
+        <li>Dmitry S. Obukhov
+&lt;dso.AT.usa.net&gt;
+- malloc and serial I/O routines.</li>
         <li><a href="http://gcc.gnu.org/">The GCC development team</a> - for the GNU C preprocessor</li>
-        <li><a href="mailto:malini_dutta.AT.hotmail.com">Malini
-Dutta &lt;malini.AT.mediaone.net&gt;</a> -
-Sandeep's wife, for her patience and support.</li>
+        <li>Malini Dutta
+&lt;malini.AT.mediaone.net&gt;
+- Sandeep's wife, for her patience and support.</li>
       </ul>
 
       <h2>Past news</h2>

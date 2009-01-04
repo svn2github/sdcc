@@ -1,6 +1,7 @@
 2009-01-04 Borut Razem <borut.razem AT siol.net>
 
-	* index.php: updated John Hartman's e-mail address
+	* index.php: updated John Hartman's e-mail address,
+	  removed mailto links
 
 2008-11-14 Borut Razem <borut.razem AT siol.net>
 
