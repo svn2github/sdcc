@@ -1,30 +1,32 @@
 include ../packages.mk
 
-VERSION=$(shell expr download/nsis-*-src.tar.bz2 : 'download/nsis-\(.*\)-src.tar.bz2')
+PACKAGE=nsis
+
+VERSION=$(shell expr download/$(PACKAGE)-*-src.tar.bz2 : 'download/$(PACKAGE)-\(.*\)-src.tar.bz2')
 
 .PHONY: all
-all: nsis-install.tag clean
+all: $(PACKAGE)-install.tag clean
 
-nsis-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/nsis/nsis-2.41-src.tar.bz2
-	wget -P download $(SF_REPOSITORY)/sourceforge/nsis/nsis-2.41.zip
+$(PACKAGE)-download.tag:
+	wget -P download $(SF_REPOSITORY)/sourceforge/$(PACKAGE)/$(PACKAGE)-2.42-src.tar.bz2
+	wget -P download $(SF_REPOSITORY)/sourceforge/$(PACKAGE)/$(PACKAGE)-2.42.zip
 	touch $@
 
-nsis-unpack.tag: nsis-download.tag
-	tar xjvf download/nsis-*-src.tar.bz2
+$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
+	tar xjvf download/$(PACKAGE)-*-src.tar.bz2
 	touch $@
 
-nsis-configure.tag: nsis-unpack.tag
-	cd nsis-$(VERSION)-src && \
+$(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
+	cd $(PACKAGE)-$(VERSION)-src && \
 	scons PREFIX=$(LOCAL_DIR) SKIPSTUBS=all SKIPPLUGINS=all SKIPUTILS=all SKIPMISC=all VERSION=$(VERSION)
 	touch $@
 
-nsis-install.tag: nsis-configure.tag
-	install nsis-$(VERSION)-src/build/release/makensis/makensis $(LOCAL_DIR)/bin
-	rm -rf $(LOCAL_DIR)/share/nsis
-	unzip download/nsis-$(VERSION).zip -d $(LOCAL_DIR)/share
-	mv $(LOCAL_DIR)/share/nsis-$(VERSION) $(LOCAL_DIR)/share/nsis
+$(PACKAGE)-install.tag: $(PACKAGE)-configure.tag
+	install $(PACKAGE)-$(VERSION)-src/build/release/makensis/makensis $(LOCAL_DIR)/bin
+	rm -rf $(LOCAL_DIR)/share/$(PACKAGE)
+	unzip download/$(PACKAGE)-$(VERSION).zip -d $(LOCAL_DIR)/share
+	mv $(LOCAL_DIR)/share/$(PACKAGE)-$(VERSION) $(LOCAL_DIR)/share/$(PACKAGE)
 	touch $@
 
 clean:
-	rm -rf nsis-$(VERSION)-src download/* *.tag
+	rm -rf $(PACKAGE)-$(VERSION)-src download/* *.tag
