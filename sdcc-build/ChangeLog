@@ -1,3 +1,7 @@
+2008-02-08 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk: add COPYING3.txt to win32 setup package
+
 2008-12-18 Borut Razem <borut.razem AT siol.net>
 
 	* lib/variables.mk, lib/upload.mk: defaults for DCF
