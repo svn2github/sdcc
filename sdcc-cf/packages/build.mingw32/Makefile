@@ -96,8 +96,8 @@ w32api-realclean: w32api-clean
 
 
 gcc-download.tag:
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.3.2/gcc-core-4.3.2.tar.bz2
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.3.2/gcc-g++-4.3.2.tar.bz2
+	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.3.3/gcc-core-4.3.3.tar.bz2
+	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.3.3/gcc-g++-4.3.3.tar.bz2
 	touch $@
 
 gcc-unpack.tag: gcc-download.tag

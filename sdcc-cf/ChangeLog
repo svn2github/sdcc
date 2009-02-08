@@ -1,3 +1,7 @@
+2009-02-08 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.mingw32/Makefile: updated to gcc-4.3.3
+
 2009-01-20 Borut Razem <borut.razem AT siol.net>
 
 	* packages/build.nsis/Makefile: updated to NSIS version 2.42
