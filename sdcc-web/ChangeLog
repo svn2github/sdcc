@@ -1,3 +1,7 @@
+2009-03-01 Borut Razem <borut.razem AT siol.net>
+
+	* index.php: sdcc asxxxx under GPL, added News - sdcc 2.9.0 RC1
+
 2009-02-17 Maarten Brock <sourceforge.brock AT dse.nl>
 
 	* left_menu.inc: updated left menu with a link to the forum
@@ -22,11 +26,11 @@
 
 2008-03-09 Borut Razem <borut.razem AT siol.net>
 
-	* index.php: added News - sdcc 2.7.0 RC2
+	* index.php: added News - sdcc 2.8.0 RC2
 
 2008-03-09 Borut Razem <borut.razem AT siol.net>
 
-	* index.php: added News - sdcc 2.7.0 RC1
+	* index.php: added News - sdcc 2.8.0 RC1
 	* previous.php: previous news moved from index.php
 
 2008-02-21 Borut Razem <borut.razem AT siol.net>
