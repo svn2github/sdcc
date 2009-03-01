@@ -1,0 +1,172 @@
+2009-02-08 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.mingw32/Makefile: updated to gcc-4.3.3
+
+2009-01-20 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.nsis/Makefile: updated to NSIS version 2.42
+
+2008-12-23 Borut Razem <borut.razem AT siol.net>
+
+	* .sdcc_builder/profile: added LD_LIBRARY_PATH
+	* bin/dcf.sh: logging enhancements
+	* packages/build.gmp_mpfr: added
+	* packages/build.mingw32/Makefile: updated to gcc-4.3.2
+
+2008-12-18 Borut Razem <borut.razem AT siol.net>
+
+	* crontab.txt take defaults for DCF
+	* packages/build.mingw32/Makefile:
+	  updated to binutils-2.19, mingwrt-3.1-mingw32 and w32api-3.13-mingw32
+
+2008-12-14 Borut Razem <borut.razem AT siol.net>
+
+	* .sdcc_builder/profile: defined PERL5LIB
+	* bin/dcf.sh: test if can't cd
+	* crontab.txt, etc/dcf_list: added cf-x86 to DCF
+
+2008-12-13 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.libtool/*: added
+
+2008-12-12 Borut Razem <borut.razem AT siol.net>
+
+	* etc/*, .sdcc_builder/*: added
+
+2008-10-31 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.autoconf/*, packages/build.automake/*: added
+
+2008-09-26 Borut Razem <borut.razem AT siol.net>
+
+	* bin/dcf.sh: call rm_old_versions only if anything was uploaded
+
+2008-09-24 Borut Razem <borut.razem AT siol.net>
+
+	* bin/dcf.sh: new SF web server sdcc-builder,sdcc@web.sourceforge.net
+	* rm_old_versions () implemented by using sftp instead ssh
+
+2008-09-14 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.popt/*: added
+	* packages/build.gpsim/Makefile: use glibtoolize on Mac OS X
+	* packages/build.ncurses/Makefile: use Xcode2.5 on Mac OS X
+	* packages/packages.mk: remove /sw/* include and lib search path
+
+2008-08-24 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.cpan/Makefile: ask perl for the version number
+
+2008-05-24 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.gputils/Makefile: upgraded to gputils-0.13.6
+
+2008-03-28 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.cpan/*: added
+
+2008-02-26 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.nsis/Makefile: updated to NSIS version 2.35
+
+2008-02-19 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.gputils/Makefile: possibiliy to build gputils from
+	  a release package or svn repository if FROM_SVN is defined
+	* packages/build.wget/*: added
+
+2008-02-17 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.mingw32/Makefile: updated to gcc-4.2.3, w32api-3.11,
+	  mingw-runtime-3.14
+
+2008-01-12 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.nsis/Makefile: updated to NSIS version 2.34
+	* crontab.txt: execute .bash_profile instead of .bashrc on cf-x86
+
+2007-09-03 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.gputils/Makefile: get gputils sources from CVS
+
+2007-08-04 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.mingw/Makefile: upgraded to gcc-4.2.1,
+	  mingw-runtime-3.13, w32api-3.10
+
+2007-06-24 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.readline: fixed support for universal binaries
+	  on Darwin
+
+2007-06-12 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.gpsim/Makefile: use new svn URL scheme
+
+2007-06-01 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.mingw/Makefile: upgraded to gcc-4.2.0,
+	  binutils-2.17, mingw-runtime-3.12, w32api-3.9
+
+2007-05-05 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.nsis/Makefile: updated to NSIS version 2.27
+
+2007-04-14 Borut Razem <borut.razem AT siol.net>
+
+	* crontab.txt: run do-upload in a separate make task on cf-x86 too
+
+2007-04-10 Borut Razem <borut.razem AT siol.net>
+
+	* crontab.txt: run do-upload in a separate make task in order to
+	  prevent starting upload before other make jobs are finished
+	* bin/dcf.sh: removed duplicated rm -f $DCF_LOCK
+
+2007-03-31 Borut Razem <borut.razem AT siol.net>
+
+	* crontab.txt: define "make" arguments on command line
+	* bin/dcf.sh: introduced trap, relative rsync
+
+2007-03-30 Borut Razem <borut.razem AT siol.net>
+
+	* bin/dcf.sh: enhanced logging
+
+2007-03-25 Borut Razem <borut.razem AT siol.net>
+
+	* bin/dcf.sh: added Distributed Compile Farm
+	* crontab.txt: updated
+
+2007-03-20 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.readline/Makefile:
+	  introduced CFLAGS, CXXFLAGS and LDFLAGS configure settings
+
+2007-03-18 Borut Razem <borut.razem AT siol.net>
+
+	* packages/*/Makefile: house cleaning
+	* packages/build.ncurses/*: added
+	* crontab.txt: added entry for mirror-doors host
+	* packages/packages.mk, packages/build.readline/Makefile:
+	  added support for universal binaries on Darwin
+	* packages/build.gpsim/Makefile:
+	  introduced CFLAGS, CXXFLAGS and LDFLAGS configure settings
+
+2007-03-17 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.readline/*: added
+	* crontab.txt: added mirror-doors line
+
+2007-03-13 Borut Razem <borut.razem AT siol.net>
+
+	* crontab.txt: added
+
+2007-03-11 Borut Razem <borut.razem AT siol.net>
+
+	* packages/packages.mk: defined LOCAL_DIR using $(HOME)/... instead of
+	  ~/... so that --prefix=$(LOCAL_DIR) works
+	* packages/build.nsis/Makefile: removed ABS_LOCAL_DIR
+
+2007-03-07 Borut Razem <borut.razem AT siol.net>
+
+	* packages/*: initial check in
+	* packages/build.nsis/Makefile: defined ABS_LOCAL_DIR

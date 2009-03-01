@@ -1,0 +1,314 @@
+
+Makefile,201
+VER = 0.35VER2,20
+OBJS=main.o z80.o parse_map.o debugger.o disgb.o csock.oOBJS5,96
+CC=gccCC6,153
+OPTS = -DSEGOPTS7,160
+CFLAGS=-O3 -fomit-frame-pointer -funroll-loops -Wall $(OPTS)CFLAGS8,173
+
+cbops.c,674
+#define var_t var_t19,803
+#define rlc(rlc20,835
+#define rrc(rrc21,883
+#define rl(rl22,950
+#define rr(rr23,1017
+#define sla(sla24,1084
+#define sra(sra25,1142
+#define sll(sll26,1215
+#define srl(srl27,1278
+#define rflags(rflags29,1336
+#define bit(bit31,1384
+#define set(set32,1443
+#define res(res33,1472
+#define nswap(nswap34,1502
+#undef var_tvar_t142,4912
+#undef rlcrlc143,4925
+#undef rrcrrc144,4936
+#undef rlrl145,4947
+#undef rrrr146,4957
+#undef slasla147,4967
+#undef srasra148,4978
+#undef sllsll149,4989
+#undef srlsrl150,5000
+#undef rflagsrflags151,5011
+#undef bitbit152,5025
+#undef setset153,5036
+#undef resres154,5047
+
+csock.c,451
+int socket_poll( int asocket )socket_poll26,522
+int socket_get( int asocket )socket_get46,834
+int socket_read( int asocket, char *buffer, int len )socket_read55,966
+int socket_write( int sink, char *buffer, int len )socket_write66,1118
+int socket_init(int port)socket_init80,1310
+int socket_main(int hsocket)socket_main104,1810
+void exitsig(sig)exitsig131,2374
+void init_signals()init_signals142,2611
+#define SIGCHLD SIGCHLD160,2971
+
+csock.h,33
+#define __CSOCK_H__CSOCK_H2,18
+
+debugger.c,488
+void profile(void)profile10,172
+char *get_param( char *from, int *storein )get_param33,603
+int getparams( char *string, int *start, int *end, int pc, int defoffset )getparams58,992
+void show_callback_stack(void)show_callback_stack78,1309
+int setBreakpoint( unsigned int addr )setBreakpoint92,1561
+void printRegisters( pmregs regs )printRegisters115,1865
+int clearBreakpoint( unsigned int addr )clearBreakpoint126,2169
+int enterDebugger( pmregs regs )enterDebugger139,2333
+
+debugger.h,693
+#define __DEBUGGER_H__DEBUGGER_H2,21
+typedef struct sregs mregs;mregs4,43
+typedef struct sregs *pmregs;pmregs5,71
+struct sregs {sregs7,102
+	unsigned char *a, *f, *b, *c, *d, *e, *h, *l;a8,117
+	unsigned char *a, *f, *b, *c, *d, *e, *h, *l;f8,117
+	unsigned char *a, *f, *b, *c, *d, *e, *h, *l;b8,117
+	unsigned char *a, *f, *b, *c, *d, *e, *h, *l;c8,117
+	unsigned char *a, *f, *b, *c, *d, *e, *h, *l;d8,117
+	unsigned char *a, *f, *b, *c, *d, *e, *h, *l;e8,117
+	unsigned char *a, *f, *b, *c, *d, *e, *h, *l;h8,117
+	unsigned char *a, *f, *b, *c, *d, *e, *h, *l;l8,117
+	unsigned short *pc, *sp;pc9,164
+	unsigned short *pc, *sp;sp9,164
+	int *cpuRunning;cpuRunning10,190
+
+disgb.c,1972
+#define WREG WREG5,62
+#define HREG HREG6,77
+#define LREG LREG7,92
+#define BREG BREG8,107
+#define COND COND9,122
+#define BRST BRST10,137
+#define WOP WOP11,152
+#define BOP BOP12,166
+#define XWREG XWREG13,180
+#define SBOP SBOP14,196
+#define BREL BREL15,212
+#define SBIT SBIT16,228
+typedef struct smnemo mmnemo;mmnemo19,246
+typedef struct smnemo *pmmnemo;pmmnemo20,276
+struct smnemo {smnemo22,309
+	char text[20];text23,325
+	int op1;op124,341
+	int op2;op225,351
+typedef struct smnemo_exception mmnemo_exception;mmnemo_exception28,365
+typedef struct smnemo_exception *pmmnemo_exception;pmmnemo_exception29,415
+struct smnemo_exception {smnemo_exception31,468
+	char text[20];text32,494
+	int op1;op133,510
+	int op2;op234,520
+	int opcode;opcode35,530
+char byte_regs[][5] = {byte_regs38,547
+char word_regs[][3] = {word_regs42,618
+char conditions[][3] = {conditions46,670
+mmnemo mnemo_80[] = {mnemo_8050,721
+mmnemo mnemo_40[] = {mnemo_4054,777
+mmnemo mnemo_07_40[] = {mnemo_07_4072,1204
+mmnemo mnemo_C0[] = {mnemo_C083,1386
+mmnemo mnemo_FF[] = {mnemo_FF94,1625
+mmnemo mnemo_00_40[] = {mnemo_00_40113,2070
+mmnemo mnemo_CB_40[] = {mnemo_CB_40123,2274
+mmnemo mnemo_CB_C7[] = {mnemo_CB_C7134,2510
+mmnemo_exception mnemo_exceptions_40[] = {mnemo_exceptions_40140,2634
+mmnemo_exception mnemo_exceptions_FF[] = {mnemo_exceptions_FF148,2835
+pmarea areas;areas177,3690
+pmglobal sorted_globals;sorted_globals178,3704
+int format_label( char *buffer, unsigned int addr )format_label180,3730
+int parse_label( char *buffer )parse_label198,4030
+int format_operand( char *buffer, int op, int reg, UBYTE *base, int addr )format_operand219,4374
+int print_code( int offset, int reg1, int reg2, pmmnemo mnemo, UBYTE *base, int addr )print_code264,5370
+int handle_exception( UBYTE *base, pmmnemo_exception except, int addr )handle_exception277,5715
+int disass( char *buffer, UBYTE *base, int addr )disass300,6225
+
+disgb.h,73
+#define __DISGB_H__DISGB_H2,18
+typedef unsigned char UBYTE;UBYTE6,61
+
+main.c,639
+#define ALLOW_WRITE ALLOW_WRITE34,1106
+unsigned char *segments[NUM_SEGS];segments37,1140
+unsigned char mem[65536];mem39,1182
+unsigned long tstates=0;tstates40,1208
+char bank_file_name[50];bank_file_name41,1233
+int last_bank;last_bank42,1258
+int tsocket;tsocket43,1273
+int flags;flags44,1286
+void usage(void)usage48,1342
+int main(int argc,char **argv)main63,1837
+int loadImage(char *imageName, int flags)loadImage158,3354
+void printGBfloat(unsigned fhl, unsigned fde)printGBfloat197,4155
+void switchBank( int segment, unsigned bank )switchBank215,4522
+int handle_sys(int scall, int parameter) handle_sys262,5716
+
+parse_map.c,228
+int parse_map( char *file_name, pmarea *first_area )parse_map6,83
+int global_compare( const void *glob1, const void *glob2 )global_compare88,2014
+int sort_globals( pmglobal *first_global, pmarea first )sort_globals99,2256
+
+parse_map.h,652
+#define __PARSE_MAP_H__PARSE_MAP_H2,22
+#define UWORD UWORD4,45
+#define SECT_AREA SECT_AREA5,72
+#define SECT_AREA_GLOBALS SECT_AREA_GLOBALS6,92
+typedef struct sglobal mglobal;mglobal8,121
+typedef struct sglobal *pmglobal;pmglobal9,153
+struct sglobal {sglobal11,188
+	char	name[50];name12,205
+	UWORD	addr;addr13,221
+	pmglobal next;next14,234
+	pmglobal sorted_next;sorted_next15,250
+typedef struct sarea marea;marea18,277
+typedef struct sarea *pmarea;pmarea19,305
+struct sarea {sarea21,336
+	char	name[50];name22,351
+	UWORD	base;base23,367
+	UWORD	size;size24,380
+	pmglobal globals;globals25,393
+	pmarea next;next26,412
+
+z80.c,350
+pmfunction fun_first;fun_first28,986
+unsigned short breakpoints[5];breakpoints30,1009
+unsigned short callback_stack[100];callback_stack31,1040
+int callback_stack_pos;callback_stack_pos33,1077
+void push_callback( unsigned short addr )push_callback36,1132
+void pop_callback(void)pop_callback64,1647
+int mainloop(int flags)mainloop82,1937
+
+z80.h,1256
+#define Z80_quit Z80_quit18,776
+#define Z80_NMI Z80_NMI19,796
+#define Z80_reset Z80_reset20,816
+#define Z80_load Z80_load21,836
+#define Z80_save Z80_save22,856
+#define Z80_log Z80_log23,876
+#define SEG_SIZE SEG_SIZE25,897
+#define NUM_SEGS NUM_SEGS26,919
+#define DMAP	DMAP28,954
+#define DPROFILE	DPROFILE29,970
+#define DSTARTDEBUG	DSTARTDEBUG30,989
+#define DSOCKETS	DSOCKETS31,1011
+#define DTIMERINT	DTIMERINT32,1030
+typedef struct sfunction mfunction;mfunction54,1492
+typedef struct sfunction *pmfunction;pmfunction55,1528
+struct sfunction {sfunction57,1567
+	int addr;addr58,1586
+	int num_calls;num_calls59,1597
+	int tstates;tstates60,1613
+	int start;start61,1627
+	pmfunction next;next62,1639
+#define fetch(fetch67,1691
+#define fetch2(fetch268,1717
+#define store(store70,1759
+#define store2b(store2b72,1806
+#define store2(store276,1874
+static void inline storefunc(unsigned short ad,unsigned char b){storefunc79,1937
+#undef storestore83,2021
+#define store(store84,2034
+static void inline store2func(unsigned short ad,unsigned char b1,unsigned char b2){store2func86,2069
+#undef store2bstore2b89,2177
+#define store2b(store2b90,2192
+#define bc bc93,2245
+#defde94,2267
+#define hl hl95,2289
+
+z80ops.c,2418
+#define instr(instr19,801
+#define endinstr endinstr20,860
+#define cy cy22,899
+#define xh xh24,917
+#define xl xl25,932
+#define setxh(setxh27,948
+#define setxl(setxl28,973
+#define inc(inc29,998
+#define dec(dec34,1284
+#define swap(swap39,1574
+#define addhl(addhl40,1623
+#define adda(adda47,1907
+#define suba(suba54,2235
+#define cpa(cpa61,2574
+#define anda(anda67,2872
+#define xora(xora71,3022
+#define ora(ora75,3167
+#define jr jr80,3311
+#define jp jp83,3446
+#define call call84,3492
+#define ret ret90,3679
+#define pop2(pop295,3826
+#define pop1(pop196,3893
+#define push2(push298,4020
+#define push1(push1100,4150
+   inc(b);b122,4525
+   dec(b);b126,4559
+   inc(c);c159,4954
+   dec(c);c163,4989
+   inc(d);d196,5412
+   dec(d);d200,5447
+   inc(e);e231,5765
+   dec(e);e235,5800
+  else jr;jr251,5986
+   inc(h);h269,6218
+   dec(h);h273,6253
+   else pc++;pc297,6652
+   inc(l);l314,6857
+	dec(l);l318,6892
+   else jr;jr333,7060
+   else pc++;pc375,7547
+   inc(a);a392,7742
+   dec(a);a396,7777
+   setxh(b);b536,9082
+   setxh(c);c540,9121
+   setxh(d);d544,9160
+   setxh(e);e548,9199
+   setxh(xl);xl556,9280
+   setxh(a);a564,9362
+   setxl(b);b568,9401
+   setxl(c);c572,9440
+   setxl(d);d576,9479
+   setxl(e);e580,9518
+   setxl(xh);xh584,9557
+   setxl(a);a596,9681
+   adda(fetch(hl),cy);cy720,10977
+   suba(fetch(hl),cy);cy784,11645
+   anda(b);b792,11735
+   anda(c);c796,11773
+   anda(d);d800,11811
+   anda(e);e804,11849
+   anda(xh);xh808,11887
+   anda(xl);xl812,11926
+   anda(a);a820,12011
+   xora(b);b824,12049
+   xora(c);c828,12087
+   xora(d);d832,12125
+   xora(e);e836,12163
+   xora(xh);xh840,12201
+   xora(xl);xl844,12240
+   xora(a);a852,12325
+   ora(b);b856,12363
+   ora(c);c860,12400
+   ora(d);d864,12437
+   ora(e);e868,12474
+   ora(xh);xh872,12511
+   ora(xl);xl876,12549
+   ora(a);a884,12632
+   cpa(b);b888,12669
+   cpa(c);c892,12706
+   cpa(d);d896,12743
+   cpa(e);e900,12780
+   cpa(xh);xh904,12817
+   cpa(xl);xl908,12855
+   cpa(a);a916,12938
+   else pc+=2;pc929,13084
+   else pc+=2;pc938,13182
+   else pc+=2;pc966,13525
+   else pc+=2;pc975,13631
+   adda(fetch(pc),cy);cy983,13708
+   else pc+=2;pc1007,14061
+   else pc+=2;pc1017,14214
+   else pc+=2;pc1046,14631
+   else pc+=2;pc1062,14857
+   suba(fetch(pc),cy);		/* SBC A,nn */cy1072,14988

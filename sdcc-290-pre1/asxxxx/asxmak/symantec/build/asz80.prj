@@ -1,0 +1,27 @@
+82569
+C:\ASXXXX\ASXMAK\SYMANTEC\BUILD\asz80.prj
+asz80.OPN
+novcs
+asz80.DEF
+8
+950219210
+0 0 0 0 0 "..\..\..\ASXXSRC\ASDATA.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASEXPR.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASLEX.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASLIST.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASMAIN.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASOUT.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASSUBR.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASSYM.C"
+0 0 0 0 0 "..\..\..\ASZ80\Z80ADR.C"
+0 0 0 0 0 "..\..\..\ASZ80\Z80EXT.C"
+0 0 0 0 0 "..\..\..\ASZ80\Z80MCH.C"
+0 0 0 0 0 "..\..\..\ASZ80\Z80PST.C"
+0 0 0 0 0 "asz80.DEF"
+0 -1 0 0 0 "F:\SC\INCLUDE\stdio.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\setjmp.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\string.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\alloc.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\stdlib.h"
+0 -1 0 0 0 "..\..\..\ASXXSRC\asxxxx.h"
+0 -1 0 0 0 "..\..\..\ASZ80\z80.h"

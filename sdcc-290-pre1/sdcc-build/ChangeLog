@@ -1,0 +1,801 @@
+2008-02-08 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk: add COPYING3.txt to win32 setup package
+
+2008-12-18 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk, lib/upload.mk: defaults for DCF
+	* lib/upload.mk: removed remove-old-versions makefile target
+
+2008-11-09 Borut Razem <borut.razem AT siol.net>
+
+	* lib/ports.mk: commented out ports/i186.mk and ports/tlcs900h.mk
+	  to remove "configure: WARNING: unrecognized options:
+	  --disable-i186-port, --disable-tlcs900h-port"
+
+2008-09-23 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk:
+	  new SF web server sdcc-builder,sdcc@web.sourceforge.net
+
+2008-03-31 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk: generate knownbugs.html - 2nd try
+
+2008-03-24 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk: generate knownbugs.html
+
+2008-03-16 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk: rename COPYING.TX to COPYING.txt
+
+2008-03-10 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk: include ChangeLog into the doc archive
+
+2008-02-21 Borut Razem <borut.razem AT siol.net>
+
+	* local/mirror-doors.mk: TARGETCC = "/Xcode2.5/usr/bin/gcc"
+	  TARGETCXX = "/Xcode2.5/usr/bin/g++"
+
+2008-02-20 Borut Razem <borut.razem AT siol.net>
+
+	* local/mirror-doors.mk: mirror-doors is now Mac OS X 10.5 Leopard
+	  with Xcvode 2.5; binaries generated with Xcode 3.0 seems not to be
+	  backward compatible with Mac OS X 10.4 and older
+
+2008-02-14 Borut Razem <borut.razem AT siol.net>
+
+	* local/mirror-doors.mk: mirror-doors is now Mac OS X 10.5 Leopard
+	  with Xcvode 3.0
+
+2008-01-13 Borut Razem <borut.razem AT siol.net>
+
+	* Makefile, lib/bootstrap.mk, lib/variables.mk, lib/version.mk:
+	  added version.mk, introduced variables SDCC_VER_MAJOR,
+	  SDCC_VER_MINOR, SDCC_VER_DEVEL, SDCCREVISION renamed to
+	  SDCC_REVISION
+
+2007-10-27 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk: test-mcs51 replaced with test-mcs51-small in
+	  REGTESTTARGETS
+
+2007-10-05 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk, lib/bootstrap.mk: the default definition of BUILDNAME,
+	  TARBALLBASE and TARBALLDIR moved from bootstrap.mk to variables.mk, so
+	  that they can be redefined by local settings. Introduced TRAGET_PLATFORM
+	* local/mirror-doors.mk: universal binaries are producrd; defined
+	  TARAGET_PLATFORM as universal-apple-macosx
+
+2007-08-07 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* lib/variables.mk: changed ~/.sdcc_builder/local to
+	  $(HOME)/.sdcc_builder/local since not all shells have
+	  a special meaning for ~
+
+2007-06-28 Borut Razem <borut.razem AT siol.net>
+
+	* local/mirror-doors.mk: slightly changed TARGETLDFLAGS
+
+2007-06-27 Borut Razem <borut.razem AT siol.net>
+
+	* local/mirror-doors.mk: create Mac OS X universal binaries
+
+2007-06-03 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk, lib/local.mk: added posibility to have the local
+	  machine makefiles in a user defined directory, ~/.sdcc_builder/local
+	  by default; defined in LOCAL_MK variable
+
+2007-04-14 Borut Razem <borut.razem AT siol.net>
+
+	* lib/upload.mk: unquote the ssh command
+
+2007-04-12 Borut Razem <borut.razem AT siol.net>
+
+	* lib/upload.mk: explicitly execute chmod g+wx on destination directories
+
+2007-04-12 Borut Razem <borut.razem AT siol.net>
+
+	* lib/upload.mk: explicitly execute chmod g+w on destination files
+
+2007-03-31 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-build-bootstrap.sh: take "make" arguments from the command line
+
+2007-03-25 Borut Razem <borut.razem AT siol.net>
+
+	* lib/send-mail.mk, lib/bootstrap.sh, Makefile:
+	  mail handling reorganization
+	* lib/upload.mk: retain file permissions
+	* lib/variables: added global mail server definition
+
+2007-03-24 Borut Razem <borut.razem AT siol.net>
+
+	* lib/upload.mk, lib/variables.mk, sdcc-build-bootstrap.sh:
+	  sdcc-builder preparation for Disrtibured Compile Farm
+
+2007-03-20 Borut Razem <borut.razem AT siol.net>
+
+	* local/cf-x86.mk: disabled pic16 regression test
+
+2007-03-18 Borut Razem <borut.razem AT siol.net>
+
+	* added fuction ls_l_full_time() which executes supported version of
+	  ls -l --full-time
+	* local/mirror-dors.mk: more specific comments about readline
+	* sdcc-build-bootstrap.sh: fixed typo - $BULDROOT changed to $BUILDROOT
+
+2007-03-17 Borut Razem <borut.razem AT siol.net>
+
+	* local/mirror-doors.mk: added
+	* components/sdcc.mk, components/sdcc-extra.mk: introduced TARGETCFLAGS configure option
+
+2007-03-16 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-build-bootstrap.sh, lib/bootstrap.mk: invoke
+	  remove-old-versions only once at the end of all builds after
+	  do-upload
+
+2007-03-15 Borut Razem <borut.razem AT siol.net>
+
+	* local/cf-x86.mk, local/cf-x86-i386-unknown-linux2.5.mk: added coment
+	  about --hash-style=both
+	* sdcc-build-bootstrap.sh: checkout sdcc-build to $BUILDROOT/sdcc-build
+
+2007-03-13 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk, components/sdcc-extra.mk: introduced TREGETLDFLAGS
+	* local/cf-x86.mk, local/cf-x86-i386-unknown-linux2.5.mk: set TARGETLDFLAGS = -Wl,--hash-style=both
+	* local/cf-x86-i586-mingw32msvc.mk: set TARGETLDFLAGS =
+	* sdcc-build-bootstrap.sh: change directory to $HOME/build
+
+2007-03-12 Borut Razem <borut.razem AT siol.net>
+
+	* lib/fetch.mk, lib/variables.mk: fetch by the local machine if SVNSERVER
+	  is not defined
+	* components/sdcc.mk: report CXX settings
+	* local/cf-x86-i386-unknown-linux2.5.mk: define HOSTOS=i386-unknown-linux2.5
+	  even on 64bit amd64-unknown-linux2.5 host in order to copile 32bit i386
+	  binaries
+
+2007-03-09 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc-web.mk, lib/bootstrap.mk, lib/doc-archive.mk,
+	  lib/src-archive.mk, local/cf-x86.mk, sdcc-build-bootstrap.sh:
+	  invoke do-upload only once at the end of all builds;
+	  do not configure and run the doc Makefile as a part of cf-x86 build
+	  since the documentation is built in a separate step
+
+2007-03-08 Borut Razem <borut.razem AT siol.net>
+
+	* local/cf-x86-i386-unknown-linux2.5.mk: added
+	* local/cf-x86.mk: added i386-unknown-linux2.5 build to OTHERTARGETS
+
+2007-03-06 Borut Razem <borut.razem AT siol.net>
+
+	* local/cf-x86-i586-mingw32msvc.mk: the latest version of mingw gcc is
+	  installed in $(HOME)/local-$(HOSTNAME); added MAKEJOBFLAGS = -j 2
+	* local/cf-x86.mk: cf-x86 is an amd64-unknown-linux2.4 machine
+
+2007-01-25 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/bootstrap.mk,
+	* lib/variables.mk,
+	* sdcc-build-bootstrap.sh: put local tools in ~/local-$HOSTNAME
+	* sdcc-build-bootstrap.sh: use "svn checkout" instead "svn export"
+	because there's enough space and it makes administration easier,
+	simplify co of sdcc-build
+
+2007-01-24 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/variables.mk: changed SVNSERVER to localhost, maybe it should
+	be removed
+	* lib/fetch.mk: changed SVN-URL from svn.sourceforge.net to
+	sdcc.svn.sourceforge.net, because it worked better during the broken
+	DNS setup; now both work, but the latter one is the official one
+	* sdcc-build-bootstrap.sh: changed SVN-URL,
+	export sdcc-build directly from svn,
+	moved BUILDROOT from /var/tmp back to ~/build
+	* local/cf-x86.mk,
+	* local/cf-x86-i586-mingw32msvc.mk: added Erik's host
+
+2007-01-24 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* /sdcc/tags/sdcc-build_before_move_to_ECF: added tag, the nightly
+	build now moves from sourceforges compile farm to Erik's compile farm.
+
+2007-01-19 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/x86-linux2-i586-mingw32msvc.mk: replaced --datadir by
+	--datarootdir for conformance with autoconf 2.6
+
+2006-11-06 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk: added default definitions for PREFIX and
+	  HOSTPREFIX
+	* components/sdcc.mk: removed --prefix=$(PREFIX) argument to configure
+	  command line, use $(HOSTPREFIX)
+	* local/x86-linux2-i586-mingw32msvc.mk: add --prefix=$(PREFIX) to
+	  SDCCCONFIGUREFLAGS
+	* lib/bootstrap.mk: skip PREFIX directories in tar.bz2 packages
+
+2006-11-05 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk: added --prefix=$(PREFIX) argument to configure
+	  command line, use $(PREFIX) variable instead hard-coded /usr/local,
+	  added sdcc-install-clean target to remove the previous installation
+	* local/x86-linux2-i586-mingw32msvc.mk: defined PREFIX = /sdcc
+	* Makefile: remove the previous installation before installing the
+	  new one
+	* local/crush.mk, local/ppc-osx2.cf.sourceforge.net.mk,
+	  local/sapphire.mk, local/sapphire-i586-mingw32msvc.mk,
+	  local/saturn.juju.net.nz.mk,
+	  local/saturn.juju.net.nz-i386-mingw32msvc.mk,
+	  local/ucf-cf-ppc-macosx-2.mk, local/ucf-cf-ppc-linux-1.mk,
+	  local/ucf-cf-ppc-macosx-1.mk, local/ucf-cf-sparc-linux-1.mk,
+	  local/x86-linux1-i586-mingw32msvc.mk, local/x86-linux1.mk:
+	  removed unneeded locals
+	* components/sdcc.mk: make _SDCCDIR local, removed /usr/local from
+	  host build directory
+	* lib/bootstrap.mk: use $(PREFIX)
+
+
+2006-10-31 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk: fixed build failure if $(ORIGDIR)/sdcc doesn't exist
+	* sdcc-build-bootstrap.sh: checkout sdcc-build directory to
+	  $(HOME)/build/sdcc/sdcc-build/orig/sdcc-build instead
+	  $(HOME)/build/sdcc/sdcc-build/dl
+
+2006-10-30 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk: add readline5.dll to packages if cross compiling
+	* lib/upload.mk: keep only the newest 7 files in changelog_heads
+
+2006-10-23 Borut Razem <borut.razem AT siol.net>
+
+	* support/sdcc_theme.pl: corect doubled </HEAD>
+
+2006-10-22 Borut Razem <borut.razem AT siol.net>
+
+	* support/sdcc_theme_navbar.html: deleted
+	* support/sdcc_theme.pl: don't use sdcc_theme_navbar.html, insert
+	  favicon to the html docummentation
+	* lib/doc-archive.mk: changed sdcc_theme.pl command line
+	* components/sdcc-web.mk: added
+	* Makefile: inluded components/sdcc-web.mk
+
+2006-10-18 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk: create .htaccess so that .html files
+	  are PHP processed
+	* support/sdcc_theme_navbar.html: include ../../left_menu.inc
+
+2006-09-05 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc-extra.mk: don't build sdcc-extra if cross compiling
+
+2006-08-31 Borut Razem <borut.razem AT siol.net>
+
+	* local/x86-linux1-i586-mingw32msvc.mk, local/x86-linux2-i586-mingw32msvc.mk:
+	  enabled ucsim cross compilation (removed --disable-ucsim)
+
+2006-08-12 Borut Razem <borut.razem AT siol.net>
+
+	* lib/src-archive.mk: use do-upload for snapshot and doc uploading
+	  to sdcc WEB
+	* lib/upload.mk: remove htdocs/* if rsync succeeded
+
+2006-08-09 Borut Razem <borut.razem AT siol.net>
+
+	* local/x86-linux2.mk, local/openpower-linux1.mk, local/amd64-linux1.mk,
+	  local/amd64-linux1, local/ucf-cf-alpha-linux1.mk: changed glibc version
+	  number from 2.2 to 2.3
+	* local/ppc-osx3.mk, local/sparc-solaris1.mk: removed (g)libc version number
+	* lib/variables.mk: default HOSTOS and TARGETOS are unknown-unknown-unknown
+
+2006-08-01 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.k, lib/doc-archive.mk, lib/src-archive.mk:
+	  changed package formats from *.tar.gz to *.tar.bz2
+	* components/sdcc-extra.mk: corrected configure source to sdcc-extra
+
+2006-07-28 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk: add doc/*.html to the doc archive
+
+2006-07-12 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk: copy the contents of doc directory
+
+2006-07-09 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk, lib/variables.mk: make
+	  ChangeLog heads available on the WEB
+	* local/amd64-linux1.mk: enable the pic16 regression tests
+
+2006-07-07 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc-extra.mk: added --host and --build options to
+	  configure, so that sdcc-extra can be cross-compiled
+	* components/sdcc.mk, lib/bootstrap.mk, lib/variables.mk: make
+	  regression test results available on the WEB
+	* lib/bootstrap.mk, lib/upload.mk: rules do_update and
+	  remove-old-versions moved to newly added upload.mk,
+	  remove-old-versions removes old versions in $(WEBREGTESTDIR)
+	* lib variables.mk: HTDOCDIR corrected to HTDOCSDIR
+	* Makefile: added include upload.mk
+
+2006-07-04 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc-extra.mk: accept TARGETXXX configure options
+
+2006-07-03 Borut Razem <borut.razem AT siol.net>
+
+	* local/ppc-osx3.mk: added
+	* sdcc-build-bootstrap.sh: Remove the stamp
+	* components/sdcc.mk: introduced TARGETCPPFLAGS configure option
+
+2006-06-30 Borut Razem <borut.razem AT siol.net>
+
+	* local/openpower-linux1.mk: added
+
+2006-06-18 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk, lib/doc-archive.mk, lib/fetch.mk,
+	  lib/src-archive.mk, components/sdcc.mk, components/sdcc-extra.mk,
+	  sdcc-build-bootstrap.sh:
+	  use common ORIG tree with VPATH functionality
+
+2006-06-17 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk: run configure from the current (SRC) directory
+	* lib/variables.mk: get current SVN release from
+	  sdcc-builder@shell.cf.sourceforge.net
+
+2006-06-15 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk, components/sdcc-extra.mk, lib/bootstrap.mk,
+	  lib/doc-archive.mk, lib/variables.mk: preparation for common ORIG tree
+
+2006-06-11 Borut Razem <borut.razem AT siol.net>
+
+	* lib/src-archive.mk, lib/variables.mk: introduced SNAPSHOTID
+	* lib/bootstrap.mk: introduced SNAPSHOTID; replaced '_' with '-' in the
+	  WIN32 setup name; introduced do-upload target
+	* lib/doc-archive.mk: temporary files moved from tmp to build directory,
+	  snapshot packages moved to ../snapshots/docs directory
+	* lib/fetch.mk: spaces replaced with a tab
+
+2006-05-18  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/src-archive.mk: added RELEASE to src-archives, extracted
+	from ChangeLog
+
+2006-05-17  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/variables.mk: added SDCCRELEASE, extracted from ChangeLog
+	* components/bootstrap.mk: added SDCCRELEASE to tarball names
+
+2006-05-09  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc-extra.mk (sdcc-extra): sdcc-extra now needs configuring
+
+2006-05-06 Borut Razem <borut.razem AT siol.net>
+
+	* lib/doc-archive.mk: get sdcc_theme_navbar.html from $(_DOC_ARCHIVE_SUPPORT_DIR)
+	* support/sdcc_theme.pl: added svn:executable property, ...
+	* support/sdcc_theme_navbar.html: added
+	* README: added desctiption of the tmp directory
+	* lib/bootstrap.mk, lib/doc-archive.mk, lib/src-archive.mk, lib/variables.mk:
+	  definition of BUILDDATE moved to variables.mk
+	* sdcc-build-bootstrap.sh: make $EXTRATARGETS after crontab-spawn
+
+2006-05-05 Borut Razem <borut.razem AT siol.net>
+
+	* Makefile: include lib/doc-archive.mk
+	* lib/doc-archive.mk, support/sdcc_theme.pl: added
+
+2006-05-02 Borut Razem <borut.razem AT siol.net>
+
+	* local/amd64-linux1.mk: added SDCCCONFIGUREFLAGS = --enable-doc
+	  to configure the doc Makefile and OPT_ENABLE_DOC = 1 to run the
+	  doc Makefile
+
+2006-05-01  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/bootstrap.mk (generate-setup): fixed another directory
+
+2006-04-29  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc.mk (sdcc-docs): fixed install directory for docs,
+	(sdcc-fromhost-install): fixed new install paths
+
+2006-04-28  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc.mk (sdcc-docs): create doc dir, it's no longer
+	created by 'make install' unless --enable-doc is configured
+	(install): use DESTDIR instead of tweaking
+	suffic, docdir and datadir
+	* lib/bootstrap (generate-setup): files are installed in
+	$(BUILDIR)/[prefix|datadir|docdir] =
+	$(HOME)/build/sdcc-build/build/i586-mingw32msvc/sdcc/sdcc/*
+	The first /sdcc/ is from BUILDDIR, the 2nd from [prefix|...].
+	* local/x86-linux1-i586-mingw32msvc.mk,
+	* local/x86-linux2-i586-mingw32msvc.mk,
+	* local/saturn.juju.net.nz-i386-mingw32msvc.mk: SDCCINSTALLFLAGS are
+	no longer needed to tweak install directories
+
+2006-04-24  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/sapphire-i586-mingw32msvc.mk,
+	  local/x86-linux1-i586-mingw32msvc.mk,
+	  local/x86-linux2-i586-mingw32msvc.mk,
+	  local/saturn.juju.net.nz-i386-mingw32msvc.mk: renamed
+	  --disable-device-lib-build in --disable-device-lib
+	* components/sdcc.mk: build of ucsim's sz80 is now enabled by default
+
+2006-04-21 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-build-bootstrap.sh, lib/fetch.mk, components/sdcc-extra.mk:
+	  use "svn export" instead "svn co" to save disk space.
+	  Thanks to Jim Paris.
+
+2006-04-20 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-build-bootstrap.sh, README,
+	  components/sdcc-extra.mk, components/sdcc.mk,
+	  lib/bootstrap.mk, lib/fetch.mk, lib/src-archive.mk, lib/variables.mk:
+	  nightly build migration from CVS to Subversion
+
+2006-01-28 Borut Razem <borut.razem AT siol.net>
+
+	* local/x86-linux1.mk, local/x86-linux1-i586-mingw32msvc.mk: added
+	* x86-linux2.cf.sourceforge.net-i586-mingw32msvc.mk,
+	  x86-linux2.cf.sourceforge.net.mk,
+	  usf-cf-x86-linux-2-i586-mingw32msvc.mk,
+	  usf-cf-x86-linux-2.cf.sourceforge.net-i586-mingw32msvc.mk,
+	  usf-cf-x86-linux-2.cf.sourceforge.net.mk,
+	  usf-cf-x86-linux-2.mk,
+	  usf-cf-x86-linux-1-i586-mingw32msvc.mk,
+	  usf-cf-x86-linux-1.mk: removed
+
+2005-11-24 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk: added SILENT=1 option
+
+2005-11-17 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk: itroduced SILENT option to make building of pic16
+	  libraries less verbose - used for nightly snapshot build
+
+2005-08-26 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk: added STRIP=$(TARGETSTRIP) to sdcc-targetos-install
+	  rule, so that the correct strip is used on sparc-solaris
+	* sdcc-build-bootstrap.sh: make it work on ppc-osx
+	* local/ppc-osx2.mk: added
+
+2005-08-23 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk: egrep on solaris doesn't understand -q option;
+	  stdout redirection to /dev/null is used instead
+
+2005-08-22 Borut Razem <borut.razem AT siol.net>
+
+	* local/sparc-solaris1.mk: use /usr/ccs/bin/strip instead the default
+	  GNU /usr/local/bin/strip, which has problems
+	* lib/cross.mk: define TRARGETSTRIP and TRAGETRANLIB only if not
+	  defined yet
+
+2005-08-18 Borut Razem <borut.razem AT siol.net>
+
+	* local/x86-linux2.mk, local/x86-linux2-i586-mingw32msvc.mk: added
+
+2005-08-16 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc-extra.mk, lib/fetch.mk:
+	  use bash instead sh: scripts are bash specific
+	* sparc-solaris1.mk: added local/sparc-solaris1.mk
+
+2005-08-15 Borut Razem <borut.razem AT siol.net>
+
+	* lib/variables.mk: extract the host name without domain to $(HOSTNAME)
+
+2005-08-08 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk: report the target OS
+
+2005-05-07  Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* lib/release.mk: updated for 2.5.0 release
+
+2004-10-28 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk: --include='*.exe' to rsync sdcc_yyyymmdd_setup.exe
+
+2004-10-17 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk, lib/variables.mk: cross compiling of WIN32 setup.exe
+	on Linux as a part of nightly build
+
+2004-10-09  Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* lib/bootstrap.mk: updated BOOTSTRAPFILTEREDLISTADMIN to point
+	to my address instead of Bernhard's
+
+2004-08-30  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc.mk (sdcc-regression): added hc08 to the regression
+	tests
+
+2004-02-22  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* sdcc-build/lib/variables.mk: fixed developername
+
+2004-02-20  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/src-archive.mk: finally removed $HOSTNAME from archive name
+
+2004-02-19  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/bootstrap.mk (generate-tarball): fixed `find` argument to
+	`recode` both *.txt and *.TXT files
+
+2004-02-11  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: added $EXTRATARGET to the list of
+	make targets; it will be used for target archive-src-trees
+
+2004-02-09  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* Makefile (build): removed finally archive-src-trees
+
+2004-02-07  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/src-archive.mk: changed file name from sdcc.src-$(HOSTNAME) to
+	sdcc-src-$(HOSTNAME)-$(BUILDDATE)
+	* lib/bootstrap.mk (crontab-spawn): removed target archive-src-trees,
+	from now on this will be done by only one host
+	* support/readme-snapshot.txt: updated link to sdcc-doc
+
+2004-01-21  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/ppc-osx2.cf.sourceforge.net.mk: added, SF keeps changing host names :-(
+
+2004-01-09  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/src-archive.mk: added HOSTNAME to src-archiv name
+
+2003-10-28  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/x86-linux2.cf.sourceforge.net-i586-mingw32msvc.mk: added
+	* local/x86-linux2.cf.sourceforge.net.mk: added
+	* sdcc-build-bootstrap.sh: fixed typo "flitered"; BUILDROOT can now be defined in enviroment
+
+2003-09-04  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* support/error-filter.sh: more tests need filter for integer overflow on host
+
+2003-09-03  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: cp log files from local hd to $HOME/build on nfs server
+
+2003-08-29  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: moved BUILDROOT to local harddisk
+	/var/tmp/`whoami`/build; nfs access was incredible slow, and we can
+	build now on all hosts at the same time!
+
+2003-08-28  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* support/error-filter.sh: added 2nd filter for integer overflow on host
+
+2003-08-22  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* support/error-filter.sh: added filter for integer overflow on host
+
+2003-08-07  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/usf-cf-x86-linux-2.mk: added
+	* local/usf-cf-x86-linux-2.cf.sourceforge.net.mk: added (complain to SF)
+
+2003-07-28  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/amd64-linux1.mk: added
+
+2003-07-18  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/bootstrap.mk: added *.TXT (old *.txt) to files, which need recoding
+
+2003-07-17  Bernhard Held <bernhard AT bernhardheld.de>
+
+	Replace cvs.sdcc.sourceforge.net:/cvsroot/sdcc by cvs.sourceforge.net:/cvsroot/sdcc
+	* sdcc-build-bootstrap.sh
+	* components/sdcc.mk
+	* components/sdcc-extra.mk
+	* lib/fetch.mk
+	* lib/bootstrap.mk: build own recode
+
+2003-07-16  Bernhard Held <bernhard AT bernhardheld.de>
+
+	switch to cvs access via ssh:
+	* sdcc-build-bootstrap.sh:
+	* lib/fetch.mk:
+	* components/sdcc-extra.mk:
+
+2003-07-14  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/fetch.mk: add "-z3" to cvs
+
+2003-06-17  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* support/error-filter.sh: filter "cvs [checkout aborted]:",
+	because of "cvs [checkout aborted]: could not find out home directory"
+
+2003-06-06  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/bootstrap.mk: stop sending logs to sdcc-buildlogs (nobody reads it, me included)
+	send only mail to sdcc-devel, if there's an error, otherwise send it to the Admin
+
+2003-05-13  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: removed "exec", so that cleanup() is finally called
+	* support/error-filter.sh: added escapes to []()
+
+2003-05-12  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: added lockfile mechanism
+
+2003-05-09  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/ucf-cf-ppc-macosx-2.mk: enable ucsim, it compiles cleanly with g++2
+
+2003-05-08  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* support/error-filter.sh: filter messages from CVS retries
+
+2003-05-07  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/ports.mk: don't include ports/z80.mk and ports/gbz80.mk.
+	This only disables the checkout of maccer, gbdk-lib and gbdk-support,
+	there was no further functionality.
+
+2003-05-06  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/fetch.mk: sdcc checkout with retry
+	* components/sdcc-extra: sdcc-extra checkout with retry
+	* components/sdcc.mk: removed MAKEJOBFLAGS for parallel build of regression tests;
+	needs more testing on CF (creating DIRs, timeouts).
+	Cleanup installing docs for mingw32
+
+2003-05-05  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: retry `CVS co` in case of failure
+	* lib/bootstrap.mk: added chmod to make sdcc-build-bootstrap.sh executable
+	* components/sdcc.mk: added MAKEJOBFLAGS for parallel build of regression tests
+
+2003-05-01  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/ucf-cf-ppc-macosx-2.mk: added
+
+2003-04-28  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/src-archive.mk: added directory sdcc to root of archive
+
+2003-04-24  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc.mk: removed "SDCCCONFIGUREFLAGS += --program-suffix=$(EXEEXTENSION)"
+	after introducing EXEEXT
+
+2003-04-23  Bernhard Held <bernhard AT bernhardheld.de>
+
+        * local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: added SDCCINSTALLFLAGS
+	for docdir
+	* components/sdcc.mk: use SDCCINSTALLFLAGS when installing
+
+2003-04-22  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: adapted to new configure
+
+2003-04-12  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc.mk: SDCC_DIR renamed to SDCC_HOME
+	remove share/sdcc for mingw32
+
+2003-04-01  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/bootstrap.mk: `mv sdcpp sdcpp.exe` seems to be no longer necessary
+
+2003-03-31  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* usf-cf-alpha-linux-1.mk, usf-cf-sparc-linux-1.mk,
+	usf-cf-x86-linux-1-i586-mingw32msvc.mk,
+	usf-cf-x86-linux-1.mk: added 'MAKEJOBFLAGS = "-j 2"' to exploit the
+	dual processors
+
+2003-03-27  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* support/error-filter.sh: suppress cvs lock messages
+	* components/sdcc.mk: --target not required for configure (even if
+	cross-compiling)
+
+2003-03-18  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* support/readme-snapshot.txt: fix links and added a link to online documentation
+	* support/error-filter.sh: yacc's warning is no longer filtered
+
+2003-03-11  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc.mk: add first 100 lines of sdcc's ChangeLog to snapshot
+
+2003-03-10  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/bootstrap.mk: first upload, then remove-old-versions, not vice versa
+
+2003-03-03  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/bootstrap.mk: put logs in $(STAGINGBASE), so that they survive sdcc-build-bootstrap.sh
+	* lib/variables.mk: put logs in $(STAGINGBASE), so that they survive sdcc-build-bootstrap.sh
+
+2003-02-27  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/variables.mk: fix availability of $(HOSTNAME) on several CF platforms
+
+2003-02-26  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* lib/bootstrap.mk: delete snapshots versions, if there are more than 7 files in a single directory
+	separate build.log files for different TARGETOS
+	* lib/variables.mk: separate build-noise.log files for different TARGETOS
+	* local/usf-cf-sparc-linux-1.mk: added
+	* local/usf-cf-alpha-linux-1.mk: added
+
+2003-02-24  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc.mk: added mcs51-stack-auto to the regression tests
+	* support/error-filter.sh: Removed several warnings, added 1 for mcs51-stack-auto
+	* lib/src-archive.mk: beautified
+
+2003-02-23  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* Makefile: include building of source archives
+	* components/sdcc-extra.mk: add sdcc-extra to the source archives
+	* components/sdcc.mk: add sdcc to the source archives
+	* lib/bootstrap.mk: include building of source archives
+	* lib/src-archive.mk: added
+
+2003-02-23  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* components/sdcc.mk: specify host, target and build for configure to avoid all warnings with autoconf 2.54
+
+2003-02-16  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/usf-cf-x86-linux-1-i586-mingw32msvc.mk: moved cross-tools to ~/local/
+
+2003-02-14  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/usf-cf-ppc-macosx-1.mk: --disbale-ucsim
+	* components/sdcc.mk: moved share/doc to share/sdcc/doc
+
+2003-02-13  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* local/usf-cf-ppc-macosx-1.mk: added
+	* components/sdcc.mk: regression test of gbz80 disabled because of (sim?) problems
+	* lib/cross.mk: don't touch TARGETCC and TARGETCXX, if it has already been set by local/*.mk
+
+2003-02-11  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* support/readme-snapshot.txt: new file; will be the only file in the
+	snapshot archives' share/doc
+	* components/sdcc.mk: new target sdcc-docs; it cleans the doc dir after
+	install and copies readme-snapshot.txt to this dir
+
+2003-02-08  Bernhard Held <bernhard AT bernhardheld.de>
+
+	* sdcc-build-bootstrap.sh: create directory $BUILDROOT
+	* check before each cvs co, if pserver passwd in ~/.cvspass; if not: login
+	* lib/bootstrap: include tidy-up-win32-release.sh; recode installed in ~/local

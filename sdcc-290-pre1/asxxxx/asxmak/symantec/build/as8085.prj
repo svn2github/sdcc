@@ -1,0 +1,26 @@
+82569
+C:\ASXXXX\ASXMAK\SYMANTEC\BUILD\as8085.prj
+as8085.OPN
+novcs
+as8085.DEF
+8
+950221008
+0 0 0 0 0 "..\..\..\ASXXSRC\ASDATA.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASEXPR.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASLEX.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASLIST.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASMAIN.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASOUT.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASSUBR.C"
+0 0 0 0 0 "..\..\..\ASXXSRC\ASSYM.C"
+0 0 0 0 0 "..\..\..\AS8085\I85EXT.C"
+0 0 0 0 0 "..\..\..\AS8085\I85MCH.C"
+0 0 0 0 0 "..\..\..\AS8085\I85PST.C"
+0 0 0 0 0 "as8085.DEF"
+0 -1 0 0 0 "F:\SC\INCLUDE\stdio.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\setjmp.h"
+0 -1 0 0 0 "..\..\..\asxxsrc\asxxxx.h"
+0 -1 0 0 0 "..\..\..\AS8085\i8085.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\string.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\alloc.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\stdlib.h"

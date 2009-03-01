@@ -1,0 +1,34 @@
+Notes
+
+Cross compiling
+---------------
+What is needed for cross compilation?
+1.  Ability to use the cross toolchain (gcc, ranlib, g++, strip)
+2.  Ability to pull the pre-built library from the native version.
+3.  Ability to run 'misc' translations, like perhaps converting line
+ends on the includes or documentation.
+4.  Extendability to other components, like gbdk.
+5.  Ability to convert the naming of exe's
+     o The mingw32 cc generates exes without the extension.
+
+Solutions:
+* All target specific data is set through a (host, target) specific
+makefile in local/host-target.mk.
+* Cross compiling will be marked by the makefile using the variable
+'CROSSCOMPILING'.
+* The toolchain will be marked using TOOLSPREFIX.  Each tool shall be
+formed using $(TOOLSPREFIX)$(TOOL), eg $(TOOLSPREFIX)gcc.  The host
+target will use a null prefix.
+* The CROSSCOMPILING flag will be used on the library build target to
+either build the library or pull it from the host version.  Assumes
+host is built.
+* All executables shall go into the bin directory, and shall be listed
+in the EXECUTABLES variable.  Each shall be name translated.  The rule
+is each file listed in EXECUTABLES will be removed from the build
+directory, then copied from the src directory with the extension
+EXEEXTENSION added.
+
+mingw32 cross compiling
+-----------------------
+Can do ucsim due to not being able to run the test program.  Ignore.
+

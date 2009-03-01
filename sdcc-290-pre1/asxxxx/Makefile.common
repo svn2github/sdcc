@@ -1,0 +1,5 @@
+CC = gcc
+CFLAGS = -Wall -ggdb
+CFLAGS += -I$(TOPDIR)/asxxsrc -I$(TOPDIR)/asxxmisc
+RANLIB = ranlib
+

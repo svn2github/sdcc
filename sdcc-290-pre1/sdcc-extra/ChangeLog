@@ -1,0 +1,70 @@
+2008-02-22 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrgb/main.c: fixed main.c:194: warning: pointer targets in passing
+	  argument 3 of 'accept' differ in signedness
+
+2008-02-21 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrgb/Makefile.in, Makefile.rules.in: added LDFLAGS
+	* emu/rrgb/csock.c: include unistd.h id Mac OS X (__APPLE__),
+	  fixed csock.c:113: warning: pointer targets in passing argument 3 of
+	  'accept' differ in signedness
+
+2006-07-09 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrgb/debugger.c, emu/rrgb/main.c, emu/rrgb/parse_map.c, emu/rrgb/z80.c:
+	  fixed compiler warnings
+
+2006-07-06 Borut Razem <borut.razem AT siol.net>
+
+	* configure.in, configure, emu/rrgb/Makefile.in: define STRIP at
+	  configure time
+
+2006-07-04 Borut Razem <borut.razem AT siol.net>
+
+	* configure.in, configure, Makefile.in, Makefile.rules.in,
+	  emu/Makefile.in, emu/rrgb/Makefile.in, emu/rrz80/Makefile.in,
+	  emu/rrz80/cpu/Makefile.in: configurable CC, CXX, CPPFLAGS,
+	  CFLAGS and CXXFLAGS
+
+2006-07-03 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrz80/cpu/z80.h: detect __BIG_ENDIAN__ if defined by preprocessor
+
+2006-05-18 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* ChangeLog: added Revision
+
+2006-05-09 Bernhard Held <bernhard AT bernhardheld.de>
+
+	* configure,
+	* configure.in: added to enable VPATH feature
+	* Makefile,
+	* emu/Makefile,
+	* emu/rrgb/Makefile,
+	* emu/rrz80/Makefile,
+	* emu/rrz80/cpu/Makefile: renamed to Makefile.in, added VPATH and top_srcdir
+	variables
+	* Makefile.rules: added distclean to remove files created by configure
+
+2006-04-24 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrgb/csock.c: replaced $Header$ with $Id$ svn keyword
+
+2005-08-27 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrgb/main.c: don't include getopt.h if __sun__ (sparc-solaris) or
+	  __APPLE__ (ppc-osx)
+
+2005-08-26 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrgb/Makefile: install --strip changed to 2 steps:
+	  install and strip, since the strip at /usr/ccs/bin should be used
+	  on solaris
+
+2005-08-20 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrgb/Makefile: link with libsocket in case of sparc-solaris
+	* emu/rrgb/main.c: don't include getopt.h if __sun__ (sparc-solaris)
+
+$Revision$

@@ -1,0 +1,14 @@
+# Makefile for Borlad C++
+
+PRJDIR          = ../../../..
+
+!include $(PRJDIR)/Bcc.inc
+
+OBJECTS         = tinitalk.obj
+
+TARGET          = tinitalk.exe
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+        $(CC) $(CFLAGS) -e$(TARGET) $(OBJECTS)

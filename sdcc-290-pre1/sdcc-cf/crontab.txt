@@ -1,0 +1,5 @@
+# amd64, i386, mingw, doc archive and src archive build on cf-x86
+00 03 * * * . $HOME/.bash_profile; { $HOME/build/sdcc-build-bootstrap.sh crontab-spawn build-doc-archive archive-src-trees build-sdcc-web; $HOME/build/sdcc-build-bootstrap.sh do-upload DCFHOST=cf-x86.ivorytower.norman.ok.us; } > $HOME/build/build-${HOSTNAME}.log 2>&1
+*/5 * * * * $HOME/bin/dcf.sh
+# MacOSX build on mirror-doors
+00 08 * * * . $HOME/.profile; { $HOME/build/sdcc-build-bootstrap.sh crontab-spawn; $HOME/build/sdcc-build-bootstrap.sh do-upload; } > $HOME/build/build-${HOSTNAME}.log 2>&1

@@ -1,0 +1,15 @@
+82569
+C:\ASXXXX\ASXMAK\SYMANTEC\BUILD\asxcnv.prj
+asxcnv.OPN
+novcs
+asxcnv.DEF
+8
+950221116
+0 0 0 0 0 "..\..\..\ASXXMISC\ASXCNV.C"
+0 0 0 0 0 "asxcnv.DEF"
+0 -1 0 0 0 "F:\SC\INCLUDE\stdio.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\string.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\setjmp.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\alloc.h"
+0 -1 0 0 0 "F:\SC\INCLUDE\stdlib.h"
+0 -1 0 0 0 "..\..\..\asxxsrc\asxxxx.h"
