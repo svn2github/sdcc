@@ -80,8 +80,7 @@ targets are no longer maintained. </p>
       <p><i><b>March 1st, 2009: SDCC 2.9.0 RC1 released.</b></i></p>
       <p>SDCC 2.9.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
 32 bit Windows and universal Mac OS X are available at:
-<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.9.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.9.0-rc1</a>
-and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+<a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
 <!-- END NEWS -->
 
       <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
