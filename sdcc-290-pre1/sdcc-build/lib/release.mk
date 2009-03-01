@@ -1,6 +1,0 @@
-# Tag in cvs for this release version
-RELEASEVERSIONTAG=sdcc-250
-# PENDING
-RELEASEVERSION=2.5.0
-# PENDING
-ISRELEASE=1

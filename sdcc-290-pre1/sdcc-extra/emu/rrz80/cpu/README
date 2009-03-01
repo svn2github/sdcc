@@ -1,9 +1,0 @@
-This is a simple encapsulation of the CPU core in SPECTEMU v0.95 by
-Miklos Szeredi <mszeredi@inf.bme.hu>.
-
-Functions:
-z80_init() - initial configuration
-z80_reset()
-z80_local_init()
-
-z80_step(tstates) - run the emulation for 'tstates' tstates.
