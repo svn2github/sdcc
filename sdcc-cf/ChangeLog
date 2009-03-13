@@ -1,3 +1,7 @@
+2009-03-13 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.gputils/Makefile: upgraded to gputils-0.13.7
+
 2009-02-08 Borut Razem <borut.razem AT siol.net>
 
 	* packages/build.mingw32/Makefile: updated to gcc-4.3.3
