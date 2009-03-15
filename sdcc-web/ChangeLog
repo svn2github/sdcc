@@ -1,3 +1,9 @@
+2009-03-15 Borut Razem <borut.razem AT siol.net>
+
+	* index.php:
+	  added News - sdcc 2.9.0 RC2, removed old sdcc 2.8.0 release news
+	* previous.php: added old news
+
 2009-03-01 Borut Razem <borut.razem AT siol.net>
 
 	* index.php: sdcc asxxxx under GPL, added News - sdcc 2.9.0 RC1

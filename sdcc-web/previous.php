@@ -18,6 +18,57 @@
 
       <h2>Previous NEWS</h2>
 
+      <p><i><b>March 30th, 2008: Small Device C Compiler 2.8.0 released.</b></i></p>
+      <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
+HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
+Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and
+universal Mac OS X are available.</p>
+      <p>SDCC 2.8.0 Feature List:</p>
+      <ul>
+        <li>added predefined preprocessor macro SDCC_REVISION holding SDCC's subversion revision number</li>
+        <li>added preprocessor macros SDCC_PARMS_IN_BANK1, SDCC_FLOAT_REENT and SDCC_INT_LONG_REENT</li>
+        <li>sdcpp synchronized with GNU cpp 4.2.3</li>
+        <li>multiple infiles for sdcclib</li>
+        <li>added option --acall-ajmp: replaces lcall/ljmp with acall/ajmp</li>
+        <li>added support for many PIC devices</li>
+        <li>sdcc executables on Mac OS X are built as universal binaries, so that they can run on both ppc and i386 Mac OS X</li>
+        <li>added --Werror command line option</li>
+        <li>Windows installer enhancements</li>
+        <li>generation of cdb debug info for as-z80 and link-z80</li>
+        <li>generation of cdb debug info for variables in pdata for mcs51</li>
+        <li>Tail call optimization for functions that take no parameters on Z80</li>
+        <li>Improved multiplication of unsigned chars on Z80</li>
+        <li>ISO/IEC 9899 standard compliant integer promotion of integer function arguments if --std-cXX is defined in command line</li>
+      </ul>
+      <p>Numerous feature requests and bug fixes are included as well.</p>
+      <p>You can download the release from:<br />
+      <a href="http://sourceforge.net/project/showfiles.php?group_id=599" target="_new">http://sourceforge.net/project/showfiles.php?group_id=599
+</a></p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
+      <p><i><b>March 23th, 2008: SDCC 2.8.0 RC2 released.</b></i></p>
+      <p>SDCC 2.8.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+32 bit Windows and universal Mac OS X are available at:
+<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.8.0-rc2">http://sdcc.sourceforge.net/snapshots/sdcc-2.8.0-rc2</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
+      <p><i><b>March 9th, 2008: SDCC 2.8.0 RC1 released.</b></i></p>
+      <p>SDCC 2.8.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+32 bit Windows and universal Mac OS X are available at:
+<a href="http://sdcc.sourceforge.net/snapshots/sdcc-2.8.0-rc1">http://sdcc.sourceforge.net/snapshots/sdcc-2.8.0-rc1</a>
+and <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
       <p><i><b>May 31st, 2007: Small Device C Compiler 2.7.0 released.</b></i></p>
       <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
 HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
