@@ -77,7 +77,7 @@ targets are no longer maintained. </p>
 <!-- START NEWS -->
       <h2><a name="News"></a>News</h2>
 
-      <p><i><b>March 22th, 2008: Small Device C Compiler 2.9.0 released.</b></i></p>
+      <p><i><b>March 22th, 2009: Small Device C Compiler 2.9.0 released.</b></i></p>
       <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
 HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
 Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and
