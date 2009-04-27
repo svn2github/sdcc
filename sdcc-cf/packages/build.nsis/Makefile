@@ -2,15 +2,18 @@ include ../packages.mk
 
 PACKAGE=nsis
 
-VERSION=$(shell expr download/$(PACKAGE)-*-src.tar.bz2 : 'download/$(PACKAGE)-\(.*\)-src.tar.bz2')
+VERSION=2.44
 
 .PHONY: all
 all: $(PACKAGE)-install.tag clean
 
-$(PACKAGE)-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/$(PACKAGE)/$(PACKAGE)-2.42-src.tar.bz2
-	wget -P download $(SF_REPOSITORY)/sourceforge/$(PACKAGE)/$(PACKAGE)-2.42.zip
-	touch $@
+download/$(PACKAGE)-$(VERSION)-src.tar.bz2:
+	wget -P download $(SF_REPOSITORY)/sourceforge/$(PACKAGE)/$(PACKAGE)-$(VERSION)-src.tar.bz2
+
+download/$(PACKAGE)-$(VERSION).zip:
+	wget -P download $(SF_REPOSITORY)/sourceforge/$(PACKAGE)/$(PACKAGE)-$(VERSION).zip
+
+$(PACKAGE)-download.tag: download/$(PACKAGE)-$(VERSION)-src.tar.bz2 download/$(PACKAGE)-$(VERSION).zip
 
 $(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
 	tar xjvf download/$(PACKAGE)-*-src.tar.bz2

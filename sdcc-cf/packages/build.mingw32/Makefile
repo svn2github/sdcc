@@ -1,5 +1,10 @@
 include ../packages.mk
 
+BINUTILS_VERSION=2.19
+MINGWRT_VERSION=3.15.2
+W32API_VERSION=3.13
+GCC_VERSION=4.4.0
+
 TARGET=i586-mingw32msvc
 PROGRAM_PREFIX=i586-mingw32msvc-
 PREFIX=$(LOCAL_DIR)/cross-tools
@@ -19,9 +24,10 @@ real-clean: binutils-realclean mingw-runtime-realclean w32api-realclean gcc-real
 	rm -rf $(PREFIX)
 
 
-binutils-download.tag:
-	wget -P download http://ftp.gnu.org/gnu/binutils/binutils-2.19.tar.bz2
-	touch $@
+download/binutils-$(BINUTILS_VERSION).tar.bz2:
+	wget -P download http://ftp.gnu.org/gnu/binutils/binutils-$(BINUTILS_VERSION).tar.bz2
+
+binutils-download.tag: download/binutils-$(BINUTILS_VERSION).tar.bz2
 
 binutils-unpack.tag: binutils-download.tag
 	tar -xjf download/binutils*.tar.bz2
@@ -57,9 +63,10 @@ binutils-realclean: binutils-clean
 
 
 
-mingw-runtime-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/mingwrt-3.15.1-mingw32-dev.tar.gz
-	touch $@
+download/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz:
+	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
+
+mingw-runtime-download.tag: download/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
 
 mingw-runtime-install.tag: mingw-runtime-download.tag
 	mkdir -p $(PREFIX)/$(TARGET)/include
@@ -76,9 +83,10 @@ mingw-runtime-realclean: mingw-runtime-clean
 	rm -f mingw-runtime-download.tag
 
 
-w32api-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/w32api-3.13-mingw32-dev.tar.gz
-	touch $@
+download/w32api-$(W32API_VERSION)-mingw32-dev.tar.gz:
+	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/w32api-$(W32API_VERSION)-mingw32-dev.tar.gz
+
+w32api-download.tag: download/w32api-$(W32API_VERSION)-mingw32-dev.tar.gz
 
 w32api-install.tag: w32api-download.tag
 	mkdir -p $(PREFIX)/$(TARGET)/include
@@ -94,11 +102,13 @@ w32api-clean:
 w32api-realclean: w32api-clean
 	rm -f w32api-download.tag
 
+download/gcc-core-$(GCC_VERSION).tar.bz2:
+	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-core-$(GCC_VERSION).tar.bz2
 
-gcc-download.tag:
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.3.3/gcc-core-4.3.3.tar.bz2
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-4.3.3/gcc-g++-4.3.3.tar.bz2
-	touch $@
+download/gcc-g++--$(GCC_VERSION).tar.bz2:
+	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-g++-$(GCC_VERSION).tar.bz2
+
+gcc-download.tag: download/gcc-core--$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_VERSION).tar.bz2
 
 gcc-unpack.tag: gcc-download.tag
 	for i in download/gcc*.tar.bz2; do \
@@ -114,7 +124,7 @@ gcc-configure.tag: gcc-unpack.tag
 	../$(shell find . -maxdepth 1 -type d -name "gcc*")/configure	\
 	  --target=$(TARGET) --program-prefix=$(PROGRAM_PREFIX) --prefix=$(PREFIX)  \
 	  --with-gcc --with-gnu-ld --with-gnu-as			\
-	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_PATH)             \
+	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR)              \
 	  --enable-threads   --disable-nls   --enable-languages=c,c++	\
 	  --disable-multilib --enable-win32-registry --disable-shared
 	touch $@
@@ -140,5 +150,3 @@ gcc-clean:
 	rm -f gcc-unpack.tag gcc-configure.tag gcc-make.tag
 
 .PHONY: gcc-realclean
-gcc-realclean: gcc-clean
-	rm -rf gcc-download.tag
