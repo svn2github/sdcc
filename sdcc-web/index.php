@@ -112,8 +112,7 @@ are the primary, so called "officially supported" platforms.</p>
 using <a href="http://www.gnu.org">gcc</a>. <b>Windows</b> release and snapshot builds are made by <b>cross compiling to mingw32</b> on a Linux host.</p>
       <p><b>Windows 9x/NT/2000/XP</b> users are
 recommended to use Cygwin (<a href="http://sources.redhat.com/cygwin/">http://sources.redhat.com/cygwin/</a>)
-or may try the unsupported Borland C compiler or Microsoft Visual C++ build
-scripts.</p>
+or may try the unsupported Microsoft Visual C++ build scripts.</p>
       <h2><a name="Download"></a>Downloading SDCC</h2>
       <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
 download page</a> for the last released version including source
