@@ -22,30 +22,28 @@ The 8051 Web Ring</a>
 <img src="images/x51chip.jpg" alt="webring icon" align="middle" height="63" width="81" /><br />
       <a href="http://www.willem.org/">PcGenerator</a>
 EpromProgrammer,Pic24C and more...<br />
-      <a href="http://www.needhams.com">Needham Electronics</a>
-- various device programmers, all sizes, all prices<a href="http://www.sensorella.da.ru"><br />
-Sensorella</a>
-- Dual 8051 board, ADCs and <i>lots</i> of I/O.<br />
+      <a href="http://www.needhams.com">Needham Electronics (dead link?)</a>
+- various device programmers, all sizes, all prices<br />
       <a href="http://www.systronix.com">Systronix</a>
 - Makers of the STEP and STEP+ for the DallasTINI board (a must see for embedded
 ethernet and Dallas 390's)<br />
       <a href="http://www.microcontroller.com">Microcontroller.com</a>
 - Micros and Embedded stuff. Not to be confused with
 microcontrollers.com (Arrow Electronics... what a joke!)<br />
-      <a href="http://www.aesmicro.com/8051.htm">AES Micro</a>
+      <a href="http://www.aesmicro.com/8051.htm">AES Micro (dead link?)</a>
 - nice but a bit expensive, may be just what some one needs though.<br />
       <a href="mailto:karl@turbobit.com">Karl
-Bongers</a> has a start on a <a href="http://www.turbobit.com/sdcc.html">Summary/FAQ</a>
+Bongers</a> has a start on a <a href="http://www.turbobit.com/sdcc.html">Summary/FAQ (unrelated link?)</a>
 about SDCC. (*highly* recommended reading!)<br />
       <a href="http://www.rabbitsemiconductor.com">Rabbit
 Semiconductor</a> - Z-World based boards, very small and lots of
 I/O. Kits available.<br />
-      <a href="http://www.flexgate.de">FlexGate</a>
+      <a href="http://www.flexgate.de">FlexGate (unrelated link?)</a>
 - '552 based boards with onboard ethernet. (German, not much on the web
 site yet)<br />
       <a href="http://mikrokontrolery.of.pl/">mikrokontrolery.of.pl</a>
 - wszystko o mikrokontrolerach jednoukładowych 8051 AVR PIC<br />
-      <a href="http://www.bhargavaz.net/main.html">www.bhargavaz.net</a>
+      <a href="http://www.bhargavaz.net/main.html">www.bhargavaz.net (unrelated link?)</a>
 -<br />
       <a href="http://www.dcd.pl/">Digital Core Design</a>&nbsp;-
 private Intellectual Property (IP) Core provider and System-on-Chip
@@ -54,7 +52,7 @@ private Intellectual Property (IP) Core provider and System-on-Chip
 Pros
 Corporation (&micro;CPros)</a> - Development Tools for All
 Major Microcontroller Architectures<br />
-      <a href="http://www.soudez.be/">www.soudez.be</a>
+      <a href="http://www.soudez.be/">www.soudez.be (unrelated link?)</a>
 -&nbsp;<span class="genmed"><font face="Arial, sans-serif"><span style="text-decoration: none;">DS89C450</span></font></span>
 system over USB port in a standard DIL40 package<br />
       <a href="http://www.proware.ind.br">www.proware.ind.br</a>
