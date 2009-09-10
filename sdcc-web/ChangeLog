@@ -1,7 +1,8 @@
 2009-09-10 Maarten Brock <sourceforge.brock AT dse.nl>
 
 	* links.php: removed sensorella as requested in webdoc 2854390,
-	  updated other apparent dead or unrelated links, to be removed later
+	  updated other apparent dead or unrelated links, to be removed later,
+	  added links for asxxxx, gputils and turbo51 (webdoc 2002629)
 
 2009-05-09 Borut Razem <borut.razem AT siol.net>
 

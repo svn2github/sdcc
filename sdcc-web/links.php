@@ -59,6 +59,13 @@ system over USB port in a standard DIL40 package<br />
 -&nbsp;<span class="genmed"><font face="Arial, sans-serif"><span style="text-decoration: none;">8051</span></font></span>
 development board with SDCC library code<br />
       </p>
+      <h2>Links - Compilers, Assemblers, Linkers</h2>
+      <p>
+      <a href="http://shop-pdp.kent.edu/ashtml/asxxxx.htm">ASxxxx Cross Assemblers</a> - assemblers and linkers from which SDCC derived
+asx8051, as-hc08, as-z80, aslink, link-hc80, link-z80<br />
+      <a href="http://gputils.sourceforge.net/">GPUTILS - GNU PIC Utilities</a> - assembler and linker SDCC needs for pic14 / pic16<br />
+      <a href="http://turbo51.com/">Turbo51 - Pascal compiler for 8051 microcontrollers</a> - If C is not your preferred language<br />
+      </p>
       <h2>Links - Code Sources</h2>
       <p>
       <a href="http://www.programmersheaven.com/zone5/cat27/index.htm">Programmers
