@@ -1,3 +1,8 @@
+2009-10-12 Borut Razem <borut.razem AT siol.net>
+
+	* lib/bootstrap.mk: search makensis in standard locations if
+	  not found in NSISBIN
+
 2008-02-08 Borut Razem <borut.razem AT siol.net>
 
 	* lib/bootstrap.mk: add COPYING3.txt to win32 setup package

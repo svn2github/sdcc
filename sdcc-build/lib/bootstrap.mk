@@ -81,7 +81,8 @@ ifeq ($(CROSSCOMPILING), 1)
 	cp $(ORIGDIR)/sdcc/support/scripts/sdcc.nsi $(BUILDDIR)$(PREFIX)
 	cp $(ORIGDIR)/sdcc/support/scripts/sdcc.ico $(BUILDDIR)$(PREFIX)
 	-cd $(BUILDDIR)$(PREFIX); \
-	  $(NSISBIN)/makensis -DVER_MAJOR=$(SDCC_VER_MAJOR) -DVER_MINOR=$(SDCC_VER_MINOR) -DVER_REVISION=$(SDCC_VER_DEVEL) -DVER_BUILD=$(SDCC_REVISION) sdcc.nsi;
+          if test -x $(NSISBIN)/makensis; then NSIS=$(NSISBIN)/makensis; else NSIS=makensis; fi; \
+          $(NSIS) -DVER_MAJOR=$(SDCC_VER_MAJOR) -DVER_MINOR=$(SDCC_VER_MINOR) -DVER_REVISION=$(SDCC_VER_DEVEL) -DVER_BUILD=$(SDCC_REVISION) sdcc.nsi;
 	mv $(BUILDDIR)$(PREFIX)/setup.exe $(SETUPNAME)
 endif
 
