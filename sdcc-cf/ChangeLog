@@ -1,3 +1,13 @@
+2009-10-14 Borut Razem <borut.razem AT siol.net>
+
+	* bin/rcf.sh: introduced bandwidth limit (--bwlimit) option for rsync
+	* .sdcc_builder/profile: changed perl version from 5.8.8 to 5.10.0
+	* crontab.txt: dont' ecplicitely define DCFHOST ip host name
+	* packages/build.mingw32/Makefile: updated to gcc 4.4.1,
+	  binutils 2.19.1, migwrt 3.16
+	* packages/build.gmp_mpfr/Makefile: updated to gmp 4.2.4, mpfr 2.3.2
+	* packages/build.nsis/Makefile: updated to NSIS 2.45
+
 2009-04-27 Borut Razem <borut.razem AT siol.net>
 
 	* packages/build.mingw32/Makefilei: updated to gcc 4.4.0

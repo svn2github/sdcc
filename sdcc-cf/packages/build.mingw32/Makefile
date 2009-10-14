@@ -1,9 +1,9 @@
 include ../packages.mk
 
-BINUTILS_VERSION=2.19
-MINGWRT_VERSION=3.15.2
+BINUTILS_VERSION=2.19.1
+MINGWRT_VERSION=3.16
 W32API_VERSION=3.13
-GCC_VERSION=4.4.0
+GCC_VERSION=4.4.1
 
 TARGET=i586-mingw32msvc
 PROGRAM_PREFIX=i586-mingw32msvc-
@@ -105,10 +105,10 @@ w32api-realclean: w32api-clean
 download/gcc-core-$(GCC_VERSION).tar.bz2:
 	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-core-$(GCC_VERSION).tar.bz2
 
-download/gcc-g++--$(GCC_VERSION).tar.bz2:
+download/gcc-g++-$(GCC_VERSION).tar.bz2:
 	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-g++-$(GCC_VERSION).tar.bz2
 
-gcc-download.tag: download/gcc-core--$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_VERSION).tar.bz2
+gcc-download.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_VERSION).tar.bz2
 
 gcc-unpack.tag: gcc-download.tag
 	for i in download/gcc*.tar.bz2; do \

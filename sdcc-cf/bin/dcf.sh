@@ -2,7 +2,7 @@
 
 # dcf.sh - Distributed Compile Farm Mediator
 #
-# Copyright (c) 2007-2008 Borut Razem
+# Copyright (c) 2007-2009 Borut Razem
 #
 # This file is part of sdcc.
 #
@@ -26,6 +26,7 @@
 #  borut.razem@siol.net
 
 LOG_LINES=1000
+BWLIMIT=7	# bandwith limit for rsync
 
 ETC_DIR=$HOME/etc
 LOG_DIR=$HOME/log
@@ -130,6 +131,8 @@ cleanup ()
 
   lockfile -r 0 $DCF_LOCK || exit 1
 
+  test "$BWLIMIT" != "" && RSYNC_OPTS="$RSYNC_OPTS --bwlimit=$BWLIMIT"
+
   for builder in $BUILDER_LIST
   do
     export builder
@@ -144,7 +147,7 @@ cleanup ()
           list_files $FILE_LIST
 
           echo "=== rsyncing:"
-          rsync --relative --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/ 2>&1 | grep -v -e "skipping directory"
+          rsync $RSYNC_OPTS --relative --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/ 2>&1 | grep -v -e "skipping directory"
 
           echo "=== removing:"
           rm_list $FILE_LIST

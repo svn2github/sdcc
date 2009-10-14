@@ -2,7 +2,7 @@ include ../packages.mk
 
 PACKAGE=nsis
 
-VERSION=2.44
+VERSION=2.45
 
 .PHONY: all
 all: $(PACKAGE)-install.tag clean
@@ -21,7 +21,7 @@ $(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
 
 $(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
 	cd $(PACKAGE)-$(VERSION)-src && \
-	scons PREFIX=$(LOCAL_DIR) SKIPSTUBS=all SKIPPLUGINS=all SKIPUTILS=all SKIPMISC=all VERSION=$(VERSION)
+	scons PREFIX=$(LOCAL_DIR) SKIPSTUBS=all SKIPPLUGINS=all SKIPUTILS=all SKIPMISC=all NSIS_CONFIG_CONST_DATA=no VERSION=$(VERSION) install-compiler
 	touch $@
 
 $(PACKAGE)-install.tag: $(PACKAGE)-configure.tag

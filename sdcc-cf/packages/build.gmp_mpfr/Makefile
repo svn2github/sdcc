@@ -14,7 +14,6 @@ clean: gmp-clean mpfr-clean
 
 
 gmp-download.tag:
-	#wget -P download ftp://gcc.gnu.org/pub/gcc/infrastructure/gmp-4.2.1.tar.bz2
 	wget -P download ftp://ftp.gnu.org/gnu/gmp/gmp-4.2.4.tar.bz2
 	touch $@
 
@@ -41,7 +40,7 @@ gmp-clean:
 
 	
 mpfr-download.tag:
-	wget -P download http://www.mpfr.org/mpfr-current/mpfr-2.3.2.tar.bz2
+	wget -P download http://www.mpfr.org/mpfr-current/mpfr-2.4.1.tar.bz2
 	touch $@
 
 mpfr-unpack.tag: mpfr-download.tag
