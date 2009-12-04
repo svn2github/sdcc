@@ -1,5 +1,5 @@
-# File to log all main make output to
-BOOTSTRAPLOG=$(STAGINGBASE)/build.$(TARGETOS).log
+## File to log all main make output to
+#BOOTSTRAPLOG=$(STAGINGBASE)/build.$(TARGETOS).log
 
 REGTESTBASE = regression_test_results
 
@@ -45,8 +45,10 @@ per-target-clean:
 	rm -rf $(SRCDIR)
 
 logged-build:
-	echo "--- Building $(TARGETOS) ---" | tee $(BOOTSTRAPLOG)
-	-$(MAKE) -k $(MAKESILENTFLAG) build 2>&1 | tee -a $(BOOTSTRAPLOG)
+	#echo "--- Building $(TARGETOS) ---" | tee $(BOOTSTRAPLOG)
+	#-$(MAKE) -k $(MAKESILENTFLAG) build 2>&1 | tee -a $(BOOTSTRAPLOG)
+	echo "--- Building $(TARGETOS) ---"
+	-$(MAKE) -k $(MAKESILENTFLAG) build
 
 generate-packages: copy-extra-bins generate-tarball generate-setup
 
