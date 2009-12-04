@@ -10,7 +10,6 @@ BUILDROOT=$HOME/build
 # SVN sdcc-build repository
 SVNROOT=https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk
 
-HOMEBUILD=$HOME/build
 BUILDDATE=$(date +%Y%m%d)
 
 # A lockfile ensures, that the cronjobs of the different hosts don't overlap.
@@ -93,9 +92,5 @@ svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
 # And spawn onto the actual build
 cd $BUILDROOT/sdcc-build
 make $*
-
-# cp log files from local hd to $HOMEBUILD on nfs server
-test $BUILDROOT != $HOMEBUILD && \
-  cp -p ../*.log ../*.filtered $HOMEBUILD/
 
 cleanup

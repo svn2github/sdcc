@@ -2,6 +2,8 @@
 
 	* lib/send-mail.mk, lib/bootstrap.mk:
 	  removed per target logging, send-mail target is noop
+	* sdcc-build-bootstrap.sh:
+	  removed HOMEBUILD since it is the same as BUILDROOT
 
 2009-10-12 Borut Razem <borut.razem AT siol.net>
 
