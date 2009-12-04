@@ -42,7 +42,6 @@ SRCDIR = $(TOPDIR)/src
 ORIGDIR = $(HOME)/build/sdcc-build/orig
 BUILDDIR = $(TOPDIR)/build/$(TARGET_PLATFORM)/sdcc
 BINDIR = $(BUILDDIR)/bin
-NOISELOG = $(STAGINGBASE)/build-noise.$(TARGET_PLATFORM).log
 STAGINGBASE = $(TOPDIR)/..
 HTDOCSDIR = $(STAGINGBASE)/htdocs
 SNAPSHOTDIR = $(HTDOCSDIR)/snapshots
