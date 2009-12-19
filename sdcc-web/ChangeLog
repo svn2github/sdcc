@@ -1,3 +1,11 @@
+2009-12-19 Borut Razem <borut.razem AT siol.net>
+
+	* images/18dot5a.gif, snap.php:
+	  added icon a bue star icon (18dot5a.gif),
+	  downloaded from http://bibcyt.ucla.edu.ve/alexandr/ICONOS/,
+	  I can't find the original icon archive any more:-(,
+	  ChangeLog icon changed to 18dot5a.gif
+
 2009-11-03 Maarten Brock <sourceforge.brock AT dse.nl>
 
 	* left_menu.inc: updated link to the forum

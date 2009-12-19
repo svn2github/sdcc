@@ -90,7 +90,7 @@ function display_files($dir, $cldir, $rtdir, $subdir)
       $clpath = $cldir . '/changelog-head-' . file_name_to_revision($file_name[$i]) . '.txt';
       if (is_file($clpath)) {
         $clpathp = preg_replace("/\s/", "%20", $clpath);
-        $clIcon = '18dot2a.gif';
+        $clIcon = '18dot5a.gif';
         $cl = "<a href=\"$clpathp\"><img src=\"/images/$clIcon\" border=\"0\" alt=\"ChangeLog Head\" /></a>";
       }
     }
