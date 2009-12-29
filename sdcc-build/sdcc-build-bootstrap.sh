@@ -58,7 +58,7 @@ do_lock ()
     then
       sleep $SLEEP
       find $LOCKFILE -mmin +$MAXMINUTES \
-           -exec echo $MSGPREFIX lock from \"$(cat $LOCKFILE$)\" expired \; \
+           -exec echo $MSGPREFIX lock from \"$(cat $LOCKFILE)\" expired \; \
            -exec rm -f {} \;
     else
       echo $MYID > $LOCKFILE

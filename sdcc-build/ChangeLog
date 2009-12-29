@@ -1,3 +1,7 @@
+2009-12-29 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-build-bootstrap.sh: removed superfluous $
+
 2009-12-04 Borut Razem <borut.razem AT siol.net>
 
 	* lib/send-mail.mk, lib/bootstrap.mk:
@@ -12,7 +16,7 @@
 	* lib/bootstrap.mk: search makensis in standard locations if
 	  not found in NSISBIN
 
-2008-02-08 Borut Razem <borut.razem AT siol.net>
+2009-02-08 Borut Razem <borut.razem AT siol.net>
 
 	* lib/bootstrap.mk: add COPYING3.txt to win32 setup package
 
