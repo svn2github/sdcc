@@ -57,13 +57,13 @@ doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.
 	mkdir -p $(_DOC_ARCHIVE_TARBALL_DIR)
 	rm -rf $(_DOC_ARCHIVE_BUILDDIR)
 	mkdir -p $(_DOC_ARCHIVE_BUILDDIR)/doc/ucsim
-	mkdir -p $(_DOC_ARCHIVE_BUILDDIR)/doc/as
+	mkdir -p $(_DOC_ARCHIVE_BUILDDIR)/doc/sdas
 	# copy to build directory
 	cd $(_DOC_ARCHIVE_SRC_DIR); cp -rpf *.txt *.html *.pdf $(_DOC_ARCHIVE_BUILDDIR)/doc
 	cd $(_DOC_ARCHIVE_ORIG_DIR); \
 	cp -rpf doc/z80 $(_DOC_ARCHIVE_BUILDDIR)/doc; \
 	cp -rpf doc/avr $(_DOC_ARCHIVE_BUILDDIR)/doc; \
-	cp -rpf as/doc/* $(_DOC_ARCHIVE_BUILDDIR)/doc/as/; \
+	cp -rpf sdas/doc/* $(_DOC_ARCHIVE_BUILDDIR)/doc/sdas/; \
 	cp -pf doc/*.txt doc/*.html $(_DOC_ARCHIVE_BUILDDIR)/doc; \
 	cp -pf ChangeLog $(_DOC_ARCHIVE_BUILDDIR)/doc/ChangeLog.txt
 	cd $(_DOC_ARCHIVE_ORIG_DIR)/sim/ucsim/doc; cp -rpf *.html *.jpg *.gif *.fig $(_DOC_ARCHIVE_BUILDDIR)/doc/ucsim/
