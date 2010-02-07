@@ -2,7 +2,7 @@ include ../packages.mk
 
 PACKAGE=nsis
 
-VERSION=2.45
+VERSION=2.46
 
 .PHONY: all
 all: $(PACKAGE)-install.tag clean
