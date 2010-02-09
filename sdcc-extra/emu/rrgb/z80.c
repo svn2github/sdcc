@@ -140,7 +140,7 @@ int mainloop(int flags)
 		switch (op) {
 #include "z80ops.c"
 		default:
-			printf("\nrrgb: warning - invalid opcode near %u.\n", pc);
+			printf("\nrrgb: warning - invalid opcode %02x at %04x.\n", op, pc - 1);
 			enterDebugger(&regs);
 			break;
 		}

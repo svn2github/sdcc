@@ -1,3 +1,9 @@
+2010-02-09 Borut Razem <borut.razem AT siol.net>
+
+	* z80ops.c: enabled opcode 0xfb - instruction ei
+	* z80.c: report the exact address and value of invalid/unknown opcode
+	* debugger.c: fixed dump command - displaying ASCII values
+
 0.1 (980321)
 ------------
 

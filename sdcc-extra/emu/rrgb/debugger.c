@@ -186,7 +186,7 @@ int enterDebugger( pmregs regs )
 						
 					if (dumpCount == 16) {
 						printf("  ");
-						for (i=-16; i<0; i++) {
+						for (i=16; i>0; i--) {
 							if (isprint(mem[start-i])) {
 								printf("%c", mem[start-i]);
 							}

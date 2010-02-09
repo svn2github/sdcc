@@ -1276,12 +1276,10 @@ instr(0xfa,16);			/* Old JP M - new LD A,(nnnn) */
    else pc+=2; */
 endinstr;
 
-#ifdef INCLUDE_UNIMP
 instr(0xfb,4);
    iff1=iff2=1;
    intsample=0;
 endinstr;
-#endif
 				/* Old CALL M */
 /*instr(0xfc,10);	
    if(f&0x80)call;
