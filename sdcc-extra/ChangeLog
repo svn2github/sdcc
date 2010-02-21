@@ -1,3 +1,13 @@
+2010-02-21 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrgb/parse_map.c: fixed bug #2956037:
+	  rrgb crashes if wrong map file format is supplied
+
+2010-02-09 Borut Razem <borut.razem AT siol.net>
+	* z80ops.c: enabled opcode 0xfb - instruction ei
+	* z80.c: report the exact address and value of invalid opcode
+	* debugger.c: fixed dump command - displaying ASCII values
+
 2008-02-22 Borut Razem <borut.razem AT siol.net>
 
 	* emu/rrgb/main.c: fixed main.c:194: warning: pointer targets in passing
