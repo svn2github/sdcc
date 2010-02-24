@@ -1,3 +1,7 @@
+2010-02-24 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-build/lib/bootstrap.mk: convert as2gbmap.py to an executable
+
 2010-01-16 Borut Razem <borut.razem AT siol.net>
 
 	* sdcc-build/lib/bootstrap.mk, sdcc-build/lib/doc-archive.mk:

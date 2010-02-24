@@ -1,6 +1,3 @@
-## File to log all main make output to
-#BOOTSTRAPLOG=$(STAGINGBASE)/build.$(TARGETOS).log
-
 REGTESTBASE = regression_test_results
 
 # Name of the tarball for this target
@@ -45,8 +42,6 @@ per-target-clean:
 	rm -rf $(SRCDIR)
 
 logged-build:
-	#echo "--- Building $(TARGETOS) ---" | tee $(BOOTSTRAPLOG)
-	#-$(MAKE) -k $(MAKESILENTFLAG) build 2>&1 | tee -a $(BOOTSTRAPLOG)
 	echo "--- Building $(TARGETOS) ---"
 	-$(MAKE) -k $(MAKESILENTFLAG) build
 
@@ -54,7 +49,17 @@ generate-packages: copy-extra-bins generate-tarball generate-setup
 
 copy-extra-bins:
 ifeq ($(CROSSCOMPILING), 1)
+# Windows build:
+# include readline5.dll in the package
 	cp $(HOME)/local-$(HOSTNAME)/cross-tools/i586-mingw32msvc/dll/readline5.dll $(BUILDDIR)$(PREFIX)/bin
+# convert as2gbmap.py to a batch file in bin directory
+	echo '@setlocal enabledelayedexpansion && python -x "%~f0" %* & exit /b !ERRORLEVEL!' | \
+	  cat - $(ORIGDIR)/sdcc/support/scripts/as2gbmap.py | \
+	  unix2dos > $(BUILDDIR)$(PREFIX)/bin/as2gbmap.cmd
+else
+# convert as2gbmap.py to an executable file in bin directory
+	cp $(ORIGDIR)/sdcc/support/scripts/as2gbmap.py $(BUILDDIR)$(PREFIX)/bin/as2gbmap && \
+	  chmod +x $(BUILDDIR)$(PREFIX)/bin/as2gbmap
 endif
 
 generate-tarball:
