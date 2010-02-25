@@ -54,12 +54,9 @@ ifeq ($(CROSSCOMPILING), 1)
 	cp $(HOME)/local-$(HOSTNAME)/cross-tools/i586-mingw32msvc/dll/readline5.dll $(BUILDDIR)$(PREFIX)/bin
 # convert as2gbmap.py to a batch file in bin directory
 	echo '@setlocal enabledelayedexpansion && python -x "%~f0" %* & exit /b !ERRORLEVEL!' | \
-	  cat - $(ORIGDIR)/sdcc/support/scripts/as2gbmap.py | \
-	  unix2dos > $(BUILDDIR)$(PREFIX)/bin/as2gbmap.cmd
-else
-# convert as2gbmap.py to an executable file in bin directory
-	cp $(ORIGDIR)/sdcc/support/scripts/as2gbmap.py $(BUILDDIR)$(PREFIX)/bin/as2gbmap && \
-	  chmod +x $(BUILDDIR)$(PREFIX)/bin/as2gbmap
+	  cat - $(BUILDDIR)$(PREFIX)/bin/as2gbmap | \
+	  unix2dos > $(BUILDDIR)$(PREFIX)/bin/as2gbmap.cmd && \
+	  rm $(BUILDDIR)$(PREFIX)/bin/as2gbmap
 endif
 
 generate-tarball:
