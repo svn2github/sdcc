@@ -1,6 +1,6 @@
 include ../packages.mk
 
-VERSION=$(shell expr download/wget-*.tar.gz : 'download/wget-\(.*\).tar.gz')
+VERSION=$(shell expr download/wget-*.tar.bz2 : 'download/wget-\(.*\).tar.bz2')
 
 WGET_DIR=wget-$(VERSION)
 
@@ -8,11 +8,11 @@ WGET_DIR=wget-$(VERSION)
 all: wget-install.tag clean
 
 wget-download.tag:
-	wget -P download ftp://mirrors.kernel.org/gnu/wget/wget-1.10.2.tar.gz
+	wget -P download ftp://mirrors.kernel.org/gnu/wget/wget-1.12.tar.bz2
 	touch $@
 
 wget-unpack.tag: wget-download.tag
-	tar xzvf download/$(WGET_DIR).tar.gz
+	tar xjvf download/$(WGET_DIR).tar.bz2
 	touch $@
 
 wget-configure.tag: wget-unpack.tag

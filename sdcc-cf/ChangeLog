@@ -1,3 +1,7 @@
+2010-03-21 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.wget/Makefilei: updated to wget 1.12
+
 2010-02-24 Borut Razem <borut.razem AT siol.net>
 
 	* packages/build.mingw32/Makefilei: updated to gcc 4.4.3
