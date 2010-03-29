@@ -8,7 +8,7 @@ _FETCH_DOER = mkdir -p $(STAMPDIR); \
 	rm -f $(STAMPDIR)/$(_FETCH_TREE).*-fetched; \
 	rm -rf $(ORIGDIR)/$(_FETCH_TREE); \
 	cd $(ORIGDIR); \
-	if [ "$(ISRELEASE)" == "true" ]; \
+	if [ "$(ISRELEASE)" = "true" ]; \
 	then \
 	  svn $(SVNFLAGS) export https://sdcc.svn.sourceforge.net/svnroot/sdcc/tags/$(SVNTAG)/$(_FETCH_TREE) $(_FETCH_TREE) && touch $@; \
 	else \

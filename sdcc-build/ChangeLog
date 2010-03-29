@@ -1,5 +1,10 @@
 2010-02-25 Borut Razem <borut.razem AT siol.net>
 
+	* sdcc-build-bootstrap.sh, lib/fetch.mk:
+	  adopted for /bin/sh (Bourne shell)
+
+2010-02-25 Borut Razem <borut.razem AT siol.net>
+
 	* sdcc-build/lib/bootstrap.mk:
 	  convert as2gbmap to a Windowd batch script if mingw crosscompiling
 

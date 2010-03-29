@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Simple shell script that knows enough to download the sdcc build scripts
 # and start them running.
@@ -38,7 +38,7 @@ ls_l_full_time ()
 {
   # test if ls -l --full-time is supported
   RES=$(ls -l --full-time $1 2>&1)
-  if test $? == 0; then
+  if test $? = 0; then
     # ls -l --full-time supported: echo the result
     echo "$RES"
   else
