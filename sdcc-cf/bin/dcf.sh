@@ -2,7 +2,7 @@
 
 # dcf.sh - Distributed Compile Farm Mediator
 #
-# Copyright (c) 2007-2009 Borut Razem
+# Copyright (c) 2007-2010 Borut Razem
 #
 # This file is part of sdcc.
 #
@@ -41,10 +41,6 @@ mkdir -p $LOG_DIR $LOCK_DIR
 WEBHOST=web.sourceforge.net
 WEBUSER=sdcc-builder,sdcc
 WEBHTDOCSDIR=/home/groups/s/sd/sdcc/htdocs
-
-WEBSNAPSHOTDIR=$WEBHTDOCSDIR/snapshots
-WEBREGTESTDIR=$WEBHTDOCSDIR/regression_test_results
-WEBCHANGELOGDIR=$WEBHTDOCSDIR/changelog_heads
 
 
 # remove files & directories specified in arguments

@@ -1,3 +1,11 @@
+2010-04-01 Borut Razem <borut.razem AT siol.net>
+
+	* .sdcc_builder/profile:
+	  export HOSTNAME
+	* bin/dcf.sh:
+	  removed definition of unneeded env variables WEBSNAPSHOTDIR
+	  WEBREGTESTDIR and WEBCHANGELOGDIR
+
 2010-03-29 Borut Razem <borut.razem AT siol.net>
 
 	* packages/build.rsync: added
@@ -8,7 +16,7 @@
 
 2010-02-24 Borut Razem <borut.razem AT siol.net>
 
-	* packages/build.mingw32/Makefilei: updated to gcc 4.4.3
+	* packages/build.mingw32/Makefile: updated to gcc 4.4.3
 	  binutils 2.20, migwrt 3.16, w32api 3.14
 
 2010-02-07 Borut Razem <borut.razem AT siol.net>

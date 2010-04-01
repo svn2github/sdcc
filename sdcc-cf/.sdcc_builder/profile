@@ -1,7 +1,7 @@
 # sdcc-builder profile
 
 # hoat name without domain
-HOSTNAME=$(if test $(expr $(hostname) : '.*\.') != '0'; then expr $(hostname) : '\([^.]*\).'; else echo $(hostname); fi)
+export HOSTNAME=$(if test $(expr $(hostname) : '.*\.') != '0'; then expr $(hostname) : '\([^.]*\).'; else echo $(hostname); fi)
 
 # this for svn
 export EDITOR=vi
