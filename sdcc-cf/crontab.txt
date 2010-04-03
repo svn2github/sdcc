@@ -3,3 +3,6 @@
 */5 * * * * $HOME/bin/dcf.sh
 # MacOSX build on mirror-doors
 00 08 * * * . $HOME/.profile; { $HOME/build/sdcc-build-bootstrap.sh crontab-spawn; $HOME/build/sdcc-build-bootstrap.sh do-upload; } > $HOME/build/build-${HOSTNAME}.log 2>&1
+# NetBSD on netbsd-i386.neurotica.com
+00 03 * * * . $HOME/.profile; { $HOME/build/sdcc-build-bootstrap.sh crontab-spawn; $HOME/build/sdcc-build-bootstrap.sh do-upload; } > $HOME/build/build-${HOSTNAME}.log 2>&1
+

@@ -1,2 +1,7 @@
 mirror-doors
 cf-x86
+openbsd-i386
+solaris-x86
+dev
+freebsd-i386
+netbsd-i386

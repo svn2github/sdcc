@@ -1,3 +1,8 @@
+2010-04-03 Borut Razem <borut.razem AT siol.net>
+
+	* crontab.txt, sdcc-cf/etc/dcf_list:
+	  added NetBSD on netbsd-i386.neurotica.com
+
 2010-04-01 Borut Razem <borut.razem AT siol.net>
 
 	* .sdcc_builder/profile:
