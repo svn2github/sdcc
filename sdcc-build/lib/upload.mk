@@ -13,8 +13,8 @@ do-upload:
 	# make all files writable and searchable by group members on the destination
 	# and remove them from source
 	cd $(HTDOCSDIR); \
-	DIR_LIST=$$(find * -type d -print 2>/dev/null); \
-	FILE_LIST=$$(find * -type f -print 2>/dev/null); \
+	DIR_LIST=`find * -type d -print 2>/dev/null`; \
+	FILE_LIST=`find * -type f -print 2>/dev/null`; \
 	if test -n "$$FILE_LIST"; \
 	then \
 	  rsync --relative --include='*.exe' -e ssh --size-only $$FILE_LIST $(_DCFSNAPSHOTDEST) && \

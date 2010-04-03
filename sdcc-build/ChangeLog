@@ -1,7 +1,9 @@
 2010-04-03 Borut Razem <borut.razem AT siol.net>
 
-	* local/netbsd-i386.mk: added
+	* local/netbsd-i386.mk, local/dev.mk, local/solaris-x86.mk: added
 	* lib/fetch.mk: adde quotes to test -z argument
+	* lib/upload.mk: use `` instead $():
+	  solaris make make doesn't understand $()
 
 2010-02-29 Borut Razem <borut.razem AT siol.net>
 
