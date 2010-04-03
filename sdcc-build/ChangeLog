@@ -1,4 +1,8 @@
-2010-02-25 Borut Razem <borut.razem AT siol.net>
+2010-04-03 Borut Razem <borut.razem AT siol.net>
+
+	* local/netbsd-i386.mk: added
+
+2010-02-29 Borut Razem <borut.razem AT siol.net>
 
 	* sdcc-build-bootstrap.sh, lib/fetch.mk:
 	  adopted for /bin/sh (Bourne shell)
