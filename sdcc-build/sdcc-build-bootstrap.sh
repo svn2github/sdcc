@@ -5,12 +5,12 @@
 
 BUILDROOT=$HOME/build
 #test -z $BUILDROOT && \
-#  BUILDROOT=/var/tmp/$(whoami)/build
+#  BUILDROOT=/var/tmp/`whoami`/build
 
 # SVN sdcc-build repository
 SVNROOT=https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk
 
-BUILDDATE=$(date +%Y%m%d)
+BUILDDATE=`date +%Y%m%d`
 
 # A lockfile ensures, that the cronjobs of the different hosts don't overlap.
 
@@ -37,7 +37,7 @@ cleanup ()
 ls_l_full_time ()
 {
   # test if ls -l --full-time is supported
-  RES=$(ls -l --full-time $1 2>&1)
+  RES=`ls -l --full-time $1 2>&1`
   if test $? = 0; then
     # ls -l --full-time supported: echo the result
     echo "$RES"
@@ -50,7 +50,7 @@ ls_l_full_time ()
 # Perform locking
 do_lock ()
 {
-  echo $MSGPREFIX Try to obtain lock on $(date)
+  echo $MSGPREFIX Try to obtain lock on `date`
   test -f $LOCKFILE && echo -n $MSGPREFIX && ls_l_full_time $LOCKFILE
   while (true)
   do
@@ -58,7 +58,7 @@ do_lock ()
     then
       sleep $SLEEP
       find $LOCKFILE -mmin +$MAXMINUTES \
-           -exec echo $MSGPREFIX lock from \"$(cat $LOCKFILE)\" expired \; \
+           -exec echo $MSGPREFIX lock from \"`cat $LOCKFILE`\" expired \; \
            -exec rm -f {} \;
     else
       echo $MYID > $LOCKFILE
@@ -66,7 +66,7 @@ do_lock ()
       # if we're not in the first line, another host was faster
       # and we have to wait again.
       head -n 1 $LOCKFILE | grep $MYID > /dev/null || continue
-      echo $MSGPREFIX "Obtained lock on     " $(date)
+      echo $MSGPREFIX "Obtained lock on     " `date`
       break
     fi
   done
