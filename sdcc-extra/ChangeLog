@@ -1,3 +1,10 @@
+2010-04-04 Borut Razem <borut.razem AT siol.net>
+
+	* configure, Makefile.in, configure.in, emu/Makefile.in,
+	  emu/rrz80/Makefile.in, emu/rrz80/cpu/Makefile.in,
+	  emu/rrgb/Makefile.in, Makefile.rules.in:
+	  fixed for Solaris SunPro compiler
+
 2010-02-21 Borut Razem <borut.razem AT siol.net>
 
 	* emu/rrgb/parse_map.c: fixed bug #2956037:

@@ -11,6 +11,64 @@ AC_PROG_CXX
 AC_PROG_CPP
 AC_CHECK_PROG(STRIP, strip, strip, :)
 
+# Macro definitions
+# ===========================================================================
+
+# Check whether the compiler for the current language is SunPRO.
+
+AC_DEFUN(bor_IS_SUNPRO,
+[AC_CACHE_CHECK([whether we are using the SunPRO _AC_LANG compiler],
+  [bor_cv_[]_AC_LANG_ABBREV[]_compiler_sunpro],
+  [_AC_COMPILE_IFELSE([AC_LANG_PROGRAM([], [[#if !defined __SUNPRO_C && !defined __SUNPRO_CC
+       choke me
+#endif
+]])],
+    [bor_compiler_sunpro=yes],
+    [bor_compiler_sunpro=no])
+bor_cv_[]_AC_LANG_ABBREV[]_compiler_sunpro=$bor_compiler_sunpro
+])])
+
+# bor_IS_VALID_OPTION macro checks if the current compiler, selected by 
+# AC_LANG, supports option specified as the 1st parameter. The test fails if
+# the compiler returns an error or in case something is writeen to stderr.
+# For example: bor_VALID_OPT(fPIC)
+
+AC_DEFUN(bor_IS_VALID_OPTION,
+[ac_test_[]_AC_LANG_PREFIX[]FLAGS=${[]_AC_LANG_PREFIX[]FLAGS+set}
+bor_save_[]_AC_LANG_PREFIX[]FLAGS=$[]_AC_LANG_PREFIX[]FLAGS
+AC_CACHE_CHECK(whether _AC_LANG accepts -$1, bor_cv_[]_AC_LANG_ABBREV[]_$1,
+  [bor_save_[]_AC_LANG_ABBREV[]_werror_flag=$ac_[]_AC_LANG_ABBREV[]_werror_flag
+   ac_[]_AC_LANG_ABBREV[]_werror_flag=yes
+   
+   []_AC_LANG_PREFIX[]FLAGS="-$1"
+   AC_COMPILE_IFELSE([AC_LANG_PROGRAM()],
+     [bor_cv_[]_AC_LANG_ABBREV[]_$1=yes],
+     [bor_cv_[]_AC_LANG_ABBREV[]_$1=no])
+   ac_[]_AC_LANG_ABBREV[]_werror_flag=$bor_save_[]_AC_LANG_ABBREV[]_werror_flag])
+   []_AC_LANG_PREFIX[]FLAGS=$bor_save_[]_AC_LANG_PREFIX[]FLAGS
+])
+
+# Checking characteristics of compilers and other programs
+# ===========================================================================
+if test "$ac_cv_c_compiler_gnu" = "yes"; then
+  # This is the first time when CFLAGS are set/modified!!
+  bor_IS_VALID_OPTION(ggdb)
+  if test "$bor_cv_c_ggdb" = "yes"; then
+    CXXFLAGS="-ggdb ${CXXFLAGS}"
+  fi
+
+  WALL_FLAG="-Wall"
+else
+  bor_IS_SUNPRO
+  if test "$bor_cv_c_compiler_sunpro" = "yes"; then
+    CFLAGS="-xO2 ${CFLAGS}"
+    CXXFLAGS="-xO2 ${CXXFLAGS}"
+    WALL_FLAG=
+  fi
+fi
+
+AC_SUBST(WALL_FLAG)
+
 AC_CONFIG_FILES([Makefile
                  Makefile.rules
                  emu/Makefile

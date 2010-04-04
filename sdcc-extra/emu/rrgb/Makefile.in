@@ -14,9 +14,9 @@ STRIP = @STRIP@
 CPPFLAGS += @CPPFLAGS@
 LDFLAGS = @LDFLAGS@
 
-OPTS = -DSEG -g
+OPTS = -DSEG
 #CFLAGS=-O3 -fomit-frame-pointer -funroll-loops -Wall $(OPTS)
-CFLAGS += @CFLAGS@ $(OPTS) -Wall
+CFLAGS += @CFLAGS@ $(OPTS)
 ifeq ($(shell uname -s),SunOS)
 LIBS = -lm -lsocket
 else

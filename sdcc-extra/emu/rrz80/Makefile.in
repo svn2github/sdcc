@@ -6,8 +6,6 @@ top_builddir = @top_builddir@
 CSRC = rrz80.c map.c
 CCSRC = disasm.cc
 
-CFLAGS += -g
-
 BIN = rrz80
 
 SUBDIRS = cpu
@@ -19,4 +17,4 @@ LDLIBS += -lstdc++
 
 EXTRA_LIBS  = cpu/libz80cpu.a
 
-include $(top_builddir)Makefile.rules
+include $(top_builddir)/Makefile.rules

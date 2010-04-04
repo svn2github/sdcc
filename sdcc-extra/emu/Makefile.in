@@ -5,4 +5,4 @@ top_builddir = @top_builddir@
 
 SUBDIRS = rrz80 rrgb
 
-include $(top_builddir)Makefile.rules
+include $(top_builddir)/Makefile.rules
