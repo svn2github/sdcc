@@ -1,6 +1,12 @@
+2010-04-04 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-build-bootstrap.sh:
+	  BSD find doesn't understand -mmin
+
 2010-04-03 Borut Razem <borut.razem AT siol.net>
 
-	* local/netbsd-i386.mk, local/dev.mk, local/solaris-x86.mk: added
+	* local/netbsd-i386.mk, local/dev.mk, local/solaris-x86.mk,
+	  local/mypants.mk, local/freebsd-i386.mk: added
 	* lib/fetch.mk: adde quotes to test -z argument
 	* sdcc-build-bootstrap.sh, lib/upload.mk: use `` instead $():
 	  solaris make make doesn't understand $()

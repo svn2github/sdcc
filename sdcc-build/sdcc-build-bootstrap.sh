@@ -51,15 +51,21 @@ ls_l_full_time ()
 do_lock ()
 {
   echo $MSGPREFIX Try to obtain lock on `date`
-  test -f $LOCKFILE && echo -n $MSGPREFIX && ls_l_full_time $LOCKFILE
-  while (true)
+  test -f $LOCKFILE && printf "%s%s" $MSGPREFIX ls_l_full_time $LOCKFILE
+  while true
   do
     if test -f $LOCKFILE
     then
       sleep $SLEEP
-      find $LOCKFILE -mmin +$MAXMINUTES \
+      RES=`find $LOCKFILE -mmin +$MAXMINUTES \
            -exec echo $MSGPREFIX lock from \"`cat $LOCKFILE`\" expired \; \
-           -exec rm -f {} \;
+           -exec rm -f {} \;`
+      if test $? = 0; then
+        echo $RES
+      else
+        echo $MSGPREFIX "Can't obtain the lock"
+        return 1
+      fi
     else
       echo $MYID > $LOCKFILE
       # check, if we're in the first line of lockfile;
@@ -70,27 +76,30 @@ do_lock ()
       break
     fi
   done
+
+  return 0
 }
 
 trap 'echo $MSGPREFIX caught signal ; cleanup ; exit 1' 1 2 3 13 15
 
 mkdir -p $BUILDROOT
 
-do_lock
+if do_lock
+then
+  # Include local apps.
+  if test -d ~/local-$HOSTNAME/bin; then
+    PATH=$PATH:$HOME/local-$HOSTNAME/bin
+  elif test -d ~/local/bin; then
+    PATH=$PATH:$HOME/local/bin
+  fi
 
-# Include local apps.
-if [ -d ~/local-$HOSTNAME/bin ] ; then
-  PATH=$PATH:$HOME/local-$HOSTNAME/bin
-elif [ -d ~/local/bin ] ; then
-  PATH=$PATH:$HOME/local/bin
+  # Checkout the latest sdcc-build version to $BUILDROOT/sdcc-build
+  rm -rf $BUILDROOT/sdcc-build
+  svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
+
+  # And spawn onto the actual build
+  cd $BUILDROOT/sdcc-build
+  make $*
 fi
-
-# Checkout the latest sdcc-build version to $BUILDROOT/sdcc-build
-rm -rf $BUILDROOT/sdcc-build
-svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
-
-# And spawn onto the actual build
-cd $BUILDROOT/sdcc-build
-make $*
 
 cleanup
