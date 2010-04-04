@@ -17,5 +17,6 @@ LD_LIBRARY_PATH=${HOME}/local-${HOSTNAME}/lib
 export LD_LIBRARY_PATH
 
 # path
-PATH=${HOME}/local-${HOSTNAME}/bin:${PATH}
+# /usr/ccs/bin for Solaris
+PATH=${HOME}/local-${HOSTNAME}/bin:/usr/local/bin:/usr/ccs/bin:${PATH}
 export PATH
