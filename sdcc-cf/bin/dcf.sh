@@ -92,7 +92,7 @@ rm_old_versions ()
 {
   local i j k
 
-  for i in "htdocs/snapshots htdocs/regression_test_results"
+  for i in htdocs/snapshots htdocs/regression_test_results
   do    
     for j in $(echo "ls -1t $i" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '/^sftp> /d')
     do    

@@ -1,16 +1,21 @@
 # sdcc-builder profile
 
 # hoat name without domain
-export HOSTNAME=$(if test $(expr $(hostname) : '.*\.') != '0'; then expr $(hostname) : '\([^.]*\).'; else echo $(hostname); fi)
+HOSTNAME=$(if test $(expr $(hostname) : '.*\.') != '0'; then expr $(hostname) : '\([^.]*\).'; else echo $(hostname); fi)
+export HOSTNAME
 
 # this for svn
-export EDITOR=vi
+EDITOR=vi
+export EDITOR
 
 # perl library
-export PERL5LIB=${HOME}/local-${HOSTNAME}/lib/perl5/site_perl/5.10.0
+PERL5LIB=${HOME}/local-${HOSTNAME}/lib/perl5/site_perl/5.10.0
+export PERL5LIB
 
 # shared libraries path
-export LD_LIBRARY_PATH=${HOME}/local-${HOSTNAME}/lib
+LD_LIBRARY_PATH=${HOME}/local-${HOSTNAME}/lib
+export LD_LIBRARY_PATH
 
 # path
-export PATH=${HOME}/local-${HOSTNAME}/bin:${PATH}
+PATH=${HOME}/local-${HOSTNAME}/bin:${PATH}
+export PATH
