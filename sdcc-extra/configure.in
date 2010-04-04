@@ -58,6 +58,7 @@ if test "$ac_cv_c_compiler_gnu" = "yes"; then
   fi
 
   WALL_FLAG="-Wall"
+  LIBSTDCXX="-lstdc++"
 else
   bor_IS_SUNPRO
   if test "$bor_cv_c_compiler_sunpro" = "yes"; then
@@ -68,6 +69,7 @@ else
 fi
 
 AC_SUBST(WALL_FLAG)
+AC_SUBST(LIBSTDCXX)
 
 AC_CONFIG_FILES([Makefile
                  Makefile.rules
