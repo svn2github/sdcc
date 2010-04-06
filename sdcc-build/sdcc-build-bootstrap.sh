@@ -51,14 +51,14 @@ ls_l_full_time ()
 do_lock ()
 {
   echo $MSGPREFIX Try to obtain lock on `date`
-  test -f $LOCKFILE && printf "%s%s" $MSGPREFIX ls_l_full_time $LOCKFILE
+  test -f $LOCKFILE && printf "%s %s\n" $MSGPREFIX \"`ls_l_full_time $LOCKFILE`\"
   while true
   do
     if test -f $LOCKFILE
     then
       sleep $SLEEP
       RES=`find $LOCKFILE -mmin +$MAXMINUTES \
-           -exec echo $MSGPREFIX lock from \"`cat $LOCKFILE`\" expired \; \
+           -exec echo $MSGPREFIX lock from \`cat $LOCKFILE\` expired \; \
            -exec rm -f {} \;`
       if test $? = 0; then
         echo $RES
