@@ -134,7 +134,7 @@ cleanup ()
           builder=$(echo $builder | sed -e "s/^\(.*\)#.*$/\1/" -e "s/[ \t]*$//")
           if test ! -z "$builder"
           then
-            if cd /home/$builder/htdocs
+            if test -d /home/$builder/htdocs && cd /home/$builder/htdocs
             then
               FILE_LIST=$(find * -depth -print 2>/dev/null)
               if test -n "$FILE_LIST"
