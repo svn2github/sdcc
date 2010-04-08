@@ -58,7 +58,7 @@ enum {
 	A_HL_IND,	// (hl) or (ix) or (iy)
 	A_SP_IND,	// (sp)
 	A_DE_HL,	// de,hl
-	A_AF_AF,	// af,af'
+	A_AF_AF		// af,af'
 };
 
 // Mnemonics

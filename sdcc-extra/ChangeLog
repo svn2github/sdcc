@@ -1,3 +1,8 @@
+2010-04-08 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-extra/emu/rrz80/disasm.cc: removed comma after the last enum
+	  element since SunPro C compiler comlains
+
 2010-04-04 Borut Razem <borut.razem AT siol.net>
 
 	* configure, Makefile.in, configure.in, emu/Makefile.in,
