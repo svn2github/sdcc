@@ -1,3 +1,7 @@
+2010-04-08 Borut Razem <borut.razem AT siol.net>
+
+	* bin/dcf.sh, etc/dcf_list: allow comments in etc/dcf_list
+
 2010-04-04 Borut Razem <borut.razem AT siol.net>
 
 	* .sdcc_builder/profile:

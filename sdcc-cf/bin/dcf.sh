@@ -122,40 +122,44 @@ cleanup ()
 
   if test -e $DCF_BUILDER_LIST_FILE
   then
-    BUILDER_LIST=$(cat $DCF_BUILDER_LIST_FILE)
+    lockfile -r 0 $DCF_LOCK || exit 1
+
+    test "$BWLIMIT" != "" && RSYNC_OPTS="$RSYNC_OPTS --bwlimit=$BWLIMIT"
+
+    {
+      while read -r builder
+      do
+        export builder
+        (
+          builder=$(echo $builder | sed "s/^\(.*\)#.*$/\1/")
+          if test ! -z "$builder"
+          then
+            if cd /home/$builder/htdocs
+            then
+              FILE_LIST=$(find * -depth -print 2>/dev/null)
+              if test -n "$FILE_LIST"
+              then
+                echo "+++ start: $(date)"
+                echo "=== files in /home/$builder/htdocs:"
+                list_files $FILE_LIST
+
+                echo "=== rsyncing..."
+                rsync $RSYNC_OPTS --relative --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/ 2>&1 | grep -v -e "skipping directory"
+
+                echo "=== removing..."
+                rm_list $FILE_LIST
+
+                echo "=== removing old versions..."
+                rm_old_versions
+
+                echo "--- end: $(date)"
+              fi
+            fi
+          fi
+        )
+      done
+    } < $DCF_BUILDER_LIST_FILE
   fi
-
-  lockfile -r 0 $DCF_LOCK || exit 1
-
-  test "$BWLIMIT" != "" && RSYNC_OPTS="$RSYNC_OPTS --bwlimit=$BWLIMIT"
-
-  for builder in $BUILDER_LIST
-  do
-    export builder
-    (
-      if cd /home/$builder/htdocs
-      then
-        FILE_LIST=$(find * -depth -print 2>/dev/null)
-        if test -n "$FILE_LIST"
-        then
-          echo "+++ start: $(date)"
-          echo "=== files in /home/$builde/htdocs:"
-          list_files $FILE_LIST
-
-          echo "=== rsyncing:"
-          rsync $RSYNC_OPTS --relative --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/ 2>&1 | grep -v -e "skipping directory"
-
-          echo "=== removing:"
-          rm_list $FILE_LIST
-
-          echo "=== removing old versions"
-          rm_old_versions
-
-          echo "--- end: $(date)"
-        fi
-      fi
-    )
-  done
 
   cleanup
 } 2>&1 | log_it
