@@ -131,7 +131,7 @@ cleanup ()
       do
         export builder
         (
-          builder=$(echo $builder | sed "s/^\(.*\)#.*$/\1/")
+          builder=$(echo $builder | sed "s/^\(.*\)[ \t]*#.*$/\1/")
           if test ! -z "$builder"
           then
             if cd /home/$builder/htdocs
