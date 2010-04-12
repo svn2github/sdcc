@@ -1,3 +1,8 @@
+2010-04-12 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-build-bootstrap.sh:
+	  try 3 times to checkout, before give up
+
 2010-04-06 Borut Razem <borut.razem AT siol.net>
 
 	* sdcc-build-bootstrap.sh:

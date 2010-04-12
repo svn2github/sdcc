@@ -51,7 +51,7 @@ ls_l_full_time ()
 do_lock ()
 {
   echo $MSGPREFIX Try to obtain lock on `date`
-  test -f $LOCKFILE && printf "%s %s\n" $MSGPREFIX \"`ls_l_full_time $LOCKFILE`\"
+  test -f $LOCKFILE && printf "%s %s\n" $MSGPREFIX "`ls_l_full_time $LOCKFILE`"
   while true
   do
     if test -f $LOCKFILE
@@ -59,7 +59,7 @@ do_lock ()
       sleep $SLEEP
       RES=`find $LOCKFILE -mmin +$MAXMINUTES \
            -exec echo $MSGPREFIX lock from \`cat $LOCKFILE\` expired \; \
-           -exec rm -f {} \;`
+           -exec rm -f {} \; 2> /dev/null`
       if test $? = 0; then
         echo $RES
       else
@@ -86,6 +86,7 @@ mkdir -p $BUILDROOT
 
 if do_lock
 then
+  success=0
   # Include local apps.
   if test -d ~/local-$HOSTNAME/bin; then
     PATH=$PATH:$HOME/local-$HOSTNAME/bin
@@ -93,13 +94,21 @@ then
     PATH=$PATH:$HOME/local/bin
   fi
 
-  # Checkout the latest sdcc-build version to $BUILDROOT/sdcc-build
-  rm -rf $BUILDROOT/sdcc-build
-  svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
+  for i in 0 1 2
+  do
+    # Checkout the latest sdcc-build version to $BUILDROOT/sdcc-build
+    rm -rf $BUILDROOT/sdcc-build
+    svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build && success=1
+  done
 
-  # And spawn onto the actual build
-  cd $BUILDROOT/sdcc-build
-  make $*
+  if test "$success" = 1
+  then
+    # And spawn onto the actual build
+    cd $BUILDROOT/sdcc-build
+    make $*
+  else
+    echo $MSGPREFIX "can't checkout"
+  fi
 fi
 
 cleanup
