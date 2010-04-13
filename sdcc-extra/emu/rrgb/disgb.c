@@ -363,6 +363,5 @@ int disass( char *buffer, UBYTE *base, int addr )
 			}
 		}
 	}
-	return 1;
 }
 

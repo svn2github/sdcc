@@ -66,7 +66,7 @@ void pop_callback(void)
 {
 	pmfunction walk;
 
-	if (callback_stack>0) {
+	if (callback_stack_pos > 0) {
 		callback_stack_pos--;
 		walk=fun_first;
 		while (walk) {

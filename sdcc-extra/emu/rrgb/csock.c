@@ -7,7 +7,7 @@ Please read the file COPYRIGHT for further details.
 
 */
 
-#if defined(__linux__) || defined(__CYGWIN__) || defined(__APPLE__)
+#if defined(__linux__) || defined(__CYGWIN__) || defined(__APPLE__) || defined(__sun)
 #include <unistd.h>
 #endif
 #include <sys/types.h>

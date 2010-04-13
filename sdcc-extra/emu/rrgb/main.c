@@ -271,7 +271,7 @@ void printGBfloat(unsigned fhl, unsigned fde)
         if (fhl & 0x08000)
                 a = -a;
         printf("%f", a);
-};
+}
 
 /* Switch in bank /bank to segment /segment */
 void switchBank( int segment, unsigned bank )

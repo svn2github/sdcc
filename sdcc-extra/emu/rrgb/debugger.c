@@ -54,7 +54,7 @@ char *get_param( char *from, int *storein )
 	*storein = parse_label(from);
 	*end = tmp;
 	return end;
-};
+}
 	
 int getparams( char *string, int *start, int *end, int pc, int defoffset )
 {
@@ -111,7 +111,7 @@ int setBreakpoint( unsigned int addr )
 		return i;
 	}
 	return -2;
-};
+}
 
 void printRegisters( pmregs regs )
 {
@@ -122,7 +122,7 @@ void printRegisters( pmregs regs )
 	       *regs->a, *regs->f, *regs->pc,
 	       *regs->sp
 	       );
-};
+}
 
 int clearBreakpoint( unsigned int addr )
 {
@@ -135,7 +135,7 @@ int clearBreakpoint( unsigned int addr )
 		return -1;
 	breakpoints[i] = 0;
 	return i;
-};
+}
 
 int enterDebugger( pmregs regs )
 {
@@ -304,4 +304,4 @@ int enterDebugger( pmregs regs )
 	}
 	return 0;
 
-};
+}
