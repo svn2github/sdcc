@@ -1,3 +1,8 @@
+2010-04-13 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc-build-bootstrap.sh:
+	  don't repeat the checkout if completed succesfully
+
 2010-04-12 Borut Razem <borut.razem AT siol.net>
 
 	* sdcc-build-bootstrap.sh:

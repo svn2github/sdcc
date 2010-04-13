@@ -98,12 +98,16 @@ then
   do
     # Checkout the latest sdcc-build version to $BUILDROOT/sdcc-build
     rm -rf $BUILDROOT/sdcc-build
-    svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build && success=1
+    if svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
+    then
+      success=1
+      break
+    fi
   done
 
   if test "$success" = 1
   then
-    # And spawn onto the actual build
+    # Spawn onto the actual build
     cd $BUILDROOT/sdcc-build
     make $*
   else
