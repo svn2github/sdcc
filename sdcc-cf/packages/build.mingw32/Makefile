@@ -1,9 +1,9 @@
 include ../packages.mk
 
-BINUTILS_VERSION=2.20
-MINGWRT_VERSION=3.17
+BINUTILS_VERSION=2.20.1
+MINGWRT_VERSION=3.18
 W32API_VERSION=3.14
-GCC_VERSION=4.4.3
+GCC_VERSION=4.5.0
 
 TARGET=i586-mingw32msvc
 PROGRAM_PREFIX=i586-mingw32msvc-
@@ -124,7 +124,7 @@ gcc-configure.tag: gcc-unpack.tag
 	../$(shell find . -maxdepth 1 -type d -name "gcc*")/configure	\
 	  --target=$(TARGET) --program-prefix=$(PROGRAM_PREFIX) --prefix=$(PREFIX)  \
 	  --with-gcc --with-gnu-ld --with-gnu-as			\
-	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR)              \
+	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR) --with-mpc=$(LOCAL_DIR)  \
 	  --enable-threads   --disable-nls   --enable-languages=c,c++	\
 	  --disable-multilib --enable-win32-registry --disable-shared
 	touch $@

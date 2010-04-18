@@ -1,3 +1,10 @@
+2010-04-18 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.mingw32/Makefile: updated to gcc 4.5.0,
+	  binutils 2.20.1, migwrt 3.18
+	* packages/build.gmp_mpfr/Makefile: updated to gmp 5.0.1, mpfr 2.4.2,
+	  mpc 0.8.1
+
 2010-04-08 Borut Razem <borut.razem AT siol.net>
 
 	* bin/dcf.sh, etc/dcf_list: allow comments in etc/dcf_list
