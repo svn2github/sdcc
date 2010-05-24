@@ -1,3 +1,8 @@
+2010-05-24 Borut Razem <borut.razem AT siol.net>
+
+	* left_menu.inc: fixed bug 2938514: "Documentation" link leads to
+	  error page
+
 2009-12-19 Borut Razem <borut.razem AT siol.net>
 
 	* images/18dot5a.gif, snap.php:

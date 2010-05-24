@@ -16,7 +16,7 @@
     <a href="/snap.php#Source"><i>Source</i></a><br />
   </div>
   <br />
-  <b><a href="/doc/"><i>Documentation</i></a></b>
+  <b><i>Documentation</i></a></b>
   <div class="submenu">
     <a href="/doc/sdccman.html/"><i>SDCC Manual (html</i></a>/<a href="http://sdcc.sourceforge.net/doc/sdccman.pdf"><i>pdf)</i></a><br />
     <a href="/doc/test_suite_spec.html/"><i>Test Suite (html</i></a>/<a href="http://sdcc.sourceforge.net/doc/test_suite_spec.pdf"><i>pdf)</i></a><br />
@@ -28,7 +28,7 @@
   <div class="submenu">
     <a href="http://sourceforge.net/project/showfiles.php?group_id=599"><i>SDCC File Releases</i></a><br />
     <a href="http://sdcc.svn.sourceforge.net/viewvc/sdcc/trunk/sdcc/"><i>SDCC Subversion Repository</i></a><br />
-    <a href="http://sourceforge.net/projects/sdcc/forums"><i>SDCC Forum</i></a><br />
+    <a href="http://sourceforge.net/projects/sdcc/forums/forum/1865/"><i>SDCC Forum</i></a><br />
   </div>
   <br />
   <b><a href="http://sdcc.wiki.sourceforge.net/"><i>SDCC Wiki</i></a></b><br />
