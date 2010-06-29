@@ -66,7 +66,8 @@ ifneq ($(CROSSCOMPILING), 1)
 else
 	rm -rf $(BUILDDIR)/sdcc/doc/*
 	mkdir -p $(BUILDDIR)/sdcc/doc
-	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/sdcc/doc/README.TXT$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) 2>&1 | tee $(REGTESTLOG)
+	cp -p $(TOPDIR)/support/readme-snapshot.txt $(BUILDDIR)/sdcc/doc/README.TXT
+	SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) 2>&1 | tee $(REGTESTLOG)
 	head -n 100 $(ORIGDIR)/sdcc/ChangeLog > $(BUILDDIR)/sdcc/doc/ChangeLog_head.txt
 	cp $(BUILDDIR)/sdcc/doc/ChangeLog_head.txt $(CHLOGTXT)
 endif
@@ -100,4 +101,6 @@ else
 	# perform regression tests
 	mkdir -p $(REGTESTDIR); \
 	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) 2>&1 | tee $(REGTESTLOG)
+endif
+
 endif
