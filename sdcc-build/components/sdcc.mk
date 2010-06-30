@@ -85,21 +85,24 @@ sdcc-device-clean:
 
 sdcc-regression: sdcc sdcc-install sdcc-extra
 # test-gbz80 temporary disabled because of problems; Bernhard 2003-02-13
+ifneq ($(CROSSCOMPILING), 1)
+	# perform regression tests
+	mkdir -p $(REGTESTDIR); \
+	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) 2>&1 | tee $(REGTESTLOG)
+endif
+
+sdcc-regression-win32: sdcc sdcc-install sdcc-extra
 ifeq ($(CROSSCOMPILING), 1)
 	# uninstall the previous version
-	wine sdcc --version > /dev/null 2>&1 && wine 'c:/Program Files/SDCC/uninstall' /S
+	-wine sdcc --version > /dev/null 2>&1 && wine 'c:/Program Files/SDCC/uninstall' /S
 	# install sdcc package
-	wine $(SETUPNAME) /S
+	-wine $(SETUPNAME) /S
 	# perform regression tests
 	if wine sdcc --version > /dev/null 2>&1; \
 	then \
 	  mkdir -p $(REGTESTDIR); \
 	  $(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) SDCC="wine sdcc" 2>&1 | tee $(REGTESTLOG); \
 	fi
-else
-	# perform regression tests
-	mkdir -p $(REGTESTDIR); \
-	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) 2>&1 | tee $(REGTESTLOG)
 endif
 
 endif
