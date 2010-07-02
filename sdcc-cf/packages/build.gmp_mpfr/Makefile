@@ -36,13 +36,9 @@ gmp-install.tag: gmp-make.tag
 	make -C $(GMP_DIR) install
 	touch $@
 
-.PHONY: gmp-clean
-gmp-clean:
-	rm -rf $(GMP_DIR) gmp-*.tag
-
 	
 mpfr-download.tag:
-	wget -P download http://www.mpfr.org/mpfr-current/mpfr-2.4.2.tar.bz2
+	wget -P download http://www.mpfr.org/mpfr-current/mpfr-3.0.0.tar.bz2
 	touch $@
 
 mpfr-unpack.tag: mpfr-download.tag
@@ -51,7 +47,7 @@ mpfr-unpack.tag: mpfr-download.tag
 
 mpfr-configure.tag: mpfr-unpack.tag
 	cd $(MPFR_DIR) && \
-	./configure --prefix=$(LOCAL_DIR)
+	./configure --prefix=$(LOCAL_DIR) --with-gmp=$(LOCAL_DIR)
 	touch $@
 
 mpfr-make.tag: mpfr-configure.tag
@@ -62,13 +58,9 @@ mpfr-install.tag: mpfr-make.tag
 	make -C $(MPFR_DIR) install
 	touch $@
 
-.PHONY: mpfr-clean
-mpfr-clean:
-	rm -rf $(MPFR_DIR) mpfr-*.tag
-
 
 mpc-download.tag:
-	wget -P download http://www.multiprecision.org/mpc/download/mpc-0.8.1.tar.gz
+	wget -P download http://www.multiprecision.org/mpc/download/mpc-0.8.2.tar.gz
 	touch $@
 
 mpc-unpack.tag: mpc-download.tag
@@ -77,7 +69,7 @@ mpc-unpack.tag: mpc-download.tag
 
 mpc-configure.tag: mpc-unpack.tag
 	cd $(MPC_DIR) && \
-	./configure --prefix=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR)
+	./configure --prefix=$(LOCAL_DIR) --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR)
 	touch $@
 
 mpc-make.tag: mpc-configure.tag
@@ -87,6 +79,15 @@ mpc-make.tag: mpc-configure.tag
 mpc-install.tag: mpc-make.tag
 	make -C $(MPC_DIR) install
 	touch $@
+
+
+.PHONY: gmp-clean
+gmp-clean:
+	rm -rf $(GMP_DIR) gmp-*.tag
+
+.PHONY: mpfr-clean
+mpfr-clean:
+	rm -rf $(MPFR_DIR) mpfr-*.tag
 
 .PHONY: mpc-clean
 mpc-clean:
