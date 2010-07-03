@@ -4,6 +4,10 @@
 HOSTNAME=`hostname | sed "s/^\([^.]*\).*$/\1/"`
 export HOSTNAME
 
+# dos utils aliases
+unix2dos -h > /dev/null 2>&1 || alias unix2dos=todos
+dos2unix -h > /dev/null 2>&1 || alias dos2unix=fromdos
+
 # this for svn
 EDITOR=vi
 export EDITOR
