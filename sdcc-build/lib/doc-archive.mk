@@ -72,7 +72,7 @@ doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.
 	# create tar.gz doc package
 	cd $(_DOC_ARCHIVE_BUILDDIR); tar -cjf $(_DOC_ARCHIVE_TARBALL_DIR)/sdcc-doc-$(SNAPSHOTID).tar.bz2 doc
 	# create zip doc package
-	find $(_DOC_ARCHIVE_BUILDDIR) -type f \( -name '*.txt' -o -name '*.html' -name 'ChangeLog' \) -exec unix2dos {} \;
+	find $(_DOC_ARCHIVE_BUILDDIR) -type f \( -name '*.txt' -o -name '*.html' -name 'ChangeLog' \) -exec $(UNIX2DOS) {} \;
 	cd $(_DOC_ARCHIVE_BUILDDIR); zip -9r $(_DOC_ARCHIVE_TARBALL_DIR)/sdcc-doc-$(SNAPSHOTID).zip doc
 
 endif
