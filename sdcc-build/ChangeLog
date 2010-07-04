@@ -1,3 +1,8 @@
+2010-07-04 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk:
+	  give 10s to (un)installation to complete
+
 2010-07-03 Borut Razem <borut.razem AT siol.net>
 
         * lib/bootstrap.mk, lib/doc-archive.mk, lib/variables.mk:

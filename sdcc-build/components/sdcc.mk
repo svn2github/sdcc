@@ -37,13 +37,13 @@ $(_SDCCDIR)/sdccconf.h:
 sdcc: sdcc-build
 
 sdcc-build: sdcc-configured
-	$(MAKE) $(MAKEJOBFLAGS) -k -C $(_SDCCDIR) sdcc SILENT=1
+	$(MAKE) $(MAKEJOBFLAGS) $(MAKESILENTFLAG) -k -C $(_SDCCDIR) sdcc
 
 # PENDING: Should depend on sdcc-build
 sdcc-install: sdcc-targetos-install sdcc-fromhost-install sdcc-docs
 
 sdcc-targetos-install:
-	$(MAKE) -k -C $(_SDCCDIR) DESTDIR=$(BUILDDIR) STRIP=$(TARGETSTRIP) $(SDCCINSTALLFLAGS) install SILENT=1
+	$(MAKE) $(MAKESILENTFLAG) -k -C $(_SDCCDIR) DESTDIR=$(BUILDDIR) STRIP=$(TARGETSTRIP) $(SDCCINSTALLFLAGS) install
 
 # Copies files from the native host that couldn't be compiled.
 sdcc-fromhost-install:
@@ -94,9 +94,9 @@ endif
 sdcc-regression-win32: sdcc sdcc-install sdcc-extra
 ifeq ($(CROSSCOMPILING), 1)
 	# uninstall the previous version
-	-wine sdcc --version > /dev/null 2>&1 && wine 'c:/Program Files/SDCC/uninstall' /S
+	-wine sdcc --version > /dev/null 2>&1 && wine 'c:/Program Files/SDCC/uninstall' /S && sleep 10
 	# install sdcc package
-	-wine $(SETUPNAME) /S
+	-wine $(SETUPNAME) /S && sleep 10
 	# perform regression tests
 	if wine sdcc --version > /dev/null 2>&1; \
 	then \
