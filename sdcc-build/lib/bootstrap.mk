@@ -32,11 +32,11 @@ build-all-targets:
 release-build:
 	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-release-build TARGETOS=$$i ISRELEASE=true 'SVNTAG=$(RELEASEVERSIONTAG)'; done
 
-per-target-build: per-target-clean logged-build update-snapshots-dir send-build-mail
+per-target-build: per-target-clean logged-build update-snapshots-dir sdcc-regression send-build-mail
 
-per-target-test-build: per-target-clean logged-build generate-packages
+per-target-test-build: per-target-clean logged-build generate-packages sdcc-regression
 
-per-target-release-build: per-target-clean logged-build copy-extra-docs generate-packages
+per-target-release-build: per-target-clean logged-build copy-extra-docs generate-packages sdcc-regression
 
 per-target-clean:
 	rm -rf $(SRCDIR)

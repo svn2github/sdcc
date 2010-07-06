@@ -10,6 +10,8 @@ TOOLSPREFIX = $(HOME)/local-$(HOSTNAME)/cross-tools/bin/i586-mingw32msvc-
 
 PREFIX = /sdcc
 
+CC_FOR_BUILD = gcc
+
 SDCCCONFIGUREFLAGS = \
 --prefix=$(PREFIX) \
 --datarootdir=/sdcc \

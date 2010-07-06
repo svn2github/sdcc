@@ -83,16 +83,14 @@ sdcc-install-clean:
 
 sdcc-device-clean:
 
-sdcc-regression: sdcc sdcc-install sdcc-extra
-# test-gbz80 temporary disabled because of problems; Bernhard 2003-02-13
-ifneq ($(CROSSCOMPILING), 1)
-	# perform regression tests
-	mkdir -p $(REGTESTDIR); \
-	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) 2>&1 | tee $(REGTESTLOG)
+ifdef CC_FOR_BUILD
+CC_FOR_BUILD_STR = CC_FOR_BUILD=$(CC_FOR_BUILD)
 endif
 
-sdcc-regression-win32: sdcc sdcc-install sdcc-extra
+sdcc-regression: sdcc sdcc-install sdcc-extra
+# test-gbz80 temporary disabled because of problems; Bernhard 2003-02-13
 ifeq ($(CROSSCOMPILING), 1)
+	# mingw cross regression testing with wine
 	# uninstall the previous version
 	-wine sdcc --version > /dev/null 2>&1 && wine 'c:/Program Files/SDCC/uninstall' /S && sleep 10
 	# install sdcc package
@@ -101,8 +99,12 @@ ifeq ($(CROSSCOMPILING), 1)
 	if wine sdcc --version > /dev/null 2>&1; \
 	then \
 	  mkdir -p $(REGTESTDIR); \
-	  $(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) SDCC="wine sdcc" 2>&1 | tee $(REGTESTLOG); \
+	  $(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(CROSSREGTESTTARGETS) CROSSCOMPILING=$(CROSSCOMPILING) SDCC="wine sdcc" $(CC_FOR_BUILD_STR) 2>&1 | tee $(REGTESTLOG); \
 	fi
+else
+	# perform regression tests
+	mkdir -p $(REGTESTDIR); \
+	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) 2>&1 | tee $(REGTESTLOG)
 endif
 
 endif
