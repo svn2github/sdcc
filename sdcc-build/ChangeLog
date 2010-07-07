@@ -1,7 +1,9 @@
 2010-07-06 Borut Razem <borut.razem AT siol.net>
 
-	* components/sdcc.mk:
-	  exclude host target from cross regression testing
+	* components/sdcc.mk, lib/bootstrap.mk, lib/variables.mk,
+	  local/cf-x86-i586-mingw32msvc.mk, Makefile:
+	  exclude host target from cross regression testing, run regression
+	  tests after packaging
 
 2010-07-04 Borut Razem <borut.razem AT siol.net>
 
