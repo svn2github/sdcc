@@ -1,12 +1,4 @@
 <?php
-
-require 'snap_header.php';
-
-parse_dir("snapshots", "changelog_heads", "regression_test_results");
-
-require 'snap_footer.php';
-
-
 function green_bar($text, $name)
 {
   echo "<h2><a name=\"" . $name . "\"></a>" . $text . "</h2>\n";
@@ -45,15 +37,21 @@ function rt_failed($fname)
     return null;
 }
 
-function display_files($dir, $cldir, $rtdir, $subdir)
+function display_files($descdir, $dir, $cldir, $rtdir, $subdir)
 {
+#  echo("display_files($descdir, " . print_r($dir, true) . ", $cldir, $rtdir, $subdir)<br />\n");
+
   $numfiles = 0;
-  $thissubdir = @opendir("$dir/$subdir");
-  while (false!=($file = @readdir($thissubdir))) {
-    if ($file != "." && $file != ".." && $file != "HEADER.html" && $file != ".htaccess") { 
+  # Why this doesn't work?!
+#  $thissubdir = &travel($dir, $subdir);
+#  print_r($thissubdir);
+  $thissubdir = $dir[$subdir];
+
+  foreach (array_keys($thissubdir) as $file) {
+    if ($file != "HEADER.html" && $file != ".htaccess") { 
       $file_name[$numfiles] = $file;
-      $file_size[$numfiles] = filesize("$dir/$subdir/$file");
-      $file_date[$numfiles] = filemtime("$dir/$subdir/$file");
+      #$file_size[$numfiles] = filesize("$dir/$subdir/$file");  #TODO
+      #$file_date[$numfiles] = filemtime("$dir/$subdir/$file"); #TODO
       $numfiles++;
     }
   }
@@ -63,8 +61,8 @@ function display_files($dir, $cldir, $rtdir, $subdir)
 
   echo "<p><img src=\"/images/folder-B4-6-32x32.png\" border=\"0\" align=\"bottom\" alt=\"Folder\" />";
   echo "<font face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\"><b><i>";
-  if (is_file("$dir/../snapshots.desc/$subdir.desc")) {
-    include "$dir/../snapshots.desc/$subdir.desc";
+  if (is_file($descdir. "/" . $subdir . ".desc")) {
+    include $descdir. "/" . $subdir . ".desc";
   }
   echo "($subdir)</i></b></font></p>\n";
   echo "<div style=\"padding-left: 2em\">\n";
@@ -78,9 +76,9 @@ function display_files($dir, $cldir, $rtdir, $subdir)
     echo "<th align=\"left\"><font color=\"#660000\" face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\">RT</font></th>";
   echo "</tr>\n";
 
-  for ($i=0; $i<$numfiles; $i++) {
+  for ($i = 0; $i < $numfiles; ++$i) {
     $fs = round($file_size[$i] / 1024,0);
-    $subdirpp = preg_replace("/\s/","%20","$dir/$subdir");
+    $subdirpp = preg_replace("/\s/","%20","$subdir");
     $filep = preg_replace("/\s/","%20",$file_name[$i]);
     $modDate = date("F j, Y", $file_date[$i]);
 
@@ -111,7 +109,7 @@ function display_files($dir, $cldir, $rtdir, $subdir)
     }
 
     $dispthisdir = "<tr>" .
-      "<td align=\"left\"><a href=\"$subdirpp/$filep\">$file_name[$i]</a></td>" .
+      "<td align=\"left\"><a href=\"http://sourceforge.net/projects/sdcc/files/snapshot_builds/$subdirpp/$filep/download\">$file_name[$i]</a></td>" .
       "<td align=\"left\">$fs K</td>" .
       "<td align=\"left\">$modDate</td>" .
       "<td align=\"left\">$cl</td>" .
@@ -124,59 +122,127 @@ function display_files($dir, $cldir, $rtdir, $subdir)
 }
 
 
-function parse_dir($scanthis, $cldir, $rtdir)
+function &travel_r(&$arr, $path)
+{
+  #echo("travel_r(" . print_r($arr, true) . ", ". print_r($path, true). ")<br />\n");
+  #var_dump($path);
+
+  if (!is_array($arr) || (is_array($arr) && empty($arr))) {
+    return $arr;
+  }
+  else {
+    $elem = array_shift($path);
+    if (!array_key_exists($arr, $elem)) {
+      $arr[$elem] = array();
+    }
+    return travel_r($arr[$elem], $path);
+  }
+}
+
+
+function &travel(&$arr, $file)
+{
+  return travel_r($arr, explode("/", $file));
+}
+
+
+function &tree_array($file)
+{
+
+  $arr = array();
+  $curdir = &$arr;
+
+  foreach (file($file) as $line) {
+    $type = substr($line, 0, 1);
+    $file = rtrim(substr($line, 2));
+    if ($type == "d") {
+       $curdir = &travel($arr, $file);
+    }
+    else {
+      $curdir[basename($file)] = null;
+    }
+  }
+
+  return $arr;
+}
+
+
+function isDir($dir, $file)
+{
+  return is_array($dir[$file]);
+}
+
+
+function parse_dir($descdir, $scanthis, $cldir, $rtdir)
 {
   $linux_num = $windows_num = $macosx_num = $docs_num = $other_docs_num = $source_num = $other_num = 0;
 
-  $dir = @opendir($scanthis);
-  while (false!=($file = @readdir($dir))) {
-    if (is_dir($scanthis."/".$file) && $file != "." && $file != "..") {
+  $tree = tree_array($scanthis);
+
+  foreach (array_keys($tree) as $file) {
+    if (isDir($tree, $file)) {
       if (preg_match('/(i386|amd64)-.*-linux/', $file)) {
         $linux_dir[$linux_num++] = $file;
-      } elseif (preg_match('/msvc/', $file)) {
+      }
+      elseif (preg_match('/msvc/', $file)) {
         $windows_dir[$windows_num++] = $file;
-      } elseif (preg_match('/macosx/', $file)) {
+      }
+      elseif (preg_match('/macosx/', $file)) {
         $macosx_dir[$macosx_num++] = $file;
-      } elseif (preg_match('/docs$/', $file)) {
+      }
+      elseif (preg_match('/docs$/', $file)) {
         $docs_dir[$docs_num++] = $file;
-      } elseif (preg_match('/docs_/', $file)) {
+      }
+      elseif (preg_match('/docs_/', $file)) {
         $other_docs_dir[$other_docs_num++] = $file;
-      } elseif (preg_match('/-src/', $file)) {
+      }
+      elseif (preg_match('/-src/', $file)) {
         $source_dir[$source_num++] = $file;
-      } else {
+      }
+      else {
         $other_dir[$other_num++] = $file;
       }
     }//end-if
   }//end-while
 
   green_bar("Supported Linux Binaries", "Linux");
-  for ($i=0; $i<$linux_num; $i++) {
-    display_files($scanthis, $cldir, $rtdir, $linux_dir[$i]);
+  for ($i = 0; $i < $linux_num; $i++) {
+    display_files($descdir, $tree, $cldir, $rtdir, $linux_dir[$i]);
   }
+
   green_bar("Supported Windows Binaries", "Windows");
-  for ($i=0; $i<$windows_num; $i++) {
-    display_files($scanthis, $cldir, $rtdir, $windows_dir[$i]);
+  for ($i = 0; $i < $windows_num; $i++) {
+    display_files($descdir, $tree, $cldir, $rtdir, $windows_dir[$i]);
   }
+
   green_bar("Supported Mac OS X Binaries", "MacOSX");
-  for ($i=0; $i<$macosx_num; $i++) {
-    display_files($scanthis, $cldir, $rtdir, $macosx_dir[$i]);
+  for ($i = 0; $i < $macosx_num; $i++) {
+    display_files($descdir, $tree, $cldir, $rtdir, $macosx_dir[$i]);
   }
+
   green_bar("Documentation", "Docs");
-  for ($i=0; $i<$docs_num; $i++) {
-    display_files($scanthis, $cldir, false, $docs_dir[$i]);
+  for ($i = 0; $i < $docs_num; $i++) {
+    display_files($descdir, $tree, $cldir, false, $docs_dir[$i]);
   }
   for ($i = 0; $i < $other_docs_num; $i++) {
-    display_files($scanthis, false, false, $other_docs_dir[$i]);
-  }
-  green_bar("Source Code", "Source");
-  for ($i=0; $i<$source_num; $i++) {
-    display_files($scanthis, $cldir, false, $source_dir[$i]);
-  }
-  if ($other_num > 0) green_bar("Other Files", "Other");
-  for ($i=0; $i<$other_num; $i++) {
-    display_files($scanthis, $cldir, $rtdir, $other_dir[$i]);
+    display_files($descdir, $tree, false, false, $other_docs_dir[$i]);
   }
 
+  green_bar("Source Code", "Source");
+  for ($i = 0; $i < $source_num; $i++) {
+    display_files($descdir, $tree, $cldir, false, $source_dir[$i]);
+  }
+
+  if ($other_num > 0) green_bar("Other Files", "Other");
+  for ($i = 0; $i < $other_num; $i++) {
+    display_files($descdir, $tree, $cldir, $rtdir, $other_dir[$i]);
+  }
 }//end-function declaration
 
+
+require 'snap_header.php';
+
+parse_dir("snapshots.desc", "snapshots_tree.txt", "changelog_heads", "regression_test_results");
+
+require 'snap_footer.php';
 ?>
