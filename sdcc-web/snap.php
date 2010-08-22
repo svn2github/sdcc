@@ -1,4 +1,160 @@
 <?php
+class LsDir {
+  protected $curdir;
+  protected $root;
+
+
+  public function dump()
+  {
+    print_r($this);
+  }
+
+
+  public function __construct()
+  {
+    $this->root = array("files" => array(), "name" => "/");
+    $this->curdir = &$this->root;
+  }
+
+
+  public function chDir($path, $relative = false)
+  {
+    if ($relative) {
+      $cur = &$this->curdir;
+    }
+    else {
+      $cur = &$this->root;
+    }
+
+    $cur = &$this->travel($cur, $path);
+
+    if ($cur != null) {
+      $this->curdir = &$cur;
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+
+  public function mkDir($path, $relative = false)
+  {
+    if ($relative) {
+      $cur = &$this->curdir;
+    }
+    else {
+      $cur = &$this->root;
+    }
+
+    $this->travel($cur, $path, true);
+  }
+
+
+  protected function _exists($dir, $path)
+  {
+    return array_key_exists($path, $dir["files"]);
+  }
+
+
+  public function exists($path)
+  {
+    return $this->_exists($this->curdir, $path);
+  }
+
+
+  protected function _isDir($dir, $path)
+  {
+    return $this->_exists($dir, $path) && array_key_exists("files", $dir["files"][$path]);
+  }
+
+
+  public function isDir($path)
+  {
+    return $this->_isDir($this->curdir, $path);
+  }
+
+
+  protected function _pwd(&$res, &$dir)
+  {
+    foreach (array_keys($dir["files"]) as $file) {
+      if ($this->_isDir($dir, $file)) {
+        if ($this->_pwd($res1, $dir["files"][$file]))
+          $res .= $file . "/" . $res1;
+          return true;
+      }
+      else {
+        return false;
+      }
+    }
+  }
+
+
+  public function pwd()
+  {
+    if ($this->_pwd($res, $this->root)) {
+      return "/" . $res;
+    }
+    else {
+      return null;
+    }
+  }
+
+
+  public function add($path, $attr)
+  {
+    if ($this->exists($path)) {
+      return false;
+    }
+    $this->curdir["files"][$path] = $attr;
+  }
+
+
+  public function getAttr($path)
+  {
+    if (!$this->exists($path)) {
+      return null;
+    }
+    return $this->curdir["files"][$path];
+  }
+
+
+  public function entries()
+  {
+    return array_keys($this->curdir["files"]);
+  }
+
+
+  protected function &travel(&$cur, $path, $create = false)
+  {
+    if (!is_array($path)) {
+      if ($path == "") {
+        return $cur;
+      }
+      $path = preg_split("/\/+/", preg_replace("|^/*(.*)/*$|", "$1", $path));
+    }
+
+    foreach($path as $file) {
+      if (!$this->_exists($cur, $file)) {
+        if ($create) {
+          $cur["files"][$file] = array("files" => array(), "name" => $file);
+        }
+        else {
+          return false;
+        }
+      }
+      if ($this->_isDir($cur, $file)) {
+        $cur = &$cur["files"][$file];
+      }
+      else {
+        return false;
+      }
+    }
+    return $cur;
+  }
+}
+
+
 function green_bar($text, $name)
 {
   echo "<h2><a name=\"" . $name . "\"></a>" . $text . "</h2>\n";
@@ -37,21 +193,17 @@ function rt_failed($fname)
     return null;
 }
 
-function display_files($descdir, $dir, $cldir, $rtdir, $subdir)
+function display_files($descdir, $lsDir, $cldir, $rtdir, $subdir)
 {
-#  echo("display_files($descdir, " . print_r($dir, true) . ", $cldir, $rtdir, $subdir)<br />\n");
-
   $numfiles = 0;
-  # Why this doesn't work?!
-#  $thissubdir = &travel($dir, $subdir);
-#  print_r($thissubdir);
-  $thissubdir = $dir[$subdir];
+  $lsDir->chDir($subdir);
 
-  foreach (array_keys($thissubdir) as $file) {
+  foreach ($lsDir->entries() as $file) {
     if ($file != "HEADER.html" && $file != ".htaccess") { 
+      $attr = $lsDir->getAttr($file);
       $file_name[$numfiles] = $file;
-      #$file_size[$numfiles] = filesize("$dir/$subdir/$file");  #TODO
-      #$file_date[$numfiles] = filemtime("$dir/$subdir/$file"); #TODO
+      $file_size[$numfiles] = $attr["size"];
+      $file_date[$numfiles] = $attr["date"];
       $numfiles++;
     }
   }
@@ -77,10 +229,11 @@ function display_files($descdir, $dir, $cldir, $rtdir, $subdir)
   echo "</tr>\n";
 
   for ($i = 0; $i < $numfiles; ++$i) {
-    $fs = round($file_size[$i] / 1024,0);
+    $fs = round($file_size[$i] / 1024, 0);
     $subdirpp = preg_replace("/\s/","%20","$subdir");
     $filep = preg_replace("/\s/","%20",$file_name[$i]);
-    $modDate = date("F j, Y", $file_date[$i]);
+    #$modDate = date("F j, Y", $file_date[$i]);
+    $modDate = $file_date[$i];
 
     # ChangeLog head
     $cl = '&nbsp;';
@@ -122,54 +275,37 @@ function display_files($descdir, $dir, $cldir, $rtdir, $subdir)
 }
 
 
-function &travel_r(&$arr, $path)
+function line2stat($line)
 {
-  #echo("travel_r(" . print_r($arr, true) . ", ". print_r($path, true). ")<br />\n");
-  #var_dump($path);
-
-  if (!is_array($arr) || (is_array($arr) && empty($arr))) {
-    return $arr;
+  $res = preg_split("/\s+/", $line, 9);
+  $path = explode('/', $res[8], 2);
+  if ($path[1] != "") {
+    $path[0] = $path[1] . '/' . $path[0];
   }
-  else {
-    $elem = array_shift($path);
-    if (!array_key_exists($arr, $elem)) {
-      $arr[$elem] = array();
-    }
-    return travel_r($arr[$elem], $path);
-  }
-}
-
-
-function &travel(&$arr, $file)
-{
-  return travel_r($arr, explode("/", $file));
+  return array($path[0], substr($res[0], 0, 1), array("size" => $res[4], "date" => $res[5] . " " . $res[6] . " " . $res[7]));
 }
 
 
 function &tree_array($file)
 {
-
-  $arr = array();
-  $curdir = &$arr;
+  $lsDir = new LsDir();
 
   foreach (file($file) as $line) {
-    $type = substr($line, 0, 1);
-    $file = rtrim(substr($line, 2));
+    $stat = line2stat(rtrim($line));
+    $type = $stat[1];
+    $file = $stat[0];
     if ($type == "d") {
-       $curdir = &travel($arr, $file);
+      if (!$lsDir->isDir($file)) {
+        $lsDir->mkDir($file);
+      }
+      $lsDir->chDir($file);
     }
     else {
-      $curdir[basename($file)] = null;
+      $lsDir->add($file, $stat[2]);
     }
   }
 
-  return $arr;
-}
-
-
-function isDir($dir, $file)
-{
-  return is_array($dir[$file]);
+  return $lsDir;
 }
 
 
@@ -177,10 +313,11 @@ function parse_dir($descdir, $scanthis, $cldir, $rtdir)
 {
   $linux_num = $windows_num = $macosx_num = $docs_num = $other_docs_num = $source_num = $other_num = 0;
 
-  $tree = tree_array($scanthis);
+  $lsDir = tree_array($scanthis);
+  $lsDir->chDir("");
 
-  foreach (array_keys($tree) as $file) {
-    if (isDir($tree, $file)) {
+  foreach ($lsDir->entries() as $file) {
+    if ($lsDir->isDir($file)) {
       if (preg_match('/(i386|amd64)-.*-linux/', $file)) {
         $linux_dir[$linux_num++] = $file;
       }
@@ -207,42 +344,42 @@ function parse_dir($descdir, $scanthis, $cldir, $rtdir)
 
   green_bar("Supported Linux Binaries", "Linux");
   for ($i = 0; $i < $linux_num; $i++) {
-    display_files($descdir, $tree, $cldir, $rtdir, $linux_dir[$i]);
+    display_files($descdir, $lsDir, $cldir, $rtdir, $linux_dir[$i]);
   }
 
   green_bar("Supported Windows Binaries", "Windows");
   for ($i = 0; $i < $windows_num; $i++) {
-    display_files($descdir, $tree, $cldir, $rtdir, $windows_dir[$i]);
+    display_files($descdir, $lsDir, $cldir, $rtdir, $windows_dir[$i]);
   }
 
   green_bar("Supported Mac OS X Binaries", "MacOSX");
   for ($i = 0; $i < $macosx_num; $i++) {
-    display_files($descdir, $tree, $cldir, $rtdir, $macosx_dir[$i]);
+    display_files($descdir, $lsDir, $cldir, $rtdir, $macosx_dir[$i]);
   }
 
   green_bar("Documentation", "Docs");
   for ($i = 0; $i < $docs_num; $i++) {
-    display_files($descdir, $tree, $cldir, false, $docs_dir[$i]);
+    display_files($descdir, $lsDir, $cldir, false, $docs_dir[$i]);
   }
   for ($i = 0; $i < $other_docs_num; $i++) {
-    display_files($descdir, $tree, false, false, $other_docs_dir[$i]);
+    display_files($descdir, $lsDir, false, false, $other_docs_dir[$i]);
   }
 
   green_bar("Source Code", "Source");
   for ($i = 0; $i < $source_num; $i++) {
-    display_files($descdir, $tree, $cldir, false, $source_dir[$i]);
+    display_files($descdir, $lsDir, $cldir, false, $source_dir[$i]);
   }
 
   if ($other_num > 0) green_bar("Other Files", "Other");
   for ($i = 0; $i < $other_num; $i++) {
-    display_files($descdir, $tree, $cldir, $rtdir, $other_dir[$i]);
+    display_files($descdir, $lsDir, $cldir, $rtdir, $other_dir[$i]);
   }
 }//end-function declaration
 
 
 require 'snap_header.php';
 
-parse_dir("snapshots.desc", "snapshots_tree.txt", "changelog_heads", "regression_test_results");
+parse_dir("snapshots.desc", "tree.txt", "changelog_heads", "regression_test_results");
 
 require 'snap_footer.php';
 ?>
