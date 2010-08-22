@@ -157,7 +157,18 @@ rm_old_versions ()
 {
   local i j k
 
-  for i in htdocs/snapshots htdocs/regression_test_results
+  for i in ${FRSDIR}
+  do    
+    for j in $(echo "ls -1t $i" | sftp -b- ${FRSUSER}@${FRSHOST} | sed -e '/^sftp> /d')
+    do    
+      for k in $(echo "ls -1t $j" | sftp -b- ${FRSUSER}@${FRSHOST} | sed -e '/^sftp> /d' | sed -e '1,7d')
+      do
+        if [ -n "$k" ]; then echo "removing $k"; echo "rm $k" | sftp -b- ${FRSUSER}@${FRSHOST}; fi
+      done
+    done
+  done
+
+  for i in ${WEBHTDOCSDIR}/regression_test_results
   do    
     for j in $(echo "ls -1t $i" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '/^sftp> /d')
     do    

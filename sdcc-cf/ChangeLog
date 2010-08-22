@@ -1,3 +1,7 @@
+2010-08-22 Borut Razem <borut.razem AT siol.net>
+
+	* bin/dcf.sh: snapshot files moved to SourceForge FRS
+
 2010-07-03 Borut Razem <borut.razem AT siol.net>
 
 	* .sdcc_builder/profile: added dos utils aliases, ndeeded on Ubuntu
