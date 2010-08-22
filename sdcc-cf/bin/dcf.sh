@@ -2,7 +2,7 @@
 
 # dcf.sh - Distributed Compile Farm Mediator
 #
-# Copyright (c) 2007-2010 Borut Razem
+# Copyright (c) 2007-2010 Borut Razem <borut dot razem at siol dot net>
 #
 # This file is part of sdcc.
 #
@@ -21,11 +21,8 @@
 #  2. Altered source versions must be plainly marked as such, and must not be
 #     misrepresented as being the original software.
 #  3. This notice may not be removed or altered from any source distribution.
-#
-#  Borut Razem
-#  borut.razem@siol.net
 
-LOG_LINES=1000
+LOG_LINES=1000	# max number of lines in the log file
 BWLIMIT=7	# bandwith limit for rsync
 
 ETC_DIR=$HOME/etc
@@ -36,11 +33,79 @@ DCF_BUILDER_LIST_FILE=$ETC_DIR/dcf_list
 DCF_LOG=$LOG_DIR/dcf.log
 DCF_LOCK=$LOCK_DIR/dcf.lock
 
+TREE_FILE=$HOME/tmp/tree.txt
+
 mkdir -p $LOG_DIR $LOCK_DIR
 
 WEBHOST=web.sourceforge.net
 WEBUSER=sdcc-builder,sdcc
 WEBHTDOCSDIR=/home/groups/s/sd/sdcc/htdocs
+
+FRSHOST=frs.sourceforge.net
+FRSUSER=$WEBUSER
+FRSDIR=/home/frs/project/s/sd/sdcc/snapshot_builds
+
+
+# substring
+substr ()
+# $1: string
+# $2: offset
+# $3: length
+{
+  if test "$3" = ""
+  then
+    echo "$1" | awk "{print substr(\$0, $2)}"
+  else
+    echo "$1" | awk "{print substr(\$0, $2, $3)}"
+  fi
+}
+
+
+# file type
+file_type ()
+# $1: premissions string
+{
+  expr "$1" : "^\(.\)[-rwxXst]*$"
+}
+
+
+# generate file tree list
+tree ()
+# $1: user
+# $2: host
+# $3: root
+# $4: subdir
+{
+  local old_ifs files line file type subdir
+
+  files=$(echo "ls -lt" | sftp -b- "$1@$2:$3/$4" | sed -e '/^sftp> /d')
+  old_ifs=$IFS
+  IFS='
+'
+  for line in ${files}
+  do
+    # get file name from ls -l line
+    # NOTE: this works only for file names without spaces!
+    file=$(expr "${line}" : ".*[ ]\([^ ][^ ]*\)$")
+    type=$(file_type $(substr "${line}" 0 8))
+    case "${type}" in
+    d)
+      if test -z "$4"
+      then
+        subdir="${file}"
+      else
+        subdir="$4${file}"
+      fi
+      echo "${line}/$4"
+      tree "$1" "$2" "$3" "${subdir}/"
+      ;;
+    [-l])
+      echo "${line}"
+      ;;
+    esac
+  done
+  IFS="${old_ifs}"
+}
 
 
 # remove files & directories specified in arguments
@@ -117,48 +182,78 @@ cleanup ()
 }
 
 
+# synchronise directory
+sync_dir ()
+# $1: source directory to sync
+# $2: traget machine/directory to sync
+{
+  if test -d $1 && cd $1
+  then
+    FILE_LIST=$(find * -depth -print 2>/dev/null)
+    if test -n "${FILE_LIST}"
+    then
+      echo "+++ start: $(date)"
+      echo "=== files in $1:"
+      list_files ${FILE_LIST}
+
+      echo "=== rsyncing..."
+      rsync $RSYNC_OPTS --relative --include='*.exe' -e ssh --size-only ${FILE_LIST} $2 2>&1 | grep -v -e "skipping directory"
+
+      echo "=== removing..."
+      rm_list ${FILE_LIST}
+
+      echo "=== removing old versions..."
+      rm_old_versions
+
+      echo "--- end: $(date)"
+
+      return 0
+    fi
+  fi
+
+  return 1
+}
+
+
 {
   trap 'echo dcf.sh caught signal ; cleanup ; exit 1' 1 2 3 13 15
 
-  if test -e $DCF_BUILDER_LIST_FILE
+  if test -e ${DCF_BUILDER_LIST_FILE}
   then
-    lockfile -r 0 $DCF_LOCK || exit 1
+    lockfile -r 0 ${DCF_LOCK} || exit 1
 
-    test "$BWLIMIT" != "" && RSYNC_OPTS="$RSYNC_OPTS --bwlimit=$BWLIMIT"
+    test "${BWLIMIT}" != "" && RSYNC_OPTS="${RSYNC_OPTS} --bwlimit=${BWLIMIT}"
+
+    rm -f ${TREE_FILE}
 
     {
       while read -r builder
       do
         export builder
+        export TREE_FILE
         (
-          builder=$(echo $builder | sed -e "s/^\(.*\)#.*$/\1/" -e "s/[ \t]*$//")
-          if test ! -z "$builder"
+          builder=$(echo ${builder} | sed -e "s/^\(.*\)#.*$/\1/" -e "s/[ \t]*$//")
+          if test ! -z "${builder}"
           then
-            if test -d /home/$builder/htdocs && cd /home/$builder/htdocs
+            if sync_dir "/home/${builder}/htdocs/snapshots" ${FRSUSER}@${FRSHOST}:${FRSDIR}/
             then
-              FILE_LIST=$(find * -depth -print 2>/dev/null)
-              if test -n "$FILE_LIST"
+              if test ! -e ${TREE_FILE}
               then
-                echo "+++ start: $(date)"
-                echo "=== files in /home/$builder/htdocs:"
-                list_files $FILE_LIST
-
-                echo "=== rsyncing..."
-                rsync $RSYNC_OPTS --relative --include='*.exe' -e ssh --size-only $FILE_LIST $WEBUSER@$WEBHOST:$WEBHTDOCSDIR/ 2>&1 | grep -v -e "skipping directory"
-
-                echo "=== removing..."
-                rm_list $FILE_LIST
-
-                echo "=== removing old versions..."
-                rm_old_versions
-
-                echo "--- end: $(date)"
+                tree ${FRSUSER} ${FRSHOST} ${FRSDIR} > ${TREE_FILE}
               fi
+              sync_dir "/home/${builder}/htdocs" ${WEBUSER}@${WEBHOST}:${WEBHTDOCSDIR}/
             fi
           fi
         )
       done
-    } < $DCF_BUILDER_LIST_FILE
+    } < ${DCF_BUILDER_LIST_FILE}
+
+    if test -e ${TREE_FILE}
+    then
+      pushd $(dirname ${TREE_FILE})
+      rsync ${RSYNC_OPTS} --relative --include='*.exe' -e ssh --size-only $(basename ${TREE_FILE}) ${WEBUSER}@${WEBHOST}:${WEBHTDOCSDIR}/ 2>&1 | grep -v -e "skipping directory"
+      popd
+    fi
   fi
 
   cleanup
