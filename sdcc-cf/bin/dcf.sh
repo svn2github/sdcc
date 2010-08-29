@@ -205,7 +205,7 @@ sync_dir ()
 {
   local ret=1 excl
 
-  if test -d $1 && pushd $1
+  if test -d $1 && pushd $1 > /dev/null
   then
     FILE_LIST=$(find * -depth -print 2>/dev/null)
     if test -n "${FILE_LIST}"
@@ -235,7 +235,7 @@ sync_dir ()
 
       ret=0
     fi
-    popd
+    popd > /dev/null
   fi
 
   return $ret
