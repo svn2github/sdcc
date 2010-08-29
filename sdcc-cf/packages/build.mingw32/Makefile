@@ -109,6 +109,7 @@ download/gcc-g++-$(GCC_VERSION).tar.bz2:
 	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-g++-$(GCC_VERSION).tar.bz2
 
 gcc-download.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_VERSION).tar.bz2
+	touch $@
 
 gcc-unpack.tag: gcc-download.tag
 	for i in download/gcc*.tar.bz2; do \
