@@ -1,3 +1,9 @@
+2010-08-29 Borut Razem <borut.razem AT siol.net>
+
+	* bin/dcf.sh: fixed upload the new version of ${TREE_FILE},
+	  needed by snap.php to create sdcc snapshots web page;
+	  cosmetic changes
+
 2010-08-22 Borut Razem <borut.razem AT siol.net>
 
 	* bin/dcf.sh: snapshot files moved to SourceForge FRS

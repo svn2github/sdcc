@@ -112,6 +112,8 @@ tree ()
 # relays on find -depth
 rm_list ()
 {
+  local file
+
   for file in $*
   do
     if test -d $file
@@ -128,6 +130,8 @@ rm_list ()
 # each file in a new line
 list_files ()
 {
+  local file
+
   for file in $*
   do
     echo "  $file"
@@ -152,7 +156,7 @@ log_it ()
 }
 
 
-# remove more than 7 files in dir from WEB server
+# remove more than 7 files in dir from fsr server
 rm_old_versions ()
 {
   local i j k
@@ -197,8 +201,11 @@ cleanup ()
 sync_dir ()
 # $1: source directory to sync
 # $2: traget machine/directory to sync
+# $3: exclude source directories from sync
 {
-  if test -d $1 && cd $1
+  local ret=1 excl
+
+  if test -d $1 && pushd $1
   then
     FILE_LIST=$(find * -depth -print 2>/dev/null)
     if test -n "${FILE_LIST}"
@@ -207,8 +214,16 @@ sync_dir ()
       echo "=== files in $1:"
       list_files ${FILE_LIST}
 
+      excl=""
       echo "=== rsyncing..."
-      rsync $RSYNC_OPTS --relative --include='*.exe' -e ssh --size-only ${FILE_LIST} $2 2>&1 | grep -v -e "skipping directory"
+      if test -n "$3"
+      then
+        for dir in $3
+	do
+          excl=${excl}" --exclude "${dir}
+	done
+      fi
+      rsync $RSYNC_OPTS --relative --recursive --include='*.exe' ${excl} -e ssh --size-only * $2 2>&1 | grep -v -e "skipping directory"
 
       echo "=== removing..."
       rm_list ${FILE_LIST}
@@ -218,14 +233,15 @@ sync_dir ()
 
       echo "--- end: $(date)"
 
-      return 0
+      ret=0
     fi
+    popd
   fi
 
-  return 1
+  return $ret
 }
 
-
+# main procedure
 {
   trap 'echo dcf.sh caught signal ; cleanup ; exit 1' 1 2 3 13 15
 
@@ -252,7 +268,7 @@ sync_dir ()
               then
                 tree ${FRSUSER} ${FRSHOST} ${FRSDIR} > ${TREE_FILE}
               fi
-              sync_dir "/home/${builder}/htdocs" ${WEBUSER}@${WEBHOST}:${WEBHTDOCSDIR}/
+              sync_dir "/home/${builder}/htdocs" ${WEBUSER}@${WEBHOST}:${WEBHTDOCSDIR}/ "/home/${builder}/htdocs/snapshots"
             fi
           fi
         )
@@ -261,9 +277,8 @@ sync_dir ()
 
     if test -e ${TREE_FILE}
     then
-      pushd $(dirname ${TREE_FILE})
-      rsync ${RSYNC_OPTS} --relative --include='*.exe' -e ssh --size-only $(basename ${TREE_FILE}) ${WEBUSER}@${WEBHOST}:${WEBHTDOCSDIR}/ 2>&1 | grep -v -e "skipping directory"
-      popd
+      # upload the new version of ${TREE_FILE}, needed by snap.php to create sdcc snapshots web page
+      echo "put ${TREE_FILE} ${WEBHTDOCSDIR}/$(basename ${TREE_FILE})" | sftp -b- ${WEBUSER}@${WEBHOST}
     fi
   fi
 
