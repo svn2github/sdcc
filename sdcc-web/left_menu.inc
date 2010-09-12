@@ -16,7 +16,7 @@
     <a href="/snap.php#Source"><i>Source</i></a><br />
   </div>
   <br />
-  <b><i>Documentation</i></a></b>
+  <b><i>Documentation</i></b>
   <div class="submenu">
     <a href="/doc/sdccman.html/"><i>SDCC Manual (html</i></a>/<a href="http://sdcc.sourceforge.net/doc/sdccman.pdf"><i>pdf)</i></a><br />
     <a href="/doc/test_suite_spec.html/"><i>Test Suite (html</i></a>/<a href="http://sdcc.sourceforge.net/doc/test_suite_spec.pdf"><i>pdf)</i></a><br />
