@@ -1,6 +1,7 @@
 2010-09-12 Borut Razem <borut.razem AT siol.net>
 
 	* snap.php: do not sort by the date: files are already sorted
+	* index.php: sdas and sdld instead asxxxx, reformatted, ...
 
 2010-08-22 Borut Razem <borut.razem AT siol.net>
 
