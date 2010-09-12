@@ -207,9 +207,11 @@ function display_files($descdir, $lsDir, $cldir, $rtdir, $subdir)
       $numfiles++;
     }
   }
-  if ($numfiles > 0) {
-    array_multisort($file_date, SORT_DESC, $file_name, $file_size);
-  }
+  # dates are in text format, so the sort is not working as expected
+  # files seems to be already sorted by the date in tree.txe, so additional sorting is not needed!
+  #if ($numfiles > 0) {
+  #  array_multisort($file_date, SORT_DESC, $file_name, $file_size);
+  #}
 
   echo "<p><img src=\"/images/folder-B4-6-32x32.png\" border=\"0\" align=\"bottom\" alt=\"Folder\" />";
   echo "<font face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\"><b><i>";
