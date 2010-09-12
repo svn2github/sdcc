@@ -16,7 +16,9 @@
             <td valign="top" width="15%"><?php echo(file_get_contents('./left_menu.inc'));?>
             </td>
             <td width="85%">
+
             <h2>What is SDCC?</h2>
+
             <p><b>SDCC</b> is a <b><i>retargettable, optimizing ANSI - C compiler</i></b> that
               targets the <b><i>Intel 8051, Maxim 80DS390, Zilog Z80</i></b> and the <b><i>Motorola 68HC08</i></b> based MCUs.
               Work is in progress on supporting the <b><i>Microchip PIC16</i></b> and <b><i>PIC18</i></b> series.
@@ -73,11 +75,11 @@
             </ul>
             <p>Numerous feature requests and bug fixes are included as well.</p>
             <p>You can download the release from:<br />
-            <a href="http://sourceforge.net/project/showfiles.php?group_id=599" target="_new">http://sourceforge.net/project/showfiles.php?group_id=599
-      </a></p>
-      <!-- END NEWS -->
+              <a href="http://sourceforge.net/project/showfiles.php?group_id=599" target="_new">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
+            <!-- END NEWS -->
 
             <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
+
             <p><b>Linux - x86</b>, <b>Microsoft Windows - x86</b> and <b>Mac OS X</b>
               are the primary, so called "officially supported" platforms.</p>
             <p><b>SDCC</b> compiles natively on <b>Linux</b> and <b>Mac OS X</b>
@@ -85,10 +87,12 @@
             <p><b>Windows 9x/NT/2000/XP</b> users are
               recommended to use Cygwin (<a href="http://sources.redhat.com/cygwin/">http://sources.redhat.com/cygwin/</a>)
               or may try the unsupported Microsoft Visual C++ build scripts.</p>
+
             <h2><a name="Download"></a>Downloading SDCC</h2>
+
             <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
               download page</a> for the last released version including source and binary packages for <b>Linux - x86</b>,
-            <b>Microsoft Windows - x86</b> and <b>Mac OS X - ppc and i386</b>.</p>
+              <b>Microsoft Windows - x86</b> and <b>Mac OS X - ppc and i386</b>.</p>
             <p>SDCC is known to compile from the source code also on the following platforms:</p>
             <ul>
               <li>Linux - x86_64</li>
@@ -101,7 +105,7 @@
               <li>SUN Solaris - Sparc</li>
             </ul>
             <p>SDCC is always under active development. Please consider
-            <a href="snap.php">downloading one of the snapshot builds</a>
+              <a href="snap.php">downloading one of the snapshot builds</a>
               if you have run across a bug, or if the above release is more than two months old.</p>
             <p> Debian packages (many thanks to Aurelien Jarno &lt;aurel32.AT.debian.org&gt;):
             </p>
@@ -114,30 +118,27 @@
               <li> <a href="http://www.rpmseek.com/">http://www.rpmseek.com/</a></li>
               <li> <a href="http://rpmfind.net/">http://rpmfind.net/</a></li>
             </ul>
-            <p>The latest development source code can be accessed using Subversion. The following will fetch the latest sources:<br />
-            <br />
-            <code>
-              svn co https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc sdcc
-            </code><br />
-            <br />
-              ... will create the <i>sdcc</i> directory in your current directory and place all
+            <p>The latest development source code can be accessed using Subversion. The following will fetch the latest sources:</p>
+            <p><code>svn co https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc sdcc</code></p>
+            <p>... will create the <i>sdcc</i> directory in your current directory and place all
               downloaded code there. You can browse the Subversion repository
-            <a href="https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/">here</a>.</p>
+              <a href="https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/">here</a>.</p>
             <p>SourceForge has further documentation on accessing the Subversion repository
-            <a href="http://sourceforge.net/docman/display_doc.php?docid=31070&amp;group_id=1">here</a>.</p>
+              <a href="http://sourceforge.net/docman/display_doc.php?docid=31070&amp;group_id=1">here</a>.</p>
             <p>Before reporting a bug, please check your SDCC version and build
               date using the -v option, and be sure to include the full version string in your bug report. For example:</p>
             <p><code>sdcc/bin &gt; sdcc -v<br /> 
-SDCC : mcs51/gbz80/z80/avr/ds390/pic14/TININative/xa51 2.3.8 (Feb 10 2004) (UNIX)</code></p>
+              SDCC : mcs51/gbz80/z80/avr/ds390/pic14/TININative/xa51 2.3.8 (Feb 10 2004) (UNIX)</code></p>
+
             <h2><a name="Support"></a>Support for SDCC</h2>
+
             <p><b>SDCC</b> and the included support packages come with fair amounts of documentation
               and examples. When they aren't enough, you can find help in the
               places listed below. Here is a short check list of tips to greatly improve your
               chances of obtaining a helpful response.</p>
             <ol>
-              <li>Attach the code you are compiling with SDCC. It
-                should compile "out of the box". Snippets must compile and must include
-                any required header files, etc.
+              <li>Attach the code you are compiling with SDCC. It should compile "out of the box".
+                Snippets must compile and must include any required header files, etc.
                 Incomplete information will hamper your chance of a timely response.</li>
               <li>Specify the exact command you use to run SDCC, or attach your Makefile.</li>
               <li>Specify the SDCC version (type "sdcc -v"), your platform and operating system.</li>
@@ -170,7 +171,9 @@ SDCC : mcs51/gbz80/z80/avr/ds390/pic14/TININative/xa51 2.3.8 (Feb 10 2004) (UNIX
                 easy online fill-in the blanks.</li>
               <li><a href="http://sdccokr.dl9sec.de/">Open Knowledge Web Site</a> - Run by Thorsten Godau &lt;thorsten.godau.AT.gmx.de&gt;</li>
             </ul>
+
             <h2><a name="Who"></a>Who is SDCC?</h2>
+
             <ul>
               <li>Sandeep Dutta &lt;sandeep.AT.users.sourceforge.net&gt; - original author (SDCC's version of Torvalds)</li>
               <li>Jean Loius-VERN &lt;jlvern.AT.writeme.com&gt; - substantial improvement in the back-end code generation.</li>
