@@ -1,3 +1,7 @@
+2010-09-15 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.mingw32/Makefile: updated to gcc 4.5.1, w32api 3.15-1
+
 2010-08-29 Borut Razem <borut.razem AT siol.net>
 
 	* bin/dcf.sh: fixed upload the new version of ${TREE_FILE},

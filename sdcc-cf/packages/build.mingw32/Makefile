@@ -2,8 +2,9 @@ include ../packages.mk
 
 BINUTILS_VERSION=2.20.1
 MINGWRT_VERSION=3.18
-W32API_VERSION=3.14
-GCC_VERSION=4.5.0
+W32API_DIR_VERSION=3.15
+W32API_VERSION=$(W32API_DIR_VERSION)-1
+GCC_VERSION=4.5.1
 
 TARGET=i586-mingw32msvc
 PROGRAM_PREFIX=i586-mingw32msvc-
@@ -64,14 +65,15 @@ binutils-realclean: binutils-clean
 
 
 download/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz:
-	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
+	wget -P download http://sourceforge.net/projects/mingw/files/MinGW/BaseSystem/RuntimeLibrary/MinGW-RT/mingwrt-$(MINGWRT_VERSION)/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz/download
+	#wget -P download $(SF_REPOSITORY)/sourceforge/mingw/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
 
 mingw-runtime-download.tag: download/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
 
 mingw-runtime-install.tag: mingw-runtime-download.tag
 	mkdir -p $(PREFIX)/$(TARGET)/include
 	mkdir -p $(PREFIX)/$(TARGET)/lib
-	tar -xzf download/mingwrt*.tar.gz -C $(PREFIX)/$(TARGET)
+	tar -C $(PREFIX)/$(TARGET) -xzf download/mingwrt*.tar.gz
 	touch $@
 
 .PHONY: mingw-runtime-clean
@@ -83,15 +85,15 @@ mingw-runtime-realclean: mingw-runtime-clean
 	rm -f mingw-runtime-download.tag
 
 
-download/w32api-$(W32API_VERSION)-mingw32-dev.tar.gz:
-	wget -P download $(SF_REPOSITORY)/sourceforge/mingw/w32api-$(W32API_VERSION)-mingw32-dev.tar.gz
+download/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma:
+	wget -P download http://sourceforge.net/projects/mingw/files/MinGW/BaseSystem/RuntimeLibrary/Win32-API/w32api-$(W32API_DIR_VERSION)/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma/download
 
-w32api-download.tag: download/w32api-$(W32API_VERSION)-mingw32-dev.tar.gz
+w32api-download.tag: download/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma
 
 w32api-install.tag: w32api-download.tag
 	mkdir -p $(PREFIX)/$(TARGET)/include
 	mkdir -p $(PREFIX)/$(TARGET)/lib
-	tar -C $(PREFIX)/$(TARGET) -xzf download/w32api*.tar.gz
+	tar -C $(PREFIX)/$(TARGET) --lzma -xf download/w32api*.tar.lzma
 	touch $@
 
 .PHONY: w32api-clean
