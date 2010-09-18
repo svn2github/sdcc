@@ -1,3 +1,8 @@
+2010-09-18 Borut Razem <borut.razem AT siol.net>
+
+	* components/sdcc.mk: remove gen and results directories before
+	  performing regression tests on cross compiled win32 platform
+
 2010-07-06 Borut Razem <borut.razem AT siol.net>
 
 	* components/sdcc.mk, lib/bootstrap.mk, lib/variables.mk,

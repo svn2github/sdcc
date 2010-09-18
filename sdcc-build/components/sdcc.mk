@@ -99,6 +99,7 @@ ifeq ($(CROSSCOMPILING), 1)
 	if wine sdcc --version > /dev/null 2>&1; \
 	then \
 	  mkdir -p $(REGTESTDIR); \
+	  rm -rf src/sdcc/support/regression/gen src/sdcc/support/regression/results; \
 	  $(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(CROSSREGTESTTARGETS) CROSSCOMPILING=$(CROSSCOMPILING) SDCC="wine sdcc" $(CC_FOR_BUILD_STR) 2>&1 | tee $(REGTESTLOG); \
 	fi
 else
