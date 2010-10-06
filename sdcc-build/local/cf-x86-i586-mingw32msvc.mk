@@ -17,7 +17,9 @@ SDCCCONFIGUREFLAGS = \
 --datarootdir=/sdcc \
 docdir=$${datarootdir}/doc \
 include_dir_suffix=include \
+non_free_include_dir_suffix=non-free/include \
 lib_dir_suffix=lib \
+non_free_lib_dir_suffix=non-free/lib \
 sdccconf_h_dir_separator=\\\\ \
 --disable-device-lib
 EXEEXTENSION = .exe

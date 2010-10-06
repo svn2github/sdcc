@@ -1,3 +1,8 @@
+2010-10-06 Borut Razem <borut.razem AT siol.net>
+
+	* local/cf-x86-i586-mingw32msvc.mk:
+	  define non_free_include_dir_suffix and non_free_lib_dir_suffix
+
 2010-09-18 Borut Razem <borut.razem AT siol.net>
 
 	* components/sdcc.mk: remove gen and results directories before
