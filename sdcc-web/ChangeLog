@@ -1,3 +1,9 @@
+2010-10-10 Borut Razem <borut.razem AT siol.net>
+
+	* index.php:
+	  added News - sdcc 3.0.0 RC1, removed old sdcc 2.9.0 release news
+	* previous.php: added old news
+
 2010-09-12 Borut Razem <borut.razem AT siol.net>
 
 	* snap.php: do not sort by the date: files are already sorted

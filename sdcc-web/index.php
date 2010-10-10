@@ -53,29 +53,11 @@
             <!-- START NEWS -->
             <h2><a name="News"></a>News</h2>
       
-            <p><i><b>March 22th, 2009: Small Device C Compiler 2.9.0 released.</b></i></p>
-            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
-              HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
-              Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and
-              universal Mac OS X are available.</p>
-            <p>SDCC 2.9.0 Feature List:</p>
-            <ul>
-              <li>sdcpp synchronized with GNU cpp 4.3.3</li>
-              <li>Integer constants written in binary (prefix 0b or 0B, followed by a sequence
-                of 0 and 1digits) are now supported as a SDCC extension.</li>
-              <li>pic16 *printf() library functions return int</li>
-              <li>disabled support of undocumented and not standard compliant 'b' binary 
-                format specifier ("%b", "%hb" and "%lb") in pic16 *printf() and printf_tiny() library functions</li>
-              <li>fixed initialization of unnamed bitfields members of objects of structure and union type</li>
-              <li>many optimizations to reduce code size and increase speed in the Z80 backend</li>
-              <li>added support for ar format libraries to adcc asxxxx</li>
-              <li>libraries, included in sdcc packages, are in ar format</li>
-              <li>sdcc asxxxx license changed to GPLv3</li>
-              <li>added support for many PIC16 devices</li>
-            </ul>
-            <p>Numerous feature requests and bug fixes are included as well.</p>
-            <p>You can download the release from:<br />
-              <a href="http://sourceforge.net/project/showfiles.php?group_id=599" target="_new">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
+            <p><i><b>October 10th, 2010: SDCC 3.0.0 RC1 released.</b></i></p>
+            <p>SDCC 3.0.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+              32 bit Windows and universal Mac OS X are available at:
+              <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.0.0-rc1/">
+                http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.0.0-rc1</a>.</p>
             <!-- END NEWS -->
 
             <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
@@ -209,15 +191,29 @@
             <!-- START PAST_NEWS -->
             <h2>Past news</h2>
 
-            <p><i><b>March 15th, 2009: SDCC 2.9.0 RC2 released.</b></i></p>
-            <p>SDCC 2.9.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
-              32 bit Windows and universal Mac OS X are available at:
-              <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
-
-            <p><i><b>March 1st, 2009: SDCC 2.9.0 RC1 released.</b></i></p>
-            <p>SDCC 2.9.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
-              32 bit Windows and universal Mac OS X are available at:
-              <a href="http://sdcc.sourceforge.net/snap.php">http://sdcc.sourceforge.net/snap.php</a>.</p>
+            <p><i><b>March 22th, 2009: Small Device C Compiler 2.9.0 released.</b></i></p>
+            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
+              HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
+              Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and
+              universal Mac OS X are available.</p>
+            <p>SDCC 2.9.0 Feature List:</p>
+            <ul>
+              <li>sdcpp synchronized with GNU cpp 4.3.3</li>
+              <li>Integer constants written in binary (prefix 0b or 0B, followed by a sequence
+                of 0 and 1digits) are now supported as a SDCC extension.</li>
+              <li>pic16 *printf() library functions return int</li>
+              <li>disabled support of undocumented and not standard compliant 'b' binary 
+                format specifier ("%b", "%hb" and "%lb") in pic16 *printf() and printf_tiny() library functions</li>
+              <li>fixed initialization of unnamed bitfields members of objects of structure and union type</li>
+              <li>many optimizations to reduce code size and increase speed in the Z80 backend</li>
+              <li>added support for ar format libraries to adcc asxxxx</li>
+              <li>libraries, included in sdcc packages, are in ar format</li>
+              <li>sdcc asxxxx license changed to GPLv3</li>
+              <li>added support for many PIC16 devices</li>
+            </ul>
+            <p>Numerous feature requests and bug fixes are included as well.</p>
+            <p>You can download the release from:<br />
+              <a href="http://sourceforge.net/project/showfiles.php?group_id=599" target="_new">http://sourceforge.net/project/showfiles.php?group_id=599</a></p>
             <!-- END PAST_NEWS -->
 
             <p><a href="previous.php">Previous News</a></p>
