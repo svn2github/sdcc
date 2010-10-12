@@ -97,4 +97,4 @@ endif
 copy-extra-docs:
 	cp -f $(SRCDIR)/sdcc/doc/README.txt $(SRCDIR)/sdcc/doc/INSTALL.txt $(BUILDDIR)
 
-update-snapshots-dir: generate-tarball generate-packages
+update-snapshots-dir: generate-packages
