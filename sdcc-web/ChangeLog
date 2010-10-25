@@ -1,3 +1,8 @@
+2010-10-25 Maarten Brock <sourceforge.brock AT dse.nl>
+
+	* index.php: fixed typos
+	* left_menu.inc: reverted fix for bug 2938514: was just a glitch at SF
+
 2010-10-23 Borut Razem <borut.razem AT siol.net>
 
 	* index.php:

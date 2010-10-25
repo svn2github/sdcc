@@ -28,7 +28,7 @@
   <div class="submenu">
     <a href="http://sourceforge.net/project/showfiles.php?group_id=599"><i>SDCC File Releases</i></a><br />
     <a href="http://sdcc.svn.sourceforge.net/viewvc/sdcc/trunk/sdcc/"><i>SDCC Subversion Repository</i></a><br />
-    <a href="http://sourceforge.net/projects/sdcc/forums/forum/1865/"><i>SDCC Forum</i></a><br />
+    <a href="http://sourceforge.net/projects/sdcc/forums/"><i>SDCC Forum</i></a><br />
   </div>
   <br />
   <b><a href="http://sdcc.wiki.sourceforge.net/"><i>SDCC Wiki</i></a></b><br />

@@ -54,10 +54,10 @@
             <h2><a name="News"></a>News</h2>
       
             <p><i><b>October 22nd, 2010: SDCC 3.0.0 RC2 released.</b></i></p>
-            <p>SDCC 3.0.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+            <p>SDCC 3.0.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
               32 bit Windows and universal Mac OS X are available at:
               <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.0.0-rc2/">
-                http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.0.0-rc1</a>.</p>
+                http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.0.0-rc2</a>.</p>
             <!-- END NEWS -->
 
             <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
