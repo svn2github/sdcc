@@ -25,7 +25,7 @@ ncurses-unpack.tag: ncurses-download.tag
 
 ncurses-configure.tag: ncurses-unpack.tag
 	cd ncurses-$(VERSION) && \
-        ./configure --prefix=$(LOCAL_DIR) $(COMPILERS) CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)"
+	./configure --prefix=$(LOCAL_DIR) $(COMPILERS) CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)"
 	touch $@
 
 ncurses-make.tag: ncurses-configure.tag
