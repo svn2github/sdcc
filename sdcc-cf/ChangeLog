@@ -1,3 +1,7 @@
+2011-03-03 Borut Razem <borut.razem AT siol.net>
+
+	* .sdcc_builder/profile: fixed dos utils aliases on Solaris
+
 2011-02-06 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.ncurses/Makefile: tab indentation
