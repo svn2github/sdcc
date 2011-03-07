@@ -6,4 +6,4 @@ HOSTOS = sparc64-unknown-netbsd
 
 # readline library at /usr/pkg/lib
 TARGETLDFLAGS = "-L/usr/pkg/lib"
-
+TARGETCXXFLAGS = "-O2 -I$(HOME)/local-$(HOSTNAME)/include"

@@ -1,3 +1,9 @@
+2011-03-07 Borut Razem <borut.razem AT siol.net>
+
+	* local/dev.mk, local/mypants.mk, local/solaris-x86.mk,
+	  local/freebsd-i386.mk, local/netbsd-i386.mk:
+	  added -I$(HOME)/local-$(HOSTNAME)/include to TARGETCXXFLAGS
+
 2010-10-12 Borut Razem <borut.razem AT siol.net>
 
 	* lib/bootstrap.mk: execute copy-extra-bins before generate-tarball

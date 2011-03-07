@@ -6,4 +6,4 @@ HOSTOS = sparc-sun-solaris
 
 TARGETCC = cc
 TARGETCXX = CC
-
+TARGETCXXFLAGS = "-O2 -I$(HOME)/local-$(HOSTNAME)/include"
