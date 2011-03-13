@@ -24,11 +24,11 @@ $(PACKAGE)-download.tag: download/$(PACKAGE_FILE)
 
 $(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
 ifeq ($(OS),SunOS)
-        unzip download/$(PACKAGE_FILE)
-        find $(PACKAGE_DIR) -type f -exec dos2unix {} {} \;
+	unzip download/$(PACKAGE_FILE)
+	find $(PACKAGE_DIR) -type f -exec dos2unix {} {} \;
         find $(PACKAGE_DIR) -name '*.sh' -exec chmod +x {} \;
 else
-        tar xjvf download/$(PACKAGE_FILE)
+	tar xjvf download/$(PACKAGE_FILE)
 endif
 	touch $@
 
