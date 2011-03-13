@@ -1,6 +1,8 @@
 2011-03-13 Borut Razem <borut.razem AT siol.net>
 
-	* packages/build.boost/Makefile: fixed boost installation on Solaris
+	* packages/build.boost/Makefile: fixed boost installation on Solaris:
+	  define INCLUDES_ONLY on Solaris due a compiler bug;
+	  see http://forums.oracle.com/forums/thread.jspa?threadID=2158828&tstart=30
 
 2011-03-03 Borut Razem <borut.razem AT siol.net>
 

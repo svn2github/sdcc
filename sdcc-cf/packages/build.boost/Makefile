@@ -5,7 +5,8 @@ VERSION=1_45_0
 SUBDIR:=$(shell echo $(VERSION) | sed -e 's/_/./g')
 ifeq ($(OS),SunOS)
   PACKAGE_FILE=$(PACKAGE)_$(VERSION).zip
-  WITH_TOOLSET=--with_toolset=sun
+  WITH_TOOLSET=--with-toolset=sun
+  INCLUDES_ONLY=1
 else
   PACKAGE_FILE=$(PACKAGE)_$(VERSION).tar.bz2
   WITH_TOOLSET=
