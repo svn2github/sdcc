@@ -48,7 +48,7 @@ endif
 	touch $@
 
 $(PACKAGE)-install.tag: $(PACKAGE)-make.tag
-	mkdir $(LOCAL_DIR)/include
+	test -e $(LOCAL_DIR)/include || mkdir $(LOCAL_DIR)/include
 	mv $(PACKAGE_DIR)/boost $(LOCAL_DIR)/include/
 ifndef INCLUDES_ONLY
 	mv $(PACKAGE_DIR)/stage/lib/* $(LOCAL_DIR)/lib
