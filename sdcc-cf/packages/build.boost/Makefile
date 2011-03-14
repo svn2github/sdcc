@@ -11,7 +11,7 @@ else
   WITH_TOOLSET=
 endif
 
-ifeq($(HOSTNAME),mypants)
+ifeq ($(HOSTNAME),mypants)
   BJAM_FLAGS=pch=off
 else
   BJAM_FLAGS=
