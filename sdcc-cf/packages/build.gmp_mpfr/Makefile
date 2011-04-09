@@ -38,7 +38,7 @@ gmp-install.tag: gmp-make.tag
 
 	
 mpfr-download.tag:
-	wget -P download http://www.mpfr.org/mpfr-current/mpfr-3.0.0.tar.bz2
+	wget -P download http://www.mpfr.org/mpfr-current/mpfr-3.0.1.tar.bz2
 	touch $@
 
 mpfr-unpack.tag: mpfr-download.tag

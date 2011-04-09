@@ -1,3 +1,8 @@
+2011-04-09 Borut Razem <borut.razem AT siol.net>
+
+	* packages/build.mingw32/Makefile, packages/build.gmp_mpfr/Makefile:
+	  updated to gcc 4.6.0, binutils 2.21, w32api 3.17-2, mpfr 3.0.1
+
 2011-03-13 Borut Razem <borut.razem AT siol.net>
 
 	* packages/build.boost/Makefile: fixed boost installation on Solaris:
