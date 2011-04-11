@@ -1,3 +1,8 @@
+2011-04-11 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.gcc/Makefile, packages/build.gmp_mpfr/Makefile:
+	  force 32 bit compiltion on Solaris
+
 2011-04-10 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.gcc/Makefile: added

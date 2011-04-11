@@ -7,6 +7,10 @@ GMP_DIR = gmp-$(GMP_VERSION)
 MPFR_DIR = mpfr-$(MPFR_VERSION)
 MPC_DIR = mpc-$(MPC_VERSION)
 
+ifeq ($(OS),SunOS)
+  CFGENV=CFLAGS='-xO3 -m32' ABI=32
+endif
+
 .PHONY: all
 all: gmp-install.tag gmp-clean mpfr-install.tag mpfr-clean mpc-install.tag mpc-clean
 
@@ -25,7 +29,7 @@ gmp-unpack.tag: gmp-download.tag
 
 gmp-configure.tag: gmp-unpack.tag
 	cd $(GMP_DIR) && \
-	./configure --prefix=$(LOCAL_DIR)
+	./configure --prefix=$(LOCAL_DIR) $(CFGENV)
 	touch $@
 
 gmp-make.tag: gmp-configure.tag
@@ -47,7 +51,7 @@ mpfr-unpack.tag: mpfr-download.tag
 
 mpfr-configure.tag: mpfr-unpack.tag
 	cd $(MPFR_DIR) && \
-	./configure --prefix=$(LOCAL_DIR) --with-gmp=$(LOCAL_DIR)
+	./configure --prefix=$(LOCAL_DIR) --with-gmp=$(LOCAL_DIR) $(CFGENV)
 	touch $@
 
 mpfr-make.tag: mpfr-configure.tag
@@ -69,7 +73,7 @@ mpc-unpack.tag: mpc-download.tag
 
 mpc-configure.tag: mpc-unpack.tag
 	cd $(MPC_DIR) && \
-	./configure --prefix=$(LOCAL_DIR) --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR)
+	./configure --prefix=$(LOCAL_DIR) --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR) $(CFGENV)
 	touch $@
 
 mpc-make.tag: mpc-configure.tag

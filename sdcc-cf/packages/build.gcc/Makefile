@@ -4,7 +4,7 @@ GCC_VERSION=4.6.0
 
 ifeq ($(OS),SunOS)
   CFGFLAGS=--with-as=/usr/ccs/bin/as --with-ld=/usr/ccs/bin/ld --disable-lto
-  CFGENV=CC='cc -m64'
+#  CFGENV=CC='cc -m64'
 endif
 
 .PHONY: all
