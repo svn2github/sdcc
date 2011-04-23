@@ -1,14 +1,16 @@
 include ../packages.mk
 
-VERSION=$(shell expr download/rsync-*.tar.gz : 'download/rsync-\(.*\).tar.gz')
+VERSION=3.0.8
 
 RSYNC_DIR=rsync-$(VERSION)
 
 .PHONY: all
 all: rsync-install.tag clean
 
-rsync-download.tag:
-	wget -P download ftp://ftp.samba.org/pub/rsync/rsync-3.0.7.tar.gz
+download/rsync-$(VERSION).tar.gz:
+	wget -P download ftp://ftp.samba.org/pub/rsync/rsync-$(VERSION).tar.gz
+
+rsync-download.tag: download/rsync-$(VERSION).tar.gz
 	touch $@
 
 rsync-unpack.tag: rsync-download.tag
