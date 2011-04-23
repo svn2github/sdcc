@@ -1,6 +1,7 @@
 2011-04-23 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.rsync/Makefile: resync version 3.0.8
+	* .sdcc_builder/profile: added /opt/solstudio12.2/bin to path
 
 2011-04-11 Borut Razem <borut.razem AT gmail.com>
 
