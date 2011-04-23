@@ -90,7 +90,7 @@ TARBALLDIR = $(SNAPSHOTDIR)/$(TARGET_PLATFORM)
 endif
 
 # dos utils
-UNIX2DOS := $(shell if unix2dos -h > /dev/null 2>&1; then echo unix2dos; else echo todos; fi)
+UNIX2DOS := $(shell if test -x unix2dos; then echo unix2dos; else echo todos; fi)
 
 $(STAMPDIR):
 	mkdir -p $(STAMPDIR)

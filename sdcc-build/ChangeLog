@@ -1,4 +1,8 @@
-2011-03-07 Borut Razem <borut.razem AT siol.net>
+2011-04-23 Borut Razem <borut.razem AT gmail.com>
+
+	* lib/variables.mk: fixed UNIX2DOS for Solaris
+
+2011-03-07 Borut Razem <borut.razem AT gmail.com>
 
 	* local/dev.mk, local/mypants.mk, local/solaris-x86.mk,
 	  local/freebsd-i386.mk, local/netbsd-i386.mk:
@@ -32,7 +36,7 @@
 
 2010-07-03 Borut Razem <borut.razem AT siol.net>
 
-        * lib/bootstrap.mk, lib/doc-archive.mk, lib/variables.mk:
+	* lib/bootstrap.mk, lib/doc-archive.mk, lib/variables.mk:
 	  added UNIX2DOS dos utils alias, ndeeded on Ubuntu
 
 2010-06-27 Borut Razem <borut.razem AT siol.net>
@@ -71,7 +75,7 @@
 	  local/mypants.mk, local/freebsd-i386.mk: added
 	* lib/fetch.mk: adde quotes to test -z argument
 	* sdcc-build-bootstrap.sh, lib/upload.mk: use `` instead $():
-	  solaris make make doesn't understand $()
+	  solaris make doesn't understand $()
 
 2010-02-29 Borut Razem <borut.razem AT siol.net>
 
