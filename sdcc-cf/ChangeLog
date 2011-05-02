@@ -1,3 +1,7 @@
+2011-05-02 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.stx-btree/*: added stx-btree package
+
 2011-04-24 Borut Razem <borut.razem AT gmail.com>
 
 	* .sdcc_builder/profile: use `` instead of $()
