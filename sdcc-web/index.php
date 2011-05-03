@@ -189,7 +189,7 @@
               <li>Bernhard Held &lt;bernhard.AT.bernhardheld.de&gt; - snpshot builds and general housekeeping</li>
               <li>Frieder Ferlemann &lt;Frieder.Ferlemann.AT.web.de&gt; - contributions to the documentation and last stages of code generation</li>
               <li>Jesus Calvino-Fraga &lt;jesusc.AT.ece.ubc.ca&gt; - math functions, AOMF51, linker improvements</li>
-              <li>Borut Ražem &lt;borut.razem.AT.siol.net&gt; - WIN32 MSC, cygwin and mingw ports, NSIS installer, preprocessor and front end
+              <li>Borut Ražem &lt;borut.razem.AT.gmail.com&gt; - WIN32 MSC, cygwin and mingw ports, NSIS installer, preprocessor and front end
                 improvements, bug fixing, snapshot builds on Distibuted Compile Farm, ...</li>
               <li>Vangelis Rokas &lt;vrokas.AT.otenet.gr&gt; - PIC16 taget development for Microchip PIC18F microcontrollers</li>
               <li>Erik Petrich &lt;epetrich.AT.users.sourceforge.net&gt; - Bug fixes and improvements for the front end, 8051, z80 and hc08</li>

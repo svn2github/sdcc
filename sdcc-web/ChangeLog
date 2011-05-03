@@ -1,3 +1,8 @@
+2011-05-03 Borut Razem <borut.razem AT siol.net>
+
+	* index.php: changed Borut's e-mail address
+	* left_menu.inc: fixed bug #3296869 - Broken link to wiki
+
 2011-01-19 Borut Razem <borut.razem AT siol.net>
 
 	* footer.php: changed SourceForge logo

@@ -31,7 +31,7 @@
     <a href="http://sourceforge.net/projects/sdcc/forums/"><i>SDCC Forum</i></a><br />
   </div>
   <br />
-  <b><a href="http://sdcc.wiki.sourceforge.net/"><i>SDCC Wiki</i></a></b><br />
+  <b><a href="http://sourceforge.net/apps/trac/sdcc/"><i>SDCC Wiki</i></a></b><br />
   <br />
   <b><a href="/links.php"><i>Links and More!</i></a></b><br />
   <br />
