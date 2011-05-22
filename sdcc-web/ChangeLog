@@ -1,17 +1,17 @@
-2011-05-22 Borut Razem <borut.razem AT gmail.com>
+2011-05-22 Borut Razem <borut.razem AT gmail.net>
 
-	* update_regtests_db.php: added
+	* update_regtests_db.php
 
-2011-05-22 Borut Razem <borut.razem AT gmail.com>
+2011-05-03 Borut Razem <borut.razem AT gmail.net>
 
 	* index.php: changed Borut's e-mail address
 	* left_menu.inc: fixed bug #3296869 - Broken link to wiki
 
-2011-05-22 Borut Razem <borut.razem AT gmail.com>
+2011-01-19 Borut Razem <borut.razem AT gmail.net>
 
 	* footer.php: changed SourceForge logo
 
-2011-05-22 Borut Razem <borut.razem AT gmail.com>
+2011-01-16 Borut Razem <borut.razem AT gmail.net>
 
 	* snap.php: search for "invalid instructions"
 
