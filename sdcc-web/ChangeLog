@@ -1,6 +1,9 @@
 2011-05-22 Borut Razem <borut.razem AT gmail.net>
 
-	* update_regtests_db.php
+	* update_regtests_db.php: added
+	* download_regtests_db.php, snap.php, snap_header.php:
+	  added possibility to download regression test results database
+	  in CSV format
 
 2011-05-03 Borut Razem <borut.razem AT gmail.net>
 
@@ -136,7 +139,7 @@
 
 2007-08-20 Borut Razem <borut.razem AT siol.net>
 
-	* index.php, links.php. previous.php, snap_head.php:
+	* index.php, links.php. previous.php, snap_header.php:
 	  fixed to pass http://validator.w3.org/ validator
 
 2007-07-10 Borut Razem <borut.razem AT siol.net>
