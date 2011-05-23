@@ -31,12 +31,13 @@
 class Out {
   protected $fileExt;
   protected $view;
+  protected $encoding;
 
   function gen_http_header()
   {
     header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
-    header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-    header('Content-Type: application/ms-excel; charset=utf-8');
+    header("Expires: Sun, 22 May 2011 00:00:00 GMT");
+    header('Content-Type: application/ms-excel; charset=' . $this->encoding);
     header('Content-Disposition: attachment; filename="' . $this->view . $this->fileExt . '"');
   }
 
@@ -60,7 +61,7 @@ class Out {
 class Csv extends Out {
   protected $outstream;
 
-  function __construct($view, $encoding = "windows-1250//IGNORE")
+  function __construct($view, $encoding = 'windows-1250')
   {
     $this->view = $view;
     $this->encoding = $encoding;
@@ -75,15 +76,22 @@ class Csv extends Out {
 
   private function recode_elem($elem)
   {
-    return iconv("utf-8", $this->encoding, $elem);
+    if ($this->encoding != 'utf-8') {
+      return iconv('utf-8', $this->encoding . '//IGNORE', $elem);
+    }
+    else {
+      return $elem;
+    }
   }
 
   function gen_row ($row)
   {
-    $row1 = array_map(array($this, "recode_elem"), $row);
+    $row1 = array_map(array($this, 'recode_elem'), $row);
     fputcsv($this->outstream, $row1, ';');
   }
 }
+
+$where = $_REQUEST['where'];
 
 $out = new Csv('regression_test_results');
 
@@ -92,6 +100,10 @@ $out->gen_http_header();
 $db = $regTestDb = new mysqli('mysql-s', 's599ro', 'riaPhiUp', 's599_regtests');
 
 $query = 'SELECT * FROM regtest_results';
+if ($where) {
+  $query .= ' WHERE ' . $where;
+}
+
 $result = $db->query($query);
 if ($result) {
   $out->prolog($view);
@@ -106,8 +118,8 @@ if ($result) {
   $result->free();
 }
 else {
-  echo("DB Error, could not query the database quey = " . $query . "<br />\n");
-  echo('MySQL Error: ' . mysql_error() . "<br />\n");
+  echo('DB Error: could not execute the database quey = ' . $query . "\n");
+  echo('MySQL Error: ' . $db->error . "\n");
 }
 
 $db->close();

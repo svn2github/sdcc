@@ -1,3 +1,7 @@
+2011-05-23 Borut Razem <borut.razem AT gmail.net>
+
+	* download_regtests_db.php: added where parameter
+
 2011-05-22 Borut Razem <borut.razem AT gmail.net>
 
 	* update_regtests_db.php: added
