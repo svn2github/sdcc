@@ -35,8 +35,8 @@ class Out {
 
   function gen_http_header()
   {
-    header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
-    header("Expires: Sun, 22 May 2011 00:00:00 GMT");
+    header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+    header('Expires: Sun, 22 May 2011 00:00:00 GMT');
     header('Content-Type: application/ms-excel; charset=' . $this->encoding);
     header('Content-Disposition: attachment; filename="' . $this->view . $this->fileExt . '"');
   }
@@ -49,11 +49,11 @@ class Out {
   {
   }
 
-  function gen_head ($row)
+  function gen_head($row)
   {
   }
 
-  function gen_row ($row)
+  function gen_row($row)
   {
   }
 }

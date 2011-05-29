@@ -34,6 +34,93 @@
   <title>SDCC - Snapshot Builds</title>
   <link type="text/css" href="style.css" rel="stylesheet" />
   <link rel="shortcut icon" type="image/x-icon" href="/images/sdcc.ico" />
+  <!-- jQuery -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <!-- required plugins -->
+  <script type="text/javascript" src="scripts/date.js"></script>
+  <!-- jquery.datePicker.js -->
+  <script type="text/javascript" src="scripts/jquery.datePicker.js"></script>
+  <!-- datePicker required styles -->
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/datePicker.css">
+  <!-- page specific scripts -->
+  <script type="text/javascript" charset="utf-8">
+Date.format = 'yyyy-mm-dd';
+$(function()
+{
+  $('.date-pick').datePicker(
+    {
+      startDate: '1970-01-01',
+      endDate: (new Date()).asString()
+    }
+  );
+});
+
+function validateFormOnSubmit(theForm) {
+  var build_date = false;
+  var error = '';
+  var build = theForm.build.value;
+  var platform = theForm.platform.value;
+
+  // validate the build date / number
+  if (/^\d{4}-\d{2}-\d{2}$/.test(build)) {
+    build_date = true;
+  }
+  else if (!/^\d+$/.test(build)) {
+    alert("Bad build date or number!\n");
+    return false;
+  }
+
+  // validate the platform
+  var platforms = [ "i386-unknown-linux2.5", "amd64-unknown-linux2.5", "i586-mingw32msvc",
+    "i386-sun-solaris", "sparc-sun-solaris",
+    "i386-unknown-freebsd", "i386-unknown-netbsd", "sparc64-unknown-netbsd",
+    "universal-apple-macosx" ];
+
+  var is_platform = false;
+  for (var i = 0; i < platforms.length; ++i) {
+    if (platforms[i] == platform) {
+      is_platform = true;
+      break;
+    }
+  }
+
+  if (!is_platform) {
+    alert("Bad / unknown platform!\n");
+    return false;
+  }
+
+  theForm.where.value = (build_date ? "`date` = '" : "`build_number` = '") + build + "' AND `platform` = '" + platform + "'";
+
+  return true;
+}
+  </script>
+  <style type="text/css">
+/* located in demo.css and creates a little calendar icon
+ * instead of a text link for "Choose date"
+ */
+a.dp-choose-date {
+  float: left;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  margin: 2px 3px 0;
+  display: block;
+  text-indent: -2000px;
+  overflow: hidden;
+  background: url(images/timespan.png) no-repeat; 
+}
+a.dp-choose-date.dp-disabled {
+  background-position: 0 -20px;
+  cursor: default;
+}
+/* makes the input field shorter once the date picker code
+ * has run (to allow space for the calendar icon
+ */
+input.dp-applied {
+  width: 140px;
+  float: left;
+}
+  </style>
 </head>
 <body bgcolor="white" link="teal" vlink="#483d8b">
   <div align="left">
@@ -67,3 +154,30 @@ view the ChangeLog</a> directly from the Subversion repository.
           <p>
 Download full <a href="http://sdcc.sourceforge.net/download_regtests_db.php">regression test results database</a> in CSV format.
           </p>
+          <form name="regtest" onsubmit="return validateFormOnSubmit(this)" action="download_regtests_db.php" method="post">
+            Download regression test results in CSV format for<br />
+            <table>
+              <tr>
+                <td><label for="build">Build date (YYYY-MM-DD) or build number:</label></td>
+                <td><input name="build" id="build" class="date-pick" /></td>
+              </tr>
+              <tr>
+                <td><label for="platform">Platform:</label></td>
+                <td>
+                  <select name="platform">
+                    <option value="i386-unknown-linux2.5">i386-unknown-linux2.5</option>
+                    <option value="amd64-unknown-linux2.5">amd64-unknown-linux2.5</option>
+                    <option value="i586-mingw32msvc">i586-mingw32msvc</option>
+                    <option value="i386-sun-solaris">i386-sun-solaris</option>
+                    <option value="sparc-sun-solaris">sparc-sun-solaris</option>
+                    <option value="i386-unknown-freebsd">i386-unknown-freebsds</option>
+                    <option value="i386-unknown-netbsd">i386-unknown-netbsd</option>
+                    <option value="sparc64-unknown-netbsd">sparc64-unknown-netbsd</option>
+                    <option value="universal-apple-macosx">universal-apple-macosx</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <input type="hidden" name="where" />
+            <input type="submit" />
+          </form>
