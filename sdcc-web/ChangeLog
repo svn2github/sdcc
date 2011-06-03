@@ -1,3 +1,7 @@
+2011-06-03 Borut Razem <borut.razem AT gmail.net>
+
+	* snap_header.php: get list of platforms from database
+
 2011-05-29 Borut Razem <borut.razem AT gmail.net>
 
 	* download_regtests_db.php: added regtest form

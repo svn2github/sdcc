@@ -26,6 +26,25 @@
    not however invalidate any other reasons why the executable file
    might be covered by the GNU General Public License.
 -------------------------------------------------------------------------*/
+
+$regTestDb = new mysqli('mysql-s', 's599ro', 'riaPhiUp', 's599_regtests');
+
+$query = 'SELECT DISTINCT `platform` FROM `regtest_results`';
+
+$result = $regTestDb->query($query);
+
+$platforms = array();
+if ($result) {
+  while ($row = $result->fetch_array(MYSQLI_NUM)) {
+    $platforms[] = $row[0];
+  }
+  $result->free();
+}
+else {
+  echo('DB Error: could not execute the database quey = ' . $query . "\n");
+  echo('MySQL Error: ' . $regTestDb->error . "\n");
+}
+$regTestDb->close();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -71,10 +90,7 @@ function validateFormOnSubmit(theForm) {
   }
 
   // validate the platform
-  var platforms = [ "i386-unknown-linux2.5", "amd64-unknown-linux2.5", "i586-mingw32msvc",
-    "i386-sun-solaris", "sparc-sun-solaris",
-    "i386-unknown-freebsd", "i386-unknown-netbsd", "sparc64-unknown-netbsd",
-    "universal-apple-macosx" ];
+  var platforms = [ <?php echo('"' . implode('", "', $platforms) . '"'); ?> ];
 
   var is_platform = false;
   for (var i = 0; i < platforms.length; ++i) {
@@ -165,15 +181,11 @@ Download full <a href="http://sdcc.sourceforge.net/download_regtests_db.php">reg
                 <td><label for="platform">Platform:</label></td>
                 <td>
                   <select name="platform">
-                    <option value="i386-unknown-linux2.5">i386-unknown-linux2.5</option>
-                    <option value="amd64-unknown-linux2.5">amd64-unknown-linux2.5</option>
-                    <option value="i586-mingw32msvc">i586-mingw32msvc</option>
-                    <option value="i386-sun-solaris">i386-sun-solaris</option>
-                    <option value="sparc-sun-solaris">sparc-sun-solaris</option>
-                    <option value="i386-unknown-freebsd">i386-unknown-freebsds</option>
-                    <option value="i386-unknown-netbsd">i386-unknown-netbsd</option>
-                    <option value="sparc64-unknown-netbsd">sparc64-unknown-netbsd</option>
-                    <option value="universal-apple-macosx">universal-apple-macosx</option>
+<?php
+  foreach ($platforms as $platform) {
+    echo('                    <option value="' . $platform . '">' . $platform . "</option>\n");
+  }
+?>
                   </select>
                 </td>
               </tr>
