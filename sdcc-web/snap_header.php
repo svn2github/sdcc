@@ -110,7 +110,7 @@ function validateFormOnSubmit(theForm) {
 
   return true;
 }
--->
+// -->
   </script>
   <style type="text/css">
 /* located in demo.css and creates a little calendar icon
