@@ -60,9 +60,10 @@ $regTestDb->close();
   <!-- jquery.datePicker.js -->
   <script type="text/javascript" src="scripts/jquery.datePicker.js"></script>
   <!-- datePicker required styles -->
-  <link rel="stylesheet" type="text/css" media="screen" href="styles/datePicker.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/datePicker.css"></link>
   <!-- page specific scripts -->
   <script type="text/javascript" charset="utf-8">
+<!--
 Date.format = 'yyyy-mm-dd';
 $(function()
 {
@@ -109,6 +110,7 @@ function validateFormOnSubmit(theForm) {
 
   return true;
 }
+-->
   </script>
   <style type="text/css">
 /* located in demo.css and creates a little calendar icon
@@ -178,7 +180,7 @@ Download full <a href="http://sdcc.sourceforge.net/download_regtests_db.php">reg
                 <td><input name="build" id="build" class="date-pick" /></td>
               </tr>
               <tr>
-                <td><label for="platform">Platform:</label></td>
+                <td>Platform:</td>
                 <td>
                   <select name="platform">
 <?php
