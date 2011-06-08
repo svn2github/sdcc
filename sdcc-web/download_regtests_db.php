@@ -97,14 +97,14 @@ $out = new Csv('regression_test_results');
 
 $out->gen_http_header();
 
-$db = $regTestDb = new mysqli('mysql-s', 's599ro', 'riaPhiUp', 's599_regtests');
+$regTestDb = new mysqli('mysql-s', 's599ro', 'riaPhiUp', 's599_regtests');
 
 $query = 'SELECT * FROM regtest_results';
 if ($where) {
   $query .= ' WHERE ' . $where;
 }
 
-$result = $db->query($query);
+$result = $regTestDb->query($query);
 if ($result) {
   $out->prolog($view);
 
@@ -119,8 +119,8 @@ if ($result) {
 }
 else {
   echo('DB Error: could not execute the database quey = ' . $query . "\n");
-  echo('MySQL Error: ' . $db->error . "\n");
+  echo('MySQL Error: ' . $regTestDb->error . "\n");
 }
 
-$db->close();
+$regTestDb->close();
 ?>

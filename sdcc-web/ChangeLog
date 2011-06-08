@@ -1,3 +1,9 @@
+2011-06-08 Borut Razem <borut.razem AT gmail.net>
+
+	* snap_header.php: removed regression tests downoad
+	* left_menu.inc, regtests.php: added regression tests page
+	* download_regtests_db.php: use $regTestDb instead $db
+
 2011-06-03 Borut Razem <borut.razem AT gmail.net>
 
 	* snap_header.php: get list of platforms from database
