@@ -97,7 +97,8 @@ $out = new Csv('regression_test_results');
 
 $out->gen_http_header();
 
-$regTestDb = new mysqli('mysql-s', 's599ro', 'riaPhiUp', 's599_regtests');
+$ini = parse_ini_file('sdcc.ini');
+$regTestDb = new mysqli($ini['host'], $ini['username'], $ini['passwd'], $ini['dbname']);
 
 $query = 'SELECT * FROM regtest_results';
 if ($where) {

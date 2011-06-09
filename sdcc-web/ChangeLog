@@ -1,3 +1,8 @@
+2011-06-09 Borut Razem <borut.razem AT gmail.net>
+
+	* download_regtests_db.php, regtests.php, get_regtest.php, sdcc.ini:
+	  use sdcc.ini file for dab connection settings
+
 2011-06-08 Borut Razem <borut.razem AT gmail.net>
 
 	* snap_header.php: removed regression tests downoad

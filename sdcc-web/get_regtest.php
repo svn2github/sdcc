@@ -27,14 +27,14 @@
    might be covered by the GNU General Public License.
 -------------------------------------------------------------------------*/
 
-$query = htmlspecialchars(trim($_REQUEST['query']));
+$ini = parse_ini_file('sdcc.ini');
+$regTestDb = new mysqli($ini['host'], $ini['username'], $ini['passwd'], $ini['dbname']);
 
-$regTestDb = new mysqli('mysql-s', 's599ro', 'riaPhiUp', 's599_regtests');
+$query = htmlspecialchars(trim($_REQUEST['query']));
 
 $res = array();
 $result = $regTestDb->query($query);
 if ($result) {
-//  while ($row = $result->fetch_array(MYSQLI_NUM)) {
   while ($row = $result->fetch_assoc()) {
     $res[] = $row;
   }

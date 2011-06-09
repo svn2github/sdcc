@@ -27,7 +27,8 @@
    might be covered by the GNU General Public License.
 -------------------------------------------------------------------------*/
 
-$regTestDb = new mysqli('mysql-s', 's599ro', 'riaPhiUp', 's599_regtests');
+$ini = parse_ini_file('sdcc.ini');
+$regTestDb = new mysqli($ini['host'], $ini['username'], $ini['passwd'], $ini['dbname']);
 
 $query = 'SELECT DISTINCT `platform` FROM `regtest_results`';
 

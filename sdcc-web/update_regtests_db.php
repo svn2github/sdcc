@@ -71,7 +71,8 @@ class RegTestDB extends mysqli {
   }
 }
 
-$regTestDb = new RegTestDB('mysql-s', 's599rw', 'riaProEs', 's599_regtests');
+$ini = parse_ini_file('sdcc.ini');
+$regTestDb = new mysqli($ini['host'], $ini['username'], $ini['passwd'], $ini['dbname']);
 
 if ($regTestDb->connect_error) {
   die('Connect Error (' . $regTestDb->connect_errno . ') ' . $regTestDb->connect_error);
