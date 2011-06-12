@@ -155,7 +155,7 @@ int enterDebugger( pmregs regs )
 	  	printf("Error: Tried to enter the debugger in a limited length run\n");
 		exit(-1);
 	}
-	
+
 	while (debugging) {
 		if (updateLine) {
 			ppc = &mem[dpc];
@@ -166,7 +166,9 @@ int enterDebugger( pmregs regs )
 		}
 		printf("!: ");
 		fflush(stdout);
-		fgets( string, sizeof(string), stdin );
+		if (fgets( string, sizeof(string), stdin ) == NULL) {
+			break;
+		}
 		switch (string[0]) {
 			case 'd': {
 				/* Dump: d [start] [end]
@@ -181,9 +183,9 @@ int enterDebugger( pmregs regs )
 					}
 					printf(" %02X", mem[start++]);
 					dumpCount++;
-					if (dumpCount == 8) 
+					if (dumpCount == 8)
 						printf(" ");
-						
+
 					if (dumpCount == 16) {
 						printf("  ");
 						for (i=16; i>0; i--) {
@@ -197,9 +199,9 @@ int enterDebugger( pmregs regs )
 						dumpCount = 0;
 					}
 				}
-				if (dumpCount!=0) 
+				if (dumpCount!=0)
 					printf("\n");
-				
+
 				break;
 			}
 			case 'r': {
@@ -260,7 +262,7 @@ int enterDebugger( pmregs regs )
 				}
 				break;
 			}
-						
+
 			case 'u': {
 				/* Unassemble: u [start] [end]
 					If no end, end = start + 0x8
@@ -294,8 +296,7 @@ int enterDebugger( pmregs regs )
 				      );
 				break;
 			}
-				       
-					
+
 			default: {
 				printf("?\n");
 				break;
@@ -303,5 +304,4 @@ int enterDebugger( pmregs regs )
 		}
 	}
 	return 0;
-
 }

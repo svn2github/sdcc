@@ -190,7 +190,7 @@ int main(int argc,char **argv)
                         printf("Done.\n");
                         printf("Waiting for connection...");
                         fflush(stdout);
-                        
+
                         sock_len=sizeof(struct sockaddr_in);
                         tsocket = accept( hsocket, (struct sockaddr *)&sock, &sock_len );
                         if (tsocket==-1) {
@@ -202,7 +202,7 @@ int main(int argc,char **argv)
                         }
                 }
         }
-                
+
         mainloop(flags);
 
         if (flags&DPROFILE)
@@ -224,7 +224,10 @@ int loadImage(char *imageName, int flags)
         char map_name[100];
 
         if((in=fopen(imageName,"rb"))!=NULL) {
-                fread( mem, 1, 32768, in );
+                size_t got = fread( mem, 1, 32768, in );
+                if (got<0) {
+                         printf("Error while reading the rom image.");
+                }
                 fclose(in);
 
                 if (flags&DMAP) {
@@ -262,7 +265,7 @@ void printGBfloat(unsigned fhl, unsigned fde)
 
         /* Get mantissa */
         a = (65536.0 * (double)(fhl&0x0ff))+(double)fde;
-        
+
         /* Multiply by 2^exponent */
         /* Seems to be normalised or something */
         a*=pow(2.0,(double)((fhl>>8)&~0x080)-88.0);

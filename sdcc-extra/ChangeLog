@@ -1,3 +1,10 @@
+2011-06-12 Maarten Brock <sourceforge.brock AT dse.nl>
+
+	* emu/rrgb/debugger.c,
+	* emu/rrgb/main.c,
+	* emu/rrz80/disasm.cc: fixed warnings
+	* Makefile.rules.in: fixed bug 3144100 parallel make
+
 2010-04-13 Borut Razem <borut.razem AT siol.net>
 
 	* emu/rrgb/csock.c, emu/rrgb/z80.c, emu/rrgb/debugger.c,

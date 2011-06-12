@@ -14,8 +14,10 @@ all: subdirs $(OBJ) $(BIN) $(LIB)
 
 $(BIN): $(OBJ) $(EXTRA_LIBS)
 
+$(EXTRA_LIBS): subdirs
+
 $(LIB): $(OBJ)
-	ar r $(LIB) $(OBJ)
+	ar rc $(LIB) $(OBJ)
 	ranlib $(LIB)
 
 %.class: %.java

@@ -307,7 +307,7 @@ static void operand(SFILE *f, char mode, uint32 &adr, uint8 op, bool ix, bool iy
 	}
 }
 
-static int print_instr(SFILE *f, char mnem, char dst_mode, char src_mode, uint32 adr, uint8 op, bool ix, bool iy)
+static int print_instr(SFILE *f, int mnem, char dst_mode, char src_mode, uint32 adr, uint8 op, bool ix, bool iy)
 {
 	uint32 orig_adr = adr;
 
