@@ -4,7 +4,7 @@
 
    Copyright (C) 2011, Borut Razem <borut.razem AT gmail.com>
 
-   This library is free software; you can redistribute it and/or modify it
+   This program is free software; you can redistribute it and/or modify it
    under the terms of the GNU General Public License as published by the
    Free Software Foundation; either version 2.1, or (at your option) any
    later version.
@@ -18,13 +18,6 @@
    along with this library; see the file COPYING. If not, write to the
    Free Software Foundation, 51 Franklin Street, Fifth Floor, Boston,
    MA 02110-1301, USA.
-
-   As a special exception, if you link this library with other files,
-   some of which are compiled with SDCC, to produce an executable,
-   this library does not by itself cause the resulting executable to
-   be covered by the GNU General Public License. This exception does
-   not however invalidate any other reasons why the executable file
-   might be covered by the GNU General Public License.
 -------------------------------------------------------------------------*/
 
 $ini = parse_ini_file('sdcc.ini');
@@ -62,8 +55,16 @@ function genForm($id, $platforms, $targets)
   echo <<<EOT
             <table>
               <tr>
-                <td align="right"><label for="build">Build date<br />or number:</label></td>
-                <td><input name="build" id="build" class="date-pick" /></td>
+                <td align="right"><label for="date">Build date:</label></td>
+                <td><input name="date" id="date" class="date-pick" /></td>
+              </tr>
+              <tr>
+                <td align="right"><label for="build">Build number:</label></td>
+                <td>
+                  <select name="build">
+                    <option></option>
+                  </select>
+                </td>
               </tr>
               <tr>
                 <td align="right">Platform:</td>
@@ -89,7 +90,7 @@ EOT;
     echo('                    <option value="' . $target . '">' . $target . "</option>\n");
   }
 
- echo <<<EOT
+  echo <<<EOT
                   </select>
                 </td>
               </tr>
@@ -128,52 +129,28 @@ $(function()
   );
 });
 
-function validateFormOnSubmit(theForm)
+function validateBuildDate(date)
 {
-  var build_date = false;
-  var build = theForm.build.value;
-  var platform = theForm.platform.value;
-
-  // validate the build date / number
-  if (/^\d{4}-\d{2}-\d{2}$/.test(build)) {
-    build_date = true;
-  }
-  else if (!/^\d+$/.test(build)) {
-    alert("Bad build date or number!\n");
+  // validate the build date
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    alert("Bad build date!\n");
     return false;
   }
-
-  // validate the platform
-  var platforms = [ <?php echo('"' . implode('", "', $platforms) . '"'); ?> ];
-
-  var is_platform = false;
-  for (var i = 0; i < platforms.length; ++i) {
-    if (platforms[i] == platform) {
-      is_platform = true;
-      break;
-    }
-  }
-
-
-  var ret = {
-    platform: platform,
-  }
-  if (build_date) {
-    ret["date"] = build;
-  }
-  else {
-    ret["build_number"] = build;
-  }
-
-  return ret;
+  return true;
 }
 
-function validateFormOnSubmitTarget(theForm)
+function validateBuildNumber(build)
 {
-  var target = theForm.target.value;
+  // validate the build number
+  if (!/^\d+$/.test(build)) {
+    alert("Bad build number!\n");
+    return false;
+  }
+  return true;
+}
 
-  ret = validateFormOnSubmit(theForm);
-
+function validateTarget(target)
+{
   // validate the target
   var targets = [ <?php echo('"' . implode('", "', $targets) . '"'); ?> ];
 
@@ -188,10 +165,50 @@ function validateFormOnSubmitTarget(theForm)
     alert("Bad / unknown target!\n");
     return false;
   }
+  return true;
+}
 
-  ret['target'] = target;
+function validateFormOnSubmit(theForm)
+{
+  var date = theForm.date.value;
+  var build = theForm.build.value;
+  var platform = theForm.platform.value;
 
-  return ret;
+  if (validateBuildDate(date) && validateBuildNumber(build)) {
+    // validate the platform
+    var platforms = [ <?php echo('"' . implode('", "', $platforms) . '"'); ?> ];
+  
+    var is_platform = false;
+    for (var i = 0; i < platforms.length; ++i) {
+      if (platforms[i] == platform) {
+        is_platform = true;
+        break;
+      }
+    }
+
+    return {
+      date: date,
+      build_number: build,
+      platform: platform
+    };
+  }
+  else
+    return false;
+}
+
+function validateFormOnSubmitTarget(theForm)
+{
+  var target = theForm.target.value;
+
+  ret = validateFormOnSubmit(theForm);
+
+  if (ret && validateTarget(target)) {
+    ret['target'] = target;
+    return ret;
+  }
+  else {
+    return false;
+  }
 }
 
 function keyArray(obj) {
@@ -338,6 +355,27 @@ $(document).ready(function()
   jQuery('table').Scrollable(200, 800);
 });
 */
+
+$(function() {
+  $("input#date.date-pick").change(function() {
+    if (this.value != '' && validateBuildDate(this.value)) {
+      var me = this.form.build;
+      $.ajax({
+        type: 'POST',
+        url: 'get_regtest.php',
+        dataType: 'json',
+        data: {query: 'SELECT DISTINCT `build_number` FROM `regtest_results` WHERE `date` = \'' + this.value +'\''},
+        success: function(data) {
+          var options = '';
+          for (var i = 0; i < data.length; i++) {
+            options += '<option value="' + data[i].build_number + '">' + data[i].build_number + '</option>';
+          }
+          me.innerHTML = options;
+        }
+      })
+    }
+  })
+})
 // -->
   </script>
   <style type="text/css">
@@ -366,8 +404,7 @@ input.dp-applied {
   width: 140px;
   float: left;
 }
-  </style>
-  <style>
+
 /* table style
  */
 table.data {
@@ -407,8 +444,16 @@ Download full <a href="http://sdcc.sourceforge.net/download_regtests_db.php">reg
             Download regression test results in CSV format for<br />
             <table>
               <tr>
-                <td align="right"><label for="build">Build date<br />or number:</label></td>
-                <td><input name="build" class="date-pick" /></td>
+                <td align="right"><label for="date">Build date:</label></td>
+                <td><input name="date" id="date" class="date-pick" /></td>
+              </tr>
+              <tr>
+                <td align="right"><label for="build">Build number:</label></td>
+                <td>
+                  <select name="build">
+                    <option></option>
+                  </select>
+                </td>
               </tr>
               <tr>
                 <td align="right">Platform:</td>

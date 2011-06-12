@@ -1,3 +1,9 @@
+2011-06-12 Borut Razem <borut.razem AT gmail.net>
+
+	* download_regtests_db.php, snap.php, update_regtests_db.php,
+	  snap_header.php, get_regtest.php: corrected license text
+	* regtests.php: select the build on the given date
+
 2011-06-09 Borut Razem <borut.razem AT gmail.net>
 
 	* download_regtests_db.php, regtests.php, get_regtest.php, sdcc.ini:
