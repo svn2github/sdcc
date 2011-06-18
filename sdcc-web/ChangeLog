@@ -1,3 +1,8 @@
+2011-06-19 Borut Razem <borut.razem AT gmail.net>
+
+	* download_regtests_db.php, regtest.php: added possibility to download
+	  regression test results database in csv.bz2 format
+
 2011-06-12 Borut Razem <borut.razem AT gmail.net>
 
 	* download_regtests_db.php, snap.php, update_regtests_db.php,
@@ -7,7 +12,7 @@
 2011-06-09 Borut Razem <borut.razem AT gmail.net>
 
 	* download_regtests_db.php, regtests.php, get_regtest.php, sdcc.ini:
-	  use sdcc.ini file for dab connection settings
+	  use sdcc.ini file for db connection settings
 
 2011-06-08 Borut Razem <borut.razem AT gmail.net>
 

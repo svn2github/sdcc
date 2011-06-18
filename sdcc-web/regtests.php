@@ -59,7 +59,7 @@ function genForm($id, $platforms, $targets)
                 <td><input name="date" id="date" class="date-pick" /></td>
               </tr>
               <tr>
-                <td align="right"><label for="build">Build number:</label></td>
+                <td align="right">Build number:</td>
                 <td>
                   <select name="build">
                     <option></option>
@@ -438,17 +438,17 @@ td, th {
         <td valign="top" width="85%">
           <h2><a name="Database"></a>Regression Tests Database</h2>
           <p>
-Download full <a href="http://sdcc.sourceforge.net/download_regtests_db.php">regression test results database</a> in CSV format.
+Download full <a href="download_regtests_db.php?compress=bz2">regression test results database</a> in csv.bz2 format.
           </p>
           <form name="regtest" onsubmit="return genHiddenWhere(this)" action="download_regtests_db.php" method="post">
-            Download regression test results in CSV format for<br />
+            Download regression test results in csv format for<br />
             <table>
               <tr>
                 <td align="right"><label for="date">Build date:</label></td>
                 <td><input name="date" id="date" class="date-pick" /></td>
               </tr>
               <tr>
-                <td align="right"><label for="build">Build number:</label></td>
+                <td align="right">Build number:</td>
                 <td>
                   <select name="build">
                     <option></option>
