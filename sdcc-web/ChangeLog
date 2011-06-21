@@ -1,3 +1,9 @@
+2011-06-21 Borut Razem <borut.razem AT gmail.net>
+
+	* regtest.php: removed XHTML 1.0 validation errors
+	* index.php, snap_header.php, previous.php, links.php:
+	  style.css moved to styles/
+
 2011-06-19 Borut Razem <borut.razem AT gmail.net>
 
 	* download_regtests_db.php, regtest.php: added possibility to download

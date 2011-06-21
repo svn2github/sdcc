@@ -51,12 +51,12 @@ $regTestDb->close();
 
 function genForm($id, $platforms, $targets)
 {
-  echo('          <form class="diff" id="' . $id . "\" method=\"post\">\n");
+  echo('          <form action="" class="diff" id="' . $id . "\" method=\"post\">\n");
   echo <<<EOT
             <table>
               <tr>
                 <td align="right"><label for="date">Build date:</label></td>
-                <td><input name="date" id="date" class="date-pick" /></td>
+                <td><input name="date" id="{$id}_date" class="date-pick" /></td>
               </tr>
               <tr>
                 <td align="right">Build number:</td>
@@ -104,8 +104,8 @@ EOT;
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-  <title>SDCC - Snapshot Builds</title>
-  <link type="text/css" href="style.css" rel="stylesheet" />
+  <title>SDCC - Regression Tests</title>
+  <link type="text/css" href="styles/style.css" rel="stylesheet" />
   <link rel="shortcut icon" type="image/x-icon" href="/images/sdcc.ico" />
   <!-- jQuery -->
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>

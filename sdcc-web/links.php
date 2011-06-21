@@ -3,7 +3,7 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
   <title>SDCC links page</title>
-  <link type="text/css" href="style.css" rel="stylesheet" />
+  <link type="text/css" href="styles/style.css" rel="stylesheet" />
   <link rel="shortcut icon" type="image/x-icon" href="/images/sdcc.ico" />
 </head>
 <body link="teal" vlink="#483d8b">

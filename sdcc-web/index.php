@@ -4,7 +4,7 @@
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
     <meta name="keywords" content="68hc08 8032 8051 ansi c compiler assembler CPU DS390 embedded development Floating Point Arithmetic free Freescale GPL HC08 inline Intel ISO/IEC 9899:1990 Linux MAC OS X OSX manual Maxim mcs51 Microchip microcontroller open source PIC Unix Windows XP Z80 Zilog" />
     <title>SDCC - Small Device C Compiler</title>
-    <link type="text/css" href="style.css" rel="stylesheet" />
+    <link type="text/css" href="styles/style.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="/images/sdcc.ico" />
   </head>
   <body link="teal" vlink="#483d8b">
