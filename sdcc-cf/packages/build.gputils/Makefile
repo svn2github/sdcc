@@ -1,41 +1,49 @@
+###############################################################################
+# To build gputils from the svn HEAD:
+# make FROM_SVN=1
+
 include ../packages.mk
 
-VERSION=$(shell expr download/gputils-*.tar.gz : 'download/gputils-\(.*\).tar.gz')
+PACKAGE=gputils
+VERSION=0.13.7
+PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.gz
 
 .PHONY: all
-all: gputils-install.tag clean
+all: $(PACKAGE)-install.tag clean
 
 ifdef FROM_SVN
-GPUTILS_DIR=gputils
+GPUTILS_DIR=$(PACKAGE)
 
-gputils-download.tag:
+$(PACKAGE)-download.tag:
 	svn --force export https://gputils.svn.sourceforge.net/svnroot/gputils/trunk/gputils gputils
 	touch $@
 
-gputils-unpack.tag: gputils-download.tag
+$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
 	touch $@
 else
-GPUTILS_DIR=gputils-$(VERSION)
+GPUTILS_DIR=$(PACKAGE)-$(VERSION)
 
-gputils-download.tag:
-	wget -P download $(SF_REPOSITORY)/sourceforge/gputils/gputils-0.13.7.tar.gz
+download/$(PACKAGE_FILE):
+	wget -P download $(SF_REPOSITORY)/sourceforge/gputils/$(PACKAGE_FILE)
+
+$(PACKAGE)-download.tag:
 	touch $@
 
-gputils-unpack.tag: gputils-download.tag
-	tar xzvf download/$(GPUTILS_DIR).tar.gz
+$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
+	tar xzvf download/$(PACKAGE_FILE)
 	touch $@
 endif
 
-gputils-configure.tag: gputils-unpack.tag
+$(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
 	cd $(GPUTILS_DIR) && \
 	./configure --prefix=$(LOCAL_DIR)
 	touch $@
 
-gputils-make.tag: gputils-configure.tag
+$(PACKAGE)-make.tag: $(PACKAGE)-configure.tag
 	$(MAKE) -C $(GPUTILS_DIR)
 	touch $@
 
-gputils-install.tag: gputils-make.tag
+$(PACKAGE)-install.tag: $(PACKAGE)-make.tag
 	$(MAKE) -C $(GPUTILS_DIR) install
 	touch $@
 

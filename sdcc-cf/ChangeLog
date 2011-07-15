@@ -1,3 +1,11 @@
+2011-07-15 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.gputils/Makefile: build gputils from svn HEAD
+
+2011-06-12 Borut Razem <borut.razem AT gmail.com>
+
+	* crontab.txt: redirect curl stderr to /dev/null
+
 2011-05-22 Borut Razem <borut.razem AT gmail.com>
 
 	* crontab.txt: added the regression tests database update

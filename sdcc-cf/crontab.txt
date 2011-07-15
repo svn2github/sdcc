@@ -3,7 +3,7 @@
 # run Distributed Compile Farm
 */5 * * * * $HOME/bin/dcf.sh
 # update the regression tests database
-00 22 * * * curl http://sdcc.sourceforge.net/update_regtests_db.php > /dev/null
+00 22 * * * curl http://sdcc.sourceforge.net/update_regtests_db.php > /dev/null 2>&1
 #
 # Mac OS X build on mirror-doors
 00 08 * * * . $HOME/.profile; { $HOME/build/sdcc-build-bootstrap.sh crontab-spawn; $HOME/build/sdcc-build-bootstrap.sh do-upload; } > $HOME/build/build-${HOSTNAME}.log 2>&1
