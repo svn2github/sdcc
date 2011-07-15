@@ -1,7 +1,7 @@
 include ../packages.mk
 
 PACKAGE=stx-btree
-VERSION=0.8.3
+VERSION=0.8.6
 PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.bz2
 
 PACKAGE_DIR=$(PACKAGE)-$(VERSION)

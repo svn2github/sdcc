@@ -1,6 +1,7 @@
 2011-07-15 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.gputils/Makefile: build gputils from svn HEAD
+	* packages/build.stx-btree/Makefile: updated stx-btree to version 0.8.6
 
 2011-06-12 Borut Razem <borut.razem AT gmail.com>
 
