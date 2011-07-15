@@ -2,6 +2,7 @@
 
 	* packages/build.gputils/Makefile: build gputils from svn HEAD
 	* packages/build.stx-btree/Makefile: updated stx-btree to version 0.8.6
+	* packages/build.mingw32/Makefile: updated to gcc 4.6.1
 
 2011-06-12 Borut Razem <borut.razem AT gmail.com>
 
