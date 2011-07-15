@@ -1,3 +1,7 @@
+###############################################################################
+# To install it for mingw cross-compilation:
+# make LOCAL_DIR=~/local-cf-x86/cross-tools/i586-mingw32msvc
+
 include ../packages.mk
 
 PACKAGE=stx-btree
