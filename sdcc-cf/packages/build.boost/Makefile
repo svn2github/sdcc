@@ -2,11 +2,13 @@ include ../packages.mk
 
 PACKAGE=boost
 ifeq ($(OS),SunOS)
+# boost 1_45_0 and newer doesn't compile on Solaris gcc
   VERSION=1_44_0
   PACKAGE_FILE=$(PACKAGE)_$(VERSION).zip
-  WITH_TOOLSET=--with-toolset=sun
+#  WITH_TOOLSET=--with-toolset=sun
+  WITH_TOOLSET=
 else
-  VERSION=1_45_0
+  VERSION=1_47_0
   PACKAGE_FILE=$(PACKAGE)_$(VERSION).tar.bz2
   WITH_TOOLSET=
 endif
@@ -55,9 +57,11 @@ endif
 
 $(PACKAGE)-install.tag: $(PACKAGE)-make.tag
 	test -d $(LOCAL_DIR)/include || mkdir $(LOCAL_DIR)/include
+	test -d $(LOCAL_DIR)/include/boost && rm -rf $(LOCAL_DIR)/include/boost
 	mv $(PACKAGE_DIR)/boost $(LOCAL_DIR)/include/
 ifndef INCLUDES_ONLY
 	test -d $(LOCAL_DIR)/lib || mkdir $(LOCAL_DIR)/lib
+	rm $(LOCAL_DIR)/lib/libboost_*
 	mv $(PACKAGE_DIR)/stage/lib/* $(LOCAL_DIR)/lib
 endif
 	touch $@
