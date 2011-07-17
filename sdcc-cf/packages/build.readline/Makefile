@@ -8,31 +8,50 @@ ifeq ($(OS), Darwin)
   CONFFLAGS = --disable-dependency-tracking
 endif
 
-VERSION=$(shell expr download/readline-*.tar.gz : 'download/readline-\(.*\).tar.gz')
+FLAGS =
+ifdef CFLAGS
+  FLAGS += CFLAGS="$(CFLAGS)"
+endif
+ifdef CXXFLAGS
+  FLAGS += CXXFLAGS="$(CXXFLAGS)"
+endif
+ifdef LDFLAGS
+  FLAGS += LDFLAGS="$(LDFLAGS)"
+endif
+ifdef CONFFLAGS
+  FLAGS += CONFFLAGS="$(CONFFLAGS)"
+endif
+
+PACKAGE=readline
+VERSION=6.2
+PACKAGE_DIR=$(PACKAGE)-$(VERSION)
+PACKAGE_FILE=$(PACKAGE_DIR).tar.gz
 
 .PHONY: all
-all: readline-install.tag #clean
+all: $(PACKAGE)-install.tag #clean
 
-readline-download.tag:
-	wget -P download ftp://ftp.cwru.edu/pub/bash/readline-5.2.tar.gz
+download/$(PACKAGE_FILE):
+	wget -P download ftp://ftp.cwru.edu/pub/bash/$(PACKAGE_FILE)
+
+$(PACKAGE)-download.tag: download/$(PACKAGE_FILE)
 	touch $@
 
-readline-unpack.tag: readline-download.tag
-	tar xzvf download/readline-$(VERSION).tar.gz
+$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
+	tar xzvf download/$(PACKAGE_FILE)
 	touch $@
 
-readline-configure.tag: readline-unpack.tag
-	cd readline-$(VERSION) && \
-	./configure --prefix=$(LOCAL_DIR) $(CONFFLAGS) CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)"
+$(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
+	cd $(PACKAGE_DIR) && \
+	./configure --prefix=$(LOCAL_DIR) $(CONFFLAGS) $(FLAGS)
 	touch $@
 
-readline-make.tag: readline-configure.tag
-	$(MAKE) -C readline-$(VERSION)
+$(PACKAGE)-make.tag: $(PACKAGE)-configure.tag
+	$(MAKE) -C $(PACKAGE_DIR)
 	touch $@
 
-readline-install.tag: readline-make.tag
-	$(MAKE) -C readline-$(VERSION) install
+$(PACKAGE)-install.tag: $(PACKAGE)-make.tag
+	$(MAKE) -C $(PACKAGE_DIR) install
 	touch $@
 
 clean:
-	rm -rf readline-$(VERSION) download/* *.tag
+	rm -rf $(PACKAGE_DIR) download/* *.tag

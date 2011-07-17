@@ -1,6 +1,7 @@
 2011-07-17 Borut Razem <borut.razem AT gmail.com>
 
 	* bin/dcf.sh: added debug_exec() function
+	* packages/build.readline: updated readline to version 6.2
 
 2011-07-15 Borut Razem <borut.razem AT gmail.com>
 
