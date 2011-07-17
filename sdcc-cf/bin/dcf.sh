@@ -2,7 +2,7 @@
 
 # dcf.sh - Distributed Compile Farm Mediator
 #
-# Copyright (c) 2007-2010 Borut Razem <borut dot razem at siol dot net>
+# Copyright (c) 2007-2011, Borut Razem <borut dot razem at gmail dot com>
 #
 # This file is part of sdcc.
 #
@@ -22,8 +22,8 @@
 #     misrepresented as being the original software.
 #  3. This notice may not be removed or altered from any source distribution.
 
-LOG_LINES=1000	# max number of lines in the log file
-BWLIMIT=7	# bandwith limit for rsync
+LOG_LINES=1000  # max number of lines in the log file
+BWLIMIT=7       # bandwith limit for rsync
 
 ETC_DIR=$HOME/etc
 LOG_DIR=$HOME/log
@@ -44,6 +44,15 @@ WEBHTDOCSDIR=/home/groups/s/sd/sdcc/htdocs
 FRSHOST=frs.sourceforge.net
 FRSUSER=$WEBUSER
 FRSDIR=/home/frs/project/s/sd/sdcc/snapshot_builds
+
+
+# debugging: print the command and execute it
+debug_exec ()
+# $*: command to debug & execute
+{
+  test -n "${DEBUG}" && echo =DBG= $*
+  $*
+}
 
 
 # substring
@@ -203,30 +212,30 @@ sync_dir ()
 # $2: traget machine/directory to sync
 # $3: exclude source directories from sync
 {
-  local ret=1 excl
+  local ret=1 excl file_list
 
   if test -d $1 && pushd $1 > /dev/null
   then
-    FILE_LIST=$(find * -depth -print 2>/dev/null)
-    if test -n "${FILE_LIST}"
+    file_list=$(find * -depth -print 2>/dev/null)
+    if test -n "${file_list}"
     then
       echo "+++ start: $(date)"
       echo "=== files in $1:"
-      list_files ${FILE_LIST}
+      list_files ${file_list}
 
       excl=""
       echo "=== rsyncing..."
       if test -n "$3"
       then
         for dir in $3
-	do
+        do
           excl=${excl}" --exclude "${dir}
-	done
+        done
       fi
-      rsync $RSYNC_OPTS --relative --recursive --include='*.exe' ${excl} -e ssh --size-only * $2 2>&1 | grep -v -e "skipping directory"
+      debug_exec rsync $RSYNC_OPTS --relative --recursive --include='*.exe' ${excl} -e ssh --size-only * $2 2>&1 | grep -v -e "skipping directory"
 
       echo "=== removing..."
-      rm_list ${FILE_LIST}
+      rm_list ${file_list}
 
       echo "=== removing old versions..."
       rm_old_versions
