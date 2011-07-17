@@ -28,7 +28,7 @@ PACKAGE_DIR=$(PACKAGE)-$(VERSION)
 PACKAGE_FILE=$(PACKAGE_DIR).tar.gz
 
 .PHONY: all
-all: $(PACKAGE)-install.tag #clean
+all: $(PACKAGE)-install.tag clean
 
 download/$(PACKAGE_FILE):
 	wget -P download ftp://ftp.cwru.edu/pub/bash/$(PACKAGE_FILE)
