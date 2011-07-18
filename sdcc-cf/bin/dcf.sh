@@ -46,14 +46,20 @@ FRSUSER=$WEBUSER
 FRSDIR=/home/frs/project/s/sd/sdcc/snapshot_builds
 
 
+# debugging: print
+debug_print ()
+# $*: text to print
+{
+  test -n "${DEBUG}" && echo =DBG= $*
+}
+
 # debugging: print the command and execute it
 debug_exec ()
 # $*: command to debug & execute
 {
-  test -n "${DEBUG}" && echo =DBG= $*
+  debug_print $*
   $*
 }
-
 
 # substring
 substr ()
@@ -232,6 +238,7 @@ sync_dir ()
           excl=${excl}" --exclude "${dir}
         done
       fi
+      debug_print "current directory: $(pwd)"
       debug_exec rsync $RSYNC_OPTS --relative --recursive --include='*.exe' ${excl} -e ssh --size-only * $2 2>&1 | grep -v -e "skipping directory"
 
       echo "=== removing..."
@@ -277,7 +284,7 @@ sync_dir ()
               then
                 tree ${FRSUSER} ${FRSHOST} ${FRSDIR} > ${TREE_FILE}
               fi
-              sync_dir "/home/${builder}/htdocs" ${WEBUSER}@${WEBHOST}:${WEBHTDOCSDIR}/ "/home/${builder}/htdocs/snapshots"
+              sync_dir "/home/${builder}/htdocs" ${WEBUSER}@${WEBHOST}:${WEBHTDOCSDIR}/ "snapshots"
             fi
           fi
         )
