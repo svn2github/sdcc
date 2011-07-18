@@ -222,7 +222,12 @@ sync_dir ()
 
   if test -d $1 && pushd $1 > /dev/null
   then
-    file_list=$(find * -depth -print 2>/dev/null)
+    if test -z "$3"
+    then
+      file_list=$(find * -depth -print 2>/dev/null)
+    else
+      file_list=$(find * -depth -print 2>/dev/null | grep -v -e "^$3")
+    fi
     if test -n "${file_list}"
     then
       echo "+++ start: $(date)"
