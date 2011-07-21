@@ -1,3 +1,12 @@
+2011-07-21 Borut Razem <borut.razem AT gmail.com>
+
+	* local/dev.mk, local/solaris-x86.mk:
+	  added TARGETCFLAGS and TARGETLSFLAGS
+	* local/amd64-linux1.mk, local/openpower-linux1.mk, local/ppc-osx2.mk,
+	  local/ppc-osx3.mk, local/sparc-solaris1.mk,
+	  local/usf-cf-alpha-linux-1.mk, local/x86-linux2.mk,
+	  local/x86-linux2-i586-mingw32msvc.mk: moved to local/old
+
 2011-06-13 Borut Razem <borut.razem AT gmail.com>
 
 	* local/dev.mk, local/solaris-x86.mk: use GCC compiler
