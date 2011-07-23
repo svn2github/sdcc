@@ -1,3 +1,10 @@
+2011-07-23 Borut Razem <borut.razem AT gmail.com>
+
+	* local/cf-x86.mk, local/cf-x86-i386-unknown-linux2.5.mk,
+	  local/mypants.mk, local/dev.mk, local/mirror-doors.mk,
+	  local/solaris-x86.mk, local/freebsd-i386.mk, local/netbsd-i386.mk:
+	  local includes and libraries paths
+
 2011-07-21 Borut Razem <borut.razem AT gmail.com>
 
 	* local/dev.mk, local/solaris-x86.mk:
