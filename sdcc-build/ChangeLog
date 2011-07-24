@@ -2,6 +2,7 @@
 
 	* local/cf-x86-i586-mingw32msvc.mk:
 	  clear TARGETCCFLAGS and TARGETCXXFLAGS
+	* local/mypants.mk, local/netbsd-i386.mk: fixed TARGETLDFLAGS
 
 2011-07-23 Borut Razem <borut.razem AT gmail.com>
 
