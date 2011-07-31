@@ -16,7 +16,13 @@ endif
 ifeq ($(HOSTNAME),mypants)
   BJAM_FLAGS=pch=off
 else
-  BJAM_FLAGS=
+#  # universal build on Mac OS X doesn't work
+#  ifeq ($(OS), Darwin)
+#    # Build universal binaries
+#    BJAM_FLAGS=macosx-version=10.5 macosx-version-min=10.4 architecture=combined threading=multi link=static address-model=32
+#  else
+    BJAM_FLAGS=
+#  endif
 endif
 
 SUBDIR:=$(shell echo $(VERSION) | sed -e 's/_/./g')

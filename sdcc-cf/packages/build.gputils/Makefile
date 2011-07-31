@@ -26,7 +26,7 @@ GPUTILS_DIR=$(PACKAGE)-$(VERSION)
 download/$(PACKAGE_FILE):
 	wget -P download $(SF_REPOSITORY)/sourceforge/gputils/$(PACKAGE_FILE)
 
-$(PACKAGE)-download.tag:
+$(PACKAGE)-download.tag: download/$(PACKAGE_FILE)
 	touch $@
 
 $(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag

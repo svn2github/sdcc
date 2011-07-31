@@ -1,3 +1,9 @@
+2011-07-31 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.boost/Makefile: failed attempt to make universal
+	  boost build
+	* packages/build.gputils/Makefile: fixed non svn build
+
 2011-07-18 Borut Razem <borut.razem AT gmail.com>
 
 	* bin/dcf.sh: use relative path as argument for rsync --exclude
