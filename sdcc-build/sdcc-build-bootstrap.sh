@@ -12,7 +12,7 @@ SVNROOT=https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk
 
 BUILDDATE=`date +%Y%m%d`
 
-# A lockfile ensures, that the cronjobs of the different hosts don't overlap.
+# The lockfile ensures that the new build doesn't start until the previous one s not done
 
 # uniq id
 MYID=$HOSTNAME
@@ -30,17 +30,17 @@ MSGPREFIX="Buildlock: "
 cleanup ()
 {
   echo $MSGPREFIX cleanup
-  test -f $LOCKFILE && head -n 1 $LOCKFILE | grep $MYID > /dev/null && rm $LOCKFILE
+  test -f $LOCKFILE && head -n 1 $LOCKFILE | grep $MYID > /dev/null && rm $LOCKFILE && echo $MSGPREFIX "Lock released on     " `date`
 }
 
 # Execute supported version of ls -l --full-time
 ls_l_full_time ()
 {
   # test if ls -l --full-time is supported
-  RES=`ls -l --full-time $1 2>&1`
+  res=`ls -l --full-time $1 2>&1`
   if test $? = 0; then
     # ls -l --full-time supported: echo the result
-    echo "$RES"
+    echo "$res"
   else
     # ls -l --full-time not supported: execute ls -l
     ls -l $1
@@ -57,11 +57,11 @@ do_lock ()
     if test -f $LOCKFILE
     then
       sleep $SLEEP
-      RES=`find $LOCKFILE -mmin +$MAXMINUTES \
+      res=`find $LOCKFILE -mmin +$MAXMINUTES \
            -exec echo $MSGPREFIX lock from \`cat $LOCKFILE\` expired \; \
            -exec rm -f {} \; 2> /dev/null`
       if test $? = 0; then
-        echo $RES
+        echo $res
       else
         echo $MSGPREFIX "Can't obtain the lock"
         return 1
@@ -113,7 +113,6 @@ then
   else
     echo $MSGPREFIX "can't checkout"
   fi
-  echo $MSGPREFIX "Lock released on     " `date`
 fi
 
 cleanup
