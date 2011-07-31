@@ -1,3 +1,7 @@
+2011-07-32 Borut Razem <borut.razem AT gmail.com>
+
+	* sdcc-build/sdcc-build-bootstrap.sh: added "Lock released" message
+
 2011-07-24 Borut Razem <borut.razem AT gmail.com>
 
 	* local/cf-x86-i586-mingw32msvc.mk:

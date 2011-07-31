@@ -113,6 +113,7 @@ then
   else
     echo $MSGPREFIX "can't checkout"
   fi
+  echo $MSGPREFIX "Lock released on     " `date`
 fi
 
 cleanup
