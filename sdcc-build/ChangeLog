@@ -1,4 +1,9 @@
-2011-07-32 Borut Razem <borut.razem AT gmail.com>
+2011-08-02 Borut Razem <borut.razem AT gmail.com>
+
+	* components/sdcc.mk, lib/bootstrap.mk, lib/upload.mk, lib/fetch.mk:
+	  added `date` outputs
+
+2011-07-31 Borut Razem <borut.razem AT gmail.com>
 
 	* sdcc-build/sdcc-build-bootstrap.sh: added "Lock released" message
 

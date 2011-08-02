@@ -25,7 +25,10 @@ test-all-targets:
 # Builds for each target, including sending the results out in an
 # email and updating the snapshots directory
 build-all-targets:
-	for i in $(TARGETOS) $(OTHERTARGETS); do $(MAKE) $(MAKESILENTFLAG) per-target-build TARGETOS=$$i; done
+	for i in $(TARGETOS) $(OTHERTARGETS); \
+	do \
+	  $(MAKE) $(MAKESILENTFLAG) per-target-build TARGETOS=$$i; \
+	done
 
 # Does a release build of each target by checking out from a label and
 # building for each target
@@ -42,8 +45,9 @@ per-target-clean:
 	rm -rf $(SRCDIR)
 
 logged-build:
-	echo "--- Building $(TARGETOS) ---"
+	echo "--- Building $(TARGETOS) started on `date` ---"
 	-$(MAKE) -k $(MAKESILENTFLAG) build
+	echo "--- Building $(TARGETOS) finished on `date` ---"
 
 generate-packages: copy-extra-bins generate-tarball generate-setup
 

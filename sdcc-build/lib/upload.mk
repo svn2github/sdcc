@@ -17,9 +17,11 @@ do-upload:
 	FILE_LIST=`find * -type f -print 2>/dev/null`; \
 	if test -n "$$FILE_LIST"; \
 	then \
+	  echo "--- rsync upload started on `date` ---"; \
 	  rsync --relative --include='*.exe' -e ssh --size-only $$FILE_LIST $(_DCFSNAPSHOTDEST) && \
 	  { \
 	    ssh $(DCFUSER)@$(DCFHOST) cd $(DCFHTDOCSDIR)\; chmod g+wx $$DIR_LIST\; chmod g+w $$FILE_LIST; \
 	    rm -rf $(HTDOCSDIR)/*; \
 	  }; \
+	  echo "--- rsync upload finished on `date` ---"; \
 	fi

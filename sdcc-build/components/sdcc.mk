@@ -89,6 +89,7 @@ endif
 
 sdcc-regression: sdcc sdcc-install sdcc-extra
 # test-gbz80 temporary disabled because of problems; Bernhard 2003-02-13
+	echo "--- Regression testing started on `date` ---"
 ifeq ($(CROSSCOMPILING), 1)
 	# mingw cross regression testing with wine
 	# uninstall the previous version
@@ -107,5 +108,6 @@ else
 	mkdir -p $(REGTESTDIR); \
 	$(MAKE) -C src/sdcc/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) 2>&1 | tee $(REGTESTLOG)
 endif
+	echo "--- Regression testing finished on `date` ---"
 
 endif

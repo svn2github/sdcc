@@ -8,12 +8,14 @@ _FETCH_DOER = mkdir -p $(STAMPDIR); \
 	rm -f $(STAMPDIR)/$(_FETCH_TREE).*-fetched; \
 	rm -rf $(ORIGDIR)/$(_FETCH_TREE); \
 	cd $(ORIGDIR); \
+	echo "--- $(_FETCH_TREE) svn download started on `date` ---"; \
 	if test "$(ISRELEASE)" = "true"; \
 	then \
 	  svn $(SVNFLAGS) export https://sdcc.svn.sourceforge.net/svnroot/sdcc/tags/$(SVNTAG)/$(_FETCH_TREE) $(_FETCH_TREE) && touch $@; \
 	else \
 	  svn $(SVNFLAGS) export https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/$(_FETCH_TREE) $(_FETCH_TREE) && touch $@; \
-	fi
+	fi; \
+	echo "--- $(_FETCH_TREE) svn download finished on `date` ---"
 
 # Default rule for fetching a tree from svn
 # if SVNSERVER is defined:
