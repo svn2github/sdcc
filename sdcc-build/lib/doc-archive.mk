@@ -14,10 +14,8 @@ _DOC_ARCHIVE_DIR = $(HTDOCSDIR)/doc
 _DOC_ARCHIVE_TARBALL_DIR = $(HTDOCSDIR)/$(TARBALLBASE)/docs
 
 _DOC_ARCHIVE_MANUAL = sdccman
-_DOC_ARCHIVE_TSS = test_suite_spec
-_DOC_ARCHIVE_CDB = cdbfileformat
 
-_DOC_ARCHIVE_SOURCES = $(addsuffix .lyx,$(_DOC_ARCHIVE_MANUAL) $(_DOC_ARCHIVE_TSS) $(_DOC_ARCHIVE_CDB))
+_DOC_ARCHIVE_SOURCES = $(addsuffix .lyx,$(_DOC_ARCHIVE_MANUAL))
 
 _DOC_ARCHIVE_TXT = $(_DOC_ARCHIVE_SOURCES:.lyx=.txt)
 _DOC_ARCHIVE_PDF = $(_DOC_ARCHIVE_SOURCES:.lyx=.pdf)
@@ -46,8 +44,6 @@ doc-archive-copy:
 	# Mangle HTML files
 	cd $(_DOC_ARCHIVE_SRC_DIR); \
 	for i in sdccman.html/*.html; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -s "SDCC Manual" $$i > $(_DOC_ARCHIVE_DIR)/$$i; done; \
-	for i in test_suite_spec.html/*.html; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -s "SDCC Test Suite" $$i > $(_DOC_ARCHIVE_DIR)/$$i; done; \
-	for i in cdbfileformat.html/*.html; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -s "SDCC CDB Format" $$i > $(_DOC_ARCHIVE_DIR)/$$i; done
 	# PHP process .html files
 	for i in $(addprefix $(_DOC_ARCHIVE_DIR)/, $(_DOC_ARCHIVE_HTML)); do echo "AddType application/x-httpd-php .html" > $$i/.htaccess; done
 	# Copy *.pdf
@@ -61,8 +57,6 @@ doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.
 	# copy to build directory
 	cd $(_DOC_ARCHIVE_SRC_DIR); cp -rpf *.txt *.html *.pdf $(_DOC_ARCHIVE_BUILDDIR)/doc
 	cd $(_DOC_ARCHIVE_ORIG_DIR); \
-	cp -rpf doc/z80 $(_DOC_ARCHIVE_BUILDDIR)/doc; \
-	cp -rpf doc/avr $(_DOC_ARCHIVE_BUILDDIR)/doc; \
 	cp -rpf sdas/doc/* $(_DOC_ARCHIVE_BUILDDIR)/doc/sdas/; \
 	cp -pf doc/*.txt doc/*.html $(_DOC_ARCHIVE_BUILDDIR)/doc; \
 	cp -pf ChangeLog $(_DOC_ARCHIVE_BUILDDIR)/doc/ChangeLog.txt

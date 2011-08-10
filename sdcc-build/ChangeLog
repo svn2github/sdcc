@@ -1,3 +1,8 @@
+2011-08-10 Borut Razem <borut.razem AT gmail.com>
+
+	* lib/doc-archive.mk:
+	  sdcc development documentation moved from doc to sdcc wiki
+
 2011-08-02 Borut Razem <borut.razem AT gmail.com>
 
 	* components/sdcc.mk, lib/bootstrap.mk, lib/upload.mk, lib/fetch.mk:
