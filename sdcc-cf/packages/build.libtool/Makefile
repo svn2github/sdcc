@@ -2,18 +2,17 @@ include ../packages.mk
 
 PACKAGE=libtool
 
-VERSION=$(shell expr download/$(PACKAGE)-*.tar.bz2 : 'download/$(PACKAGE)-\(.*\).tar.bz2')
+VERSION=2.2
 
 LIBTOOL_DIR=$(PACKAGE)-$(VERSION)
 
 .PHONY: all
 all: $(PACKAGE)-install.tag clean
 
-$(PACKAGE)-download.tag:
-	wget -P download http://ftp.gnu.org/gnu/$(PACKAGE)/$(PACKAGE)-2.2.tar.bz2
-	touch $@
+download/$(PACKAGE)-$(VERSION).tar.bz2:
+	wget -P download http://ftp.gnu.org/gnu/$(PACKAGE)/$(PACKAGE)-$(VERSION).tar.bz2
 
-$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
+$(PACKAGE)-unpack.tag: download/$(PACKAGE)-$(VERSION).tar.bz2
 	tar xjvf download/$(LIBTOOL_DIR).tar.bz2
 	touch $@
 
@@ -31,4 +30,4 @@ $(PACKAGE)-install.tag: $(PACKAGE)-make.tag
 	touch $@
 
 clean:
-	rm -rf $(LIBTOOL_DIR) *.tag
+	rm -rf $(LIBTOOL_DIR) download/* *.tag

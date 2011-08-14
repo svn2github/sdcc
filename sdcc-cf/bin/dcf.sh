@@ -23,7 +23,7 @@
 #  3. This notice may not be removed or altered from any source distribution.
 
 LOG_LINES=1000  # max number of lines in the log file
-BWLIMIT=7       # bandwith limit for rsync
+BWLIMIT=21      # bandwith limit in KiB for rsync
 
 ETC_DIR=$HOME/etc
 LOG_DIR=$HOME/log

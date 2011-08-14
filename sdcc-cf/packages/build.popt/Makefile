@@ -1,30 +1,31 @@
 include ../packages.mk
 
-VERSION=$(shell expr download/popt-*.tar.gz : 'download/popt-\(.*\).tar.gz')
+PACKAGE=popt
+
+VERSION=1.14
 
 .PHONY: all
-all: popt-install.tag clean
+all: $(PACKAGE)-install.tag clean
 
-popt-download.tag:
-        wget -P download http://rpm5.org/files/popt/popt-1.14.tar.gz
-        touch $@
+download/$(PACKAGE)-$(VERSION).tar.gz:
+	wget -P download http://rpm5.org/files/$(PACKAGE)/$(PACKAGE)-$(VERSION).tar.gz
 
-popt-unpack.tag: popt-download.tag
-        tar xzvf download/popt-$(VERSION).tar.gz
-        touch $@
+$(PACKAGE)-unpack.tag: $download/$(PACKAGE)-$(VERSION).tar.gz
+	tar xzvf download/$(PACKAGE)-$(VERSION).tar.gz
+	touch $@
 
-popt-configure.tag: popt-unpack.tag
-        cd popt-$(VERSION) && \
-        ./configure --prefix=$(LOCAL_DIR) CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)"
-        touch $@
+$(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
+	cd $(PACKAGE)-$(VERSION) && \
+	./configure --prefix=$(LOCAL_DIR) CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)"
+	touch $@
 
-popt-make.tag: popt-configure.tag
-        $(MAKE) -C popt-$(VERSION)
-        touch $@
+$(PACKAGE)-make.tag: $(PACKAGE)-configure.tag
+	$(MAKE) -C $(PACKAGE)-$(VERSION)
+	touch $@
 
-popt-install.tag: popt-make.tag
-        $(MAKE) -C popt-$(VERSION) install
-        touch $@
+$(PACKAGE)-install.tag: $(PACKAGE)-make.tag
+	$(MAKE) -C $(PACKAGE)-$(VERSION) install
+	touch $@
 
 clean:
-        rm -rf popt-$(VERSION) download/* *.tag
+	rm -rf $(PACKAGE)-$(VERSION) download/* *.tag

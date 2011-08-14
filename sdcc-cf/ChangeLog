@@ -1,3 +1,13 @@
+2011-08-14 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.dos2unix/*: added
+	* etc/dcf_list: added derna DFC build machine
+	* bin/dcf.sh: bandwith limit increase from 7 to KiB/s
+	* crontab.txt: mirror-doors buld starts at 01:00; all entries commented
+	* packages/build.popt/Makefile, packages/build.scons/Makefile,
+	  packages/build.libtool/Makefile, packages/build.nsis/Makefile:
+	  misc. cosmetic changes
+
 2011-07-31 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.boost/Makefile: failed attempt to make universal

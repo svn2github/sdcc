@@ -8,15 +8,13 @@ VERSION=2.46
 all: $(PACKAGE)-install.tag clean
 
 download/$(PACKAGE)-$(VERSION)-src.tar.bz2:
-	wget -P download $(SF_REPOSITORY)/sourceforge/$(PACKAGE)/$(PACKAGE)-$(VERSION)-src.tar.bz2
+	wget -P download http://sourceforge.net/projects/$(PACKAGE)/files/NSIS%202/$(VERSION)/$(PACKAGE)-$(VERSION)-src.tar.bz2
 
 download/$(PACKAGE)-$(VERSION).zip:
-	wget -P download $(SF_REPOSITORY)/sourceforge/$(PACKAGE)/$(PACKAGE)-$(VERSION).zip
+	wget -P download http://sourceforge.net/projects/$(PACKAGE)/files/NSIS%202/$(VERSION)/$(PACKAGE)-$(VERSION).zip
 
-$(PACKAGE)-download.tag: download/$(PACKAGE)-$(VERSION)-src.tar.bz2 download/$(PACKAGE)-$(VERSION).zip
-
-$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
-	tar xjvf download/$(PACKAGE)-*-src.tar.bz2
+$(PACKAGE)-unpack.tag: download/$(PACKAGE)-$(VERSION)-src.tar.bz2 download/$(PACKAGE)-$(VERSION).zip
+	tar xjvf download/$(PACKAGE)-$(VERSION)-src.tar.bz2
 	touch $@
 
 $(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
