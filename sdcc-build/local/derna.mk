@@ -12,8 +12,8 @@ TARGETCXXFLAGS = "-O2 -I$(HOME)/local-$(HOSTNAME)/include"
 TARGETCFLAGS = "-O2 -I$(HOME)/local-$(HOSTNAME)/include"
 TARGETLDFLAGS = "-L$(HOME)/local-$(HOSTNAME)/lib32"
 
-##### cross-tools are installed
-####OTHERTARGETS = i586-mingw32msvc
+# cross-tools are installed
+OTHERTARGETS = i586-mingw32msvc
 
 # for backward compatibility
 # FC6 uses --hash-style=gnu by default
