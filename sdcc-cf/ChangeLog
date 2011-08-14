@@ -8,6 +8,7 @@
 	  packages/build.libtool/Makefile, packages/build.nsis/Makefile:
 	  misc. cosmetic changes
 	* packages/build.gettext/*: added
+	* .sdcc_builder/profile: serach for local unix2dos
 
 2011-07-31 Borut Razem <borut.razem AT gmail.com>
 
