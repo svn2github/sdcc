@@ -97,7 +97,8 @@ then
   for i in 0 1 2
   do
     # Checkout the latest sdcc-build version to $BUILDROOT/sdcc-build
-    rm -rf $BUILDROOT/sdcc-build
+    # Quick & dirty temporary fix: don't remove the build if uploading
+    test "$1" != "do_upload" && rm -rf $BUILDROOT/sdcc-build
     if svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
     then
       success=1
@@ -108,8 +109,7 @@ then
   if test "$success" = 1
   then
     # Spawn onto the actual build
-    cd $BUILDROOT/sdcc-build
-    make $*
+    make -C $BUILDROOT/sdcc-build $*
   else
     echo $MSGPREFIX "can't checkout"
   fi

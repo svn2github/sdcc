@@ -1,6 +1,8 @@
 2011-08-14 Borut Razem <borut.razem AT gmail.com>
 
 	* lib/variables.mk: serach for local unix2dos
+	* sdcc-build-bootstrap.sh: don't remove the build if uploading
+	* local/derna.mk: configuration for derna buld machine
 
 2011-08-10 Borut Razem <borut.razem AT gmail.com>
 
