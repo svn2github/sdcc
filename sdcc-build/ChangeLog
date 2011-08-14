@@ -1,9 +1,10 @@
 2011-08-14 Borut Razem <borut.razem AT gmail.com>
 
 	* lib/variables.mk: serach for local unix2dos
-	* sdcc-build-bootstrap.sh: don't remove the build if uploading
-	* local/derna.mk: configuration for derna build machine
 	* lib/variables.mk, lib/upload.mk: added DCFPORT
+	* sdcc-build-bootstrap.sh: don't remove the build if uploading
+	* local/derna.mk: x86 build on derna build machine
+	* local/cf-x86.mk: disable x86 build
 
 2011-08-10 Borut Razem <borut.razem AT gmail.com>
 
