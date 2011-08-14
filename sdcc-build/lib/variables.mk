@@ -24,6 +24,7 @@ LOCAL_MK = $(HOME)/.sdcc_builder/local
 # DCF server host, user and path
 # cf-x86.ivorytower.norman.ok.us
 DCFHOST = 66.142.207.42
+DCFPORT = 22
 DCFUSER = $(HOSTNAME)
 DCFHTDOCSDIR = /home/$(HOSTNAME)/htdocs/
 
