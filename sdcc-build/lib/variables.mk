@@ -39,7 +39,7 @@ HOSTPREFIX = /usr/local
 TOPDIR := $(shell /bin/pwd)
 
 # Directory that all of the soure trees get copied into
-SRCDIR = $(TOPDIR)/src
+SRCDIR = $(TOPDIR)/$(TARGET_PLATFORM).build
 ORIGDIR = $(HOME)/build/sdcc-build/orig
 BUILDDIR = $(TOPDIR)/build/$(TARGET_PLATFORM)/sdcc
 BINDIR = $(BUILDDIR)/bin
