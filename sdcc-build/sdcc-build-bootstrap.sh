@@ -98,7 +98,7 @@ then
   do
     # Checkout the latest sdcc-build version to $BUILDROOT/sdcc-build
     # Quick & dirty temporary fix: don't remove the build if uploading
-    test "$1" != "do_upload" && rm -rf $BUILDROOT/sdcc-build
+    test "$1" != "do-upload" && rm -rf $BUILDROOT/sdcc-build
     if svn checkout $SVNROOT/sdcc-build $BUILDROOT/sdcc-build
     then
       success=1

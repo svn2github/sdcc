@@ -1,3 +1,7 @@
+2011-08-15 Borut Razem <borut.razem AT gmail.com>
+
+	* sdcc-build-bootstrap.sh: fixed typo
+
 2011-08-14 Borut Razem <borut.razem AT gmail.com>
 
 	* lib/variables.mk: serach for local unix2dos
