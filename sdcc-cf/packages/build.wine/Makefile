@@ -18,7 +18,7 @@ $(PACKAGE)-unpack.tag: download/$(PACKAGE)-$(VERSION).tar.bz2
 
 $(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
 	cd $(PACKAGE)-$(VERSION) && \
-	./configure --prefix=$(LOCAL_DIR) CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)"
+	./configure --without-x --without-freetype --prefix=$(LOCAL_DIR) CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)"
 	touch $@
 
 $(PACKAGE)-make.tag: $(PACKAGE)-configure.tag

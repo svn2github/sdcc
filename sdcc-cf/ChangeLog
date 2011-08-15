@@ -1,3 +1,8 @@
+2011-08-15 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.wine/Makefile:
+	  added --without-x --without-freetype configure options
+
 2011-08-14 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.dos2unix/*: added
