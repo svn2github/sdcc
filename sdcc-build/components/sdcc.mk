@@ -101,12 +101,12 @@ ifeq ($(CROSSCOMPILING), 1)
 	then \
 	  mkdir -p $(REGTESTDIR); \
 	  rm -rf $(_SDCCDIR)/support/regression/gen $(_SDCCDIR)/support/regression/results; \
-	  $(MAKE) -C $(_SDCCDIR)/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(CROSSREGTESTTARGETS) CROSSCOMPILING=$(CROSSCOMPILING) SDCC="wine sdcc" $(CC_FOR_BUILD_STR) 2>&1 | tee $(REGTESTLOG); \
+	  $(MAKE) $(MAKESILENTFLAG) -C $(_SDCCDIR)/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(CROSSREGTESTTARGETS) CROSSCOMPILING=$(CROSSCOMPILING) SDCC="wine sdcc" $(CC_FOR_BUILD_STR) 2>&1 | tee $(REGTESTLOG); \
 	fi
 else
 	# perform regression tests
 	mkdir -p $(REGTESTDIR); \
-	$(MAKE) -C $(_SDCCDIR)/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) 2>&1 | tee $(REGTESTLOG)
+	$(MAKE) $(MAKESILENTFLAG) -C $(_SDCCDIR)/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(REGTESTTARGETS) 2>&1 | tee $(REGTESTLOG)
 endif
 	echo "--- Regression testing finished on `date` ---"
 
