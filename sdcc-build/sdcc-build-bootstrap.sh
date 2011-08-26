@@ -109,7 +109,11 @@ then
   if test "$success" = 1
   then
     # Spawn onto the actual build
-    make -C $BUILDROOT/sdcc-build $*
+    # Don't use "make -C" to change directory since the "Entering directory" and
+    # "Leaving directory" messages are displayed in the regression test results
+    pushd $BUILDROOT/sdcc-build
+    make $*
+    popd
   else
     echo $MSGPREFIX "can't checkout"
   fi
