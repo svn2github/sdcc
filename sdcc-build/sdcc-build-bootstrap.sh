@@ -111,9 +111,8 @@ then
     # Spawn onto the actual build
     # Don't use "make -C" to change directory since the "Entering directory" and
     # "Leaving directory" messages are displayed in the regression test results
-    pushd $BUILDROOT/sdcc-build
+    cd $BUILDROOT/sdcc-build
     make $*
-    popd
   else
     echo $MSGPREFIX "can't checkout"
   fi
