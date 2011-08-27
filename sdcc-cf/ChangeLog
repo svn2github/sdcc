@@ -1,3 +1,8 @@
+2011-08-27 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.gmp_mpfr/Makefile: updated to mpfr 3.0.1, mpc 0.9
+	* packages/build.gcc/Makefile: updated to gcc 4.6.1
+
 2011-08-15 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.wine/Makefile:

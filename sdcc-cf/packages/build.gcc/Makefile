@@ -1,6 +1,6 @@
 include ../packages.mk
 
-GCC_VERSION=4.6.0
+GCC_VERSION=4.6.1
 
 ifeq ($(OS),SunOS)
   CFGFLAGS=--with-as=/usr/ccs/bin/as --with-ld=/usr/ccs/bin/ld --disable-lto
