@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*-------------------------------------------------------------------------
    snap_head.php - snapshot builds page head
 
@@ -14,11 +14,12 @@
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
    GNU General Public License for more details.
 
-   You should have received a copy of the GNU General Public License 
+   You should have received a copy of the GNU General Public License
    along with this library; see the file COPYING. If not, write to the
    Free Software Foundation, 51 Franklin Street, Fifth Floor, Boston,
    MA 02110-1301, USA.
 -------------------------------------------------------------------------*/
+header("Cache-Control: max-age=3600, must-revalidate"); //HTTP/1.1
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">

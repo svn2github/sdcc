@@ -1,3 +1,7 @@
+2011-08-28 Maarten Brock <sourceforge.brock AT dse.nl>
+
+	* snap_header.php: added max-age=3600 header for caching browsers
+
 2011-06-21 Borut Razem <borut.razem AT gmail.net>
 
 	* regtest.php: removed XHTML 1.0 validation errors
