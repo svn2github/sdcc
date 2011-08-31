@@ -251,11 +251,14 @@ function display_files($descdir, $lsDir, $cldir, $rtdir, $subdir)
     echo "<th align=\"left\"><font color=\"#660000\" face=\"Arial,Helvetica,Geneva,Swiss,SunSans-Regular\">RT</font></th>";
   echo "</tr>\n";
 
+  # set the default timezone to use. Available since PHP 5.1
+  date_default_timezone_set("UTC");
+
   for ($i = 0; $i < $numfiles; ++$i) {
     $fs = round($file_size[$i] / 1024, 0);
     $subdirpp = preg_replace("/\s/","%20","$subdir");
     $filep = preg_replace("/\s/","%20",$file_name[$i]);
-    #$modDate = date("F j, Y", $file_date[$i]);
+    #$modDate = date("M j H:i T", $file_date[$i]);
     $modDate = $file_date[$i];
 
     # ChangeLog head
