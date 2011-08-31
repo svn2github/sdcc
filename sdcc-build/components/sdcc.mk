@@ -87,6 +87,14 @@ ifdef CC_FOR_BUILD
 CC_FOR_BUILD_STR = CC_FOR_BUILD=$(CC_FOR_BUILD)
 endif
 
+ifeq ($(CROSSCOMPILING), 1)
+ifeq ($(TARGETOS), x86_64-w64-mingw32)
+  WINE = wine64
+else
+  WINE = wine
+endif
+endif
+
 sdcc-regression: sdcc sdcc-install sdcc-extra
 # test-gbz80 temporary disabled because of problems; Bernhard 2003-02-13
 	echo "--- Regression testing started on `date` ---"
@@ -97,11 +105,11 @@ ifeq ($(CROSSCOMPILING), 1)
 	# install sdcc package
 	-wine $(SETUPNAME) /S && sleep 10
 	# perform regression tests
-	if wine sdcc --version > /dev/null 2>&1; \
+	if $(WINE) sdcc --version > /dev/null 2>&1; \
 	then \
 	  mkdir -p $(REGTESTDIR); \
 	  rm -rf $(_SDCCDIR)/support/regression/gen $(_SDCCDIR)/support/regression/results; \
-	  $(MAKE) $(MAKESILENTFLAG) -C $(_SDCCDIR)/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(CROSSREGTESTTARGETS) CROSSCOMPILING=$(CROSSCOMPILING) SDCC="wine sdcc" $(CC_FOR_BUILD_STR) 2>&1 | tee $(REGTESTLOG); \
+	  $(MAKE) $(MAKESILENTFLAG) -C $(_SDCCDIR)/support/regression SDCC_HOME=$(BUILDDIR) SDCC_EXTRA_DIR=$(SRCDIR)/sdcc-extra $(CROSSREGTESTTARGETS) CROSSCOMPILING=$(CROSSCOMPILING) SDCC="$(WINE) sdcc" $(CC_FOR_BUILD_STR) 2>&1 | tee $(REGTESTLOG); \
 	fi
 else
 	# perform regression tests

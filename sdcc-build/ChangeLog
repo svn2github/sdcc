@@ -4,6 +4,9 @@
 	  added Windows 64bit mingw_w64 cross-compilation
 	* local/cf-x86-i386-unknown-linux2.5.mk,
 	  local/cf-x86-i586-mingw32msvc.mk: moved to local/old
+	* components/sdcc.mk: use wine64 for running mingw_w64 regtests
+	* lib/bootstrap.mk: added libgcc_s_sjlj-1.dll and libstdc++-6.dll dlls
+	  to mingw_w64 packages; call makensis with -DWIN64
 
 2011-08-26 Borut Razem <borut.razem AT gmail.com>
 

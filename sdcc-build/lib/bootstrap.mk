@@ -54,8 +54,18 @@ generate-packages: copy-extra-bins generate-tarball generate-setup
 copy-extra-bins:
 ifeq ($(CROSSCOMPILING), 1)
 # Windows build:
+ifeq ($(TARGETOS), x86_64-w64-mingw32)
+# Windows 64bit:
+## TODO: we don't have 64bit readline5.dll!
+## include readline5.dll in the package
+#	cp $(HOME)/local-$(HOSTNAME)/cross-tools-w64/x86_64-w64-mingw32/dll/readline5.dll $(BUILDDIR)$(PREFIX)/bin
+	cp $(HOME)/local-$(HOSTNAME)/cross-tools-w64/bin/libgcc_s_sjlj-1.dll $(BUILDDIR)$(PREFIX)/bin
+	cp $(HOME)/local-$(HOSTNAME)/cross-tools-w64/bin/libstdc++-6.dll $(BUILDDIR)$(PREFIX)/bin
+else
+# Windows 32bit:
 # include readline5.dll in the package
 	cp $(HOME)/local-$(HOSTNAME)/cross-tools/i586-mingw32msvc/dll/readline5.dll $(BUILDDIR)$(PREFIX)/bin
+endif
 # convert as2gbmap.py to a batch file in bin directory
 	echo '@setlocal enabledelayedexpansion && python -x "%~f0" %* & exit /b !ERRORLEVEL!' | \
 	  cat - $(BUILDDIR)$(PREFIX)/bin/as2gbmap | \
@@ -81,6 +91,14 @@ else
 	-cd $(BUILDDIR); zip -9r $(TARBALLNAME) sdcc
 endif
 
+ifeq ($(CROSSCOMPILING), 1)
+ifeq ($(TARGETOS), x86_64-w64-mingw32)
+  WINVER = -DWIN64
+else
+  WINVER =
+endif
+endif
+
 generate-setup:
 ifeq ($(CROSSCOMPILING), 1)
 	mkdir -p $(dir $(SETUPNAME))
@@ -92,7 +110,7 @@ ifeq ($(CROSSCOMPILING), 1)
 	$(UNIX2DOS) $(BUILDDIR)$(PREFIX)/doc/README.TXT
 	-cd $(BUILDDIR)$(PREFIX); \
 	  if test -x $(NSISBIN)/makensis; then NSIS=$(NSISBIN)/makensis; else NSIS=makensis; fi; \
-	  $$NSIS -DVER_MAJOR=$(SDCC_VER_MAJOR) -DVER_MINOR=$(SDCC_VER_MINOR) -DVER_REVISION=$(SDCC_VER_DEVEL) -DVER_BUILD=$(SDCC_REVISION) sdcc.nsi;
+	  $$NSIS -DVER_MAJOR=$(SDCC_VER_MAJOR) -DVER_MINOR=$(SDCC_VER_MINOR) -DVER_REVISION=$(SDCC_VER_DEVEL) -DVER_BUILD=$(SDCC_REVISION) $(WINVER) sdcc.nsi;
 	mv $(BUILDDIR)$(PREFIX)/setup.exe $(SETUPNAME)
 endif
 
