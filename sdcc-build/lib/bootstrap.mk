@@ -5,7 +5,11 @@ ifneq ($(CROSSCOMPILING), 1)
 TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.bz2
 else
 TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).zip
-SETUPNAME=$(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-setup.exe
+ifeq ($(TARGETOS), x86_64-x64-mingw32)
+  SETUPNAME=$(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-w64-setup.exe
+else
+  SETUPNAME=$(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-setup.exe
+endif
 endif
 
 # PENDING: Better naming

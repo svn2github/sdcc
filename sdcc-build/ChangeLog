@@ -2,6 +2,8 @@
 
 	* components/sdcc.mk: pass WINE to regtest Makefile,
 	  disable wine fixme messagess
+	* lib/bootstrap.mk:
+	  WIN64 setup package renamed to sdcc-yyymmdd-bbbb-x64-setup.exe
 
 2011-08-31 Borut Razem <borut.razem AT gmail.com>
 
