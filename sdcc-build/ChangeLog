@@ -1,6 +1,7 @@
 2011-09-01 Borut Razem <borut.razem AT gmail.com>
 
-	* components/sdcc.mk: pass WINE to regtest Makefile
+	* components/sdcc.mk: pass WINE to regtest Makefile,
+	  disable wine fixme messagess
 
 2011-08-31 Borut Razem <borut.razem AT gmail.com>
 
