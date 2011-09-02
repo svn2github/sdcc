@@ -2,14 +2,9 @@ REGTESTBASE = regression_test_results
 
 # Name of the tarball for this target
 ifneq ($(CROSSCOMPILING), 1)
-TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).tar.bz2
+  TARBALLNAME = $(TARBALLDIR)/sdcc-$(BUILDNAME).tar.bz2
 else
-TARBALLNAME=$(TARBALLDIR)/sdcc-$(BUILDNAME).zip
-ifeq ($(TARGETOS), x86_64-x64-mingw32)
-  SETUPNAME=$(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-w64-setup.exe
-else
-  SETUPNAME=$(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-setup.exe
-endif
+  TARBALLNAME = $(TARBALLDIR)/sdcc-$(BUILDNAME).zip
 endif
 
 # PENDING: Better naming
@@ -98,8 +93,10 @@ endif
 ifeq ($(CROSSCOMPILING), 1)
 ifeq ($(TARGETOS), x86_64-w64-mingw32)
   WINVER = -DWIN64
+  SETUPNAME = $(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-w64-setup.exe
 else
   WINVER =
+  SETUPNAME = $(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-setup.exe
 endif
 endif
 

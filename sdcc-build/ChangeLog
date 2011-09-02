@@ -1,3 +1,8 @@
+2011-09-02 Borut Razem <borut.razem AT gmail.com>
+
+	* lib/bootstrap.mk: 2nd try:
+	  WIN64 setup package renamed to sdcc-yyymmdd-bbbb-x64-setup.exe
+
 2011-09-01 Borut Razem <borut.razem AT gmail.com>
 
 	* components/sdcc.mk: pass WINE to regtest Makefile,
