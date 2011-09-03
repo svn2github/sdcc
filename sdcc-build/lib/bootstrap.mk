@@ -93,7 +93,7 @@ endif
 ifeq ($(CROSSCOMPILING), 1)
 ifeq ($(TARGETOS), x86_64-w64-mingw32)
   WINVER = -DWIN64
-  SETUPNAME = $(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-w64-setup.exe
+  SETUPNAME = $(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-x64-setup.exe
 else
   WINVER =
   SETUPNAME = $(TARBALLDIR)-setup/sdcc-$(SNAPSHOTID)-setup.exe
