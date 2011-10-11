@@ -24,6 +24,6 @@ sdccconf_h_dir_separator=\\\\ \
 --disable-device-lib
 EXEEXTENSION = .exe
 
-TARGETCXXFLAGS =
-TARGETCFLAGS =
+TARGETCXXFLAGS = -O2
+TARGETCFLAGS = -O2
 TARGETLDFLAGS =
