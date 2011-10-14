@@ -20,9 +20,10 @@
             <h2>What is SDCC?</h2>
 
             <p><b>SDCC</b> is a <b><i>retargettable, optimizing ANSI - C compiler</i></b> that
-              targets the <b><i>Intel 8051, Maxim 80DS390, Zilog Z80</i></b> and the <b><i>Motorola 68HC08</i></b> based MCUs.
-              Work is in progress on supporting the <b><i>Microchip PIC16</i></b> and <b><i>PIC18</i></b> series.
-              SDCC is Free Open Source Software, distributed under GNU General Public License (GPL).</p>
+              targets the <b><i>Intel 8051, Maxim 80DS390, Zilog Z80, Z180, Rabbit 2000</i></b>
+              and the <b><i>Motorola 68HC08</i></b> based MCUs. Work is in progress on supporting
+              the <b><i>Microchip PIC16</i></b> and <b><i>PIC18</i></b> series. SDCC is Free Open
+              Source Software, distributed under GNU General Public License (GPL).</p>
             <p>Some of the features include:</p>
             <ul>
               <li>SDCC sdas and sdld, a retargettable assembler and linker, based on ASXXXX, is Free Open Source Software,
@@ -36,7 +37,9 @@
               <li>adaptable MCU specific backend that should be well suited for other 8 bit MCUs</li>
               <li>independent rule based peep hole optimizer.</li>
               <li>a full range of data types: <b>char </b>(<i>8</i> bits, 1 byte), <b>short </b>(<i>16</i> bits, 2 bytes),
-                <b>int</b> (<i>16</i> bits, 2 bytes), <b>long</b> (<i>32</i> bit, 4 bytes) and <b>float</b> (<i>4</i> byte IEEE).</li>
+                <b>int</b> (<i>16</i> bits, 2 bytes), <b>long</b> (<i>32</i> bit, 4 bytes) and <b>float</b> (<i>4</i> byte IEEE);<br />
+                very basic (no integer constants, multiplication, division, shifts or use as return value) support for
+                <b>long long</b> <i>64</i> bit, 8 bytes) data types for the z80, z180, Rabbit 2000 and gbz80 targets.</li>
               <li>the ability to add inline assembler code anywhere in a function.</li>
               <li>the ability to report on the complexity of a function to help decide what should be re-written in assembler.</li>
               <li>a good selection of automated regression tests.</li>
@@ -99,6 +102,7 @@
               <b>Microsoft Windows - x86</b> and <b>Mac OS X - ppc and i386</b>.</p>
             <p>SDCC is known to compile from the source code also on the following platforms:</p>
             <ul>
+              <li>Microsoft Windows - x86_64</li>
               <li>Linux - x86_64</li>
               <li>Linux - Alpha</li>
               <li>Linux - IBM Power5</li>
@@ -198,7 +202,8 @@
               <li>Michael Hope &lt;michaelh.AT.juju.net.nz&gt; - initial Z80 target, additional coding and bug fixes.</li>
               <li>Maarten Brock &lt;sourceforge.brock.AT.dse.nl&gt; - several bug fixes and improvements, esp. for mcs51 target</li>
               <li>Raphael Neider &lt;RNeider.AT.web.de&gt; - bug fixes and optimizations for PIC16, completion of the PIC14 target</li>
-              <li>Philipp Klaus Krause &lt;pkk.AT.spth.de&gt; - z80 and gbz80 bug fixes and optimizations</li>
+              <li>Philipp Klaus Krause &lt;pkk.AT.spth.de&gt; - z80 and gbz80 bug fixes and optimizations, z180 target</li>
+              <li>Leland Morrison &lt;enigmalee.AT.sourceforget.net&gt; - Rabbit 2000 support: the target code generator, sdasrab assembler and ucsim support</li>
             </ul>
             <p>SDCC has had help from a number of external sources, including:</p>
             <ul>

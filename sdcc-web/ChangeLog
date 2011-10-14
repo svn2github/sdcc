@@ -1,3 +1,8 @@
+2011-10-14 Borut Razem <borut.razem AT gmail.net>
+
+	* index.php: added Leland Morrison to the developers list,
+	  added Rabbit 2000 and z180 targets, adde basic long long support
+
 2011-08-31 Maarten Brock <sourceforge.brock AT dse.nl>
 
 	* snap.php: show time as UTC
