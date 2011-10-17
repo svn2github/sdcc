@@ -10,6 +10,10 @@
   <body link="teal" vlink="#483d8b">
     <div align="left">
       <h1>SDCC - Small Device C Compiler</h1>
+      <p style="border: 2px solid black; color: blue">
+        The forthcoming SDCC 3.1.0 release is dedicated to memory of
+        Dennis M. Ritchie, father of the C programming language.
+      </p>
       <table bgcolor="white" border="0" cellpadding="2" cellspacing="1" width="100%">
         <tbody>
           <tr>
