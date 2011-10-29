@@ -15,16 +15,13 @@ clean: gcc-clean
 	rm -rf download/* *.tag
 
 download/gcc-core-$(GCC_VERSION).tar.bz2:
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-core-$(GCC_VERSION).tar.bz2
+	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-core-$(GCC_VERSION).tar.bz2
 
 download/gcc-g++-$(GCC_VERSION).tar.bz2:
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-g++-$(GCC_VERSION).tar.bz2
+	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-g++-$(GCC_VERSION).tar.bz2
 
-gcc-download.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_VERSION).tar.bz2
-	touch $@
-
-gcc-unpack.tag: gcc-download.tag
-	for i in download/gcc*.tar.bz2; do \
+gcc-unpack.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_VERSION).tar.bz2
+	for i in $^; do \
 	  tar -xjf $$i; \
 	done
 	#bunzip2 -c download/gcc*.tar.bz2 | tar -xf -
@@ -38,7 +35,7 @@ gcc-configure.tag: gcc-unpack.tag
 	  --prefix=$(LOCAL_DIR) \
 	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR) --with-mpc=$(LOCAL_DIR) \
 	  --enable-threads --disable-nls --enable-languages=c,c++ \
-	  --disable-multilib --disable-shared $(CFGFLAGS) $(CFGENV)
+	  --disable-shared $(CFGFLAGS) $(CFGENV)
 	touch $@
 
 gcc-make.tag: gcc-configure.tag

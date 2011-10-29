@@ -1,18 +1,18 @@
-## Linux amd64, Linux i386, mingw, doc archive and src archive build on cf-x86
+## Linux x86_64 @ cf-x86
 #00 02 * * * . $HOME/.bash_profile; { $HOME/build/sdcc-build-bootstrap.sh crontab-spawn build-doc-archive archive-src-trees build-sdcc-web; $HOME/build/sdcc-build-bootstrap.sh do-upload; } > $HOME/build/build-${HOSTNAME}.log 2>&1
 ## run Distributed Compile Farm
 #*/5 * * * * $HOME/bin/dcf.sh
 ## update the regression tests database
 #00 22 * * * curl http://sdcc.sourceforge.net/update_regtests_db.php > /dev/null 2>&1
 ##
-## Mac OS X build on mirror-doors
+## Mac OS X @ mirror-doors
 #00 01 * * * . $HOME/.profile; { $HOME/build/sdcc-build-bootstrap.sh crontab-spawn; $HOME/build/sdcc-build-bootstrap.sh do-upload; } > $HOME/build/build-${HOSTNAME}.log 2>&1
 ##
-## Solaris sparc on mypants.neurotica.com
-## Solaris i386 on solaris-x86.neurotica.com
-## NetBSD i386 on netbsd-i386.neurotica.com
-## NetBSD sparc64 on mypants.neurotica.com
-## FreeBSD i386 on freebsd-i386.neurotica.com
-## OpenBSD i386 on openbsd-i386.neurotica.com
+## Solaris sparc @ mypants.neurotica.com
+## Solaris i386 @ solaris-x86.neurotica.com
+## NetBSD i386 @ netbsd-i386.neurotica.com
+## NetBSD sparc64 @ mypants.neurotica.com
+## FreeBSD i386 @ freebsd-i386.neurotica.com
+## OpenBSD i386 @ openbsd-i386.neurotica.com
 ## Linux x86 @ derna.itholland.nl
 #00 03 * * * . $HOME/.profile; { $HOME/build/sdcc-build-bootstrap.sh crontab-spawn; $HOME/build/sdcc-build-bootstrap.sh do-upload; } > $HOME/build/build-${HOSTNAME}.log 2>&1

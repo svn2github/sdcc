@@ -1,6 +1,6 @@
 include ../packages.mk
 
-BINUTILS_VERSION=2.21
+BINUTILS_VERSION=2.21.1a
 MINGWRT_VERSION=3.18
 W32API_DIR_VERSION=3.17
 W32API_VERSION=$(W32API_DIR_VERSION)-2
@@ -26,19 +26,17 @@ real-clean: binutils-realclean mingw-runtime-realclean w32api-realclean gcc-real
 
 
 download/binutils-$(BINUTILS_VERSION).tar.bz2:
-	wget -P download http://ftp.gnu.org/gnu/binutils/binutils-$(BINUTILS_VERSION).tar.bz2
+	wget -nv -P download http://ftp.gnu.org/gnu/binutils/binutils-$(BINUTILS_VERSION).tar.bz2
 
-binutils-download.tag: download/binutils-$(BINUTILS_VERSION).tar.bz2
-
-binutils-unpack.tag: binutils-download.tag
-	tar -xjf download/binutils*.tar.bz2
+binutils-unpack.tag: download/binutils-$(BINUTILS_VERSION).tar.bz2
+	tar -xjf download/binutils-$(BINUTILS_VERSION).tar.bz2
 	touch $@
 
 binutils-configure.tag: binutils-unpack.tag
 	cd $(shell find . -maxdepth 1 -type d -name "binutil*") && \
-	./configure --target=$(TARGET) --program-prefix=$(PROGRAM_PREFIX) --prefix=$(PREFIX)  \
-	    --with-gcc --with-gnu-as --with-gnu-ld      \
-	    --disable-nls --disable-shared
+	./configure --target=$(TARGET) --program-prefix=$(PROGRAM_PREFIX) --prefix=$(PREFIX) \
+	  --with-gcc --with-gnu-as --with-gnu-ld \
+	  --disable-nls --disable-shared
 	touch $@
 
 binutils-make.tag: binutils-configure.tag
@@ -63,17 +61,14 @@ binutils-realclean: binutils-clean
 	rm -rf binutils-*
 
 
-
 download/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz:
-	wget -P download http://sourceforge.net/projects/mingw/files/MinGW/BaseSystem/RuntimeLibrary/MinGW-RT/mingwrt-$(MINGWRT_VERSION)/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz/download
-	#wget -P download $(SF_REPOSITORY)/sourceforge/mingw/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
+	wget -nv -P download http://sourceforge.net/projects/mingw/files/MinGW/BaseSystem/RuntimeLibrary/MinGW-RT/mingwrt-$(MINGWRT_VERSION)/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz/download
+	#wget -nv -P download $(SF_REPOSITORY)/sourceforge/mingw/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
 
-mingw-runtime-download.tag: download/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
-
-mingw-runtime-install.tag: mingw-runtime-download.tag
+mingw-runtime-install.tag: download/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
 	mkdir -p $(PREFIX)/$(TARGET)/include
 	mkdir -p $(PREFIX)/$(TARGET)/lib
-	tar -C $(PREFIX)/$(TARGET) -xzf download/mingwrt*.tar.gz
+	tar -C $(PREFIX)/$(TARGET) -xzf download/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
 	touch $@
 
 .PHONY: mingw-runtime-clean
@@ -86,14 +81,12 @@ mingw-runtime-realclean: mingw-runtime-clean
 
 
 download/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma:
-	wget -P download http://sourceforge.net/projects/mingw/files/MinGW/BaseSystem/RuntimeLibrary/Win32-API/w32api-$(W32API_DIR_VERSION)/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma/download
+	wget -nv -P download http://sourceforge.net/projects/mingw/files/MinGW/BaseSystem/RuntimeLibrary/Win32-API/w32api-$(W32API_DIR_VERSION)/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma/download
 
-w32api-download.tag: download/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma
-
-w32api-install.tag: w32api-download.tag
+w32api-install.tag: download/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma
 	mkdir -p $(PREFIX)/$(TARGET)/include
 	mkdir -p $(PREFIX)/$(TARGET)/lib
-	tar -C $(PREFIX)/$(TARGET) --lzma -xf download/w32api*.tar.lzma
+	tar -C $(PREFIX)/$(TARGET) --lzma -xf download/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma
 	touch $@
 
 .PHONY: w32api-clean
@@ -104,18 +97,16 @@ w32api-clean:
 w32api-realclean: w32api-clean
 	rm -f w32api-download.tag
 
+
 download/gcc-core-$(GCC_VERSION).tar.bz2:
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-core-$(GCC_VERSION).tar.bz2
+	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-core-$(GCC_VERSION).tar.bz2
 
 download/gcc-g++-$(GCC_VERSION).tar.bz2:
-	wget -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-g++-$(GCC_VERSION).tar.bz2
+	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-g++-$(GCC_VERSION).tar.bz2
 
-gcc-download.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_VERSION).tar.bz2
-	touch $@
-
-gcc-unpack.tag: gcc-download.tag
-	for i in download/gcc*.tar.bz2; do \
-	  tar -xjf $$i;	\
+gcc-unpack.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_VERSION).tar.bz2
+	for i in $^ do \
+	  tar -xjf $$i; \
 	done
 	#bunzip2 -c download/gcc*.tar.bz2 | tar -xf -
 	touch $@
@@ -123,12 +114,12 @@ gcc-unpack.tag: gcc-download.tag
 gcc-configure.tag: gcc-unpack.tag
 	rm -rf objdir-gcc
 	mkdir -p objdir-gcc
-	cd objdir-gcc &&	\
-	../$(shell find . -maxdepth 1 -type d -name "gcc*")/configure	\
-	  --target=$(TARGET) --program-prefix=$(PROGRAM_PREFIX) --prefix=$(PREFIX)  \
-	  --with-gcc --with-gnu-ld --with-gnu-as			\
-	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR) --with-mpc=$(LOCAL_DIR)  \
-	  --enable-threads   --disable-nls   --enable-languages=c,c++	\
+	cd objdir-gcc && \
+	../$(shell find . -maxdepth 1 -type d -name "gcc*")/configure \
+	  --target=$(TARGET) --program-prefix=$(PROGRAM_PREFIX) --prefix=$(PREFIX) \
+	  --with-gcc --with-gnu-ld --with-gnu-as \
+	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR) --with-mpc=$(LOCAL_DIR) \
+	  --enable-threads --disable-nls --enable-languages=c,c++ \
 	  --disable-multilib --enable-win32-registry --disable-shared
 	touch $@
 
@@ -144,7 +135,6 @@ gcc-install.tag: gcc-make.tag
 	make install
 	rm -r $(PREFIX)/man $(PREFIX)/info
 	touch $@
-
 
 .PHONY: gcc-clean
 gcc-clean:
