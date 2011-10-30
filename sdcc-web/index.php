@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
@@ -11,7 +11,7 @@
     <div align="left">
       <h1>SDCC - Small Device C Compiler</h1>
       <p style="border: 2px solid black; color: blue">
-        The forthcoming SDCC 3.1.0 release is dedicated to memory of
+        The forthcoming SDCC 3.1.0 release is dedicated to the memory of
         Dennis M. Ritchie, father of the C programming language.
       </p>
       <table bgcolor="white" border="0" cellpadding="2" cellspacing="1" width="100%">
@@ -59,22 +59,22 @@
 
             <!-- START NEWS -->
             <h2><a name="News"></a>News</h2>
-      
-            <p><i><b>November 1st, 2010: Small Device C Compiler 3.0.0 released.</b></i></p> 
+
+            <p><i><b>November 1st, 2010: Small Device C Compiler 3.0.0 released.</b></i></p>
             <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
               HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
-              Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and universal Mac OS X are available.</p> 
-            <p>SDCC 3.0.0 Feature List:</p> 
-            <ul> 
+              Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and universal Mac OS X are available.</p>
+            <p>SDCC 3.0.0 Feature List:</p>
+            <ul>
               <li>sdcpp synchronized with GNU cpp 4.5.0</li>
               <li>changed z80 and gb targets object file extension to .rel</li>
-              <li>special sdcc keywords which are not preceded by a double underscore 
+              <li>special sdcc keywords which are not preceded by a double underscore
                 are deprecated in sdcc version 3.0.0 and higher. See section ANSI-Compliance in sdccman</li>
               <li>xa51 and avr targets are disabled by default in sdcc version 3.0.0 and higher</li>
               <li>introduced new memory model huge for mcs51 to use bankswitching for all functions</li>
-              <li>removed generation of GameBoy binary image file format, rrgb map file 
-                format and no$gmb sym file format from sdld linker. Utility makebin 
-                generates GameBoy binary image file format, utility as2gbmap utility 
+              <li>removed generation of GameBoy binary image file format, rrgb map file
+                format and no$gmb sym file format from sdld linker. Utility makebin
+                generates GameBoy binary image file format, utility as2gbmap utility
                 converts sdas map file to rrgb map and no$gmb sym file formas.</li>
               <li>implemented __builtin_offsetof</li>
               <li>asxxxx / aslink renamed to sdas / sdld and synchronized with ASXXXX V2.0</li>
@@ -82,11 +82,11 @@
                 (see http://sourceforge.net/apps/trac/sdcc/wiki/Files%20and%20Licenses)</li>
               <li>introduced --use-non-free command line option</li>
               <li>non free (non GPL compatible) header and library files moved to non-free directory</li>
-              <li>deprecated --no-pack-iram command line option</li> 
-            </ul> 
-            <p>Numerous feature requests and bug fixes are included as well.</p> 
-            <p>You can download the release from:<br /> 
-              <a href="http://sourceforge.net/projects/sdcc/files/" target="_new">http://sourceforge.net/projects/sdcc/files/</a></p> 
+              <li>deprecated --no-pack-iram command line option</li>
+            </ul>
+            <p>Numerous feature requests and bug fixes are included as well.</p>
+            <p>You can download the release from:<br />
+              <a href="http://sourceforge.net/projects/sdcc/files/" target="_new">http://sourceforge.net/projects/sdcc/files/</a></p>
             <!-- END NEWS -->
 
             <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
@@ -139,7 +139,7 @@
               <a href="http://sourceforge.net/docman/display_doc.php?docid=31070&amp;group_id=1">here</a>.</p>
             <p>Before reporting a bug, please check your SDCC version and build
               date using the -v option, and be sure to include the full version string in your bug report. For example:</p>
-            <p><code>sdcc/bin &gt; sdcc -v<br /> 
+            <p><code>sdcc/bin &gt; sdcc -v<br />
               SDCC : mcs51/gbz80/z80/avr/ds390/pic14/TININative/xa51 2.3.8 (Feb 10 2004) (UNIX)</code></p>
 
             <h2><a name="Support"></a>Support for SDCC</h2>
