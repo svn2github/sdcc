@@ -60,11 +60,11 @@
             <!-- START NEWS -->
             <h2><a name="News"></a>News</h2>
 
-            <p><i><b>November 6th, 2011: SDCC 3.1.0 RC1 released.</b></i></p>
-            <p>SDCC 3.1.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+            <p><i><b>November 18th, 2011: SDCC 3.1.0 RC2 released.</b></i></p>
+            <p>SDCC 3.1.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
               32 bit Windows and universal Mac OS X are available at:
-              <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc1/">
-                http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc1</a>.</p>
+              <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc2/">
+                http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc2</a>.</p>
             <!-- END NEWS -->
 
             <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
@@ -200,45 +200,11 @@
             <!-- START PAST_NEWS -->
             <h2>Past news</h2>
 
-            <p><i><b>November 1st, 2010: Small Device C Compiler 3.0.0 released.</b></i></p>
-            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
-              HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
-              Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and universal Mac OS X are available.</p>
-            <p>SDCC 3.0.0 Feature List:</p>
-            <ul>
-              <li>sdcpp synchronized with GNU cpp 4.5.0</li>
-              <li>changed z80 and gb targets object file extension to .rel</li>
-              <li>special sdcc keywords which are not preceded by a double underscore
-                are deprecated in sdcc version 3.0.0 and higher. See section ANSI-Compliance in sdccman</li>
-              <li>xa51 and avr targets are disabled by default in sdcc version 3.0.0 and higher</li>
-              <li>introduced new memory model huge for mcs51 to use bankswitching for all functions</li>
-              <li>removed generation of GameBoy binary image file format, rrgb map file
-                format and no$gmb sym file format from sdld linker. Utility makebin
-                generates GameBoy binary image file format, utility as2gbmap utility
-                converts sdas map file to rrgb map and no$gmb sym file formas.</li>
-              <li>implemented __builtin_offsetof</li>
-              <li>asxxxx / aslink renamed to sdas / sdld and synchronized with ASXXXX V2.0</li>
-              <li>majority of sdcc run time library released under GPL+LE license
-                (see http://sourceforge.net/apps/trac/sdcc/wiki/Files%20and%20Licenses)</li>
-              <li>introduced --use-non-free command line option</li>
-              <li>non free (non GPL compatible) header and library files moved to non-free directory</li>
-              <li>deprecated --no-pack-iram command line option</li>
-            </ul>
-            <p>Numerous feature requests and bug fixes are included as well.</p>
-            <p>You can download the release from:<br />
-              <a href="http://sourceforge.net/projects/sdcc/files/" target="_new">http://sourceforge.net/projects/sdcc/files/</a></p>
-
-            <p><i><b>October 22nd, 2010: SDCC 3.0.0 RC2 released.</b></i></p>
-            <p>SDCC 3.0.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+            <p><i><b>November 6th, 2011: SDCC 3.1.0 RC1 released.</b></i></p>
+            <p>SDCC 3.1.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
               32 bit Windows and universal Mac OS X are available at:
-              <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.0.0-rc2/">
-                http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.0.0-rc2</a>.</p>
-
-            <p><i><b>October 10th, 2010: SDCC 3.0.0 RC1 released.</b></i></p>
-            <p>SDCC 3.0.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
-              32 bit Windows and universal Mac OS X are available at:
-              <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.0.0-rc1/">
-                http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.0.0-rc1</a>.</p>
+              <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc1/">
+                http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc1</a>.</p>
             <!-- END PAST_NEWS -->
 
             <p><a href="previous.php">Previous News</a></p>
