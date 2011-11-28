@@ -11,7 +11,7 @@
     <div align="left">
       <h1>SDCC - Small Device C Compiler</h1>
       <p style="border: 2px solid black; color: blue">
-        The forthcoming SDCC 3.1.0 release is dedicated to the memory of
+        The SDCC 3.1.0 release is dedicated to the memory of
         Dennis M. Ritchie, father of the C programming language.
       </p>
       <table bgcolor="white" border="0" cellpadding="2" cellspacing="1" width="100%">
@@ -221,8 +221,6 @@
 
             <!-- START PAST_NEWS -->
             <h2>Past news</h2>
-
-            <h2><a name="News"></a>News</h2>
 
             <p><i><b>November 22nd, 2011: SDCC 3.1.0 RC3 released.</b></i></p>
             <p>SDCC 3.1.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
