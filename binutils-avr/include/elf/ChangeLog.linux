@@ -1,5 +1,0 @@
-Tue Feb 23 01:57:53 1999  Linas Vepstas (linas@linas.org)
-
-	* i370.h: New.
-
-	* common.h (EM_I370): New. Defined as 0xf00f.

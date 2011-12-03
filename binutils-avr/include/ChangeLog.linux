@@ -1,7 +1,0 @@
-Tue Feb 23 01:57:53 1999  Linas Vepstas (linas@linas.org)
-
-	* dis-asm.h (print_insn_i370): New.
-
-Sun Feb 14 12:26:18 1999  H.J. Lu  (hjl@gnu.org)
-
-	* demangle.h (DMGL_GNAT): New.
