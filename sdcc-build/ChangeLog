@@ -1,3 +1,8 @@
+2011-12-25 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* local/cf-x86-x86_64-w64-mingw32.mk: increase stack size to 4M
+	  so compiling gcc-torture-execute-div-cmp-1 won't stack overflow
+
 2011-10-11 Borut Razem <borut.razem AT gmail.com>
 
 	* local/cf-x86-x86_64-w64-mingw32.mk, local/derna-i586-mingw32msvc.mk:
