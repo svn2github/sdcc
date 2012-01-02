@@ -1,3 +1,9 @@
+2012-01-02 Maarten Brock <sourceforge.brock AT dse.nl>
+
+	* local/cf-x86-x86_64-w64-mingw32.mk,
+	* local/derna-i586-mingw32msvc.mk: increased stack size 32M/64M so it
+	  never overflows; stack overflow crashes sdcc without error message
+
 2011-12-25 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* local/cf-x86-x86_64-w64-mingw32.mk: increase stack size to 4M
