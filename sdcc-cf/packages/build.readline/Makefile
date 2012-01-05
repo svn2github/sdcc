@@ -2,8 +2,8 @@ include ../packages.mk
 
 ifeq ($(OS), Darwin)
   # Build universal binaries
-  CFLAGS = -g -O2 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -DNEED_EXTERN_PC
-  CXXFLAGS = -g -O2 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -DNEED_EXTERN_PC
+  CFLAGS = -g -O2 -isysroot $(XCODE_ROOT)/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -DNEED_EXTERN_PC
+  CXXFLAGS = -g -O2 -isysroot $(XCODE_ROOT)/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -DNEED_EXTERN_PC
   LDFLAGS = -g -O2 -arch i386 -arch ppc
   CONFFLAGS = --disable-dependency-tracking
 endif

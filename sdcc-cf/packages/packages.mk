@@ -7,3 +7,11 @@ OS = $(shell uname)
 CFLAGS += -I$(HOME)/local-$(HOSTNAME)/include
 CXXFLAGS += -I$(HOME)/local-$(HOSTNAME)/include
 LDFLAGS += -L$(HOME)/local-$(HOSTNAME)/lib
+
+ifeq ($(OS), Darwin)
+  ifeq ($(HOSTNAME), mirror-doors)
+    XCODE_ROOT = /Xcode2.5
+  else
+    XCODE_ROOT = /Developer
+  endif
+endif

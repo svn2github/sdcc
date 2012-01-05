@@ -1,3 +1,8 @@
+2012-01-05 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.readline/Makefile, packages/build.ncurses/Makefile,
+	  packages/packages.mk: introduced XCODE_ROOT
+
 2011-10-29 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.gputils/Makefile: upgraded to gputils-0.14.0

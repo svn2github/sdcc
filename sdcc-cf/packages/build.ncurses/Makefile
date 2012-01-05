@@ -3,11 +3,11 @@ include ../packages.mk
 ifeq ($(OS), Darwin)
   # Build universl binaries
 
-  COMPILERS = CC="/Xcode2.5/usr/bin/gcc" CXX="/Xcode2.5/usr/bin/g++"
+  COMPILERS = CC="$(XCODE_ROOT)/usr/bin/gcc" CXX="$(XCODE_ROOT)/usr/bin/g++"
 
-  LDFLAGS += -Wl,-syslibroot,/Xcode2.5/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -L$(HOME)/local-$(HOSTNAME)/lib
-  CXXFLAGS += -O2 -isysroot /Xcode2.5/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -I$(HOME)/local-$(HOSTNAME)/include
-  CFLAGS += -O2 -isysroot /Xcode2.5/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -I$(HOME)/local-$(HOSTNAME)/include
+  LDFLAGS += -Wl,-syslibroot,$(XCODE_ROOT)/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -L$(HOME)/local-$(HOSTNAME)/lib
+  CXXFLAGS += -O2 -isysroot $(XCODE_ROOT)/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -I$(HOME)/local-$(HOSTNAME)/include
+  CFLAGS += -O2 -isysroot $(XCODE_ROOT)/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -I$(HOME)/local-$(HOSTNAME)/include
 endif
 
 VERSION=$(shell expr download/ncurses-*.tar.gz : 'download/ncurses-\(.*\).tar.gz')
