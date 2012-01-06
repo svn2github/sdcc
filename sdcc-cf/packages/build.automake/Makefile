@@ -1,32 +1,36 @@
 include ../packages.mk
 
-VERSION=$(shell expr download/automake-*.tar.bz2 : 'download/automake-\(.*\).tar.bz2')
+PACKAGE=automake
+VERSION=1.11
+PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.bz2
 
-AUTOMAKE_DIR=automake-$(VERSION)
+PACKAGE_DIR=$(PACKAGE)-$(VERSION)
 
 .PHONY: all
-all: automake-install.tag clean
+all: $(PACKAGE)-install.tag clean
 
-automake-download.tag:
-	wget -P download http://ftp.gnu.org/gnu/automake/automake-1.10.tar.bz2
+download/$(PACKAGE_FILE):
+	wget -P download ftp://ftp.gnu.org/gnu/$(PACKAGE)/$(PACKAGE_FILE)
+
+$(PACKAGE)-download.tag: download/$(PACKAGE_FILE)
 	touch $@
 
-automake-unpack.tag: automake-download.tag
-	tar xjvf download/$(AUTOMAKE_DIR).tar.bz2
+$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
+	tar xjvf download/$(PACKAGE_FILE)
 	touch $@
 
-automake-configure.tag: automake-unpack.tag
-	cd $(AUTOMAKE_DIR) && \
+$(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
+	cd $(PACKAGE_DIR) && \
 	./configure --prefix=$(LOCAL_DIR)
 	touch $@
 
-automake-make.tag: automake-configure.tag
-	$(MAKE) -C $(AUTOMAKE_DIR)
+$(PACKAGE)-make.tag: $(PACKAGE)-configure.tag
+	$(MAKE) -C $(PACKAGE_DIR)
 	touch $@
 
-automake-install.tag: automake-make.tag
-	$(MAKE) -C $(AUTOMAKE_DIR) install
+$(PACKAGE)-install.tag: $(PACKAGE)-make.tag
+	$(MAKE) -C $(PACKAGE_DIR) install
 	touch $@
 
 clean:
-	rm -rf $(AUTOMAKE_DIR) *.tag
+	rm -rf $(PACKAGE_DIR) *.tag

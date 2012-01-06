@@ -1,32 +1,36 @@
 include ../packages.mk
 
-VERSION=$(shell expr download/autoconf-*.tar.bz2 : 'download/autoconf-\(.*\).tar.bz2')
+PACKAGE=autoconf
+VERSION=2.68
+PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.xz
 
-AUTOCONF_DIR=autoconf-$(VERSION)
+PACKAGE_DIR=$(PACKAGE)-$(VERSION)
 
 .PHONY: all
-all: autoconf-install.tag clean
+all: $(PACKAGE)-install.tag clean
 
-autoconf-download.tag:
-	wget -P download http://ftp.gnu.org/gnu/autoconf/autoconf-2.63.tar.bz2
+download/$(PACKAGE_FILE):
+	wget -P download ftp://ftp.gnu.org/gnu/$(PACKAGE)/$(PACKAGE_FILE)
+
+$(PACKAGE)-download.tag: download/$(PACKAGE_FILE)
 	touch $@
 
-autoconf-unpack.tag: autoconf-download.tag
-	tar xjvf download/$(AUTOCONF_DIR).tar.bz2
+$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
+	xz -dc download/$(PACKAGE_FILE) | tar xvf -
 	touch $@
 
-autoconf-configure.tag: autoconf-unpack.tag
-	cd $(AUTOCONF_DIR) && \
+$(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
+	cd $(PACKAGE_DIR) && \
 	./configure --prefix=$(LOCAL_DIR)
 	touch $@
 
-autoconf-make.tag: autoconf-configure.tag
-	$(MAKE) -C $(AUTOCONF_DIR)
+$(PACKAGE)-make.tag: $(PACKAGE)-configure.tag
+	$(MAKE) -C $(PACKAGE_DIR)
 	touch $@
 
-autoconf-install.tag: autoconf-make.tag
-	$(MAKE) -C $(AUTOCONF_DIR) install
+$(PACKAGE)-install.tag: $(PACKAGE)-make.tag
+	$(MAKE) -C $(PACKAGE_DIR) install
 	touch $@
 
 clean:
-	rm -rf $(AUTOCONF_DIR) *.tag
+	rm -rf $(PACKAGE_DIR) *.tag
