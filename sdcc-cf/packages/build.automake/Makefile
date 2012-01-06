@@ -1,7 +1,7 @@
 include ../packages.mk
 
 PACKAGE=automake
-VERSION=1.11
+VERSION=1.11.2
 PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.bz2
 
 PACKAGE_DIR=$(PACKAGE)-$(VERSION)

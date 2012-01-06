@@ -3,7 +3,7 @@
 	* packages/build.bison, packages/build.bison/download,
 	  packages/build.bison/Makefile: added
 	* packages/build.automake/Makefile, packages/build.autoconf/Makefile:
-          updated versions: automake-1.11, autoconf-2.68
+          updated versions: automake-1.11.2, autoconf-2.68
 
 2012-01-05 Borut Razem <borut.razem AT gmail.com>
 
