@@ -1,6 +1,7 @@
 2012-01-08 Borut Razem <borut.razem AT gmail.com>
 
-	* etc/dcf_list: added dhcp101 DFC build machine
+	* etc/dcf_list, crontab.txt:
+	  added Mac OS X i386 on dhcp101 DFC build machine
 
 2012-01-06 Borut Razem <borut.razem AT gmail.com>
 
@@ -36,7 +37,7 @@
 	* packages/build.dos2unix/*: added
 	* etc/dcf_list: added derna DFC build machine
 	* bin/dcf.sh: bandwith limit increase from 7 to KiB/s
-	* crontab.txt: mirror-doors buld starts at 01:00; all entries commented
+	* crontab.txt: mirror-doors build starts at 01:00; all entries commented
 	* packages/build.popt/Makefile, packages/build.scons/Makefile,
 	  packages/build.libtool/Makefile, packages/build.nsis/Makefile:
 	  miscellaneous cosmetic changes
