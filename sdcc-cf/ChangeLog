@@ -2,6 +2,7 @@
 
 	* etc/dcf_list, crontab.txt:
 	  added Mac OS X i386 on dhcp101 DFC build machine
+	* packages/build.gputils/Makefile: upgraded to gputils-0.14.1
 
 2012-01-06 Borut Razem <borut.razem AT gmail.com>
 

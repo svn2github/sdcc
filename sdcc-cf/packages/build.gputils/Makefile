@@ -5,7 +5,7 @@
 include ../packages.mk
 
 PACKAGE=gputils
-VERSION=0.14.0
+VERSION=0.14.1
 PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.gz
 
 .PHONY: all
