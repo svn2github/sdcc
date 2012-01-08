@@ -1,4 +1,4 @@
-mirror-doors    # Mac OS X
+mirror-doors    # Mac OS X ppc
 cf-x86          # GNU/Linux amd64
 openbsd-i386    # OpenBSD i386
 solaris-x86     # Solaris i386
@@ -7,3 +7,4 @@ freebsd-i386    # FreeBSD i386
 netbsd-i386     # NetBSD i386
 mypants         # NetBSD sparc64
 derna           # GNU/Linux i386
+dhcp101         # Mac OS X i386
