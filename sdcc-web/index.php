@@ -26,7 +26,7 @@
             <p><b>SDCC</b> is a <b><i>retargettable, optimizing ANSI - C compiler</i></b> that
               targets the <b><i>Intel 8051, Maxim 80DS390, Zilog Z80, Z180, Rabbit 2000</i></b>
               and the <b><i>Motorola 68HC08</i></b> based MCUs. Work is in progress on supporting
-              the <b><i>Microchip PIC16</i></b> and <b><i>PIC18</i></b> series. SDCC is Free Open
+              the <b><i>Microchip PIC16</i></b>, <b><i>PIC18</i></b> and <b><i>gbz80</i></b> targets. SDCC is Free Open
               Source Software, distributed under GNU General Public License (GPL).</p>
             <p>Some of the features include:</p>
             <ul>
@@ -55,7 +55,7 @@
               of December 1999, the code was moved to SourceForge where all the "users
               turned developers" can access the same source tree. SDCC is constantly being
               updated with all the users' and developers' input.</p>
-            <p><b><i>AVR</i></b> and <b><i>gbz80</i></b> targets are no longer maintained.</p>
+            <p><b><i>AVR</i></b> target is no longer maintained.</p>
 
             <!-- START NEWS -->
             <h2><a name="News"></a>News</h2>

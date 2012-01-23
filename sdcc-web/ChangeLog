@@ -1,3 +1,8 @@
+2012-01-23 Borut Razem <borut.razem AT siol.net>
+
+	* index.php:
+	  changed gbz80 status from unmaintained to experimental
+
 2011-11-28 Borut Razem <borut.razem AT siol.net>
 
 	* index.php: corrected PastNews, dedication to Dennis M. Ritchie
