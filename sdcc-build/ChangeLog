@@ -1,3 +1,8 @@
+2012-10-27 Philipp Klaus Krause <philipp AT informatik.uni-frankfurt.de>
+
+	* lib/variables.mk:
+	  Added test-ucgbz80 to the list of regression test targets.
+
 2012-01-16 Borut Razem <borut.razem AT gmail.com>
 
 	* local/freebsd-i386.mk: disabled -j 2 since src/z80/ralloc2.cc

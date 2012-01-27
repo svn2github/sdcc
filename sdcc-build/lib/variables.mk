@@ -54,7 +54,7 @@ CVSACCESS = :ext:sdcc-builder
 SVNSERVER =
 
 # Regression test targets
-CROSSREGTESTTARGETS = test-mcs51-small test-mcs51-large test-mcs51-stack-auto test-ds390 test-hc08 test-ucz80 test-ucz180 test-ucr2k
+CROSSREGTESTTARGETS = test-mcs51-small test-mcs51-large test-mcs51-stack-auto test-ds390 test-hc08 test-ucz80 test-ucz180 test-ucr2k test-ucgbz80
 REGTESTTARGETS = test-host $(CROSSREGTESTTARGETS)
 # Directory for regression test log file
 REGTESTDIR = $(HTDOCSDIR)/regression_test_results/$(TARGET_PLATFORM)
