@@ -1,3 +1,7 @@
+2012-02-11 Borut Razem <borut.razem AT gmail.com>
+
+	* components/sdcc.mk, lib/cross.mk: added TARGETAR
+
 2012-10-27 Philipp Klaus Krause <philipp AT informatik.uni-frankfurt.de>
 
 	* lib/variables.mk:
