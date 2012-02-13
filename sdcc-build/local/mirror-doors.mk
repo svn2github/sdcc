@@ -11,9 +11,12 @@ TARGET_PLATFORM = universal-apple-macosx
 TARGETCC = "/Xcode2.5/usr/bin/gcc"
 TARGETCXX = "/Xcode2.5/usr/bin/g++"
 
+SDCCCONFIGUREFLAGS = --disable-dependency-tracking
+
 # local includes and libraries
 # An old readline version is installed on the machine,
 # so I had to install new one (readline-5.2) to $(HOME)/local-$(HOSTNAME)
 TARGETLDFLAGS = "-Wl,-syslibroot,/Xcode2.5/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -L$(HOME)/local-$(HOSTNAME)/lib"
 TARGETCXXFLAGS = "-O2 -isysroot /Xcode2.5/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -I$(HOME)/local-$(HOSTNAME)/include"
 TARGETCFLAGS = "-O2 -isysroot /Xcode2.5/SDKs/MacOSX10.4u.sdk -arch i386 -arch ppc -I$(HOME)/local-$(HOSTNAME)/include"
+TARGETCPPFLAGS = "-I$(HOME)/local-$(HOSTNAME)/include"

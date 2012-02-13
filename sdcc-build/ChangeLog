@@ -1,3 +1,9 @@
+2012-02-13 Borut Razem <borut.razem AT gmail.com>
+
+	* local/mirror-doors.mk, local/dhcp101.mk:
+	  added --disable-dependency-tracking configure flag to enable
+	  support/sdbinutils/bfd compilation
+
 2012-02-11 Borut Razem <borut.razem AT gmail.com>
 
 	* components/sdcc.mk, lib/cross.mk: added TARGETAR

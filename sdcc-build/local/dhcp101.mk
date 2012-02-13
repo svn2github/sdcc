@@ -11,6 +11,8 @@ TARGET_PLATFORM = i386_universal-apple-macosx
 TARGETCC = "/Developer/usr/bin/gcc"
 TARGETCXX = "/Developer/usr/bin/g++"
 
+SDCCCONFIGUREFLAGS = --disable-dependency-tracking
+
 # local includes and libraries
 # An old readline version is installed on the machine,
 # so I had to install new one (readline-5.2) to $(HOME)/local-$(HOSTNAME)
