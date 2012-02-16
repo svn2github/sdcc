@@ -29,5 +29,10 @@ if [ `uname` = "SunOS" ]
 then
   PATH=/usr/ccs/bin:/opt/solstudio12.2/bin:${PATH}
 fi
+# /opt/local/bin for Darwin i386
+if [ `uname` = "Darwin" -a `uname -m` = "i386" ]
+then
+  PATH=/opt/local/bin:${PATH}
+fi
 PATH=${HOME}/local-${HOSTNAME}/bin:/usr/local/bin:${PATH}
 export PATH

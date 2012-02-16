@@ -1,3 +1,8 @@
+2012-02-16 Borut Razem <borut.razem AT gmail.com>
+
+	* .sdcc_builder/profile:
+	  added /opt/local/bin to path for Darwin i386
+
 2012-01-08 Borut Razem <borut.razem AT gmail.com>
 
 	* etc/dcf_list, crontab.txt:
