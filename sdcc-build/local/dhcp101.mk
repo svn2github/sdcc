@@ -2,8 +2,8 @@
 # i386/ppc universal binaries
 # NOTE: Binaries generated with Xcode 3.0 seems not to be backward compatible with Mac OS X 10.4 and older
 
-TARGETOS = i386-apple-macosx
-HOSTOS = i386-apple-macosx
+TARGETOS = i386-apple-darwin
+HOSTOS = i386-apple-darwin
 
 # proper naming of packages containing universal binaries
 TARGET_PLATFORM = i386_universal-apple-macosx

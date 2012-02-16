@@ -1,3 +1,8 @@
+2012-02-16 Borut Razem <borut.razem AT gmail.com>
+
+	* local/dhcp101.mk:
+	  HOSTOS and TARGETOS renamed to i386-apple-darwin
+
 2012-02-13 Borut Razem <borut.razem AT gmail.com>
 
 	* local/mirror-doors.mk, local/dhcp101.mk:
