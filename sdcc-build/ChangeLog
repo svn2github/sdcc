@@ -1,3 +1,7 @@
+2012-02-17 Borut Razem <borut.razem AT gmail.com>
+
+	* local/dev.mk, local/mypants.mk: added TARGETCPPFLAGS
+
 2012-02-16 Borut Razem <borut.razem AT gmail.com>
 
 	* local/dhcp101.mk:
