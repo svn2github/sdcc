@@ -1,6 +1,6 @@
 2012-02-26 Borut Razem <borut.razem AT gmail.com>
 
-	* packages/build.flex/*: added
+	* packages/build.flex/*, packages/build.m4/*: added
 
 2012-02-16 Borut Razem <borut.razem AT gmail.com>
 
