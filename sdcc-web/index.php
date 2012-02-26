@@ -213,9 +213,10 @@
             <ul>
               <li>Alan Baldwin &lt;baldwin.AT.shop-pdp.kent.edu&gt; - Initial version of ASXXXX&nbsp; and&nbsp; ASLINK.</li>
               <li>John Hartman &lt;noice.AT.noicedebugger.com&gt; - Porting ASXXXX and ASLINK for 8051.</li>
-              <li>Jans J Boehm &lt;boehm.AT.sgi.com&gt; and Alan J Demers - Conservative garbage collector for C &amp; C++.</li>
+              <!-- <li>Jans J Boehm &lt;boehm.AT.sgi.com&gt; and Alan J Demers - Conservative garbage collector for C &amp; C++.</li> -->
               <li>Dmitry S. Obukhov &lt;dso.AT.usa.net&gt; - malloc and serial I/O routines.</li>
               <li><a href="http://gcc.gnu.org/">The GCC development team</a> - for the GNU C preprocessor</li>
+              <li><a href="http://www.gnu.org/software/binutils/">The GNU Binutils development team</a> - for GNU Binutils</li>
               <li>Malini Dutta &lt;malini.AT.mediaone.net&gt; - Sandeep's wife, for her patience and support.</li>
             </ul>
 
