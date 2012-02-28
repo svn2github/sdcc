@@ -113,7 +113,7 @@ what not to do.<br />
 <!--  the lcd subdirectory magically disappeared (probably it was deleted by mistake) from the sdcc web page,
       so the following links don't work any more.
 
-      I (borutr) sent a mail to Dave Helton 2012-02-28 asking him if he still have a backup copy of lcd dorectory -->
+      I (borutr) sent a mail to Dave Helton 2012-02-28 asking him if he still have a backup copy of lcd directory -->
       <!-- <h2>Links - LCD Stuff</h2>
       <p>
       <b>T6963 controlled LCD panels </b>(includes

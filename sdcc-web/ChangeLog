@@ -1,10 +1,10 @@
 2012-02-28 Borut Razem <borut.razem AT siol.net>
 
 	* links.php: applied requests from Wbdocs tracker:
-	  #3486131: Broken links
+	  #3486131: Broken links,
 	  #3407481: Links - General,
-	  #2986975: New Link for SDCC
-	  #2298395: KTechLab
+	  #2986975: New Link for SDCC,
+	  #2298395: KTechLab,
 	  #1807915: KiCAD link
 
 2012-02-26 Borut Razem <borut.razem AT siol.net>
