@@ -97,7 +97,6 @@ endif
 endif
 
 sdcc-regression: sdcc sdcc-install sdcc-extra
-# test-gbz80 temporary disabled because of problems; Bernhard 2003-02-13
 	echo "--- Regression testing started on `date` ---"
 ifeq ($(CROSSCOMPILING), 1)
 	# mingw cross regression testing with wine
