@@ -110,11 +110,7 @@ into a microcontroller. Lots of small tips on wiring, what to do, and
 what not to do.<br />
       </p>
 
-<!--  the lcd subdirectory magically disappeared (probably it was deleted by mistake) from the sdcc web page,
-      so the following links don't work any more.
-
-      I (borutr) sent a mail to Dave Helton 2012-02-28 asking him if he still have a backup copy of lcd directory -->
-      <!-- <h2>Links - LCD Stuff</h2>
+      <h2>Links - LCD Stuff</h2>
       <p>
       <b>T6963 controlled LCD panels </b>(includes
 the Optrex DM-5000 series and others) </p>
@@ -125,7 +121,7 @@ Feb 15,2000 10:54:02 PM (133K jpg) <br />
 Feb 15,2000 10:57:06 PM (139K jpg)<br />
       <a href="lcd/lcdsource.tar.gz">source</a>
 written by <a href="mailto:dave@kd0yu.com">Dave Helton</a>,
-(compile with sdcc) (44K tar.gz format)<br />
+(compile with sdcc) (39K tar.gz format)<br />
       </p>
       <p>Note:<br />
 There are no docs for the source...
@@ -134,7 +130,7 @@ winter of 2000-01 I will be updating the code and writing some docs.
 This may force me to write better code if I have to document it. Your
 feedbeed back on the code is welcome. If you have enhanced the code,
 made a better mouse trap... please email me and let me know.<br />
-      </p> -->
+      </p>
 
       <h2>Links - Z80 based VoIP</h2>
       <p>
