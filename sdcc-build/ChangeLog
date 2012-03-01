@@ -2,6 +2,8 @@
 
 	* components/sdcc.mk: removed comment "test-gbz80 temporary disabled"
 	* local/netbsd-i386.mk: added TARGETCPPFLAGS, added -I/usr/pkg/include
+	* local/mypants.mk: added -I/usr/pkg/include
+	* local/cf-86.mk: added TARGETCPPFLAGS
 
 2012-02-17 Borut Razem <borut.razem AT gmail.com>
 
