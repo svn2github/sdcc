@@ -23,14 +23,15 @@
 
             <h2>What is SDCC?</h2>
 
-            <p><b>SDCC</b> is a <b><i>retargettable, optimizing ANSI - C compiler</i></b> that
+            <p><b>SDCC</b> is a <b><i>retargettable, optimizing ANSI - C compiler suite</i></b> that
               targets the <b><i>Intel 8051, Maxim 80DS390, Zilog Z80, Z180, Rabbit 2000</i></b>
               and the <b><i>Motorola 68HC08</i></b> based MCUs. Work is in progress on supporting
-              the <b><i>Microchip PIC16</i></b>, <b><i>PIC18</i></b> and <b><i>gbz80</i></b> targets. SDCC is Free Open
-              Source Software, distributed under GNU General Public License (GPL).</p>
+              the <b><i>Microchip PIC16</i></b>, <b><i>PIC18</i></b> and <b><i>gbz80</i></b> targets.
+              SDCC suite is a collection of several components derived from different sources with
+              different FOSS licenses..</p>
             <p>Some of the features include:</p>
             <ul>
-              <li>SDCC sdas and sdld, a retargettable assembler and linker, based on ASXXXX, is Free Open Source Software,
+              <li>sdas and sdld, a retargettable assembler and linker, based on ASXXXX, is Free Open Source Software,
                 distributed under GNU General Public License (GPL).</li>
               <li>extensive MCU specific language extensions, allowing effective use of the underlying hardware.</li>
               <li>a host of standard optimizations such as <i>global sub expression
@@ -48,8 +49,8 @@
               <li>the ability to report on the complexity of a function to help decide what should be re-written in assembler.</li>
               <li>a good selection of automated regression tests.</li>
             </ul>
-            <p><b>SDCC</b> also comes with the <i>source level debugger</i><b>
-              SDCDB</b>, using the current version of Daniel's s51 simulator.</p>
+            <p><b>SDCC</b> also comes with the <i>source level debugger</i> <b>sdcdb</b>,
+              using the current version of Daniel's s51 simulator.</p>
             <p><b>SDCC</b> was written by Sandeep Dutta and released under a <b>GPL</b> license. Since its
               initial release there have been numerous bug fixes and improvements. As
               of December 1999, the code was moved to SourceForge where all the "users
@@ -62,8 +63,9 @@
 
             <p><i><b>November 27th, 2011: Small Device C Compiler 3.1.0 released.</b></i></p>
             <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
-              HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
-              Sources, documentation and binaries compiled for x86 Linux, x86 MS Windows and universal Mac OS X are available.</p>
+              HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net"
+              target="_new">http://sdcc.sourceforge.net</a>). Sources, documentation and binaries
+              compiled for x86 Linux, x86 MS Windows and universal Mac OS X are available.</p>
             <p>SDCC 3.1.0 Feature List:</p>
             <ul>
               <li>include/pic, non-free/include/pic, lib/pic, non-free/lib/pic renamed to */pic14</li>
@@ -79,9 +81,9 @@
               <li>_Bool / bool for the hc08, pic16 and pic14 ports</li>
               <li>sdcpp synchronized with GNU cpp 4.6.1</li>
               <li>z180 port</li>
-              <li>very basic (no integer constants, multiplication, division, shifts or use as return value) support for data types long long,
-                unsigned long long, int_fast64_t, int_least64_t, int64_t, uint_fast64_t, uint_least64_t, uint64_t in the z80, z180, r2k and
-                gbz80 ports</li>
+              <li>very basic (no integer constants, multiplication, division, shifts or use as return value) support for data types 
+                long long, unsigned long long, int_fast64_t, int_least64_t, int64_t, uint_fast64_t, uint_least64_t, uint64_t in the
+                z80, z180, r2k and gbz80 ports</li>
               <li>r2k port for the Rabbit 2000 and Rabbit 3000</li>
             </ul>
             <p>Numerous feature requests and bug fixes are included as well.</p>
@@ -94,7 +96,8 @@
             <p><b>Linux - x86</b>, <b>Microsoft Windows - x86</b> and <b>Mac OS X</b>
               are the primary, so called "officially supported" platforms.</p>
             <p><b>SDCC</b> compiles natively on <b>Linux</b> and <b>Mac OS X</b>
-              using <a href="http://www.gnu.org">gcc</a>. <b>Windows</b> release and snapshot builds are made by <b>cross compiling to mingw32</b> on a Linux host.</p>
+              using <a href="http://www.gnu.org">gcc</a>. <b>Windows</b> release and snapshot builds are made by
+              <b>cross compiling to mingw32</b> on a Linux host.</p>
             <p><b>Windows 9x/NT/2000/XP</b> users are
               recommended to use Cygwin (<a href="http://sources.redhat.com/cygwin/">http://sources.redhat.com/cygwin/</a>)
               or may try the unsupported Microsoft Visual C++ build scripts.</p>
@@ -181,7 +184,8 @@
               <li><a href="https://sourceforge.net/forum/forum.php?forum_id=1864&amp;et=0">SDCC
                 Message Forum</a> - an account on Sourceforge is needed if you're going to post and reply. Short
                 easy online fill-in the blanks.</li>
-              <li><a href="http://sdccokr.dl9sec.de/">Open Knowledge Web Site</a> - Run by Thorsten Godau &lt;thorsten.godau.AT.gmx.de&gt;</li>
+              <li><a href="http://sdccokr.dl9sec.de/">Open Knowledge Web Site</a> - Run by Thorsten Godau
+                &lt;thorsten.godau.AT.gmx.de&gt;</li>
             </ul>
 
             <h2><a name="Who"></a>Who is SDCC?</h2>
@@ -195,19 +199,22 @@
               <li>Scott Dattalo &lt;scott.AT.dattalo.com&gt; - sdcc for Microchip PIC controller target</li>
               <li>Karl Bongers &lt;karl.AT.turbobit.com&gt; - mcs51 support, winbin builds, and an occasional bug.</li>
               <li>Bernhard Held &lt;bernhard.AT.bernhardheld.de&gt; - snpshot builds and general housekeeping</li>
-              <li>Frieder Ferlemann &lt;Frieder.Ferlemann.AT.web.de&gt; - contributions to the documentation and last stages of code generation</li>
+              <li>Frieder Ferlemann &lt;Frieder.Ferlemann.AT.web.de&gt; - contributions to the documentation and last stages
+                of code generation</li>
               <li>Jesus Calvino-Fraga &lt;jesusc.AT.ece.ubc.ca&gt; - math functions, AOMF51, linker improvements</li>
-              <li>Borut Ražem &lt;borut.razem.AT.gmail.com&gt; - WIN32 MSC, cygwin and mingw ports, NSIS installer, preprocessor and front end
-                improvements, bug fixing, snapshot builds on Distibuted Compile Farm, ...</li>
+              <li>Borut Ražem &lt;borut.razem.AT.gmail.com&gt; - WIN32 MSC, cygwin and mingw ports, NSIS installer,
+                preprocessor and front end improvements, bug fixing, snapshot builds on Distibuted Compile Farm, ...</li>
               <li>Vangelis Rokas &lt;vrokas.AT.otenet.gr&gt; - PIC16 taget development for Microchip PIC18F microcontrollers</li>
-              <li>Erik Petrich &lt;epetrich.AT.users.sourceforge.net&gt; - Bug fixes and improvements for the front end, 8051, z80 and hc08</li>
+              <li>Erik Petrich &lt;epetrich.AT.users.sourceforge.net&gt; - Bug fixes and improvements for the front end,
+                8051, z80 and hc08</li>
               <li>Dave Helton &lt;dave.AT.kd0yu.com&gt; - website design</li>
               <li>Paul Stoffregen &lt;paul.AT.pjrc.com&gt; - mcs51 optimizations and website maintenance.</li>
               <li>Michael Hope &lt;michaelh.AT.juju.net.nz&gt; - initial Z80 target, additional coding and bug fixes.</li>
               <li>Maarten Brock &lt;sourceforge.brock.AT.dse.nl&gt; - several bug fixes and improvements, esp. for mcs51 target</li>
               <li>Raphael Neider &lt;RNeider.AT.web.de&gt; - bug fixes and optimizations for PIC16, completion of the PIC14 target</li>
               <li>Philipp Klaus Krause &lt;pkk.AT.spth.de&gt; - z80 and gbz80 bug fixes and optimizations, z180 target</li>
-              <li>Leland Morrison &lt;enigmalee.AT.sourceforget.net&gt; - Rabbit 2000 support: the target code generator, sdasrab assembler and ucsim support</li>
+              <li>Leland Morrison &lt;enigmalee.AT.sourceforget.net&gt; - Rabbit 2000 support: the target code generator,
+                sdasrab assembler and ucsim support</li>
             </ul>
             <p>SDCC has had help from a number of external sources, including:</p>
             <ul>
@@ -215,8 +222,14 @@
               <li>John Hartman &lt;noice.AT.noicedebugger.com&gt; - Porting ASXXXX and ASLINK for 8051.</li>
               <!-- <li>Jans J Boehm &lt;boehm.AT.sgi.com&gt; and Alan J Demers - Conservative garbage collector for C &amp; C++.</li> -->
               <li>Dmitry S. Obukhov &lt;dso.AT.usa.net&gt; - malloc and serial I/O routines.</li>
-              <li><a href="http://gcc.gnu.org/">The GCC development team</a> - for the GNU C preprocessor</li>
-              <li><a href="http://www.gnu.org/software/binutils/">The GNU Binutils development team</a> - for GNU Binutils</li>
+              <li>Pascal Felber - Some of the Z80 related files are borrowed from the Gameboy Development Kit (GBDK).</li>
+              <li><a href="http://gcc.gnu.org/">The GCC development team</a> - for GNU C preprocessor,
+                the basis of sdcpp preprocessor</li>
+              <li><a href="http://www.gnu.org/software/binutils/">The GNU Binutils development team</a> - for GNU Binutils,
+                the basis of sdbinutils</li>
+              <li><a href="http://www.boost.org/">Boost Community</a> - for Boost C++ libraries used in sdcc compiler</li>
+              <li><a href="http://idlebox.net/2007/stx-btree/">Timo Bingmann</a> - for STX B+ Tree C++ Template Classes
+                used in sdcc compiler</li>
               <li>Malini Dutta &lt;malini.AT.mediaone.net&gt; - Sandeep's wife, for her patience and support.</li>
             </ul>
 
