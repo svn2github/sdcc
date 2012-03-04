@@ -1,3 +1,7 @@
+2012-03-04 Borut Razem <borut.razem AT gmail.com>
+
+	* .sdcc_builder/profile: properly quoted uname results
+
 2012-02-26 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.flex/*, packages/build.m4/*: added

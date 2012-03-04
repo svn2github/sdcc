@@ -25,12 +25,12 @@ export LD_LIBRARY_PATH
 
 # path
 # /usr/ccs/bin:/opt/solstudio12.2/bin for Solaris
-if [ `uname` = "SunOS" ]
+if [ "`uname`" = "SunOS" ]
 then
   PATH=/usr/ccs/bin:/opt/solstudio12.2/bin:${PATH}
 fi
 # /opt/local/bin for Darwin i386
-if [ `uname` = "Darwin" -a `uname -m` = "i386" ]
+if [ "`uname`" = "Darwin" -a "`uname -m`" = "i386" ]
 then
   PATH=/opt/local/bin:${PATH}
 fi
