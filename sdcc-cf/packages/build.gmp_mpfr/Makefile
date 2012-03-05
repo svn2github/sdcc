@@ -1,7 +1,7 @@
 include ../packages.mk
 
-GMP_VERSION = 5.0.2
-MPFR_VERSION = 3.0.1
+GMP_VERSION = 5.0.4
+MPFR_VERSION = 3.1.0
 MPC_VERSION = 0.9
 
 GMP_DIR = gmp-$(GMP_VERSION)

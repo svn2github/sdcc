@@ -1,10 +1,10 @@
 include ../packages.mk
 
-BINUTILS_VERSION=2.21.1a
-MINGWRT_VERSION=3.18
+BINUTILS_VERSION=2.22
+MINGWRT_VERSION=3.20
 W32API_DIR_VERSION=3.17
 W32API_VERSION=$(W32API_DIR_VERSION)-2
-GCC_VERSION=4.6.1
+GCC_VERSION=4.6.3
 
 TARGET=i586-mingw32msvc
 PROGRAM_PREFIX=i586-mingw32msvc-
@@ -62,8 +62,7 @@ binutils-realclean: binutils-clean
 
 
 download/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz:
-	wget -nv -P download http://sourceforge.net/projects/mingw/files/MinGW/BaseSystem/RuntimeLibrary/MinGW-RT/mingwrt-$(MINGWRT_VERSION)/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz/download
-	#wget -nv -P download $(SF_REPOSITORY)/sourceforge/mingw/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
+	wget -nv -P download http://sourceforge.net/projects/mingw/files/MinGW/Base/mingw-rt/mingwrt-$(MINGWRT_VERSION)/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
 
 mingw-runtime-install.tag: download/mingwrt-$(MINGWRT_VERSION)-mingw32-dev.tar.gz
 	mkdir -p $(PREFIX)/$(TARGET)/include
@@ -81,7 +80,7 @@ mingw-runtime-realclean: mingw-runtime-clean
 
 
 download/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma:
-	wget -nv -P download http://sourceforge.net/projects/mingw/files/MinGW/BaseSystem/RuntimeLibrary/Win32-API/w32api-$(W32API_DIR_VERSION)/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma/download
+	wget -nv -P download http://sourceforge.net/projects/mingw/files/MinGW/Base/w32api/w32api-$(W32API_DIR_VERSION)/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma
 
 w32api-install.tag: download/w32api-$(W32API_VERSION)-mingw32-dev.tar.lzma
 	mkdir -p $(PREFIX)/$(TARGET)/include
@@ -105,7 +104,7 @@ download/gcc-g++-$(GCC_VERSION).tar.bz2:
 	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-g++-$(GCC_VERSION).tar.bz2
 
 gcc-unpack.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_VERSION).tar.bz2
-	for i in $^ do \
+	for i in $^; do \
 	  tar -xjf $$i; \
 	done
 	#bunzip2 -c download/gcc*.tar.bz2 | tar -xf -

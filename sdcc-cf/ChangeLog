@@ -1,3 +1,10 @@
+2012-03-05 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.gmp_mpfr/Makefile:
+	  updated to gmp 5.0.4, mpfr 3.1.0
+	* packages/build.gcc/Makefile:
+	  updated to binutils 2.22, mingwrt 3.30, gcc 4.6.3
+
 2012-03-04 Borut Razem <borut.razem AT gmail.com>
 
 	* .sdcc_builder/profile: properly quoted uname results
