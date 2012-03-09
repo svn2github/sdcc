@@ -4,7 +4,7 @@ BINUTILS_VERSION=2.22
 MINGWRT_VERSION=3.20
 W32API_DIR_VERSION=3.17
 W32API_VERSION=$(W32API_DIR_VERSION)-2
-GCC_VERSION=4.6.3
+GCC_VERSION=4.6.1
 
 TARGET=i586-mingw32msvc
 PROGRAM_PREFIX=i586-mingw32msvc-
@@ -114,7 +114,7 @@ gcc-configure.tag: gcc-unpack.tag
 	rm -rf objdir-gcc
 	mkdir -p objdir-gcc
 	cd objdir-gcc && \
-	../$(shell find . -maxdepth 1 -type d -name "gcc*")/configure \
+	../gcc-$(GCC_VERSION)/configure \
 	  --target=$(TARGET) --program-prefix=$(PROGRAM_PREFIX) --prefix=$(PREFIX) \
 	  --with-gcc --with-gnu-ld --with-gnu-as \
 	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR) --with-mpc=$(LOCAL_DIR) \
