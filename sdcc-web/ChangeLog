@@ -1,3 +1,10 @@
+2012-03-09 Borut Razem <borut.razem AT siol.net>
+
+	* index.php:
+	  added info about included code from gcc test suite
+	* left_menu.inc: link to Regression Tests temporary excluded
+	  since regression tests analysis is not functional
+
 2012-03-02 Borut Razem <borut.razem AT siol.net>
 
 	* index.php: updated chapter "Who is SDCC?", ...

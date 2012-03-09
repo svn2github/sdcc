@@ -224,7 +224,7 @@
               <li>Dmitry S. Obukhov &lt;dso.AT.usa.net&gt; - malloc and serial I/O routines.</li>
               <li>Pascal Felber - Some of the Z80 related files are borrowed from the Gameboy Development Kit (GBDK).</li>
               <li><a href="http://gcc.gnu.org/">The GCC development team</a> - for GNU C preprocessor,
-                the basis of sdcpp preprocessor</li>
+                the basis of sdcpp preprocessor and gcc test suite, partially included into the SDCC regression test suite </li>
               <li><a href="http://www.gnu.org/software/binutils/">The GNU Binutils development team</a> - for GNU Binutils,
                 the basis of sdbinutils</li>
               <li><a href="http://www.boost.org/">Boost Community</a> - for Boost C++ libraries used in sdcc compiler</li>

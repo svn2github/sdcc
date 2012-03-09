@@ -16,12 +16,16 @@
     <a href="/snap.php#Source"><i>Source</i></a><br />
   </div>
   <br />
+<!-- !!! Link to Regression Tests temporary excluded       !!!
+     !!! since regression tests analysis is not functional !!!
+
   <b><a href="/regtests.php"><i>Regression Tests</i></a></b>
   <div class="submenu">
     <a href="/regtests.php#Database"><i>Download CSV</i></a><br />
     <a href="/regtests.php#Diffs"><i>Differences</i></a><br />
   </div>
   <br />
+-->
   <b><i>Documentation</i></b>
   <div class="submenu">
     <a href="/doc/sdccman.html/"><i>SDCC Manual (html</i></a>/<a href="http://sdcc.sourceforge.net/doc/sdccman.pdf"><i>pdf)</i></a><br />
