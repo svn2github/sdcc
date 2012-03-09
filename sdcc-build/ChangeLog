@@ -1,8 +1,6 @@
 2012-03-09 Borut Razem <borut.razem AT gmail.com>
 
-	* local/dev.mk, local/solaris-x86.mk: added TARGETCPPFLAGS;
-	  removed explicit definitions of TARGETOS and HOSTOS: they are
-	  now guessed by configure script
+	* local/solaris-x86.mk: added TARGETCPPFLAGS
 
 2012-03-01 Borut Razem <borut.razem AT gmail.com>
 
