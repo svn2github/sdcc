@@ -1,3 +1,7 @@
+2012-03-11 Borut Razem <borut.razem AT siol.net>
+
+	* index.php, snap_header.php, links.php: removed Unicode BOM
+
 2012-03-09 Borut Razem <borut.razem AT siol.net>
 
 	* index.php:
