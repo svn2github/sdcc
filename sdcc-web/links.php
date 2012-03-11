@@ -104,7 +104,7 @@ time. Need info? Go here!<br />
       <h2>Links - Embedded Ethernet</h2>
       <p>
       <a href="mailto:werner.cornelius@gmx.de">Werner Cornelius</a>
-has a <a href="http://fiction-writing.de/index.php?lang=eng&pos=5&sub=4">web page</a>
+has a <a href="http://fiction-writing.de/index.php?lang=eng&amp;pos=5&amp;sub=4">web page</a>
 devoted to embedding the RealTek RTL8019AS ethernet controller chip
 into a microcontroller. Lots of small tips on wiring, what to do, and
 what not to do.<br />
@@ -151,7 +151,7 @@ microcontrollers distributed under the GNU General Public License<br />
 application, either hardware or software, that you believe would be of
 interest to other readers, drop either myself or the list members a
 note.</i></p>
-      <p><a href="http://sourceforge.net/tracker/?group_id=599&atid=536150">Send
+      <p><a href="http://sourceforge.net/tracker/?group_id=599&amp;atid=536150">Send
 us your link!</a></p>
 <?php include('./footer.php')?>
       </td>
