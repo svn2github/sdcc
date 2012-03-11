@@ -1,3 +1,9 @@
+2012-03-11 Borut Razem <borut.razem AT gmail.com>
+
+	* lib/variables.mk:
+	  use config.guess to detect the default build and host system
+	* support/config.guess: added
+
 2012-03-09 Borut Razem <borut.razem AT gmail.com>
 
 	* local/solaris-x86.mk: added TARGETCPPFLAGS

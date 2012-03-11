@@ -1,11 +1,11 @@
 # List of all source trees that need to be fetched either locally or from Subversion
 SRCTREES +=
+# Local host type.
+HOSTOS := $(shell $(TOPDIR)/support/config.guess)
 # Target to build for.
-TARGETOS = unknown-unknown-unknown
+TARGETOS = $(HOSTOS)
 # Target platform name equals to target OS name by default
 TARGET_PLATFORM = $(TARGETOS)
-# Local host type.
-HOSTOS = unknown-unknown-unknown
 # By default compile for the host.
 TOOLSPREFIX =
 # Extract the host name without domain to $(HOSTNAME)
@@ -47,9 +47,6 @@ STAGINGBASE = $(TOPDIR)/..
 HTDOCSDIR = $(STAGINGBASE)/htdocs
 SNAPSHOTDIR = $(HTDOCSDIR)/snapshots
 
-# Start of the CVS repository line, used to set the access method (pserver,
-# ext, ...) and username.  Can be overriden in your local.mk
-CVSACCESS = :ext:sdcc-builder
 # Name of the machine used for fetching svn tree; empty for the local machine
 SVNSERVER =
 
@@ -66,7 +63,6 @@ CHLOGDIR = $(HTDOCSDIR)/changelog_heads
 # Regression test log file
 CHLOGTXT = $(CHLOGDIR)/changelog-head-$(SDCC_REVISION).txt
 
-CVSFLAGS += -Q
 SVNFLAGS += --force
 STAMPDIR = $(ORIGDIR)/../stamps
 RSYNCFLAGS = -C -r
