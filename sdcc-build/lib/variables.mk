@@ -1,5 +1,7 @@
 # List of all source trees that need to be fetched either locally or from Subversion
 SRCTREES +=
+# Top build directory
+TOPDIR := $(shell /bin/pwd)
 # Local host type.
 HOSTOS := $(shell $(TOPDIR)/support/config.guess)
 # Target to build for.
@@ -35,8 +37,6 @@ BOOTSTRAPSSHMAILSERVER =
 PREFIX = /usr/local
 # default host prefix if cross compiling
 HOSTPREFIX = /usr/local
-
-TOPDIR := $(shell /bin/pwd)
 
 # Directory that all of the soure trees get copied into
 SRCDIR = $(TOPDIR)/$(TARGET_PLATFORM).build
