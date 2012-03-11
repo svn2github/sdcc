@@ -4,8 +4,7 @@
 # Spawn 2 make proceses
 MAKEJOBFLAGS = -j 2
 
-TARGETOS = amd64-unknown-linux2.5
-HOSTOS = amd64-unknown-linux2.5
+TARGET_PLATFORM = amd64-unknown-linux2.5
 
 # local includes and libraries
 TARGETCXXFLAGS = "-O2 -I$(HOME)/local-$(HOSTNAME)/include"
