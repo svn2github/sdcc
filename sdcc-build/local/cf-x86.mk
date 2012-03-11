@@ -4,6 +4,7 @@
 # Spawn 2 make proceses
 MAKEJOBFLAGS = -j 2
 
+HOSTOS = amd64-unknown-linux2.5
 TARGETOS = amd64-unknown-linux2.5
 
 # local includes and libraries

@@ -3,9 +3,6 @@
 	* lib/variables.mk:
 	  use config.guess to detect the default build and host system
 	* support/config.guess: added
-	* local/derna.mk, local/cf-x86.mk:
-	  removed explicit definition of HOSTOS,
-	  used default values from config.guess
 	* local/derna.mk: added TARGETCPPFLAGS
 
 2012-03-09 Borut Razem <borut.razem AT gmail.com>

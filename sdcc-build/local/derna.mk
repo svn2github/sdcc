@@ -4,6 +4,7 @@
 # Spawn 2 make proceses
 MAKEJOBFLAGS = -j 2
 
+HOSTOS = i386-unknown-linux2.5
 TARGETOS = i386-unknown-linux2.5
 
 # local includes and libraries
