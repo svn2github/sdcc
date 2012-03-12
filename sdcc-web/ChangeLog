@@ -5,6 +5,8 @@
 	  now available on sdcc wiki:
 	  http://sourceforge.net/apps/trac/sdcc/wiki/Proposed%20Test%20Suite%20Design
 	  http://sourceforge.net/apps/trac/sdcc/wiki/CDB%20File%20Format
+	* sdcctarbin.html, sdcc-install-nt.html, flatmode.txt,
+	  cygwin_help.html: removed from svn, moved to sdcc wiki
 
 2012-03-11 Borut Razem <borut.razem AT siol.net>
 
