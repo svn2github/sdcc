@@ -1,3 +1,11 @@
+2012-03-12 Borut Razem <borut.razem AT siol.net>
+
+	* left_menu.inc: link to html version of sdccman removed;
+	  Removed links to "Test Suite" and "CDB Format" documents,
+	  now available on sdcc wiki:
+	  http://sourceforge.net/apps/trac/sdcc/wiki/Proposed%20Test%20Suite%20Design
+	  http://sourceforge.net/apps/trac/sdcc/wiki/CDB%20File%20Format
+
 2012-03-11 Borut Razem <borut.razem AT siol.net>
 
 	* index.php, snap_header.php, links.php: removed Unicode BOM
