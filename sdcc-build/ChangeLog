@@ -1,3 +1,8 @@
+2012-03-13 Borut Razem <borut.razem AT gmail.com>
+
+	* lib/doc-archive.mk:
+	  test if *.txt, *.html and  *.pdf exist before copying
+
 2012-03-11 Borut Razem <borut.razem AT gmail.com>
 
 	* lib/variables.mk:

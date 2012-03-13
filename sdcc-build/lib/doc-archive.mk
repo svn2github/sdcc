@@ -55,7 +55,10 @@ doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.
 	mkdir -p $(_DOC_ARCHIVE_BUILDDIR)/doc/ucsim
 	mkdir -p $(_DOC_ARCHIVE_BUILDDIR)/doc/sdas
 	# copy to build directory
-	cd $(_DOC_ARCHIVE_SRC_DIR); cp -rpf *.txt *.html *.pdf $(_DOC_ARCHIVE_BUILDDIR)/doc
+	cd $(_DOC_ARCHIVE_SRC_DIR); \
+	ls *.txt > /dev/null 2>&1 && cp -rpf *.txt $(_DOC_ARCHIVE_BUILDDIR)/doc; \
+	ls *.html > /dev/null 2>&1 && cp -rpf *.html $(_DOC_ARCHIVE_BUILDDIR)/doc; \
+	ls *.pdf > /dev/null 2>&1 && cp -rpf *.pdf $(_DOC_ARCHIVE_BUILDDIR)/doc
 	cd $(_DOC_ARCHIVE_ORIG_DIR); \
 	cp -rpf sdas/doc/* $(_DOC_ARCHIVE_BUILDDIR)/doc/sdas/; \
 	cp -pf doc/*.txt doc/*.html $(_DOC_ARCHIVE_BUILDDIR)/doc; \
