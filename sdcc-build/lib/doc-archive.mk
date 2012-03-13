@@ -35,19 +35,25 @@ doc-archive-make $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.pdf):
 
 doc-archive-copy:
 	# Create dirs for the HTML-doc
-	mkdir -p $(addprefix $(_DOC_ARCHIVE_DIR)/, $(_DOC_ARCHIVE_HTML))
+	-test -d $(_DOC_ARCHIVE_HTML) && mkdir -p $(addprefix $(_DOC_ARCHIVE_DIR)/, $(_DOC_ARCHIVE_HTML))
 	# Copy everything except the HTML files (png, css)
-	test -d $(_DOC_ARCHIVE_HTML) && cd $(_DOC_ARCHIVE_SRC_DIR) && \
-	for dir in $(_DOC_ARCHIVE_HTML); do \
-	  find $$dir -maxdepth 1 -type f ! -name "*.html" -exec cp {} $(_DOC_ARCHIVE_DIR)/$$dir \; ; \
-	done
+	-test -d $(_DOC_ARCHIVE_HTML) && cd $(_DOC_ARCHIVE_SRC_DIR) && \
+	  for dir in $(_DOC_ARCHIVE_HTML); do \
+	    find $$dir -maxdepth 1 -type f ! -name "*.html" -exec cp {} $(_DOC_ARCHIVE_DIR)/$$dir \; ; \
+	  done
 	# Mangle HTML files
-	test -d $(_DOC_ARCHIVE_HTML) && cd $(_DOC_ARCHIVE_SRC_DIR) && \
-	for i in sdccman.html/*.html; do $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -s "SDCC Manual" $$i > $(_DOC_ARCHIVE_DIR)/$$i; done; \
+	-test -d $(_DOC_ARCHIVE_HTML) && cd $(_DOC_ARCHIVE_SRC_DIR) && \
+	  for i in sdccman.html/*.html; do \
+	    $(_DOC_ARCHIVE_SUPPORT_DIR)/sdcc_theme.pl -s "SDCC Manual" $$i > $(_DOC_ARCHIVE_DIR)/$$i; \
+	  done;
 	# PHP process .html files
-	test -d $(_DOC_ARCHIVE_HTML) && for i in $(addprefix $(_DOC_ARCHIVE_DIR)/, $(_DOC_ARCHIVE_HTML)); do echo "AddType application/x-httpd-php .html" > $$i/.htaccess; done
+	-test -d $(_DOC_ARCHIVE_HTML) && \
+	  for i in $(addprefix $(_DOC_ARCHIVE_DIR)/, $(_DOC_ARCHIVE_HTML)); do \
+	    echo "AddType application/x-httpd-php .html" > $$i/.htaccess; \
+	  done
 	# Copy *.pdf
-	cp -r $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,$(_DOC_ARCHIVE_PDF)) $(_DOC_ARCHIVE_DIR)
+	-test -f $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,$(_DOC_ARCHIVE_PDF)) && \
+	  cp -r $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,$(_DOC_ARCHIVE_PDF)) $(_DOC_ARCHIVE_DIR)
 
 doc-archive-build-archives: $(addprefix $(_DOC_ARCHIVE_SRC_DIR)/,*.txt *.html *.pdf)
 	mkdir -p $(_DOC_ARCHIVE_TARBALL_DIR)
