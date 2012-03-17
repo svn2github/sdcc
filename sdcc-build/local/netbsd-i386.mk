@@ -1,6 +1,8 @@
 # NetBSD on i386
 # Dual procressor
-MAKEJOBFLAGS = -j 2
+## disabled 2012-03-17 by borutr since src/SDCCnaddr.cc compilation
+## mysteriously fails if enabled
+##MAKEJOBFLAGS = -j 2
 TARGETOS = i386-unknown-netbsd
 HOSTOS = i386-unknown-netbsd
 
