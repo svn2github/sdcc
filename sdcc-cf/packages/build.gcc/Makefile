@@ -1,6 +1,8 @@
 include ../packages.mk
 
-GCC_VERSION=4.6.1
+#GCC_VERSION=4.6.1
+#GCC_SEPARATE_PACKAGES=1
+GCC_VERSION=4.7.0
 
 ifeq ($(OS),SunOS)
   CFGFLAGS=--with-as=/usr/ccs/bin/as --with-ld=/usr/ccs/bin/ld --disable-lto
@@ -14,6 +16,7 @@ all: gcc-install.tag gcc-clean
 clean: gcc-clean
 	rm -rf download/* *.tag
 
+ifdef GCC_SEPARATE_PACKAGES
 download/gcc-core-$(GCC_VERSION).tar.bz2:
 	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-core-$(GCC_VERSION).tar.bz2
 
@@ -26,6 +29,14 @@ gcc-unpack.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_
 	done
 	#bunzip2 -c download/gcc*.tar.bz2 | tar -xf -
 	touch $@
+else
+download/gcc-$(GCC_VERSION).tar.bz2:
+	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-$(GCC_VERSION).tar.bz2
+
+gcc-unpack.tag: download/gcc-$(GCC_VERSION).tar.bz2
+	tar -xjf download/gcc-$(GCC_VERSION).tar.bz2
+	touch $@
+endif
 
 gcc-configure.tag: gcc-unpack.tag
 	rm -rf objdir-gcc
@@ -33,8 +44,9 @@ gcc-configure.tag: gcc-unpack.tag
 	cd objdir-gcc && \
 	../gcc-$(GCC_VERSION)/configure \
 	  --prefix=$(LOCAL_DIR) \
+	  --enable-languages=c,c++ \
 	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR) --with-mpc=$(LOCAL_DIR) \
-	  --enable-threads --disable-nls --enable-languages=c,c++ \
+	  --enable-threads --disable-nls \
 	  --disable-shared $(CFGFLAGS) $(CFGENV)
 	touch $@
 

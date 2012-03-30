@@ -4,7 +4,9 @@ BINUTILS_VERSION=2.22
 MINGWRT_VERSION=3.20
 W32API_DIR_VERSION=3.17
 W32API_VERSION=$(W32API_DIR_VERSION)-2
-GCC_VERSION=4.6.1
+#GCC_VERSION=4.6.1
+#GCC_SEPARATE_PACKAGES=1
+GCC_VERSION=4.7.0
 
 TARGET=i586-mingw32msvc
 PROGRAM_PREFIX=i586-mingw32msvc-
@@ -97,6 +99,7 @@ w32api-realclean: w32api-clean
 	rm -f w32api-download.tag
 
 
+ifdef GCC_SEPARATE_PACKAGES
 download/gcc-core-$(GCC_VERSION).tar.bz2:
 	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-core-$(GCC_VERSION).tar.bz2
 
@@ -109,6 +112,14 @@ gcc-unpack.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_
 	done
 	#bunzip2 -c download/gcc*.tar.bz2 | tar -xf -
 	touch $@
+else
+download/gcc-$(GCC_VERSION).tar.bz2:
+	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-$(GCC_VERSION).tar.bz2
+
+gcc-unpack.tag: download/gcc-$(GCC_VERSION).tar.bz2
+	tar -xjf download/gcc-$(GCC_VERSION).tar.bz2
+	touch $@
+endif
 
 gcc-configure.tag: gcc-unpack.tag
 	rm -rf objdir-gcc
@@ -116,9 +127,10 @@ gcc-configure.tag: gcc-unpack.tag
 	cd objdir-gcc && \
 	../gcc-$(GCC_VERSION)/configure \
 	  --target=$(TARGET) --program-prefix=$(PROGRAM_PREFIX) --prefix=$(PREFIX) \
+	  --enable-languages=c,c++ \
 	  --with-gcc --with-gnu-ld --with-gnu-as \
 	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR) --with-mpc=$(LOCAL_DIR) \
-	  --enable-threads --disable-nls --enable-languages=c,c++ \
+	  --enable-threads --disable-nls \
 	  --disable-multilib --enable-win32-registry --disable-shared
 	touch $@
 
