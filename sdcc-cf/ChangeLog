@@ -1,3 +1,8 @@
+2012-05-05 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* bin/dcf.sh: update to match current SourceForge specs for
+	  accessing project-web and file release system areas
+
 2012-03-30 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.mingw32/Makefile, packages/build.gcc/Makefile:

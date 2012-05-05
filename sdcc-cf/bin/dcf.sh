@@ -38,12 +38,12 @@ TREE_FILE=$HOME/tmp/tree.txt
 mkdir -p $LOG_DIR $LOCK_DIR
 
 WEBHOST=web.sourceforge.net
-WEBUSER=sdcc-builder,sdcc
-WEBHTDOCSDIR=/home/groups/s/sd/sdcc/htdocs
+WEBUSER=sdcc-builder
+WEBHTDOCSDIR=/home/project-web/sdcc/htdocs
 
 FRSHOST=frs.sourceforge.net
 FRSUSER=$WEBUSER
-FRSDIR=/home/frs/project/s/sd/sdcc/snapshot_builds
+FRSDIR=/home/frs/project/sdcc/snapshot_builds
 
 
 # debugging: print
@@ -198,7 +198,7 @@ rm_old_versions ()
     done
   done
 
-  for k in $(echo "ls -1t htdocs/changelog_heads" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '/^sftp> /d' | sed -e '1,7d')
+  for k in $(echo "ls -1t ${WEBHTDOCSDIR}/changelog_heads" | sftp -b- ${WEBUSER}@${WEBHOST} | sed -e '/^sftp> /d' | sed -e '1,7d')
   do
     if [ -n "$k" ]; then echo "removing $k"; echo "rm $k" | sftp -b- ${WEBUSER}@${WEBHOST}; fi
   done
