@@ -1,3 +1,9 @@
+2012-05-15 Borut Razem <borut.razem AT siol.net>
+
+	* sdcc_sw.ini: added for regtests db rw access
+	* dbg.php: new, implemented Dbg debugging class
+	* update_regtests_db.php: fixed, use Dbg class
+
 2012-03-12 Borut Razem <borut.razem AT siol.net>
 
 	* left_menu.inc: link to html version of sdccman removed;
