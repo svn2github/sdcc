@@ -324,7 +324,7 @@ function composeQuery(data)
 
 function buttonClick()
 {
-  $('body').css('cursor','wait')
+  $('body').css('cursor', 'wait')
 
   var params = [];
   $('form.diff').each(function()
@@ -357,9 +357,12 @@ $(document).ready(function()
 */
 
 $(function() {
-  $("input#date.date-pick").change(function() {
+  $("input.date-pick").change(function() {
     if (this.value != '' && validateBuildDate(this.value)) {
       var me = this.form.build;
+
+      // delete previous content
+      me.innerHTML = '';
       $.ajax({
         type: 'POST',
         url: 'get_regtest.php',

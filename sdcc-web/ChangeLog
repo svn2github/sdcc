@@ -1,3 +1,8 @@
+2012-05-18 Borut Razem <borut.razem AT siol.net>
+
+	* left_menu.inc: link to Regression Tests re-included
+	* regtests.php: fixed build number update
+
 2012-05-15 Borut Razem <borut.razem AT siol.net>
 
 	* sdcc_sw.ini: added for regtests db rw access
