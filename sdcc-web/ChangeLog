@@ -1,7 +1,10 @@
 2012-05-18 Borut Razem <borut.razem AT siol.net>
 
 	* left_menu.inc: link to Regression Tests re-included
-	* regtests.php: fixed build number update
+	* regtests.php: fixed build number update, table sort & zebra style
+	* images/asc.gif, images/bg.gif, images/desc.gif,
+	  scripts/jquery.tablesorter.js, styles/tablesorter.css:
+	  included tablesorter plugin
 
 2012-05-15 Borut Razem <borut.razem AT siol.net>
 

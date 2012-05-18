@@ -2,7 +2,7 @@
 /*-------------------------------------------------------------------------
    regtests.php - regression tests page
 
-   Copyright (C) 2011, Borut Razem <borut.razem AT gmail.com>
+   Copyright (C) 2011, 2012, Borut Razem <borut.razem AT gmail.com>
 
    This program is free software; you can redistribute it and/or modify it
    under the terms of the GNU General Public License as published by the
@@ -115,6 +115,10 @@ EOT;
   <script type="text/javascript" src="scripts/jquery.datePicker.js"></script>
   <!-- datePicker required styles -->
   <link rel="stylesheet" type="text/css" media="screen" href="styles/datePicker.css"></link>
+  <!-- jquery.tablesorter.js -->
+  <script type="text/javascript" src="scripts/jquery.tablesorter.js"></script> 
+  <!-- tablesorter required styles -->
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/tablesorter.css"></link>
   <!-- page specific scripts -->
   <script type="text/javascript" charset="utf-8">
 //<!--
@@ -256,7 +260,7 @@ function htmlTable (data)
 {
   var ret = '';
   if (data) {
-    ret += '<table class="data"><thead><tr>';
+    ret += '<table id="dataTable" class="tablesorter"><thead><tr>'; 
     var keys = keyArray(data[0]);
     for (var i = 0; i < keys.length; ++i) {
       ret += '<th>' + keys[i] + '</th>';
@@ -342,7 +346,11 @@ function buttonClick()
       data: { query: query },
       success: function(data) {
         $('div.success').replaceWith('<div class="success">' + ((data.length > 0) ? htmlTable(data) : 'No data available!') + '</div>');
-        $('body').css('cursor','auto')
+        $('body').css('cursor','auto');
+        $("#dataTable").tablesorter({
+         // striping looking
+         widgets: ['zebra']	
+        }); 
       }
     });
   }
@@ -377,8 +385,8 @@ $(function() {
         }
       })
     }
-  })
-})
+  });
+});
 // -->
   </script>
   <style type="text/css">
@@ -406,28 +414,6 @@ a.dp-choose-date.dp-disabled {
 input.dp-applied {
   width: 140px;
   float: left;
-}
-
-/* table style
- */
-table.data {
-  text-align: left;
-  font-size: 12px;
-  font-family: verdana;
-  background: #c0c0c0;
-}
-
-table.data thead tr,
-table.data tfoot tr {
-  background: #c0c0c0;
-}
-
-table.data tbody tr {
-  background: #f0f0f0;
-}
-
-td, th {
-  border: 1px solid white;
 }
   </style>
 </head>
