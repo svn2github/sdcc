@@ -1,3 +1,8 @@
+2012-05-21 Philipp Klaus Krause <pkk AT spth.de>
+
+	* lib/variables.mk:
+	  Enable testing of s08 and r3ka ports.
+
 2012-03-17 Borut Razem <borut.razem AT gmail.com>
 
 	* local/netbsd-i386.mk: disabled -j 2 since src/SDCCnaddr.cc
