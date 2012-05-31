@@ -1,3 +1,8 @@
+2012-05-31 Borut Razem <borut.razem AT gmail.com>
+
+	* components/sdcc.mk: fixed bug #3531055 - PIC18F24K22
+	  by enabling building of new pics
+
 2012-05-21 Philipp Klaus Krause <pkk AT spth.de>
 
 	* lib/variables.mk:
