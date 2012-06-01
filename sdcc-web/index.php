@@ -24,39 +24,48 @@
             <h2>What is SDCC?</h2>
 
             <p><b>SDCC</b> is a <b><i>retargettable, optimizing ANSI - C compiler suite</i></b> that
-              targets the <b><i>Intel 8051, Maxim 80DS390, Zilog Z80, Z180, Rabbit 2000</i></b>
-              and the <b><i>Motorola 68HC08</i></b> based MCUs. Work is in progress on supporting
-              the <b><i>Microchip PIC16</i></b>, <b><i>PIC18</i></b> and <b><i>gbz80</i></b> targets.
-              SDCC suite is a collection of several components derived from different sources with
-              different FOSS licenses..</p>
-            <p>Some of the features include:</p>
+              targets the <b><i>Intel MCS51 </i></b> based microprocessors <b><i>(8031, 8032, 8051, 8052, etc.)</i></b>,
+              <b><i>Maxim</i></b> (formerly <b><i>Dallas</i></b>) <b><i>DS80C390</i></b> variants,
+              <b><i>Freescale</i></b> (formerly <b><i>Motorola</i></b>) <b><i>HC08</i></b> based <b><i>(hc08, s08)</i></b> and
+              <b><i>Zilog Z80</i></b> based MCUs <b><i>(z80, z180, gbz80, Rabbit 2000/3000, Rabbit 3000A)</i></b>.
+              Work is in progress on supporting the <b><i>Microchip PIC16</i></b> and <b><i>PIC18</i></b>
+              targets. It can be retargeted for other microprocessors.</p>
+           <p>SDCC suite is a collection of several components derived from different sources with
+              different FOSS licenses. SDCC compiler suite include:</p>
             <ul>
-              <li>sdas and sdld, a retargettable assembler and linker, based on ASXXXX, is Free Open Source Software,
-                distributed under GNU General Public License (GPL).</li>
-              <li>extensive MCU specific language extensions, allowing effective use of the underlying hardware.</li>
-              <li>a host of standard optimizations such as <i>global sub expression
-                elimination, loop optimizations (loop invariant, strength reduction of induction
-                variables and loop reversing), constant folding </i>and<i> propagation,
-                copy propagation, dead code elimination and jump tables for 'switch' statements.</i></li>
-              <li>MCU specific optimizations, including a global register allocator.</li>
-              <li>adaptable MCU specific backend that should be well suited for other 8 bit MCUs</li>
-              <li>independent rule based peep hole optimizer.</li>
-              <li>a full range of data types: <b>char </b>(<i>8</i> bits, 1 byte), <b>short </b>(<i>16</i> bits, 2 bytes),
-                <b>int</b> (<i>16</i> bits, 2 bytes), <b>long</b> (<i>32</i> bit, 4 bytes) and <b>float</b> (<i>4</i> byte IEEE);<br />
-                very basic (no integer constants, multiplication, division, shifts or use as return value) support for
-                <b>long long</b> <i>64</i> bit, 8 bytes) data types for the z80, z180, Rabbit 2000 and gbz80 targets.</li>
-              <li>the ability to add inline assembler code anywhere in a function.</li>
-              <li>the ability to report on the complexity of a function to help decide what should be re-written in assembler.</li>
-              <li>a good selection of automated regression tests.</li>
+              <li><b>sdas</b> and <b>sdld</b>, a <i>retargettable assembler and linker</i>, based on <b>ASXXXX</b>, written by Alan Baldwin; (GPL).</li>
+              <li><b>sdcpp</b> <i>preprocessor</i>, based on <b>GCC cpp</b>; (GPL).</li>
+              <li><b>ucsim</b> <i>simulators</i>, originally written by Daniel Drotos; (GPL).</li>
+              <li><b>sdcdb</b> <i>source level debugger</i>, originally written by Sandeep Dutta; (GPL).</li>
+              <li><b>sdbinutils</b> <i>library archive utilities</i>, including sdar, sdranlib and sdnm, derived from GNU Binutils; (GPL)</li>
+              <li><b>SDCC run-time libraries</b>; (GPL+LE). Pic device libraries and header files are derived from Microchip header (.inc) and linker script (.lkr) files. Microchip requires that "The header files should state that they are only to be used with authentic Microchip devices" which makes them incompatible with the GPL.</li>
+              <li><b>gcc-test</b> <i>regression tests</i>, derived from  <b>gcc-testsuite</b>; (no license explicitely specified, but since it is a part of GCC is probably GPL licensed)</li>
+              <li><b>packihx</b>; (public domain)</li>
+              <li><b>makebin</b>; (zlib/libpng License)</li>
+              <li><b>sdcc</b> <i>C compiler</i>, originally written by Sandeep Dutta; (GPL). Some of the features include:
+              <ul>
+                <li>extensive MCU specific language extensions, allowing effective use of the underlying hardware.</li>
+                <li>a host of standard optimizations such as <i>global sub expression
+                  elimination, loop optimizations (loop invariant, strength reduction of induction
+                  variables and loop reversing), constant folding </i>and<i> propagation,
+                  copy propagation, dead code elimination and jump tables for 'switch' statements.</i></li>
+                <li>MCU specific optimizations, including a global register allocator.</li>
+                <li>adaptable MCU specific backend that should be well suited for other 8 bit MCUs</li>
+                <li>independent rule based peep hole optimizer.</li>
+                <li>a full range of data types: <b>char </b>(<i>8</i> bits, 1 byte), <b>short </b>(<i>16</i> bits, 2 bytes),
+                  <b>int</b> (<i>16</i> bits, 2 bytes), <b>long</b> (<i>32</i> bit, 4 bytes) and <b>float</b> (<i>4</i> byte IEEE);<br />
+                  very basic (no integer constants, multiplication, division, shifts or use as return value) support for
+                  <b>long long</b> <i>64</i> bit, 8 bytes) data types for the z80, z180, Rabbit 2000/3000, Rabbit 3000A and gbz80 targets.</li>
+                <li>the ability to add inline assembler code anywhere in a function.</li>
+                <li>the ability to report on the complexity of a function to help decide what should be re-written in assembler.</li>
+                <li>a good selection of automated regression tests.</li>
+              </ul></li>
             </ul>
-            <p><b>SDCC</b> also comes with the <i>source level debugger</i> <b>sdcdb</b>,
-              using the current version of Daniel's s51 simulator.</p>
             <p><b>SDCC</b> was written by Sandeep Dutta and released under a <b>GPL</b> license. Since its
               initial release there have been numerous bug fixes and improvements. As
               of December 1999, the code was moved to SourceForge where all the "users
               turned developers" can access the same source tree. SDCC is constantly being
               updated with all the users' and developers' input.</p>
-            <p><b><i>AVR</i></b> target is no longer maintained.</p>
 
             <!-- START NEWS -->
             <h2><a name="News"></a>News</h2>
@@ -81,7 +90,7 @@
               <li>_Bool / bool for the hc08, pic16 and pic14 ports</li>
               <li>sdcpp synchronized with GNU cpp 4.6.1</li>
               <li>z180 port</li>
-              <li>very basic (no integer constants, multiplication, division, shifts or use as return value) support for data types 
+              <li>very basic (no integer constants, multiplication, division, shifts or use as return value) support for data types
                 long long, unsigned long long, int_fast64_t, int_least64_t, int64_t, uint_fast64_t, uint_least64_t, uint64_t in the
                 z80, z180, r2k and gbz80 ports</li>
               <li>r2k port for the Rabbit 2000 and Rabbit 3000</li>

@@ -1,3 +1,7 @@
+2012-06-01 Borut Razem <borut.razem AT siol.net>
+
+	* index.php: updated / reorganised for sdcc 3.2.0
+
 2012-05-18 Borut Razem <borut.razem AT siol.net>
 
 	* left_menu.inc: link to Regression Tests re-included
