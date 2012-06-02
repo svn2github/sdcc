@@ -1,3 +1,9 @@
+2012-06-02 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* lib/variables.mk: split up regression tests into 3 groups
+	* local/mypants.mk: set SLOWHOST flag so only a partial regression
+	  test done each day (two days for complete tests)
+
 2012-05-31 Borut Razem <borut.razem AT gmail.com>
 
 	* components/sdcc.mk: fixed bug #3531055 - PIC18F24K22
