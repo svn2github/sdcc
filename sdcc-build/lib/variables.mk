@@ -53,26 +53,17 @@ SVNSERVER =
 # Regression test targets. To help reduce the load on the slower systems of the DCF, the
 # test targets are broken up into three categories:
 #  CROSSREGTESTTARGETS0: These will always be tested
-#  CROSSREGTESTTARGETS1: These will be tested on even days for slow hosts
-#                        and all days for fast hosts
-#  CROSSREGTESTTARGETS2: These will be tested on odd days for slow hosts
-#                        and all days for fast hosts
-CROSSREGTESTTARGETS0 = test-mcs51-small test-hc08 test-ucz80 test-ds390
-CROSSREGTESTTARGETS1 = test-mcs51-large test-ucr3ka test-ucgbz80
+#  CROSSREGTESTTARGETS1: These will be tested on even days
+#  CROSSREGTESTTARGETS2: These will be tested on odd days
+CROSSREGTESTTARGETS0 = test-mcs51-small test-hc08 test-ds390
+CROSSREGTESTTARGETS1 = test-mcs51-large test-ucr3ka test-ucgbz80 test-ucz80
 CROSSREGTESTTARGETS2 = test-mcs51-stack-auto test-s08 test-ucr2k test-ucz180
 
 DAYODD = $(shell date +%j | awk '{print $$0%2}')
-ifndef SLOWHOST
-SLOWHOST = 0
-endif
-ifeq ($(strip $(SLOWHOST)),0)
-CROSSREGTESTTARGETS = $(CROSSREGTESTTARGETS0) $(CROSSREGTESTTARGETS1) $(CROSSREGTESTTARGETS2)
-else
 ifeq ($(strip $(DAYODD)),0)
 CROSSREGTESTTARGETS = $(CROSSREGTESTTARGETS0) $(CROSSREGTESTTARGETS1)
 else
 CROSSREGTESTTARGETS = $(CROSSREGTESTTARGETS0) $(CROSSREGTESTTARGETS2)
-endif
 endif
 REGTESTTARGETS = test-host $(CROSSREGTESTTARGETS)
 # Directory for regression test log file

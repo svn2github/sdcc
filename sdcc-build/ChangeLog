@@ -1,3 +1,7 @@
+2012-06-04 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* lib/variables.mk: use the 3 regression tests groups for all hosts
+
 2012-06-02 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* lib/variables.mk: split up regression tests into 3 groups
