@@ -73,8 +73,8 @@
             <p><i><b>June 24th, 2012: SDCC 3.2.0 RC2 released.</b></i></p>
             <p>SDCC 3.2.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
               32 bit Windows and universal Mac OS X are available in corresponding folders at:
-              <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.2.0-rc2/">
-              http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.2.0-rc2</a>.</p>
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
             <!-- END NEWS -->
 
             <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
