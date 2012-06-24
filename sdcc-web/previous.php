@@ -18,6 +18,16 @@
 
       <h2>Previous NEWS</h2>
 
+      <p><i><b>November 6th, 2011: SDCC 3.1.0 RC1 released.</b></i></p>
+      <p>SDCC 3.1.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+       32 bit Windows and universal Mac OS X are available at:
+       <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc1/">
+         http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc1</a>.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
       <p><i><b>November 1st, 2010: Small Device C Compiler 3.0.0 released.</b></i></p>
       <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
         HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).

@@ -61,20 +61,20 @@
                 <li>a good selection of automated regression tests.</li>
               </ul></li>
             </ul>
-            <p><b>SDCC</b> was written by Sandeep Dutta and released under a <b>GPL</b> license. Since its
-              initial release there have been numerous bug fixes and improvements. As
-              of December 1999, the code was moved to SourceForge where all the "users
+            <p><b>SDCC</b> was written by Sandeep Dutta and released under a <b>GPL</b> license.
+              Since its initial release there have been numerous bug fixes and improvements.
+              As of December 1999, the code was moved to SourceForge where all the "users
               turned developers" can access the same source tree. SDCC is constantly being
               updated with all the users' and developers' input.</p>
 
             <!-- START NEWS -->
             <h2><a name="News"></a>News</h2>
 
-            <p><i><b>June 16th, 2012: SDCC 3.2.0 RC1 released.</b></i></p>
-            <p>SDCC 3.2.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
-              32 bit Windows and universal Mac OS X are available at:
-              <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.2.0-rc1/">
-              http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.2.0-rc1</a>.</p>
+            <p><i><b>June 24th, 2012: SDCC 3.2.0 RC2 released.</b></i></p>
+            <p>SDCC 3.2.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+              32 bit Windows and universal Mac OS X are available in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.2.0-rc2/">
+              http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.2.0-rc2</a>.</p>
             <!-- END NEWS -->
 
             <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
@@ -84,15 +84,23 @@
             <p><b>SDCC</b> compiles natively on <b>Linux</b> and <b>Mac OS X</b>
               using <a href="http://www.gnu.org">gcc</a>. <b>Windows</b> release and snapshot builds are made by
               <b>cross compiling to mingw32</b> on a Linux host.</p>
-            <p><b>Windows 9x/NT/2000/XP</b> users are
+            <p><b>Windows 9x/NT/2000/XP/Vista/7</b> users are
               recommended to use Cygwin (<a href="http://sources.redhat.com/cygwin/">http://sources.redhat.com/cygwin/</a>)
               or may try the unsupported Microsoft Visual C++ build scripts.</p>
 
             <h2><a name="Download"></a>Downloading SDCC</h2>
 
-            <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">Sourceforge
-              download page</a> for the last released version including source and binary packages for <b>Linux - x86</b>,
-              <b>Microsoft Windows - x86</b> and <b>Mac OS X - ppc and i386</b>.</p>
+            <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">
+              Sourceforge download page</a> for the last released version including source and
+              binary packages for <b>Linux - x86</b>, <b>Microsoft Windows - x86</b>
+              and <b>Mac OS X - ppc and i386</b>.</p>
+            <p>Major Linux distributions take care of SDCC installation packages themselves
+              and you will find SDCC in their repositories. Unfortunately SDCC packages included
+              in Linux disributions are often outdated. In this case users are encouraged to compile
+              the latest official SDCC release or a recent snapshot build by themselves or download
+              the pre-compiled binaries from
+              <a href="http://sourceforge.net/project/showfiles.php?group_id=599">
+              Sourceforge download page</a>.</p>
             <p>SDCC is known to compile from the source code also on the following platforms:</p>
             <ul>
               <li>Microsoft Windows - x86_64</li>
@@ -108,24 +116,14 @@
             <p>SDCC is always under active development. Please consider
               <a href="snap.php">downloading one of the snapshot builds</a>
               if you have run across a bug, or if the above release is more than two months old.</p>
-            <p> Debian packages (many thanks to Aurelien Jarno &lt;aurel32.AT.debian.org&gt;):
-            </p>
-            <ul>
-              <li> <a href="http://packages.debian.org/sdcc">http://packages.debian.org/sdcc</a></li>
-              <li> <a href="http://ftp.debian.org/debian/pool/main/s/sdcc/">http://ftp.debian.org/debian/pool/main/s/sdcc/</a></li>
-            </ul>
-            <p>RPM packages (thanks to Mandrake, Conectiva and PLD Linux distributions):</p>
-            <ul>
-              <li> <a href="http://www.rpmseek.com/">http://www.rpmseek.com/</a></li>
-              <li> <a href="http://rpmfind.net/">http://rpmfind.net/</a></li>
-            </ul>
-            <p>The latest development source code can be accessed using Subversion. The following will fetch the latest sources:</p>
+            <p>The latest development source code can be accessed using Subversion. The following
+              will fetch the latest sources:</p>
             <p><code>svn co https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc sdcc</code></p>
             <p>... will create the <i>sdcc</i> directory in your current directory and place all
               downloaded code there. You can browse the Subversion repository
-              <a href="https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/">here</a>.</p>
+              <a href="http://sdcc.svn.sourceforge.net/viewvc/sdcc/trunk/sdcc/">here</a>.</p>
             <p>SourceForge has further documentation on accessing the Subversion repository
-              <a href="http://sourceforge.net/docman/display_doc.php?docid=31070&amp;group_id=1">here</a>.</p>
+              <a href="https://sourceforge.net/scm/?type=svn&group_id=599">here</a>.</p>
             <p>Before reporting a bug, please check your SDCC version and build
               date using the -v option, and be sure to include the full version string in your bug report. For example:</p>
             <p><code>sdcc/bin &gt; sdcc -v<br />
@@ -146,32 +144,37 @@
               <li>Provide an exact copy of any error message or incorrect output.</li>
             </ol>
             <p><b>Please attempt to include these 4 important parts</b>,
-              as applicable, in all requests for support or when reporting any problems or bugs with SDCC. Though
-              this will make your message lengthy, it will greatly improve your chance that SDCC users
-              and developers will be able to help you. Some SDCC developers are frustrated by bug reports
-              without code provided that they can use to reproduce and ultimately fix the problem,
-              so please be sure to provide sample code if you are reporting a bug!</p>
+              as applicable, in all requests for support or when reporting any problems or bugs
+              with SDCC. Though this will make your message lengthy, it will greatly improve your
+              chance that SDCC users and developers will be able to help you. Some SDCC developers
+              are frustrated by bug reports without code provided that they can use to reproduce
+              and ultimately fix the problem, so please be sure to provide sample code if you are
+              reporting a bug!</p>
             <ul>
               <li><a href="http://sdcc.sourceforge.net">Web Page</a> - you are (X) here.</li>
               <li>Mailing list: [use "BUG REPORTING" below if you believe you have found a bug.]
                 <ul>
-                  <li>Send to the developer list &lt;sdcc-devel.AT.lists.sourceforge.net&gt; - for development work on SDCC</li>
-                  <li>Send to the user list &lt;sdcc-user.AT.lists.sourceforge.net&gt; - [preferred] all developers and all users.</li>
-                  <li><a href="http://lists.sourceforge.net/mailman/listinfo/sdcc-user">Subscribe to the user list</a></li>
+                  <li>Send to the developer list &lt;sdcc-devel.AT.lists.sourceforge.net&gt; -
+                    for development work on SDCC</li>
+                  <li>Send to the user list &lt;sdcc-user.AT.lists.sourceforge.net&gt; -
+                    [preferred] all developers and all users.</li>
+                  <li><a href="http://lists.sourceforge.net/mailman/listinfo/sdcc-user">
+                    Subscribe to the user list</a></li>
                 </ul>
               </li>
-              <li><a href="http://sourceforge.net/bugs/?func=addbug&amp;group_id=599">Bug
-                Reporting</a> - if you have a problem using SDCC, we need to
+              <li><a href="http://sourceforge.net/bugs/?func=addbug&amp;group_id=599">
+                Bug Reporting</a> - if you have a problem using SDCC, we need to
                 hear about it. Please attach <b>code to reproduce the problem</b>,
                 and be sure to provide your email address so a developer can contact
                 you if they need more information to investigate and fix the bug.</li>
-              <li><a href="http://sourceforge.net/tracker/?func=add&amp;group_id=599&amp;atid=536150">Website/Documentation
-                Issues</a> - Please report erroneous, missing or outdated information</li>
-              <li><a href="https://sourceforge.net/forum/forum.php?forum_id=1864&amp;et=0">SDCC
-                Message Forum</a> - an account on Sourceforge is needed if you're going to post and reply. Short
-                easy online fill-in the blanks.</li>
-              <li><a href="http://sdccokr.dl9sec.de/">Open Knowledge Web Site</a> - Run by Thorsten Godau
-                &lt;thorsten.godau.AT.gmx.de&gt;</li>
+              <li><a href="http://sourceforge.net/tracker/?func=add&amp;group_id=599&amp;atid=536150">
+                Website/Documentation Issues</a> - Please report erroneous, missing or outdated
+                information</li>
+              <li><a href="https://sourceforge.net/projects/sdcc/forums/forum/1864">
+                SDCC Message Forum</a> - an account on Sourceforge is needed if you're going to
+                post and reply. Short easy online fill-in the blanks.</li>
+              <li><a href="http://sdccokr.dl9sec.de/">Open Knowledge Web Site</a> -
+                Run by Thorsten Godau &lt;thorsten.godau.AT.gmx.de&gt;</li>
             </ul>
 
             <h2><a name="Who"></a>Who is SDCC?</h2>
@@ -222,6 +225,12 @@
             <!-- START PAST_NEWS -->
             <h2>Past news</h2>
 
+            <p><i><b>June 16th, 2012: SDCC 3.2.0 RC1 released.</b></i></p>
+            <p>SDCC 3.2.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+              32 bit Windows and universal Mac OS X are available at:
+              <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.2.0-rc1/">
+              http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.2.0-rc1</a>.</p>
+
             <p><i><b>November 27th, 2011: Small Device C Compiler 3.1.0 released.</b></i></p>
             <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
               HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net"
@@ -262,12 +271,6 @@
               32 bit Windows and universal Mac OS X are available at:
               <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc2/">
                 http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc2</a>.</p>
-
-            <p><i><b>November 6th, 2011: SDCC 3.1.0 RC1 released.</b></i></p>
-            <p>SDCC 3.1.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
-              32 bit Windows and universal Mac OS X are available at:
-              <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc1/">
-                http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc1</a>.</p>
             <!-- END PAST_NEWS -->
 
             <p><a href="previous.php">Previous News</a></p>
