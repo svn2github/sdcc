@@ -1,3 +1,7 @@
+2012-06-25 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.gputils/Makefile: updated to gputils 0.14.2
+
 2012-05-05 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* bin/dcf.sh: update to match current SourceForge specs for
