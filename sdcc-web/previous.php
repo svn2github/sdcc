@@ -18,6 +18,26 @@
 
       <h2>Previous NEWS</h2>
 
+      <p><i><b>November 22nd, 2011: SDCC 3.1.0 RC3 released.</b></i></p>
+      <p>SDCC 3.1.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
+        32 bit Windows and universal Mac OS X are available at:
+        <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc3/">
+          http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc3</a>.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
+      <p><i><b>November 18th, 2011: SDCC 3.1.0 RC2 released.</b></i></p>
+      <p>SDCC 3.1.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+       32 bit Windows and universal Mac OS X are available at:
+        <a href="http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc2/">
+          http://sourceforge.net/projects/sdcc/files/snapshot_builds/sdcc-3.1.0-rc2</a>.</p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
       <p><i><b>November 6th, 2011: SDCC 3.1.0 RC1 released.</b></i></p>
       <p>SDCC 3.1.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
        32 bit Windows and universal Mac OS X are available at:
