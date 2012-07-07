@@ -18,6 +18,39 @@
 
       <h2>Previous NEWS</h2>
 
+      <p><i><b>November 27th, 2011: Small Device C Compiler 3.1.0 released.</b></i></p>
+      <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80,
+        HC08, and PIC microprocessors is now available (<a href="http://sdcc.sourceforge.net"
+        target="_new">http://sdcc.sourceforge.net</a>). Sources, documentation and binaries
+        compiled for x86 Linux, x86 MS Windows and universal Mac OS X are available.</p>
+      <p>SDCC 3.1.0 Feature List:</p>
+      <ul>
+        <li>include/pic, non-free/include/pic, lib/pic, non-free/lib/pic renamed to */pic14</li>
+        <li>implemented --fomit-frame-pointer for mcs51</li>
+        <li>support for use of sdcc in z88dk (--reserve-regs-iy and --no-optsdcc-in-asm options; smallc calling convention)</li>
+        <li>new register allocator in the z80 and gbz80 ports (optimal when using --opt-code-size and a sufficiently high value for
+          --max-allocs-per-node for the z80 port)</li>
+        <li>C99 designated initializers</li>
+        <li>added strxfrm() and strcoll() functions; strerror() is the only string handling function still missing</li>
+        <li>added support for pic18f2xk22/pic18f4xk22 family (requires gputils > 0.14.0 and --enable-new-pics configure flag)</li>
+        <li>added support for enhanced core pic14 devices (requires gputils > 0.14.0 and --enable-new-pics configure flag)</li>
+        <li>setjmp() / longjmp() for the z80 port</li>
+        <li>_Bool / bool for the hc08, pic16 and pic14 ports</li>
+        <li>sdcpp synchronized with GNU cpp 4.6.1</li>
+        <li>z180 port</li>
+        <li>very basic (no integer constants, multiplication, division, shifts or use as return value) support for data types
+          long long, unsigned long long, int_fast64_t, int_least64_t, int64_t, uint_fast64_t, uint_least64_t, uint64_t in the
+          z80, z180, r2k and gbz80 ports</li>
+        <li>r2k port for the Rabbit 2000 and Rabbit 3000</li>
+      </ul>
+      <p>Numerous feature requests and bug fixes are included as well.</p>
+      <p>You can download the release from:<br />
+        <a href="http://sourceforge.net/projects/sdcc/files/" target="_new">http://sourceforge.net/projects/sdcc/files/</a></p>
+
+      <p></p>
+      <hr width="60%" />
+      <p></p>
+
       <p><i><b>November 22nd, 2011: SDCC 3.1.0 RC3 released.</b></i></p>
       <p>SDCC 3.1.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
         32 bit Windows and universal Mac OS X are available at:
