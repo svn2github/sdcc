@@ -73,23 +73,30 @@
               and binaries compiled for x86 Linux, x86 MS Windows and PPC Mac OS X are available. </p>
             <p>SDCC 3.2.0 Feature List:</p>
             <ul>
-              <li>include/pic, non-free/include/pic, lib/pic, non-free/lib/pic renamed to */pic14</li>
-              <li>implemented --fomit-frame-pointer for mcs51</li>
-              <li>support for use of sdcc in z88dk (--reserve-regs-iy and --no-optsdcc-in-asm options; smallc calling convention)</li>
-              <li>new register allocator in the z80 and gbz80 ports (optimal when using --opt-code-size and a sufficiently high
-                value for --max-allocs-per-node for the z80 port)</li>
-              <li>C99 designated initializers</li>
-              <li>added strxfrm() and strcoll() functions; strerror() is the only string handling function still missing</li>
-              <li>added support for pic18f2xk22/pic18f4xk22 family (requires gputils > 0.14.0 and --enable-new-pics configure flag)</li>
-              <li>added support for enhanced core pic14 devices (requires gputils > 0.14.0 and --enable-new-pics configure flag)</li>
-              <li>setjmp() / longjmp() for the z80 port</li>
-              <li>_Bool / bool for the hc08, pic16 and pic14 ports</li>
-              <li>sdcpp synchronized with GNU cpp 4.6.1</li>
-              <li>z180 port</li>
-              <li>very basic (no integer constants, multiplication, division, shifts or use as return value) support for data
-                types long long, unsigned long long, int_fast64_t, int_least64_t, int64_t, uint_fast64_t, uint_least64_t,
-                uint64_t in the z80, z180, r2k and gbz80 ports</li>
-              <li>r2k port for the Rabbit 2000 and Rabbit 3000</li>
+              <li>Named address spaces with optimal placement of bank selection calls.</li>
+              <li>_Noreturn.</li>
+              <li>--std-c11 command line option for ISO C11.</li>
+              <li>ucsim support for the LR35902 (gameboy CPU).</li>
+              <li>The gbz80 port is alive again, there were many bug fixes and the generated code is much better now.</li>
+              <li>Pic 14 enhanced core libraries are included in sdcc builds by default</li>
+              <li>Added pic 14 enhanced core devices: 16f1503, 16f1508, 16f1509, 16f1516, 16f1517, 16f1518, 16f1519, 16f1526, 16f1527, 16f1946,
+                16f1947</li>
+              <li>PIC14/PIC16: Implemented __critical; PIC14 __critical function cannot have arguments for now, though</li>
+              <li>inclusion of some tests from the gcc test suite into the sdcc regression test suite led to many bugs being found and fixed.</li>
+              <li>Many macros with previously non-standard-compliant names have been renamed (SDCC_REVISION to __SDCC_REVISION, etc).</li>
+              <li>setjmp() / longjmp() for the z180 and r2k ports.</li>
+              <li>Added sdar archive managing utility. sdar and sdranlib are derived from GNU binutils package</li>
+              <li>Added support for pic 14 core devices: 16f720, 16f721, 16f882, 16f883, 16f884, 16f747, 16f946</li>
+              <li>sdcpp synchronized with GNU cpp 4.6.3</li>
+              <li>Added support for pic 18f1230/18f1330 device family</li>
+              <li>Implemented #pragma config for pic16 target</li>
+              <li>sdcc now works on Debian GNU/Hurd.</li>
+              <li>New register allocator for the hc08 port, resulting in better code being generated.</li>
+              <li>New s08 port.</li>
+              <li>New r3ka port.</li>
+              <li>Many small improvements in the z80, hc08 and r2k code generation, reducing code size.</li>
+              <li>Shift, multiplication, division and returning of long long are now supported (modulo for long long is still missing, integer
+                literals of type long long are broken).
             </ul>
             <p>Numerous feature requests and bug fixes are included as well.</p>
             <p>You can download the release from:<br />
