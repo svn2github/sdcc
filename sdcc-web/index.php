@@ -10,10 +10,6 @@
   <body link="teal" vlink="#483d8b">
     <div align="left">
       <h1>SDCC - Small Device C Compiler</h1>
-      <p style="border: 2px solid black; color: blue">
-        The SDCC 3.1.0 release is dedicated to the memory of
-        Dennis M. Ritchie, father of the C programming language.
-      </p>
       <table bgcolor="white" border="0" cellpadding="2" cellspacing="1" width="100%">
         <tbody>
           <tr>
@@ -52,10 +48,11 @@
                 <li>MCU specific optimizations, including a global register allocator.</li>
                 <li>adaptable MCU specific backend that should be well suited for other 8 bit MCUs</li>
                 <li>independent rule based peep hole optimizer.</li>
-                <li>a full range of data types: <b>char </b>(<i>8</i> bits, 1 byte), <b>short </b>(<i>16</i> bits, 2 bytes),
-                  <b>int</b> (<i>16</i> bits, 2 bytes), <b>long</b> (<i>32</i> bit, 4 bytes) and <b>float</b> (<i>4</i> byte IEEE);<br />
-                  very basic (no integer constants, multiplication, division, shifts or use as return value) support for
-                  <b>long long</b> <i>64</i> bit, 8 bytes) data types for the z80, z180, Rabbit 2000/3000, Rabbit 3000A and gbz80 targets.</li>
+                <li>a full range of data types: <b>char</b> (<i>8</i> bits, 1 byte), <b>short</b> (<i>16</i> bits, 2 bytes),
+                  <b>int</b> (<i>16</i> bits, 2 bytes), <b>long</b> (<i>32</i> bit, 4 bytes), <b>float</b> (4 byte IEEE) and
+                  <b>_Bool</b>/<b>bool</b>;<br />
+                  basic (no integer constants) support for <b>long long</b> (<i>64</i> bit, 8 bytes) data types for the z80, z180,
+                  r2k, r3ka, gbz80, hc08 and s08 targets.</li>
                 <li>the ability to add inline assembler code anywhere in a function.</li>
                 <li>the ability to report on the complexity of a function to help decide what should be re-written in assembler.</li>
                 <li>a good selection of automated regression tests.</li>
@@ -70,11 +67,33 @@
             <!-- START NEWS -->
             <h2><a name="News"></a>News</h2>
 
-            <p><i><b>July 6th, 2012: SDCC 3.2.0 RC4 released.</b></i></p>
-            <p>SDCC 3.2.0 Release Candidate 4 source, doc and binary packages for x86 Linux,
-              32 bit Windows and universal Mac OS X are available in corresponding folders at:
-              <a href="http://sourceforge.net/projects/sdcc/files/">
-              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+            <p><i><b>July 9th, 2012: Small Device C Compiler 3.2.0 released.</b></i></p>
+            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000, HC08 and PIC microprocessors
+              is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>). Sources, documentation
+              and binaries compiled for x86 Linux, x86 MS Windows and PPC Mac OS X are available. </p>
+            <p>SDCC 3.2.0 Feature List:</p>
+            <ul>
+              <li>include/pic, non-free/include/pic, lib/pic, non-free/lib/pic renamed to */pic14</li>
+              <li>implemented --fomit-frame-pointer for mcs51</li>
+              <li>support for use of sdcc in z88dk (--reserve-regs-iy and --no-optsdcc-in-asm options; smallc calling convention)</li>
+              <li>new register allocator in the z80 and gbz80 ports (optimal when using --opt-code-size and a sufficiently high
+                value for --max-allocs-per-node for the z80 port)</li>
+              <li>C99 designated initializers</li>
+              <li>added strxfrm() and strcoll() functions; strerror() is the only string handling function still missing</li>
+              <li>added support for pic18f2xk22/pic18f4xk22 family (requires gputils > 0.14.0 and --enable-new-pics configure flag)</li>
+              <li>added support for enhanced core pic14 devices (requires gputils > 0.14.0 and --enable-new-pics configure flag)</li>
+              <li>setjmp() / longjmp() for the z80 port</li>
+              <li>_Bool / bool for the hc08, pic16 and pic14 ports</li>
+              <li>sdcpp synchronized with GNU cpp 4.6.1</li>
+              <li>z180 port</li>
+              <li>very basic (no integer constants, multiplication, division, shifts or use as return value) support for data
+                types long long, unsigned long long, int_fast64_t, int_least64_t, int64_t, uint_fast64_t, uint_least64_t,
+                uint64_t in the z80, z180, r2k and gbz80 ports</li>
+              <li>r2k port for the Rabbit 2000 and Rabbit 3000</li>
+            </ul>
+            <p>Numerous feature requests and bug fixes are included as well.</p>
+            <p>You can download the release from:<br />
+              <a href="http://sourceforge.net/projects/sdcc/files/" target="_new">http://sourceforge.net/projects/sdcc/files/</a></p>
             <!-- END NEWS -->
 
             <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
@@ -123,7 +142,7 @@
               downloaded code there. You can browse the Subversion repository
               <a href="http://sdcc.svn.sourceforge.net/viewvc/sdcc/trunk/sdcc/">here</a>.</p>
             <p>SourceForge has further documentation on accessing the Subversion repository
-              <a href="https://sourceforge.net/scm/?type=svn&group_id=599">here</a>.</p>
+              <a href="https://sourceforge.net/scm/?type=svn&amp;group_id=599">here</a>.</p>
             <p>Before reporting a bug, please check your SDCC version and build
               date using the -v option, and be sure to include the full version string in your bug report. For example:</p>
             <p><code>sdcc/bin &gt; sdcc -v<br />
@@ -223,7 +242,13 @@
             </ul>
 
             <!-- START PAST_NEWS -->
+
             <h2><a name="Past_news"></a>Past news</h2>
+            <p><i><b>July 6th, 2012: SDCC 3.2.0 RC4 released.</b></i></p>
+            <p>SDCC 3.2.0 Release Candidate 4 source, doc and binary packages for x86 Linux,
+              32 bit Windows and universal Mac OS X are available in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
 
             <p><i><b>June 29th, 2012: SDCC 3.2.0 RC3 released.</b></i></p>
             <p>SDCC 3.2.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
