@@ -2,11 +2,10 @@ include ../packages.mk
 
 PACKAGE=boost
 ifeq ($(OS),SunOS)
-# boost 1_45_0 and newer doesn't compile on Solaris gcc
-  VERSION=1_44_0
+  VERSION=1_49_0
   PACKAGE_FILE=$(PACKAGE)_$(VERSION).zip
 #  WITH_TOOLSET=--with-toolset=sun
-  WITH_TOOLSET=--with-toolset=gnu
+  WITH_TOOLSET=--with-toolset=
 else
   VERSION=1_50_0
   PACKAGE_FILE=$(PACKAGE)_$(VERSION).tar.bz2
@@ -17,8 +16,10 @@ else
   endif
 endif
 
+BJAM_FLAGS=link=static
+
 ifeq ($(HOSTNAME),mypants)
-  BJAM_FLAGS+=pch=off
+  BJAM_FLAGS+= pch=off
 else
 #  # universal build on Mac OS X doesn't work
 #  ifeq ($(OS), Darwin)
@@ -70,7 +71,7 @@ ifdef INCLUDES_ONLY
 	mv $(PACKAGE_DIR)/boost $(LOCAL_DIR)/include/
 else
 	cd $(PACKAGE_DIR) && \
-	./bjam install
+	./bjam $(BJAM_FLAGS) install
 endif
 	touch $@
 
