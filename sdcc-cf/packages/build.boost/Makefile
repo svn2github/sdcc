@@ -6,22 +6,24 @@ ifeq ($(OS),SunOS)
   VERSION=1_44_0
   PACKAGE_FILE=$(PACKAGE)_$(VERSION).zip
 #  WITH_TOOLSET=--with-toolset=sun
-  WITH_TOOLSET=
+  WITH_TOOLSET=--with-toolset=gnu
 else
-  VERSION=1_47_0
+  VERSION=1_50_0
   PACKAGE_FILE=$(PACKAGE)_$(VERSION).tar.bz2
-  WITH_TOOLSET=
+  ifeq ($(OS), Darwin)
+    WITH_TOOLSET=--with-toolset=darwin
+  else
+    WITH_TOOLSET=
+  endif
 endif
 
 ifeq ($(HOSTNAME),mypants)
-  BJAM_FLAGS=pch=off
+  BJAM_FLAGS+=pch=off
 else
 #  # universal build on Mac OS X doesn't work
 #  ifeq ($(OS), Darwin)
 #    # Build universal binaries
 #    BJAM_FLAGS=macosx-version=10.5 macosx-version-min=10.4 architecture=combined threading=multi link=static address-model=32
-#  else
-    BJAM_FLAGS=
 #  endif
 endif
 
@@ -32,7 +34,7 @@ PACKAGE_DIR=$(PACKAGE)_$(VERSION)
 all: $(PACKAGE)-install.tag clean
 
 download/$(PACKAGE_FILE):
-	wget -P download http://sourceforge.net/projects/boost/files/boost/$(SUBDIR)/$(PACKAGE_FILE)/download
+	wget -P download http://sourceforge.net/projects/boost/files/boost/$(SUBDIR)/$(PACKAGE_FILE)
 
 $(PACKAGE)-download.tag: download/$(PACKAGE_FILE)
 	touch $@
@@ -50,7 +52,7 @@ endif
 $(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
 ifndef INCLUDES_ONLY
 	cd $(PACKAGE_DIR) && \
-	./bootstrap.sh $(WITH_TOOLSET) --prefix=$(LOCAL_DIR) --includedir=$(LOCAL_DIR)/include/boost
+	./bootstrap.sh $(WITH_TOOLSET) --prefix=$(LOCAL_DIR) --with-libraries=graph
 endif
 	touch $@
 
@@ -62,13 +64,13 @@ endif
 	touch $@
 
 $(PACKAGE)-install.tag: $(PACKAGE)-make.tag
+ifdef INCLUDES_ONLY
 	test -d $(LOCAL_DIR)/include || mkdir $(LOCAL_DIR)/include
-	test -d $(LOCAL_DIR)/include/boost && rm -rf $(LOCAL_DIR)/include/boost
+	-test -d $(LOCAL_DIR)/include/boost && rm -rf $(LOCAL_DIR)/include/boost
 	mv $(PACKAGE_DIR)/boost $(LOCAL_DIR)/include/
-ifndef INCLUDES_ONLY
-	test -d $(LOCAL_DIR)/lib || mkdir $(LOCAL_DIR)/lib
-	rm $(LOCAL_DIR)/lib/libboost_*
-	mv $(PACKAGE_DIR)/stage/lib/* $(LOCAL_DIR)/lib
+else
+	cd $(PACKAGE_DIR) && \
+	./bjam install
 endif
 	touch $@
 
