@@ -5,6 +5,8 @@
 	* lib/variables.mk: CROSSREGTESTTARGETSx renamed to
 	  REGTESTTARGETSx since they have nothing to do wit cross-compiletion
 	* local/mypants.mk: removed useless SLOWHOST definition
+	* local/wizzard.mk:
+	  created for Rasbian (Debian on Raspberry Pi) ARMv6 armhf machine
 
 2012-06-04 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
