@@ -52,20 +52,19 @@ SVNSERVER =
 
 # Regression test targets. To help reduce the load on the slower systems of the DCF, the
 # test targets are broken up into three categories:
-#  CROSSREGTESTTARGETS0: These will always be tested
-#  CROSSREGTESTTARGETS1: These will be tested on even days
-#  CROSSREGTESTTARGETS2: These will be tested on odd days
-CROSSREGTESTTARGETS0 = test-mcs51-small test-hc08 test-ds390
-CROSSREGTESTTARGETS1 = test-mcs51-large test-ucr3ka test-ucgbz80 test-ucz80
-CROSSREGTESTTARGETS2 = test-mcs51-stack-auto test-s08 test-ucr2k test-ucz180
+#  REGTESTTARGETS0: These will always be tested
+#  REGTESTTARGETS1: These will be tested on even days
+#  REGTESTTARGETS2: These will be tested on odd days
+REGTESTTARGETS0 = test-mcs51-small test-hc08 test-ds390
+REGTESTTARGETS1 = test-mcs51-large test-ucr3ka test-ucgbz80 test-ucz80
+REGTESTTARGETS2 = test-mcs51-stack-auto test-s08 test-ucr2k test-ucz180
 
 DAYODD = $(shell date +%j | awk '{print $$0%2}')
 ifeq ($(strip $(DAYODD)),0)
-CROSSREGTESTTARGETS = $(CROSSREGTESTTARGETS0) $(CROSSREGTESTTARGETS1)
+REGTESTTARGETS = test-host $(REGTESTTARGETS0) $(REGTESTTARGETS1)
 else
-CROSSREGTESTTARGETS = $(CROSSREGTESTTARGETS0) $(CROSSREGTESTTARGETS2)
+REGTESTTARGETS = test-host $(REGTESTTARGETS0) $(REGTESTTARGETS2)
 endif
-REGTESTTARGETS = test-host $(CROSSREGTESTTARGETS)
 # Directory for regression test log file
 REGTESTDIR = $(HTDOCSDIR)/regression_test_results/$(TARGET_PLATFORM)
 # Regression test log file

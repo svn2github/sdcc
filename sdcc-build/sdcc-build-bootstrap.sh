@@ -19,7 +19,7 @@ MYID=$HOSTNAME
 # time to sleep until next check of lockfile, in seconds
 SLEEP=60
 # maximum age of lockfile; after this the lock will be removed
-MAXMINUTES=120
+MAXMINUTES=1440 #one day
 # filename of lock
 LOCKFILE=$BUILDROOT/sdcc-build.lock
 # prefix for all messages, which is used to filter the messages out of the buildlogs

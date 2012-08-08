@@ -3,7 +3,6 @@
 MAKEJOBFLAGS = -j 2
 TARGETOS = sparc64-unknown-netbsd
 HOSTOS = sparc64-unknown-netbsd
-SLOWHOST = 1
 
 # local includes and libraries
 # readline at /usr/pkg

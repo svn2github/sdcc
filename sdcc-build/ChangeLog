@@ -1,3 +1,11 @@
+2012-08-08 Borut Razem <borut.razem AT gmail.com>
+
+	* sdcc-build-bootstrap.sh:
+	  maximum age of lockfile increased to 1440 minutes = 1 day
+	* lib/variables.mk: CROSSREGTESTTARGETSx renamed to
+	  REGTESTTARGETSx since they have nothing to do wit cross-compiletion
+	* local/mypants.mk: removed useless SLOWHOST definition
+
 2012-06-04 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* lib/variables.mk: use the 3 regression tests groups for all hosts
