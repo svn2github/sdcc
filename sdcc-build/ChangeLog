@@ -1,3 +1,7 @@
+2012-08-11 Borut Razem <borut.razem AT gmail.com>
+
+	* lib/variables.mk: reintroduced CROSSREGTESTTARGETS
+
 2012-08-08 Borut Razem <borut.razem AT gmail.com>
 
 	* sdcc-build-bootstrap.sh:

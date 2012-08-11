@@ -61,10 +61,11 @@ REGTESTTARGETS2 = test-mcs51-stack-auto test-s08 test-ucr2k test-ucz180
 
 DAYODD = $(shell date +%j | awk '{print $$0%2}')
 ifeq ($(strip $(DAYODD)),0)
-REGTESTTARGETS = test-host $(REGTESTTARGETS0) $(REGTESTTARGETS1)
+CROSSREGTESTTARGETS = test-host $(REGTESTTARGETS0) $(REGTESTTARGETS1)
 else
-REGTESTTARGETS = test-host $(REGTESTTARGETS0) $(REGTESTTARGETS2)
+CROSSREGTESTTARGETS = test-host $(REGTESTTARGETS0) $(REGTESTTARGETS2)
 endif
+REGTESTTARGETS = test-host $(CROSSREGTESTTARGETS)
 # Directory for regression test log file
 REGTESTDIR = $(HTDOCSDIR)/regression_test_results/$(TARGET_PLATFORM)
 # Regression test log file
