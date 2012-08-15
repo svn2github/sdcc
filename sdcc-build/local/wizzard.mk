@@ -1,8 +1,9 @@
 # Generate ARMv6 armhf Linux executables on
 # Debian (Raspbian) on Raspberry Pi
 
-# Spawn 2 make proceses
-MAKEJOBFLAGS = -j 2
+# Spawn 1 make process:
+# spawning 2 processes leads to a compilation error
+MAKEJOBFLAGS = -j 1
 
 HOSTOS = armv6l-unknown-linux-gnueabihf
 TARGETOS = armv6l-unknown-linux-gnueabihf
