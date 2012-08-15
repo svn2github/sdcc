@@ -183,11 +183,12 @@ function green_bar($text, $name)
 
 function file_name_to_snapshot_id($fname)
 {
-  $ret = preg_replace('/sdcc-snapshot-([^-]+-[^-]+-[^-]+-\d{8}-\d+)\..*/', '$1', $fname);
-  if ($ret === $fname)
-    $ret = preg_replace('/sdcc-snapshot-([^-]+-[^-]+-\d{8}-\d+)\..*/', '$1', $fname);
-  if ($ret === $fname)
-    $ret = preg_replace('/.*-([^-]+-[^-]+-[^-]+-\d{8}-\d+)\..*/', '$1', $fname);
+  $ret = preg_replace('/sdcc-snapshot-([^-]+-[^-]+-[^ ]+-\d{8}-\d+)\..*/', '$1', $fname);
+  if ($ret === $fname) {
+    $ret = preg_replace('/sdcc-snapshot-([^-]+-[^ ]+-\d{8}-\d+)\..*/', '$1', $fname);
+    if ($ret === $fname)
+      $ret = preg_replace('/.*-([^-]+-[^-]+-[^ ]+-\d{8}-\d+)\..*/', '$1', $fname);
+  }
 
   return $ret;
 }

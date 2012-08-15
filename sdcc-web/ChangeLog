@@ -1,3 +1,7 @@
+2012-08-15 Borut Razem <borut.razem AT siol.net>
+
+	* snap.php: enable fourth part in configuration triplets
+
 2012-07-09 Borut Razem <borut.razem AT siol.net>
 
 	* index.php: added News - sdcc 3.2.0 release,
