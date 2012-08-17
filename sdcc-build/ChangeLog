@@ -1,3 +1,7 @@
+2012-08-17 Borut Razem <borut.razem AT gmail.com>
+
+	* local/wizard.mk: renamed
+
 2012-08-15 Borut Razem <borut.razem AT gmail.com>
 
 	* local/wizzard.mk: spawn 1 make process:
