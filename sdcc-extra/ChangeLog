@@ -1,3 +1,8 @@
+2012-10-02 Borut Razem <borut.razem AT siol.net>
+
+	* emu/rrz80/disasm.cc: fixed warning
+	* emu/rrgb/Makefile.in: link libreries after object files
+
 2011-06-12 Maarten Brock <sourceforge.brock AT dse.nl>
 
 	* emu/rrgb/debugger.c,

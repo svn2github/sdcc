@@ -340,7 +340,7 @@ static int disass_cb(SFILE *f, uint32 adr, bool ix, bool iy)
 	}
 
 	// Decode mnemonic and addressing modes
-	char mnem, dst_mode = A_IMPL, src_mode = A_IMPL;
+	char mnem = 0, dst_mode = A_IMPL, src_mode = A_IMPL;
 	switch (op & 0xc0) {
 		case 0x00:
 			dst_mode = A_REG1;
