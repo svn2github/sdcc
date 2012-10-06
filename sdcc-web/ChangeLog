@@ -1,3 +1,7 @@
+2012-10-06 Borut Razem <borut.razem AT siol.net>
+
+	* index.php: added Raspbian to the list of "known to compile" platforms
+
 2012-08-15 Borut Razem <borut.razem AT siol.net>
 
 	* snap.php: enable fourth part in configuration triplets
