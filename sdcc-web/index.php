@@ -231,6 +231,8 @@
               <li>Philipp Klaus Krause &lt;pkk.AT.spth.de&gt; - z80 and gbz80 bug fixes and optimizations, z180 target</li>
               <li>Leland Morrison &lt;enigmalee.AT.sourceforget.net&gt; - Rabbit 2000 support: the target code generator,
                 sdasrab assembler and ucsim support</li>
+              <li>Molnár Károly &lt;molnarkaroly.AT.users.sf.net&gt; - adding pic devices, developing and maintaining pic device files
+                generation scripts</li>
             </ul>
             <p>SDCC has had help from a number of external sources, including:</p>
             <ul>
