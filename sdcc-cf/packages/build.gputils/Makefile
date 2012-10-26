@@ -36,7 +36,7 @@ endif
 
 $(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
 	cd $(GPUTILS_DIR) && \
-	./configure --prefix=$(LOCAL_DIR)
+	./configure --prefix=$(LOCAL_DIR) --disable-html-doc
 	touch $@
 
 $(PACKAGE)-make.tag: $(PACKAGE)-configure.tag
