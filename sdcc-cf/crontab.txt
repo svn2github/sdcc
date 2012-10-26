@@ -16,4 +16,5 @@
 ## OpenBSD i386 @ openbsd-i386.neurotica.com
 ## Linux x86 @ derna.itholland.nl
 ## Mac OS X @ dhcp101
+## Rasbian @ wizard
 #00 03 * * * . $HOME/.profile; { $HOME/build/sdcc-build-bootstrap.sh crontab-spawn; $HOME/build/sdcc-build-bootstrap.sh do-upload; } > $HOME/build/build-${HOSTNAME}.log 2>&1

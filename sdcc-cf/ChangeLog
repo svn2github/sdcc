@@ -1,3 +1,7 @@
+2012-10-26 Borut Razem <borut.razem AT gmail.com>
+	* packages/build.gputils/Makefile: updated svn server
+	* crontab.txt: added Raspbian on wizard
+
 2012-08-04 Borut Razem <borut.razem AT gmail.com>
 	* packages/build.boost/Makefile: updated to boost 1_50_0,
 	  build only graph package

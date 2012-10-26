@@ -15,7 +15,7 @@ ifdef FROM_SVN
 GPUTILS_DIR=$(PACKAGE)
 
 $(PACKAGE)-download.tag:
-	svn --force export https://gputils.svn.sourceforge.net/svnroot/gputils/trunk/gputils gputils
+	svn --force export svn://svn.code.sf.net/p/gputils/code/trunk/gputils gputils
 	touch $@
 
 $(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
