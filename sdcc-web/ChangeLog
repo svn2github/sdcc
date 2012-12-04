@@ -1,3 +1,8 @@
+2012-12-04 Borut Razem <borut.razem AT siol.net>
+
+	* left_menu.inc:
+	  updated sdcc wiki url to http://sdcc.sourceforge.net/wiki/
+
 2012-10-19 Borut Razem <borut.razem AT siol.net>
 
 	* index.php: added Molnar Karoly to the "Who is SDCC?" list
