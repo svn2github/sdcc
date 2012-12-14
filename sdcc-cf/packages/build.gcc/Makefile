@@ -2,7 +2,8 @@ include ../packages.mk
 
 #GCC_VERSION=4.6.1
 #GCC_SEPARATE_PACKAGES=1
-GCC_VERSION=4.7.0
+#GCC_VERSION=4.7.0
+GCC_VERSION=4.7.2
 
 ifeq ($(OS),SunOS)
   CFGFLAGS=--with-as=/usr/ccs/bin/as --with-ld=/usr/ccs/bin/ld --disable-lto
@@ -43,6 +44,7 @@ gcc-configure.tag: gcc-unpack.tag
 	mkdir -p objdir-gcc
 	cd objdir-gcc && \
 	../gcc-$(GCC_VERSION)/configure \
+	  --enable-languages=c,c++ \
 	  --prefix=$(LOCAL_DIR) \
 	  --enable-languages=c,c++ \
 	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR) --with-mpc=$(LOCAL_DIR) \
