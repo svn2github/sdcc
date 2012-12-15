@@ -4,6 +4,9 @@ SF_REPOSITORY=http://voxel.dl.sourceforge.net
 
 OS = $(shell uname)
 
+isTTY=[ -t 1 -o -S /dev/stdin ]
+WGET=if $(isTTY); then WGET_FLAGS='-P'; else WGET_FLAGS='-nv -P'; fi; wget $$WGET_FLAGS download
+
 CFLAGS += -I$(HOME)/local-$(HOSTNAME)/include
 CXXFLAGS += -I$(HOME)/local-$(HOSTNAME)/include
 LDFLAGS += -L$(HOME)/local-$(HOSTNAME)/lib

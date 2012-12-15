@@ -1,5 +1,7 @@
 2012-12-15 Borut Razem <borut.razem AT gmail.com>
-	* packages/build.wine/Makefile: updated to wine 1.4.1
+	* packages/build.wine/Makefile:
+	  updated to wine 1.4.1, smart WGET
+	* packages/packages.mk, packages/build.gcc/Makefile: smart WGET
 
 2012-12-14 Borut Razem <borut.razem AT gmail.com>
 	* packages/build.gcc/Makefile: updated to gcc 4.7.2

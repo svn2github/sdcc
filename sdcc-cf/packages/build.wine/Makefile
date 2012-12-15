@@ -21,7 +21,7 @@ endif
 all: $(PACKAGE)-install.tag clean
 
 download/$(PACKAGE)-$(VERSION).tar.bz2:
-	wget -nv -P download http://sourceforge.net/projects/wine/files/Source/$(PACKAGE)-$(VERSION).tar.bz2
+	$(WGET) http://sourceforge.net/projects/wine/files/Source/$(PACKAGE)-$(VERSION).tar.bz2
 
 $(PACKAGE)-unpack.tag: download/$(PACKAGE)-$(VERSION).tar.bz2
 	tar xjvf download/$(PACKAGE)-$(VERSION).tar.bz2

@@ -2,7 +2,6 @@ include ../packages.mk
 
 #GCC_VERSION=4.6.1
 #GCC_SEPARATE_PACKAGES=1
-#GCC_VERSION=4.7.0
 GCC_VERSION=4.7.2
 
 ifeq ($(OS),SunOS)
@@ -19,10 +18,10 @@ clean: gcc-clean
 
 ifdef GCC_SEPARATE_PACKAGES
 download/gcc-core-$(GCC_VERSION).tar.bz2:
-	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-core-$(GCC_VERSION).tar.bz2
+	$(WGET) ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-core-$(GCC_VERSION).tar.bz2
 
 download/gcc-g++-$(GCC_VERSION).tar.bz2:
-	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-g++-$(GCC_VERSION).tar.bz2
+	$(WGET) ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-g++-$(GCC_VERSION).tar.bz2
 
 gcc-unpack.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_VERSION).tar.bz2
 	for i in $^; do \
@@ -32,7 +31,7 @@ gcc-unpack.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_
 	touch $@
 else
 download/gcc-$(GCC_VERSION).tar.bz2:
-	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-$(GCC_VERSION).tar.bz2
+	$(WGET) ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-$(GCC_VERSION).tar.bz2
 
 gcc-unpack.tag: download/gcc-$(GCC_VERSION).tar.bz2
 	tar -xjf download/gcc-$(GCC_VERSION).tar.bz2
@@ -44,7 +43,6 @@ gcc-configure.tag: gcc-unpack.tag
 	mkdir -p objdir-gcc
 	cd objdir-gcc && \
 	../gcc-$(GCC_VERSION)/configure \
-	  --enable-languages=c,c++ \
 	  --prefix=$(LOCAL_DIR) \
 	  --enable-languages=c,c++ \
 	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR) --with-mpc=$(LOCAL_DIR) \
