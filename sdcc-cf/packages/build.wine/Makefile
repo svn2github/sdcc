@@ -1,8 +1,13 @@
+###############################################################################
+# To build 64bit wine:
+# make WINE64=1
+
 include ../packages.mk
 
 PACKAGE=wine
 
-VERSION=1.2.3
+#VERSION=1.3.8
+VERSION=1.4.1
 
 WINE_DIR=$(PACKAGE)-$(VERSION)
 
@@ -33,26 +38,26 @@ $(PACKAGE)64-make.tag: $(PACKAGE)64-configure.tag
 endif
 
 $(PACKAGE)32-configure.tag: $(PACKAGE)-unpack.tag
-	mkdir wine32
-	cd wine32 && \
+	mkdir wine_obj
+	cd wine_obj && \
 	../$(WINE_DIR)/configure $(WITH_WINE64) $(CFGFLAGS)
 	touch $@
 
 $(PACKAGE)32-make.tag: $(PACKAGE)32-configure.tag
-	$(MAKE) -C wine32
+	$(MAKE) -C wine_obj
 	touch $@
 
 ifdef WINE64
 $(PACKAGE)-install.tag: $(PACKAGE)64-make.tag $(PACKAGE)32-make.tag
 	$(MAKE) -C wine64 install prefix=$(LOCAL_DIR)
-	$(MAKE) -C wine32 install prefix=$(LOCAL_DIR)
+	$(MAKE) -C wine_obj install prefix=$(LOCAL_DIR)
 	touch $@
 else
 $(PACKAGE)-install.tag: $(PACKAGE)32-make.tag
-	$(MAKE) -C wine32 install prefix=$(LOCAL_DIR)
+	$(MAKE) -C wine_obj install prefix=$(LOCAL_DIR)
 	touch $@
 endif
 
 .PHONY: clean
 clean:
-	rm -rf $(WINE_DIR) wine64 wine32 download/* *.tag
+	rm -rf $(WINE_DIR) wine64 wine_obj download/* *.tag
