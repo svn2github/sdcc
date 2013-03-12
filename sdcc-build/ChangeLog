@@ -1,3 +1,7 @@
+2013-03-12 Borut Razem <borut.razem AT gmail.com>
+
+	* sdcc-build-bootstrap.sh: changed SVNROOT after after project transition to Allura
+
 2012-12-19 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* local/cf-ppc-macosx.mk: created for Mac OS X 10.5 PPC machine

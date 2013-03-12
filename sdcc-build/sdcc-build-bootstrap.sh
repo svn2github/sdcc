@@ -8,7 +8,7 @@ BUILDROOT=$HOME/build
 #  BUILDROOT=/var/tmp/`whoami`/build
 
 # SVN sdcc-build repository
-SVNROOT=https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk
+SVNROOT=svn://svn.code.sf.net/p/sdcc/code/trunk
 
 BUILDDATE=`date +%Y%m%d`
 
