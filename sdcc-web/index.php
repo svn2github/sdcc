@@ -100,7 +100,7 @@
             </ul>
             <p>Numerous feature requests and bug fixes are included as well.</p>
             <p>You can download the release from:<br />
-              <a href="http://sourceforge.net/projects/sdcc/files/" target="_new">http://sourceforge.net/projects/sdcc/files/</a></p>
+              <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
             <!-- END NEWS -->
 
             <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
@@ -116,7 +116,7 @@
 
             <h2><a name="Download"></a>Downloading SDCC</h2>
 
-            <p>See the <a href="http://sourceforge.net/project/showfiles.php?group_id=599">
+            <p>See the <a href="https://sourceforge.net/projects/sdcc/files/">
               Sourceforge download page</a> for the last released version including source and
               binary packages for <b>Linux - x86</b>, <b>Microsoft Windows - x86</b>
               and <b>Mac OS X - ppc and i386</b>.</p>
@@ -125,7 +125,7 @@
               in Linux disributions are often outdated. In this case users are encouraged to compile
               the latest official SDCC release or a recent snapshot build by themselves or download
               the pre-compiled binaries from
-              <a href="http://sourceforge.net/project/showfiles.php?group_id=599">
+              <a href="https://sourceforge.net/projects/sdcc/files/">
               Sourceforge download page</a>.</p>
             <p>SDCC is known to compile from the source code also on the following platforms:</p>
             <ul>
@@ -145,12 +145,12 @@
               if you have run across a bug, or if the above release is more than two months old.</p>
             <p>The latest development source code can be accessed using Subversion. The following
               will fetch the latest sources:</p>
-            <p><code>svn co https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc sdcc</code></p>
+            <p><code>svn checkout svn://svn.code.sf.net/p/sdcc/code/trunk/sdcc sdcc</code></p>
             <p>... will create the <i>sdcc</i> directory in your current directory and place all
               downloaded code there. You can browse the Subversion repository
-              <a href="http://sdcc.svn.sourceforge.net/viewvc/sdcc/trunk/sdcc/">here</a>.</p>
-            <p>SourceForge has further documentation on accessing the Subversion repository
-              <a href="https://sourceforge.net/scm/?type=svn&amp;group_id=599">here</a>.</p>
+              <a href="https://sourceforge.net/p/sdcc/code/HEAD/tree/trunk/sdcc/">here</a>.</p>
+            <!-- <p>SourceForge has further documentation on accessing the Subversion repository
+              <a href="https://sourceforge.net/scm/?type=svn&amp;group_id=599">here</a>.</p> -->
             <p>Before reporting a bug, please check your SDCC version and build
               date using the -v option, and be sure to include the full version string in your bug report. For example:</p>
             <p><code>sdcc/bin &gt; sdcc -v<br />
@@ -189,15 +189,15 @@
                     Subscribe to the user list</a></li>
                 </ul>
               </li>
-              <li><a href="http://sourceforge.net/bugs/?func=addbug&amp;group_id=599">
+              <li><a href="https://sourceforge.net/p/sdcc/bugs/new/">
                 Bug Reporting</a> - if you have a problem using SDCC, we need to
                 hear about it. Please attach <b>code to reproduce the problem</b>,
                 and be sure to provide your email address so a developer can contact
                 you if they need more information to investigate and fix the bug.</li>
-              <li><a href="http://sourceforge.net/tracker/?func=add&amp;group_id=599&amp;atid=536150">
+              <li><a href="https://sourceforge.net/p/sdcc/webdocs/new/">
                 Website/Documentation Issues</a> - Please report erroneous, missing or outdated
                 information</li>
-              <li><a href="https://sourceforge.net/projects/sdcc/forums/forum/1864">
+              <li><a href="https://sourceforge.net/p/sdcc/discussion/1864/">
                 SDCC Message Forum</a> - an account on Sourceforge is needed if you're going to
                 post and reply. Short easy online fill-in the blanks.</li>
               <li><a href="http://sdccokr.dl9sec.de/">Open Knowledge Web Site</a> -
