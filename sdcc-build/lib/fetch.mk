@@ -11,9 +11,9 @@ _FETCH_DOER = mkdir -p $(STAMPDIR); \
 	echo "--- $(_FETCH_TREE) svn download started on `date` ---"; \
 	if test "$(ISRELEASE)" = "true"; \
 	then \
-	  svn $(SVNFLAGS) export https://sdcc.svn.sourceforge.net/svnroot/sdcc/tags/$(SVNTAG)/$(_FETCH_TREE) $(_FETCH_TREE) && touch $@; \
+	  svn $(SVNFLAGS) export $(SVN_ROOT)/tags/$(SVNTAG)/$(_FETCH_TREE) $(_FETCH_TREE) && touch $@; \
 	else \
-	  svn $(SVNFLAGS) export https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/$(_FETCH_TREE) $(_FETCH_TREE) && touch $@; \
+	  svn $(SVNFLAGS) export $(SVN_ROOT)/trunk/$(_FETCH_TREE) $(_FETCH_TREE) && touch $@; \
 	fi; \
 	echo "--- $(_FETCH_TREE) svn download finished on `date` ---"
 

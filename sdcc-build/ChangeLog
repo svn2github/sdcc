@@ -1,3 +1,7 @@
+2013-03-15 Borut Razem <borut.razem AT gmail.com>
+
+	* lib/variables.mk, lib/fetch.mk: introduced SVN_ROOT
+
 2013-03-12 Borut Razem <borut.razem AT gmail.com>
 
 	* sdcc-build-bootstrap.sh: changed SVNROOT after after project transition to Allura

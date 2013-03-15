@@ -50,6 +50,9 @@ SNAPSHOTDIR = $(HTDOCSDIR)/snapshots
 # Name of the machine used for fetching svn tree; empty for the local machine
 SVNSERVER =
 
+# Subversion repository root url
+SVN_ROOT = svn://svn.code.sf.net/p/sdcc/code
+
 # Regression test targets. To help reduce the load on the slower systems of the DCF, the
 # test targets are broken up into three categories:
 #  REGTESTTARGETS0: These will always be tested
