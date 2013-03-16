@@ -55,6 +55,6 @@ snapshot build to see if it has already been fixed by a developer.
           </p>
           <p>
 To see what developers have added, you can
-<a href="https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/ChangeLog">
+<a href="http://svn.code.sf.net/p/sdcc/code/trunk/sdcc/ChangeLog">
 view the ChangeLog</a> directly from the Subversion repository.
           </p>

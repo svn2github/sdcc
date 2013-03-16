@@ -1,3 +1,7 @@
+2013-03-16 Borut Razem <borut.razem AT siol.net>
+
+	* snap_header.php: fetch ChangeLog from the new svn repository
+
 2013-03-12 Borut Razem <borut.razem AT siol.net>
 
 	* index.php, left_menu.inc: updated after project transition to Allura
