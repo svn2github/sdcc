@@ -1,3 +1,7 @@
+2013-05-06 Maarten Brock <sourceforge.brock AT dse.nl>
+
+	* index.php: added News - sdcc 3.3.0 RC1
+
 2013-03-16 Borut Razem <borut.razem AT siol.net>
 
 	* snap_header.php: fetch ChangeLog from the new svn repository
