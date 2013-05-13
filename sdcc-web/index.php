@@ -67,6 +67,18 @@
             <!-- START NEWS -->
             <h2><a name="News"></a>News</h2>
 
+            <p><i><b>May 12th, 2013: SDCC 3.3.0 RC3 released.</b></i></p>
+            <p>SDCC 3.3.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
+              32 bit Windows, 64 bit Windows and universal Mac OS X are available in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+
+            <p><i><b>May 11th, 2013: SDCC 3.3.0 RC2 released.</b></i></p>
+            <p>SDCC 3.3.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+              32 bit Windows, 64 bit Windows and universal Mac OS X are available in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+
             <p><i><b>May 5th, 2013: SDCC 3.3.0 RC1 released.</b></i></p>
             <p>SDCC 3.3.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
               32 bit Windows and universal Mac OS X are available in corresponding folders at:
