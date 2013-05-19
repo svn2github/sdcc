@@ -1,3 +1,8 @@
+2013-05-20 Maarten Brock <sourceforge.brock AT dse.nl>
+
+	* index.php: added News - sdcc 3.3.0 release
+	* previous.php: moved 3.2.0 release items
+
 2013-05-13 Maarten Brock <sourceforge.brock AT dse.nl>
 
 	* index.php: added News - sdcc 3.3.0 RC2 and RC3
