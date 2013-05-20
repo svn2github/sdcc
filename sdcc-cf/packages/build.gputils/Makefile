@@ -5,7 +5,7 @@
 include ../packages.mk
 
 PACKAGE=gputils
-VERSION=0.14.2
+VERSION=1.2.0
 PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.gz
 
 .PHONY: all
@@ -24,7 +24,7 @@ else
 GPUTILS_DIR=$(PACKAGE)-$(VERSION)
 
 download/$(PACKAGE_FILE):
-	wget -P download $(SF_REPOSITORY)/sourceforge/gputils/$(PACKAGE_FILE)
+	wget -P download http://sourceforge.net/projects/$(PACKAGE)/files/$(PACKAGE_FILE)
 
 $(PACKAGE)-download.tag: download/$(PACKAGE_FILE)
 	touch $@
