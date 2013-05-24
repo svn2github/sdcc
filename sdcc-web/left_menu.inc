@@ -25,7 +25,6 @@
   <b><i>Documentation</i></b>
   <div class="submenu">
     <a href="/doc/sdccman.pdf"><i>SDCC Manual (pdf)</i></a><br />
-    <a href="http://www.circuitcellar.com/SA/Articles2/Dutta-121.pdf"><i>Anatomy of a Compiler - A Retargetable ANSI-C Compiler</i></a><br />
   </div>
   <br />
   <b><a href="http://sourceforge.net/projects/sdcc"><i>SDCC at SourceForge</i></a></b>
