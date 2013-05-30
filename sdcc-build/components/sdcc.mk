@@ -5,9 +5,7 @@ ifneq ($(SDCCMKINCLUDE), 1)
 SDCCMKINCLUDE = 1
 
 # Flags to pass on to configure in the sdcc directory:
-# - enable building of new pics; gputils on snapshot build machines should
-#   be updated to support them
-SDCCCONFIGUREFLAGS += --enable-new-pics
+SDCCCONFIGUREFLAGS += 
 # Add sdcc to the list of source trees that need to be fetched
 SRCTREES += sdcc
 # PENDING

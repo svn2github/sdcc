@@ -1,3 +1,7 @@
+2013-05-30 Raphael Neider <rneider AT web.de>
+
+	* components/sdcc.mk: remove --enable-new-pics
+
 2013-03-15 Borut Razem <borut.razem AT gmail.com>
 
 	* lib/variables.mk, lib/fetch.mk: introduced SVN_ROOT
