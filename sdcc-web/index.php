@@ -94,7 +94,7 @@
 
             <h2><a name="Platforms"></a>What Platforms are Supported?</h2>
 
-            <p><b>Linux - x86</b>, <b>Microsoft Windows - x86</b> and <b>Mac OS X</b>
+            <p><b>Linux - x86</b>, <b>Microsoft Windows - x86</b>, <b>Microsoft Windows - x86_64</b> and <b>Mac OS X</b>
               are the primary, so called "officially supported" platforms.</p>
             <p><b>SDCC</b> compiles natively on <b>Linux</b> and <b>Mac OS X</b>
               using <a href="http://www.gnu.org">gcc</a>. <b>Windows</b> release and snapshot builds are made by
@@ -118,7 +118,6 @@
               Sourceforge download page</a>.</p>
             <p>SDCC is known to compile from the source code also on the following platforms:</p>
             <ul>
-              <li>Microsoft Windows - x86_64</li>
               <li>Linux - x86_64</li>
               <li>Linux - Alpha</li>
               <li>Linux - IBM Power5</li>

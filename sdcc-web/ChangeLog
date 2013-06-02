@@ -1,3 +1,7 @@
+2013-06-02 Borut Razem <borut.razem AT gmail.com.net>
+
+	* index.php: Microsoft Windows - x86_64 is officialy supported platform
+
 2013-05-24 Maarten Brock <sourceforge.brock AT dse.nl>
 
 	* left_menu.inc: removed link to the Sandeep's article as it's no longer
