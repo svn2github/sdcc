@@ -338,7 +338,7 @@ function &tree_array($file)
 
 function parse_dir($descdir, $scanthis, $cldir, $rtdir)
 {
-  $linux_num = $windows_num = $macosx_num = $docs_num = $other_docs_num = $source_num = $other_num = 0;
+  $linux_num = $windows_num = $windows64_num = $macosx_num = $docs_num = $other_docs_num = $source_num = $other_num = 0;
 
   $lsDir = tree_array($scanthis);
   $lsDir->chDir("");
@@ -350,6 +350,9 @@ function parse_dir($descdir, $scanthis, $cldir, $rtdir)
       }
       elseif (preg_match('/msvc/', $file)) {
         $windows_dir[$windows_num++] = $file;
+      }
+      elseif (preg_match('/x86_64-w64/', $file)) {
+        $windows64_dir[$windows64_num++] = $file;
       }
       elseif (preg_match('/macosx/', $file)) {
         $macosx_dir[$macosx_num++] = $file;
@@ -374,9 +377,14 @@ function parse_dir($descdir, $scanthis, $cldir, $rtdir)
     display_files($descdir, $lsDir, $cldir, $rtdir, $linux_dir[$i]);
   }
 
-  green_bar("Supported Windows Binaries", "Windows");
+  green_bar("Supported Windows - x86 Binaries", "Windows32");
   for ($i = 0; $i < $windows_num; $i++) {
     display_files($descdir, $lsDir, $cldir, $rtdir, $windows_dir[$i]);
+  }
+
+  green_bar("Supported Windows - x86_64 Binaries", "Windows64");
+  for ($i = 0; $i < $windows64_num; $i++) {
+    display_files($descdir, $lsDir, $cldir, $rtdir, $windows64_dir[$i]);
   }
 
   green_bar("Supported Mac OS X Binaries", "MacOSX");
