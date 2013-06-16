@@ -1,8 +1,12 @@
-2013-06-07 Borut Razem <borut.razem AT gmail.com.net>
+2013-06-16 Borut Razem <borutr@users.sourceforge.net>
+
+	* snap.php: mentioned Microsoft Windows - x86_64 official binary package
+
+2013-06-07 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap.php: Microsoft Windows - x86_64 is officialy supported platform
 
-2013-06-02 Borut Razem <borut.razem AT gmail.com.net>
+2013-06-02 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: Microsoft Windows - x86_64 is officialy supported platform
 
@@ -24,57 +28,57 @@
 
 	* index.php: added News - sdcc 3.3.0 RC1
 
-2013-03-16 Borut Razem <borut.razem AT siol.net>
+2013-03-16 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap_header.php: fetch ChangeLog from the new svn repository
 
-2013-03-12 Borut Razem <borut.razem AT siol.net>
+2013-03-12 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, left_menu.inc: updated after project transition to Allura
 
-2012-12-04 Borut Razem <borut.razem AT siol.net>
+2012-12-04 Borut Razem <borutr@users.sourceforge.net>
 
 	* left_menu.inc:
 	  updated sdcc wiki url to http://sdcc.sourceforge.net/wiki/
 
-2012-10-19 Borut Razem <borut.razem AT siol.net>
+2012-10-19 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added Molnar Karoly to the "Who is SDCC?" list
 
-2012-10-06 Borut Razem <borut.razem AT siol.net>
+2012-10-06 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added Raspbian to the list of "known to compile" platforms
 
-2012-08-15 Borut Razem <borut.razem AT siol.net>
+2012-08-15 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap.php: enable fourth part in configuration triplets
 
-2012-07-09 Borut Razem <borut.razem AT siol.net>
+2012-07-09 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 3.2.0 release,
 	  fixed bug #3537876 - types doc
 
-2012-07-07 Borut Razem <borut.razem AT siol.net>
+2012-07-07 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, previous.php: added News - sdcc 3.2.0 RC4
 
-2012-06-29 Borut Razem <borut.razem AT siol.net>
+2012-06-29 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, previous.php: added News - sdcc 3.2.0 RC3
 
-2012-06-24 Borut Razem <borut.razem AT siol.net>
+2012-06-24 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, previous.php: added News - sdcc 3.2.0 RC2
 
-2012-06-17 Borut Razem <borut.razem AT siol.net>
+2012-06-17 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 3.2.0 RC1
 
-2012-06-01 Borut Razem <borut.razem AT siol.net>
+2012-06-01 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: updated / reorganised for sdcc 3.2.0
 
-2012-05-18 Borut Razem <borut.razem AT siol.net>
+2012-05-18 Borut Razem <borutr@users.sourceforge.net>
 
 	* left_menu.inc: link to Regression Tests re-included
 	* regtests.php: fixed build number update, table sort & zebra style
@@ -82,13 +86,13 @@
 	  scripts/jquery.tablesorter.js, styles/tablesorter.css:
 	  included tablesorter plugin
 
-2012-05-15 Borut Razem <borut.razem AT siol.net>
+2012-05-15 Borut Razem <borutr@users.sourceforge.net>
 
 	* sdcc_sw.ini: added for regtests db rw access
 	* dbg.php: new, implemented Dbg debugging class
 	* update_regtests_db.php: fixed, use Dbg class
 
-2012-03-12 Borut Razem <borut.razem AT siol.net>
+2012-03-12 Borut Razem <borutr@users.sourceforge.net>
 
 	* left_menu.inc: link to html version of sdccman removed;
 	  Removed links to "Test Suite" and "CDB Format" documents,
@@ -98,28 +102,28 @@
 	* sdcctarbin.html, sdcc-install-nt.html, flatmode.txt,
 	  cygwin_help.html: removed from svn, moved to sdcc wiki
 
-2012-03-11 Borut Razem <borut.razem AT siol.net>
+2012-03-11 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, snap_header.php, links.php: removed Unicode BOM
 	* links.php: fixed html errors
 
-2012-03-09 Borut Razem <borut.razem AT siol.net>
+2012-03-09 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php:
 	  added info about included code from gcc test suite
 	* left_menu.inc: link to Regression Tests temporary excluded
 	  since regression tests analysis is not functional
 
-2012-03-02 Borut Razem <borut.razem AT siol.net>
+2012-03-02 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: updated chapter "Who is SDCC?", ...
 
-2012-03-01 Borut Razem <borut.razem AT siol.net>
+2012-03-01 Borut Razem <borutr@users.sourceforge.net>
 
 	* links.php: "Links - LCD Stuff" is back, thanks to Dave Helton
 	  who provided the backup copy of lcd directory
 
-2012-02-28 Borut Razem <borut.razem AT siol.net>
+2012-02-28 Borut Razem <borutr@users.sourceforge.net>
 
 	* links.php: applied requests from Wbdocs tracker:
 	  #3486131: Broken links,
@@ -128,36 +132,36 @@
 	  #2298395: KTechLab,
 	  #1807915: KiCAD link
 
-2012-02-26 Borut Razem <borut.razem AT siol.net>
+2012-02-26 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php:
 	  added GNU Binutils development team to external sources;
 	  removed Conservative garbage collector for C & C++
 	  from extrnal sources since it is not used by sdcc any more
 
-2012-01-23 Borut Razem <borut.razem AT siol.net>
+2012-01-23 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php:
 	  changed gbz80 status from unmaintained to experimental
 
-2011-11-28 Borut Razem <borut.razem AT siol.net>
+2011-11-28 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: corrected PastNews, dedication to Dennis M. Ritchie
 
-2011-11-27 Borut Razem <borut.razem AT siol.net>
+2011-11-27 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 3.1.0 release
 
-2011-11-22 Borut Razem <borut.razem AT siol.net>
+2011-11-22 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 3.1.0 RC3
 
-2011-11-18 Borut Razem <borut.razem AT siol.net>
+2011-11-18 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 3.1.0 RC2
 	* previous.php: added old news
 
-2011-11-06 Borut Razem <borut.razem AT siol.net>
+2011-11-06 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 3.1.0 RC1
 
@@ -240,7 +244,7 @@
 
 	* snap.php: search for "invalid instructions"
 
-2010-11-01 Borut Razem <borut.razem AT siol.net>
+2010-11-01 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 3.0.0 release
 
@@ -249,38 +253,38 @@
 	* index.php: fixed typos
 	* left_menu.inc: reverted fix for bug 2938514: was just a glitch at SF
 
-2010-10-23 Borut Razem <borut.razem AT siol.net>
+2010-10-23 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php:
 	  added News - sdcc 3.0.0 RC2
 	* previous.php: added old news
 
-2010-10-10 Borut Razem <borut.razem AT siol.net>
+2010-10-10 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php:
 	  added News - sdcc 3.0.0 RC1, removed old sdcc 2.9.0 release news
 	* previous.php: added old news
 
-2010-09-12 Borut Razem <borut.razem AT siol.net>
+2010-09-12 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap.php: do not sort by the date: files are already sorted
 	* index.php: sdas and sdld instead asxxxx, reformatted, ...
 	* left_menu.inc: corrected html format
 
-2010-08-22 Borut Razem <borut.razem AT siol.net>
+2010-08-22 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap.php: update file size and date
 
-2010-08-21 Borut Razem <borut.razem AT siol.net>
+2010-08-21 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap.php: snapshot files moved to SourceForge FRS
 
-2010-05-24 Borut Razem <borut.razem AT siol.net>
+2010-05-24 Borut Razem <borutr@users.sourceforge.net>
 
 	* left_menu.inc: fixed bug 2938514: "Documentation" link leads to
 	  error page
 
-2009-12-19 Borut Razem <borut.razem AT siol.net>
+2009-12-19 Borut Razem <borutr@users.sourceforge.net>
 
 	* images/18dot5a.gif, snap.php:
 	  added icon a bue star icon (18dot5a.gif),
@@ -298,21 +302,21 @@
 	  updated other apparent dead or unrelated links, to be removed later,
 	  added links for asxxxx, gputils and turbo51 (webdoc 2002629)
 
-2009-05-09 Borut Razem <borut.razem AT siol.net>
+2009-05-09 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: implemented FRE #2786753: Remove Borland C support
 
-2009-03-22 Borut Razem <borut.razem AT siol.net>
+2009-03-22 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 2.9.0 release
 
-2009-03-15 Borut Razem <borut.razem AT siol.net>
+2009-03-15 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php:
 	  added News - sdcc 2.9.0 RC2, removed old sdcc 2.8.0 release news
 	* previous.php: added old news
 
-2009-03-01 Borut Razem <borut.razem AT siol.net>
+2009-03-01 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: sdcc asxxxx under GPL, added News - sdcc 2.9.0 RC1
 
@@ -320,7 +324,7 @@
 
 	* left_menu.inc: updated left menu with a link to the forum
 
-2009-01-04 Borut Razem <borut.razem AT siol.net>
+2009-01-04 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: updated John Hartman's e-mail address,
 	  removed mailto links
@@ -329,100 +333,100 @@
 	  images/dir.gif: removed
 	  images/folder-B4-6-32x32.png: added
 
-2008-11-14 Borut Razem <borut.razem AT siol.net>
+2008-11-14 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap_footer.php: direct access not possible any more
 
-2008-03-30 Borut Razem <borut.razem AT siol.net>
+2008-03-30 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 2.8.0 release
 	* previous.php: previous news moved from index.php
 
-2008-03-09 Borut Razem <borut.razem AT siol.net>
+2008-03-09 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 2.8.0 RC2
 
-2008-03-09 Borut Razem <borut.razem AT siol.net>
+2008-03-09 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 2.8.0 RC1
 	* previous.php: previous news moved from index.php
 
-2008-02-21 Borut Razem <borut.razem AT siol.net>
+2008-02-21 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added Philipp Klaus Krause to the list of developers
 
-2007-10-30 Borut Razem <borut.razem AT siol.net>
+2007-10-30 Borut Razem <borutr@users.sourceforge.net>
 
 	* left_menu.inc: updated left menu
 
-2007-10-29 Borut Razem <borut.razem AT siol.net>
+2007-10-29 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap.php: rearranged, added new category Mac OS X
 
-2007-08-20 Borut Razem <borut.razem AT siol.net>
+2007-08-20 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, links.php. previous.php, snap_header.php:
 	  fixed to pass http://validator.w3.org/ validator
 
-2007-07-10 Borut Razem <borut.razem AT siol.net>
+2007-07-10 Borut Razem <borutr@users.sourceforge.net>
 
 	* left_menu.inc: fixed #1751299: subversion link broken
 
-2007-06-18 Borut Razem <borut.razem AT siol.net>
+2007-06-18 Borut Razem <borutr@users.sourceforge.net>
 
 	* left_menu.inc: link to the Sandeep's article moved to the end of
 	  Documentation
 
-2007-06-12 Borut Razem <borut.razem AT siol.net>
+2007-06-12 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, snap_header.php, left_menu.inc:
 	  use new svn URL scheme
 	* left_menu.inc: SDCC Wiki moved to
 	  http://sdcc.wiki.sourceforge.net/
 
-2007-06-01 Borut Razem <borut.razem AT siol.net>
+2007-06-01 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 2.7.0 release
 	* previous.php: previous news moved from index.php
 
-2007-05-26 Borut Razem <borut.razem AT siol.net>
+2007-05-26 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 2.7.0 RC3
 
-2007-05-22 Borut Razem <borut.razem AT siol.net>
+2007-05-22 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: added News - sdcc 2.7.0 RC2, availability of
 	  "Anatomy of a Compiler A Retargetable ANSI-C Compiler"
 
-2007-05-21 Borut Razem <borut.razem AT siol.net>
+2007-05-21 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: fixed ASXXXX typo
 	* left_menu.inc: added link to the Sandeep's article
 
-2007-05-10 Borut Razem <borut.razem AT siol.net>
+2007-05-10 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, previous.php: sdcc 2.7.0 RC1 announced, nodes old news to
 	  previous.php
 
-2007-04-08 Borut Razem <borut.razem AT siol.net>
+2007-04-08 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: replaced "freeware" with "Free Open Source Software",
 	  announce "officially supported" platforms, ...
 	* links.php: removed unreachable pages
 
-2007-03-31 Borut Razem <borut.razem AT siol.net>
+2007-03-31 Borut Razem <borutr@users.sourceforge.net>
 
 	* cygwin_help.html, flatmode.txt, sdcc-install-nt.html, sdcc.gif,
 	  sdcctarbin.html: added
 
-2007-03-28 Borut Razem <borut.razem AT siol.net>
+2007-03-28 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, snap_header.php:
 	  "Nightly Snapshots" replaced with "Snapshot Builds", since the SDCC
 	  is developed, built and used worldwide, and the word "night" doesn't
 	  make any sense.
 
-2007-03-26 Borut Razem <borut.razem AT siol.net>
+2007-03-26 Borut Razem <borutr@users.sourceforge.net>
 
 	* left_menu.inc: added link to Ohloh
 
@@ -431,32 +435,32 @@
 	* index.php: added link for webdoc 1445872,
 	  updated www.soudez.be with unfound product
 
-2007-01-02 Borut Razem <borut.razem AT siol.net>
+2007-01-02 Borut Razem <borutr@users.sourceforge.net>
 
 	* links.php: removed old broken links, new broken links marked as
 	  (Page Not Found), closed [ 948959 ] Add a link Request: link removed
 
-2006-10-31 Borut Razem <borut.razem AT siol.net>
+2006-10-31 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: ucSim and sdcdb are now avaialble also in WIN32 platforms
 
-2006-10-30 Borut Razem <borut.razem AT siol.net>
+2006-10-30 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, previous.php: moved no-so-fresh-news to past news and
 	  previous news
 	* left_menu.inc: use absolute paths instead full URLs
 
-2006-10-23 Borut Razem <borut.razem AT siol.net>
+2006-10-23 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: corrected keywords to pass the w3c XHTML 1.0 validation
 
-2006-10-22 Borut Razem <borut.razem AT siol.net>
+2006-10-22 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, snap_header.php, links.php, previous.php:
 	  added favicon, thanks to Maarten Brock
 	* images/sdcc.ico: added
 
-2006-10-18 Borut Razem <borut.razem AT siol.net>
+2006-10-18 Borut Razem <borutr@users.sourceforge.net>
 
 	* left_menu.inc: absolute URLs, so that it can be reused in html doc
 
@@ -464,36 +468,36 @@
 
 	* index.php: updated SDCC OKR link, added keywords (of the manual)
 
-2006-08-12 Borut Razem <borut.razem AT siol.net>
+2006-08-12 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap.php: report failure if 'Error' found
 
-2006-07-31 Borut Razem <borut.razem AT siol.net>
+2006-07-31 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: Small Device C Compiler 2.6.0 released
 
-2006-07-24 Borut Razem <borut.razem AT siol.net>
+2006-07-24 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap.php: correct alt tag values for RT and CL icons
 
-2006-07-12 Borut Razem <borut.razem AT siol.net>
+2006-07-12 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php: sdcc 2.6.0 RC1 announced
 
-2006-07-10 Borut Razem <borut.razem AT siol.net>
+2006-07-10 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap.php: support for i586-mingw32msvc snapshots
 
-2006-07-09 Borut Razem <borut.razem AT siol.net>
+2006-07-09 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap.php, snap_footer.php: added ChangeLog heads
 
-2006-07-08 Borut Razem <borut.razem AT siol.net>
+2006-07-08 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap.php, snap_footer.php: added regression test results
 	* images/*: added
 
-2006-05-11 Borut Razem <borut.razem AT siol.net>
+2006-05-11 Borut Razem <borutr@users.sourceforge.net>
 
 	* snap_header.php: fixed bug [1486015] Changelog not visible from the
 	  Snapshots webpage. Thanks to Jim Paris.
@@ -502,34 +506,34 @@
 
 	* left_menu.inc: added links to pdf files
 
-2006-04-21 Borut Razem <borut.razem AT siol.net>
+2006-04-21 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.php, left_menu.inc, snap_header.php:
 	  CVS replaced with Subversion
 	* index.html, links.html, previous.html, snap_footer.html,
 	  snap_header.html:deleted
 
-2005-12-12 Borut Razem <borut.razem AT siol.net>
+2005-12-12 Borut Razem <borutr@users.sourceforge.net>
 
 	* previous.php, snap_header.php, footer.php, index.php, links.php, snap.php:
 	  XHTML 1.0 Transitional
 
-2005-11-25 Borut Razem <borut.razem AT siol.net>
+2005-11-25 Borut Razem <borutr@users.sourceforge.net>
 
 	* previous.php, snap_footer.php, footer.php: added, common footer
 	* index.php, links.php, snap.php: common footer
 
-2005-11-23 Borut Razem <borut.razem AT siol.net>
+2005-11-23 Borut Razem <borutr@users.sourceforge.net>
 
 	* left_menu.inc, index.php, links.php, snap_header.php, snap.php:
 	  added - common left menu
 
-2005-11-12 Borut Razem <borut.razem AT siol.net>
+2005-11-12 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.html: added description if Maarten Brock's contribution,
 	  added Raphael Neider to "who is SDCC" section
 
-2005-11-11 Borut Razem <borut.razem AT siol.net>
+2005-11-11 Borut Razem <borutr@users.sourceforge.net>
 
 	* links.html: fixed documentation requests:
 	  [ 1183225 ] Link suggestions
@@ -542,18 +546,18 @@
 	* index.html, previous.html, snap_header.html, snap_footer.html:
 	  new Sourceforge icon, unified menu
 
-2005-11-10 Borut Razem <borut.razem AT siol.net>
+2005-11-10 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.html, links.html, previous.html, snap.html, snap_header.html, snap_footer.html, style.css:
 	  added to CVS, reformatted to use style.css, valid HTML 4.01 Transitional
 
-2005-11-09 Borut Razem <borut.razem AT siol.net>
+2005-11-09 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.html: fixed doc request [ 1201748 ] Adding Maarten Brock's name to "who is
 	  SDCC" section, [ 766655 ] target of link on SDCC links page has moved
 	* links.html: added to CVS
 
-2004-05-13 Borut Razem <borut.razem AT siol.net>
+2004-05-13 Borut Razem <borutr@users.sourceforge.net>
 
 	* index.html: info about SDCC 2.5.0 release
 	* ChangeLog created

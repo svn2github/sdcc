@@ -99,7 +99,7 @@
             <p><b>SDCC</b> compiles natively on <b>Linux</b> and <b>Mac OS X</b>
               using <a href="http://www.gnu.org">gcc</a>. <b>Windows</b> release and snapshot builds are made by
               <b>cross compiling to mingw32</b> on a Linux host.</p>
-            <p><b>Windows 9x/NT/2000/XP/Vista/7</b> users are
+            <p><b>Windows 9x/NT/2000/XP/Vista/7/8</b> users are
               recommended to use Cygwin (<a href="http://sources.redhat.com/cygwin/">http://sources.redhat.com/cygwin/</a>)
               or may try the unsupported Microsoft Visual C++ build scripts.</p>
 
@@ -107,8 +107,8 @@
 
             <p>See the <a href="https://sourceforge.net/projects/sdcc/files/">
               Sourceforge download page</a> for the last released version including source and
-              binary packages for <b>Linux - x86</b>, <b>Microsoft Windows - x86</b>
-              and <b>Mac OS X - ppc and i386</b>.</p>
+              binary packages for <b>Linux - x86</b>, <b>Microsoft Windows - x86</b>,
+              <b>Microsoft Windows - x86_64</b> and <b>Mac OS X - ppc and i386</b>.</p>
             <p>Major Linux distributions take care of SDCC installation packages themselves
               and you will find SDCC in their repositories. Unfortunately SDCC packages included
               in Linux disributions are often outdated. In this case users are encouraged to compile
