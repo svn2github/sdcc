@@ -1,3 +1,8 @@
+2013-07-30 Philipp Klaus Krause <pkk AT spth.de>
+
+	* lib/variables.mk:
+	  Enable stm8 regression testing.
+
 2013-05-30 Raphael Neider <rneider AT web.de>
 
 	* components/sdcc.mk: remove --enable-new-pics
