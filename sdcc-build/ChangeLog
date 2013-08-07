@@ -1,3 +1,9 @@
+2013-08-07 Borut Razem <borut.razem AT gmail.com>
+
+	* lib/doc-archive.mk: foxed copying of pdf documents
+	  html documentation copying commented out since it is not
+	  generated any more
+
 2013-07-30 Philipp Klaus Krause <pkk AT spth.de>
 
 	* lib/variables.mk:
