@@ -1,3 +1,7 @@
+2013-09-08 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* local/macspot.mk: new name for dhcp101
+
 2013-08-07 Borut Razem <borut.razem AT gmail.com>
 
 	* lib/doc-archive.mk: foxed copying of pdf documents
