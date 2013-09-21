@@ -1,3 +1,6 @@
+2013-09-21 Borut Razem <borut.razem AT gmail.com>
+	* packages/packages.mk: use  64 bit library on 64 bit x86_64 cf-x86 machine in LDFLAGS: -L$(HOME)/local-$(HOSTNAME)/lib64
+
 2013-05-20 Borut Razem <borut.razem AT gmail.com>
 	* packages/packages.mk: removed SF_REPOSITORY
 	  packages/build.gputils/Makefile: changed package version to 1.2.0,

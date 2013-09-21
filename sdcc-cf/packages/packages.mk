@@ -8,7 +8,13 @@ WGET=if $(isTTY); then WGET_FLAGS='-P'; else WGET_FLAGS='-nv -P'; fi; wget $$WGE
 
 CFLAGS += -I$(HOME)/local-$(HOSTNAME)/include
 CXXFLAGS += -I$(HOME)/local-$(HOSTNAME)/include
-LDFLAGS += -L$(HOME)/local-$(HOSTNAME)/lib
+ifeq ($(OS), Linux)
+  ifeq ($(HOSTNAME), cf-x86)
+    LDFLAGS += -L$(HOME)/local-$(HOSTNAME)/lib64
+  else
+    LDFLAGS += -L$(HOME)/local-$(HOSTNAME)/lib
+  endif
+endif
 
 ifeq ($(OS), Darwin)
   ifeq ($(HOSTNAME), mirror-doors)
