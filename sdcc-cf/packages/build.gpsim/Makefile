@@ -10,7 +10,7 @@ endif
 all: gpsim-install.tag clean
 
 gpsim-download.tag:
-	svn --force export https://gpsim.svn.sourceforge.net/svnroot/gpsim/trunk gpsim
+	svn --force export svn+ssh://borutr@svn.code.sf.net/p/gpsim/code/trunk gpsim
 	touch $@
 
 gpsim-configure.tag: gpsim-download.tag

@@ -1,25 +1,32 @@
 2013-09-21 Borut Razem <borut.razem AT gmail.com>
-	* packages/packages.mk: use  64 bit library on 64 bit x86_64 cf-x86 machine in LDFLAGS: -L$(HOME)/local-$(HOSTNAME)/lib64
+
+	* packages/packages.mk: use 64 bit library on 64 bit x86_64 cf-x86 machine in LDFLAGS: -L$(HOME)/local-$(HOSTNAME)/lib64
 	* packages/build.popt/Makefile: popt updatetd to version 1.16
+	* packages/build.gpsim/Makefile: relocate svn repository
 
 2013-05-20 Borut Razem <borut.razem AT gmail.com>
+
 	* packages/packages.mk: removed SF_REPOSITORY
 	  packages/build.gputils/Makefile: changed package version to 1.2.0,
 	  corrected file repository path
 
 2012-12-15 Borut Razem <borut.razem AT gmail.com>
+
 	* packages/build.wine/Makefile:
 	  updated to wine 1.4.1, smart WGET
 	* packages/packages.mk, packages/build.gcc/Makefile: smart WGET
 
 2012-12-14 Borut Razem <borut.razem AT gmail.com>
+
 	* packages/build.gcc/Makefile: updated to gcc 4.7.2
 
 2012-10-26 Borut Razem <borut.razem AT gmail.com>
+
 	* packages/build.gputils/Makefile: updated svn server
 	* crontab.txt: added Raspbian on wizard
 
 2012-08-04 Borut Razem <borut.razem AT gmail.com>
+
 	* packages/build.boost/Makefile: updated to boost 1_50_0,
 	  build only graph package
 
