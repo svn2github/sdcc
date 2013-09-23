@@ -19,16 +19,16 @@ $(PACKAGE)-unpack.tag: download/$(PACKAGE_FILE)
 	xz -d < download/$(PACKAGE_FILE) | tar xvf -
 	touch $@
 
-$(PACKAGE)-configure.tag: wget-unpack.tag
+$(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
 	cd $(PACKAGE_DIR) && \
 	./configure --prefix=$(LOCAL_DIR) --with-ssl
 	touch $@
 
-$(PACKAGE)-make.tag: wget-configure.tag
+$(PACKAGE)-make.tag: $(PACKAGE)-configure.tag
 	$(MAKE) -C $(PACKAGE_DIR)
 	touch $@
 
-$(PACKAGE)-install.tag: wget-make.tag
+$(PACKAGE)-install.tag: $(PACKAGE)-make.tag
 	$(MAKE) -C $(PACKAGE_DIR) install
 	touch $@
 
