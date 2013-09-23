@@ -1,3 +1,7 @@
+2013-09-23 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.wget/Makefile: wget updated to  version 1.14
+
 2013-09-21 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/packages.mk: use 64 bit library on 64 bit x86_64 cf-x86 machine in LDFLAGS: -L$(HOME)/local-$(HOSTNAME)/lib64

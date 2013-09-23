@@ -1,32 +1,36 @@
 include ../packages.mk
 
-VERSION=$(shell expr download/wget-*.tar.bz2 : 'download/wget-\(.*\).tar.bz2')
+# OOPS, we need some other mathod to bootstrap wget!
 
-WGET_DIR=wget-$(VERSION)
+PACKAGE=wget
+VERSION=1.14
+PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.xz
+
+PACKAGE_DIR=$(PACKAGE)-$(VERSION)
 
 .PHONY: all
-all: wget-install.tag clean
+all: $(PACKAGE)-install.tag clean
 
-wget-download.tag:
-	wget -P download ftp://mirrors.kernel.org/gnu/wget/wget-1.12.tar.bz2
+download/$(PACKAGE_FILE):
+	wget -P download ftp://mirrors.kernel.org/gnu/$(PACKAGE)/$(PACKAGE_FILE)
 	touch $@
 
-wget-unpack.tag: wget-download.tag
-	tar xjvf download/$(WGET_DIR).tar.bz2
+$(PACKAGE)-unpack.tag: download/$(PACKAGE_FILE)
+	xz -d < download/$(PACKAGE_FILE) | tar xvf -
 	touch $@
 
-wget-configure.tag: wget-unpack.tag
-	cd $(WGET_DIR) && \
+$(PACKAGE)-configure.tag: wget-unpack.tag
+	cd $(PACKAGE_DIR) && \
 	./configure --prefix=$(LOCAL_DIR) --with-ssl
 	touch $@
 
-wget-make.tag: wget-configure.tag
-	$(MAKE) -C $(WGET_DIR)
+$(PACKAGE)-make.tag: wget-configure.tag
+	$(MAKE) -C $(PACKAGE_DIR)
 	touch $@
 
-wget-install.tag: wget-make.tag
-	$(MAKE) -C $(WGET_DIR) install
+$(PACKAGE)-install.tag: wget-make.tag
+	$(MAKE) -C $(PACKAGE_DIR) install
 	touch $@
 
 clean:
-	rm -rf $(WGET_DIR) *.tag
+	rm -rf $(PACKAGE_DIR) *.tag
