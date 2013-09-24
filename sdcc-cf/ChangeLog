@@ -1,6 +1,11 @@
+2013-09-24 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/build.stx-btree/Makefile: stx-btree updated to version 0.9
+	* packages/build.wget/Makefile: fixed uccompresion
+
 2013-09-23 Borut Razem <borut.razem AT gmail.com>
 
-	* packages/build.wget/Makefile: wget updated to  version 1.14
+	* packages/build.wget/Makefile: wget updated to version 1.14
 
 2013-09-21 Borut Razem <borut.razem AT gmail.com>
 

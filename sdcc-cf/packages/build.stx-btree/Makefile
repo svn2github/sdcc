@@ -5,7 +5,7 @@
 include ../packages.mk
 
 PACKAGE=stx-btree
-VERSION=0.8.6
+VERSION=0.9
 PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.bz2
 
 PACKAGE_DIR=$(PACKAGE)-$(VERSION)
@@ -14,12 +14,10 @@ PACKAGE_DIR=$(PACKAGE)-$(VERSION)
 all: $(PACKAGE)-install.tag clean
 
 download/$(PACKAGE_FILE):
-	wget -P download http://idlebox.net/2007/$(PACKAGE)/$(PACKAGE_FILE)
-
-$(PACKAGE)-download.tag: download/$(PACKAGE_FILE)
+	wget -P download http://panthema.net/2007/$(PACKAGE)/$(PACKAGE_FILE)
 	touch $@
 
-$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
+$(PACKAGE)-unpack.tag: download/$(PACKAGE_FILE)
 	tar xjvf download/$(PACKAGE_FILE)
 	touch $@
 

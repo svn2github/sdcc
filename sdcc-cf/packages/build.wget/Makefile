@@ -16,7 +16,7 @@ download/$(PACKAGE_FILE):
 	touch $@
 
 $(PACKAGE)-unpack.tag: download/$(PACKAGE_FILE)
-	xz -d < download/$(PACKAGE_FILE) | tar xvf -
+	xz -dc download/$(PACKAGE_FILE) | tar xvf -
 	touch $@
 
 $(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
