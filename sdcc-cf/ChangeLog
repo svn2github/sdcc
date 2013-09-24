@@ -1,7 +1,8 @@
 2013-09-24 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.stx-btree/Makefile: stx-btree updated to version 0.9
-	* packages/build.wget/Makefile: fixed uccompresion
+	* packages/build.wget/Makefile: fixed uncompresion
+	* packages/build.bison/Makefile: small fixed in bisom Makefile
 
 2013-09-23 Borut Razem <borut.razem AT gmail.com>
 

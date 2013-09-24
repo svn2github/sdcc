@@ -13,7 +13,6 @@ all: $(PACKAGE)-install.tag clean
 
 download/$(PACKAGE_FILE):
 	wget -P download ftp://mirrors.kernel.org/gnu/$(PACKAGE)/$(PACKAGE_FILE)
-	touch $@
 
 $(PACKAGE)-unpack.tag: download/$(PACKAGE_FILE)
 	xz -dc download/$(PACKAGE_FILE) | tar xvf -

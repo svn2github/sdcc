@@ -15,7 +15,6 @@ all: $(PACKAGE)-install.tag clean
 
 download/$(PACKAGE_FILE):
 	wget -P download http://panthema.net/2007/$(PACKAGE)/$(PACKAGE_FILE)
-	touch $@
 
 $(PACKAGE)-unpack.tag: download/$(PACKAGE_FILE)
 	tar xjvf download/$(PACKAGE_FILE)
