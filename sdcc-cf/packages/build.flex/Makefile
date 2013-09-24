@@ -12,10 +12,7 @@ all: $(PACKAGE)-install.tag clean
 download/$(PACKAGE_FILE):
 	wget -P download http://sourceforge.net/projects/flex/files/$(PACKAGE)/$(PACKAGE)-$(VERSION)/$(PACKAGE_FILE)
 
-$(PACKAGE)-download.tag: download/$(PACKAGE_FILE)
-	touch $@
-
-$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
+$(PACKAGE)-unpack.tag: download/$(PACKAGE_FILE)
 	tar xjvf download/$(PACKAGE_FILE)
 	touch $@
 
