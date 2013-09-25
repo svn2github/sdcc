@@ -6,14 +6,12 @@ PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.xz
 
 PACKAGE_DIR=$(PACKAGE)-$(VERSION)
 
-.PHONY: all
-all: $(PACKAGE)-install.tag clean
+all: do-all
 
 download/$(PACKAGE_FILE):
 	wget -P download ftp://ftp.gnu.org/gnu/$(PACKAGE)/$(PACKAGE_FILE)
 
-$(PACKAGE)-unpack.tag: download/$(PACKAGE_FILE)
-	xz -dc download/$(PACKAGE_FILE) | tar xvf -
+$(PACKAGE)-unpack.tag: unpack-downloaded-package
 	touch $@
 
 $(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
@@ -29,5 +27,4 @@ $(PACKAGE)-install.tag: $(PACKAGE)-make.tag
 	$(MAKE) -C $(PACKAGE_DIR) install
 	touch $@
 
-clean:
-	rm -rf $(PACKAGE_DIR) *.tag
+include ../common_deps.mk

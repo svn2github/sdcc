@@ -1,3 +1,7 @@
+2013-09-25 Borut Razem <borut.razem AT gmail.com>
+
+	* packages/*: several improvements
+
 2013-09-24 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/build.stx-btree/Makefile: stx-btree updated to version 0.9

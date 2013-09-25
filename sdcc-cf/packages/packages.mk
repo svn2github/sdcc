@@ -23,3 +23,7 @@ ifeq ($(OS), Darwin)
     XCODE_ROOT = /Developer
   endif
 endif
+
+define AR_FUNC
+$(shell case $1 in (*.tar.gz) echo gzip;; (*.tgz) echo gzip;; (*.tar.bz2) echo bzip2;; (*.tar.xz) echo xz;; esac)
+endef

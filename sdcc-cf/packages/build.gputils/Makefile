@@ -8,44 +8,35 @@ PACKAGE=gputils
 VERSION=1.2.0
 PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.gz
 
-.PHONY: all
-all: $(PACKAGE)-install.tag clean
+all: do-all
 
 ifdef FROM_SVN
-GPUTILS_DIR=$(PACKAGE)
+PACKAGE_DIR=$(PACKAGE)
 
-$(PACKAGE)-download.tag:
+$(PACKAGE)-unpack.tag:
 	svn --force export svn://svn.code.sf.net/p/gputils/code/trunk/gputils gputils
 	touch $@
-
-$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
-	touch $@
 else
-GPUTILS_DIR=$(PACKAGE)-$(VERSION)
+PACKAGE_DIR=$(PACKAGE)-$(VERSION)
 
 download/$(PACKAGE_FILE):
 	wget -P download http://sourceforge.net/projects/$(PACKAGE)/files/$(PACKAGE_FILE)
 
-$(PACKAGE)-download.tag: download/$(PACKAGE_FILE)
-	touch $@
-
-$(PACKAGE)-unpack.tag: $(PACKAGE)-download.tag
-	tar xzvf download/$(PACKAGE_FILE)
+$(PACKAGE)-unpack.tag: unpack-downloaded-package
 	touch $@
 endif
 
 $(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag
-	cd $(GPUTILS_DIR) && \
+	cd $(PACKAGE_DIR) && \
 	./configure --prefix=$(LOCAL_DIR) --disable-html-doc
 	touch $@
 
 $(PACKAGE)-make.tag: $(PACKAGE)-configure.tag
-	$(MAKE) -C $(GPUTILS_DIR)
+	$(MAKE) -C $(PACKAGE_DIR)
 	touch $@
 
 $(PACKAGE)-install.tag: $(PACKAGE)-make.tag
-	$(MAKE) -C $(GPUTILS_DIR) install
+	$(MAKE) -C $(PACKAGE_DIR) install
 	touch $@
 
-clean:
-	rm -rf $(GPUTILS_DIR) download/* *.tag
+include ../common_deps.mk
