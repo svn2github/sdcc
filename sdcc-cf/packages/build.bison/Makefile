@@ -1,8 +1,8 @@
 include ../packages.mk
 
 PACKAGE=bison
-VERSION=2.5
-PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.bz2
+VERSION=3.0
+PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.xz
 
 PACKAGE_DIR=$(PACKAGE)-$(VERSION)
 
@@ -13,7 +13,7 @@ download/$(PACKAGE_FILE):
 	wget -P download ftp://ftp.gnu.org/gnu/$(PACKAGE)/$(PACKAGE_FILE)
 
 $(PACKAGE)-unpack.tag: download/$(PACKAGE_FILE)
-	tar xjvf download/$(PACKAGE_FILE)
+	xz -dc download/$(PACKAGE_FILE) | tar xvf -
 	touch $@
 
 $(PACKAGE)-configure.tag: $(PACKAGE)-unpack.tag

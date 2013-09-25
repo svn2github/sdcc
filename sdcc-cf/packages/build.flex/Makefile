@@ -1,7 +1,7 @@
 include ../packages.mk
 
 PACKAGE=flex
-VERSION=2.5.35
+VERSION=2.5.37
 PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.bz2
 
 PACKAGE_DIR=$(PACKAGE)-$(VERSION)
