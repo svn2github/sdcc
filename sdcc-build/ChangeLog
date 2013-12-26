@@ -1,3 +1,7 @@
+2013-12-26 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* lib/bootstrap.mk: copy either sjlj or seh support dll
+
 2013-09-08 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* local/macspot.mk: new name for dhcp101
