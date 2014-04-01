@@ -10,6 +10,9 @@
   <body link="teal" vlink="#483d8b">
     <div align="left">
       <h1>SDCC - Small Device C Compiler</h1>
+      <p style="border: 2px solid black; color: blue">
+        The SDCC 3.4.0 release is dedicated to the memory of Borut Ražem. He was a highly active developer, release manager and administrator of the SDCC project. We will miss him dearly.
+      </p>
       <table bgcolor="white" border="0" cellpadding="2" cellspacing="1" width="100%">
         <tbody>
           <tr>
