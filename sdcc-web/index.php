@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-    <meta name="keywords" content="68hc08 8032 8051 ansi c compiler assembler CPU DS390 embedded development Floating Point Arithmetic free Freescale GPL HC08 inline Intel ISO/IEC 9899:1990 Linux MAC OS X OSX manual Maxim mcs51 Microchip microcontroller open source PIC Unix Windows XP Z80 Zilog" />
+    <meta name="keywords" content="68hc08 8032 8051 ansi c compiler assembler CPU DS390 embedded development Floating Point Arithmetic free Freescale GPL HC08 inline Intel ISO/IEC 9899:1990 Linux MAC OS X OSX manual Maxim mcs51 Microchip microcontroller open source PIC Unix Windows XP Z80 Zilog TLCS-90 STMicroelectronics STM8" />
     <title>SDCC - Small Device C Compiler</title>
     <link type="text/css" href="styles/style.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="/images/sdcc.ico" />
@@ -25,8 +25,9 @@
             <p><b>SDCC</b> is a <b><i>retargettable, optimizing ANSI - C compiler suite</i></b> that
               targets the <b><i>Intel MCS51 </i></b> based microprocessors <b><i>(8031, 8032, 8051, 8052, etc.)</i></b>,
               <b><i>Maxim</i></b> (formerly <b><i>Dallas</i></b>) <b><i>DS80C390</i></b> variants,
-              <b><i>Freescale</i></b> (formerly <b><i>Motorola</i></b>) <b><i>HC08</i></b> based <b><i>(hc08, s08)</i></b> and
-              <b><i>Zilog Z80</i></b> based MCUs <b><i>(z80, z180, gbz80, Rabbit 2000/3000, Rabbit 3000A)</i></b>.
+              <b><i>Freescale</i></b> (formerly <b><i>Motorola</i></b>) <b><i>HC08</i></b> based <b><i>(hc08, s08)</i></b>,
+              <b><i>Zilog Z80</i></b> based MCUs <b><i>(z80, z180, gbz80, Rabbit 2000/3000, Rabbit 3000A, TLCS-90)</i></b> and
+			  <b><i>STMicroelectronics STM8</i></b>.
               Work is in progress on supporting the <b><i>Microchip PIC16</i></b> and <b><i>PIC18</i></b>
               targets. It can be retargeted for other microprocessors.</p>
            <p>SDCC suite is a collection of several components derived from different sources with
@@ -70,23 +71,22 @@
             <!-- START NEWS -->
             <h2><a name="News"></a>News</h2>
 
-            <p><i><b>April 5th, 2014: SDCC 3.4.0 RC3 released.</b></i></p>
-            <p>SDCC 3.4.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
-              32 bit Windows, 64 bit Windows and universal Mac OS X are available in corresponding folders at:
-              <a href="http://sourceforge.net/projects/sdcc/files/">
-              http://sourceforge.net/projects/sdcc/files/</a>.</p>
-
-            <p><i><b>March 27th, 2014: SDCC 3.4.0 RC2 released.</b></i></p>
-            <p>SDCC 3.4.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
-              32 bit Windows, 64 bit Windows and universal Mac OS X are available in corresponding folders at:
-              <a href="http://sourceforge.net/projects/sdcc/files/">
-              http://sourceforge.net/projects/sdcc/files/</a>.</p>
-
-            <p><i><b>March 16th, 2014: SDCC 3.4.0 RC1 released.</b></i></p>
-            <p>SDCC 3.4.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
-              32 bit Windows and universal Mac OS X are available in corresponding folders at:
-              <a href="http://sourceforge.net/projects/sdcc/files/">
-              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+            <p><i><b>April 11th, 2014: Small Device C Compiler 3.4.0 released.</b></i></p>
+            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000,
+              HC08, STM8 and PIC microprocessors is now available
+              (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
+              Sources, documentation and binaries compiled for x86 Linux, x86 and x64 MS Windows and
+              x86 and PPC Mac OS X are available. </p>
+            <p>SDCC 3.4.0 Feature List:</p>
+            <ul>
+              <li>New TLCS90 (Toshiba Z80 clone) target support</li>
+              <li>New STMicroelectronics STM8 target support</li>
+              <li>Support for named address spaces in ROM</li>
+              <li>Detects supported devices by gputils when building SDCC</li>
+            </ul>
+            <p>Numerous feature requests and bug fixes are included as well.</p>
+            <p>You can download the release from:<br />
+              <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
 
             <!-- END NEWS -->
 
@@ -241,43 +241,20 @@
 
             <h2><a name="Past_news"></a>Past news</h2>
 
-            <p><i><b>May 20th, 2013: Small Device C Compiler 3.3.0 released.</b></i></p>
-            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000, HC08 and PIC microprocessors
-              is now available (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>). Sources, documentation
-              and binaries compiled for x86 Linux, x86 and x64 MS Windows and x86 and PPC Mac OS X are available. </p>
-            <p>SDCC 3.3.0 Feature List:</p>
-            <ul>
-              <li>Many small improvements in code generation for the z80-related ports - merged smallopts branch</li>
-              <li>lospre (currently enabled for z80-related and hc08-related ports only) - merged lospre branch</li>
-              <li>More efficient initialization of globals in z80, z180, r2k and r3ka ports.</li>
-              <li>Inclusion of tests from the gcc test suite into the sdcc regression test suite led to many bugs being found and fixed.</li>
-              <li>Split sdas390 from sdas8051</li>
-              <li>Merged big parts of ASxxxx v5 into sdas</li>
-              <li>New pic devices (synchronization with MPLABX 1.60). (Except for very old MCU-s.)</li>
-              <li>New script which disassembles those hex files, in which MCS51 code there is. (mcs51-disasm.pl)</li>
-              <li>Added the PIC16F1788 and PIC16F1789 devices.</li>
-              <li>C11 _Alignof operator.</li>
-              <li>C11 _Alignas alignment specifier.</li>
-              <li>C11 _Static_Assert static assertion.</li>
-            </ul>
-            <p>Numerous feature requests and bug fixes are included as well.</p>
-            <p>You can download the release from:<br />
-              <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
-
-            <p><i><b>May 12th, 2013: SDCC 3.3.0 RC3 released.</b></i></p>
-            <p>SDCC 3.3.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
+            <p><i><b>April 5th, 2014: SDCC 3.4.0 RC3 released.</b></i></p>
+            <p>SDCC 3.4.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
               32 bit Windows, 64 bit Windows and universal Mac OS X are available in corresponding folders at:
               <a href="http://sourceforge.net/projects/sdcc/files/">
               http://sourceforge.net/projects/sdcc/files/</a>.</p>
 
-            <p><i><b>May 11th, 2013: SDCC 3.3.0 RC2 released.</b></i></p>
-            <p>SDCC 3.3.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+            <p><i><b>March 27th, 2014: SDCC 3.4.0 RC2 released.</b></i></p>
+            <p>SDCC 3.4.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
               32 bit Windows, 64 bit Windows and universal Mac OS X are available in corresponding folders at:
               <a href="http://sourceforge.net/projects/sdcc/files/">
               http://sourceforge.net/projects/sdcc/files/</a>.</p>
 
-            <p><i><b>May 5th, 2013: SDCC 3.3.0 RC1 released.</b></i></p>
-            <p>SDCC 3.3.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+            <p><i><b>March 16th, 2014: SDCC 3.4.0 RC1 released.</b></i></p>
+            <p>SDCC 3.4.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
               32 bit Windows and universal Mac OS X are available in corresponding folders at:
               <a href="http://sourceforge.net/projects/sdcc/files/">
               http://sourceforge.net/projects/sdcc/files/</a>.</p>
