@@ -225,8 +225,9 @@ int loadImage(char *imageName, int flags)
 
         if((in=fopen(imageName,"rb"))!=NULL) {
                 size_t got = fread( mem, 1, 32768, in );
-                if (got<0) {
-                         printf("Error while reading the rom image.");
+                if (ferror(in)) {
+                        perror("Error while reading the rom image");
+                        return -1;
                 }
                 fclose(in);
 
