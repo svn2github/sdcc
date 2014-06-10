@@ -219,6 +219,7 @@
                 sdasrab assembler and ucsim support</li>
               <li>Molnár Károly &lt;molnarkaroly.AT.users.sf.net&gt; - adding pic devices, developing and maintaining pic device files
                 generation scripts</li>
+              <li>Ben Shi &lt;powerstudio1st.AT.163.com&gt; - fixes bugs and improves the code quality of the STM8 port</li>
             </ul>
             <p>SDCC has had help from a number of external sources, including:</p>
             <ul>
