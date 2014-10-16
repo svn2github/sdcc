@@ -5,7 +5,7 @@ ifneq ($(SDCCMKINCLUDE), 1)
 SDCCMKINCLUDE = 1
 
 # Flags to pass on to configure in the sdcc directory:
-SDCCCONFIGUREFLAGS += 
+SDCCCONFIGUREFLAGS += --disable-werror
 # Add sdcc to the list of source trees that need to be fetched
 SRCTREES += sdcc
 # PENDING

@@ -1,3 +1,8 @@
+2014-10-16 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* components/sdcc.mk: use --disable-werror with configure when
+	  building sdcc to avoid problems on cf hosts with newer gcc/clang
+
 2013-12-26 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* lib/bootstrap.mk: copy either sjlj or seh support dll
