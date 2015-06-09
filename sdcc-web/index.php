@@ -71,22 +71,11 @@
             <!-- START NEWS -->
             <h2><a name="News"></a>News</h2>
 
-            <p><i><b>April 11th, 2014: Small Device C Compiler 3.4.0 released.</b></i></p>
-            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000,
-              HC08, STM8 and PIC microprocessors is now available
-              (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
-              Sources, documentation and binaries compiled for x86 Linux, x86 and x64 MS Windows and
-              x86 and PPC Mac OS X are available. </p>
-            <p>SDCC 3.4.0 Feature List:</p>
-            <ul>
-              <li>New TLCS90 (Toshiba Z80 clone) target support</li>
-              <li>New STMicroelectronics STM8 target support</li>
-              <li>Support for named address spaces in ROM</li>
-              <li>Detects supported devices by gputils when building SDCC</li>
-            </ul>
-            <p>Numerous feature requests and bug fixes are included as well.</p>
-            <p>You can download the release from:<br />
-              <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
+            <p><i><b>June 9th, 2015: SDCC 3.5.0 RC1 released.</b></i></p>
+            <p>SDCC 3.5.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+              32 and 64 bit Windows and universal Mac OS X are available in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
 
             <!-- END NEWS -->
 
@@ -241,6 +230,23 @@
             <!-- START PAST_NEWS -->
 
             <h2><a name="Past_news"></a>Past news</h2>
+
+            <p><i><b>April 11th, 2014: Small Device C Compiler 3.4.0 released.</b></i></p>
+            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000,
+              HC08, STM8 and PIC microprocessors is now available
+              (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
+              Sources, documentation and binaries compiled for x86 Linux, x86 and x64 MS Windows and
+              x86 and PPC Mac OS X are available. </p>
+            <p>SDCC 3.4.0 Feature List:</p>
+            <ul>
+              <li>New TLCS90 (Toshiba Z80 clone) target support</li>
+              <li>New STMicroelectronics STM8 target support</li>
+              <li>Support for named address spaces in ROM</li>
+              <li>Detects supported devices by gputils when building SDCC</li>
+            </ul>
+            <p>Numerous feature requests and bug fixes are included as well.</p>
+            <p>You can download the release from:<br />
+              <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
 
             <p><i><b>April 5th, 2014: SDCC 3.4.0 RC3 released.</b></i></p>
             <p>SDCC 3.4.0 Release Candidate 3 source, doc and binary packages for x86 Linux,
