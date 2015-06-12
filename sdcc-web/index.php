@@ -114,6 +114,7 @@
               <li>SUN Solaris - i386</li>
               <li>SUN Solaris - Sparc</li>
               <li>Rasbian (Debian for Raspberry Pi) - ARMv6</li>
+              <li>Debian - ARMv7-a</li>
             </ul>
             <p>SDCC is always under active development. Please consider
               <a href="snap.php">downloading one of the snapshot builds</a>
