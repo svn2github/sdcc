@@ -216,7 +216,7 @@
               <li>Michael Hope &lt;michaelh.AT.juju.net.nz&gt; - initial Z80 target, additional coding and bug fixes.</li>
               <li>Maarten Brock &lt;sourceforge.brock.AT.dse.nl&gt; - several bug fixes and improvements, esp. for mcs51 target</li>
               <li>Raphael Neider &lt;RNeider.AT.web.de&gt; - bug fixes and optimizations for PIC16, completion of the PIC14 target</li>
-              <li>Philipp Klaus Krause &lt;pkk.AT.spth.de&gt; - z80 and gbz80 bug fixes and optimizations, z180 target</li>
+              <li>Philipp Klaus Krause &lt;pkk.AT.spth.de&gt; - work on the STM8,Z80,Z180,Rabbit,GBZ80,TLCS-90 backends, compiler research</li>
               <li>Leland Morrison &lt;enigmalee.AT.sourceforget.net&gt; - Rabbit 2000 support: the target code generator,
                 sdasrab assembler and ucsim support</li>
               <li>Molnár Károly &lt;molnarkaroly.AT.users.sf.net&gt; - adding pic devices, developing and maintaining pic device files
