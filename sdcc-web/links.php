@@ -21,10 +21,6 @@
       <a href="http://www.webring.org/cgi-bin/webring?ring=80x51;list">
 The 8051 Web Ring</a>
 <img src="images/x51chip.jpg" alt="webring icon" align="middle" height="63" width="81" /><br />
-      <a href="http://www.willem.org/">PcGenerator</a>
-EpromProgrammer,Pic24C and more...<br />
-      <!-- <a href="http://www.needhams.com">Needham Electronics (dead link?)</a>
-- various device programmers, all sizes, all prices<br /> -->
       <a href="http://www.systronix.com">Systronix</a>
 - Makers of the STEP and STEP+ for the DallasTINI board (a must see for embedded
 ethernet and Dallas 390's)<br />
@@ -39,9 +35,6 @@ about SDCC. (*highly* recommended reading!)<br /> -->
       <a href="http://www.rabbitsemiconductor.com">Rabbit
 Semiconductor</a> - Z-World based boards, very small and lots of
 I/O. Kits available.<br />
-      <!-- <a href="http://www.flexgate.de">FlexGate (unrelated link?)</a>
-- '552 based boards with onboard ethernet. (German, not much on the web
-site yet)<br /> -->
       <a href="http://mikrokontrolery.net/">mikrokontrolery.of.pl</a>
 - wszystko o mikrokontrolerach jednoukładowych 8051 AVR PIC<br />
       <!-- <a href="http://www.bhargavaz.net/main.html">www.bhargavaz.net (unrelated link?)</a>
@@ -82,14 +75,11 @@ snippets.<br />
 
       <h2>Links - SDCC IDEs</h2>
       <p>
-      <a href="http://ktechlab.org/">KTechLab</a> - an Open Source Intergated Design Environment (IDE) for electronic and PIC microcontroller circuit design and simulation.<br />
       <a href="http://www.bipom.com/products/us/319513.html">MicroIDE</a> - free IDE software to manage SDCC projects
       </p>
 
       <h2>Links - Circuit Boards and EDA software</h2>
       <p>
-      <!-- <a href="http://www.geocities.com/pdmtr">PC
-board HOWTO using Press &amp; Peel Tech Film</a><br /> -->
       <a href="http://www.gipsa-lab.inpg.fr/realise_au_lis/kicad/index.html">Kicad</a> - Free Open Source PCB Schematic Capture and Board Design<br />
       <a href="http://www.cadsoft.de">CadSoft</a> - makers of Eagle EDA software, download a free (somewhat restricted) version for
 Win32 or Linux.<br />
