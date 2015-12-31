@@ -16,73 +16,78 @@
       </td>
       <td width="85%">
 
+      <h2>Links - 8051/DS390</h2>
+
+      <p>
+      <a href="http://www.webring.org/cgi-bin/webring?ring=80x51;list"> The 8051 Web Ring</a><img src="images/x51chip.jpg" alt="webring icon" align="middle" height="63" width="81" /><br />
+      <a href="http://www.programmersheaven.com/zone5/cat27/index.htm">Programmers Heaven</a> - 8051 resources, sample code and compilers<br />
+      <a href="http://www.8052.com">8052.COM</a> - resources, sample code.<br />
+      <a href="http://turbo51.com/">Turbo51 - Pascal compiler for 8051 microcontrollers</a> - If C is not your preferred language<br />
+      <a href="http://www.pjrc.com/tech/8051/index.html">Paul Stoffregen's Home Page</a> - Home of PAULMON and other code snippets.<br />
+      <a href="http://www.systronix.com">Systronix</a> - Makers of the STEP and STEP+ for the DallasTINI board (a must see for embedded ethernet and Dallas 390's)<br />
+      <a href="http://www.soudez.be/">www.soudez.be</a> -DS89C450 system over USB port in a standard DIL40 package<br />
+      </p>
+
+      <h2>Links - STM8</h2>
+
+      <p>
+      <a href="https://github.com/vdudouyt/stm8flash">stm8flash</a> - program your stm8 devices with SWIM/stlinkv(1,2)<br />
+      <a href="http://www.colecovision.eu/stm8/">STM8 Tutorials</a> - Tutorials for STM8 development using free software<br />
+      <a href="http://www.emcu.it/">WWW.EMCU.IT</a> - resources<br />
+      </p>
+
+      <h2>Links - Z80/Z180/Rabbit/GameBoy/TLCS-90</h2>
+
+      <p>
+      <a href="http://www.colecovision.eu/ColecoVision/development/">ColecoVision</a> - Tutorials and tools for ColecoVision development using SDCC<br />  
+      <a href="http://www.rabbitsemiconductor.com">Rabbit Semiconductor</a> - Z-World based boards, very small and lots of I/O. Kits available.<br />    
+      <a href="http://palmmicro.com/ar1688/">AR1688</a> - Z80 based VoIP processor and module using SDCC compiler<br />
+      </p>
+
+      <h2>Links - PIC</h2>
+
+      <p>
+      <a href="http://gputils.sourceforge.net/">GPUTILS - GNU PIC Utilities</a> - assembler and linker SDCC needs for pic14 / pic16<br />
+      <a href="http://gpsim.sourceforge.net/">gpsim</a> - gpsim is a full-featured software simulator for Microchip PIC microcontrollers distributed under the GNU General Public License<br />
+      </p>
+
       <h2>Links - General</h2>
       <p>
-      <a href="http://www.webring.org/cgi-bin/webring?ring=80x51;list">
-The 8051 Web Ring</a>
-<img src="images/x51chip.jpg" alt="webring icon" align="middle" height="63" width="81" /><br />
-      <a href="http://www.systronix.com">Systronix</a>
-- Makers of the STEP and STEP+ for the DallasTINI board (a must see for embedded
-ethernet and Dallas 390's)<br />
       <a href="http://www.microcontroller.com">Microcontroller.com</a>
 - Micros and Embedded stuff. Not to be confused with
 microcontrollers.com (Arrow Electronics... what a joke!)<br />
-      <!-- <a href="http://www.aesmicro.com/8051.htm">AES Micro (dead link?)</a>
-- nice but a bit expensive, may be just what some one needs though.<br /> -->
-      <!--<a href="mailto:karl@turbobit.com">Karl
-Bongers</a> has a start on a <a href="http://www.turbobit.com/sdcc.html">Summary/FAQ (unrelated link?)</a>
-about SDCC. (*highly* recommended reading!)<br /> -->
-      <a href="http://www.rabbitsemiconductor.com">Rabbit
-Semiconductor</a> - Z-World based boards, very small and lots of
-I/O. Kits available.<br />
       <a href="http://mikrokontrolery.net/">mikrokontrolery.of.pl</a>
 - wszystko o mikrokontrolerach jednoukładowych 8051 AVR PIC<br />
-      <!-- <a href="http://www.bhargavaz.net/main.html">www.bhargavaz.net (unrelated link?)</a>
--<br /> -->
       <a href="http://www.dcd.pl/">Digital Core Design</a>&nbsp;-
 private Intellectual Property (IP) Core provider and System-on-Chip
 (SoC) design house<br />
       <a href="http://microcontrollershop.com/">MicroController Pros
 Corporation (&micro;CPros)</a> - Development Tools for All
 Major Microcontroller Architectures<br />
-      <a href="http://www.soudez.be/">www.soudez.be</a>
--&nbsp;<span class="genmed"><font face="Arial, sans-serif"><span style="text-decoration: none;">DS89C450</span></font></span>
-system over USB port in a standard DIL40 package<br />
-      <!-- <a href="http://www.proware.ind.br">www.proware.ind.br</a>
--&nbsp;<span class="genmed"><font face="Arial, sans-serif"><span style="text-decoration: none;">8051</span></font></span>
-development board with SDCC library code<br /> -->
       </p>
 
       <h2>Links - Compilers, Assemblers, Linkers</h2>
       <p>
       <a href="http://shop-pdp.kent.edu/ashtml/asxxxx.htm">ASxxxx Cross Assemblers</a> - assemblers and linkers from which SDCC derived
 asx8051, as-hc08, as-z80, aslink, link-hc80, link-z80<br />
-      <a href="http://gputils.sourceforge.net/">GPUTILS - GNU PIC Utilities</a> - assembler and linker SDCC needs for pic14 / pic16<br />
-      <a href="http://turbo51.com/">Turbo51 - Pascal compiler for 8051 microcontrollers</a> - If C is not your preferred language<br />
+      
       </p>
       <h2>Links - Code Sources</h2>
       <p>
-      <a href="http://www.programmersheaven.com/zone5/cat27/index.htm">Programmers
-Heaven</a> - 8051 resources, sample code and compilers<br />
-      <a href="http://www.pjrc.com/tech/8051/index.html">Paul
-Stoffregen's Home Page</a> - Home of PAULMON and other code
-snippets.<br />
-      <a href="http://www.8052.com">8052.COM</a>
-- resources, sample code.<br />
+      
       <a href="http://www.freertos.org/">FreeRTOS</a>
 - a portable, open source, mini Real Time Kernel<br />
       </p>
 
-      <h2>Links - SDCC IDEs</h2>
+      <h2>Links - IDEs</h2>
       <p>
       <a href="http://www.bipom.com/products/us/319513.html">MicroIDE</a> - free IDE software to manage SDCC projects
       </p>
 
       <h2>Links - Circuit Boards and EDA software</h2>
       <p>
+      <a href="http://www.geda-project.org/">gEDA</a>GPL'd suite and toolkit of Electronic Design Automation tools<br />
       <a href="http://www.gipsa-lab.inpg.fr/realise_au_lis/kicad/index.html">Kicad</a> - Free Open Source PCB Schematic Capture and Board Design<br />
-      <a href="http://www.cadsoft.de">CadSoft</a> - makers of Eagle EDA software, download a free (somewhat restricted) version for
-Win32 or Linux.<br />
       </p>
       <h2>Links - IC Data and Searches</h2>
       <p>
@@ -122,16 +127,8 @@ feedbeed back on the code is welcome. If you have enhanced the code,
 made a better mouse trap... please email me and let me know.<br />
       </p>
 
-      <h2>Links - Z80 based VoIP</h2>
-      <p>
-      <a href="http://palmmicro.com/ar1688/">AR1688</a> - Z80 based VoIP processor and module using SDCC compiler
-      </p>
-
       <h2>Links - simulators</h2>
       <p>
-      <a href="http://gpsim.sourceforge.net/">gpsim</a>
-- gpsim is a full-featured software simulator for Microchip PIC
-microcontrollers distributed under the GNU General Public License<br />
       <a href="http://mazsola.iit.uni-miskolc.hu/%7Edrdani/embedded/ucsim/">&micro;Csim</a>
 - the old ucsim page<br />
       </p>

@@ -1,6 +1,11 @@
 2015-12-31 Philipp Klaus Krause <pkk AT spth.de>
 
 	* links.php:
+	  Reorganize link sections, add STM8 links.
+
+2015-12-31 Philipp Klaus Krause <pkk AT spth.de>
+
+	* links.php:
 	  Remove dead links.
 
 2015-06-29 Maarten Brock <sourceforge.brock AT dse.nl>
