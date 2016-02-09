@@ -103,6 +103,8 @@ then
     then
       success=1
       break
+    else
+      sleep 5m
     fi
   done
 

@@ -1,3 +1,10 @@
+2016-02-09 Maarten Brock <sourceforge.brock AT dse.nl>
+
+	* lib/local.mk: cosmetic only
+	* lib/variables.mk: added test-mcs51-large-stack-auto
+	* local/derna.mk: fixed typo
+	* sdcc-build-bootstrap.sh: added sleep on svn checkout fail
+
 2014-10-16 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* components/sdcc.mk: use --disable-werror with configure when
@@ -13,7 +20,7 @@
 
 2013-08-07 Borut Razem <borut.razem AT gmail.com>
 
-	* lib/doc-archive.mk: foxed copying of pdf documents
+	* lib/doc-archive.mk: fixed copying of pdf documents
 	  html documentation copying commented out since it is not
 	  generated any more
 

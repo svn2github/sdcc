@@ -1,6 +1,6 @@
 # Rules to include local settings
 
-# Path to the directory containing local machine makefiles (<hosatname>.mk)
+# Path to the directory containing local machine makefiles (<hostname>.mk)
 # $(HOME)/build/sdcc-build/local is used if the path doesn't exist
 ifneq ($(shell test -d $(LOCAL_MK) && echo 1),1)
   LOCAL_MK = local

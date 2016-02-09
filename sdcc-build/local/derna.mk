@@ -18,4 +18,4 @@ OTHERTARGETS = i586-mingw32msvc
 
 # for backward compatibility
 # FC6 uses --hash-style=gnu by default
-TRAGETLDFLAGS += -Wl,--hash-style=both
+TARGETLDFLAGS += -Wl,--hash-style=both

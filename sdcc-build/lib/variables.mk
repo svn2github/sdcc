@@ -60,7 +60,7 @@ SVN_ROOT = svn://svn.code.sf.net/p/sdcc/code
 #  REGTESTTARGETS2: These will be tested on odd days
 REGTESTTARGETS0 = test-mcs51-small test-ds390 test-stm8
 REGTESTTARGETS1 = test-mcs51-large test-hc08 test-ucr3ka test-ucgbz80 test-ucz80
-REGTESTTARGETS2 = test-mcs51-stack-auto test-s08 test-ucr2k test-ucz180
+REGTESTTARGETS2 = test-mcs51-stack-auto test-mcs51-large-stack-auto test-s08 test-ucr2k test-ucz180
 
 DAYODD = $(shell date +%j | awk '{print $$0%2}')
 ifeq ($(strip $(DAYODD)),0)
