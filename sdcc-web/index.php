@@ -74,6 +74,12 @@
               <a href="http://sourceforge.net/projects/sdcc/files/">
               http://sourceforge.net/projects/sdcc/files/</a>.</p>
 
+            <p><i><b>June 5th, 2016: SDCC 3.6.0 RC2 released.</b></i></p>
+            <p>SDCC 3.6.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+              32 and 64 bit Windows and universal Mac OS X are available in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+
             <!-- END NEWS -->
 
             <h2><a name="Platforms"></a>What Platforms are Supported?</h2>

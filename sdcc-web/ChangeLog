@@ -1,4 +1,8 @@
-2016-06-02 Maarten Brock <sourceforge.brock AT dse.nl>
+2016-06-05 Maarten Brock <sourceforge.brock AT dse.nl>
+
+	* index.php: added News - sdcc 3.6.0 RC2
+
+2016-06-02 Philipp Klaus Krause <pkk AT spth.de>
 
 	* index.php: Update standards and data types.
 
