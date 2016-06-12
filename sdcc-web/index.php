@@ -68,17 +68,34 @@
             <!-- START NEWS -->
             <h2><a name="News"></a>News</h2>
 
-            <p><i><b>May 30th, 2016: SDCC 3.6.0 RC1 released.</b></i></p>
-            <p>SDCC 3.6.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
-              32 and 64 bit Windows and universal Mac OS X are available in corresponding folders at:
-              <a href="http://sourceforge.net/projects/sdcc/files/">
-              http://sourceforge.net/projects/sdcc/files/</a>.</p>
-
-            <p><i><b>June 5th, 2016: SDCC 3.6.0 RC2 released.</b></i></p>
-            <p>SDCC 3.6.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
-              32 and 64 bit Windows and universal Mac OS X are available in corresponding folders at:
-              <a href="http://sourceforge.net/projects/sdcc/files/">
-              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+            <p><i><b>June 12th, 2016: Small Device C Compiler 3.6.0 released.</b></i></p>
+            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000,
+              HC08, STM8 and PIC microprocessors is now available
+              (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
+              Sources, documentation and binaries compiled for x86 Linux, x86 and x64 MS Windows and
+              x86 and PPC Mac OS X are available. </p>
+            <p>SDCC 3.6.0 Feature List:</p>
+            <ul>
+              <li>Merged upstream binutils 2.25</li>
+              <li>New memory management with lower overhead</li>
+              <li>Changed default language dialect to --std-sdcc11</li>
+              <li>Diagnostic for missing type specifier: No implicit int outside of C90 mode anymore</li>
+              <li>C11 generic selections</li>
+              <li>char type is now unsigned by default (old behaviour can be restored using --fsigned-char)</li>
+              <li>Character constants are now of type int instead of char.</li>
+              <li>ISO C95 and ISO C11 wide character constants</li>
+              <li>ISO C95 and ISO C11 wide string literals</li>
+              <li>Basic standard library support for wide characters: c16rtomb(), mbrtoc16(), mbsinit(), mbtowc(), mbrlen(), mbrtoc32, c32rtomb(), mbrtowc(), wcrtomb(), mblen(), wctomb()</li>
+              <li>Treat all ports the same in the manual (i.e. mcs51-specific stuff is now clearly described as such)</li>
+              <li>Reorganized interrupt handling for z80, z180, r2k, r3ka, tlcs90, gbz80 backends</li>
+              <li>Workaround for stm8 division hardware bug</li>
+              <li>ELF/DWARF support for stm8</li>
+              <li>Output symbol table for ELF</li>
+              <li>pic16 port now uses standard-compliant crt0iz that initializes static and globals to 0 by default</li>
+            </ul>
+            <p>Numerous feature requests and bug fixes are included as well.</p>
+            <p>You can download the release from:<br />
+              <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
 
             <!-- END NEWS -->
 
@@ -235,35 +252,14 @@
 
             <h2><a name="Past_news"></a>Past news</h2>
 
-            <p><i><b>June 24th, 2015: Small Device C Compiler 3.5.0 released.</b></i></p>
-            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000,
-              HC08, STM8 and PIC microprocessors is now available
-              (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
-              Sources, documentation and binaries compiled for x86 Linux, x86 and x64 MS Windows and
-              x86 and PPC Mac OS X are available. </p>
-            <p>SDCC 3.5.0 Feature List:</p>
-            <ul>
-              <li>--disable-non-free configure option</li>
-              <li>Changed default language dialect from --std-sdcc89 to --std-sdcc99</li>
-              <li>Reorganized and updated manual</li>
-              <li>Reduced memory consumption (most noticeable for high --max-allocs-per-node)</li>
-              <li>Faster compilation for stm8 (most noticeable for high --max-allocs-per-node)</li>
-              <li>atoll() function for conversion of strings to long long</li>
-              <li>__z88dk_fastcall and __z88dk_callee calling conventions for more efficient function calls and better compability with z88dk</li>
-              <li>--lospre-unsafe-read renamed to --allow-unsafe-read</li>
-            </ul>
-            <p>Numerous feature requests and bug fixes are included as well.</p>
-            <p>You can download the release from:<br />
-              <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
-
-            <p><i><b>June 20th, 2015: SDCC 3.5.0 RC2 released.</b></i></p>
-            <p>SDCC 3.5.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+            <p><i><b>June 5th, 2016: SDCC 3.6.0 RC2 released.</b></i></p>
+            <p>SDCC 3.6.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
               32 and 64 bit Windows and universal Mac OS X are available in corresponding folders at:
               <a href="http://sourceforge.net/projects/sdcc/files/">
               http://sourceforge.net/projects/sdcc/files/</a>.</p>
 
-            <p><i><b>June 9th, 2015: SDCC 3.5.0 RC1 released.</b></i></p>
-            <p>SDCC 3.5.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+            <p><i><b>May 30th, 2016: SDCC 3.6.0 RC1 released.</b></i></p>
+            <p>SDCC 3.6.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
               32 and 64 bit Windows and universal Mac OS X are available in corresponding folders at:
               <a href="http://sourceforge.net/projects/sdcc/files/">
               http://sourceforge.net/projects/sdcc/files/</a>.</p>

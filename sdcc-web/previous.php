@@ -18,6 +18,39 @@
 
       <h2>Previous NEWS</h2>
 
+            <p><i><b>June 24th, 2015: Small Device C Compiler 3.5.0 released.</b></i></p>
+            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000,
+              HC08, STM8 and PIC microprocessors is now available
+              (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
+              Sources, documentation and binaries compiled for x86 Linux, x86 and x64 MS Windows and
+              x86 and PPC Mac OS X are available. </p>
+            <p>SDCC 3.5.0 Feature List:</p>
+            <ul>
+              <li>--disable-non-free configure option</li>
+              <li>Changed default language dialect from --std-sdcc89 to --std-sdcc99</li>
+              <li>Reorganized and updated manual</li>
+              <li>Reduced memory consumption (most noticeable for high --max-allocs-per-node)</li>
+              <li>Faster compilation for stm8 (most noticeable for high --max-allocs-per-node)</li>
+              <li>atoll() function for conversion of strings to long long</li>
+              <li>__z88dk_fastcall and __z88dk_callee calling conventions for more efficient function calls and better compability with z88dk</li>
+              <li>--lospre-unsafe-read renamed to --allow-unsafe-read</li>
+            </ul>
+            <p>Numerous feature requests and bug fixes are included as well.</p>
+            <p>You can download the release from:<br />
+              <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
+
+            <p><i><b>June 20th, 2015: SDCC 3.5.0 RC2 released.</b></i></p>
+            <p>SDCC 3.5.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+              32 and 64 bit Windows and universal Mac OS X are available in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+
+            <p><i><b>June 9th, 2015: SDCC 3.5.0 RC1 released.</b></i></p>
+            <p>SDCC 3.5.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+              32 and 64 bit Windows and universal Mac OS X are available in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+
       <p><i><b>April 11th, 2014: Small Device C Compiler 3.4.0 released.</b></i></p>
       <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000,
         HC08, STM8 and PIC microprocessors is now available
