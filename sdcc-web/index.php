@@ -229,7 +229,7 @@
                 sdasrab assembler and ucsim support</li>
               <li>Molnár Károly &lt;molnarkaroly.AT.users.sf.net&gt; - adding pic devices, developing and maintaining pic device files
                 generation scripts</li>
-              <li>Ben Shi &lt;powerstudio1st.AT.163.com&gt; - fixes bugs in the front end and improves the STM8 back end</li>
+              <li>Ben Shi &lt;powerstudio1st.AT.163.com&gt; - the front-end, the STM8 back-end, and the MCS-51 back-end maintain</li>
             </ul>
             <p>SDCC has had help from a number of external sources, including:</p>
             <ul>
