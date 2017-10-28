@@ -1,3 +1,8 @@
+2017-10-28 Philipp Klaus Krause <pkk AT spth.de>
+
+	* packages/build.mingw32/Makefile:
+	  Update package version, remove support for GCC 4.6 and older.
+
 2013-09-25 Borut Razem <borut.razem AT gmail.com>
 
 	* packages/*: several improvements
