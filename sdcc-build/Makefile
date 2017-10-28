@@ -7,7 +7,6 @@ include lib/variables.mk
 include lib/version.mk
 include lib/local.mk
 include lib/cross.mk
-include lib/ports.mk
 
 include components/sdcc.mk
 include components/sdcc-extra.mk

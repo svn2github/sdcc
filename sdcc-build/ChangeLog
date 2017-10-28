@@ -1,3 +1,11 @@
+2017-10-28 Philipp Klaus Krause <pkk AT spth.de>
+
+	* Makefile,
+	  README,
+	  lib/ports.mk,
+	  ports:
+	  Remove unused infrastructure for port-specific builds.
+
 2016-02-09 Maarten Brock <sourceforge.brock AT dse.nl>
 
 	* lib/local.mk: cosmetic only
