@@ -7,7 +7,7 @@ ifeq ($(OS),SunOS)
 #  WITH_TOOLSET=--with-toolset=sun
   WITH_TOOLSET=--with-toolset=
 else
-  VERSION=1_50_0
+  VERSION=1_59_0
   PACKAGE_FILE=$(PACKAGE)_$(VERSION).tar.bz2
   ifeq ($(OS), Darwin)
     WITH_TOOLSET=--with-toolset=darwin

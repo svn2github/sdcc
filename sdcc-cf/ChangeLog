@@ -1,3 +1,8 @@
+2017-10-29 Philipp Klaus Krause <pkk AT spth.de>
+
+	* packages/build.boost/Makefile:
+	  Update package version.
+
 2017-10-28 Philipp Klaus Krause <pkk AT spth.de>
 
 	* packages/build.mingw32/Makefile:
