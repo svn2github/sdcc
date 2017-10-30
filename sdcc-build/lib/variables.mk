@@ -58,12 +58,10 @@ SVN_ROOT = svn://svn.code.sf.net/p/sdcc/code
 #  REGTESTTARGETS_1_0: These will always be tested
 #  REGTESTTARGETS_2_0: These will be tested on even days
 #  REGTESTTARGETS_2_1: These will be tested on odd days
-#REGTESTTARGETS1 = test-ucr3ka test-ucgbz80 test-ucz80
-#REGTESTTARGETS2 = test-s08 test-ucr2k test-ucz180
-# TEMPORARILY DISABLE MOST REGRESSION TESTING TO CHECK THE EFFECT ON THE COMPILE FARM
+# TODO: Add test-mcs51-huge, test-lcs90, replace test-ucr3ka by test-ucz80-resiy
 REGTESTTARGETS_1_0 = test-mcs51-small test-ds390 test-stm8
-REGTESTTARGETS_2_0 = test-mcs51-large test-mcs51-stack-auto test-hc08
-REGTESTTARGETS_2_1 = test-mcs51-large-stack-auto test-s08
+REGTESTTARGETS_2_0 = test-mcs51-large test-mcs51-stack-auto test-hc08 test-ucz80 test-ucgbz80 test-ucr2k
+REGTESTTARGETS_2_1 = test-mcs51-large-stack-auto test-s08 test-ucz180 test-ucr3ka
 
 DAYODD = $(shell date +%j | awk '{print $$0%2}')
 ifeq ($(strip $(DAYODD)),0)
