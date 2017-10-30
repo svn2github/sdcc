@@ -1,3 +1,8 @@
+2017-10-30 Philipp Klaus Krause <pkk AT spth.de>
+
+	* lib/variables.mk:
+	  Test mcs51 huge model and tlcs90.
+
 2017-10-29 Philipp Klaus Krause <pkk AT spth.de>
 
 	* lib/doc-archive.mk:
