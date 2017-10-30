@@ -55,22 +55,21 @@ SVN_ROOT = svn://svn.code.sf.net/p/sdcc/code
 
 # Regression test targets. To help reduce the load on the slower systems of the DCF, the
 # test targets are broken up into three categories:
-#  REGTESTTARGETS0: These will always be tested
-#  REGTESTTARGETS1: These will be tested on even days
-#  REGTESTTARGETS2: These will be tested on odd days
-#REGTESTTARGETS0 = test-mcs51-small test-ds390 test-stm8
+#  REGTESTTARGETS_1_0: These will always be tested
+#  REGTESTTARGETS_2_0: These will be tested on even days
+#  REGTESTTARGETS_2_1: These will be tested on odd days
 #REGTESTTARGETS1 = test-mcs51-large test-hc08 test-ucr3ka test-ucgbz80 test-ucz80
 #REGTESTTARGETS2 = test-mcs51-stack-auto test-mcs51-large-stack-auto test-s08 test-ucr2k test-ucz180
 # TEMPORARILY DISABLE MOST REGRESSION TESTING TO CHECK THE EFFECT ON THE COMPILE FARM
-REGTESTTARGETS0 = test-mcs51-small
-REGTESTTARGETS1 = test-mcs51-large
-REGTESTTARGETS2 = test-mcs51-stack-auto
+REGTESTTARGETS_1_0 = test-mcs51-small test-ds390 test-stm8
+REGTESTTARGETS_2_0 = test-mcs51-large
+REGTESTTARGETS_2_1 = test-mcs51-stack-auto
 
 DAYODD = $(shell date +%j | awk '{print $$0%2}')
 ifeq ($(strip $(DAYODD)),0)
-CROSSREGTESTTARGETS = $(REGTESTTARGETS0) $(REGTESTTARGETS1)
+CROSSREGTESTTARGETS = $(REGTESTTARGETS_1_0) $(REGTESTTARGETS_2_1)
 else
-CROSSREGTESTTARGETS = $(REGTESTTARGETS0) $(REGTESTTARGETS2)
+CROSSREGTESTTARGETS = $(REGTESTTARGETS_1_0) $(REGTESTTARGETS_2_0)
 endif
 REGTESTTARGETS = test-host $(CROSSREGTESTTARGETS)
 # Directory for regression test log file
