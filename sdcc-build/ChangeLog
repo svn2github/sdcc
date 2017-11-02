@@ -1,3 +1,8 @@
+2017-11-02 Philipp Klaus Krause <pkk AT spth.de>
+
+	* lib/variables.mk:
+	  Alternate mcs51-small test with new mcs51-medium test.
+
 2017-10-30 Philipp Klaus Krause <pkk AT spth.de>
 
 	* lib/variables.mk:
