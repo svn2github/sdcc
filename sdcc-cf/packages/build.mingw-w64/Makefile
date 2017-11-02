@@ -29,7 +29,6 @@ mingw-w64-install.tag: download/mingw-w64-$(MINGW_W64_VERSION)-bin_x86_64-linux_
 #####mingw-w64-install.tag: download/mingw-w64-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2
 	mkdir -p $(LOCAL_DIR)/cross-tools-w64
 	tar -C $(LOCAL_DIR)/cross-tools-w64 -xjvf download/mingw-w64-$(MINGW_W64_VERSION)-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2
-	#####tar -C $(LOCAL_DIR)/cross-tools-w64 -xjvf download/mingw-w64-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2
 	test -L $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/boost && rm $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/boost; true
 	ln -s /usr/include/boost/ $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include
 	test -L $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/stx && rm $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/stx; true
@@ -91,7 +90,7 @@ gcc-configure.tag: gcc-unpack.tag
 	  --with-gcc --with-gnu-ld --with-gnu-as \
 	  --with-gmp=$(LOCAL_DIR) --with-mpfr=$(LOCAL_DIR) --with-mpc=$(LOCAL_DIR) \
 	  --enable-threads --disable-nls --enable-languages=c,c++ \
-	  --disable-multilib--enable-win32-registry --disable-shared
+	  --disable-multilib --enable-win32-registry --disable-shared
 	touch $@
 
 gcc-make.tag: gcc-configure.tag
