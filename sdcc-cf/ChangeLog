@@ -1,3 +1,8 @@
+2017-11-02 Philipp Klaus Krause <pkk AT spth.de>
+
+	* packages/build.mingw-w64/Makefile:
+	  Port some fixes from build.mingw32/Makefile, update some paths; build progresses further than before, but still fails.
+
 2017-11-02 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* packages/build.mingw-w64/Makefile: finally check in 64-bit mingw

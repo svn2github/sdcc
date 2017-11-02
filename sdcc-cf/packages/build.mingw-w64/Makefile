@@ -1,10 +1,9 @@
 include ../packages.mk
 
 MINGW_W64_VERSION=1.0
-MINGW_W64_BUILD_DATE=20110822
-####MINGW_W64_BUILD_DATE=20121031
-BINUTILS_VERSION=2.23
-GCC_VERSION=4.7.2
+MINGW_W64_BUILD_DATE=20120227
+BINUTILS_VERSION=2.28
+GCC_VERSION=4.9.4
 
 TARGET=x86_64-w64-mingw32
 PROGRAM_PREFIX=$(TARGET)-
@@ -25,16 +24,15 @@ real-clean: clean
 download/mingw-w64-$(MINGW_W64_VERSION)-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2:
 ####download/mingw-w64-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2:
 	wget -nv -P download http://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Automated%20Builds/mingw-w64-$(MINGW_W64_VERSION)-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2
-	#####wget -P download http://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Automated%20Builds/mingw-w64-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2
 
 mingw-w64-install.tag: download/mingw-w64-$(MINGW_W64_VERSION)-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2
 #####mingw-w64-install.tag: download/mingw-w64-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2
 	mkdir -p $(LOCAL_DIR)/cross-tools-w64
 	tar -C $(LOCAL_DIR)/cross-tools-w64 -xjvf download/mingw-w64-$(MINGW_W64_VERSION)-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2
 	#####tar -C $(LOCAL_DIR)/cross-tools-w64 -xjvf download/mingw-w64-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2
-	test -L $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/boost && rm $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/boost
+	test -L $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/boost && rm $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/boost; true
 	ln -s /usr/include/boost/ $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include
-	test -L $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/stx && rm $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/stx
+	test -L $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/stx && rm $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/stx; true
 	ln -s $(LOCAL_DIR)/include/stx/ $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include
 	touch $@
 
@@ -46,12 +44,10 @@ mingw-w64-clean:
 download/binutils-$(BINUTILS_VERSION).tar.bz2:
 download/binutils-$(BINUTILS_VERSION).tar.gz:
 	wget -nv -P download http://ftp.gnu.org/gnu/binutils/binutils-$(BINUTILS_VERSION).tar.bz2
-	#####wget -nv -P download http://ftp.gnu.org/gnu/binutils/binutils-$(BINUTILS_VERSION).tar.gz
 
 binutils-unpack.tag: download/binutils-$(BINUTILS_VERSION).tar.bz2
 binutils-unpack.tag: download/binutils-$(BINUTILS_VERSION).tar.gz
 	tar -xjf download/binutils-$(BINUTILS_VERSION).tar.bz2
-	####tar -xzf download/binutils-$(BINUTILS_VERSION).tar.gz
 	touch $@
 
 binutils-configure.tag: binutils-unpack.tag
@@ -79,20 +75,11 @@ binutils-clean:
 	rm -rf binutils-*.tag
 
 
-####download/gcc-core-$(GCC_VERSION).tar.bz2:
 download/gcc-$(GCC_VERSION).tar.bz2:
-	####wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-core-$(GCC_VERSION).tar.bz2
 	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-$(GCC_VERSION).tar.bz2
 
-####download/gcc-g++-$(GCC_VERSION).tar.bz2:
-####	wget -nv -P download ftp://ftp.gnu.org/gnu/gcc/gcc-$(GCC_VERSION)/gcc-g++-$(GCC_VERSION).tar.bz2
-
-####gcc-unpack.tag: download/gcc-core-$(GCC_VERSION).tar.bz2 download/gcc-g++-$(GCC_VERSION).tar.bz2
 gcc-unpack.tag: download/gcc-$(GCC_VERSION).tar.bz2
-	for i in $^; do \
-	  tar -xjf $$i; \
-	done
-	#bunzip2 -c download/gcc*.tar.bz2 | tar -xf -
+	tar -xjf download/gcc-$(GCC_VERSION).tar.bz2
 	touch $@
 
 gcc-configure.tag: gcc-unpack.tag
@@ -117,7 +104,6 @@ gcc-install.tag: gcc-make.tag
 	cd objdir-gcc && \
 	PATH=$(PATH):$(PREFIX)/bin \
 	make install
-	rm -r $(PREFIX)/man $(PREFIX)/info
 	touch $@
 
 .PHONY: gcc-clean
