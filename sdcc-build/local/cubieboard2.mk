@@ -8,7 +8,7 @@ MAKEJOBFLAGS = -j 1
 HOSTOS = armv7l-unknown-linux-gnueabihf
 TARGETOS = armv7l-unknown-linux-gnueabihf
  
-# disable pic14 and pic16 for broken gputils
+# disable pic14 and pic16 due to broken gputils on archlinux/armv7l
 SDCCCONFIGUREFLAGS = "--disable-pic14-port --disable-pic16-port"
 
 # local includes and libraries
