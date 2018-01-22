@@ -133,7 +133,7 @@ $(COMPILERS): sdcc-%/bin/sdcc:
 %: REVISION=$(lastword $(subst -, ,$*))
 
 .SECONDEXPANSION:
-$(BENCHMARKS_3000): %/image.ihx: $$(BENCHMARK) sdcc-$$(REVISION)/bin/sdcc
+$(BENCHMARKS_3000): %/image.ihx: $$(BENCHMARK)-$$(TARGET) sdcc-$$(REVISION)/bin/sdcc
 	rm -rf $(BENCHMARK)-$(TARGET)-$(GOAL)-$(REVISION)
 	cp -r $(BENCHMARK)-$(TARGET) $(BENCHMARK)-$(TARGET)-$(GOAL)-$(REVISION)
 	cd $(BENCHMARK)-$(TARGET)-$(GOAL)-$(REVISION) && make SDCC="../sdcc-$(REVISION)/bin/sdcc" SDCCFLAGS="$(SDCCFLAGS) -I../sdcc-$(REVISION)/device/include -L ../sdcc-$(REVISION)/device/lib/build/$(TARGET)"
