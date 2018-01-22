@@ -1,0 +1,8 @@
+The infrastructure in this directory is (c) 2018 Philipp Krause Krause and under GPLv2 or later (see the file GPL-2 for details).
+
+The benchmarks are under their own licenses, which are:
+
+Whetstone: free
+Dhrystone: free
+Coremark: non-free (and thus not included in repository)
+

@@ -1,3 +1,8 @@
+2018-01-22 Philipp Klaus Krause <philipp AT informatik.uni-frankfurt.de>
+
+	* historygraphs:
+	  Infrastructure for generating SDCC code size and performance history graphs.
+
 2014-04-14 Philipp Klaus Krause <philipp AT informatik.uni-frankfurt.de>
 
 	* emu/rrgb/main.c:

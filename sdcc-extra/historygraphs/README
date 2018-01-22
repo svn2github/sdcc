@@ -1,0 +1,19 @@
+This directory contains infrastructure for generating SDCC code size and performance history graphs.
+
+WARNINGS:
+* Reproducing the graphs takes a lot of time and disk space!
+* Reproducing the benchmark score graphs requires the STM8AF board from the STM8A-Discovery, and sufficient access priviledges on the host system!
+
+Files:
+
+Makefile:
+Build infrastructure for graphs, uses the other files.
+Invoking GNU make via "make" will create the code size graphs for Whetstone and Dhrystone on stm8.
+Further graphs (score graphs for all benchmarks, sizegraph for Coremark) can be build by making their respective targets.
+
+execute_benchmark-stm8:
+Execute a benchmark (Whetstone, Dhrystone or Coremark) on an STM8AF board and report the results line.
+
+*.p:
+gnuplot command files togenerate graphs from data files.
+
