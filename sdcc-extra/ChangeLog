@@ -4,6 +4,8 @@
 	  historygraphs/Makefile.coremark,
 	  historygraphs/coremark-1.0.patch:
 	  Infrastructure for Coremark code size and speed history graphs.
+	* historygraphs/*.svg:
+	  Bring graphs into svn, since they take substantial effort to recreate.
 
 2018-01-22 Philipp Klaus Krause <philipp AT informatik.uni-frankfurt.de>
 
