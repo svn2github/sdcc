@@ -1,0 +1,15 @@
+SOURCES = core_list_join.c core_main.c core_matrix.c core_state.c core_util.c core_portme.c
+OBJ = $(SOURCES:.c=.rel)
+SDCC = sdcc
+
+all: coremark
+
+clean:
+	rm -f *.ihx *.lnk *.lst *.noi *.rel *.sym *.size *.dot *.lk *.rst *.asm
+
+%.rel: %.c
+	$(SDCC) -c --std-c99 --fverbose-asm $(SDCCFLAGS) --fverbose-asm $< ||:
+
+coremark: $(OBJ)
+	$(SDCC) $(SDCCFLAGS) *.rel -o image.ihx
+
