@@ -24,7 +24,7 @@
               <b><i>Maxim</i></b> (formerly <b><i>Dallas</i></b>) <b><i>DS80C390</i></b> variants,
               <b><i>Freescale</i></b> (formerly <b><i>Motorola</i></b>) <b><i>HC08</i></b> based <b><i>(hc08, s08)</i></b>,
               <b><i>Zilog Z80</i></b> based MCUs <b><i>(z80, z180, gbz80, Rabbit 2000/3000, Rabbit 3000A, TLCS-90)</i></b> and
-			  <b><i>STMicroelectronics STM8</i></b>.
+              <b><i>STMicroelectronics STM8</i></b>.
               Work is in progress on supporting the <b><i>Microchip PIC16</i></b> and <b><i>PIC18</i></b>
               targets. It can be retargeted for other microprocessors.</p>
            <p>SDCC suite is a collection of several components derived from different sources with
@@ -50,16 +50,14 @@
                 <li>adaptable MCU specific backend that should be well suited for other 8 bit MCUs</li>
                 <li>independent rule based peep hole optimizer.</li>
                 <li>a full range of data types: <b>char</b> (<i>8</i> bits, 1 byte), <b>short</b> (<i>16</i> bits, 2 bytes),
-                  <b>int</b> (<i>16</i> bits, 2 bytes), <b>long</b> (<i>32</i> bit, 4 bytes), <b>float</b> (4 byte IEEE) and
-                  <b>_Bool</b>/<b>bool</b>;<br />
-                  support for <b>long long</b> (<i>64</i> bit, 8 bytes) data types for the z80, z180,
-                  r2k, r3ka, gbz80, hc08, s08 and stm8 targets.</li>
+                  <b>int</b> (<i>16</i> bits, 2 bytes), <b>long</b> (<i>32</i> bit, 4 bytes), <b>long long</b> (<i>64</i> bit, 8 bytes), <b>float</b> (4 byte IEEE) and
+                  <b>_Bool</b>/<b>bool</b>.</li>
                 <li>the ability to add inline assembler code anywhere in a function.</li>
                 <li>the ability to report on the complexity of a function to help decide what should be re-written in assembler.</li>
                 <li>a good selection of automated regression tests.</li>
               </ul></li>
             </ul>
-            <p><b>SDCC</b> was written by Sandeep Dutta and released under a <b>GPL</b> license.
+            <p><b>SDCC</b> was originally written by Sandeep Dutta and released under a <b>GPL</b> license.
               Since its initial release there have been numerous bug fixes and improvements.
               As of December 1999, the code was moved to SourceForge where all the "users
               turned developers" can access the same source tree. SDCC is constantly being
