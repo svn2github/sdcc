@@ -18,6 +18,18 @@
 
       <h2>Previous NEWS</h2>
 
+            <p><i><b>June 5th, 2016: SDCC 3.6.0 RC2 released.</b></i></p>
+            <p>SDCC 3.6.0 Release Candidate 2 source, doc and binary packages for x86 Linux,
+              32 and 64 bit Windows and universal Mac OS X are available in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+
+            <p><i><b>May 30th, 2016: SDCC 3.6.0 RC1 released.</b></i></p>
+            <p>SDCC 3.6.0 Release Candidate 1 source, doc and binary packages for x86 Linux,
+              32 and 64 bit Windows and universal Mac OS X are available in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+
             <p><i><b>June 24th, 2015: Small Device C Compiler 3.5.0 released.</b></i></p>
             <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000,
               HC08, STM8 and PIC microprocessors is now available
