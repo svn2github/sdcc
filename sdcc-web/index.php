@@ -67,6 +67,11 @@
             
             <h2><a name="News"></a>News</h2>
 
+            <p><i><b>Feb 20th, 2018: SDCC 3.7.0 RC2 released.</b></i></p>
+            <p>SDCC 3.7.0 Release Candidate 2 source and doc in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+
             <p><i><b>Feb 11th, 2018: SDCC 3.7.0 RC1 released.</b></i></p>
             <p>SDCC 3.7.0 Release Candidate 1 source and doc in corresponding folders at:
               <a href="http://sourceforge.net/projects/sdcc/files/">
