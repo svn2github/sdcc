@@ -1,6 +1,7 @@
 This directory contains infrastructure for generating SDCC code size and performance history graphs.
 
 WARNINGS:
+* No SDCC should be installed on the system!
 * Reproducing the graphs takes a lot of time and disk space!
 * Reproducing the benchmark score graphs requires the STM8AF board from the STM8A-Discovery, and sufficient access priviledges on the host system!
 

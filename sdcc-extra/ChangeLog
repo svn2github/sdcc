@@ -1,3 +1,9 @@
+2018-02-26 Philipp Klaus Krause <pkk AT spth.de>
+
+	* historygraphs/Makefile,
+	  historygraphs/README:
+	  Update for 3.7.0, document conflict with installed sdcc.
+
 2018-01-31 Philipp Klaus Krause <philipp AT informatik.uni-frankfurt.de>
 
 	* historygraphs/Makefile,
