@@ -101,19 +101,9 @@
               <li>New methods to obtain tree-decompositions of control-flow graphs improve compilation time / code-quality trade-off (when SDCC is built with support for the treedec library).</li>
               <li>Additional general utility functions: qsort(), strtol(), strtoul().</li>
             </ul>
-            <p>Numerous othe rnew features and bug fixes are included as well.</p>
+            <p>Numerous other new features and bug fixes are included as well.</p>
             <p>You can download the release from:<br />
               <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
-
-            <p><i><b>Feb 20th, 2018: SDCC 3.7.0 RC2 released.</b></i></p>
-            <p>SDCC 3.7.0 Release Candidate 2 source and doc in corresponding folders at:
-              <a href="http://sourceforge.net/projects/sdcc/files/">
-              http://sourceforge.net/projects/sdcc/files/</a>.</p>
-
-            <p><i><b>Feb 11th, 2018: SDCC 3.7.0 RC1 released.</b></i></p>
-            <p>SDCC 3.7.0 Release Candidate 1 source and doc in corresponding folders at:
-              <a href="http://sourceforge.net/projects/sdcc/files/">
-              http://sourceforge.net/projects/sdcc/files/</a>.</p>
 
             <!-- END NEWS -->
 
@@ -270,34 +260,15 @@
 
             <h2><a name="Past_news"></a>Past news</h2>
 
-            <p><i><b>June 12th, 2016: Small Device C Compiler 3.6.0 released.</b></i></p>
-            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000,
-              HC08, STM8 and PIC microprocessors is now available
-              (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
-              Sources, documentation and binaries compiled for x86 Linux, x86 and x64 MS Windows and
-              x86 and PPC Mac OS X are available. </p>
-            <p>SDCC 3.6.0 Feature List:</p>
-            <ul>
-              <li>Merged upstream binutils 2.25</li>
-              <li>New memory management with lower overhead</li>
-              <li>Changed default language dialect to --std-sdcc11</li>
-              <li>Diagnostic for missing type specifier: No implicit int outside of C90 mode anymore</li>
-              <li>C11 generic selections</li>
-              <li>char type is now unsigned by default (old behaviour can be restored using --fsigned-char)</li>
-              <li>Character constants are now of type int instead of char.</li>
-              <li>ISO C95 and ISO C11 wide character constants</li>
-              <li>ISO C95 and ISO C11 wide string literals</li>
-              <li>Basic standard library support for wide characters: c16rtomb(), mbrtoc16(), mbsinit(), mbtowc(), mbrlen(), mbrtoc32, c32rtomb(), mbrtowc(), wcrtomb(), mblen(), wctomb()</li>
-              <li>Treat all ports the same in the manual (i.e. mcs51-specific stuff is now clearly described as such)</li>
-              <li>Reorganized interrupt handling for z80, z180, r2k, r3ka, tlcs90, gbz80 backends</li>
-              <li>Workaround for stm8 division hardware bug</li>
-              <li>ELF/DWARF support for stm8</li>
-              <li>Output symbol table for ELF</li>
-              <li>pic16 port now uses standard-compliant crt0iz that initializes static and globals to 0 by default</li>
-            </ul>
-            <p>Numerous feature requests and bug fixes are included as well.</p>
-            <p>You can download the release from:<br />
-              <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
+            <p><i><b>Feb 20th, 2018: SDCC 3.7.0 RC2 released.</b></i></p>
+            <p>SDCC 3.7.0 Release Candidate 2 source and doc in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+
+            <p><i><b>Feb 11th, 2018: SDCC 3.7.0 RC1 released.</b></i></p>
+            <p>SDCC 3.7.0 Release Candidate 1 source and doc in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
 
             <!-- END PAST_NEWS -->
 
