@@ -439,7 +439,7 @@ struct
   { W_BAD_PRAGMA_ARGUMENTS, ERROR_LEVEL_WARNING,
      "#pragma %s: bad argument(s); pragma ignored", 0 },
   { E_BAD_RESTRICT, ERROR_LEVEL_ERROR,
-     "Only pointers may be qualified with 'restrict'", 0 },
+     "Only object pointers may be qualified with 'restrict'", 0 },
   { E_BAD_INLINE, ERROR_LEVEL_ERROR,
      "Only functions may be qualified with 'inline'", 0 },
   { E_BAD_INT_ARGUMENT, ERROR_LEVEL_ERROR,
@@ -541,6 +541,8 @@ struct
     "qualifier or static in array declarator that is not a parameter", 0},
   { E_STATIC_ARRAY_PARAM_C99, ERROR_LEVEL_ERROR,
     "static in array parameters requires ISO C99 or later", 0},
+  { E_INT_MULTIPLE, ERROR_LEVEL_ERROR,
+    "mutiple interrupt numbers for '%s'", 0},
 };
 
 /* -------------------------------------------------------------------------------

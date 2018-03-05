@@ -808,6 +808,9 @@ mergeSpec (sym_link * dest, sym_link * src, const char *name)
   if (IS_STRUCT (dest) && SPEC_STRUCT (dest) == NULL)
     SPEC_STRUCT (dest) = SPEC_STRUCT (src);
 
+  if (FUNC_ISISR (dest) && FUNC_ISISR (src))
+    werror (E_INT_MULTIPLE, name);
+
   /* these are the only function attributes that will be set
      in a specifier while parsing */
   FUNC_NONBANKED (dest) |= FUNC_NONBANKED (src);
@@ -1795,7 +1798,7 @@ checkSClass (symbol *sym, int isProto)
   t = sym->type;
   while (t)
     {
-      if (IS_DECL (t) && DCL_PTR_RESTRICT (t) && !IS_PTR (t))
+      if (IS_DECL (t) && DCL_PTR_RESTRICT (t) && !(IS_PTR (t) && !IS_FUNCPTR(t)))
         {
           werrorfl (sym->fileDef, sym->lineDef, E_BAD_RESTRICT);
           DCL_PTR_RESTRICT (t) = 0;

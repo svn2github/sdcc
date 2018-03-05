@@ -218,7 +218,7 @@ enum {
   E_FLEXARRAY_INEMPTYSTRCT      = 189, /* flexible array in otherwise empty struct */
   W_EMPTY_SOURCE_FILE           = 190, /* ISO C forbids an empty source file */
   W_BAD_PRAGMA_ARGUMENTS        = 191, /* #pragma %s: bad argument(s); pragma ignored */
-  E_BAD_RESTRICT                = 192, /* Only pointers may be qualified with 'restrict' */
+  E_BAD_RESTRICT                = 192, /* Only object pointers may be qualified with 'restrict' */
   E_BAD_INLINE                  = 193, /* Only functions may be qualified with 'inline' */
   E_BAD_INT_ARGUMENT            = 194, /* Bad integer option argument */
   E_NEGATIVE_ARRAY_SIZE         = 195, /* Size of array '%s' is negative */
@@ -269,6 +269,7 @@ enum {
   E_QUALIFIED_ARRAY_PARAM_C99   = 240, /* qualifiers in array parameters require ISO C99 or later */
   E_QUALIFIED_ARRAY_NOPARAM     = 241, /* qualifier or static in array declarator that is not a parameter */
   E_STATIC_ARRAY_PARAM_C99      = 242, /* static in array parameters requires ISO C99 or later */
+  E_INT_MULTIPLE                = 243, /* mutiple interrupt numbers */
 
   /* don't touch this! */
   NUMBER_OF_ERROR_MESSAGES             /* Number of error messages */
