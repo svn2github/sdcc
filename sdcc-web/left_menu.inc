@@ -34,7 +34,7 @@
     <a href="https://sourceforge.net/p/sdcc/discussion/"><i>SDCC Forum</i></a><br />
   </div>
   <br />
-  <b><a href="http://sdcc.sourceforge.net/wiki/"><i>SDCC Wiki</i></a></b><br />
+  <b><a href="https://sourceforge.net/p/sdcc/wiki/"><i>SDCC Wiki</i></a></b><br />
   <br />
   <b><a href="/links.php"><i>Links and More!</i></a></b><br />
   <br />
