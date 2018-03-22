@@ -1,10 +1,17 @@
+2018-03-22 Philipp Klaus Krause <pkk AT spth.de>
+
+	* historygraphs/execute_benchmark-mcs51,
+	  historygraphs/hello-mcs51,
+	  historygraphs/Makefile:
+	  Infrastructure for generating mcs51 Dhrystone speed graphs.
+
 2018-03-21 Philipp Klaus Krause <krauseph AT informatik.uni-freiburg.de>
 
 	* Makefile,
 	  dhrystone-mcs51,
 	  dhrystone-mcs51-sizetable.p,
 	  dhrystone-mcs51-size.svg:
-	  Support for mcs51 dhrystone code size graphs.
+	  Support for mcs51 Dhrystone code size graphs.
 
 2018-02-26 Philipp Klaus Krause <pkk AT spth.de>
 
