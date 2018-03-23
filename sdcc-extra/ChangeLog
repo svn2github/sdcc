@@ -1,3 +1,10 @@
+2018-03-23 Philipp Klaus Krause <pkk AT spth.de>
+
+	* historygraphs/whetstone-mcs51,
+	  historygraphs/whetstone-mcs51-sizetable.p,
+	  historygraphs/Makefile:
+	  Infrastructure for generating mcs51 Whetstone graphs.
+
 2018-03-22 Philipp Klaus Krause <pkk AT spth.de>
 
 	* historygraphs/execute_benchmark-mcs51,

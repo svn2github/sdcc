@@ -1,11 +1,37 @@
-/* Target-specific functions for making Dhrystone work on the C8051F120
+/* Target-specific functions for making Whetstone work on the STM8
    Author: Philipp Klaus Krause */
 
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
 
-#include <C8051F120.h>
+// #include <C8051F120.h> conflict with P0 and P3 from whetstone.c
+
+__sfr __at(0xa2) _XPAGE;
+__sfr __at(0x84) SFRPAGE;
+
+__sfr __at(0xe1) XBR0; 
+__sfr __at(0xe3) XBR2;
+__sfr __at(0xff) WDTCN;
+__sfr __at(0x8a) OSCICN;
+__sfr __at(0xa8) IE;
+
+__sfr __at(0xa4) P0MDOUT;
+__sfr __at(0x88) TCON;
+__sfr __at(0x89) TMOD;
+__sfr __at(0x8a) TL0;
+__sfr __at(0x8c) TH0;
+__sfr __at(0x8d) TH1;
+__sfr __at(0x98) SCON0;
+__sfr __at(0x99) SBUF0;
+
+__sfr __at(0xb7) FLSCL;
+
+__sfr __at(0x89) PLL0CN;
+__sfr __at(0x8e) PLL0MUL;
+__sfr __at(0x8f) PLL0FLT;
+
+__sfr __at(0x97) CLKSEL;
 
 volatile unsigned long int clocktime;
 volatile bool clockupdate;
