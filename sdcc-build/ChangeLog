@@ -1,3 +1,8 @@
+2018-03-17 Philipp Klaus Krause <pkk AT spth.de>
+
+	* lib/variables.mk:
+	  Alternate stm8 test with stm8-large test.
+
 2018-03-21 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* components/sdcc.mk: Only test diagnostics for supported
