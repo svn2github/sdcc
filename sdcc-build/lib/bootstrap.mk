@@ -59,6 +59,7 @@ ifeq ($(TARGETOS), x86_64-w64-mingw32)
 	cp $(HOME)/local-$(HOSTNAME)/cross-tools-w64/x86_64-w64-mingw32/dll/readline5.dll $(BUILDDIR)$(PREFIX)/bin
 	cp $(HOME)/local-$(HOSTNAME)/cross-tools-w64/bin/libgcc_s_*-1.dll $(BUILDDIR)$(PREFIX)/bin
 	cp $(HOME)/local-$(HOSTNAME)/cross-tools-w64/bin/libstdc++-6.dll $(BUILDDIR)$(PREFIX)/bin
+	cp $(HOME)/local-$(HOSTNAME)/cross-tools-w64/bin/libwinpthread-1.dll $(BUILDDIR)$(PREFIX)/bin
 else
 # Windows 32bit:
 # include readline5.dll in the package

@@ -1,3 +1,7 @@
+2018-06-01 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
+
+	* lib/bootstrap.mk: mingw-w64 needs libwinpthread-1.dll
+
 2018-05-24 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* components/sdcc.mk: skip valdiags testing under wine
