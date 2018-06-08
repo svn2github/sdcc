@@ -5,7 +5,7 @@
 include ../packages.mk
 
 PACKAGE=gputils
-VERSION=1.2.0
+VERSION=1.5.0
 PACKAGE_FILE=$(PACKAGE)-$(VERSION).tar.gz
 
 all: do-all

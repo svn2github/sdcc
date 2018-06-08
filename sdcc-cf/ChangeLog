@@ -1,3 +1,8 @@
+2018-06-08 Ben Shi <powerstudio1st AT 163 DOT com>
+
+	* packages/build.gputils/Makefile:
+	  updated to newer gputils.
+
 2017-11-02 Philipp Klaus Krause <pkk AT spth.de>
 
 	* packages/build.mingw-w64/Makefile:
