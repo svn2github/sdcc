@@ -1,3 +1,8 @@
+2018-06-08 Ben Shi <powerstudio1st AT 163 DOT com>
+
+	* local/archlinux-respberrypi-3.mk:
+	  Add new makefile config for archlinux/raspberrypi3.
+
 2018-06-01 Erik Petrich <epetrich AT ivorytower.norman.ok.us>
 
 	* lib/bootstrap.mk: mingw-w64 needs libwinpthread-1.dll
