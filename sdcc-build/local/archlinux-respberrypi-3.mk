@@ -7,7 +7,7 @@
 MAKEJOBFLAGS = -j 1
 
 HOSTOS = aarch64-unknown-linux-gnu
-TARGETOS = arrch64-unknown-linux-gnu
+TARGETOS = aarch64-unknown-linux-gnu
 
 # local includes and libraries
 TARGETCXXFLAGS = "-O2 -I$(HOME)/local-$(HOSTNAME)/include"
