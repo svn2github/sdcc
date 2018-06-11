@@ -1,3 +1,10 @@
+2018-06-12 Ben Shi <powerstudio1st AT 163 DOT com>
+
+	* local/archlinux-respberrypi-3.mk:
+	  Removed.
+	* local/alarm.mk:
+	  Renamed from for archlinux/raspberrypi-3.
+
 2018-06-08 Ben Shi <powerstudio1st AT 163 DOT com>
 
 	* local/archlinux-respberrypi-3.mk:
