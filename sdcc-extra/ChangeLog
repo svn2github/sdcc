@@ -1,3 +1,16 @@
+2018-06-17 Philipp Klaus Krause <pkk AT spth.de>
+
+	* historygraphs/Makefile,
+	  historygraphs/dhrystone-*-size.svg:
+	  Update graphs to illustrate RFE #574.
+
+2018-04-04 Philipp Klaus Krause <pkk AT spth.de>
+
+	* historygraphs/Makefile,
+	  historygraphs/*.p,
+	  historygraphs/*.svg,
+	  Add mcs51 Whetstone graphs, update other graphs.
+
 2018-03-23 Philipp Klaus Krause <pkk AT spth.de>
 
 	* historygraphs/whetstone-mcs51,
