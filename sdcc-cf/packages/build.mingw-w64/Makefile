@@ -31,8 +31,6 @@ mingw-w64-install.tag: download/mingw-w64-$(MINGW_W64_VERSION)-bin_x86_64-linux_
 	tar -C $(LOCAL_DIR)/cross-tools-w64 -xjvf download/mingw-w64-$(MINGW_W64_VERSION)-bin_x86_64-linux_$(MINGW_W64_BUILD_DATE).tar.bz2
 	test -L $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/boost && rm $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/boost; true
 	ln -s /usr/include/boost/ $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include
-	test -L $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/stx && rm $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include/stx; true
-	ln -s $(LOCAL_DIR)/include/stx/ $(LOCAL_DIR)/cross-tools-w64/x86_64-w64-mingw32/include
 	touch $@
 
 .PHONY: mingw-w64-clean

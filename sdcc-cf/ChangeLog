@@ -1,3 +1,9 @@
+2018-08-20 Philipp Klaus Krause <pkk AT spth.de>
+
+	* packages/build.stx-btree,
+	  packages/build.mingw-w64/Makefile:
+	  Remove infrastructure for STX support.
+
 2018-06-08 Ben Shi <powerstudio1st AT 163 DOT com>
 
 	* packages/build.gputils/Makefile:
