@@ -3,6 +3,13 @@
 # Simple shell script that knows enough to download the sdcc build scripts
 # and start them running.
 
+# Use gmake over make by default.
+if command -v gmake > /dev/null; then
+    MAKE=gmake
+  else
+    MAKE=make
+  fi
+
 BUILDROOT=$HOME/build
 #test -z $BUILDROOT && \
 #  BUILDROOT=/var/tmp/`whoami`/build
@@ -114,7 +121,7 @@ then
     # Don't use "make -C" to change directory since the "Entering directory" and
     # "Leaving directory" messages are displayed in the regression test results
     cd $BUILDROOT/sdcc-build
-    make $*
+    $MAKE $*
   else
     echo $MSGPREFIX "can't checkout"
   fi
