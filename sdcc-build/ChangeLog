@@ -1,3 +1,8 @@
+2018-08-22 Philipp Klaus Krause <pkk AT spth.de>
+
+	* sdcc-build-bootstrap.sh:
+	  Do not rely on non-portable sleep behaviour.
+
 2018-06-12 Ben Shi <powerstudio1st AT 163 DOT com>
 
 	* local/archlinux-respberrypi-3.mk:

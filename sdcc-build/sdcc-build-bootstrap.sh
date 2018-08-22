@@ -104,7 +104,7 @@ then
       success=1
       break
     else
-      sleep 5m
+      sleep 300
     fi
   done
 
