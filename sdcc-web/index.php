@@ -67,43 +67,10 @@
             
             <h2><a name="News"></a>News</h2>
 
-            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000, GBZ80, TLCS-90,
-              HC08, STM8 and PIC microprocessors is now available
-              (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
-              Sources and documentation are available (for 3.8.0 we are aiming to bring back binary releases).</p>
-            <p>SDCC 3.7.0 Feature List:</p>
-            <ul>
-              <li>Changed putchar() prototype from void putchar(char) to int putchar(int) to improve standard-compliance and allow error reporting.</li>
-              <li>Various speed improvements in stm8 backend - Dhrystone score more than doubled, resulting in SDCC achieving the highest Dhrystone scores among STM8 C implementations.</li>
-              <li>Various speed improvements for multiplications resulting in SDCC achieving the highest Coremark scores among STM8 C implementations.</li>
-              <li>Declarations in for loops (ISO C99).</li>
-              <li>64-bit integers (long long) for the mcs51 and ds390 backends (now long long is fully supported in SDCC except for the pic14 and pic16 backends).</li>
-              <li>Full _Bool support for mcs51 and ds390 backend (now _Bool is fully supported in SDCC regardless of backend).</li>
-              <li>Additional wide character library functions: mbstowcs() and wcstombs(), btowc() and wctob(), wcscmp(), wcslen().</li>
-              <li>Changed PRNG for rand() from LCG to xorshift to improve speed and quality.</li>
-              <li>Support for Small-C calling convention on the callee side (i.e. function definitions with Small-C calling convention).</li>
-              <li>The obsolete macro SDCC (which used to contain the version number encoded as an integer) has finally been removed (except for mcs51, where it will survive a little bit longer for SiLabs IDE compability).</li>
-              <li>New devices supported by simulator (TLCS-90, and the 517, F380, XC88X, DS320 mcs51-variants along with dual-dptr and MDU support).</li>
-              <li>Timer, UART (incl. interrupt) and I/O support in STM8 simulator.</li>
-              <li>Simulator support for banked memory and bit banding.</li>
-              <li>Various simulator improvements: Conditional breakpoints, breakpoints by function name from SDCC debug output, OMF input, VCD output, simulator interface for simulated program and new operators in expressions.</li>
-              <li>Deprecated --nojtbound and the corresponding pragma.</li>
-              <li>Faster register allocator reduces compilation time by about 25% (does not apply to mcs51, ds390 which use a different register allocator).</li>
-              <li>Execution count guessing and use of execution count guesses in stm8 register allocation improve optimization for code speed.</li>
-              <li>Changed getchar() prototype from char getchar(void) to int getchar(void) to improve standard-compliance and allow error reporting.</li>
-              <li>Type qualifiers in array parameters (ISO C99).</li>
-              <li>static in array parameters (ISO C99).</li>
-              <li>Improved support for DWARFv2 debug info in ELF output (stm8, hc08, s08).</li>
-              <li>Various improvements in z80/z180/gbz80/tlcs90/r2k/r3ka code generation, in particular for mixed 16-/32-bit code.</li>
-              <li>__z88dk_fastcall function pointer support for --reserve-regs-iy.</li>
-              <li>tlcs90 is now a fully supported backend, no longer work in progress.</li>
-              <li>--data-seg to specify the segment for non-initialized data in the z80, z180, gbz80, tlcs90, r2k and r3ka backends.</li>
-              <li>New methods to obtain tree-decompositions of control-flow graphs improve compilation time / code-quality trade-off (when SDCC is built with support for the treedec library).</li>
-              <li>Additional general utility functions: qsort(), strtol(), strtoul().</li>
-            </ul>
-            <p>Numerous other new features and bug fixes are included as well.</p>
-            <p>You can download the release from:<br />
-              <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
+            <p><i><b>Sep 17th, 2018: SDCC 3.8.0 RC1 released.</b></i></p>
+            <p>SDCC 3.8.0 Release Candidate 1 source, doc and binary packages for amd64 GNU/Linux, 32 and 64 bit Windows and amd64 macOS are available in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
 
             <!-- END NEWS -->
 
@@ -259,6 +226,44 @@
             <!-- START PAST_NEWS -->
 
             <h2><a name="Past_news"></a>Past news</h2>
+
+            <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000, GBZ80, TLCS-90,
+              HC08, STM8 and PIC microprocessors is now available
+              (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
+              Sources and documentation are available (for 3.8.0 we are aiming to bring back binary releases).</p>
+            <p>SDCC 3.7.0 Feature List:</p>
+            <ul>
+              <li>Changed putchar() prototype from void putchar(char) to int putchar(int) to improve standard-compliance and allow error reporting.</li>
+              <li>Various speed improvements in stm8 backend - Dhrystone score more than doubled, resulting in SDCC achieving the highest Dhrystone scores among STM8 C implementations.</li>
+              <li>Various speed improvements for multiplications resulting in SDCC achieving the highest Coremark scores among STM8 C implementations.</li>
+              <li>Declarations in for loops (ISO C99).</li>
+              <li>64-bit integers (long long) for the mcs51 and ds390 backends (now long long is fully supported in SDCC except for the pic14 and pic16 backends).</li>
+              <li>Full _Bool support for mcs51 and ds390 backend (now _Bool is fully supported in SDCC regardless of backend).</li>
+              <li>Additional wide character library functions: mbstowcs() and wcstombs(), btowc() and wctob(), wcscmp(), wcslen().</li>
+              <li>Changed PRNG for rand() from LCG to xorshift to improve speed and quality.</li>
+              <li>Support for Small-C calling convention on the callee side (i.e. function definitions with Small-C calling convention).</li>
+              <li>The obsolete macro SDCC (which used to contain the version number encoded as an integer) has finally been removed (except for mcs51, where it will survive a little bit longer for SiLabs IDE compability).</li>
+              <li>New devices supported by simulator (TLCS-90, and the 517, F380, XC88X, DS320 mcs51-variants along with dual-dptr and MDU support).</li>
+              <li>Timer, UART (incl. interrupt) and I/O support in STM8 simulator.</li>
+              <li>Simulator support for banked memory and bit banding.</li>
+              <li>Various simulator improvements: Conditional breakpoints, breakpoints by function name from SDCC debug output, OMF input, VCD output, simulator interface for simulated program and new operators in expressions.</li>
+              <li>Deprecated --nojtbound and the corresponding pragma.</li>
+              <li>Faster register allocator reduces compilation time by about 25% (does not apply to mcs51, ds390 which use a different register allocator).</li>
+              <li>Execution count guessing and use of execution count guesses in stm8 register allocation improve optimization for code speed.</li>
+              <li>Changed getchar() prototype from char getchar(void) to int getchar(void) to improve standard-compliance and allow error reporting.</li>
+              <li>Type qualifiers in array parameters (ISO C99).</li>
+              <li>static in array parameters (ISO C99).</li>
+              <li>Improved support for DWARFv2 debug info in ELF output (stm8, hc08, s08).</li>
+              <li>Various improvements in z80/z180/gbz80/tlcs90/r2k/r3ka code generation, in particular for mixed 16-/32-bit code.</li>
+              <li>__z88dk_fastcall function pointer support for --reserve-regs-iy.</li>
+              <li>tlcs90 is now a fully supported backend, no longer work in progress.</li>
+              <li>--data-seg to specify the segment for non-initialized data in the z80, z180, gbz80, tlcs90, r2k and r3ka backends.</li>
+              <li>New methods to obtain tree-decompositions of control-flow graphs improve compilation time / code-quality trade-off (when SDCC is built with support for the treedec library).</li>
+              <li>Additional general utility functions: qsort(), strtol(), strtoul().</li>
+            </ul>
+            <p>Numerous other new features and bug fixes are included as well.</p>
+            <p>You can download the release from:<br />
+              <a href="https://sourceforge.net/projects/sdcc/files/" target="_new">https://sourceforge.net/projects/sdcc/files/</a></p>
 
             <p><i><b>Feb 20th, 2018: SDCC 3.7.0 RC2 released.</b></i></p>
             <p>SDCC 3.7.0 Release Candidate 2 source and doc in corresponding folders at:
