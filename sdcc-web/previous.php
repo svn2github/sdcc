@@ -18,6 +18,16 @@
 
       <h2>Previous NEWS</h2>
 
+            <p><i><b>Feb 20th, 2018: SDCC 3.7.0 RC2 released.</b></i></p>
+            <p>SDCC 3.7.0 Release Candidate 2 source and doc in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+
+            <p><i><b>Feb 11th, 2018: SDCC 3.7.0 RC1 released.</b></i></p>
+            <p>SDCC 3.7.0 Release Candidate 1 source and doc in corresponding folders at:
+              <a href="http://sourceforge.net/projects/sdcc/files/">
+              http://sourceforge.net/projects/sdcc/files/</a>.</p>
+
             <p><i><b>June 12th, 2016: Small Device C Compiler 3.6.0 released.</b></i></p>
             <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000,
               HC08, STM8 and PIC microprocessors is now available
