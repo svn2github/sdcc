@@ -20,7 +20,7 @@ fi
 # Setup serial device
 stty --file $1 9600 cooked
 
-# Ensure that we don't get any leftover results from an old benchmark still running onthe device
+# Ensure that we don't get any leftover results from an old benchmark still running on the device
 if ! $STM8FLASH -c stlinkv2 -p stm8af5288 -w hello-stm8/hello.ihx &> /dev/null; then
 	echo "FAILED to write hello.ihx to device!"
 	exit 1
