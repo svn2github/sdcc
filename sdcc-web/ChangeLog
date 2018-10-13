@@ -1,3 +1,8 @@
+2018-10-13 Philipp Klaus Krause <pkk AT spth.de>
+
+	* index.php:
+	  Add date line to 3.7.0 and 3.8.0 release news.
+
 2018-09-27 Philipp Klaus Krause <pkk AT spth.de>
 
 	* index.php,

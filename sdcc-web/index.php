@@ -67,6 +67,7 @@
             
             <h2><a name="News"></a>News</h2>
 
+            <p><i><b>Sep 27th, 2018: SDCC 3.8.0  released.</b></i></p>
             <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000, GBZ80, TLCS-90,
               HC08, STM8 and PIC microprocessors is now available
               (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
@@ -251,6 +252,7 @@
               <a href="http://sourceforge.net/projects/sdcc/files/">
               http://sourceforge.net/projects/sdcc/files/</a>.</p>
 
+            <p><i><b>Mar 1st, 2018: SDCC 3.7.0 released.</b></i></p>
             <p>A new release of SDCC, the portable optimizing compiler for 8051, DS390, Z80, Z180, Rabbit 2000, GBZ80, TLCS-90,
               HC08, STM8 and PIC microprocessors is now available
               (<a href="http://sdcc.sourceforge.net" target="_new">http://sdcc.sourceforge.net</a>).
