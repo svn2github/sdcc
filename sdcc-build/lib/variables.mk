@@ -61,7 +61,7 @@ SVN_ROOT = svn://svn.code.sf.net/p/sdcc/code
 # TODO: Replace test-ucr3ka by test-ucz80-resiy when the r3ka port gets dropped.
 REGTESTTARGETS_1_0 = test-ds390
 REGTESTTARGETS_2_0 = test-mcs51-medium test-mcs51-large test-mcs51-stack-auto test-hc08 test-ucz80 test-ucgbz80 test-ucr2k test-stm8-large
-REGTESTTARGETS_2_1 = test-mcs51-small test-mcs51-huge test-mcs51-large-stack-auto test-s08 test-ucz180 test-tlcs90 test-ucr3ka test-stm8
+REGTESTTARGETS_2_1 = test-mcs51-small test-mcs51-huge test-mcs51-large-stack-auto test-s08 test-ucz180 test-tlcs90 test-ucr3ka test-stm8 test-ucz80-resiy
 
 DAYODD = $(shell date +%j | awk '{print $$0%2}')
 ifeq ($(strip $(DAYODD)),0)
