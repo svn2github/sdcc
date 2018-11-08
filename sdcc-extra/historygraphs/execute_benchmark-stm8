@@ -31,7 +31,7 @@ while read -r line; do
 	fi
 done < "$1"
 
-# Load benchmarkonto the board
+# Load benchmark onto the board
 if ! $STM8FLASH -c stlinkv2 -p stm8af5288 -w "$2" &> /dev/null; then
 	echo "FAILED to write benchmark to device!"
 	exit 1

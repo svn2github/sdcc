@@ -2,8 +2,13 @@
 
 	* historygraphs/Makefile,
 	  historygraphs/execute_benchmark-stm8,
-	  historygraphs/stdcbench-0.6.patch:
-	  Improve handling of paralle make, prepare for Coremark and stdcbench support.
+	  historygraphs/execute_benchmark-mcs51,
+	  historygraphs/stdcbench-0.6.patch,
+	  coremark-stm8-sizetable.p,
+	  stdcbench-stm8-sizetable.p,
+	  stdcbench-stm8-scoretable.p,
+	  historygraphs/*.svg:
+	  Improve handling of parallel make, some Coremark and stdcbench support, update graphs.
 
 2018-10-18 Philipp Klaus Krause <pkk AT spth.de>
 
