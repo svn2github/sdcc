@@ -1,3 +1,10 @@
+2018-11-08 Philipp Klaus Krause <pkk AT spth.de>
+
+	* historygraphs/Makefile,
+	  historygraphs/execute_benchmark-stm8,
+	  historygraphs/stdcbench-0.6.patch:
+	  Improve handling of paralle make, prepare for Coremark and stdcbench support.
+
 2018-10-18 Philipp Klaus Krause <pkk AT spth.de>
 
 	* historygraphs/README,

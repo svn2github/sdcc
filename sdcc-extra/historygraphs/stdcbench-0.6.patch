@@ -1,0 +1,18 @@
+--- stdcbench-0.5/examples/Makefile.SDCC-STM8AF	2018-05-10 10:10:43.000000000 +0200
++++ stdcbench-stm8/Makefile	2018-10-29 12:06:39.008647535 +0100
+@@ -1,6 +1,6 @@
+ # A Makefile for SDCC targeting the STM8AF board from the STM8A-Discovery kit
+ 
+-CC = sdcc -mstm8 --opt-code-speed --max-allocs-per-node 10000
++CC = $(SDCC) $(SDCCFLAGS)
+ SOURCES = c90base.c c90base-data.c c90base-huffman-recursive.c c90base-isort.c c90float.c c90base-huffman_tree.c stdcbench.c c90base-compression.c c90base-huffman-iterative.c c90base-immul.c c90double.c c90lib.c c90lib-lnlc.c c90lib-peep.c c90lib-peep-stm8.c c90lib-htab.c portme.c
+ OBJECTS = $(SOURCES:.c=.rel)
+ 
+@@ -10,6 +10,7 @@
+ 
+ stdcbench.ihx: $(OBJECTS)
+ 	$(CC) *.rel -o stdcbench.ihx
++	cp stdcbench.ihx image.ihx
+ 
+ %.rel: %.c *.h portme.h
+ 	$(CC) -c $<
