@@ -12,8 +12,8 @@ if [ $# != 2 ]; then
 	exit 1
 fi
 
-if ! command -v $STM8FLASH &> /dev/null; then
-	echo "$STM8FLASH not found!";
+if ! command -v $EC2WRITEFLASH &> /dev/null; then
+	echo "$EC2WRITEFLASH not found!";
 	exit 1
 fi
 
